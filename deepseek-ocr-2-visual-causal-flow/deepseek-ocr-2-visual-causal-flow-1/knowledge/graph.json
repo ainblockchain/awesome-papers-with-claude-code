@@ -1,0 +1,650 @@
+{
+  "nodes": [
+    {
+      "id": "ocr_fundamentals",
+      "name": "OCR Fundamentals",
+      "type": "foundational",
+      "level": "foundational",
+      "description": "Optical Character Recognition is the task of converting images containing text into machine-readable text. Traditional OCR systems process images in fixed raster-scan order, reading left-to-right, top-to-bottom.",
+      "key_ideas": [
+        "Image to text conversion",
+        "Raster-scan reading order",
+        "Character and word detection"
+      ],
+      "code_refs": [],
+      "paper_ref": null,
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "vision_language_models",
+      "name": "Vision-Language Models",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "Vision-Language Models (VLMs) combine visual encoders with language models to understand and generate text based on image inputs. They bridge the gap between visual perception and language understanding.",
+      "key_ideas": [
+        "Multimodal fusion of vision and language",
+        "Visual encoder + language decoder architecture",
+        "Cross-modal attention mechanisms"
+      ],
+      "code_refs": [],
+      "paper_ref": null,
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "visual_tokenization",
+      "name": "Visual Tokenization",
+      "type": "component",
+      "level": "foundational",
+      "description": "Visual tokenization converts continuous image data into discrete tokens that can be processed by transformer architectures. This enables treating images similarly to text sequences.",
+      "key_ideas": [
+        "Patch-based image splitting",
+        "Token embedding generation",
+        "Bridging continuous images to discrete tokens"
+      ],
+      "code_refs": [],
+      "paper_ref": null,
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "attention_mechanisms",
+      "name": "Attention Mechanisms",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Attention mechanisms allow models to focus on relevant parts of the input. Bidirectional attention sees all tokens, while causal attention only sees previous tokens, enabling autoregressive generation.",
+      "key_ideas": [
+        "Query-Key-Value computation",
+        "Bidirectional vs causal attention",
+        "Attention mask matrices"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "clip_encoder",
+      "name": "CLIP Visual Encoder",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "CLIP (Contrastive Language-Image Pre-training) provides visual encoders trained on image-text pairs. It uses bidirectional attention for global image understanding but processes tokens in fixed spatial order.",
+      "key_ideas": [
+        "Contrastive pre-training on image-text pairs",
+        "Global visual understanding",
+        "Fixed spatial token ordering"
+      ],
+      "code_refs": [],
+      "paper_ref": "Radford et al., 2021 — Learning Transferable Visual Models",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "human_visual_perception",
+      "name": "Human Visual Perception",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Humans don't read documents in strict raster order. We follow semantic structures—reading titles first, scanning headers, following logical flow. DeepSeek-OCR 2 draws inspiration from this cognitive process.",
+      "key_ideas": [
+        "Semantic-driven reading patterns",
+        "Flexible scanning based on content structure",
+        "Logical flow over spatial order"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "visual_causal_flow",
+      "name": "Visual Causal Flow",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Visual Causal Flow is the core innovation of DeepSeek-OCR 2. It dynamically reorders visual tokens based on semantic content rather than fixed spatial positions, mimicking human reading patterns.",
+      "key_ideas": [
+        "Dynamic token reordering",
+        "Semantic-based ordering over spatial ordering",
+        "Causal reasoning over visual content"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "deep_encoder_v2",
+      "name": "DeepEncoder V2",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "DeepEncoder V2 replaces traditional CLIP encoders with an LLM-style architecture (Qwen2-0.5B). It uses dual-stream attention: bidirectional for visual tokens and causal for flow queries.",
+      "key_ideas": [
+        "LLM-style visual encoding",
+        "Dual-stream attention mechanism",
+        "500M parameter Qwen2-based encoder"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "vision_tokenizer",
+      "name": "SAM-based Vision Tokenizer",
+      "type": "component",
+      "level": "intermediate",
+      "description": "DeepSeek-OCR 2 uses an 80M-parameter SAM-base architecture with convolutional layers as its vision tokenizer. This converts raw images into visual tokens for the encoder.",
+      "key_ideas": [
+        "SAM-base architecture adaptation",
+        "Convolutional feature extraction",
+        "80M parameters for efficient tokenization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "causal_flow_queries",
+      "name": "Causal Flow Queries",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Learnable query tokens appended after visual tokens. Each query attends to all visual tokens and preceding queries, enabling semantic reorganization of visual information.",
+      "key_ideas": [
+        "Learnable query tokens",
+        "Cross-attention to visual tokens",
+        "Causal attention between queries"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dual_stream_attention",
+      "name": "Dual-Stream Attention",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Visual tokens use bidirectional attention (preserving CLIP's global modeling), while causal flow queries use causal attention. This hybrid approach combines global understanding with sequential reasoning.",
+      "key_ideas": [
+        "Bidirectional attention for visual tokens",
+        "Causal attention for flow queries",
+        "Hybrid attention mask design"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "attention_mask_design",
+      "name": "Attention Mask Design",
+      "type": "technique",
+      "level": "advanced",
+      "description": "The attention mask combines full attention for visual tokens with lower-triangular causal masking for queries. This allows visual tokens global access while queries attend causally.",
+      "key_ideas": [
+        "Block-diagonal mask structure",
+        "Lower triangular for causal queries",
+        "Full attention for visual tokens"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cascade_causal_reasoning",
+      "name": "Cascade Causal Reasoning",
+      "type": "architecture",
+      "level": "advanced",
+      "description": "Two-stage causal reasoning: encoder reorders visual tokens semantically via learnable queries, then the LLM decoder processes the ordered sequence autoregressively. This bridges 2D images with 1D language.",
+      "key_ideas": [
+        "Two-stage reasoning pipeline",
+        "Encoder semantic reordering",
+        "Decoder autoregressive processing"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_crop_strategy",
+      "name": "Multi-Crop Strategy",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Images are processed with one global view (1024×1024) plus 0-6 local crops (768×768 each). This captures both global context and fine-grained details, producing 256-1120 tokens total.",
+      "key_ideas": [
+        "Global view for context",
+        "Local crops for detail",
+        "Dynamic token count based on image"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "token_efficiency",
+      "name": "Token Efficiency",
+      "type": "optimization",
+      "level": "intermediate",
+      "description": "DeepSeek-OCR 2 uses only 256-1120 visual tokens versus 6000+ for many competitors. Fewer tokens means faster inference and lower memory usage while maintaining accuracy.",
+      "key_ideas": [
+        "Compact token representation",
+        "256-1120 tokens vs 6000+",
+        "Better efficiency-accuracy tradeoff"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "three_stage_training",
+      "name": "Three-Stage Training",
+      "type": "training",
+      "level": "advanced",
+      "description": "Training proceeds in three stages: encoder pretraining (40k iterations), query-decoder integration (15k iterations), and LLM fine-tuning with frozen encoder (20k iterations).",
+      "key_ideas": [
+        "Stage 1: Encoder language modeling",
+        "Stage 2: Query-decoder integration",
+        "Stage 3: Frozen encoder, LLM tuning"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "stage1_encoder_pretraining",
+      "name": "Stage 1: Encoder Pretraining",
+      "type": "training",
+      "level": "advanced",
+      "description": "DeepEncoder V2 is pretrained using language modeling objective on 160 A100 GPUs, batch size 640, for 40k iterations (~100M samples). Learning rate decays from 1e-4 to 1e-6.",
+      "key_ideas": [
+        "Language modeling objective for vision",
+        "Large-scale distributed training",
+        "100M sample pretraining"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "stage2_query_enhancement",
+      "name": "Stage 2: Query Enhancement",
+      "type": "training",
+      "level": "advanced",
+      "description": "Integrates causal flow queries with the DeepSeek-3B decoder using 4-stage pipeline parallelism for 15k iterations. This bridges the encoder's reordered tokens with the language model.",
+      "key_ideas": [
+        "Query-decoder integration",
+        "Pipeline parallelism for efficiency",
+        "Bridging encoder and decoder"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "stage3_llm_finetuning",
+      "name": "Stage 3: LLM Fine-tuning",
+      "type": "training",
+      "level": "advanced",
+      "description": "Final stage freezes the encoder and fine-tunes only the LLM decoder parameters for 20k iterations with very low learning rates (1e-6 to 5e-8) to prevent catastrophic forgetting.",
+      "key_ideas": [
+        "Frozen encoder preservation",
+        "Low learning rate fine-tuning",
+        "Preventing catastrophic forgetting"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "document_to_markdown",
+      "name": "Document-to-Markdown Conversion",
+      "type": "application",
+      "level": "intermediate",
+      "description": "A key application of DeepSeek-OCR 2 is converting complex documents (with tables, formulas, figures) into structured Markdown format while preserving semantic reading order.",
+      "key_ideas": [
+        "Complex document understanding",
+        "Structure-preserving conversion",
+        "Markdown output generation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reading_order_detection",
+      "name": "Reading Order Detection",
+      "type": "application",
+      "level": "intermediate",
+      "description": "The model excels at detecting correct reading order in complex documents. Edit Distance metric for reading order improved from 0.085 to 0.057, a 33% improvement.",
+      "key_ideas": [
+        "Semantic reading order",
+        "Edit Distance evaluation",
+        "33% improvement over predecessor"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "formula_recognition",
+      "name": "Formula Recognition",
+      "type": "application",
+      "level": "intermediate",
+      "description": "DeepSeek-OCR 2 shows strong mathematical formula recognition with 6.17% improvement over DeepSeek-OCR 1. Visual causal flow helps understand formula structure and symbols.",
+      "key_ideas": [
+        "LaTeX formula generation",
+        "Complex symbol recognition",
+        "6.17% accuracy improvement"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "omnidocbench",
+      "name": "OmniDocBench Evaluation",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "OmniDocBench v1.5 is a comprehensive document OCR benchmark. DeepSeek-OCR 2 achieves 91.09% overall score, improving 3.73% over DeepSeek-OCR 1's 87.36%.",
+      "key_ideas": [
+        "Comprehensive document benchmark",
+        "91.09% overall accuracy",
+        "Multiple document types and tasks"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "repetition_reduction",
+      "name": "Repetition Reduction",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Visual causal flow reduces text repetition errors by 2.08% in production. The semantic ordering helps the model maintain coherent output without redundant predictions.",
+      "key_ideas": [
+        "Reduced repetitive outputs",
+        "2.08% improvement in production",
+        "Coherent sequential generation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "grounding_tasks",
+      "name": "Visual Grounding",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Beyond OCR, DeepSeek-OCR 2 supports grounding tasks—locating specific text or elements within documents. The semantic token ordering aids in spatial-semantic correspondence.",
+      "key_ideas": [
+        "Text localization in documents",
+        "Spatial-semantic mapping",
+        "Beyond pure text extraction"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "2d_to_1d_bridging",
+      "name": "2D-to-1D Bridging",
+      "type": "theory",
+      "level": "advanced",
+      "description": "The fundamental challenge: images are 2D structures but language models process 1D sequences. Cascade causal reasoning offers a principled solution by semantically linearizing visual content.",
+      "key_ideas": [
+        "Spatial to sequential transformation",
+        "Semantic linearization",
+        "Preserving 2D relationships in 1D"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "future_encoder_architectures",
+      "name": "Future Visual Encoder Architectures",
+      "type": "theory",
+      "level": "frontier",
+      "description": "DeepSeek-OCR 2 suggests LLM-style encoders with causal reasoning could become a new paradigm for visual understanding, challenging the dominance of CLIP-style bidirectional encoders.",
+      "key_ideas": [
+        "LLM-style visual encoding paradigm",
+        "Beyond CLIP architectures",
+        "Causal reasoning for vision"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cognitive_ai_design",
+      "name": "Cognitive AI Design",
+      "type": "theory",
+      "level": "frontier",
+      "description": "The paper exemplifies cognitive AI design—drawing inspiration from human perception. Future models may further incorporate cognitive science insights for more human-like visual understanding.",
+      "key_ideas": [
+        "Human cognition as design inspiration",
+        "Perception-aligned architectures",
+        "Bridging cognitive science and AI"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2026 — DeepSeek-OCR 2: Visual Causal Flow",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "ocr_fundamentals",
+      "target": "visual_causal_flow",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "Visual causal flow evolves traditional OCR by replacing fixed raster-scan with semantic ordering"
+    },
+    {
+      "source": "vision_language_models",
+      "target": "deep_encoder_v2",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "VLM architectures provide the foundation for DeepEncoder V2's design"
+    },
+    {
+      "source": "visual_tokenization",
+      "target": "vision_tokenizer",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "SAM-based vision tokenizer is a specific implementation of visual tokenization"
+    },
+    {
+      "source": "attention_mechanisms",
+      "target": "dual_stream_attention",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Dual-stream attention combines bidirectional and causal attention mechanisms"
+    },
+    {
+      "source": "clip_encoder",
+      "target": "deep_encoder_v2",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "DeepEncoder V2 replaces CLIP with an LLM-style architecture"
+    },
+    {
+      "source": "human_visual_perception",
+      "target": "visual_causal_flow",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Human reading patterns inspire the visual causal flow design"
+    },
+    {
+      "source": "visual_causal_flow",
+      "target": "causal_flow_queries",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Causal flow queries are the mechanism implementing visual causal flow"
+    },
+    {
+      "source": "deep_encoder_v2",
+      "target": "dual_stream_attention",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Dual-stream attention is a core component of DeepEncoder V2"
+    },
+    {
+      "source": "deep_encoder_v2",
+      "target": "vision_tokenizer",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "SAM-based vision tokenizer feeds into DeepEncoder V2"
+    },
+    {
+      "source": "causal_flow_queries",
+      "target": "cascade_causal_reasoning",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Causal flow queries form the first stage of cascade causal reasoning"
+    },
+    {
+      "source": "dual_stream_attention",
+      "target": "attention_mask_design",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Dual-stream attention requires specialized attention mask design"
+    },
+    {
+      "source": "cascade_causal_reasoning",
+      "target": "2d_to_1d_bridging",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Cascade reasoning provides a solution for 2D to 1D bridging"
+    },
+    {
+      "source": "multi_crop_strategy",
+      "target": "token_efficiency",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Multi-crop strategy contributes to efficient token usage"
+    },
+    {
+      "source": "deep_encoder_v2",
+      "target": "multi_crop_strategy",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multi-crop strategy is part of the DeepEncoder V2 pipeline"
+    },
+    {
+      "source": "three_stage_training",
+      "target": "stage1_encoder_pretraining",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Stage 1 is the first phase of three-stage training"
+    },
+    {
+      "source": "three_stage_training",
+      "target": "stage2_query_enhancement",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Stage 2 is the second phase of three-stage training"
+    },
+    {
+      "source": "three_stage_training",
+      "target": "stage3_llm_finetuning",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Stage 3 is the final phase of three-stage training"
+    },
+    {
+      "source": "stage1_encoder_pretraining",
+      "target": "stage2_query_enhancement",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Stage 2 requires a pretrained encoder from Stage 1"
+    },
+    {
+      "source": "stage2_query_enhancement",
+      "target": "stage3_llm_finetuning",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Stage 3 requires integrated query-decoder from Stage 2"
+    },
+    {
+      "source": "visual_causal_flow",
+      "target": "reading_order_detection",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Visual causal flow enables accurate reading order detection"
+    },
+    {
+      "source": "visual_causal_flow",
+      "target": "document_to_markdown",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Semantic ordering enables structure-preserving document conversion"
+    },
+    {
+      "source": "visual_causal_flow",
+      "target": "formula_recognition",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Visual causal flow helps understand formula structure"
+    },
+    {
+      "source": "visual_causal_flow",
+      "target": "grounding_tasks",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Semantic token ordering aids visual grounding"
+    },
+    {
+      "source": "omnidocbench",
+      "target": "reading_order_detection",
+      "relationship": "alternative_to",
+      "weight": 0.5,
+      "description": "OmniDocBench evaluates reading order detection"
+    },
+    {
+      "source": "cascade_causal_reasoning",
+      "target": "repetition_reduction",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Cascade reasoning helps reduce repetitive outputs"
+    },
+    {
+      "source": "deep_encoder_v2",
+      "target": "future_encoder_architectures",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "DeepEncoder V2 points toward future LLM-style encoders"
+    },
+    {
+      "source": "human_visual_perception",
+      "target": "cognitive_ai_design",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Human perception insights enable cognitive AI design"
+    },
+    {
+      "source": "visual_causal_flow",
+      "target": "cognitive_ai_design",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Visual causal flow exemplifies cognitive AI design principles"
+    }
+  ]
+}
