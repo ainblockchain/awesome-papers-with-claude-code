@@ -1,0 +1,427 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations: LLM Building Blocks",
+    "description": "Essential concepts for understanding modern large language models and their training",
+    "concepts": [
+      "transformer_architecture",
+      "mixture_of_experts",
+      "sparse_attention",
+      "reinforcement_learning_from_human_feedback",
+      "long_context_modeling",
+      "open_source_llm_ecosystem"
+    ],
+    "lessons": [
+      {
+        "concept_id": "transformer_architecture",
+        "title": "The Transformer: Attention Is All You Need",
+        "prerequisites": [],
+        "key_ideas": [
+          "Self-attention lets each token 'look at' every other token in the sequence",
+          "Parallel processing replaces sequential RNN computation",
+          "Query, Key, Value projections compute attention weights",
+          "Positional encodings inject sequence order information",
+          "Encoder-decoder or decoder-only variants serve different tasks"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "In self-attention, what determines how much token A 'pays attention to' token B?\n1) The dot product of A's query vector and B's key vector\n2) The physical distance between A and B in the sequence\n3) A random selection process during training\nType the number.",
+        "explanation": "In 2017, Vaswani and colleagues at Google introduced the Transformer in 'Attention Is All You Need.' They were tackling a fundamental problem: RNNs processed sequences one token at a time, making them slow and hard to parallelize.\n\nThe Transformer's key insight is self-attention. Imagine a book club where everyone can instantly discuss any passage with anyone else — no waiting for the person next to you to finish speaking. Each token computes a 'query' (what am I looking for?), and every token offers a 'key' (what do I have?) and 'value' (here's my information). The attention weight between two tokens is just their query-key dot product.\n\nThis parallelism revolutionized NLP. Training that took weeks on RNNs could now happen in days. The Transformer became the foundation of BERT, GPT, and now GLM-5.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "mixture_of_experts",
+        "title": "Mixture of Experts: Scaling Without Proportional Cost",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Multiple 'expert' sub-networks specialize in different inputs",
+          "A gating network routes each token to the most relevant experts",
+          "Total parameters can be huge while active parameters stay small",
+          "Load balancing ensures experts are used evenly",
+          "GLM-5 uses MoE to achieve 744B parameters with only 40B active"
+        ],
+        "code_ref": "",
+        "paper_ref": "Shazeer et al., 2017 — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+        "exercise": "If a model has 100B total parameters but uses MoE with 10B active parameters, what's the key benefit?\n1) The model is 10x faster than a dense 100B model\n2) The model has the knowledge capacity of 100B parameters but the inference cost closer to 10B\n3) The model uses 10x more GPU memory\nType the number.",
+        "explanation": "Shazeer et al. (2017) introduced the Mixture of Experts layer to address a tantalizing question: can we make models bigger without proportionally increasing compute?\n\nThink of MoE like a hospital with specialist doctors. A patient (token) doesn't see every doctor — a triage system (gating network) routes them to the relevant specialists (experts). The hospital employs 100 doctors (total parameters) but each patient only sees 5 (active parameters).\n\nGLM-5 exploits this brilliantly: 744 billion total parameters, but only 40 billion active at any time. That's an 18.6x ratio! The model stores vast knowledge across its experts but keeps inference tractable. The gating network learns which experts handle which types of content — some might specialize in code, others in mathematics, others in natural language.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "sparse_attention",
+        "title": "Sparse Attention: Breaking the Quadratic Barrier",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Full attention is O(n²) — prohibitive for long sequences",
+          "Sparse patterns attend to subsets of positions",
+          "Local attention captures nearby context",
+          "Strided patterns capture periodic long-range dependencies",
+          "Reduces memory from O(n²) to O(n) or O(n log n)"
+        ],
+        "code_ref": "",
+        "paper_ref": "Child et al., 2019 — Generating Long Sequences with Sparse Transformers",
+        "exercise": "A document has 100,000 tokens. Full attention would compute how many attention scores?\n1) 100,000\n2) 10,000,000,000 (10 billion)\n3) 1,000,000 (1 million)\nType the number.",
+        "explanation": "Child et al. (2019) at OpenAI confronted the Transformer's Achilles heel: its O(n²) attention complexity. Double your sequence length, and attention costs quadruple.\n\nImagine a town hall meeting. In 'full attention,' everyone must shake hands with everyone else — fine for 20 people, but with 10,000 people you'd spend all day shaking hands. Sparse attention is like saying: shake hands with your neighbors, plus a few random people across the room. You lose some connections but capture most of the important relationships.\n\nFor a 100,000 token context (like a full codebase), full attention would require 10 billion operations per layer. Sparse attention patterns — local windows, strided patterns, random connections — can reduce this to roughly 100 million while preserving most modeling capacity. This is essential for GLM-5's long-context capabilities.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "reinforcement_learning_from_human_feedback",
+        "title": "RLHF: Learning What Humans Actually Want",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Pre-trained models don't inherently align with human preferences",
+          "Human annotators compare model outputs to express preferences",
+          "A reward model learns to predict human preferences",
+          "RL (usually PPO) optimizes the LLM against this reward",
+          "Enables models to be helpful, harmless, and honest"
+        ],
+        "code_ref": "",
+        "paper_ref": "Ouyang et al., 2022 — Training language models to follow instructions with human feedback",
+        "exercise": "In RLHF, what's the purpose of the reward model?\n1) To generate training data\n2) To predict which outputs humans would prefer, enabling RL optimization\n3) To compress the main model\nType the number.",
+        "explanation": "Ouyang et al. (2022) at OpenAI cracked a crucial puzzle: pre-trained LLMs know a lot, but they don't know what you want. Ask GPT-3 a question and it might continue your text in unhelpful ways — it was trained to predict tokens, not to be useful.\n\nRLHF works like training a dog with treats. First, you show the dog (reward model) many examples of good and bad behavior until it can predict what earns a treat. Then you let the actual dog (LLM) practice, using the reward model's predictions as 'treats.' The dog learns to do what the reward model thinks deserves treats.\n\nThe process has three stages: (1) collect human comparisons of model outputs, (2) train a reward model on these preferences, (3) use RL (typically PPO) to optimize the LLM. GLM-5's Slime infrastructure makes step 3 faster through asynchronous training.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "long_context_modeling",
+        "title": "Long Context: Remembering the Whole Book",
+        "prerequisites": ["transformer_architecture", "sparse_attention"],
+        "key_ideas": [
+          "Standard transformers struggle to extrapolate beyond training length",
+          "RoPE (Rotary Position Embedding) enables length generalization",
+          "ALiBi adds linear biases instead of absolute positions",
+          "KV-cache size becomes the memory bottleneck",
+          "Critical for agentic tasks and code understanding"
+        ],
+        "code_ref": "",
+        "paper_ref": "Press et al., 2022 — Train Short, Test Long: Attention with Linear Biases Enables Input Length Generalization",
+        "exercise": "Why is long context important for agentic tasks?\n1) Agents need to remember their previous actions and observations\n2) Longer contexts are always faster to process\n3) Short contexts use too much memory\nType the number.",
+        "explanation": "Press et al. (2022) tackled a strange limitation: models trained on 2048 tokens often broke completely when given 4096. The positional encodings just weren't designed to extrapolate.\n\nThink of positional encoding like a street address system. Absolute positions are like saying 'house #1, house #2, house #3' — it works until you reach house #2049 and the system has no address for it. ALiBi is more like relative directions: 'the house 3 doors down.' This naturally extends to any neighborhood size.\n\nFor GLM-5's agentic capabilities, long context is essential. An agent working on a complex codebase needs to remember what files it read, what changes it made, and what errors it saw — potentially tens of thousands of tokens of context. Without efficient long-context modeling, agents would have to constantly 're-discover' information.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "open_source_llm_ecosystem",
+        "title": "The Open-Source LLM Ecosystem",
+        "prerequisites": [],
+        "key_ideas": [
+          "Open weights enable fine-tuning and research",
+          "Community develops tools, datasets, and techniques",
+          "Hugging Face serves as a central hub",
+          "Tension between openness and safety considerations",
+          "GLM-5 contributes to this ecosystem as an open-source release"
+        ],
+        "code_ref": "",
+        "paper_ref": "Various, 2023-2025 — Open-source LLM releases",
+        "exercise": "What's a key advantage of open-weight models like GLM-5?\n1) They are always smaller than closed models\n2) Researchers can fine-tune them and study their internals\n3) They don't require any compute to run\nType the number.",
+        "explanation": "The open-source LLM ecosystem emerged as a counterweight to closed models from OpenAI and Anthropic. Projects like LLaMA, Mistral, and now GLM-5 release their weights publicly.\n\nImagine the difference between buying a car with a sealed hood versus one you can open and modify. Open weights let researchers study how the model works, fine-tune it for specific tasks, run it on their own infrastructure, and build on top of it.\n\nGLM-5's open release is significant: 744B parameters is frontier scale. The community can study its MoE architecture, experiment with its sparse attention, and build applications on top of it. Tools like vLLM and SGLang make deployment practical even for such large models.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "glm5_architecture",
+    "title": "GLM-5 Architecture Deep Dive",
+    "description": "The architectural innovations that make GLM-5 possible",
+    "concepts": [
+      "glm_architecture",
+      "glm5_scale",
+      "deepseek_sparse_attention",
+      "inference_frameworks"
+    ],
+    "lessons": [
+      {
+        "concept_id": "glm_architecture",
+        "title": "GLM: Unifying Pre-training with Blank Infilling",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Autoregressive blank infilling unifies NLU and NLG",
+          "Spans of varying lengths are masked and predicted",
+          "2D positional encoding handles within-span and between-span positions",
+          "More flexible than pure causal or masked language modeling",
+          "Foundation for the GLM model family"
+        ],
+        "code_ref": "",
+        "paper_ref": "Du et al., 2022 — GLM: General Language Model Pretraining with Autoregressive Blank Infilling",
+        "exercise": "How does GLM's blank infilling differ from BERT's masked language modeling?\n1) GLM predicts entire spans autoregressively, not just single tokens\n2) GLM only works on Chinese text\n3) GLM doesn't use attention mechanisms\nType the number.",
+        "explanation": "Du et al. (2022) at Tsinghua/Zhipu introduced GLM to bridge two pre-training worlds: BERT-style bidirectional understanding and GPT-style autoregressive generation.\n\nImagine learning to write by filling in missing sections of books. BERT fills in single missing words — like 'The cat sat on the ___.' GLM fills in entire spans — like 'The cat ___ ___.' and having to generate 'sat on the mat' token by token. This trains the model to both understand context bidirectionally AND generate coherently.\n\nThe key innovation is 2D positional encoding. Position is described by (which span am I in?, how far into that span am I?). This lets GLM handle spans of any length naturally. The result is a model that excels at both understanding tasks and generation tasks — a foundation that GLM-5 scales up dramatically.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "glm5_scale",
+        "title": "GLM-5 Scale: 744B Total, 40B Active",
+        "prerequisites": ["glm_architecture", "mixture_of_experts"],
+        "key_ideas": [
+          "744 billion total parameters — frontier scale",
+          "Only 40 billion parameters active at any time",
+          "18.6x ratio between total and active parameters",
+          "Scaled up from GLM-4.5's 355B parameters",
+          "MoE architecture enables this extreme sparsity"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "GLM-5 has 744B total but 40B active parameters. What does this mean for inference cost?\n1) Inference costs similar to a 744B dense model\n2) Inference costs similar to a 40B dense model\n3) Inference is free\nType the number.",
+        "explanation": "Z.ai's GLM-5 represents a massive scaling leap: 744 billion parameters total, with 40 billion active. For context, GPT-3 was 175B dense — every forward pass used all parameters.\n\nThink of GLM-5 like a massive library with specialized librarians. The library contains 744 billion 'books' (parameters), but for any given question, only 40 billion books need to be consulted. The routing mechanism (gating network) determines which 'librarians' (experts) are relevant.\n\nThis 18.6x ratio is aggressive. It means GLM-5 stores 18.6x more knowledge than a dense 40B model while maintaining similar inference costs. The jump from GLM-4.5's 355B to 744B represents a 2.1x increase in total capacity — enabling more specialization and broader knowledge coverage.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "deepseek_sparse_attention",
+        "title": "DeepSeek Sparse Attention: Efficient Long Context",
+        "prerequisites": ["sparse_attention", "long_context_modeling"],
+        "key_ideas": [
+          "Reduces memory and compute for long-context inference",
+          "Preserves quality on long-context benchmarks",
+          "Integrated into GLM-5 for deployment efficiency",
+          "Combines with MoE for compound efficiency gains",
+          "Critical for practical 100K+ token contexts"
+        ],
+        "code_ref": "",
+        "paper_ref": "DeepSeek-AI, 2024 — DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+        "exercise": "Why does GLM-5 need DeepSeek Sparse Attention alongside MoE?\n1) MoE handles parameter efficiency; DSA handles attention efficiency\n2) They do the same thing\n3) DSA makes the model larger\nType the number.",
+        "explanation": "DeepSeek-AI introduced DeepSeek Sparse Attention (DSA) in their V2 model, and GLM-5 integrates it as a key efficiency component.\n\nMoE and sparse attention solve different bottlenecks. Think of MoE as reducing the size of each department in a company — you have many departments (experts) but only visit a few. DSA reduces the meeting time within each department — instead of everyone talking to everyone, you use efficient communication patterns.\n\nWithout DSA, a 100K token context would require attention matrices of 100K × 100K per layer. Even with MoE's sparse activation, this attention cost would dominate. DSA ensures that both the feed-forward (MoE) and attention components scale efficiently. The combination is multiplicative: you get the knowledge capacity of 744B parameters with the deployment cost of a much smaller model.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "inference_frameworks",
+        "title": "Inference Frameworks: vLLM, SGLang, and Beyond",
+        "prerequisites": ["glm5_scale", "kv_cache_optimization"],
+        "key_ideas": [
+          "vLLM: PagedAttention for efficient memory management",
+          "SGLang: Structured generation and advanced batching",
+          "KTransformers: Optimized transformer kernels",
+          "xLLM: Alternative inference optimization",
+          "Framework choice depends on hardware and use case"
+        ],
+        "code_ref": "",
+        "paper_ref": "Kwon et al., 2023 — Efficient Memory Management for Large Language Model Serving with PagedAttention",
+        "exercise": "What problem does vLLM's PagedAttention solve?\n1) Making models smaller\n2) Managing GPU memory for KV-cache efficiently across variable-length sequences\n3) Training models faster\nType the number.",
+        "explanation": "Deploying a 744B parameter model isn't trivial — you need specialized inference frameworks. GLM-5 supports vLLM, SGLang, KTransformers, and xLLM.\n\nvLLM's key innovation is PagedAttention. Imagine GPU memory as a hotel. Traditional serving reserves entire floors for each guest (sequence) even if they only need one room. PagedAttention allocates rooms (memory pages) on demand, letting more guests stay simultaneously. This is crucial when sequences vary wildly in length.\n\nSGLang adds structured generation — efficiently producing JSON, code, or other constrained outputs. KTransformers provides optimized CUDA kernels for transformer operations. Each framework has trade-offs: vLLM excels at high-throughput serving, SGLang at structured outputs, and others at specific hardware configurations.\n\nFor GLM-5's agentic use cases, where outputs might be long function calls or code, framework choice significantly impacts latency and throughput.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "training_and_alignment",
+    "title": "Training and Alignment",
+    "description": "How GLM-5 is trained and aligned to be helpful",
+    "concepts": [
+      "pretraining_data_scaling",
+      "post_training_pipeline",
+      "slime_infrastructure",
+      "kv_cache_optimization"
+    ],
+    "lessons": [
+      {
+        "concept_id": "pretraining_data_scaling",
+        "title": "Pre-training at Scale: 28.5 Trillion Tokens",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "GLM-5 trained on 28.5T tokens (up from GLM-4.5's 23T)",
+          "Data quality and diversity matter as much as quantity",
+          "Deduplication prevents memorization artifacts",
+          "Multi-lingual data enables cross-lingual transfer",
+          "Scaling laws guide data-compute tradeoffs"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "Why did GLM-5 increase pre-training data from 23T to 28.5T tokens?\n1) More data generally improves model capabilities according to scaling laws\n2) The old data was deleted\n3) Larger numbers are always better marketing\nType the number.",
+        "explanation": "GLM-5's pre-training scaled from 23 trillion to 28.5 trillion tokens — a 24% increase that's significant at this scale.\n\nThink of pre-training data like ingredients for a master chef. More ingredients (tokens) give the chef more dishes to learn from. But quality matters: you want diverse cuisines (domains), fresh ingredients (recent data), and no duplicates (deduplication prevents the model from memorizing specific texts).\n\n28.5 trillion tokens is roughly equivalent to reading every book ever written, multiple times, plus the entire internet. The 'Chinchilla scaling laws' (Hoffmann et al., 2022) suggest optimal data-compute ratios — GLM-5's data increase likely corresponds to their expanded compute budget. More data helps the model generalize better and reduces harmful memorization.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "post_training_pipeline",
+        "title": "Post-Training: From Base Model to Assistant",
+        "prerequisites": ["pretraining_data_scaling", "reinforcement_learning_from_human_feedback"],
+        "key_ideas": [
+          "Supervised Fine-Tuning (SFT) teaches instruction following",
+          "RL refines behavior based on preference signals",
+          "Multiple iterations improve alignment quality",
+          "Slime enables faster iteration cycles",
+          "Balance between helpfulness and safety"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "What's the typical order of post-training steps?\n1) RL → SFT → Pre-training\n2) Pre-training → SFT → RL\n3) SFT → Pre-training → RL\nType the number.",
+        "explanation": "Pre-training produces a base model that predicts tokens but doesn't follow instructions. Post-training transforms it into a useful assistant.\n\nThe process is like training an employee. First, you hire someone knowledgeable (pre-trained model). Then you show them examples of good work (SFT — supervised fine-tuning with instruction-response pairs). Finally, you give performance reviews (RL — reinforcement learning from feedback) to refine their judgment.\n\nSFT teaches the format: 'When asked X, respond like Y.' RL teaches the subtleties: 'This response was better than that one because it was more helpful/accurate/safe.' GLM-5's Slime infrastructure accelerates the RL phase, enabling more iterations and faster experimentation. This matters because RL is notoriously finicky — more iterations mean more chances to find good hyperparameters.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "slime_infrastructure",
+        "title": "Slime: Asynchronous RL at Scale",
+        "prerequisites": ["post_training_pipeline", "reinforcement_learning_from_human_feedback"],
+        "key_ideas": [
+          "Asynchronous training decouples generation from updates",
+          "Enables more fine-grained iteration cycles",
+          "Reduces wall-clock time for RL experiments",
+          "Critical for rapid alignment research",
+          "Custom infrastructure for large-scale RL"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "What does 'asynchronous' mean in Slime's context?\n1) The model generates responses and policy updates happen simultaneously, not sequentially\n2) The model only works at night\n3) Training happens on a single GPU\nType the number.",
+        "explanation": "Z.ai developed Slime as custom infrastructure for asynchronous reinforcement learning. The name might evoke something that flows and adapts — appropriate for adaptive training.\n\nTraditional RL is like a cooking show: cook a dish (generate responses), get feedback from judges (compute rewards), adjust your recipe (update policy), repeat. Everything happens sequentially. Slime makes it asynchronous: while judges evaluate dish #1, you're already cooking dish #2. The kitchen never stops.\n\nThis matters enormously at scale. RL training involves generating millions of responses, scoring them with reward models, and updating the policy. Synchronous training wastes GPU time waiting for each step. Slime keeps all GPUs busy by pipelining these stages. The result: 'more fine-grained post-training iterations' — more experiments, faster convergence, better final models.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "kv_cache_optimization",
+        "title": "KV-Cache: The Memory Bottleneck",
+        "prerequisites": ["transformer_architecture", "long_context_modeling"],
+        "key_ideas": [
+          "KV-cache stores previous tokens' key-value vectors",
+          "Size grows linearly with sequence length",
+          "Becomes the dominant memory cost for long contexts",
+          "Quantization and compression reduce footprint",
+          "Sparse attention reduces what needs to be cached"
+        ],
+        "code_ref": "",
+        "paper_ref": "Various, 2023-2024 — KV-Cache compression techniques",
+        "exercise": "If a model processes 100K tokens with 128 layers and 128 heads of size 128, roughly how large is the KV-cache (in 16-bit floats)?\n1) About 1 GB\n2) About 50 GB\n3) About 1 TB\nType the number.",
+        "explanation": "During autoregressive generation, each token needs to attend to all previous tokens. The KV-cache stores previously computed key and value vectors so they don't need to be recomputed.\n\nImagine writing a mystery novel. Every time you write a new sentence, you need to check it's consistent with everything you've written before. You could re-read the entire manuscript each time (recompute), or keep running notes (KV-cache). The notes grow with the manuscript.\n\nFor a 100K token context: 100K tokens × 128 layers × 128 heads × 128 dimensions × 2 (K and V) × 2 bytes = ~52 GB just for the cache. This is why long-context models are memory-hungry. Solutions include quantizing the cache to 8-bit or 4-bit, compressing old entries, or using sparse attention (DSA) to reduce what needs caching. GLM-5's architecture choices directly address this bottleneck.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "applications",
+    "title": "Applications and Capabilities",
+    "description": "What GLM-5 enables and how to use it",
+    "concepts": [
+      "benchmark_performance",
+      "agentic_capabilities",
+      "complex_systems_engineering"
+    ],
+    "lessons": [
+      {
+        "concept_id": "benchmark_performance",
+        "title": "Benchmarks: Measuring Model Capabilities",
+        "prerequisites": ["glm5_scale"],
+        "key_ideas": [
+          "Reasoning benchmarks test multi-step logical thinking",
+          "Coding benchmarks evaluate program synthesis",
+          "Agentic benchmarks measure tool use and planning",
+          "Benchmarks are imperfect proxies for real-world usefulness",
+          "GLM-5 achieves strong performance among open-source models"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "Why might benchmark performance not perfectly predict real-world usefulness?\n1) Benchmarks test specific skills that may not cover all use cases\n2) Benchmarks are always perfect measures\n3) Real-world tasks are easier than benchmarks\nType the number.",
+        "explanation": "GLM-5 claims 'strong performance on reasoning, coding, and agentic benchmarks among open-source models.' But what do these benchmarks actually measure?\n\nReasoning benchmarks like GSM8K (grade school math) and MATH (competition math) test multi-step problem solving. Coding benchmarks like HumanEval and MBPP test program synthesis — can the model write correct code from descriptions? Agentic benchmarks like WebArena test tool use in realistic environments.\n\nThink of benchmarks like standardized tests. A high SAT score suggests academic capability but doesn't guarantee success in every college course. Similarly, strong benchmark performance indicates GLM-5 has certain capabilities, but your specific use case might emphasize different skills. The benchmarks are useful for comparing models but shouldn't be the only factor in model selection.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "agentic_capabilities",
+        "title": "Agentic Tasks: Planning, Acting, Adapting",
+        "prerequisites": ["benchmark_performance", "long_context_modeling"],
+        "key_ideas": [
+          "Agents maintain state across many interaction steps",
+          "Tool use enables interaction with external systems",
+          "Planning decomposes complex goals into subgoals",
+          "Error recovery handles unexpected situations",
+          "Long context maintains awareness of history"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "What's the key difference between a chatbot and an agent?\n1) Agents have longer context windows\n2) Agents can plan multi-step actions and interact with tools over time\n3) Chatbots are always smaller models\nType the number.",
+        "explanation": "GLM-5 is explicitly designed for 'long-horizon agentic tasks.' This is a fundamental shift from chatbots that answer questions to agents that accomplish goals.\n\nImagine a travel agent versus a travel FAQ chatbot. The chatbot answers 'What's the weather in Paris?' The agent books your entire trip: searches flights, compares hotels, reserves restaurants, handles changes when your first choice is unavailable. It plans, acts, observes results, and adapts.\n\nThis requires several capabilities that GLM-5 emphasizes: long context (remembering what it already did), tool use (interacting with external APIs and systems), planning (decomposing 'book a trip' into steps), and error recovery (rebooking when something goes wrong). The 40B active parameters and efficient long-context attention make this practical to deploy.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "complex_systems_engineering",
+        "title": "Complex Systems: GLM-5's Target Domain",
+        "prerequisites": ["agentic_capabilities"],
+        "key_ideas": [
+          "Systems have many interconnected components",
+          "Changes ripple across dependencies",
+          "Emergent behaviors arise from component interactions",
+          "Long context helps maintain system-wide awareness",
+          "Agentic capabilities enable systematic exploration"
+        ],
+        "code_ref": "",
+        "paper_ref": "Z.ai, 2025 — GLM-5",
+        "exercise": "Why is long context particularly valuable for systems engineering?\n1) Systems engineering is boring and needs longer conversations\n2) Understanding a system requires holding many components and relationships in mind simultaneously\n3) Systems engineering only works with short prompts\nType the number.",
+        "explanation": "Z.ai positions GLM-5 for 'complex systems engineering' — a demanding domain that tests all of the model's capabilities.\n\nConsider debugging a large software system. You need to understand how dozens of services interact, hold multiple file contents in mind, trace data flow across components, and reason about what happens when you change one piece. This is exactly what long context (hold the system in mind) + agentic capabilities (systematically explore and modify) enable.\n\nSystems engineering is also a test of reasoning: understanding that changing A affects B, which affects C, which might break D. GLM-5's strong reasoning benchmarks suggest capability for this kind of multi-step causal reasoning. The 744B parameter capacity means the model has 'seen' many systems and patterns — knowledge that helps it generalize to new systems.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "frontier",
+    "title": "Frontier: Future Directions",
+    "description": "Where GLM-5's innovations lead and open questions",
+    "concepts": [
+      "scaling_efficiency_tradeoff",
+      "future_rl_directions",
+      "multimodal_extension"
+    ],
+    "lessons": [
+      {
+        "concept_id": "scaling_efficiency_tradeoff",
+        "title": "The Scaling-Efficiency Frontier",
+        "prerequisites": ["glm5_scale", "deepseek_sparse_attention"],
+        "key_ideas": [
+          "Larger models are more capable but more expensive",
+          "MoE decouples knowledge capacity from compute",
+          "Sparse attention decouples context length from memory",
+          "The optimal tradeoff depends on deployment constraints",
+          "Research pushes the efficiency frontier outward"
+        ],
+        "code_ref": "",
+        "paper_ref": "Hoffmann et al., 2022 — Training Compute-Optimal Large Language Models",
+        "exercise": "What's the fundamental tradeoff that MoE and sparse attention address?\n1) Speed vs. accuracy\n2) Model capability vs. deployment cost\n3) Training time vs. inference time\nType the number.",
+        "explanation": "GLM-5 represents a point on a fundamental tradeoff curve: capability vs. efficiency. Understanding this curve illuminates where the field is heading.\n\nDense scaling (more parameters, all active) hit diminishing returns: GPT-4 class models require entire datacenters. MoE pushes the 'knowledge frontier' — you can store more knowledge without proportionally increasing inference cost. Sparse attention pushes the 'context frontier' — you can process more context without quadratic memory growth.\n\nThink of it like phone evolution. Early phones got bigger screens by making the phone bigger (dense scaling). Modern phones use bezeless designs and foldables (sparse innovations) to maximize screen in minimal space. Similarly, MoE and sparse attention maximize capability in minimal compute.\n\nThe frontier keeps advancing. Today's efficiency innovations become tomorrow's baseline, enabling even more capable models at practical costs.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "future_rl_directions",
+        "title": "The Future of RL for LLMs",
+        "prerequisites": ["slime_infrastructure"],
+        "key_ideas": [
+          "Process reward models provide denser learning signals",
+          "Constitutional AI reduces reliance on human labels",
+          "Online RL enables continuous improvement",
+          "Debate and self-play may improve reasoning",
+          "Slime enables rapid experimentation with these approaches"
+        ],
+        "code_ref": "",
+        "paper_ref": "Various, 2023-2025 — RL for LLMs",
+        "exercise": "What's a potential advantage of process rewards over outcome rewards?\n1) Process rewards are easier to compute\n2) Process rewards give feedback at each step, not just the final answer, enabling finer-grained learning\n3) Process rewards are more popular\nType the number.",
+        "explanation": "GLM-5's Slime infrastructure isn't just about training GLM-5 — it's a platform for exploring the future of LLM alignment.\n\nCurrent RLHF uses outcome rewards: 'this final answer was good.' Process rewards instead evaluate each reasoning step: 'step 1 was good, step 2 was flawed, step 3 recovered.' This provides much denser learning signal — like a teacher who marks each line of a proof versus just the final answer.\n\nConstitutional AI (Anthropic) replaces some human feedback with model self-critique. Debate (Irving et al.) has models argue both sides of questions. Self-play (like in game AI) has models compete against themselves. All of these require extensive RL experimentation — exactly what efficient infrastructure like Slime enables.\n\nThe future might see models that continuously improve from usage, adapting to individual users while maintaining safety. GLM-5's infrastructure choices position it for this future.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multimodal_extension",
+        "title": "Multimodal Future: Beyond Text",
+        "prerequisites": ["glm5_scale"],
+        "key_ideas": [
+          "MoE naturally accommodates modality-specific experts",
+          "Long context helps with dense visual information",
+          "Unified architecture simplifies deployment",
+          "Vision-language models already show this direction",
+          "GLM-5's architecture could extend to multimodal"
+        ],
+        "code_ref": "",
+        "paper_ref": "Potential future work",
+        "exercise": "Why might MoE be well-suited for multimodal models?\n1) Different experts could specialize in different modalities\n2) MoE only works with text\n3) Multimodal models are always smaller\nType the number.",
+        "explanation": "GLM-5 is currently text-only, but its architecture hints at multimodal potential. This is speculative but grounded in architectural observations.\n\nMoE's routing mechanism naturally handles heterogeneous inputs. Some experts could specialize in visual tokens, others in text, others in code. The gating network learns which experts serve which modalities. This is more elegant than having entirely separate encoders.\n\nLong context is crucial for vision: a single high-resolution image might encode as thousands of tokens. GLM-5's efficient long-context handling (via DSA) would be essential. The sparse attention patterns might even adapt — local attention for spatially adjacent image patches, global attention for integrating visual and textual information.\n\nWe're speculating here — Z.ai hasn't announced multimodal GLM-5. But the architectural choices (MoE, DSA, long context) are exactly what you'd want for efficient multimodal modeling. Watch this space.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,650 @@
+{
+  "nodes": [
+    {
+      "id": "transformer_architecture",
+      "name": "Transformer Architecture",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "The foundational neural network architecture using self-attention mechanisms, originally introduced in 'Attention Is All You Need'. Forms the backbone of modern large language models.",
+      "key_ideas": [
+        "Self-attention enables parallel processing of sequences",
+        "Encoder-decoder structure for sequence-to-sequence tasks",
+        "Positional encodings capture sequence order information"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "mixture_of_experts",
+      "name": "Mixture of Experts (MoE)",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "An architecture that routes each input token to a subset of specialized 'expert' networks, allowing massive parameter counts while keeping compute costs manageable.",
+      "key_ideas": [
+        "Multiple expert networks specialize in different input patterns",
+        "Routing mechanism selects which experts process each token",
+        "Total parameters >> active parameters per forward pass"
+      ],
+      "code_refs": [],
+      "paper_ref": "Shazeer et al., 2017 — Outrageously Large Neural Networks",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "sparse_activation",
+      "name": "Sparse Activation",
+      "type": "technique",
+      "level": "foundational",
+      "description": "The principle of activating only a small fraction of model parameters for each input, enabling larger models without proportionally increased compute.",
+      "key_ideas": [
+        "Only top-k experts are activated per token",
+        "Enables scaling parameters without linear compute growth",
+        "Balances model capacity with inference efficiency"
+      ],
+      "code_refs": [],
+      "paper_ref": "Fedus et al., 2022 — Switch Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "gpt_oss_architecture",
+      "name": "GPT-OSS Architecture",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "OpenAI's open-weight MoE transformer with 120B/20B total parameters and 5.1B/3.6B active parameters respectively. Uses 128/32 experts with top-4 routing and 2,880-dimensional residual streams.",
+      "key_ideas": [
+        "gpt-oss-120b: 116.8B total, 5.1B active, 128 experts",
+        "gpt-oss-20b: 20.9B total, 3.6B active, 32 experts",
+        "Top-4 expert selection with linear router projection"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "top_k_routing",
+      "name": "Top-K Expert Routing",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The routing mechanism that selects the K highest-scoring experts for each token using a linear projection. GPT-OSS uses top-4 routing.",
+      "key_ideas": [
+        "Linear router computes scores for all experts",
+        "Top-4 experts selected based on routing scores",
+        "Balances specialization with coverage"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "swiglu_activation",
+      "name": "SwiGLU Activation",
+      "type": "component",
+      "level": "intermediate",
+      "description": "A gated activation function combining Swish and Gated Linear Units, providing improved gradient flow and model expressiveness compared to ReLU or GELU.",
+      "key_ideas": [
+        "Combines Swish activation with gating mechanism",
+        "Better gradient properties than simpler activations",
+        "Standard in modern large language models"
+      ],
+      "code_refs": [],
+      "paper_ref": "Shazeer, 2020 — GLU Variants Improve Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "chain_of_thought",
+      "name": "Chain-of-Thought Reasoning",
+      "type": "technique",
+      "level": "foundational",
+      "description": "A prompting and training technique where models explicitly generate intermediate reasoning steps before producing final answers, dramatically improving performance on complex tasks.",
+      "key_ideas": [
+        "Models verbalize reasoning process step-by-step",
+        "Improves accuracy on math, logic, and multi-step problems",
+        "Can be elicited via prompting or trained directly"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wei et al., 2022 — Chain-of-Thought Prompting",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cot_rl_training",
+      "name": "Chain-of-Thought RL Training",
+      "type": "training",
+      "level": "intermediate",
+      "description": "The reinforcement learning approach used to train GPT-OSS models to reason and use tools, building on techniques from OpenAI o3.",
+      "key_ideas": [
+        "RL rewards correct final answers and valid reasoning",
+        "Similar techniques to OpenAI o3 training",
+        "Teaches both reasoning chains and tool usage"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reasoning_effort_levels",
+      "name": "Configurable Reasoning Effort",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "A system allowing users to specify low/medium/high reasoning effort via system prompt, trading off latency and cost against accuracy with log-linear returns.",
+      "key_ideas": [
+        "Three levels: low, medium, high via system prompt",
+        "Higher effort = longer CoT = better accuracy",
+        "Log-linear scaling: diminishing returns at higher effort"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "test_time_compute",
+      "name": "Test-Time Compute Scaling",
+      "type": "technique",
+      "level": "advanced",
+      "description": "The principle that allocating more compute at inference time (longer reasoning chains) can improve model accuracy, complementing traditional pre-training compute scaling.",
+      "key_ideas": [
+        "More inference-time thinking improves accuracy",
+        "Orthogonal to model size scaling",
+        "Enables dynamic accuracy/cost tradeoffs"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "knowledge_distillation",
+      "name": "Knowledge Distillation",
+      "type": "training",
+      "level": "foundational",
+      "description": "Training smaller models to mimic the behavior of larger 'teacher' models, transferring knowledge while reducing model size and inference cost.",
+      "key_ideas": [
+        "Teacher model generates soft targets",
+        "Student learns to match teacher distributions",
+        "Enables smaller models with near-teacher performance"
+      ],
+      "code_refs": [],
+      "paper_ref": "Hinton et al., 2015 — Distilling the Knowledge in a Neural Network",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "large_scale_distillation",
+      "name": "Large-Scale Distillation",
+      "type": "training",
+      "level": "intermediate",
+      "description": "The training approach used for GPT-OSS combining massive-scale knowledge distillation with reinforcement learning to create efficient open-weight models.",
+      "key_ideas": [
+        "Distillation from larger proprietary models",
+        "Combined with CoT RL fine-tuning",
+        "Enables competitive performance with open weights"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "o200k_harmony_tokenizer",
+      "name": "o200k_harmony Tokenizer",
+      "type": "tokenization",
+      "level": "intermediate",
+      "description": "Extended BPE tokenizer with 201,088 tokens, building on GPT-4o's o200k tokenizer with additional tokens for the harmony chat format.",
+      "key_ideas": [
+        "201,088 total vocabulary tokens",
+        "Based on o200k from GPT-4o/o1-mini",
+        "Special tokens for harmony message format"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "harmony_format",
+      "name": "Harmony Response Format",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "A custom chat format using special tokens to delineate message boundaries, roles (User/Assistant/System/Developer), and channels (analysis/commentary/final) for CoT visibility control.",
+      "key_ideas": [
+        "Special tokens mark message boundaries and roles",
+        "Channels control visibility: analysis (CoT), commentary (tools), final (answer)",
+        "Supports interleaved tool calls within reasoning"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "agentic_capabilities",
+      "name": "Agentic Capabilities",
+      "type": "application",
+      "level": "intermediate",
+      "description": "The ability of models to autonomously use tools, browse the web, execute code, and call custom functions to accomplish complex multi-step tasks.",
+      "key_ideas": [
+        "Models can invoke external tools during reasoning",
+        "Supports browsing, code execution, custom functions",
+        "Enables autonomous multi-step problem solving"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "browsing_tool",
+      "name": "Browsing Tool",
+      "type": "component",
+      "level": "advanced",
+      "description": "An agentic tool providing search and web page opening capabilities, enabling the model to retrieve real-time information during reasoning.",
+      "key_ideas": [
+        "Search function for web queries",
+        "Open function for reading web pages",
+        "Integrates with chain-of-thought reasoning"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "python_tool",
+      "name": "Python Code Execution Tool",
+      "type": "component",
+      "level": "advanced",
+      "description": "A stateful Jupyter notebook environment allowing the model to write and execute Python code during reasoning, maintaining state across multiple executions.",
+      "key_ideas": [
+        "Stateful execution preserves variables between calls",
+        "Jupyter notebook-style interface",
+        "Enables computational reasoning and data analysis"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "function_calling",
+      "name": "Developer Function Calling",
+      "type": "component",
+      "level": "advanced",
+      "description": "The ability to invoke custom developer-specified functions with defined schemas, enabling integration with arbitrary external systems and APIs.",
+      "key_ideas": [
+        "Developers define function schemas in Developer messages",
+        "Model generates structured function calls",
+        "Enables custom tool integration"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "mxfp4_quantization",
+      "name": "MXFP4 Quantization",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Microscaling FP4 quantization compressing MoE weights to 4.25 bits per parameter, enabling the 120B model to run on a single 80GB GPU and the 20B model on 16GB memory.",
+      "key_ideas": [
+        "4.25 bits per parameter average",
+        "Applied to 90%+ of parameters (MoE weights)",
+        "Enables 120B on 80GB GPU, 20B on 16GB"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "flash_attention",
+      "name": "Flash Attention",
+      "type": "optimization",
+      "level": "intermediate",
+      "description": "A memory-efficient attention algorithm that reduces memory usage from O(n²) to O(n) by computing attention in tiles and avoiding materialization of the full attention matrix.",
+      "key_ideas": [
+        "Tiled computation avoids O(n²) memory",
+        "Fuses operations for better GPU utilization",
+        "Essential for long-context training and inference"
+      ],
+      "code_refs": [],
+      "paper_ref": "Dao et al., 2022 — FlashAttention",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "triton_kernels",
+      "name": "Triton Kernels",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Custom GPU kernels written in OpenAI's Triton language, enabling optimized implementations of model operations without low-level CUDA programming.",
+      "key_ideas": [
+        "Python-like syntax for GPU kernel programming",
+        "Automatic memory coalescing and tiling",
+        "Used for custom MoE and attention operations"
+      ],
+      "code_refs": [],
+      "paper_ref": "Tillet et al., 2019 — Triton: An Intermediate Language and Compiler for Tiled Neural Network Computations",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bf16_precision",
+      "name": "BF16 Mixed Precision",
+      "type": "optimization",
+      "level": "foundational",
+      "description": "Brain floating-point 16-bit format providing the dynamic range of FP32 with reduced memory, widely used in modern LLM training and inference.",
+      "key_ideas": [
+        "Same exponent bits as FP32, fewer mantissa bits",
+        "Half the memory of FP32 with similar range",
+        "Standard for modern transformer training"
+      ],
+      "code_refs": [],
+      "paper_ref": "Google, 2019 — BFloat16 specification",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "safety_training",
+      "name": "Safety Training",
+      "type": "training",
+      "level": "advanced",
+      "description": "Training approaches ensuring models refuse harmful requests while remaining helpful, including content filtering, adversarial fine-tuning, and instruction hierarchy following.",
+      "key_ideas": [
+        "Models trained to refuse disallowed content categories",
+        "Adversarial fine-tuning tested for dangerous capabilities",
+        "Instruction hierarchy prevents jailbreak attempts"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cbrn_filters",
+      "name": "CBRN Pre-training Filters",
+      "type": "training",
+      "level": "advanced",
+      "description": "Filters applied during pre-training to remove chemical, biological, radiological, and nuclear weapons-related content from the training corpus.",
+      "key_ideas": [
+        "Removes CBRN weapons content from training data",
+        "Reduces dual-use knowledge risks",
+        "Part of responsible AI development"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_weights",
+      "name": "Open Weights Release",
+      "type": "application",
+      "level": "frontier",
+      "description": "The practice of publicly releasing model weights under permissive licenses (Apache 2.0), enabling community use, research, and deployment without API dependencies.",
+      "key_ideas": [
+        "Apache 2.0 license allows commercial use",
+        "Enables on-premise and edge deployment",
+        "Democratizes access to frontier capabilities"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "swe_bench",
+      "name": "SWE-Bench Evaluation",
+      "type": "application",
+      "level": "advanced",
+      "description": "A benchmark evaluating models' ability to solve real-world GitHub issues by generating code patches. GPT-OSS achieves 62.4% (120B) and 60.7% (20B) on the verified subset.",
+      "key_ideas": [
+        "Tests real software engineering capability",
+        "Models must understand and fix actual bugs",
+        "Key benchmark for agentic coding ability"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jimenez et al., 2024 — SWE-bench",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "aime_benchmark",
+      "name": "AIME Mathematical Reasoning",
+      "type": "application",
+      "level": "advanced",
+      "description": "American Invitational Mathematics Examination benchmark testing advanced mathematical reasoning. GPT-OSS achieves 95.8% (120B) and 92.1% (20B) with tools at high reasoning.",
+      "key_ideas": [
+        "Tests competition-level math problems",
+        "Requires multi-step mathematical reasoning",
+        "Tool use (calculator) significantly improves scores"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "edge_deployment",
+      "name": "Edge and Local Deployment",
+      "type": "application",
+      "level": "frontier",
+      "description": "Running models locally or on edge devices rather than cloud APIs, enabled by quantization (MXFP4) allowing the 20B model to run on systems with just 16GB memory.",
+      "key_ideas": [
+        "20B model runs on 16GB consumer hardware",
+        "Eliminates cloud API dependencies",
+        "Enables privacy-preserving local inference"
+      ],
+      "code_refs": [],
+      "paper_ref": "OpenAI, 2025 — gpt-oss-120b & gpt-oss-20b Model Card",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "transformer_architecture",
+      "target": "mixture_of_experts",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Transformer architecture provides the foundation that MoE extends with sparse expert routing"
+    },
+    {
+      "source": "mixture_of_experts",
+      "target": "sparse_activation",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "MoE fundamentally relies on sparse activation to achieve efficiency"
+    },
+    {
+      "source": "mixture_of_experts",
+      "target": "gpt_oss_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "GPT-OSS is built on MoE architecture with 128/32 experts"
+    },
+    {
+      "source": "sparse_activation",
+      "target": "top_k_routing",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Top-K routing implements the sparse expert selection mechanism"
+    },
+    {
+      "source": "top_k_routing",
+      "target": "gpt_oss_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "GPT-OSS uses top-4 expert routing"
+    },
+    {
+      "source": "swiglu_activation",
+      "target": "gpt_oss_architecture",
+      "relationship": "component_of",
+      "weight": 0.8,
+      "description": "GPT-OSS uses gated SwiGLU activation in its expert networks"
+    },
+    {
+      "source": "chain_of_thought",
+      "target": "cot_rl_training",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "CoT prompting inspired the RL training approach for reasoning"
+    },
+    {
+      "source": "cot_rl_training",
+      "target": "gpt_oss_architecture",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "CoT RL training is the core post-training methodology for GPT-OSS"
+    },
+    {
+      "source": "chain_of_thought",
+      "target": "reasoning_effort_levels",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Reasoning effort levels control the length of chain-of-thought"
+    },
+    {
+      "source": "reasoning_effort_levels",
+      "target": "test_time_compute",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Configurable effort implements test-time compute scaling"
+    },
+    {
+      "source": "knowledge_distillation",
+      "target": "large_scale_distillation",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Large-scale distillation extends classical knowledge distillation"
+    },
+    {
+      "source": "large_scale_distillation",
+      "target": "gpt_oss_architecture",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "GPT-OSS was trained using large-scale distillation from larger models"
+    },
+    {
+      "source": "o200k_harmony_tokenizer",
+      "target": "harmony_format",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Harmony format uses special tokens defined in the tokenizer"
+    },
+    {
+      "source": "harmony_format",
+      "target": "agentic_capabilities",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Harmony format's channels enable tool call interleaving"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "browsing_tool",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Browsing is one of the core agentic tools"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "python_tool",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Python execution is one of the core agentic tools"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "function_calling",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Developer functions enable custom tool integration"
+    },
+    {
+      "source": "gpt_oss_architecture",
+      "target": "mxfp4_quantization",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "MXFP4 quantization enables efficient deployment of GPT-OSS"
+    },
+    {
+      "source": "flash_attention",
+      "target": "gpt_oss_architecture",
+      "relationship": "optimizes",
+      "weight": 0.9,
+      "description": "Flash Attention enables efficient training of GPT-OSS"
+    },
+    {
+      "source": "triton_kernels",
+      "target": "gpt_oss_architecture",
+      "relationship": "optimizes",
+      "weight": 0.8,
+      "description": "Custom Triton kernels optimize GPT-OSS operations"
+    },
+    {
+      "source": "bf16_precision",
+      "target": "flash_attention",
+      "relationship": "requires",
+      "weight": 0.7,
+      "description": "Flash Attention operates efficiently with BF16 precision"
+    },
+    {
+      "source": "cot_rl_training",
+      "target": "safety_training",
+      "relationship": "enables",
+      "weight": 0.8,
+      "description": "RL training enables teaching safety behaviors"
+    },
+    {
+      "source": "safety_training",
+      "target": "cbrn_filters",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "CBRN filters are part of the safety training pipeline"
+    },
+    {
+      "source": "mxfp4_quantization",
+      "target": "edge_deployment",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "MXFP4 quantization makes edge deployment feasible"
+    },
+    {
+      "source": "gpt_oss_architecture",
+      "target": "open_weights",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "GPT-OSS architecture enables the open weights release"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "swe_bench",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Agentic tools enable strong SWE-Bench performance"
+    },
+    {
+      "source": "reasoning_effort_levels",
+      "target": "aime_benchmark",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "High reasoning effort enables strong AIME performance"
+    },
+    {
+      "source": "python_tool",
+      "target": "aime_benchmark",
+      "relationship": "enables",
+      "weight": 0.9,
+      "description": "Python tool for calculations improves AIME scores"
+    }
+  ]
+}

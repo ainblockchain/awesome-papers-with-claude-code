@@ -1,0 +1,466 @@
+{
+  "nodes": [
+    {
+      "id": "transformer_architecture",
+      "name": "Transformer Architecture",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "The foundational neural network architecture based on self-attention mechanisms. Transformers process sequences in parallel and have become the backbone of modern large language models.",
+      "key_ideas": [
+        "Self-attention allows each token to attend to all other tokens",
+        "Parallel processing enables efficient training on GPUs",
+        "Encoder-decoder or decoder-only variants exist"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "mixture_of_experts",
+      "name": "Mixture of Experts (MoE)",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "An architecture pattern where multiple specialized sub-networks (experts) exist, but only a subset are activated for each input via a gating mechanism. This allows scaling model capacity without proportionally scaling compute.",
+      "key_ideas": [
+        "Multiple expert networks with specialized knowledge",
+        "Gating mechanism routes inputs to relevant experts",
+        "Enables larger models with similar computational cost"
+      ],
+      "code_refs": [],
+      "paper_ref": "Shazeer et al., 2017 — Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "sparse_attention",
+      "name": "Sparse Attention",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Attention mechanisms that compute attention only for a subset of token pairs rather than all pairs. This reduces the quadratic complexity of standard attention to linear or near-linear complexity.",
+      "key_ideas": [
+        "Full attention has O(n²) complexity",
+        "Sparse patterns reduce computation significantly",
+        "Various patterns: local, strided, learned sparsity"
+      ],
+      "code_refs": [],
+      "paper_ref": "Child et al., 2019 — Generating Long Sequences with Sparse Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reinforcement_learning_from_human_feedback",
+      "name": "Reinforcement Learning from Human Feedback (RLHF)",
+      "type": "training",
+      "level": "foundational",
+      "description": "A training paradigm where models learn to align with human preferences through reinforcement learning. Human feedback is used to train a reward model, which then guides policy optimization.",
+      "key_ideas": [
+        "Reward model trained on human preference data",
+        "Policy optimization using PPO or similar algorithms",
+        "Aligns model outputs with human values and preferences"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ouyang et al., 2022 — Training language models to follow instructions with human feedback",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "glm_architecture",
+      "name": "GLM Architecture",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "General Language Model architecture that uses autoregressive blank infilling as the pre-training objective. GLM combines bidirectional and autoregressive attention patterns for flexible text generation.",
+      "key_ideas": [
+        "Blank infilling pre-training objective",
+        "2D positional encoding for span shuffling",
+        "Unified framework for NLU and NLG tasks"
+      ],
+      "code_refs": [],
+      "paper_ref": "Du et al., 2022 — GLM: General Language Model Pretraining with Autoregressive Blank Infilling",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "glm5_scale",
+      "name": "GLM-5 Scale: 744B Parameters",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "GLM-5 scales to 744 billion total parameters with 40 billion active parameters per forward pass. This represents a significant expansion from GLM-4.5's 355B parameters, trained on 28.5T tokens.",
+      "key_ideas": [
+        "744B total parameters, 40B active (sparse)",
+        "Pre-training expanded from 23T to 28.5T tokens",
+        "MoE enables large capacity with efficient inference"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "deepseek_sparse_attention",
+      "name": "DeepSeek Sparse Attention (DSA)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "A sparse attention mechanism developed by DeepSeek and integrated into GLM-5. DSA reduces deployment costs while preserving long-context capabilities through intelligent attention pattern sparsification.",
+      "key_ideas": [
+        "Reduces computational cost of attention",
+        "Preserves long-context understanding",
+        "Enables efficient deployment of large models"
+      ],
+      "code_refs": [],
+      "paper_ref": "DeepSeek-AI, 2024 — DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "long_context_modeling",
+      "name": "Long Context Modeling",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Techniques for handling extended input sequences beyond typical context windows. GLM-5 uses sparse attention to maintain long-context capabilities while managing computational costs.",
+      "key_ideas": [
+        "Context length determines how much text model can process",
+        "Longer context enables complex reasoning tasks",
+        "Efficiency techniques needed as length increases"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "slime_infrastructure",
+      "name": "Slime: Asynchronous RL Infrastructure",
+      "type": "training",
+      "level": "advanced",
+      "description": "An asynchronous reinforcement learning infrastructure developed for GLM-5 post-training. Slime substantially improves training throughput by decoupling data collection and model updates.",
+      "key_ideas": [
+        "Asynchronous architecture separates collection and training",
+        "Improved throughput for RL-based post-training",
+        "Enables more granular refinement of model behavior"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "post_training_refinement",
+      "name": "Post-Training Refinement",
+      "type": "training",
+      "level": "advanced",
+      "description": "The process of improving a pre-trained model's capabilities through additional training stages. GLM-5 uses RLHF and the Slime infrastructure for sophisticated post-training optimization.",
+      "key_ideas": [
+        "Builds on pre-trained foundation",
+        "Aligns model with desired behaviors",
+        "Improves reasoning and instruction following"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "agentic_capabilities",
+      "name": "Agentic Capabilities",
+      "type": "application",
+      "level": "advanced",
+      "description": "The ability of language models to act as autonomous agents that can plan, use tools, and execute multi-step tasks. GLM-5 specifically targets 'long-horizon agentic tasks' as a key use case.",
+      "key_ideas": [
+        "Autonomous planning and execution",
+        "Tool use and environment interaction",
+        "Multi-step reasoning and task completion"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tool_augmented_reasoning",
+      "name": "Tool-Augmented Reasoning",
+      "type": "application",
+      "level": "advanced",
+      "description": "Enhancing model reasoning by allowing it to use external tools. GLM-5 achieves 50.4% on HLE with tools compared to 30.5% without, demonstrating significant gains from tool integration.",
+      "key_ideas": [
+        "External tools extend model capabilities",
+        "Code execution, search, and computation tools",
+        "Significant performance boost on complex tasks"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "swe_bench",
+      "name": "SWE-bench: Software Engineering Benchmark",
+      "type": "application",
+      "level": "advanced",
+      "description": "A benchmark for evaluating models on real-world software engineering tasks. GLM-5 achieves 77.8% on SWE-bench Verified, demonstrating strong code understanding and modification abilities.",
+      "key_ideas": [
+        "Real GitHub issues and pull requests",
+        "Tests end-to-end software engineering capability",
+        "Requires code understanding and generation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jimenez et al., 2024 — SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tensor_parallelism",
+      "name": "Tensor Parallelism",
+      "type": "optimization",
+      "level": "intermediate",
+      "description": "A distributed computing technique that splits individual tensor operations across multiple devices. Essential for deploying large models like GLM-5 that exceed single-device memory.",
+      "key_ideas": [
+        "Splits weight matrices across devices",
+        "Enables training/inference of very large models",
+        "Requires communication between devices for each layer"
+      ],
+      "code_refs": [],
+      "paper_ref": "Shoeybi et al., 2019 — Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "speculative_decoding",
+      "name": "Speculative Decoding",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "An inference optimization where a smaller draft model proposes multiple tokens that the large model then verifies in parallel. GLM-5 deployment supports speculative decoding via vLLM and SGLang.",
+      "key_ideas": [
+        "Draft model generates candidate continuations",
+        "Large model verifies multiple tokens in parallel",
+        "Reduces latency without changing output distribution"
+      ],
+      "code_refs": [],
+      "paper_ref": "Leviathan et al., 2023 — Fast Inference from Transformers via Speculative Decoding",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "eagle_algorithm",
+      "name": "EAGLE Speculative Algorithm",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "A speculative decoding algorithm used by SGLang for GLM-5. EAGLE (Extrapolation Algorithm for Greater Language-model Efficiency) improves upon basic speculative decoding with better draft token selection.",
+      "key_ideas": [
+        "Improved draft token generation strategy",
+        "Higher acceptance rates than basic speculation",
+        "Integrated with SGLang for GLM-5 deployment"
+      ],
+      "code_refs": [],
+      "paper_ref": "Li et al., 2024 — EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "vllm_deployment",
+      "name": "vLLM Deployment",
+      "type": "application",
+      "level": "intermediate",
+      "description": "vLLM is a high-throughput inference engine for LLMs. GLM-5 is compatible with vLLM, enabling efficient serving with features like continuous batching and PagedAttention.",
+      "key_ideas": [
+        "PagedAttention for efficient memory management",
+        "Continuous batching for high throughput",
+        "Supports tensor parallelism for large models"
+      ],
+      "code_refs": [],
+      "paper_ref": "Kwon et al., 2023 — Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "systems_engineering_tasks",
+      "name": "Complex Systems Engineering Tasks",
+      "type": "application",
+      "level": "frontier",
+      "description": "GLM-5's primary target application domain: tackling complex, multi-faceted engineering problems that require understanding of large codebases, system architecture, and long-term planning.",
+      "key_ideas": [
+        "Understanding complex system architectures",
+        "Multi-file code navigation and modification",
+        "Integration of multiple components and dependencies"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "long_horizon_planning",
+      "name": "Long-Horizon Planning",
+      "type": "application",
+      "level": "frontier",
+      "description": "The capability to maintain coherent goals and execute multi-step plans over extended interactions. GLM-5 specifically targets 'long-horizon agentic tasks' requiring sustained reasoning.",
+      "key_ideas": [
+        "Maintaining goals across many steps",
+        "Decomposing complex tasks into subtasks",
+        "Error recovery and plan adaptation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_source_frontier_model",
+      "name": "Open-Source Frontier Model",
+      "type": "application",
+      "level": "frontier",
+      "description": "GLM-5 represents the cutting edge of open-source LLMs, achieving competitive results with proprietary models while being released under MIT license for full accessibility.",
+      "key_ideas": [
+        "MIT license enables unrestricted use",
+        "Competitive with closed-source alternatives",
+        "Democratizes access to frontier AI capabilities"
+      ],
+      "code_refs": [],
+      "paper_ref": "Z.ai, 2025 — GLM-5",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "transformer_architecture",
+      "target": "glm_architecture",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "GLM architecture is built on the transformer foundation with modifications for blank infilling"
+    },
+    {
+      "source": "mixture_of_experts",
+      "target": "glm5_scale",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "MoE architecture enables GLM-5's 744B parameter scale with only 40B active parameters"
+    },
+    {
+      "source": "sparse_attention",
+      "target": "deepseek_sparse_attention",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "DeepSeek Sparse Attention is a specific implementation of sparse attention techniques"
+    },
+    {
+      "source": "glm_architecture",
+      "target": "glm5_scale",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "GLM-5 is the scaled evolution of the GLM architecture family"
+    },
+    {
+      "source": "deepseek_sparse_attention",
+      "target": "long_context_modeling",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "DSA enables efficient long context processing by reducing attention complexity"
+    },
+    {
+      "source": "deepseek_sparse_attention",
+      "target": "glm5_scale",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "DSA is integrated into GLM-5 for efficient attention computation"
+    },
+    {
+      "source": "reinforcement_learning_from_human_feedback",
+      "target": "slime_infrastructure",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Slime is an asynchronous infrastructure specifically designed for RLHF training"
+    },
+    {
+      "source": "slime_infrastructure",
+      "target": "post_training_refinement",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Slime infrastructure enables efficient post-training refinement of GLM-5"
+    },
+    {
+      "source": "post_training_refinement",
+      "target": "agentic_capabilities",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Post-training refinement develops the agentic capabilities of GLM-5"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "tool_augmented_reasoning",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Tool use is a key component of agentic capabilities"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "swe_bench",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Agentic capabilities enable strong performance on SWE-bench engineering tasks"
+    },
+    {
+      "source": "tensor_parallelism",
+      "target": "vllm_deployment",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Tensor parallelism in vLLM enables deployment of GLM-5's large model"
+    },
+    {
+      "source": "speculative_decoding",
+      "target": "eagle_algorithm",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "EAGLE is an advanced speculative decoding algorithm"
+    },
+    {
+      "source": "vllm_deployment",
+      "target": "speculative_decoding",
+      "relationship": "enables",
+      "weight": 0.8,
+      "description": "vLLM supports speculative decoding for faster inference"
+    },
+    {
+      "source": "glm5_scale",
+      "target": "tensor_parallelism",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "GLM-5's 744B parameters require tensor parallelism for deployment"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "systems_engineering_tasks",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Agentic capabilities enable tackling complex systems engineering tasks"
+    },
+    {
+      "source": "agentic_capabilities",
+      "target": "long_horizon_planning",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Agentic capabilities include long-horizon planning abilities"
+    },
+    {
+      "source": "long_context_modeling",
+      "target": "long_horizon_planning",
+      "relationship": "enables",
+      "weight": 0.9,
+      "description": "Long context capability supports sustained reasoning over many steps"
+    },
+    {
+      "source": "glm5_scale",
+      "target": "open_source_frontier_model",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "GLM-5's scale and capabilities position it as an open-source frontier model"
+    },
+    {
+      "source": "tool_augmented_reasoning",
+      "target": "systems_engineering_tasks",
+      "relationship": "enables",
+      "weight": 0.9,
+      "description": "Tool use enables complex engineering tasks requiring code execution"
+    }
+  ]
+}
