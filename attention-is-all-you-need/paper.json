@@ -1,6 +1,6 @@
 {
   "title": "Attention Is All You Need",
-  "description": "Transformer 아키텍처는 recurrence를 완전히 self-attention으로 대체하여, 기계 번역에서 SOTA 성능을 달성하면서도 훈련 병렬화를 가능하게 한 획기적 모델입니다.",
+  "description": "The Transformer architecture replaces recurrence entirely with self-attention, achieving state-of-the-art results on machine translation while enabling full training parallelization.",
   "arxivId": "1706.03762",
   "githubUrl": "https://github.com/tensorflow/tensor2tensor",
   "authors": [

@@ -1,6 +1,6 @@
 {
   "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
-  "description": "T5는 모든 NLP 태스크를 text-to-text 형식으로 통합하는 프레임워크로, 전이 학습의 한계를 체계적으로 탐구하여 다양한 벤치마크에서 SOTA를 달성했습니다.",
+  "description": "T5 frames every NLP task as text-to-text, systematically exploring transfer learning limits and achieving state-of-the-art results across diverse benchmarks.",
   "arxivId": "1910.10683",
   "githubUrl": "https://github.com/google-research/text-to-text-transfer-transformer",
   "authors": [

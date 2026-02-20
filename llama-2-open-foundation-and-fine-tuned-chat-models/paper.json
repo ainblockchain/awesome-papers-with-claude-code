@@ -1,6 +1,6 @@
 {
   "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
-  "description": "Llama 2는 7B~70B 파라미터의 오픈소스 LLM 모음으로, RLHF를 통한 fine-tuning과 안전성 평가를 통해 상용 수준의 대화 AI를 누구나 활용할 수 있게 공개했습니다.",
+  "description": "Llama 2 is a collection of open-source LLMs (7B-70B parameters) fine-tuned with RLHF and safety evaluations, enabling production-grade conversational AI for everyone.",
   "arxivId": "2307.09288",
   "githubUrl": "https://github.com/meta-llama/llama",
   "authors": [
