@@ -1,0 +1,23 @@
+{
+  "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+  "description": "Vision Transformer(ViT)는 이미지를 패치 시퀀스로 분할하여 순수 Transformer에 입력함으로써, CNN 없이도 이미지 분류에서 SOTA 성능을 달성했습니다.",
+  "arxivId": "2010.11929",
+  "githubUrl": "https://github.com/google-research/vision_transformer",
+  "authors": [
+    { "name": "Alexey Dosovitskiy" },
+    { "name": "Lucas Beyer" },
+    { "name": "Alexander Kolesnikov" },
+    { "name": "Dirk Weissenborn" },
+    { "name": "Xiaohua Zhai" },
+    { "name": "Thomas Unterthiner" },
+    { "name": "Mostafa Dehghani" },
+    { "name": "Matthias Minderer" },
+    { "name": "Georg Heigold" },
+    { "name": "Sylvain Gelly" },
+    { "name": "Jakob Uszkoreit" },
+    { "name": "Neil Houlsby" }
+  ],
+  "publishedAt": "2020-10-22",
+  "organization": { "name": "Google Research" },
+  "submittedBy": "community"
+}

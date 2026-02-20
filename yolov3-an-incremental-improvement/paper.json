@@ -1,0 +1,13 @@
+{
+  "title": "YOLOv3: An Incremental Improvement",
+  "description": "YOLOv3는 multi-scale prediction과 Darknet-53 백본을 도입하여 실시간 객체 탐지의 정확도와 속도를 동시에 개선한 모델입니다.",
+  "arxivId": "1804.02767",
+  "githubUrl": "https://github.com/pjreddie/darknet",
+  "authors": [
+    { "name": "Joseph Redmon" },
+    { "name": "Ali Farhadi" }
+  ],
+  "publishedAt": "2018-04-08",
+  "organization": { "name": "University of Washington" },
+  "submittedBy": "community"
+}
