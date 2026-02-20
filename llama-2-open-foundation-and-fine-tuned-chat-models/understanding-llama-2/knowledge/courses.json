@@ -1,0 +1,214 @@
+[
+  {
+    "id": "course_1_foundations",
+    "title": "Foundations of Large Language Models",
+    "description": "Learn the core concepts behind LLMs: transformers, autoregressive modeling, and pretraining at scale.",
+    "concepts": ["large_language_models", "transformer_architecture", "autoregressive_language_modeling", "pretraining"],
+    "lessons": [
+      {
+        "concept_id": "large_language_models",
+        "title": "What Are Large Language Models?",
+        "prerequisites": [],
+        "key_ideas": ["Neural networks trained on massive text", "Predict next tokens", "Foundation of modern AI"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2: Open Foundation and Fine-Tuned Chat Models",
+        "exercise": "A large language model learns patterns by predicting which word comes next. True or False?",
+        "explanation": "Touvron et al. (2023) introduced Llama 2, a family of large language models trained on 2 trillion tokens. An LLM is like a super-powered text prediction machine—given some text, it predicts what word should come next. This simple idea, scaled to billions of parameters and trillions of tokens, creates surprisingly intelligent behavior.\n\nThink of it like learning to write by reading millions of books. You pick up patterns: after 'Once upon a time', a story usually follows. After 'The capital of France is', you expect 'Paris'. LLMs learn these patterns at massive scale.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "transformer_architecture",
+        "title": "The Transformer: Attention Over Recurrence",
+        "prerequisites": ["large_language_models"],
+        "key_ideas": ["Self-attention mechanism", "Parallel computation", "Position encoding"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need (foundational; Llama 2 builds on this)",
+        "exercise": "In a Transformer, attention allows each token to look at: 1) Only previous tokens, 2) All other tokens, 3) Random tokens. Which is correct for LLMs?",
+        "explanation": "Transformers replaced older recurrent architectures by using 'attention'—a mechanism where each word token can look at relevant previous tokens to understand context. Imagine reading a sentence: when you see 'it', you look back to find what 'it' refers to. Transformers do this automatically for all tokens in parallel, making training much faster.\n\nLlama 2 is built entirely on Transformers. The key innovation is self-attention: each position in the text learns what to pay attention to.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "autoregressive_language_modeling",
+        "title": "Autoregressive Training: Predicting One Token at a Time",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": ["Causal masking", "Next-token prediction", "Sequential generation"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "In autoregressive training, the model learns to predict: 1) All future tokens simultaneously, 2) The next token given all previous tokens, 3) Random tokens. Which?",
+        "explanation": "Autoregressive means 'self-generating': the model predicts the next token given everything that came before. During training, if the text is 'The cat sat on the', the model learns to predict 'mat' as the next word.\n\nThis is implemented using causal masking in the Transformer—tokens can only look at previous tokens, not future ones. During generation, the model keeps adding one token at a time, each informed by all previous tokens. Simple but powerful!",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "pretraining",
+        "title": "Pretraining on 2 Trillion Tokens",
+        "prerequisites": ["autoregressive_language_modeling"],
+        "key_ideas": ["Public data sources", "Massive scale", "Broad knowledge acquisition"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Llama 2 was pretrained on approximately: 1) 100 billion tokens, 2) 500 billion tokens, 3) 2 trillion tokens. Which?",
+        "explanation": "Llama 2 underwent massive pretraining on 2 trillion tokens—text from the internet, books, code repositories, and more. This is like reading billions of pages of diverse content. The model learns not just grammar but world knowledge, coding patterns, math, reasoning, and much more.\n\nPretraining is the most expensive phase but creates a foundation of general knowledge. All subsequent fine-tuning builds on this pretrained base.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_2_training_techniques",
+    "title": "Training & Fine-tuning Llama 2",
+    "description": "Explore supervised fine-tuning, RLHF, and techniques to make Llama 2 follow instructions and have helpful conversations.",
+    "concepts": ["parameter_scaling", "supervised_fine_tuning", "reinforcement_learning_hf", "instruction_following", "context_length"],
+    "lessons": [
+      {
+        "concept_id": "parameter_scaling",
+        "title": "Model Sizes: 7B, 13B, 70B",
+        "prerequisites": ["pretraining"],
+        "key_ideas": ["Three model sizes", "Performance-efficiency trade-off", "Right size for your task"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Llama 2 comes in how many parameter sizes? 1) Two, 2) Three, 3) Five",
+        "explanation": "Llama 2 is released in three flavors: 7 billion, 13 billion, and 70 billion parameters. Bigger models are smarter but slower and need more memory. It's like choosing between a bicycle (7B: fast, efficient), a car (13B: balanced), or a truck (70B: powerful but resource-hungry).\n\nThe paper shows that even the 7B model outperforms many competitors. You choose your size based on available compute and latency requirements.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "supervised_fine_tuning",
+        "title": "Supervised Fine-Tuning (SFT): From Pretraining to Instructions",
+        "prerequisites": ["parameter_scaling"],
+        "key_ideas": ["Instruction-response pairs", "Curated datasets", "Task alignment"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "SFT uses labeled data in what format? 1) Unlabeled raw text, 2) Instruction-response pairs, 3) Only code examples",
+        "explanation": "After pretraining, Llama 2 is 'taught' with supervised fine-tuning. Humans write high-quality instruction-response pairs: 'Explain quantum computing' → a detailed answer. The model learns to follow instructions and provide helpful responses.\n\nThis step transforms a general language model into an instruction-following assistant. It's like going from a person who reads books (pretraining) to someone trained as a tutor (SFT).",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "reinforcement_learning_hf",
+        "title": "RLHF: Learning from Human Preferences",
+        "prerequisites": ["supervised_fine_tuning"],
+        "key_ideas": ["Human feedback", "Reward model", "Preference optimization"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "In RLHF, how does the model learn? 1) From labeled answers only, 2) From human preferences between pairs of answers, 3) From random feedback",
+        "explanation": "RLHF (Reinforcement Learning from Human Feedback) is where human preferences shape the model. Humans compare two answers and pick the better one. A 'reward model' learns to predict what humans prefer, and the language model is optimized to maximize this reward.\n\nThink of training a dog: instead of just showing it what to do (SFT), you reward behaviors you like and discourage ones you don't (RLHF). This fine-tunes the model toward actually helpful, harmless behavior.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "instruction_following",
+        "title": "Instruction Following & Intent Understanding",
+        "prerequisites": ["reinforcement_learning_hf"],
+        "key_ideas": ["Understanding user intent", "Generalization", "Multi-task learning"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "After fine-tuning, Llama 2 can follow instructions it has never seen before. This is called: 1) Memorization, 2) Generalization, 3) Hallucination",
+        "explanation": "Instruction following isn't memorizing answers—it's learning to understand intent and generate relevant responses to novel requests. If trained on 'Translate English to French', it can translate unseen sentences. This generalization is a key achievement of modern fine-tuning.\n\nLlama 2-Chat demonstrates strong instruction-following abilities, handling diverse requests from summarization to creative writing to coding help.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "context_length",
+        "title": "Context Window: 4K Tokens",
+        "prerequisites": ["pretraining"],
+        "key_ideas": ["Token limit", "Memory constraint", "Document understanding"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Llama 2's context length is 4K tokens. This means: 1) It can only read 4 words, 2) It can read ~3,000 words at once, 3) It can read infinite text",
+        "explanation": "Context length is how much text the model can 'see' at one time. Llama 2 has a 4K token context—roughly 3,000 words. This is like a person's working memory: they can keep a few pages of text in mind to answer questions about it, but not an entire book.\n\nLonger contexts would be better but cost more compute. This 4K choice balances capability and efficiency.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_3_advanced_techniques",
+    "title": "Advanced Techniques & Safety",
+    "description": "Dive into safety training, red teaming, dialogue optimization, and inference efficiency.",
+    "concepts": ["safety_training", "red_teaming", "multi_turn_dialogue", "inference_optimization"],
+    "lessons": [
+      {
+        "concept_id": "safety_training",
+        "title": "Safety Training & Alignment",
+        "prerequisites": ["reinforcement_learning_hf"],
+        "key_ideas": ["Preventing harmful output", "Constitutional AI", "Safety-capability balance"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Safety training in Llama 2 aims to: 1) Make the model refuse all questions, 2) Prevent harmful outputs while staying helpful, 3) Only answer about safety topics",
+        "explanation": "Llama 2's safety training is sophisticated: the model learns to refuse harmful requests (illegal activities, misinformation, abuse) while remaining helpful for legitimate uses. It's a balancing act—too rigid and it's useless, too permissive and it's dangerous.\n\nThe approach includes red teaming (finding edge cases) and constitutional AI (principles for safe behavior). The goal is a model that's both capable and trustworthy.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "red_teaming",
+        "title": "Red Teaming: Adversarial Testing",
+        "prerequisites": ["safety_training"],
+        "key_ideas": ["Adversarial prompts", "Finding vulnerabilities", "Iterative improvement"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Red teaming is: 1) A cyberattack, 2) Testing models with adversarial prompts to find weaknesses, 3) Only used by hackers",
+        "explanation": "Red teaming is 'ethical hacking' for AI. Security researchers try to break the model—they craft tricky prompts to elicit harmful behavior. When they find an edge case, the team patches it through additional training.\n\nLlama 2 underwent extensive red teaming to identify safety gaps. This iterative process of 'attack and defend' strengthens the model's robustness.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multi_turn_dialogue",
+        "title": "Multi-turn Dialogue: Conversational Continuity",
+        "prerequisites": ["instruction_following"],
+        "key_ideas": ["Conversation history", "Context preservation", "Turn-based interaction"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "In a multi-turn dialogue, the model must: 1) Forget the previous message each turn, 2) Remember and build on conversation history, 3) Always start fresh",
+        "explanation": "Multi-turn dialogue means the model remembers what was said before. If you ask 'Who was Einstein?' and then 'When did he die?', the model understands 'he' refers to Einstein from the previous turn. \n\nLlama 2-Chat is optimized for this. It maintains coherence across many turns, making conversations feel natural rather than disjointed. This is critical for a usable chat interface.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "inference_optimization",
+        "title": "Inference Optimization: Speed & Efficiency",
+        "prerequisites": ["parameter_scaling"],
+        "key_ideas": ["Quantization", "Hardware acceleration", "Latency reduction"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Quantization is: 1) Making the model bigger, 2) Reducing precision of weights for speed, 3) Changing the training objective",
+        "explanation": "A 70B parameter model is powerful but slow—running it costs real money and takes time. Inference optimization techniques like quantization reduce precision (fewer bits per number) without much quality loss, making inference 2-4x faster.\n\nOther optimizations include kernel tuning, batch processing, and GPU scheduling. These matter enormously for real-world deployment where latency equals user experience.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_4_frontiers",
+    "title": "Open Source & Responsible AI",
+    "description": "Explore the significance of open-source LLMs and the principles behind responsible AI development.",
+    "concepts": ["open_source_llms", "responsible_ai"],
+    "lessons": [
+      {
+        "concept_id": "open_source_llms",
+        "title": "The Open-Source LLM Revolution",
+        "prerequisites": ["large_language_models"],
+        "key_ideas": ["Open weights", "Community contribution", "Democratizing AI"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Why did Meta release Llama 2 as open-source? 1) Cost-cutting, 2) To democratize AI and enable community research, 3) Lack of alternatives",
+        "explanation": "Before Llama 2, state-of-the-art LLMs (GPT-4, Claude) were closed-source, controlled by single companies. Llama 2 changed that by releasing model weights publicly. This democratization enables researchers, companies, and developers worldwide to build on the model.\n\nIt's like the difference between a library you can only visit (closed) vs. one that lends books (open-source). Community research accelerates with transparency and access.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "responsible_ai",
+        "title": "Responsible AI: Transparency & Ethical Deployment",
+        "prerequisites": ["safety_training", "open_source_llms"],
+        "key_ideas": ["Transparency about limitations", "Ethical guidelines", "Community accountability"],
+        "code_ref": "",
+        "paper_ref": "Touvron et al., 2023 — Llama 2",
+        "exercise": "Responsible AI development includes: 1) Hiding limitations from users, 2) Clear documentation of capabilities and limitations, 3) Only using proprietary models",
+        "explanation": "Releasing powerful AI responsibly means transparency: documenting what the model can and cannot do, disclosing biases, providing safety guidelines. Llama 2's paper is unusually detailed about training methodology, safety testing, and limitations.\n\nThis sets a precedent—AI companies have a shared responsibility to the broader public. Responsible AI isn't about being perfect; it's about being honest and collaborative.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]

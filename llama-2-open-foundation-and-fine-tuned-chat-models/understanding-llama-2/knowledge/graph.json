@@ -1,0 +1,298 @@
+{
+  "nodes": [
+    {
+      "id": "large_language_models",
+      "name": "Large Language Models (LLMs)",
+      "type": "theory",
+      "level": "foundational",
+      "description": "A large language model is a neural network trained on vast amounts of text data to predict and generate human language. LLMs form the foundation of modern NLP systems.",
+      "key_ideas": ["Scaling laws", "Emergent capabilities", "Few-shot learning"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "transformer_architecture",
+      "name": "Transformer Architecture",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "The Transformer is a neural architecture based on self-attention mechanisms, replacing recurrence with parallel computation. It forms the backbone of modern language models.",
+      "key_ideas": ["Self-attention", "Positional encoding", "Multi-head attention"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need (referenced in Llama 2)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "autoregressive_language_modeling",
+      "name": "Autoregressive Language Modeling",
+      "type": "technique",
+      "level": "foundational",
+      "description": "A training approach where the model predicts the next token given all previous tokens. This is the standard objective for pretraining LLMs.",
+      "key_ideas": ["Causal attention mask", "Next-token prediction", "Sequential generation"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pretraining",
+      "name": "Pretraining on Large Text Corpora",
+      "type": "training",
+      "level": "foundational",
+      "description": "Llama 2 was pretrained on 2 trillion tokens from publicly available internet text, GitHub code, and other sources. This massive exposure enables broad language understanding.",
+      "key_ideas": ["2 trillion token training", "Public data sources", "Long-range context"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "parameter_scaling",
+      "name": "Parameter Scaling & Model Sizes",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Llama 2 comes in three sizes: 7B, 13B, and 70B parameters. Larger models generally perform better but require more compute resources.",
+      "key_ideas": ["7B/13B/70B variants", "Trade-off between performance and efficiency", "Scaling laws"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "supervised_fine_tuning",
+      "name": "Supervised Fine-Tuning (SFT)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The process of further training a pretrained model on labeled instruction-response pairs. Llama 2 was fine-tuned on curated instruction datasets to improve instruction-following ability.",
+      "key_ideas": ["High-quality instruction data", "Task alignment", "Adapting pretrained weights"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reinforcement_learning_hf",
+      "name": "Reinforcement Learning from Human Feedback (RLHF)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "A training method where human preferences guide the model's behavior. Human raters evaluate model outputs, and the model is optimized to produce higher-rated responses.",
+      "key_ideas": ["Human feedback", "Preference optimization", "Reward modeling"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "instruction_following",
+      "name": "Instruction Following & Intent Recognition",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The ability to understand user intent from natural language instructions and produce relevant outputs. Fine-tuning improves instruction-following capability.",
+      "key_ideas": ["Task comprehension", "Multi-task learning", "Generalization to unseen tasks"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "context_length",
+      "name": "Context Length & Token Limits",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Llama 2 has a 4K token context window, determining how much text it can process in a single inference. Longer contexts enable better understanding of longer documents.",
+      "key_ideas": ["4K token window", "Position interpolation", "Memory constraints"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "safety_training",
+      "name": "Safety Training & Alignment",
+      "type": "technique",
+      "level": "advanced",
+      "description": "A multi-stage process including red teaming and constitutional AI to prevent harmful outputs. Llama 2 was trained to refuse unsafe requests while remaining helpful.",
+      "key_ideas": ["Red teaming", "Constitutional AI", "Bias mitigation", "Harm prevention"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "red_teaming",
+      "name": "Red Teaming for Model Safety",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Adversarial testing where researchers attempt to elicit harmful or undesired behavior from the model. Findings inform safety training improvements.",
+      "key_ideas": ["Adversarial prompts", "Vulnerability discovery", "Iterative safety refinement"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_turn_dialogue",
+      "name": "Multi-turn Dialogue & Conversation",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Llama 2-Chat was specifically optimized for multi-turn conversations, maintaining context and coherence across multiple user-model exchanges.",
+      "key_ideas": ["Conversation history", "Context preservation", "Turn-based interaction"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "inference_optimization",
+      "name": "Inference Optimization & Efficiency",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Techniques to make inference faster and less resource-intensive, such as quantization and kernel optimization. Critical for deployment in real-world applications.",
+      "key_ideas": ["Quantization", "Kernel optimization", "Hardware acceleration"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_source_llms",
+      "name": "Open-Source LLMs vs. Proprietary Models",
+      "type": "application",
+      "level": "frontier",
+      "description": "Llama 2 represents a shift toward open-source large language models that rival proprietary solutions. This democratizes AI access and enables community-driven development.",
+      "key_ideas": ["Open weights", "Community contribution", "Transparency", "Reproducibility"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "responsible_ai",
+      "name": "Responsible AI & Ethical Deployment",
+      "type": "application",
+      "level": "frontier",
+      "description": "The commitment to building AI systems responsibly, including transparency about capabilities, limitations, and safety considerations. Llama 2 emphasizes shared responsibility.",
+      "key_ideas": ["Transparency", "Safety documentation", "Community governance", "Ethical use"],
+      "code_refs": [],
+      "paper_ref": "Touvron et al., 2023 — Llama 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "large_language_models",
+      "target": "transformer_architecture",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "LLMs are built on top of the Transformer architecture."
+    },
+    {
+      "source": "transformer_architecture",
+      "target": "autoregressive_language_modeling",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Transformers enable efficient autoregressive language modeling."
+    },
+    {
+      "source": "autoregressive_language_modeling",
+      "target": "pretraining",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Autoregressive modeling is the core training objective during pretraining."
+    },
+    {
+      "source": "pretraining",
+      "target": "parameter_scaling",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Pretraining is applied to models of varying sizes."
+    },
+    {
+      "source": "pretraining",
+      "target": "supervised_fine_tuning",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Fine-tuning builds on top of pretrained weights."
+    },
+    {
+      "source": "supervised_fine_tuning",
+      "target": "instruction_following",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "SFT improves the model's ability to follow instructions."
+    },
+    {
+      "source": "supervised_fine_tuning",
+      "target": "reinforcement_learning_hf",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "RLHF is applied after initial SFT to further align with human preferences."
+    },
+    {
+      "source": "reinforcement_learning_hf",
+      "target": "multi_turn_dialogue",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "RLHF optimization improves dialogue quality."
+    },
+    {
+      "source": "instruction_following",
+      "target": "multi_turn_dialogue",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multi-turn dialogue relies on strong instruction understanding."
+    },
+    {
+      "source": "pretraining",
+      "target": "context_length",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Context length is a fixed design choice for pretraining."
+    },
+    {
+      "source": "supervised_fine_tuning",
+      "target": "safety_training",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Safety training is applied after SFT to align with safety goals."
+    },
+    {
+      "source": "safety_training",
+      "target": "red_teaming",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Red teaming is part of the safety training process."
+    },
+    {
+      "source": "pretraining",
+      "target": "inference_optimization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Optimization techniques are applied to pretrained models for efficient deployment."
+    },
+    {
+      "source": "parameter_scaling",
+      "target": "inference_optimization",
+      "relationship": "related_to",
+      "weight": 1.0,
+      "description": "Different model sizes have different optimization requirements."
+    },
+    {
+      "source": "large_language_models",
+      "target": "open_source_llms",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "Open-source LLMs represent an evolution in how LLMs are developed and distributed."
+    },
+    {
+      "source": "open_source_llms",
+      "target": "responsible_ai",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Open-source models require careful consideration of responsible AI practices."
+    }
+  ]
+}
