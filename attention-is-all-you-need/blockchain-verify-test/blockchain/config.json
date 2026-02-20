@@ -1,0 +1,177 @@
+{
+  "provider_url": "https://mainnet-api.ainetwork.ai",
+  "topic_prefix": "attention-is-all-you-need",
+  "topic_map": {
+    "sequence_to_sequence": "attention-is-all-you-need/sequence_to_sequence",
+    "attention_mechanism": "attention-is-all-you-need/attention_mechanism",
+    "dot_product_attention": "attention-is-all-you-need/dot_product_attention",
+    "scaled_dot_product_attention": "attention-is-all-you-need/scaled_dot_product_attention",
+    "multi_head_attention": "attention-is-all-you-need/multi_head_attention",
+    "self_attention": "attention-is-all-you-need/self_attention",
+    "positional_encoding": "attention-is-all-you-need/positional_encoding",
+    "encoder_stack": "attention-is-all-you-need/encoder_stack",
+    "decoder_stack": "attention-is-all-you-need/decoder_stack",
+    "feed_forward_network": "attention-is-all-you-need/feed_forward_network",
+    "residual_connections": "attention-is-all-you-need/residual_connections",
+    "layer_normalization": "attention-is-all-you-need/layer_normalization",
+    "masked_attention": "attention-is-all-you-need/masked_attention",
+    "encoder_decoder_attention": "attention-is-all-you-need/encoder_decoder_attention",
+    "transformer_architecture": "attention-is-all-you-need/transformer_architecture",
+    "attention_dropout": "attention-is-all-you-need/attention_dropout",
+    "label_smoothing": "attention-is-all-you-need/label_smoothing",
+    "warmup_learning_rate": "attention-is-all-you-need/warmup_learning_rate",
+    "beam_search": "attention-is-all-you-need/beam_search",
+    "byte_pair_encoding": "attention-is-all-you-need/byte_pair_encoding",
+    "parallelization": "attention-is-all-you-need/parallelization",
+    "machine_translation": "attention-is-all-you-need/machine_translation",
+    "constituency_parsing": "attention-is-all-you-need/constituency_parsing"
+  },
+  "depth_map": {
+    "sequence_to_sequence": 1,
+    "attention_mechanism": 1,
+    "residual_connections": 1,
+    "layer_normalization": 1,
+    "byte_pair_encoding": 1,
+    "dot_product_attention": 2,
+    "scaled_dot_product_attention": 2,
+    "self_attention": 2,
+    "multi_head_attention": 2,
+    "positional_encoding": 2,
+    "feed_forward_network": 2,
+    "attention_dropout": 2,
+    "beam_search": 2,
+    "encoder_stack": 3,
+    "decoder_stack": 3,
+    "masked_attention": 3,
+    "encoder_decoder_attention": 3,
+    "transformer_architecture": 3,
+    "label_smoothing": 3,
+    "warmup_learning_rate": 3,
+    "parallelization": 3,
+    "machine_translation": 4,
+    "constituency_parsing": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "attention-is-all-you-need",
+      "title": "Attention Is All You Need",
+      "description": "Learning path for the Transformer paper by Vaswani et al., 2017"
+    },
+    {
+      "path": "attention-is-all-you-need/sequence_to_sequence",
+      "title": "Sequence-to-Sequence Models",
+      "description": "Neural network architectures that transform an input sequence into an output sequence. Before Transformers, these were typically built using recurrent neural networks (RNNs) or convolutional neural networks (CNNs)."
+    },
+    {
+      "path": "attention-is-all-you-need/attention_mechanism",
+      "title": "Attention Mechanism",
+      "description": "A mechanism that allows models to focus on relevant parts of the input when producing each part of the output. It computes weighted sums of values based on query-key similarity."
+    },
+    {
+      "path": "attention-is-all-you-need/dot_product_attention",
+      "title": "Dot-Product Attention",
+      "description": "A specific attention mechanism that computes attention weights using dot products between queries and keys. Efficient and parallelizable compared to additive attention."
+    },
+    {
+      "path": "attention-is-all-you-need/scaled_dot_product_attention",
+      "title": "Scaled Dot-Product Attention",
+      "description": "Dot-product attention with scaling by 1/√d_k to prevent gradient saturation when dimension sizes are large. The core attention operation: Attention(Q,K,V) = softmax(QK^T/√d_k)V."
+    },
+    {
+      "path": "attention-is-all-you-need/multi_head_attention",
+      "title": "Multi-Head Attention",
+      "description": "Running multiple attention operations in parallel, each with different learned projections. Allows the model to attend to information from different representation subspaces at different positions."
+    },
+    {
+      "path": "attention-is-all-you-need/self_attention",
+      "title": "Self-Attention",
+      "description": "Attention where queries, keys, and values all come from the same sequence. Allows each position to attend to all positions in the same sequence, capturing dependencies regardless of distance."
+    },
+    {
+      "path": "attention-is-all-you-need/positional_encoding",
+      "title": "Positional Encoding",
+      "description": "Since the Transformer has no recurrence or convolution, positional encodings are added to input embeddings to inject sequence order information. Uses sinusoidal functions: PE(pos,2i) = sin(pos/10000^(2i/d_model))."
+    },
+    {
+      "path": "attention-is-all-you-need/encoder_stack",
+      "title": "Transformer Encoder",
+      "description": "Stack of N=6 identical layers, each containing multi-head self-attention and position-wise feed-forward network, with residual connections and layer normalization around each sub-layer."
+    },
+    {
+      "path": "attention-is-all-you-need/decoder_stack",
+      "title": "Transformer Decoder",
+      "description": "Stack of N=6 identical layers with masked self-attention, encoder-decoder attention, and feed-forward network. Masking ensures predictions depend only on known outputs at positions less than the current position."
+    },
+    {
+      "path": "attention-is-all-you-need/feed_forward_network",
+      "title": "Position-wise Feed-Forward Network",
+      "description": "Two linear transformations with ReLU activation applied to each position independently: FFN(x) = max(0, xW₁+b₁)W₂+b₂. Inner dimension is 2048, outer is 512."
+    },
+    {
+      "path": "attention-is-all-you-need/residual_connections",
+      "title": "Residual Connections",
+      "description": "Skip connections that add the input of a sub-layer to its output, enabling gradient flow and allowing the network to learn identity mappings easily. Used around every sub-layer in the Transformer."
+    },
+    {
+      "path": "attention-is-all-you-need/layer_normalization",
+      "title": "Layer Normalization",
+      "description": "Normalizes activations across the feature dimension for each training example independently. Applied after residual connections in the Transformer to stabilize training."
+    },
+    {
+      "path": "attention-is-all-you-need/masked_attention",
+      "title": "Masked Self-Attention",
+      "description": "Self-attention with masking to prevent positions from attending to subsequent positions. Ensures the auto-regressive property during training by setting attention weights to -∞ for illegal connections."
+    },
+    {
+      "path": "attention-is-all-you-need/encoder_decoder_attention",
+      "title": "Encoder-Decoder Attention",
+      "description": "Cross-attention layer in the decoder where queries come from the previous decoder layer, and keys/values come from the encoder output. Allows the decoder to attend to all input positions."
+    },
+    {
+      "path": "attention-is-all-you-need/transformer_architecture",
+      "title": "Transformer Architecture",
+      "description": "The complete architecture combining encoder and decoder stacks, using only attention mechanisms without recurrence or convolution. First sequence transduction model based entirely on self-attention."
+    },
+    {
+      "path": "attention-is-all-you-need/attention_dropout",
+      "title": "Attention Dropout",
+      "description": "Dropout applied to attention weights after softmax. Prevents over-reliance on specific attention patterns and improves generalization. Rate of 0.1 used in the original Transformer."
+    },
+    {
+      "path": "attention-is-all-you-need/label_smoothing",
+      "title": "Label Smoothing",
+      "description": "Regularization technique that softens target distributions during training. Instead of hard 0/1 targets, uses ε_ls=0.1 smoothing. Hurts perplexity but improves BLEU scores."
+    },
+    {
+      "path": "attention-is-all-you-need/warmup_learning_rate",
+      "title": "Learning Rate Warmup",
+      "description": "Learning rate schedule that linearly increases for warmup_steps, then decreases proportionally to the inverse square root of step number. Critical for stable Transformer training."
+    },
+    {
+      "path": "attention-is-all-you-need/beam_search",
+      "title": "Beam Search Decoding",
+      "description": "Decoding strategy that maintains top-k hypotheses at each step. Used with beam size 4 and length penalty α=0.6 for the Transformer translation results."
+    },
+    {
+      "path": "attention-is-all-you-need/byte_pair_encoding",
+      "title": "Byte Pair Encoding (BPE)",
+      "description": "Subword tokenization algorithm that iteratively merges frequent character pairs. Used for the Transformer's shared source-target vocabulary of ~37000 tokens."
+    },
+    {
+      "path": "attention-is-all-you-need/parallelization",
+      "title": "Training Parallelization",
+      "description": "The Transformer's lack of sequential dependencies enables massive parallelization during training. Training completed in 3.5 days on 8 P100 GPUs vs weeks for RNN-based models."
+    },
+    {
+      "path": "attention-is-all-you-need/machine_translation",
+      "title": "Neural Machine Translation",
+      "description": "The primary application demonstrating Transformer superiority. Achieved 28.4 BLEU on WMT 2014 En-De and 41.8 BLEU on En-Fr, surpassing all previous models including ensembles."
+    },
+    {
+      "path": "attention-is-all-you-need/constituency_parsing",
+      "title": "Constituency Parsing Transfer",
+      "description": "Demonstrated Transformer generalization to English constituency parsing. Achieved competitive results with task-specific models, showing the architecture's versatility beyond translation."
+    }
+  ],
+  "x402_lessons": {}
+}
