@@ -1,0 +1,476 @@
+{
+  "nodes": [
+    {
+      "id": "object_detection",
+      "name": "Object Detection",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The task of locating and classifying objects in images. Unlike image classification (which predicts a single class for the entire image), object detection predicts multiple class labels and their corresponding spatial locations as bounding boxes.",
+      "key_ideas": ["localization", "classification", "multiple objects", "spatial awareness"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bounding_boxes",
+      "name": "Bounding Boxes",
+      "type": "component",
+      "level": "foundational",
+      "description": "Rectangular regions that define the location and size of detected objects in an image. Each bounding box is typically represented by (x, y, width, height) or (x1, y1, x2, y2) coordinates.",
+      "key_ideas": ["rectangular region", "spatial coordinates", "object localization", "box encoding"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "iou_metric",
+      "name": "IoU (Intersection over Union)",
+      "type": "technique",
+      "level": "foundational",
+      "description": "A metric measuring overlap between two bounding boxes: IoU = Area(Intersection) / Area(Union). Used to evaluate detection quality and during non-maximum suppression to filter overlapping predictions.",
+      "key_ideas": ["overlap measurement", "intersection", "union", "detection evaluation"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "map_metric",
+      "name": "mAP (Mean Average Precision)",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Standard metric for evaluating object detection models. Averages precision across different IoU thresholds and classes. Higher mAP indicates better detection accuracy.",
+      "key_ideas": ["precision-recall curve", "average precision", "class averaging", "benchmark metric"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "single_stage_detector",
+      "name": "Single-Stage Detector",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Detection approach that predicts bounding boxes and class labels directly from the entire image in a single forward pass. YOLO is the pioneering single-stage detector, contrasting with two-stage detectors like Faster R-CNN that first propose regions.",
+      "key_ideas": ["end-to-end detection", "direct prediction", "no region proposals", "speed-accuracy tradeoff"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "darknet53",
+      "name": "Darknet-53 Backbone",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Feature extraction backbone in YOLOv3 consisting of 53 convolutional layers. Uses residual connections and batch normalization to efficiently extract multi-level image features with minimal computational cost.",
+      "key_ideas": ["53 layers", "feature extraction", "residual blocks", "efficient design"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fpn",
+      "name": "Feature Pyramid Network (FPN)",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Network component that extracts features at multiple scales. In YOLOv3, the FPN-like structure creates predictions at three different scales (13×13, 26×26, 52×52) to detect objects of various sizes effectively.",
+      "key_ideas": ["multi-scale features", "pyramidal structure", "small objects", "large objects"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_scale_prediction",
+      "name": "Multi-Scale Prediction",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Key YOLOv3 improvement: predictions at three scales (13×13, 26×26, 52×52) to detect small, medium, and large objects. Each scale has independent detection heads processing different feature levels.",
+      "key_ideas": ["three detection scales", "small object detection", "scale-specific heads", "feature reuse"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "anchor_boxes",
+      "name": "Anchor Boxes",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Pre-defined bounding box templates of various aspect ratios used as starting points for prediction. YOLOv3 uses 3 anchors per scale (9 total), allowing the model to predict objects of different shapes efficiently.",
+      "key_ideas": ["predefined templates", "aspect ratio diversity", "shape priors", "3 anchors per scale"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "grid_prediction",
+      "name": "Grid-Based Prediction",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "YOLO's core prediction mechanism: divides the input image into a grid and predicts bounding boxes and class scores from each grid cell. For each cell, multiple bounding boxes (anchors) can be predicted.",
+      "key_ideas": ["spatial grid", "cell-based prediction", "anchor per cell", "efficient spatial encoding"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "objectness_score",
+      "name": "Objectness Score (Logistic Regression)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "YOLOv3 predicts a probability that an anchor box contains an object using logistic regression (sigmoid activation). This single objectness score per anchor replaces the softmax approach of earlier YOLO versions.",
+      "key_ideas": ["sigmoid activation", "binary classification", "object presence", "single score per anchor"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nms",
+      "name": "Non-Maximum Suppression (NMS)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Post-processing step that removes duplicate detections by suppressing lower-confidence boxes that overlap significantly with higher-confidence boxes using IoU threshold. Critical for producing clean final predictions.",
+      "key_ideas": ["duplicate removal", "IoU-based filtering", "confidence ranking", "post-processing"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bbox_regression",
+      "name": "Bounding Box Regression",
+      "type": "component",
+      "level": "advanced",
+      "description": "Neural network task of predicting coordinate offsets (tx, ty, tw, th) to adjust anchor boxes. YOLOv3 predicts offsets relative to the grid cell and applies exponential transformation for width/height.",
+      "key_ideas": ["coordinate offsets", "anchor adjustment", "exponential scaling", "localization accuracy"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "residual_connections",
+      "name": "Residual Connections",
+      "type": "component",
+      "level": "advanced",
+      "description": "Skip connections in Darknet-53 that allow gradients to flow directly through layers, enabling training of very deep networks. Essential for YOLOv3's 53-layer backbone to train effectively.",
+      "key_ideas": ["skip connections", "gradient flow", "deep networks", "identity mapping"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "batch_normalization",
+      "name": "Batch Normalization",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Normalization technique applied after convolutional layers in Darknet-53. Stabilizes training, reduces internal covariate shift, and allows higher learning rates, improving convergence speed.",
+      "key_ideas": ["feature normalization", "training stability", "covariate shift", "gradient flow"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "leaky_relu",
+      "name": "Leaky ReLU Activation",
+      "type": "component",
+      "level": "advanced",
+      "description": "Activation function used throughout Darknet-53 that allows small negative values (instead of zero) to pass through. Prevents dead neurons and improves gradient flow during backpropagation.",
+      "key_ideas": ["activation function", "negative slope", "dead neuron prevention", "gradient flow"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "loss_function",
+      "name": "Loss Function Design",
+      "type": "technique",
+      "level": "advanced",
+      "description": "YOLOv3 combines three loss components: localization loss (MSE on box coordinates), objectness loss (binary cross-entropy), and classification loss (cross-entropy per class). Careful weighting balances these objectives.",
+      "key_ideas": ["localization loss", "objectness loss", "classification loss", "loss weighting"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "class_imbalance",
+      "name": "Class Imbalance Handling",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Object detection datasets often have imbalanced class distributions (many background cells, few object-containing cells). YOLOv3 handles this through careful loss weighting and positive/negative sample selection.",
+      "key_ideas": ["foreground-background imbalance", "loss weighting", "hard negative mining", "balanced training"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "data_augmentation",
+      "name": "Data Augmentation",
+      "type": "training",
+      "level": "advanced",
+      "description": "Techniques like random cropping, rotation, brightness adjustment, and scaling applied during training. Increases dataset diversity, improves model robustness, and prevents overfitting without collecting more data.",
+      "key_ideas": ["random transformations", "robustness", "overfitting prevention", "dataset expansion"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "speed_accuracy_tradeoff",
+      "name": "Speed-Accuracy Tradeoff",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Core YOLO philosophy: sacrifice some accuracy for dramatic speed gains. YOLOv3 at 320×320 achieves 22ms inference while remaining competitive with slower detectors like SSD and RetinaNet.",
+      "key_ideas": ["real-time constraint", "inference latency", "practical deployment", "quantitative tradeoff"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "conv_layers",
+      "name": "Convolutional Layers",
+      "type": "component",
+      "level": "foundational",
+      "description": "Core building blocks of Darknet-53 that extract spatial features through learned filters. Apply same operation across image regions, enabling weight sharing and efficient feature learning.",
+      "key_ideas": ["spatial filters", "feature extraction", "weight sharing", "local receptive field"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "real_time_optimization",
+      "name": "Real-Time Detection Optimization",
+      "type": "optimization",
+      "level": "frontier",
+      "description": "Architectural and training strategies to achieve real-time performance (>30 FPS): efficient backbone, pruning, knowledge distillation, quantization. YOLOv3 pioneered practical real-time detection.",
+      "key_ideas": ["inference speed", "model efficiency", "latency constraints", "practical deployment"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "edge_deployment",
+      "name": "Edge Device Deployment",
+      "type": "application",
+      "level": "frontier",
+      "description": "Running YOLO on resource-constrained devices (mobile phones, embedded systems). Requires model compression, quantization, and optimization strategies. YOLO's speed advantage makes it ideal for edge deployment.",
+      "key_ideas": ["mobile inference", "embedded systems", "model compression", "latency optimization"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "weak_supervision",
+      "name": "Weak Supervision & Semi-Supervised Learning",
+      "type": "technique",
+      "level": "frontier",
+      "description": "Using partially labeled or unlabeled data to improve detection models. Future direction for YOLO: leveraging vast unlabeled image collections without expensive bounding box annotations.",
+      "key_ideas": ["partial labels", "unlabeled data", "label efficiency", "semi-supervised learning"],
+      "code_refs": [],
+      "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "object_detection",
+      "target": "bounding_boxes",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Object detection fundamentally requires predicting bounding boxes as spatial localization"
+    },
+    {
+      "source": "bounding_boxes",
+      "target": "iou_metric",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "IoU metric measures overlap between bounding boxes to evaluate detection quality"
+    },
+    {
+      "source": "iou_metric",
+      "target": "map_metric",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "mAP uses IoU thresholds to compute average precision across detection results"
+    },
+    {
+      "source": "object_detection",
+      "target": "single_stage_detector",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Single-stage detector is one approach to solve the object detection problem"
+    },
+    {
+      "source": "single_stage_detector",
+      "target": "darknet53",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Darknet-53 is the feature extraction backbone in YOLOv3 single-stage detector"
+    },
+    {
+      "source": "darknet53",
+      "target": "conv_layers",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Darknet-53 consists of 53 convolutional layers with residual connections"
+    },
+    {
+      "source": "darknet53",
+      "target": "residual_connections",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Residual connections enable training of the deep 53-layer Darknet backbone"
+    },
+    {
+      "source": "darknet53",
+      "target": "batch_normalization",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Batch normalization is applied after conv layers in Darknet-53 for stable training"
+    },
+    {
+      "source": "darknet53",
+      "target": "leaky_relu",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Leaky ReLU activations are used throughout Darknet-53 layers"
+    },
+    {
+      "source": "darknet53",
+      "target": "fpn",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Darknet-53 feeds into FPN structure for multi-scale feature extraction"
+    },
+    {
+      "source": "fpn",
+      "target": "multi_scale_prediction",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "FPN enables predictions at multiple scales (13×13, 26×26, 52×52)"
+    },
+    {
+      "source": "multi_scale_prediction",
+      "target": "anchor_boxes",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Each scale has multiple anchor boxes (3 per scale in YOLOv3) as shape priors"
+    },
+    {
+      "source": "anchor_boxes",
+      "target": "grid_prediction",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Anchors are placed in each grid cell for grid-based prediction"
+    },
+    {
+      "source": "grid_prediction",
+      "target": "objectness_score",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Each grid-anchor cell predicts an objectness score via logistic regression"
+    },
+    {
+      "source": "grid_prediction",
+      "target": "bbox_regression",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Grid cells predict coordinate offsets for bounding box regression"
+    },
+    {
+      "source": "objectness_score",
+      "target": "nms",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Objectness scores are used in NMS to rank and filter overlapping boxes"
+    },
+    {
+      "source": "bbox_regression",
+      "target": "loss_function",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Localization loss in composite loss function supervises bbox regression"
+    },
+    {
+      "source": "objectness_score",
+      "target": "loss_function",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Objectness loss in composite loss supervises object presence prediction"
+    },
+    {
+      "source": "loss_function",
+      "target": "class_imbalance",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Loss function must handle class imbalance through careful weighting"
+    },
+    {
+      "source": "loss_function",
+      "target": "data_augmentation",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Combined loss enables training with diverse augmented samples"
+    },
+    {
+      "source": "single_stage_detector",
+      "target": "speed_accuracy_tradeoff",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Single-stage detection achieves superior speed-accuracy tradeoff vs. two-stage detectors"
+    },
+    {
+      "source": "speed_accuracy_tradeoff",
+      "target": "real_time_optimization",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "Real-time optimization techniques further improve YOLOv3's speed-accuracy frontier"
+    },
+    {
+      "source": "real_time_optimization",
+      "target": "edge_deployment",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Real-time performance enables deployment on edge devices with strict latency budgets"
+    },
+    {
+      "source": "map_metric",
+      "target": "speed_accuracy_tradeoff",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "mAP evaluation reveals the speed-accuracy tradeoff when varying input resolution"
+    },
+    {
+      "source": "multi_scale_prediction",
+      "target": "class_imbalance",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Multi-scale predictions increase positive samples but require careful imbalance handling"
+    },
+    {
+      "source": "weak_supervision",
+      "target": "object_detection",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "Future direction: using weakly-labeled data to improve detection with less annotation cost"
+    }
+  ]
+}

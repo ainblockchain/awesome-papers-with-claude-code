@@ -1,0 +1,330 @@
+[
+  {
+    "id": "course_1_fundamentals",
+    "title": "Object Detection Fundamentals",
+    "description": "Core concepts for understanding object detection: what we're solving, how we measure success, and foundational techniques",
+    "concepts": ["object_detection", "bounding_boxes", "conv_layers", "iou_metric", "map_metric"],
+    "lessons": [
+      {
+        "concept_id": "object_detection",
+        "title": "What is Object Detection?",
+        "prerequisites": [],
+        "key_ideas": ["multiple objects in images", "localization and classification", "why detection matters"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Object detection differs from image classification because:\n1) It only works on large images\n2) It must locate AND classify multiple objects\n3) It cannot handle overlapping objects\nWhich answer is correct?",
+        "explanation": "Redmon & Farhadi introduce YOLO v3 as a practical solution to real-world vision problems where you need to find *where* objects are, not just *what* they are. Think of it like a security camera system: you don't just want to know \"there's a person in this image,\" you want to know \"there's a person at coordinates (150, 200) in a 50×60 box.\"\n\nThis is fundamentally different from image classification, where a single label covers the entire image. Detection requires spatial awareness — predicting locations for multiple objects simultaneously.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "bounding_boxes",
+        "title": "Representing Objects with Bounding Boxes",
+        "prerequisites": ["object_detection"],
+        "key_ideas": ["rectangle representation", "coordinate encoding", "anchor priors"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "A bounding box at coordinates (100, 50, 300, 200) in (x1, y1, x2, y2) format has width:\n1) 100\n2) 200\n3) 300\nWhat's the width?",
+        "explanation": "Bounding boxes are rectangles that \"wrap\" detected objects. The simplest representation is (x1, y1, x2, y2) — top-left and bottom-right corners. YOLOv3 actually predicts (tx, ty, tw, th) — offset from the grid cell's top-left, and log-scale width/height relative to anchor priors.\n\nThink of anchors like a \"clipboard with pre-printed boxes of different sizes\" — the model predicts adjustments to these templates rather than drawing from scratch.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "conv_layers",
+        "title": "Convolutional Layers: The Building Blocks",
+        "prerequisites": ["object_detection"],
+        "key_ideas": ["spatial feature extraction", "learned filters", "efficient computation"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Convolutional layers extract features by:\n1) Averaging pixels in the entire image\n2) Sliding learned filters across the image\n3) Storing raw pixel values\nWhat's the main mechanism?",
+        "explanation": "A convolutional layer slides a small learned filter (e.g., 3×3) across the image, computing dot products at each position. This produces feature maps showing where edges, textures, and patterns appear. Stacking many conv layers creates hierarchical features: early layers detect edges, mid layers detect shapes, deep layers detect objects.\n\nDarknet-53 has 53 such layers — each one refining the feature representation. It's like asking an increasingly specific question at each layer: \"Are there edges here? Are there corners? Are there wheels?\"",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "iou_metric",
+        "title": "IoU: Measuring Detection Quality",
+        "prerequisites": ["bounding_boxes"],
+        "key_ideas": ["intersection area", "union area", "overlap measure"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "If a predicted box and ground-truth box overlap in a 20-square-unit area, and together they cover 100 square units, what's the IoU?\n1) 0.2\n2) 0.5\n3) 0.8\nCalculate the overlap ratio.",
+        "explanation": "IoU (Intersection over Union) = Area(Overlap) / Area(Combined). In the example: 20 / 100 = 0.2 IoU.\n\nIoU tells us: \"How well does my prediction match the ground truth?\" An IoU of 0.5 is typically considered \"hit,\" while <0.5 is \"miss.\" It's the metric used both for training (to define what counts as a good prediction) and evaluation (to score the final model).",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "map_metric",
+        "title": "mAP: The Standard Detection Benchmark",
+        "prerequisites": ["iou_metric"],
+        "key_ideas": ["average precision", "class-wise evaluation", "benchmark standard"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "mAP (Mean Average Precision) evaluates detection by:\n1) Summing IoU scores across all detections\n2) Averaging precision-recall curves across classes and IoU thresholds\n3) Simply counting correct predictions\nWhat's the proper definition?",
+        "explanation": "mAP is the gold standard metric in object detection papers. YOLOv3 claims \"28.2 mAP at 320×320 resolution.\" This means: for each object class, compute a precision-recall curve at different confidence thresholds and IoU thresholds (commonly 0.5 and 0.75), then average across classes.\n\nHigher mAP = better model. Comparing mAP across papers lets researchers know who's winning the detection race.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_2_architecture",
+    "title": "YOLO Architecture Deep Dive",
+    "description": "How YOLOv3 is structured: Darknet-53 backbone, Feature Pyramid Network, and the components that power real-time detection",
+    "concepts": ["single_stage_detector", "darknet53", "residual_connections", "batch_normalization", "leaky_relu", "fpn"],
+    "lessons": [
+      {
+        "concept_id": "single_stage_detector",
+        "title": "Single-Stage Detection: YOLO's Core Insight",
+        "prerequisites": ["object_detection"],
+        "key_ideas": ["end-to-end prediction", "no region proposals", "speed advantage"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Compared to two-stage detectors (like Faster R-CNN), single-stage detectors like YOLO:\n1) Always produce worse accuracy\n2) Predict boxes directly from the full image in one forward pass\n3) Require pre-trained classification models\nWhat's the defining characteristic?",
+        "explanation": "The genius of YOLO: skip the region proposal step entirely. Two-stage detectors first find candidate regions (RPN), then refine them. YOLO predicts directly from the entire image.\n\nThis saves computation dramatically — hence \"real-time.\" You sacrifice some accuracy (YOLO can miss overlapping objects), but gain speed. It's a fundamental speed-accuracy tradeoff that made real-world deployment practical.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "darknet53",
+        "title": "Darknet-53: The Feature Extraction Backbone",
+        "prerequisites": ["conv_layers"],
+        "key_ideas": ["53 convolutional layers", "hierarchical features", "efficient design"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Darknet-53 is named for having:\n1) 53 pixels per layer\n2) 53 convolutional layers\n3) 53 different activation functions\nWhat does the \"53\" refer to?",
+        "explanation": "Darknet-53 has 53 convolutional layers — hence the name. It's the \"backbone\" that transforms raw images into rich feature representations. Earlier layers detect low-level features (edges), middle layers detect shapes, and deeper layers detect high-level patterns.\n\nYOLOv3 chose 53 layers as a sweet spot: deep enough to learn complex patterns, but efficient enough to run in real-time. Compare to ResNet-152 (152 layers), which is slower but slightly more accurate.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "residual_connections",
+        "title": "Residual Connections: Training Deep Networks",
+        "prerequisites": ["darknet53"],
+        "key_ideas": ["skip connections", "identity mapping", "gradient flow"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Residual connections (skip connections) help train deep networks by:\n1) Adding more parameters\n2) Allowing gradients to skip layers, improving backpropagation\n3) Reducing the model size\nWhat's the key benefit?",
+        "explanation": "Without skip connections, gradients can vanish when backpropagating through 50+ layers. Skip connections create \"shortcuts\" where the gradient can flow directly, plus a residual term: y = F(x) + x instead of just y = F(x).\n\nThink of it like adding a \"fast lane\" to a deep highway — information (and gradients) can take shortcuts, while the main path learns additional transformations. This is why Darknet-53 can be so deep without vanishing gradients.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "batch_normalization",
+        "title": "Batch Normalization: Stabilizing Training",
+        "prerequisites": ["residual_connections"],
+        "key_ideas": ["feature normalization", "internal covariate shift", "higher learning rates"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Batch normalization normalizes features to have:\n1) Zero variance (all equal values)\n2) Mean 0 and variance 1\n3) Arbitrary mean and variance set by the network\nWhat's the normalization target?",
+        "explanation": "During training, each layer receives inputs from previous layers, whose distributions constantly shift (internal covariate shift). Batch normalization fixes layer inputs to mean=0, variance=1, then lets the network learn its own scale/shift via learnable parameters.\n\nBenefit: the network sees more stable input distributions, allowing faster learning and higher learning rates. In Darknet-53, batch norm follows every conv layer except the final output layer.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "leaky_relu",
+        "title": "Leaky ReLU: Better Gradient Flow",
+        "prerequisites": ["batch_normalization"],
+        "key_ideas": ["activation function", "negative slope", "dead neuron prevention"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Leaky ReLU allows small negative values to pass through (e.g., 0.1 * x if x < 0), unlike standard ReLU which outputs 0. Why is this useful?\n1) To increase model capacity\n2) To prevent dead neurons and improve gradient flow\n3) To reduce computation\nWhat's the main benefit?",
+        "explanation": "Standard ReLU outputs 0 for all negative inputs. During training, if a neuron always outputs 0, it receives zero gradients and never learns (\"dead neuron\").\n\nLeaky ReLU (with slope 0.01 or 0.1) ensures gradients flow even for negative inputs. This keeps all neurons \"alive\" and learning. Across 53 layers, this small change significantly improves training stability and convergence speed.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "fpn",
+        "title": "Feature Pyramid Network: Multi-Scale Features",
+        "prerequisites": ["darknet53"],
+        "key_ideas": ["hierarchical features", "coarse-to-fine", "small object detection"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Feature Pyramid Networks extract multi-scale features by:\n1) Running the backbone once and using different layer outputs\n2) Running the backbone multiple times at different image resolutions\n3) Applying nearest-neighbor upsampling to coarser features\nWhat's the approach?",
+        "explanation": "Darknet-53 progressively reduces spatial dimensions (via stride-2 convolutions), creating a hierarchy: high-resolution early features, low-resolution deep features. FPN combines these by upsampling coarse features and fusing them with fine features.\n\nResult: feature maps at different scales, each encoding different details. This is why YOLOv3 predicts at 3 scales (13×13, 26×26, 52×52) — it leverages this pyramid structure to detect small, medium, and large objects.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_3_prediction",
+    "title": "Multi-Scale Detection & Prediction",
+    "description": "The key insight: predicting at multiple scales and using anchors to efficiently cover diverse object shapes",
+    "concepts": ["multi_scale_prediction", "anchor_boxes", "grid_prediction", "objectness_score", "bbox_regression"],
+    "lessons": [
+      {
+        "concept_id": "multi_scale_prediction",
+        "title": "YOLOv3's Core Innovation: Multi-Scale Predictions",
+        "prerequisites": ["fpn"],
+        "key_ideas": ["three detection scales", "small-large object range", "independent prediction heads"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "YOLOv3 makes predictions at three scales:\n1) 13×13, 26×26, 52×52\n2) 64×64, 32×32, 16×16\n3) 256×256, 128×128, 64×64\nWhich is correct?",
+        "explanation": "In earlier YOLO versions, predictions only happened at one scale (e.g., 7×7 or 13×13). This missed small objects.\n\nYOLOv3's innovation: predict simultaneously at 13×13 (large objects, large receptive field), 26×26 (medium objects), and 52×52 (small objects, fine detail). Each scale has separate detection head, trained jointly. This single change dramatically improved small-object detection, closing the gap to slower detectors.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "anchor_boxes",
+        "title": "Anchor Boxes: Predicting Multiple Shapes",
+        "prerequisites": ["bounding_boxes"],
+        "key_ideas": ["pre-defined templates", "aspect ratio diversity", "shape priors"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "YOLOv3 uses how many anchor boxes per grid cell?\n1) 1 (one prediction per cell)\n2) 3 (three predictions per scale)\n3) 9 (three predictions across three scales)\nThink about what's possible at one grid cell.",
+        "explanation": "Imagine a 13×13 grid cell. Many different objects could fall in that cell — a person (tall, narrow), a car (wide, short), a ball (square). If we predict just one box per cell, we can't capture all shapes.\n\nYOLOv3 uses 3 anchor boxes per cell, each with different aspect ratios (e.g., 1:1, 2:1, 1:2). This gives 3 shape templates per cell, and the network predicts adjustments to these templates. Total: 3 anchors × 3 scales = 9 predictions per grid cell position across the image.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "grid_prediction",
+        "title": "Grid-Based Predictions: Efficient Spatial Encoding",
+        "prerequisites": ["multi_scale_prediction", "anchor_boxes"],
+        "key_ideas": ["spatial grid", "cell-based responsibility", "fixed output structure"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "YOLO divides the image into a grid and:\n1) Predicts one object per grid cell\n2) Predicts multiple boxes and classes per cell using anchors\n3) Scans the image with a sliding window\nWhat's the prediction structure?",
+        "explanation": "The 13×13 grid is key to YOLO's speed. Instead of proposing thousands of possible boxes (Faster R-CNN), YOLO divides the image into a 13×13 = 169 cells. Each cell predicts 3 bounding boxes (anchors) and class scores.\n\nThis gives 169 × 3 = 507 total predictions — structured, fixed output. No expensive per-pixel processing, just 169 grid cells making 3 predictions each. It's like tiling the image with prediction \"licenses\" — each cell gets a license to output boxes.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "objectness_score",
+        "title": "Objectness Score: Is There an Object Here?",
+        "prerequisites": ["grid_prediction"],
+        "key_ideas": ["logistic regression", "binary classification", "confidence score"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "In YOLOv3, each predicted box includes an objectness score computed via:\n1) Softmax (comparing to other classes)\n2) Logistic regression / sigmoid (binary: object or background)\n3) Linear function\nWhat's the activation?",
+        "explanation": "For each predicted box, the network outputs a single objectness score (0 to 1) via sigmoid activation: \"What's the probability this box contains an object?\"\n\nThis is different from class prediction (\"Is it a cat, dog, or person?\"). Objectness answers: \"Is there *anything* here?\" A box with objectness=0.9 is highly confident it contains something; objectness=0.1 is uncertain.\n\nDuring inference, boxes with low objectness are discarded, cleaning up predictions.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "bbox_regression",
+        "title": "Bounding Box Regression: Precise Localization",
+        "prerequisites": ["anchor_boxes"],
+        "key_ideas": ["coordinate offsets", "anchor adjustment", "exponential scaling"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "YOLOv3 predicts bounding boxes by:\n1) Predicting absolute (x, y, w, h) coordinates directly\n2) Predicting offsets (tx, ty, tw, th) relative to anchor priors\n3) Predicting corner coordinates (x1, y1, x2, y2) for each anchor\nWhat's the actual approach?",
+        "explanation": "Predicting absolute coordinates is hard (unbounded). YOLOv3 predicts offsets relative to anchor templates:\n- tx, ty: offsets from grid cell center (via sigmoid to keep in [0, 1])\n- tw, th: log-scale scaling of anchor width/height (via exp transformation)\n\nThis constrains predictions to reasonable ranges and accelerates training. An anchor box for a car (16×32 pixels) with tw=0.5 becomes 32×64 — plausible car sizes. It's like saying \"start with this shape and adjust by this factor.\"",
+        "x402_price": "0",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_4_training",
+    "title": "Loss Functions & Training Strategy",
+    "description": "How YOLOv3 learns: loss function design, handling class imbalance, data augmentation, and the speed-accuracy tradeoff",
+    "concepts": ["loss_function", "class_imbalance", "data_augmentation", "speed_accuracy_tradeoff", "nms"],
+    "lessons": [
+      {
+        "concept_id": "loss_function",
+        "title": "The YOLOv3 Loss Function: Balancing Three Objectives",
+        "prerequisites": ["objectness_score", "bbox_regression"],
+        "key_ideas": ["localization loss", "objectness loss", "classification loss", "loss weighting"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "YOLOv3's total loss combines:\n1) MSE on coordinates + BCE on objectness + CE on classes\n2) Only classification loss (determines everything)\n3) Only localization loss (classification is secondary)\nWhat's the composite loss?",
+        "explanation": "YOLOv3 jointly optimizes three objectives:\n\n**Localization loss** (MSE on tx, ty, tw, th): \"Predict accurate box coordinates.\"\n**Objectness loss** (BCE): \"Predict high score if object, low if background.\"\n**Classification loss** (Cross-Entropy): \"Predict correct class if object present.\"\n\nThese are weighted and summed. The weights balance importance — if you weight objectness too high, you'll miss small objects; too low, you'll predict many false positives. YOLOv3 carefully tunes these weights based on empirical results.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "class_imbalance",
+        "title": "Handling Class Imbalance: Foreground vs. Background",
+        "prerequisites": ["loss_function"],
+        "key_ideas": ["foreground-background ratio", "loss weighting", "positive/negative samples"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "In a 13×13 grid, typical object detection datasets have:\n1) Equal numbers of object and background cells\n2) Mostly background cells (no objects), few with objects\n3) Only object cells are used for training\nWhat's the realistic distribution?",
+        "explanation": "In most images, most grid cells contain background (no objects). A 13×13 grid has 169 cells; maybe 10 contain objects, 159 are empty. Training naively on all cells means the loss is dominated by background predictions.\n\nYOLOv3 handles this by weighting: positive samples (boxes with objects) get higher loss weight than negative samples (background). Additionally, predicted boxes far from anchors (\"hard negatives\") might be upweighted. This balancing ensures the model learns both to detect objects *and* suppress false positives.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "data_augmentation",
+        "title": "Data Augmentation: Making the Dataset Larger",
+        "prerequisites": ["loss_function"],
+        "key_ideas": ["random transformations", "robustness", "generalization", "preventing overfitting"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Data augmentation in YOLOv3 includes:\n1) Random cropping, brightness, saturation, hue shifts\n2) Geometric transformations like rotation and scaling\n3) Both of the above\nWhich transformations are used?",
+        "explanation": "YOLOv3 trains on augmented data: each training epoch, images are randomly cropped, color-shifted, scaled, and rotated. This artificially expands the dataset without collecting more images.\n\nBenefits: the model sees diverse versions of the same object (different lighting, angles, sizes), so it learns robust features rather than memorizing specific patterns. During inference on real images (which vary), this diversity helps generalize. It's like practicing karate against opponents of different heights and speeds — you learn to handle real variation.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "speed_accuracy_tradeoff",
+        "title": "The Speed-Accuracy Frontier: YOLO's Philosophy",
+        "prerequisites": ["loss_function"],
+        "key_ideas": ["inference latency", "real-time deployment", "quantitative optimization"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "YOLOv3 at 320×320 input achieves:\n1) 22 ms inference time at 28.2 mAP (faster than SSD but similar accuracy)\n2) 100 ms inference at 50+ mAP (very accurate but slow)\n3) 1 ms inference at 10 mAP (very fast but poor quality)\nWhich best describes YOLOv3?",
+        "explanation": "The YOLO philosophy: \"Real-time detection is worth a small accuracy loss.\" YOLOv3 at 320×320 input runs in 22 ms on a GPU (~45 FPS), which is fast enough for many applications.\n\nCompare to Faster R-CNN or RetinaNet: higher mAP (+2-3 points), but 100+ ms inference. For robotics, autonomous vehicles, or live video analysis, 22 ms is game-changing. For offline annotation, the extra accuracy might matter more.\n\nYou can trade off by changing input resolution: 416×416 is slower but more accurate, 256×256 is faster but less accurate.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "nms",
+        "title": "Non-Maximum Suppression: Cleaning Up Predictions",
+        "prerequisites": ["objectness_score"],
+        "key_ideas": ["duplicate removal", "IoU-based filtering", "confidence ranking"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Non-Maximum Suppression removes overlapping boxes by:\n1) Ranking by objectness score and removing low-confidence duplicates\n2) Averaging overlapping boxes into one\n3) Keeping only the highest-confidence box in overlapping regions\nWhat's the correct mechanism?",
+        "explanation": "YOLOv3 predicts 507 boxes (13×13×3 across one scale, plus 26×26×3 and 52×52×3). Many overlap! NMS cleans this up:\n\n1. Sort boxes by objectness score (confidence).\n2. Keep the highest-confidence box.\n3. Remove all boxes with IoU > threshold (e.g., 0.5) to that box.\n4. Repeat for remaining boxes.\n\nResult: a sparse set of non-overlapping predictions. For a single detected person, you get one box, not 10 overlapping boxes. NMS is essential for usable final predictions.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_5_applications",
+    "title": "Real-Time Optimization & Deployment",
+    "description": "Practical deployment: optimizing YOLOv3 for edge devices, real-time inference, and future directions",
+    "concepts": ["real_time_optimization", "edge_deployment", "weak_supervision"],
+    "lessons": [
+      {
+        "concept_id": "real_time_optimization",
+        "title": "Optimizing for Real-Time Performance",
+        "prerequisites": ["speed_accuracy_tradeoff"],
+        "key_ideas": ["model compression", "quantization", "pruning", "knowledge distillation"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Real-time optimization techniques include:\n1) Model compression, quantization, pruning, knowledge distillation\n2) Only using one scale of predictions\n3) Skipping data augmentation to train faster\nWhat are legitimate optimization methods?",
+        "explanation": "YOLOv3 at full resolution (416×416) on a GPU achieves ~65 FPS. But on mobile, an iPhone might only do 10 FPS. To optimize:\n\n**Quantization**: Convert weights/activations from 32-bit float to 8-bit int. Minimal accuracy loss, 4× speedup.\n**Pruning**: Remove insignificant weights/channels. Sparse models are faster.\n**Knowledge Distillation**: Train a smaller student network to mimic YOLOv3. Smaller = faster.\n**Lower resolution**: 256×256 is faster than 416×416, sacrificing some accuracy.\n\nThese trade accuracy for speed and let YOLOv3 run on resource-constrained devices.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "edge_deployment",
+        "title": "Edge Device Deployment: YOLOv3 in the Wild",
+        "prerequisites": ["real_time_optimization"],
+        "key_ideas": ["mobile inference", "embedded systems", "latency constraints"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Which is a valid deployment target for YOLOv3?\n1) Smartphone camera app (real-time object detection)\n2) Drone obstacle avoidance\n3) Security camera detecting intruders\n4) All of the above\nThink about latency requirements.",
+        "explanation": "YOLOv3's speed makes it practical for edge devices:\n\n**Smartphones**: Run YOLOv3 via TensorFlow Lite or Core ML. Detect objects in camera feed locally (no cloud upload). Battery-efficient — inference on-device.\n\n**Drones**: Real-time obstacle avoidance requires <100ms latency. YOLOv3 fits within drone compute budgets.\n\n**Security cameras**: Local processing without uploading footage to the cloud, preserving privacy.\n\n**Robotics**: Real-time grasp planning, navigation, manipulation.\n\nAll leverage YOLOv3's speed-accuracy balance. A slower detector (RetinaNet, Faster R-CNN) would overwhelm edge hardware.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "weak_supervision",
+        "title": "Future Direction: Weak Supervision & Semi-Supervised Learning",
+        "prerequisites": ["data_augmentation"],
+        "key_ideas": ["partial labels", "unlabeled data", "label efficiency"],
+        "code_ref": "",
+        "paper_ref": "Redmon & Farhadi, 2018 — YOLOv3: An Incremental Improvement",
+        "exercise": "Weak supervision in object detection means:\n1) Using image-level labels (\"cat is in this image\") instead of bounding boxes\n2) Training only on fully-labeled data\n3) Using only synthetic data\nWhat's weak supervision?",
+        "explanation": "Full object detection requires bounding box annotations — expensive and time-consuming. Weak supervision uses cheaper, partial labels:\n\n**Image-level labels**: You know \"a cat is in this image\" but not where. Semi-supervised learning can localize it.\n**Scribbles/marks**: Quick rough annotations instead of precise boxes.\n**Unlabeled data**: Leverage large datasets where labels are unavailable.\n\nFuture YOLOs might combine self-supervised learning (learning from unlabeled data) with weak labels. This could scale to millions of images without full annotation, making detection available in more domains.",
+        "x402_price": "0",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]
