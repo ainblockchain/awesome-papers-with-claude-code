@@ -1,0 +1,680 @@
+{
+  "nodes": [
+    {
+      "id": "transfer_learning",
+      "name": "Transfer Learning",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The practice of pre-training a model on a data-rich task before fine-tuning on a downstream task. T5 systematically explores how transfer learning can be applied across all NLP tasks.",
+      "key_ideas": [
+        "Pre-training captures general linguistic knowledge",
+        "Fine-tuning adapts model to specific tasks",
+        "Reduces need for task-specific labeled data"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "transformer_architecture",
+      "name": "Transformer Architecture",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "The attention-based neural network architecture that forms the backbone of T5. Uses self-attention mechanisms to process sequences in parallel rather than sequentially.",
+      "key_ideas": [
+        "Self-attention for capturing long-range dependencies",
+        "Encoder-decoder structure for sequence-to-sequence tasks",
+        "Parallel processing enables efficient training"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "encoder_decoder_model",
+      "name": "Encoder-Decoder Model",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "T5's core architecture uses separate encoder and decoder components. The encoder processes input text bidirectionally, while the decoder generates output autoregressively with causal masking.",
+      "key_ideas": [
+        "Encoder sees full input context bidirectionally",
+        "Decoder generates output left-to-right",
+        "Cross-attention connects decoder to encoder representations"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "text_to_text_framework",
+      "name": "Text-to-Text Framework",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The unifying framework that converts all NLP tasks into a common format: text input to text output. Classification, translation, summarization, and QA all become sequence-to-sequence problems.",
+      "key_ideas": [
+        "Task-specific prefixes indicate the task (e.g., 'translate English to German:')",
+        "Eliminates need for task-specific output layers",
+        "Enables single model architecture for all tasks"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "c4_dataset",
+      "name": "C4 Dataset (Colossal Clean Crawled Corpus)",
+      "type": "training",
+      "level": "intermediate",
+      "description": "A 750GB cleaned English text corpus created by filtering Common Crawl data. Rigorous heuristics remove low-quality text, non-English content, code, and duplicates.",
+      "key_ideas": [
+        "Filtered from Common Crawl web data",
+        "Heuristics: terminal punctuation, language detection, deduplication",
+        "Orders of magnitude larger than previous pre-training datasets"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "sentencepiece_tokenization",
+      "name": "SentencePiece Tokenization",
+      "type": "tokenization",
+      "level": "foundational",
+      "description": "Subword tokenization method used by T5 with a 32,000 token vocabulary. Handles multiple languages and rare words by breaking them into common subword units.",
+      "key_ideas": [
+        "Language-agnostic subword segmentation",
+        "Byte-pair encoding (BPE) variant",
+        "Shared vocabulary across encoder and decoder"
+      ],
+      "code_refs": [],
+      "paper_ref": "Kudo & Richardson, 2018 — SentencePiece",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "span_corruption_objective",
+      "name": "Span Corruption Objective",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "T5's denoising pre-training objective. Random spans of tokens are replaced with sentinel tokens, and the model learns to reconstruct only the corrupted spans rather than the full input.",
+      "key_ideas": [
+        "15% of tokens corrupted by default",
+        "Sentinel tokens mark corruption boundaries",
+        "More efficient than reconstructing full sequences"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "self_attention",
+      "name": "Self-Attention Mechanism",
+      "type": "component",
+      "level": "foundational",
+      "description": "The core mechanism where each position attends to all positions in the input sequence. Computes attention weights via query-key dot products and applies them to values.",
+      "key_ideas": [
+        "Query, Key, Value projections from input",
+        "Scaled dot-product attention",
+        "Enables capturing relationships at any distance"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_head_attention",
+      "name": "Multi-Head Attention",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Running multiple attention operations in parallel, each with different learned projections. T5 uses 12 attention heads, allowing the model to attend to information from different representation subspaces.",
+      "key_ideas": [
+        "Multiple parallel attention functions",
+        "Each head learns different attention patterns",
+        "Outputs concatenated and projected"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "relative_position_embeddings",
+      "name": "Relative Position Embeddings",
+      "type": "component",
+      "level": "intermediate",
+      "description": "T5 uses relative position biases rather than absolute position embeddings. Each attention head learns a set of embeddings based on the offset between positions, enabling better generalization to different sequence lengths.",
+      "key_ideas": [
+        "Position bias added to attention logits",
+        "Shared across layers within encoder/decoder",
+        "Bucketed for positions beyond training length"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "layer_normalization",
+      "name": "Layer Normalization",
+      "type": "component",
+      "level": "foundational",
+      "description": "Normalization technique applied before each sub-layer in the Transformer. T5 uses pre-layer normalization (RMSNorm variant) which stabilizes training and enables deeper models.",
+      "key_ideas": [
+        "Normalizes activations across features",
+        "Pre-norm placement before attention and FFN",
+        "Enables training of very deep networks"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ba et al., 2016 — Layer Normalization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "feed_forward_network",
+      "name": "Feed-Forward Network",
+      "type": "component",
+      "level": "foundational",
+      "description": "The position-wise feed-forward sublayer in each Transformer block. Consists of two linear transformations with a nonlinearity (ReLU or GELU) in between.",
+      "key_ideas": [
+        "Applied independently to each position",
+        "Expands then contracts dimensionality",
+        "Provides non-linear transformation capacity"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fine_tuning",
+      "name": "Fine-Tuning Strategy",
+      "type": "training",
+      "level": "intermediate",
+      "description": "After pre-training, T5 is fine-tuned on specific downstream tasks. The paper explores fine-tuning all parameters versus adapters, single-task versus multi-task approaches.",
+      "key_ideas": [
+        "All parameters updated during fine-tuning",
+        "Lower learning rate than pre-training",
+        "Task-specific checkpoints selected on validation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_task_learning",
+      "name": "Multi-Task Learning",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Training on multiple tasks simultaneously during pre-training or fine-tuning. T5 experiments show mixing tasks during pre-training can improve downstream performance.",
+      "key_ideas": [
+        "Tasks mixed proportionally during training",
+        "Shared representations across tasks",
+        "Prevents catastrophic forgetting of pre-trained knowledge"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "coordinate_ascent_methodology",
+      "name": "Coordinate Ascent Methodology",
+      "type": "technique",
+      "level": "advanced",
+      "description": "The systematic experimental approach used in T5. One factor is varied while others are held constant, enabling isolation of individual contributions to model performance.",
+      "key_ideas": [
+        "Vary one factor at a time",
+        "Establishes strong baselines for comparison",
+        "May miss interaction effects between factors"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "model_scaling",
+      "name": "Model Scaling",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "T5 explores scaling from base (220M parameters) to 11B parameters. Performance consistently improves with scale on most benchmarks, following predictable scaling laws.",
+      "key_ideas": [
+        "Larger models achieve better downstream performance",
+        "T5-Small, Base, Large, 3B, 11B variants",
+        "No evidence of diminishing returns in their range"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "inverse_sqrt_lr_schedule",
+      "name": "Inverse Square Root Learning Rate Schedule",
+      "type": "optimization",
+      "level": "intermediate",
+      "description": "The learning rate schedule used during T5 pre-training. Learning rate increases linearly during warm-up, then decays proportionally to the inverse square root of the step number.",
+      "key_ideas": [
+        "Linear warm-up for 10,000 steps",
+        "Decay: lr = 1/sqrt(max(step, 10000))",
+        "Stabilizes early training, enables continued learning"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dropout_regularization",
+      "name": "Dropout Regularization",
+      "type": "optimization",
+      "level": "foundational",
+      "description": "Regularization technique applied throughout T5 to prevent overfitting. Dropout is applied to attention weights and feed-forward activations with rate 0.1.",
+      "key_ideas": [
+        "Randomly zeroes activations during training",
+        "Applied to attention and FFN layers",
+        "Disabled during inference"
+      ],
+      "code_refs": [],
+      "paper_ref": "Srivastava et al., 2014 — Dropout",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "benchmark_evaluation",
+      "name": "Benchmark Evaluation",
+      "type": "application",
+      "level": "intermediate",
+      "description": "T5 is evaluated on GLUE, SuperGLUE, SQuAD, CNN/Daily Mail, and WMT translation tasks. The unified text-to-text format enables fair comparison across diverse task types.",
+      "key_ideas": [
+        "GLUE/SuperGLUE for language understanding",
+        "SQuAD for question answering",
+        "WMT for machine translation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "glue_benchmark",
+      "name": "GLUE Benchmark",
+      "type": "application",
+      "level": "intermediate",
+      "description": "General Language Understanding Evaluation benchmark testing various NLU capabilities. T5's text-to-text approach converts classification labels to text targets.",
+      "key_ideas": [
+        "9 tasks: CoLA, SST-2, MRPC, STS-B, QQP, MNLI, QNLI, RTE, WNLI",
+        "Covers sentiment, paraphrase, entailment, similarity",
+        "T5 baseline achieves 83.28 average"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wang et al., 2018 — GLUE: A Multi-Task Benchmark",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "superglue_benchmark",
+      "name": "SuperGLUE Benchmark",
+      "type": "application",
+      "level": "advanced",
+      "description": "More challenging successor to GLUE with harder reasoning tasks. T5-11B achieved state-of-the-art results, demonstrating benefits of scale and unified training.",
+      "key_ideas": [
+        "8 tasks including BoolQ, CB, COPA, MultiRC, ReCoRD, RTE, WiC, WSC",
+        "Requires more sophisticated reasoning",
+        "T5-11B pushed state-of-the-art forward"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wang et al., 2019 — SuperGLUE",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "machine_translation",
+      "name": "Machine Translation",
+      "type": "application",
+      "level": "intermediate",
+      "description": "T5 treats translation as text-to-text with task prefix 'translate X to Y:'. Evaluated on WMT English-German, English-French, and English-Romanian benchmarks.",
+      "key_ideas": [
+        "Task prefix specifies source and target languages",
+        "Shared vocabulary across languages",
+        "Competitive BLEU scores without translation-specific design"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "abstractive_summarization",
+      "name": "Abstractive Summarization",
+      "type": "application",
+      "level": "intermediate",
+      "description": "T5 generates summaries by producing novel text rather than extracting sentences. Evaluated on CNN/Daily Mail dataset with 'summarize:' task prefix.",
+      "key_ideas": [
+        "Generates new text, not just extracts",
+        "Task prefix: 'summarize:'",
+        "Measured by ROUGE scores"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "question_answering",
+      "name": "Question Answering",
+      "type": "application",
+      "level": "intermediate",
+      "description": "T5 generates answers as text output given question and context. On SQuAD, the model outputs the answer span directly rather than predicting start/end positions.",
+      "key_ideas": [
+        "Input: 'question: Q context: C'",
+        "Output: answer text directly",
+        "Evaluated on SQuAD exact match and F1"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pretraining_data_quality",
+      "name": "Pre-training Data Quality",
+      "type": "training",
+      "level": "advanced",
+      "description": "T5 demonstrates that data quality matters as much as quantity. The C4 corpus's careful filtering outperforms larger but noisier alternatives.",
+      "key_ideas": [
+        "Quality filtering improves transfer",
+        "Deduplication prevents memorization",
+        "Domain diversity aids generalization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "architecture_comparison",
+      "name": "Architecture Comparison Study",
+      "type": "theory",
+      "level": "advanced",
+      "description": "T5 compares encoder-decoder, decoder-only, and prefix LM architectures. Encoder-decoder consistently outperforms alternatives, demonstrating value of explicit bidirectional encoding.",
+      "key_ideas": [
+        "Encoder-decoder best for most tasks",
+        "Decoder-only underperforms despite same compute",
+        "Shared parameters nearly match full model"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "unsupervised_objective_study",
+      "name": "Unsupervised Objective Study",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Systematic comparison of pre-training objectives including BERT-style masking, prefix LM, deshuffling, and span corruption. Span corruption proves most effective for T5.",
+      "key_ideas": [
+        "Span corruption slightly outperforms BERT masking",
+        "Deshuffling substantially underperforms",
+        "Prefix LM competitive for translation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reproducibility_practices",
+      "name": "Reproducibility Practices",
+      "type": "frontier",
+      "level": "frontier",
+      "description": "T5 sets a standard for reproducibility by releasing code, pre-trained models, C4 dataset, and detailed experimental configurations. Enables exact replication of results.",
+      "key_ideas": [
+        "Full code and model weights released",
+        "C4 available via TensorFlow Datasets",
+        "Variance reported across random seeds"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "future_scaling_directions",
+      "name": "Future Scaling Directions",
+      "type": "frontier",
+      "level": "frontier",
+      "description": "T5's results suggest continued scaling benefits. The paper opens directions for larger models, longer training, and exploration of compute-optimal training configurations.",
+      "key_ideas": [
+        "No diminishing returns observed at 11B scale",
+        "Compute-performance tradeoffs to explore",
+        "Foundation for subsequent scaling research"
+      ],
+      "code_refs": [],
+      "paper_ref": "Raffel et al., 2019 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "transfer_learning",
+      "target": "text_to_text_framework",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Transfer learning provides the foundation that makes the unified text-to-text approach effective"
+    },
+    {
+      "source": "transformer_architecture",
+      "target": "encoder_decoder_model",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "T5's encoder-decoder is built on the Transformer architecture"
+    },
+    {
+      "source": "encoder_decoder_model",
+      "target": "text_to_text_framework",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "The encoder-decoder structure naturally supports the text-to-text paradigm"
+    },
+    {
+      "source": "self_attention",
+      "target": "multi_head_attention",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multi-head attention runs multiple self-attention operations in parallel"
+    },
+    {
+      "source": "multi_head_attention",
+      "target": "transformer_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multi-head attention is a core building block of the Transformer"
+    },
+    {
+      "source": "layer_normalization",
+      "target": "transformer_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Layer normalization stabilizes Transformer training"
+    },
+    {
+      "source": "feed_forward_network",
+      "target": "transformer_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Position-wise FFN is a core Transformer component"
+    },
+    {
+      "source": "relative_position_embeddings",
+      "target": "encoder_decoder_model",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "T5 uses relative positions instead of absolute embeddings"
+    },
+    {
+      "source": "sentencepiece_tokenization",
+      "target": "text_to_text_framework",
+      "relationship": "enables",
+      "weight": 0.8,
+      "description": "SentencePiece provides the shared vocabulary for text-to-text processing"
+    },
+    {
+      "source": "c4_dataset",
+      "target": "span_corruption_objective",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "C4 provides the training data for span corruption pre-training"
+    },
+    {
+      "source": "span_corruption_objective",
+      "target": "transfer_learning",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Span corruption is the pre-training objective enabling transfer"
+    },
+    {
+      "source": "fine_tuning",
+      "target": "transfer_learning",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Fine-tuning is the second phase of transfer learning"
+    },
+    {
+      "source": "multi_task_learning",
+      "target": "fine_tuning",
+      "relationship": "variant_of",
+      "weight": 0.8,
+      "description": "Multi-task learning extends single-task fine-tuning"
+    },
+    {
+      "source": "inverse_sqrt_lr_schedule",
+      "target": "span_corruption_objective",
+      "relationship": "optimizes",
+      "weight": 0.7,
+      "description": "Learning rate schedule controls pre-training optimization"
+    },
+    {
+      "source": "dropout_regularization",
+      "target": "encoder_decoder_model",
+      "relationship": "optimizes",
+      "weight": 0.7,
+      "description": "Dropout prevents overfitting in the model"
+    },
+    {
+      "source": "model_scaling",
+      "target": "encoder_decoder_model",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "Scaling increases model capacity and performance"
+    },
+    {
+      "source": "coordinate_ascent_methodology",
+      "target": "architecture_comparison",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Coordinate ascent methodology enables systematic architecture comparison"
+    },
+    {
+      "source": "coordinate_ascent_methodology",
+      "target": "unsupervised_objective_study",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Coordinate ascent methodology enables systematic objective comparison"
+    },
+    {
+      "source": "text_to_text_framework",
+      "target": "benchmark_evaluation",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Unified format enables consistent evaluation across benchmarks"
+    },
+    {
+      "source": "benchmark_evaluation",
+      "target": "glue_benchmark",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "GLUE is a key evaluation benchmark"
+    },
+    {
+      "source": "benchmark_evaluation",
+      "target": "superglue_benchmark",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "SuperGLUE is a key evaluation benchmark"
+    },
+    {
+      "source": "text_to_text_framework",
+      "target": "machine_translation",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Text-to-text handles translation with task prefixes"
+    },
+    {
+      "source": "text_to_text_framework",
+      "target": "abstractive_summarization",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Text-to-text handles summarization naturally"
+    },
+    {
+      "source": "text_to_text_framework",
+      "target": "question_answering",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Text-to-text generates answers directly"
+    },
+    {
+      "source": "pretraining_data_quality",
+      "target": "c4_dataset",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "C4's quality derives from careful filtering practices"
+    },
+    {
+      "source": "architecture_comparison",
+      "target": "encoder_decoder_model",
+      "relationship": "builds_on",
+      "weight": 0.9,
+      "description": "Comparison study validates encoder-decoder choice"
+    },
+    {
+      "source": "unsupervised_objective_study",
+      "target": "span_corruption_objective",
+      "relationship": "builds_on",
+      "weight": 0.9,
+      "description": "Study validates span corruption as optimal objective"
+    },
+    {
+      "source": "reproducibility_practices",
+      "target": "coordinate_ascent_methodology",
+      "relationship": "builds_on",
+      "weight": 0.8,
+      "description": "Reproducibility enables verification of systematic experiments"
+    },
+    {
+      "source": "model_scaling",
+      "target": "future_scaling_directions",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "Current scaling results motivate future exploration"
+    },
+    {
+      "source": "reproducibility_practices",
+      "target": "future_scaling_directions",
+      "relationship": "enables",
+      "weight": 0.8,
+      "description": "Released resources enable future research"
+    }
+  ]
+}
