@@ -1,0 +1,503 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations: Why We Needed Transformers",
+    "description": "Background concepts that motivated the Transformer architecture",
+    "concepts": ["sequence_to_sequence", "attention_mechanism", "recurrent_limitations", "residual_connections", "layer_normalization", "byte_pair_encoding"],
+    "lessons": [
+      {
+        "concept_id": "sequence_to_sequence",
+        "title": "The Seq2Seq Revolution",
+        "prerequisites": [],
+        "key_ideas": [
+          "Encoder compresses input sequence into a context vector",
+          "Decoder generates output sequence from context",
+          "Originally used RNNs/LSTMs for both components",
+          "Enabled breakthroughs in machine translation"
+        ],
+        "code_ref": "",
+        "paper_ref": "Sutskever et al., 2014 — Sequence to Sequence Learning with Neural Networks",
+        "exercise": "In a seq2seq model, the encoder:\n1) Generates the output directly\n2) Compresses the input into a fixed representation\n3) Only processes the first word\n\nType the number.",
+        "explanation": "In 2014, Sutskever and colleagues at Google introduced a paradigm-shifting idea: use one neural network to read an entire sentence, compress it into a vector, then use another network to generate the translation.\n\nThink of it like a game of telephone, but with a really good memory. The encoder 'listens' to the entire input sentence and summarizes it into a dense vector. The decoder then 'speaks' the translation based solely on that summary.\n\nThis encoder-decoder pattern became the foundation for all modern translation systems. But there was a catch: squeezing a whole sentence into a single vector created an information bottleneck, especially for long sentences.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "attention_mechanism",
+        "title": "Attention: Looking Back at the Input",
+        "prerequisites": ["sequence_to_sequence"],
+        "key_ideas": [
+          "Allows decoder to 'look back' at all encoder states",
+          "Computes relevance scores between current output and all inputs",
+          "Produces weighted sum of encoder representations",
+          "Solved the information bottleneck problem"
+        ],
+        "code_ref": "",
+        "paper_ref": "Bahdanau et al., 2015 — Neural Machine Translation by Jointly Learning to Align and Translate",
+        "exercise": "Why was attention introduced?\n1) To make models faster\n2) To address the information bottleneck of fixed-size context vectors\n3) To reduce memory usage\n\nType the number.",
+        "explanation": "In 2015, Bahdanau realized the fatal flaw in seq2seq: cramming a 50-word sentence into a single vector loses information. His solution was elegant—let the decoder 'peek' back at the encoder.\n\nImagine translating a long document. Instead of memorizing the whole thing before translating, you'd keep the original open and glance back when needed. That's attention: for each output word, compute how relevant each input word is, then focus on the important ones.\n\nThe decoder asks 'which input words should I pay attention to right now?' and gets a weighted combination of all encoder states. This single idea—letting the model decide where to look—revolutionized NLP.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "recurrent_limitations",
+        "title": "The Bottleneck of Sequential Processing",
+        "prerequisites": ["sequence_to_sequence", "attention_mechanism"],
+        "key_ideas": [
+          "RNNs process one token at a time, sequentially",
+          "Cannot parallelize: must wait for previous step",
+          "Long-range dependencies suffer from vanishing gradients",
+          "Training is slow and scaling is difficult"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "True or False: RNNs can process all words in a sentence simultaneously.\n\nType 'True' or 'False'.",
+        "explanation": "Even with attention, seq2seq models had a fundamental problem: they were built on RNNs, which process sequences one step at a time. To encode 'The cat sat on the mat', you must process 'The', then 'cat', then 'sat'... in order.\n\nThis is like being forced to read a book one word at a time, never looking ahead. It's slow (no parallelization), and by the time you reach the end, you've partially forgotten the beginning (vanishing gradients).\n\nVaswani et al. asked: what if we didn't need recurrence at all? What if attention alone could capture sequential relationships? This question led to the Transformer.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "residual_connections",
+        "title": "Skip Connections: Gradient Highways",
+        "prerequisites": [],
+        "key_ideas": [
+          "Add input directly to sublayer output: x + Sublayer(x)",
+          "Creates 'shortcut' paths for gradients during backprop",
+          "Enables training of very deep networks",
+          "Essential for stacking many Transformer layers"
+        ],
+        "code_ref": "",
+        "paper_ref": "He et al., 2016 — Deep Residual Learning for Image Recognition",
+        "exercise": "Residual connections help deep networks by:\n1) Reducing the number of parameters\n2) Providing shortcut paths for gradient flow\n3) Making the model smaller\n\nType the number.",
+        "explanation": "In 2016, He et al. discovered why very deep networks were hard to train: gradients vanish as they backpropagate through many layers. Their solution was brilliantly simple—add skip connections.\n\nInstead of computing y = F(x), compute y = x + F(x). Now the gradient can flow directly through the addition, bypassing the layer entirely if needed. It's like building a highway with express lanes that skip traffic jams.\n\nThe Transformer uses these everywhere. With 6+ stacked layers, residual connections ensure gradients reach the earliest layers without fading away.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "layer_normalization",
+        "title": "Layer Normalization: Stabilizing Training",
+        "prerequisites": ["residual_connections"],
+        "key_ideas": [
+          "Normalizes activations across the feature dimension",
+          "Applied after residual addition in each sublayer",
+          "Stabilizes training and enables higher learning rates",
+          "Independent of batch size (unlike batch normalization)"
+        ],
+        "code_ref": "",
+        "paper_ref": "Ba et al., 2016 — Layer Normalization",
+        "exercise": "Layer normalization normalizes across:\n1) The batch dimension\n2) The feature/hidden dimension\n3) The time dimension\n\nType the number.",
+        "explanation": "Ba et al. (2016) introduced layer normalization to stabilize RNN training. Unlike batch normalization (which normalizes across samples), layer norm normalizes across features for each sample independently.\n\nThink of it like adjusting the volume on each speaker in a concert separately, regardless of how loud the other speakers are. Each token's representation gets normalized to have zero mean and unit variance across its 512 dimensions.\n\nIn Transformers, LayerNorm is applied after each residual connection: LayerNorm(x + Sublayer(x)). This keeps activations in a stable range, preventing exploding or vanishing values.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "byte_pair_encoding",
+        "title": "BPE: Subword Tokenization",
+        "prerequisites": [],
+        "key_ideas": [
+          "Iteratively merges frequent character pairs into tokens",
+          "Creates vocabulary between character-level and word-level",
+          "Handles rare/unknown words through subword decomposition",
+          "37K shared vocabulary for source and target languages"
+        ],
+        "code_ref": "",
+        "paper_ref": "Sennrich et al., 2016 — Neural Machine Translation of Rare Words with Subword Units",
+        "exercise": "How would BPE likely tokenize a rare word like 'unparallelizable'?\n1) As a single token\n2) As individual characters\n3) As subword pieces like 'un' + 'parallel' + 'izable'\n\nType the number.",
+        "explanation": "Sennrich et al. (2016) solved the out-of-vocabulary problem with Byte Pair Encoding. The idea comes from data compression: repeatedly merge the most frequent adjacent pair of tokens.\n\nStart with characters. 'th' appears often? Merge to single token. 'the' appears often? Merge again. Eventually you get a vocabulary that represents common words as single tokens but can decompose rare words into pieces.\n\nThe Transformer paper uses BPE with 37,000 tokens shared between English and German. 'unhappiness' might become ['un', 'happiness'], while 'the' stays as one token. This elegantly handles any word the model encounters.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "core_attention",
+    "title": "The Attention Revolution",
+    "description": "How attention works in the Transformer: from scaled dot-product to multi-head",
+    "concepts": ["scaled_dot_product_attention", "multi_head_attention", "self_attention", "encoder_decoder_attention", "positional_encoding"],
+    "lessons": [
+      {
+        "concept_id": "scaled_dot_product_attention",
+        "title": "Scaled Dot-Product Attention",
+        "prerequisites": ["attention_mechanism"],
+        "key_ideas": [
+          "Attention(Q,K,V) = softmax(QK^T / √d_k) × V",
+          "Queries ask 'what am I looking for?'",
+          "Keys answer 'what do I contain?'",
+          "Values are 'what do I actually output?'",
+          "Scaling by √d_k prevents softmax saturation"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why divide by √d_k in the attention formula?\n1) To make computation faster\n2) To prevent dot products from getting too large, which would push softmax into saturation\n3) To normalize the output values\n\nType the number.",
+        "explanation": "Vaswani et al. formalized attention with three components: Queries (Q), Keys (K), and Values (V). Think of a library: queries are your search terms, keys are book titles, and values are the book contents.\n\nThe formula is elegant:\n```\nAttention(Q,K,V) = softmax(QK^T / √d_k) × V\n```\n\n1. Compute similarity: QK^T gives a score for each query-key pair\n2. Scale: divide by √d_k (here, √64 = 8) to keep values manageable\n3. Normalize: softmax turns scores into probabilities\n4. Aggregate: weighted sum of values\n\nWhy scale? If d_k is large, dot products can be huge, pushing softmax into regions where gradients vanish. Scaling keeps things in a happy range.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multi_head_attention",
+        "title": "Multi-Head Attention: Parallel Perspectives",
+        "prerequisites": ["scaled_dot_product_attention"],
+        "key_ideas": [
+          "Run h=8 attention operations in parallel",
+          "Each head uses different learned projections",
+          "Concatenate all head outputs, then project",
+          "Allows attending to different representation subspaces"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The Transformer base model has how many attention heads?\n1) 4\n2) 8\n3) 16\n\nType the number.",
+        "explanation": "One attention head can only focus on one pattern at a time. But language has many simultaneous relationships: syntax, semantics, coreference, etc. Solution: use multiple heads in parallel.\n\nEach head has its own learned projection matrices. With d_model=512 and 8 heads, each head works with d_k=64 dimensions. It's like having 8 different experts, each examining the sequence from their own angle.\n\n```\nMultiHead(Q,K,V) = Concat(head_1,...,head_8) × W^O\n```\n\nThe outputs are concatenated back to 512 dimensions and mixed with a final projection. Different heads learn different things: one might track subject-verb agreement, another might handle coreference.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "self_attention",
+        "title": "Self-Attention: Relating Positions Within a Sequence",
+        "prerequisites": ["multi_head_attention"],
+        "key_ideas": [
+          "Q, K, V all derived from the same sequence",
+          "Every position can attend to every other position",
+          "Captures dependencies regardless of distance",
+          "Path length between any two positions: O(1)"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "In self-attention, the maximum path length between any two positions is:\n1) O(n) where n is sequence length\n2) O(log n)\n3) O(1) - constant\n\nType the number.",
+        "explanation": "Self-attention is where the magic happens. Unlike cross-attention (where one sequence attends to another), self-attention lets a sequence attend to itself.\n\nGiven input X, we compute Q = XW^Q, K = XW^K, V = XW^V. Each position asks: 'What other positions in my own sequence should I pay attention to?'\n\nThis is revolutionary because any position can directly attend to any other—no passing through intermediate steps. In 'The cat sat on the mat because it was tired', 'it' can directly attend to 'cat' in one step, not through a chain of hidden states.\n\nThis O(1) path length is why Transformers capture long-range dependencies so well.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "encoder_decoder_attention",
+        "title": "Encoder-Decoder Attention: Bridging the Gap",
+        "prerequisites": ["multi_head_attention", "self_attention"],
+        "key_ideas": [
+          "Queries come from decoder, keys/values from encoder",
+          "Every decoder position attends to all encoder positions",
+          "This is where translation alignment happens",
+          "Mimics the attention mechanism in seq2seq"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "In encoder-decoder attention, where do the keys and values come from?\n1) The decoder\n2) The encoder output\n3) A separate memory bank\n\nType the number.",
+        "explanation": "Self-attention lets each side understand itself, but translation requires the decoder to 'see' the encoder. That's encoder-decoder attention.\n\nIn each decoder layer, after masked self-attention, there's a cross-attention sublayer:\n- Queries: from decoder's current state\n- Keys & Values: from encoder's final output\n\nThis is where 'le chat' learns to look at 'the cat'. The decoder asks: 'Given what I've generated so far, which parts of the input should I focus on now?'\n\nIt's the same multi-head attention mechanism, just with Q from one side and K,V from the other.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "positional_encoding",
+        "title": "Positional Encoding: Teaching Order",
+        "prerequisites": ["self_attention"],
+        "key_ideas": [
+          "Attention is permutation-invariant: needs position info",
+          "Add sinusoidal signals to embeddings",
+          "PE(pos,2i) = sin(pos / 10000^(2i/d))",
+          "PE(pos,2i+1) = cos(pos / 10000^(2i/d))",
+          "Relative positions encoded as linear functions"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why do Transformers need positional encoding?\n1) To make the model bigger\n2) Because attention treats sequences as unordered sets\n3) To improve memory efficiency\n\nType the number.",
+        "explanation": "Here's a problem: attention doesn't know about order. 'Dog bites man' and 'Man bites dog' would produce identical attention patterns! We need to inject position information.\n\nVaswani et al. chose sinusoidal functions at different frequencies:\n```\nPE(pos, 2i)   = sin(pos / 10000^(2i/512))\nPE(pos, 2i+1) = cos(pos / 10000^(2i/512))\n```\n\nThink of it like a clock with many hands rotating at different speeds. Position 0 has a unique pattern of sine/cosine values; position 1 has a slightly different pattern. The beauty: PE(pos+k) can be expressed as a linear function of PE(pos), so the model can learn relative positions.\n\nThese encodings are added (not concatenated) to the input embeddings.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "architecture",
+    "title": "Building the Transformer",
+    "description": "How encoder and decoder stacks are constructed from attention and feed-forward layers",
+    "concepts": ["encoder_stack", "decoder_stack", "position_wise_ffn", "masked_attention", "transformer_architecture"],
+    "lessons": [
+      {
+        "concept_id": "encoder_stack",
+        "title": "The Encoder: Understanding the Input",
+        "prerequisites": ["self_attention", "position_wise_ffn", "residual_connections", "layer_normalization"],
+        "key_ideas": [
+          "6 identical layers stacked",
+          "Each layer: self-attention → FFN",
+          "Both sublayers wrapped with residual + LayerNorm",
+          "Output: contextualized representations for all positions"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "How many layers are in the Transformer encoder?\n1) 4\n2) 6\n3) 12\n\nType the number.",
+        "explanation": "The encoder's job: transform input tokens into rich, contextualized representations. It stacks 6 identical layers, each with two sublayers:\n\n1. **Multi-head self-attention**: Each position looks at all positions\n2. **Feed-forward network**: Process each position independently\n\nBoth sublayers are wrapped: output = LayerNorm(x + Sublayer(x))\n\nThink of the encoder as a series of increasingly sophisticated filters. Layer 1 captures local patterns. Layer 6 captures abstract, global relationships. The final encoder output goes to every decoder layer.\n\nWith d_model=512 maintained throughout, the encoder produces 512-dimensional vectors for each input position.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "position_wise_ffn",
+        "title": "Position-wise Feed-Forward Networks",
+        "prerequisites": ["encoder_stack"],
+        "key_ideas": [
+          "Applied to each position independently",
+          "Two linear transforms with ReLU: FFN(x) = max(0, xW₁+b₁)W₂+b₂",
+          "Inner dimension d_ff = 2048 (4× d_model)",
+          "Same across positions, different across layers"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The feed-forward network inner dimension d_ff is:\n1) 512\n2) 1024\n3) 2048\n\nType the number.",
+        "explanation": "After attention mixes information across positions, the FFN processes each position independently. It's deceptively simple:\n\n```\nFFN(x) = max(0, x·W₁ + b₁)·W₂ + b₂\n```\n\nThis is just two linear layers with a ReLU in between. The middle expands from 512 to 2048 dimensions, then projects back to 512. Think of it as each position getting to 'think' in a higher-dimensional space.\n\nWhy position-wise? The attention already mixed information. Now each position needs to process what it learned. The weights are shared across positions (like a 1×1 convolution) but different for each of the 6 layers.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "masked_attention",
+        "title": "Masked Self-Attention: No Peeking Ahead",
+        "prerequisites": ["self_attention"],
+        "key_ideas": [
+          "In decoder, prevent attending to future positions",
+          "Set future positions to -∞ before softmax",
+          "Preserves auto-regressive property",
+          "Position i can only attend to positions ≤ i"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "True or False: In masked self-attention, position 3 can attend to position 5.\n\nType 'True' or 'False'.",
+        "explanation": "During generation, the decoder produces tokens one at a time. It can't see the future—that would be cheating! Masked self-attention enforces this.\n\nBefore softmax, we add a mask that sets all 'illegal' attention scores to -∞:\n```\nattention_scores[i, j] = -∞  if j > i\n```\n\nAfter softmax, these become 0. Position 3 can only attend to positions 0, 1, 2, 3—never 4, 5, or beyond.\n\nThis triangular mask ensures the model learns to predict autoregressively: each position only depends on its left context. During training, we can still process all positions in parallel—we just mask the future.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "decoder_stack",
+        "title": "The Decoder: Generating the Output",
+        "prerequisites": ["encoder_stack", "masked_attention", "encoder_decoder_attention"],
+        "key_ideas": [
+          "6 identical layers stacked",
+          "Three sublayers per layer: masked self-attn → encoder-decoder attn → FFN",
+          "Masked attention preserves autoregressive property",
+          "Encoder-decoder attention reads from encoder output"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "How many sublayers does each decoder layer have?\n1) 2\n2) 3\n3) 4\n\nType the number.",
+        "explanation": "The decoder generates output one token at a time, with three sublayers per layer:\n\n1. **Masked self-attention**: Attend to previous outputs only\n2. **Encoder-decoder attention**: Look at the input sequence\n3. **Feed-forward network**: Process independently\n\nEach sublayer has residual connections and layer norm. The decoder is more complex because it needs to:\n- Remember what it has generated (masked self-attention)\n- Know what the input said (encoder-decoder attention)\n- Process that combined information (FFN)\n\nThe encoder output is shared across all 6 decoder layers—computed once, used 6 times.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "transformer_architecture",
+        "title": "The Complete Transformer",
+        "prerequisites": ["encoder_stack", "decoder_stack", "positional_encoding"],
+        "key_ideas": [
+          "Encoder-decoder structure without recurrence",
+          "All attention-based: self-attention + cross-attention",
+          "Fully parallelizable during training",
+          "d_model=512, 6 layers, 8 heads in base model"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What did the Transformer eliminate compared to previous seq2seq models?\n1) Attention\n2) Embeddings\n3) Recurrence\n\nType the number.",
+        "explanation": "Putting it all together, the Transformer is:\n\n**Input side:**\n- Embed input tokens + add positional encoding\n- Pass through 6 encoder layers\n- Output: contextualized representations for all positions\n\n**Output side:**\n- Embed output tokens + add positional encoding\n- Pass through 6 decoder layers (with encoder-decoder attention)\n- Linear projection + softmax to get next token probabilities\n\nThe key insight: attention is all you need. No RNNs, no convolutions. Just attention layers stacked up. This enables full parallelization during training—all positions computed simultaneously.\n\nThe base model has 65M parameters. Training time on 8 GPUs: 12 hours. Result: new state-of-the-art on translation.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "training_optimization",
+    "title": "Training the Transformer",
+    "description": "Optimization techniques, regularization, and training strategies",
+    "concepts": ["embedding_scaling", "weight_tying", "dropout_regularization", "label_smoothing", "adam_optimizer", "beam_search", "model_parallelism"],
+    "lessons": [
+      {
+        "concept_id": "embedding_scaling",
+        "title": "Embedding Scaling",
+        "prerequisites": ["positional_encoding"],
+        "key_ideas": [
+          "Multiply embeddings by √d_model (√512 ≈ 22.6)",
+          "Balances embedding magnitude with positional encoding",
+          "Positional encodings have magnitude ~1",
+          "Scaled embeddings have similar magnitude"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Embeddings are scaled by:\n1) √d_model\n2) d_model\n3) 1/d_model\n\nType the number.",
+        "explanation": "A subtle but important detail: the paper multiplies token embeddings by √512 ≈ 22.6. Why?\n\nEmbeddings are typically initialized with small values (std ≈ 0.02). After scaling, they have magnitude ≈ 0.02 × 22.6 ≈ 0.45. Positional encodings are sines/cosines with magnitude ≈ 1.\n\nWithout scaling, positional information would dominate the token information. With scaling, they're roughly balanced, allowing both to contribute meaningfully.\n\nThink of it like mixing audio tracks: you want both the vocals (embeddings) and the beat (positions) to be audible, not one drowning out the other.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "weight_tying",
+        "title": "Weight Tying: Sharing Embeddings",
+        "prerequisites": ["embedding_scaling"],
+        "key_ideas": [
+          "Same weights for input embeddings, output embeddings, and pre-softmax linear",
+          "Three-way weight sharing",
+          "Reduces parameters significantly",
+          "Embeddings learn to both encode and decode"
+        ],
+        "code_ref": "",
+        "paper_ref": "Press & Wolf, 2017 — Using the Output Embedding to Improve Language Models",
+        "exercise": "True or False: The Transformer uses different weight matrices for input embeddings and the pre-softmax linear layer.\n\nType 'True' or 'False'.",
+        "explanation": "Press & Wolf (2017) showed that sharing the embedding weights improves language models. The Transformer takes this further with three-way sharing:\n\n1. **Input embedding**: token → 512-dim vector\n2. **Output embedding**: (same matrix)\n3. **Pre-softmax linear**: 512-dim → vocabulary logits (transpose of same matrix)\n\nThis makes intuitive sense: if 'cat' maps to vector v as input, then when the model wants to output 'cat', it should produce something similar to v.\n\nWith a 37K vocabulary and d=512, this saves ~38M parameters (37K × 512 × 2). The single embedding matrix learns a space where similar words are nearby—useful for both input and output.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "dropout_regularization",
+        "title": "Dropout: Preventing Overfitting",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "P_drop = 0.1 in base model",
+          "Applied to: sublayer outputs, attention weights, embedding sums",
+          "Forces redundancy in learned representations",
+          "Essential for generalization"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Dropout is applied at which location?\n1) Only at the final output layer\n2) At multiple points including sublayer outputs and attention weights\n3) Only to the embeddings\n\nType the number.",
+        "explanation": "Dropout randomly zeros out neurons during training, preventing co-adaptation. The Transformer applies it liberally:\n\n- After each sublayer (before residual addition)\n- To attention weights (after softmax)\n- To the sum of embeddings + positional encoding\n\nWith P=0.1, 10% of values become zero on each forward pass. This forces the model to learn redundant representations—no single neuron can be critical.\n\nThink of it like training with random team members absent. The team learns to function without relying on any one person. During inference, no dropout—the full team works together.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "label_smoothing",
+        "title": "Label Smoothing: Embracing Uncertainty",
+        "prerequisites": ["dropout_regularization"],
+        "key_ideas": [
+          "ε = 0.1 smoothing",
+          "Target: (1-ε) on correct class, ε/(V-1) on others",
+          "Hurts perplexity, improves BLEU",
+          "Prevents overconfident predictions"
+        ],
+        "code_ref": "",
+        "paper_ref": "Szegedy et al., 2016 — Rethinking the Inception Architecture",
+        "exercise": "Label smoothing:\n1) Improves both perplexity and BLEU\n2) Hurts perplexity but improves BLEU\n3) Hurts both metrics\n\nType the number.",
+        "explanation": "Standard training pushes the model to output 1.0 probability for the correct answer and 0.0 for everything else. But this can make the model overconfident.\n\nLabel smoothing softens targets. Instead of [0, 0, 1, 0], use [0.033, 0.033, 0.9, 0.033] (with ε=0.1). The model learns 'pretty confident, but not absolutely certain.'\n\nInterestingly, this hurts perplexity (the model never predicts with 100% confidence) but improves BLEU score (translations are actually better). The lesson: maximizing the training metric isn't always the goal.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "adam_optimizer",
+        "title": "Adam with Warmup: A Custom Learning Rate",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Adam optimizer with β₁=0.9, β₂=0.98, ε=10⁻⁹",
+          "Linear warmup for first 4000 steps",
+          "Then decay proportional to step^(-0.5)",
+          "lr = d_model^(-0.5) × min(step^(-0.5), step × warmup_steps^(-1.5))"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The Transformer uses ___ warmup steps:\n1) 1000\n2) 4000\n3) 10000\n\nType the number.",
+        "explanation": "The Transformer's learning rate schedule is carefully designed:\n\n```\nlr = d_model^(-0.5) × min(step^(-0.5), step × warmup^(-1.5))\n```\n\n**Phase 1 (warmup)**: Learning rate increases linearly for 4000 steps. This prevents early instability—gradients are noisy initially, so take small steps.\n\n**Phase 2 (decay)**: Learning rate decreases with inverse square root of step number. As training progresses, make increasingly fine adjustments.\n\nWith d_model=512, the peak learning rate is about 0.0014 at step 4000. Think of it like heating metal: warm up slowly, then gradually cool for refined shaping.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "beam_search",
+        "title": "Beam Search: Finding Good Translations",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Keep k=4 best partial translations at each step",
+          "Length penalty α=0.6 to avoid short translations",
+          "Maximum length: input length + 50",
+          "Balance between exploration and efficiency"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Beam search with beam size k=4 keeps:\n1) The single best hypothesis\n2) The 4 best hypotheses at each step\n3) All possible hypotheses\n\nType the number.",
+        "explanation": "During generation, greedy decoding picks the highest-probability token at each step. But this can lead to locally-optimal, globally-poor translations.\n\nBeam search maintains k=4 candidates. At each step, expand all candidates with all vocabulary tokens, score them, keep the top 4. It's like exploring 4 paths through a maze simultaneously.\n\nLength penalty prevents short translations (which have fewer opportunities to make mistakes, thus higher probability):\n```\nscore = log_prob / length^α\n```\n\nWith α=0.6, longer translations aren't unfairly penalized. The result: better translations than greedy, without exponential search cost.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "model_parallelism",
+        "title": "Multi-GPU Training",
+        "prerequisites": ["transformer_architecture", "adam_optimizer"],
+        "key_ideas": [
+          "Trained on 8 NVIDIA P100 GPUs",
+          "Base model: 100K steps in 12 hours",
+          "Big model: 300K steps in 3.5 days",
+          "Massive speedup vs recurrent models"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "How long did it take to train the big Transformer model?\n1) 12 hours\n2) 3.5 days\n3) 2 weeks\n\nType the number.",
+        "explanation": "The Transformer's parallelizability translates to dramatically faster training:\n\n**Base model (65M params):** 100K steps × ~0.4s/step = 12 hours on 8 P100 GPUs\n\n**Big model (213M params):** 300K steps = 3.5 days\n\nFor comparison, recurrent models trained for weeks or months. The secret: with no sequential dependencies, all positions compute simultaneously. 8 GPUs process 8 different batches, gradients are synchronized.\n\nThis speed advantage extends to inference too—though autoregressive generation is still sequential, each step is faster without recurrence overhead.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "beyond_translation",
+    "title": "Beyond Translation: Impact and Future",
+    "description": "Understanding Transformer complexity, interpretability, and future directions",
+    "concepts": ["computational_complexity", "attention_visualization", "constituency_parsing", "future_directions"],
+    "lessons": [
+      {
+        "concept_id": "computational_complexity",
+        "title": "Complexity Analysis: Why Self-Attention Wins",
+        "prerequisites": ["self_attention", "recurrent_limitations"],
+        "key_ideas": [
+          "Self-attention: O(n² · d) per layer",
+          "Recurrent: O(n · d²) per layer",
+          "Self-attention faster when n < d (typical for NLP)",
+          "Constant O(1) path length vs O(n) for RNNs"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Self-attention is faster than recurrence when:\n1) Sequence length n > model dimension d\n2) Sequence length n < model dimension d\n3) Always faster regardless of n and d\n\nType the number.",
+        "explanation": "Let's break down the complexity:\n\n**Self-attention per layer:** O(n² · d)\n- Each position attends to all n positions: n² comparisons\n- Each comparison involves d-dimensional vectors\n\n**Recurrent per layer:** O(n · d²)\n- n sequential steps (can't parallelize!)\n- Each step: matrix multiply with d² operations\n\nWith d=512 and typical sentence n≈30, self-attention wins: 30² × 512 < 30 × 512².\n\nBut the real win is parallelization. Self-attention: all positions computed at once. RNN: strictly sequential. And path length between any positions: O(1) for attention vs O(n) for RNN—crucial for learning long-range dependencies.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "attention_visualization",
+        "title": "What Do Attention Heads Learn?",
+        "prerequisites": ["multi_head_attention"],
+        "key_ideas": [
+          "Different heads learn different linguistic patterns",
+          "Some heads track syntactic structure",
+          "Others handle coreference and long-range dependencies",
+          "Attention maps provide interpretability"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "True or False: All attention heads in a Transformer learn the same patterns.\n\nType 'True' or 'False'.",
+        "explanation": "The paper includes fascinating attention visualizations. Different heads specialize:\n\n- **Syntactic heads**: Track subject-verb relationships across clauses\n- **Positional heads**: Attend to adjacent positions (like n-gram features)\n- **Coreference heads**: Link pronouns to their referents\n\nOne example: given 'The animal didn't cross the street because it was too tired', a head correctly links 'it' to 'animal' (not 'street').\n\nThis specialization emerges automatically from training. No one designed heads for specific purposes—they discovered useful patterns. This provides interpretability: we can visualize what the model 'pays attention to' at each layer.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "constituency_parsing",
+        "title": "Transformers for Parsing",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": [
+          "Applied Transformer to English constituency parsing",
+          "91.3 F1 on WSJ benchmark",
+          "Outperformed all prior single models",
+          "Demonstrates architecture generalizability"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The Transformer achieved what F1 score on parsing?\n1) 85.2\n2) 91.3\n3) 95.0\n\nType the number.",
+        "explanation": "Translation wasn't enough—could Transformers generalize? The authors tested on English constituency parsing (breaking sentences into grammatical phrases).\n\nTreating parsing as sequence-to-sequence (sentence → linearized tree), the Transformer achieved 91.3 F1 on the Wall Street Journal benchmark. This beat all prior single models, including task-specific architectures designed specifically for parsing.\n\nThe kicker: they used minimal task-specific modifications. The same architecture that translates languages can parse sentences. This generalizability hinted at the future: GPT, BERT, and the entire modern NLP landscape.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "future_directions",
+        "title": "The Future the Paper Predicted",
+        "prerequisites": ["transformer_architecture", "computational_complexity"],
+        "key_ideas": [
+          "Apply to images, audio, video (now Vision Transformers)",
+          "Restricted attention for very long sequences (now sparse attention)",
+          "Less sequential generation (now parallel decoding research)",
+          "The foundation for modern AI"
+        ],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Which direction did the paper NOT explicitly mention?\n1) Applying Transformers to images\n2) Restricted attention for long sequences\n3) Using Transformers for code generation\n\nType the number.",
+        "explanation": "The paper's future work section was remarkably prescient:\n\n**'Apply to images, audio, video'** → Vision Transformer (ViT), Whisper, DALL-E. Images are patches, audio is frames—all become sequences for Transformers.\n\n**'Restricted attention for long sequences'** → Sparse attention (Longformer), linear attention (Performer), sliding window (Mistral). The n² cost motivated years of research.\n\n**'Less sequential generation'** → Non-autoregressive translation, diffusion models for text. Still active research.\n\nIn 2017, this was one paper about translation. By 2024, Transformers power GPT-4, Claude, Gemini, Stable Diffusion, and essentially all frontier AI. The title was prophetic: attention really was all you need.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]
