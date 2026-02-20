@@ -1,0 +1,184 @@
+{
+  "provider_url": "https://mainnet-api.ainetwork.ai",
+  "topic_prefix": "the-llama-3-herd-of-models",
+  "topic_map": {
+    "dense_transformer_architecture": "the-llama-3-herd-of-models/dense_transformer_architecture",
+    "grouped_query_attention": "the-llama-3-herd-of-models/grouped_query_attention",
+    "rotary_position_embeddings": "the-llama-3-herd-of-models/rotary_position_embeddings",
+    "swiglu_activation": "the-llama-3-herd-of-models/swiglu_activation",
+    "tokenizer_vocabulary": "the-llama-3-herd-of-models/tokenizer_vocabulary",
+    "model_scaling": "the-llama-3-herd-of-models/model_scaling",
+    "pretraining_data_curation": "the-llama-3-herd-of-models/pretraining_data_curation",
+    "context_length_extension": "the-llama-3-herd-of-models/context_length_extension",
+    "four_d_parallelism": "the-llama-3-herd-of-models/four_d_parallelism",
+    "training_infrastructure": "the-llama-3-herd-of-models/training_infrastructure",
+    "supervised_finetuning": "the-llama-3-herd-of-models/supervised_finetuning",
+    "reward_modeling": "the-llama-3-herd-of-models/reward_modeling",
+    "direct_preference_optimization": "the-llama-3-herd-of-models/direct_preference_optimization",
+    "synthetic_data_generation": "the-llama-3-herd-of-models/synthetic_data_generation",
+    "tool_use_capabilities": "the-llama-3-herd-of-models/tool_use_capabilities",
+    "code_generation": "the-llama-3-herd-of-models/code_generation",
+    "factuality_and_knowledge": "the-llama-3-herd-of-models/factuality_and_knowledge",
+    "multimodal_vision_integration": "the-llama-3-herd-of-models/multimodal_vision_integration",
+    "speech_integration": "the-llama-3-herd-of-models/speech_integration",
+    "safety_alignment": "the-llama-3-herd-of-models/safety_alignment",
+    "llama_guard": "the-llama-3-herd-of-models/llama_guard",
+    "scaling_laws": "the-llama-3-herd-of-models/scaling_laws",
+    "benchmark_performance": "the-llama-3-herd-of-models/benchmark_performance",
+    "open_release_philosophy": "the-llama-3-herd-of-models/open_release_philosophy"
+  },
+  "depth_map": {
+    "dense_transformer_architecture": 1,
+    "grouped_query_attention": 1,
+    "rotary_position_embeddings": 1,
+    "swiglu_activation": 1,
+    "tokenizer_vocabulary": 1,
+    "model_scaling": 2,
+    "pretraining_data_curation": 2,
+    "context_length_extension": 2,
+    "four_d_parallelism": 2,
+    "training_infrastructure": 2,
+    "supervised_finetuning": 2,
+    "reward_modeling": 3,
+    "direct_preference_optimization": 3,
+    "synthetic_data_generation": 3,
+    "tool_use_capabilities": 3,
+    "code_generation": 3,
+    "factuality_and_knowledge": 3,
+    "multimodal_vision_integration": 3,
+    "speech_integration": 3,
+    "safety_alignment": 3,
+    "llama_guard": 3,
+    "scaling_laws": 2,
+    "benchmark_performance": 4,
+    "open_release_philosophy": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "the-llama-3-herd-of-models",
+      "title": "The Llama 3 Herd of Models",
+      "description": "Learning path for the Llama 3 paper by Meta AI, 2024"
+    },
+    {
+      "path": "the-llama-3-herd-of-models/dense_transformer_architecture",
+      "title": "Dense Transformer Architecture",
+      "description": "Llama 3 uses a standard dense Transformer architecture rather than mixture-of-experts. This design prioritizes training stability and simplicity, with all parameters active during inference."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/grouped_query_attention",
+      "title": "Grouped Query Attention (GQA)",
+      "description": "GQA uses 8 key-value heads shared across 128 attention heads, reducing memory bandwidth during inference while maintaining model quality."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/rotary_position_embeddings",
+      "title": "Rotary Position Embeddings (RoPE)",
+      "description": "RoPE encodes position information by rotating query and key vectors. Llama 3 uses a base frequency of 500,000 to support 128K context length."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/swiglu_activation",
+      "title": "SwiGLU Activation",
+      "description": "SwiGLU combines Swish activation with Gated Linear Units. It provides better gradient flow and expressiveness in feed-forward layers."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/tokenizer_vocabulary",
+      "title": "128K Vocabulary Tokenizer",
+      "description": "Llama 3 uses tiktoken-based tokenizer with 128K vocabulary including 28K non-English tokens, improving compression ratio to 3.94 characters per token."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/model_scaling",
+      "title": "Model Scaling (8B, 70B, 405B)",
+      "description": "Llama 3 is released in three sizes: 8B, 70B, and 405B parameters. The 405B model has 126 layers, 16,384 model dimension, and 128 attention heads."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/pretraining_data_curation",
+      "title": "Pre-training Data Curation",
+      "description": "15.6 trillion tokens curated through HTML extraction, de-duplication, heuristic filtering, and model-based quality classification."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/context_length_extension",
+      "title": "Context Length Extension to 128K",
+      "description": "Six-stage continued pre-training gradually extends context from 8K to 128K tokens with RoPE frequency scaling."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/four_d_parallelism",
+      "title": "4D Parallelism Training",
+      "description": "Combines tensor, pipeline, context, and data parallelism to train on 16K H100 GPUs with 38-43% model FLOPs utilization."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/training_infrastructure",
+      "title": "Training Infrastructure at Scale",
+      "description": "16K H100 GPUs connected via NVLink and 400Gbps interconnects, achieving 90%+ effective training time."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/supervised_finetuning",
+      "title": "Supervised Fine-Tuning (SFT)",
+      "description": "Post-training begins with SFT on high-quality instruction-response pairs with rejection sampling for best response selection."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/reward_modeling",
+      "title": "Reward Modeling",
+      "description": "Reward model trained on human preference pairs with three-tier comparisons: chosen, rejected, and edited responses."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/direct_preference_optimization",
+      "title": "Direct Preference Optimization (DPO)",
+      "description": "DPO aligns model outputs with human preferences without explicit reward modeling during training, using formatting token masking for stability."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/synthetic_data_generation",
+      "title": "Synthetic Data Generation",
+      "description": "405B model generates training data for smaller models. Code data uses execution feedback and backtranslation."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/tool_use_capabilities",
+      "title": "Tool Use Capabilities",
+      "description": "Models trained on synthetic multi-step tool use scenarios including search engines, Python interpreters, and Wolfram Alpha."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/code_generation",
+      "title": "Code Generation Capabilities",
+      "description": "Strong code generation across Python, Java, JavaScript, C/C++, Rust with execution feedback and backtranslation."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/factuality_and_knowledge",
+      "title": "Factuality and Knowledge Probing",
+      "description": "Knowledge probes identify model knowledge gaps, training appropriate refusals for unsupported claims."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/multimodal_vision_integration",
+      "title": "Multimodal Vision Integration",
+      "description": "Vision capabilities added via ViT-derived encoder with cross-attention injection, preserving text-only performance."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/speech_integration",
+      "title": "Speech Integration",
+      "description": "Speech capabilities via Conformer encoder with lightweight adapter, supporting streaming with 226ms latency."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/safety_alignment",
+      "title": "Safety Alignment",
+      "description": "Multi-stage safety training including instruction-tuning and RLHF to balance helpfulness with safety."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/llama_guard",
+      "title": "Llama Guard Safety Filter",
+      "description": "Llama Guard 3 is a safety classifier for filtering harmful inputs/outputs, with vision variant and quantized edge version."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/scaling_laws",
+      "title": "Scaling Laws and Compute Optimization",
+      "description": "405B model is compute-optimal for 3.8×10²⁵ FLOPs budget. Data quality matters more than architecture novelty at scale."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/benchmark_performance",
+      "title": "Benchmark Performance vs GPT-4",
+      "description": "Llama 3 405B achieves competitive performance with GPT-4 across MMLU, HumanEval, GSM8K, and other benchmarks."
+    },
+    {
+      "path": "the-llama-3-herd-of-models/open_release_philosophy",
+      "title": "Open Release Philosophy",
+      "description": "Meta releases weights for pre-trained and instruction-tuned models, democratizing access to frontier-class AI."
+    }
+  ],
+  "x402_lessons": {}
+}

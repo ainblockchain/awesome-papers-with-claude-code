@@ -1,0 +1,455 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations: Transformer Architecture",
+    "description": "Core building blocks of the Llama 3 architecture",
+    "concepts": [
+      "dense_transformer_architecture",
+      "grouped_query_attention",
+      "rotary_position_embeddings",
+      "swiglu_activation",
+      "tokenizer_vocabulary"
+    ],
+    "lessons": [
+      {
+        "concept_id": "dense_transformer_architecture",
+        "title": "Dense Transformer Architecture",
+        "prerequisites": [],
+        "key_ideas": [
+          "Dense vs. mixture-of-experts tradeoff",
+          "All parameters active during forward pass",
+          "Training stability prioritized over efficiency"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "Why did Meta choose a dense Transformer over mixture-of-experts for Llama 3?\n1) Dense models are always faster\n2) Prioritizing training stability over inference efficiency\n3) MoE wasn't invented yet\n4) Dense models use less memory\nAnswer with a number.",
+        "explanation": "In their 2024 paper, the Llama team at Meta made a deliberate architectural choice: stick with a standard dense Transformer rather than adopting mixture-of-experts (MoE). While MoE can be more efficient at inference by only activating a subset of parameters, it introduces training instability and complexity.\n\nThink of it like choosing between a Swiss Army knife and a dedicated chef's knife. The Swiss knife has many specialized tools (like MoE's expert networks), but the chef's knife—simple and solid—might be more reliable for the main job.\n\nIn a dense Transformer, every parameter participates in every forward pass. This means the 405B model truly uses all 405 billion parameters when processing your prompt. The architecture includes 126 layers for the largest model, with the same fundamental attention and feed-forward structure that has proven reliable since the original Transformer paper.\n\nThe key insight from Meta's work: at scale, data quality and training stability matter more than architectural novelty. The dense design allows them to focus on what really moves the needle—curating 15.6 trillion tokens of high-quality training data.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "grouped_query_attention",
+        "title": "Grouped Query Attention (GQA)",
+        "prerequisites": ["dense_transformer_architecture"],
+        "key_ideas": [
+          "8 KV heads shared across 128 attention heads",
+          "Reduces KV cache memory by 16x vs MHA",
+          "Accelerates inference without quality loss"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "In Llama 3 405B, how many key-value heads are shared across 128 attention heads?\n1) 128 (one per head)\n2) 64 (half)\n3) 8\n4) 1 (all shared)\nAnswer with a number.",
+        "explanation": "The Llama team at Meta introduced Grouped Query Attention (GQA) as a practical optimization for large-scale inference. The core insight: during autoregressive generation, the bottleneck is often memory bandwidth for loading the key-value cache, not compute.\n\nImagine a library where 128 researchers (attention heads) need to look up information. In standard multi-head attention (MHA), each researcher maintains their own copy of the reference books (KV pairs). With GQA, groups of 16 researchers share the same reference set—only 8 copies needed instead of 128.\n\n```python\n# Standard MHA: 128 Q heads, 128 K heads, 128 V heads\n# GQA in Llama 3: 128 Q heads, 8 K heads, 8 V heads\n# Each K/V head is shared by 16 Q heads\n\nnum_attention_heads = 128\nnum_kv_heads = 8  # 16x reduction in KV cache\n```\n\nThis 16x reduction in KV cache size directly translates to faster inference. The 405B model would be painfully slow without this optimization. Remarkably, GQA achieves this efficiency with minimal quality degradation—the shared KV heads capture sufficient information for the grouped queries to attend effectively.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "rotary_position_embeddings",
+        "title": "Rotary Position Embeddings (RoPE)",
+        "prerequisites": ["dense_transformer_architecture"],
+        "key_ideas": [
+          "Position encoded via rotation in complex space",
+          "Base frequency 500,000 for long context",
+          "Relative position naturally captured"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What base frequency does Llama 3 use for RoPE to support 128K context length?\n1) 10,000 (original RoPE)\n2) 100,000\n3) 500,000\n4) 1,000,000\nAnswer with a number.",
+        "explanation": "The Llama team uses Rotary Position Embeddings (RoPE) to help the model understand where tokens are in a sequence. The key innovation for Llama 3: increasing the base frequency from 10,000 to 500,000 to support 128K token context windows.\n\nThink of RoPE like hands on a clock. Each position in the sequence corresponds to a rotation angle. Token 1 might be at 12 o'clock, token 2 at 12:01, and so on. When two tokens compute attention, their relative position is captured by the angle between them—this happens automatically through the rotation operation.\n\n```python\n# RoPE rotation for position pos at dimension d\n# theta = pos / (base_freq ^ (2d/dim))\n# x_rotated = x * cos(theta) + rotate(x) * sin(theta)\n\nbase_freq = 500_000  # Llama 3 (vs 10,000 original)\n# Higher base = slower rotation = handles longer sequences\n```\n\nThe base frequency controls how quickly the rotation cycles. A higher base means slower rotation, allowing the model to distinguish positions even at 128K tokens apart. Without this adjustment, the positional encodings would 'wrap around' and confuse distant positions with nearby ones.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "swiglu_activation",
+        "title": "SwiGLU Activation",
+        "prerequisites": ["dense_transformer_architecture"],
+        "key_ideas": [
+          "Swish(x·W1) * (x·W2) gating mechanism",
+          "Better gradient flow than ReLU/GELU",
+          "Standard in modern LLM architectures"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "True or False: SwiGLU uses a gating mechanism that multiplies two projections together.\n1) True\n2) False\nAnswer with a number.",
+        "explanation": "The Llama team uses SwiGLU activation in the feed-forward layers, which has become standard in modern LLMs. SwiGLU combines the smooth Swish activation with a Gated Linear Unit (GLU) mechanism.\n\nThink of it like a smart traffic light. One signal (the gate) decides how much of another signal (the value) should pass through. Instead of a simple on/off like ReLU, SwiGLU creates a nuanced flow control.\n\n```python\n# SwiGLU formula\ndef swiglu(x, W1, W2, W3):\n    # Swish gate: smooth, learnable gating\n    gate = swish(x @ W1)  # swish(x) = x * sigmoid(x)\n    # Value projection\n    value = x @ W2\n    # Gated output\n    hidden = gate * value\n    return hidden @ W3\n```\n\nWhy does this matter? The gating mechanism lets the network learn which features to amplify or suppress. The Swish function provides smooth gradients everywhere (unlike ReLU's hard zero), which helps training stability at scale. This small architectural choice contributes to the overall reliability that Meta prioritized in Llama 3.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "tokenizer_vocabulary",
+        "title": "128K Vocabulary Tokenizer",
+        "prerequisites": [],
+        "key_ideas": [
+          "128K vocabulary size with multilingual support",
+          "Based on tiktoken (BPE algorithm)",
+          "Better compression ratio than Llama 2"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What compression ratio (characters per token) does Llama 3's tokenizer achieve compared to Llama 2?\n1) Worse: 2.5 vs 3.17\n2) Same: 3.17 vs 3.17\n3) Better: 3.94 vs 3.17\n4) Much better: 5.0 vs 3.17\nAnswer with a number.",
+        "explanation": "The Llama team significantly upgraded the tokenizer for Llama 3, expanding vocabulary from 32K to 128K tokens. This includes 28K additional non-English tokens for better multilingual support. The result: improved compression from 3.17 to 3.94 characters per token.\n\nImagine packing a suitcase. A small vocabulary is like having only t-shirts—you need many to cover all occasions. A large vocabulary is like having complete outfits—fewer items represent more. Better compression means the same text needs fewer tokens, making the model faster and cheaper to run.\n\n```python\n# Compression comparison\ntext = \"The quick brown fox jumps over the lazy dog.\"\n\n# Llama 2 (32K vocab): ~14 tokens, 3.17 chars/token\n# Llama 3 (128K vocab): ~11 tokens, 3.94 chars/token\n# 20% fewer tokens for same text!\n```\n\nThe tokenizer is based on tiktoken, using the Byte Pair Encoding (BPE) algorithm. BPE iteratively merges the most frequent character pairs into tokens. With 128K vocabulary slots, Llama 3 can learn more efficient mergings, especially for common multilingual phrases and code patterns that Llama 2 would split into multiple pieces.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "pretraining",
+    "title": "Pre-training at Scale",
+    "description": "Data curation, scaling laws, and infrastructure for training",
+    "concepts": [
+      "pretraining_data_curation",
+      "scaling_laws",
+      "model_scaling",
+      "context_length_extension",
+      "four_d_parallelism",
+      "training_infrastructure"
+    ],
+    "lessons": [
+      {
+        "concept_id": "pretraining_data_curation",
+        "title": "Pre-training Data Curation",
+        "prerequisites": ["tokenizer_vocabulary"],
+        "key_ideas": [
+          "15.6T tokens from diverse web sources",
+          "Multi-stage filtering pipeline",
+          "Quality classifiers trained on human labels"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What is the approximate distribution of Llama 3's training data?\n1) 90% code, 10% text\n2) 50% general, 25% math/reasoning, 17% code, 8% multilingual\n3) Equal parts across all categories\n4) 80% English text, 20% other\nAnswer with a number.",
+        "explanation": "The Llama team curated 15.6 trillion tokens through one of the most sophisticated data pipelines ever built. Their key insight: data quality matters more than architecture innovation at scale. The paper's authors note that Llama 3 is '99% about data.'\n\nThink of data curation like preparing ingredients for a master chef. Even the best cook can't make a great dish from poor ingredients. The pipeline includes HTML extraction, aggressive de-duplication, heuristic filtering, and model-based quality classification.\n\n```\nData Distribution:\n├── 50% General knowledge (web text)\n├── 25% Math and reasoning\n├── 17% Code (multiple languages)\n└── 8% Multilingual content\n```\n\nThe quality classifiers are particularly clever: they train small models on human-labeled examples of 'good' vs 'bad' text, then use these to score billions of documents. Documents below a threshold are filtered out. This automated quality control at scale is what enables training on trillions of tokens while maintaining quality.\n\nDe-duplication is crucial—the same Wikipedia article copied across thousands of websites shouldn't be seen thousands of times. The team uses both exact matching and fuzzy deduplication to remove near-duplicates.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "scaling_laws",
+        "title": "Scaling Laws and Compute Optimization",
+        "prerequisites": ["pretraining_data_curation"],
+        "key_ideas": [
+          "Compute-optimal model sizing",
+          "Data quality over architecture tricks",
+          "Scaling predictably improves performance"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "According to Llama 3's scaling analysis, which factor matters most for improving model performance?\n1) Novel architecture components\n2) Data quality and quantity\n3) Faster GPUs\n4) Smaller batch sizes\nAnswer with a number.",
+        "explanation": "The Llama team conducted extensive scaling experiments to determine the optimal model size for their compute budget of 3.8×10²⁵ FLOPs. Their conclusion: 405B parameters is compute-optimal for their training budget and data.\n\nScaling laws, pioneered by OpenAI and Anthropic, predict how model performance improves with more compute. Think of it like planning a road trip—scaling laws tell you how far you'll get with a given amount of fuel (compute).\n\n```\nCompute Budget: 3.8 × 10²⁵ FLOPs\nOptimal Model: 405B parameters\nTraining Tokens: 15.6T\n\nKey insight: At this scale, returns from\narchitecture tricks diminish. Data quality\nbecomes the primary lever.\n```\n\nThe most profound finding: data quality dominates architecture novelty at scale. The team deliberately chose a 'boring' dense Transformer because exotic architectures don't provide meaningful gains once you have enough compute and clean data. This is why the paper spends far more pages discussing data curation than model architecture.\n\nThey also found that smaller models (8B, 70B) benefit enormously from synthetic data generated by the 405B model, but training 405B on its own outputs provides no benefit—you can't lift yourself by your own bootstraps.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "model_scaling",
+        "title": "Model Scaling (8B, 70B, 405B)",
+        "prerequisites": ["scaling_laws", "dense_transformer_architecture"],
+        "key_ideas": [
+          "405B: 126 layers, 16,384 dim, 128 heads",
+          "Compute-optimal for 3.8×10²⁵ FLOPs budget",
+          "Smaller models benefit from larger model distillation"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "How many layers does the Llama 3 405B model have?\n1) 32 layers\n2) 80 layers\n3) 126 layers\n4) 256 layers\nAnswer with a number.",
+        "explanation": "Meta released Llama 3 in three sizes—8B, 70B, and 405B parameters—each targeting different use cases. The 405B flagship model pushes the frontier of open models, achieving GPT-4 competitive performance.\n\nThink of the model sizes like vehicles: 8B is a motorcycle (fast, efficient, fits everywhere), 70B is a sedan (good balance), and 405B is a semi-truck (maximum capability, needs serious infrastructure).\n\n```\nLlama 3 405B Architecture:\n├── Layers: 126\n├── Model dimension: 16,384\n├── Attention heads: 128 (query)\n├── KV heads: 8 (GQA)\n├── Vocabulary: 128K tokens\n└── Context: 128K tokens\n```\n\nA key finding: smaller models gain significantly from the 405B model. The team generates synthetic training data with 405B, then uses it to train 8B and 70B. This 'model distillation' makes smaller models punch above their weight.\n\nHowever, self-improvement doesn't work at the frontier—training 405B on its own outputs provides no benefit and can even hurt performance. You need external signal (human data, execution feedback) to improve the largest model.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "context_length_extension",
+        "title": "Context Length Extension to 128K",
+        "prerequisites": ["rotary_position_embeddings", "model_scaling"],
+        "key_ideas": [
+          "Gradual extension through 6 stages",
+          "Started at 8K, ended at 128K tokens",
+          "RoPE frequency scaling essential"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "How did Meta extend Llama 3's context length from 8K to 128K tokens?\n1) Trained from scratch with 128K context\n2) Gradual extension through 6 continued pre-training stages\n3) Simply changed a config parameter\n4) Fine-tuned on long documents only\nAnswer with a number.",
+        "explanation": "The Llama team extended context length from 8K to 128K tokens through a careful six-stage continued pre-training process. Simply training with long context from the start would be prohibitively expensive—attention is O(n²) in sequence length.\n\nThink of it like gradually increasing your running distance for a marathon. You don't go from 5K to 42K overnight—you build up through progressively longer training runs.\n\n```\nContext Extension Stages:\nStage 1: 8K → 16K tokens\nStage 2: 16K → 32K tokens\nStage 3: 32K → 48K tokens\nStage 4: 48K → 64K tokens\nStage 5: 64K → 96K tokens\nStage 6: 96K → 128K tokens\n\nEach stage: continued pre-training on\nprogressively longer documents\n```\n\nThe RoPE base frequency increase (10K → 500K) is essential for this to work. Without it, the positional encodings would fail to distinguish positions in long sequences. The higher frequency means the rotation cycles more slowly, providing unique positional signals even at position 128,000.\n\nThe team also curates long-context data carefully—you need documents that actually use the full context meaningfully, not just padding.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "four_d_parallelism",
+        "title": "4D Parallelism Training",
+        "prerequisites": ["model_scaling"],
+        "key_ideas": [
+          "Tensor parallelism: split weights across GPUs",
+          "Pipeline parallelism: split layers across stages",
+          "Context parallelism: split sequence across GPUs"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "Which of these is NOT one of the four dimensions in Llama 3's 4D parallelism?\n1) Tensor parallelism\n2) Pipeline parallelism\n3) Batch parallelism\n4) Context parallelism\nAnswer with a number.",
+        "explanation": "Training a 405B model requires distributing computation across 16,000 GPUs. The Llama team uses 4D parallelism: tensor, pipeline, context, and data parallelism. Each dimension addresses a different scaling challenge.\n\nThink of building a skyscraper. You need workers at different levels (pipeline), workers sharing floor sections (tensor), workers on different floors handling different rooms (context), and multiple buildings constructed simultaneously (data).\n\n```\n4D Parallelism:\n\n1. Tensor Parallelism (TP)\n   Split weight matrices across GPUs\n   → Reduces memory per GPU\n\n2. Pipeline Parallelism (PP)\n   Split layers into stages\n   → Each stage on different GPUs\n\n3. Context Parallelism (CP)\n   Split sequence across GPUs\n   → Essential for 128K context\n\n4. Data Parallelism (DP)\n   Different batches on different groups\n   → Standard scaling approach\n```\n\nContext parallelism is particularly important for long sequences. With 128K tokens, even the attention computation becomes memory-prohibitive on single GPUs. CP distributes the sequence so each GPU handles a portion, with communication for cross-segment attention.\n\nThe team achieved 38-43% model FLOPs utilization—remarkably high given the communication overhead and despite experiencing at least one training interruption per day. Sophisticated fault tolerance and checkpointing made this possible.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "training_infrastructure",
+        "title": "Training Infrastructure at Scale",
+        "prerequisites": ["four_d_parallelism"],
+        "key_ideas": [
+          "16,000 H100 GPUs on Grand Teton platform",
+          "400Gbps GPU interconnects",
+          "90%+ effective training time achieved"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What effective training time did Meta achieve with their 16K GPU cluster?\n1) Around 50%\n2) Around 70%\n3) Over 90%\n4) 100%\nAnswer with a number.",
+        "explanation": "Training Llama 3 405B required one of the largest GPU clusters ever assembled: 16,000 NVIDIA H100 GPUs. The Llama team's infrastructure achievement is as impressive as the model itself—achieving over 90% effective training time despite daily hardware failures.\n\nThink of coordinating an orchestra with 16,000 musicians across multiple venues, connected by high-speed video links. If even one musician misses a beat, the whole performance suffers. The team built systems to automatically handle failures and keep the show running.\n\n```\nInfrastructure Specs:\n├── GPUs: 16,000 × H100 (700W, 80GB HBM3)\n├── Servers: Grand Teton AI platform\n├── Interconnect: 400Gbps (RoCE/InfiniBand)\n├── Storage: 240PB on Tectonic (7TB/s peak)\n└── Effective training: >90%\n\nReality: At least 1 interruption per day\n→ Automated recovery essential\n```\n\nThe 400Gbps interconnect bandwidth is crucial for 4D parallelism. Tensor parallelism especially requires tight communication—splitting a matrix multiplication means GPUs must exchange partial results constantly. NVLink connects GPUs within a server (8 per server), while RoCE/InfiniBand connects servers.\n\nTectonic, Meta's distributed filesystem, provides the storage backbone: 240PB with 7TB/s peak throughput. Checkpointing a 405B model isn't trivial—the full state is hundreds of gigabytes.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "post_training",
+    "title": "Post-training Alignment",
+    "description": "SFT, reward modeling, DPO, and safety alignment",
+    "concepts": [
+      "supervised_finetuning",
+      "reward_modeling",
+      "direct_preference_optimization",
+      "safety_alignment"
+    ],
+    "lessons": [
+      {
+        "concept_id": "supervised_finetuning",
+        "title": "Supervised Fine-Tuning (SFT)",
+        "prerequisites": ["model_scaling"],
+        "key_ideas": [
+          "High-quality human-written examples",
+          "Rejection sampling for response selection",
+          "Multiple generation candidates ranked"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What technique does Llama 3's SFT use to select the best response from multiple candidates?\n1) Random selection\n2) Longest response wins\n3) Rejection sampling with reward model\n4) First response generated\nAnswer with a number.",
+        "explanation": "After pre-training, the Llama team transforms the raw language model into a helpful assistant through Supervised Fine-Tuning (SFT). The key innovation: rejection sampling, where multiple responses are generated and the best is selected using a reward model.\n\nThink of it like a talent show audition. Instead of accepting the first performer (response), you have multiple candidates perform (generate several responses) and judges (reward model) select the best one for the final show (training data).\n\n```python\n# Rejection Sampling SFT\ndef create_sft_example(prompt, model, reward_model, n=16):\n    # Generate multiple candidate responses\n    candidates = [model.generate(prompt) for _ in range(n)]\n    \n    # Score each with reward model\n    scores = [reward_model.score(prompt, c) for c in candidates]\n    \n    # Select best for training\n    best = candidates[argmax(scores)]\n    return (prompt, best)\n```\n\nThe SFT data comes from high-quality human-written examples covering diverse tasks: coding, math, creative writing, analysis, and more. Human annotators craft 'gold standard' responses that demonstrate the desired assistant behavior.\n\nCrucially, SFT teaches the model format and style—how to structure responses, when to ask clarifying questions, how to handle ambiguity. This foundational alignment sets up the model for further refinement through preference optimization.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "reward_modeling",
+        "title": "Reward Modeling",
+        "prerequisites": ["supervised_finetuning"],
+        "key_ideas": [
+          "Three-tier human preference annotations",
+          "Guides SFT rejection sampling",
+          "Foundation for DPO optimization"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "How many tiers of comparison does Llama 3's reward model training use?\n1) Two tiers (chosen vs rejected)\n2) Three tiers (chosen, rejected, edited)\n3) Four tiers\n4) Just a single rating score\nAnswer with a number.",
+        "explanation": "The Llama team trains reward models to predict human preferences—the core signal for aligning the model with human values. Their innovation: three-tier comparisons with chosen, rejected, and edited responses.\n\nThink of it like grading essays. Instead of just A/F (good/bad), you have A (chosen), C (rejected), and B (edited—fixed version of a flawed response). This richer signal helps the reward model understand nuanced quality differences.\n\n```\nThree-Tier Preference Data:\n\nPrompt: \"Explain quantum computing\"\n\n1. Chosen (A): Clear, accurate, well-structured\n2. Edited (B): Fixed version of rejected response\n3. Rejected (C): Confusing, contains errors\n\nReward Model learns:\n  score(chosen) > score(edited) > score(rejected)\n```\n\nThe reward model serves two critical purposes: guiding rejection sampling during SFT (picking the best of N generated responses) and providing training signal for DPO alignment.\n\nHuman annotators create preference pairs by comparing model outputs. The three-tier system is particularly valuable for subtle cases—where the response isn't completely wrong but needs improvement. The 'edited' tier shows what a good version would look like, giving the model a gradient toward improvement rather than just a binary good/bad signal.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "direct_preference_optimization",
+        "title": "Direct Preference Optimization (DPO)",
+        "prerequisites": ["reward_modeling"],
+        "key_ideas": [
+          "Direct optimization on preference pairs",
+          "No reward model needed during training",
+          "Formatting token masking improves stability"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What modification did Meta make to standard DPO for Llama 3?\n1) Used larger learning rate\n2) Masked formatting tokens in loss computation\n3) Trained for more epochs\n4) Used only code examples\nAnswer with a number.",
+        "explanation": "The Llama team uses Direct Preference Optimization (DPO) as the final alignment stage. DPO elegantly eliminates the need for explicit reward model inference during training by converting the preference learning objective directly into a language model loss.\n\nThink of DPO like learning to cook by comparing dishes. Instead of having a separate taste-tester (reward model) score every bite, you directly learn from pairs of 'this dish is better than that one.' The preference information is baked directly into the learning signal.\n\n```python\n# DPO Loss (simplified)\ndef dpo_loss(policy, ref_model, chosen, rejected, beta):\n    # Log probability ratios\n    log_ratio_chosen = policy.log_prob(chosen) - ref_model.log_prob(chosen)\n    log_ratio_rejected = policy.log_prob(rejected) - ref_model.log_prob(rejected)\n    \n    # DPO objective: prefer chosen over rejected\n    loss = -log(sigmoid(beta * (log_ratio_chosen - log_ratio_rejected)))\n    return loss\n```\n\nMeta's key modification: masking out formatting tokens in the loss computation. Formatting tokens (like markdown, special delimiters) shouldn't affect preference scores—only the actual content matters. By masking these during loss calculation, training becomes more stable and the model focuses on what humans actually care about.\n\nDPO is simpler than RLHF (no reward model during training, no PPO complexity) while achieving comparable results. This simplicity makes it more stable for training the massive 405B model.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "safety_alignment",
+        "title": "Safety Alignment",
+        "prerequisites": ["direct_preference_optimization"],
+        "key_ideas": [
+          "Instruction-tuning for safe responses",
+          "RLHF aligns with human values",
+          "Balance helpfulness and safety"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What is the key challenge in safety alignment according to the Llama 3 approach?\n1) Making the model faster\n2) Balancing helpfulness with safety\n3) Reducing model size\n4) Supporting more languages\nAnswer with a number.",
+        "explanation": "The Llama team implements multi-stage safety training to make models refuse harmful requests while remaining genuinely helpful. The core challenge: avoiding both over-refusal (unhelpfully cautious) and under-refusal (complying with harmful requests).\n\nThink of it like training a security guard. You want them to stop actual threats but not tackle every visitor. Over-cautious guards frustrate legitimate users; under-cautious ones miss real problems. The sweet spot requires nuanced judgment.\n\n```\nSafety Training Pipeline:\n\n1. Red-teaming: Adversarial prompts\n   → Identify model vulnerabilities\n\n2. Safety SFT: Examples of appropriate\n   refusals for harmful requests\n\n3. Safety DPO: Preference pairs where\n   safe responses are preferred\n\n4. Robustness testing: Verify against\n   jailbreak attempts\n```\n\nThe team uses red-teaming—dedicated adversaries trying to elicit harmful outputs—to discover vulnerabilities. These discoveries become training data: safe refusals for harmful prompts, helpful responses for edge cases that look suspicious but are legitimate.\n\nA key insight: safety alignment must be robust to adversarial attacks. Simple prompt injections, jailbreaks, and role-playing attacks are all tested. The model needs to maintain safe behavior even when users are actively trying to subvert it. This is particularly important for an openly released model that will be deployed in countless contexts.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "capabilities",
+    "title": "Advanced Capabilities",
+    "description": "Code, tools, multimodality, and specialized skills",
+    "concepts": [
+      "synthetic_data_generation",
+      "code_generation",
+      "tool_use_capabilities",
+      "factuality_and_knowledge",
+      "multimodal_vision_integration",
+      "speech_integration",
+      "llama_guard"
+    ],
+    "lessons": [
+      {
+        "concept_id": "synthetic_data_generation",
+        "title": "Synthetic Data Generation",
+        "prerequisites": ["model_scaling", "supervised_finetuning"],
+        "key_ideas": [
+          "Larger model teaches smaller models",
+          "Execution feedback validates code",
+          "Self-distillation not helpful for 405B"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "Does training Llama 3 405B on its own generated data improve its performance?\n1) Yes, significantly\n2) Yes, slightly\n3) No, and it can even hurt performance\n4) It wasn't tested\nAnswer with a number.",
+        "explanation": "The Llama team pioneered large-scale synthetic data generation, using the 405B model to create training data for smaller models. This 'model distillation' approach generated 2.7 million code dialogs alone. The key finding: it works brilliantly for 8B and 70B, but not for 405B itself.\n\nThink of it like a master chef writing recipes for cooking students. The students (smaller models) benefit enormously from the master's recipes (synthetic data). But the master can't improve by reading their own recipes—they need new inspiration from outside (human data, real-world feedback).\n\n```\nSynthetic Data Pipeline:\n\n1. 405B generates diverse completions\n2. Execution feedback filters (for code)\n3. Backtranslation augments data\n4. Train 8B/70B on curated outputs\n\nResult: 8B and 70B significantly improved\nBut: 405B sees no gain from self-data\n```\n\nFor code, the pipeline includes execution feedback—generated code is actually run, and only correct solutions are kept. This grounds the synthetic data in real correctness, not just plausible-looking code.\n\nBacktranslation is another clever technique: take a code solution, generate a natural language description, then use that description to generate new code. This creates diverse training pairs from a single seed example.\n\nThe asymmetry—smaller models benefit but 405B doesn't—suggests there's a ceiling to self-improvement. The largest model needs external signal (human preferences, execution results) to improve.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "code_generation",
+        "title": "Code Generation Capabilities",
+        "prerequisites": ["synthetic_data_generation"],
+        "key_ideas": [
+          "Multi-language code generation",
+          "Execution feedback validates outputs",
+          "Backtranslation augments training data"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "How many code dialogs did Meta generate synthetically for Llama 3 training?\n1) About 100K\n2) About 500K\n3) About 2.7 million\n4) About 10 million\nAnswer with a number.",
+        "explanation": "Llama 3 achieves strong code generation across Python, Java, JavaScript, C/C++, Rust, and more. The secret sauce: 2.7 million synthetic code dialogs with execution-validated correctness, plus 17% of pre-training data being code.\n\nThink of learning to code by having an infinitely patient tutor generate millions of practice problems with verified solutions. Each solution is actually executed to confirm it works—no hallucinated code that looks right but fails.\n\n```\nCode Training Pipeline:\n\n1. Pre-training: 17% code data (~2.6T tokens)\n\n2. Synthetic Generation:\n   └── 2.7M code dialogs\n   └── Python, Java, JS, C/C++, Rust, etc.\n\n3. Execution Feedback:\n   └── Run generated code\n   └── Keep only correct solutions\n   └── Error messages inform retries\n\n4. Backtranslation:\n   └── Code → Description → New Code\n   └── Diversifies training pairs\n```\n\nBacktranslation is particularly powerful for code. Take a working function, ask the model to describe what it does in natural language, then use that description as a prompt to generate alternative implementations. This creates diverse, semantically-equivalent code examples from a single seed.\n\nThe execution feedback loop is crucial for quality. Without it, the model might generate plausible-looking code that doesn't actually run. By only keeping solutions that pass tests, the synthetic data maintains high quality standards.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "tool_use_capabilities",
+        "title": "Tool Use Capabilities",
+        "prerequisites": ["synthetic_data_generation", "context_length_extension"],
+        "key_ideas": [
+          "Search engine integration",
+          "Python code execution",
+          "Multi-step reasoning with tools"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "Which tools is Llama 3 trained to use natively?\n1) Only search engines\n2) Search engines, Python interpreter, and Wolfram Alpha\n3) Only calculators\n4) No tool training\nAnswer with a number.",
+        "explanation": "The Llama team trained Llama 3 to use external tools: search engines, Python interpreters, and Wolfram Alpha. This enables complex multi-step reasoning that combines the model's knowledge with real-time information and computation.\n\nThink of it like giving a student access to the internet, a calculator, and reference books during an exam. The student (model) still needs to know how to formulate queries and interpret results, but they can leverage external resources for current information and precise computation.\n\n```\nTool Use Training:\n\n1. Synthetic Scenarios:\n   User: \"What's the population of the 3 largest\n         cities in France multiplied together?\"\n   \n   Model thinks: Need current data + math\n   → Tool: search(\"largest cities France population\")\n   → Result: Paris 2.1M, Marseille 870K, Lyon 520K\n   → Tool: python(\"2_100_000 * 870_000 * 520_000\")\n   → Result: 949,620,000,000,000\n   → Answer with computation shown\n\n2. Multi-step Reasoning:\n   Chain multiple tool calls\n   Verify intermediate results\n   Handle tool failures gracefully\n```\n\nThe training data is synthetically generated: the team creates diverse scenarios requiring tool use, has the model (or humans) solve them with tools, and uses successful trajectories as training examples.\n\nLong context (128K tokens) is essential here—multi-step tool use can involve many back-and-forth exchanges with tools, intermediate reasoning, and accumulated results. The extended context lets the model maintain coherent reasoning chains across complex multi-tool scenarios.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "factuality_and_knowledge",
+        "title": "Factuality and Knowledge Probing",
+        "prerequisites": ["supervised_finetuning"],
+        "key_ideas": [
+          "Probes detect knowledge boundaries",
+          "Refusal training for unknown facts",
+          "Reduces hallucination on edge cases"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What happens when Llama 3's knowledge probes identify a fact the model doesn't know?\n1) The model is trained to guess anyway\n2) The fact is added to training data\n3) The model is trained to appropriately refuse\n4) Nothing—it's just for research\nAnswer with a number.",
+        "explanation": "The Llama team developed knowledge probing techniques to identify what the model knows and doesn't know. When probes reveal knowledge gaps, the team generates training data teaching appropriate refusals—reducing confident-sounding hallucinations on uncertain topics.\n\nThink of it like a student learning when to say 'I don't know' instead of making something up. The probes are like pop quizzes that reveal which topics the student hasn't actually learned, so they can be taught to recognize and admit their limits.\n\n```\nKnowledge Probing Pipeline:\n\n1. Generate factual questions\n   \"What year was the Treaty of X signed?\"\n\n2. Check model's knowledge\n   → Does it know? (verify against ground truth)\n   → How confident is it?\n\n3. For unknown facts:\n   Train on refusal examples:\n   \"I don't have reliable information about\n    the Treaty of X's signing date.\"\n\n4. For known facts:\n   Train on accurate responses\n```\n\nThe key insight: it's better for a model to admit uncertainty than to confidently state wrong information. A user can seek other sources when the model says 'I don't know,' but might be misled by confident-sounding hallucinations.\n\nThis approach particularly helps with 'long-tail' knowledge—obscure facts that appear rarely in training data. The model learns that low-confidence beliefs should trigger appropriate uncertainty language rather than false confidence.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multimodal_vision_integration",
+        "title": "Multimodal Vision Integration",
+        "prerequisites": ["dense_transformer_architecture"],
+        "key_ideas": [
+          "Vision Transformer encoder for images",
+          "Cross-attention injects visual features",
+          "Modular design preserves text capability"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "How does Llama 3 integrate vision capabilities without degrading text performance?\n1) Retrains the entire model on image-text data\n2) Uses a separate image model\n3) Uses modular cross-attention injection\n4) Converts images to text first\nAnswer with a number.",
+        "explanation": "The Llama team added vision capabilities to Llama 3 through a modular, compositional approach. A Vision Transformer (ViT) encoder processes images, and cross-attention layers inject visual features into the language model—all without retraining or degrading the base text capabilities.\n\nThink of it like adding a sidecar to a motorcycle. The main bike (language model) works exactly as before, but now it can carry a passenger (visual information) through the attached sidecar (cross-attention). The bike's core performance is unchanged.\n\n```\nVision Integration Architecture:\n\n┌─────────────────────────────────────┐\n│  Image → ViT Encoder → Visual Tokens│\n└──────────────┬──────────────────────┘\n               │ Cross-Attention\n               ▼\n┌─────────────────────────────────────┐\n│     Frozen LLaMA 3 Transformer      │\n│   (Text capabilities preserved)     │\n└─────────────────────────────────────┘\n               │\n               ▼\n        Text Output\n```\n\nThe ViT encoder (derived from standard Vision Transformer architectures) converts images into a sequence of visual tokens. These tokens are then attended to by the language model through inserted cross-attention layers. The key property: the original language model weights remain frozen during vision training.\n\nThis modularity means you can have the best of both worlds—frontier-class text capability from the 405B base model, plus vision understanding, without compromise. The 11B and 90B vision models (Llama 3.2) demonstrate competitive multimodal performance while maintaining strong text capabilities.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "speech_integration",
+        "title": "Speech Integration",
+        "prerequisites": ["dense_transformer_architecture"],
+        "key_ideas": [
+          "Conformer encoder processes speech",
+          "Adapter bridges speech-text modalities",
+          "Streaming with 226ms latency"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What latency does Llama 3's speech integration achieve for streaming responses?\n1) About 1 second\n2) About 500ms\n3) About 226ms\n4) About 50ms\nAnswer with a number.",
+        "explanation": "The Llama team integrated speech capabilities using a Conformer encoder with a lightweight adapter, achieving remarkably low 226ms latency for streaming speech responses. The architecture supports simultaneous text and speech output.\n\nThink of it like a simultaneous translator at the UN. They hear the speaker (Conformer encodes speech), process through their expertise (adapter + LLM), and immediately start speaking the translation (streaming decoder)—all with minimal delay.\n\n```\nSpeech Architecture (LLaMA-Omni style):\n\n┌─────────────────────────────────────┐\n│ Speech → Whisper/Conformer Encoder  │\n└──────────────┬──────────────────────┘\n               │ Adapter\n               ▼\n┌─────────────────────────────────────┐\n│     LLaMA 3 8B-Instruct Base        │\n└──────────────┬──────────────────────┘\n               │\n        ┌──────┴──────┐\n        ▼             ▼\n   Text Output   Speech Decoder\n                 (CTC-aligned)\n\nLatency: ~226ms for first output token\n```\n\nThe Conformer encoder (an improved version of Transformer for audio) processes raw speech waveforms. A trained adapter bridges the speech embedding space to the text embedding space that Llama 3 expects.\n\nThe streaming capability comes from a non-autoregressive speech decoder using Connectionist Temporal Classification (CTC) alignment. Unlike autoregressive decoders that generate one token at a time, CTC-based approaches can produce multiple output units in parallel, enabling the low latency.\n\nThe 226ms latency approaches human conversation turn-taking timing, making natural spoken dialogue possible.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "llama_guard",
+        "title": "Llama Guard Safety Filter",
+        "prerequisites": ["safety_alignment", "multimodal_vision_integration"],
+        "key_ideas": [
+          "Classifies prompts and responses",
+          "Vision variant for image safety",
+          "Quantized for edge deployment"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What is the compressed size of Llama Guard 3 1B after pruning and quantization?\n1) 2,858 MB\n2) 1,000 MB\n3) 438 MB\n4) 100 MB\nAnswer with a number.",
+        "explanation": "Llama Guard 3 is a specialized safety classifier that filters harmful inputs and outputs. The team released multiple versions: an 11B vision-capable variant and a heavily compressed 1B version (438MB after quantization) for edge deployment.\n\nThink of Llama Guard as a content moderator working alongside the main assistant. Before a user's message reaches the assistant, and after the assistant responds, the guard checks for policy violations—like a security checkpoint at both ends of a conversation.\n\n```\nLlama Guard Deployment:\n\n      User Input\n          │\n          ▼\n  ┌───────────────┐\n  │ Llama Guard   │ ← Classify: Safe / Unsafe\n  │ (Input Check) │   Categories: violence, hate, etc.\n  └───────┬───────┘\n          │ If safe\n          ▼\n  ┌───────────────┐\n  │   Llama 3     │\n  │   (Main LLM)  │\n  └───────┬───────┘\n          │\n          ▼\n  ┌───────────────┐\n  │ Llama Guard   │ ← Classify output too\n  │(Output Check) │\n  └───────┬───────┘\n          │ If safe\n          ▼\n     User Response\n```\n\nLlama Guard 3 Vision extends this to multimodal content—it can detect harmful images as well as text. This is crucial because text-only filters can miss policy violations embedded in images.\n\nThe 1B quantized version (438MB, down from 2,858MB) enables on-device safety filtering. This is important for edge deployments where you can't send every interaction to a cloud server. The pruning and quantization achieve 6.5x compression while maintaining safety classification accuracy.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "impact",
+    "title": "Impact and Future Directions",
+    "description": "Benchmark performance, open release, and implications",
+    "concepts": [
+      "benchmark_performance",
+      "open_release_philosophy"
+    ],
+    "lessons": [
+      {
+        "concept_id": "benchmark_performance",
+        "title": "Benchmark Performance vs GPT-4",
+        "prerequisites": ["model_scaling", "safety_alignment"],
+        "key_ideas": [
+          "Competitive with GPT-4 on benchmarks",
+          "Strong on code, math, reasoning",
+          "Open weights enable research community"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "On which types of benchmarks does Llama 3 405B demonstrate competitive performance with GPT-4?\n1) Only language tasks\n2) Only code tasks\n3) Code, math, reasoning, and general knowledge\n4) None—it's significantly behind\nAnswer with a number.",
+        "explanation": "The Llama team demonstrated that Llama 3 405B achieves GPT-4 competitive performance across major benchmarks: MMLU (general knowledge), HumanEval (code), GSM8K (math reasoning), and more. This marks a milestone for open-weight models matching proprietary frontier systems.\n\nThink of it like an open-source car matching a luxury brand's performance. For years, the assumption was that only well-funded proprietary efforts could build frontier AI. Llama 3 challenges that assumption.\n\n```\nBenchmark Performance (Llama 3 405B):\n\n┌────────────────┬─────────┬─────────┐\n│ Benchmark      │ Llama 3 │ GPT-4   │\n├────────────────┼─────────┼─────────┤\n│ MMLU           │  ~88%   │  ~87%   │\n│ HumanEval      │  ~80%   │  ~67%   │\n│ GSM8K          │  ~96%   │  ~92%   │\n│ MATH           │  ~68%   │  ~69%   │\n└────────────────┴─────────┴─────────┘\n(Approximate; see paper for exact numbers)\n```\n\nThe performance is particularly strong on code (HumanEval) and math (GSM8K), areas where synthetic data generation and execution feedback during training pay off.\n\nCrucially, these benchmarks are evaluated with the same methodology across models. The Llama team went to significant effort to ensure fair comparisons—using official evaluation protocols, proper prompting, and transparent methodology. This scientific rigor makes the competitive results credible.\n\nThe implications are profound: researchers and developers worldwide can now build on a GPT-4 class foundation without API costs or usage restrictions.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "open_release_philosophy",
+        "title": "Open Release Philosophy",
+        "prerequisites": ["benchmark_performance"],
+        "key_ideas": [
+          "Open weights for community research",
+          "Pre-trained and instruct versions",
+          "Democratizes frontier AI access"
+        ],
+        "code_ref": "",
+        "paper_ref": "Llama Team, AI @ Meta, 2024 — The Llama 3 Herd of Models",
+        "exercise": "What versions of Llama 3 did Meta release openly?\n1) Only the 8B model\n2) Only instruction-tuned versions\n3) Pre-trained and instruction-tuned versions of 8B, 70B, and 405B\n4) Only the architecture, not the weights\nAnswer with a number.",
+        "explanation": "Meta released both pre-trained and instruction-tuned versions of all Llama 3 models (8B, 70B, 405B) with open weights. This represents a philosophical commitment to democratizing AI—making frontier capabilities accessible to researchers, startups, and developers worldwide.\n\nThink of it like publishing the blueprints and manufacturing specs for a cutting-edge machine, not just selling the finished product. Anyone can study how it works, modify it for their needs, or build something new on top of it.\n\n```\nOpen Release Benefits:\n\n For Researchers:\n ├── Study frontier model internals\n ├── Develop interpretability tools\n └── Test safety interventions\n\n For Developers:\n ├── Fine-tune for specific domains\n ├── Deploy on own infrastructure\n └── No per-token API costs\n\n For the Field:\n ├── Reproducible research baselines\n ├── Democratized access to frontier AI\n └── Accelerated innovation cycle\n```\n\nThe pre-trained versions are particularly valuable for research. Instruction-tuned models are optimized for conversation, but pre-trained models reveal the raw capabilities that emerge from scale. Researchers can study what the model learned during pre-training, apply their own alignment techniques, or investigate emergent behaviors.\n\nMeta's stated motivation: they believe open development leads to safer, more beneficial AI through broader scrutiny and diverse applications. Whether you agree with this philosophy or not, the practical impact is undeniable—Llama has become a foundation for thousands of projects, papers, and products.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]
