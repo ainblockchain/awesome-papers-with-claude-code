@@ -1,0 +1,586 @@
+{
+  "nodes": [
+    {
+      "id": "transformer_encoder",
+      "name": "Transformer Encoder",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "The encoder component of the Transformer architecture, consisting of stacked self-attention and feed-forward layers. BERT uses only the encoder, unlike the original Transformer which has encoder-decoder structure.",
+      "key_ideas": [
+        "Stack of identical layers with self-attention",
+        "Each layer has multi-head attention + FFN",
+        "Bidirectional context in all layers"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "language_model_pretraining",
+      "name": "Language Model Pre-training",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Training a model on large unlabeled text corpora to learn general language representations before fine-tuning on specific tasks. Pre-training transfers knowledge from abundant unlabeled data.",
+      "key_ideas": [
+        "Learn from massive unlabeled text",
+        "Transfer learned representations to downstream tasks",
+        "Reduces need for task-specific labeled data"
+      ],
+      "code_refs": [],
+      "paper_ref": "Howard & Ruder, 2018 — Universal Language Model Fine-tuning",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "unidirectional_limitations",
+      "name": "Limitations of Unidirectional Models",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Previous pre-trained models like GPT use left-to-right language modeling, limiting them to only left context. This restricts their ability to capture bidirectional dependencies needed for tasks like question answering.",
+      "key_ideas": [
+        "GPT uses left-to-right training only",
+        "Cannot incorporate right context for predictions",
+        "Problematic for token-level tasks needing full context"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "wordpiece_tokenization",
+      "name": "WordPiece Tokenization",
+      "type": "tokenization",
+      "level": "foundational",
+      "description": "A subword tokenization algorithm that splits words into smaller units based on frequency. BERT uses a 30,000 token vocabulary that handles rare words through subword decomposition.",
+      "key_ideas": [
+        "30,000 token vocabulary",
+        "Handles out-of-vocabulary words via subwords",
+        "Prefix ## indicates continuation of a word"
+      ],
+      "code_refs": [],
+      "paper_ref": "Wu et al., 2016 — Google's Neural Machine Translation System",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bert_architecture",
+      "name": "BERT Architecture",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "BERT uses a multi-layer bidirectional Transformer encoder. BERT-Base has 12 layers, 768 hidden units, and 12 attention heads (110M params). BERT-Large has 24 layers, 1024 hidden units, and 16 heads (340M params).",
+      "key_ideas": [
+        "BERT-Base: L=12, H=768, A=12, 110M parameters",
+        "BERT-Large: L=24, H=1024, A=16, 340M parameters",
+        "Uses only encoder stack, no decoder"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "input_representation",
+      "name": "BERT Input Representation",
+      "type": "component",
+      "level": "intermediate",
+      "description": "BERT's input combines three embeddings: token embeddings (WordPiece), segment embeddings (distinguishing sentence A from B), and position embeddings (learned, not sinusoidal). Special tokens [CLS] and [SEP] mark sequence boundaries.",
+      "key_ideas": [
+        "Sum of token + segment + position embeddings",
+        "[CLS] token for classification tasks",
+        "[SEP] token separates sentence pairs"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "masked_language_model",
+      "name": "Masked Language Model (MLM)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "BERT's primary pre-training objective. Randomly masks 15% of input tokens and trains the model to predict the original tokens. Enables deep bidirectional training unlike standard LM objectives.",
+      "key_ideas": [
+        "Mask 15% of tokens randomly",
+        "Predict original token from context",
+        "Enables bidirectional representation learning"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "masking_strategy",
+      "name": "80-10-10 Masking Strategy",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Of the 15% selected tokens: 80% are replaced with [MASK], 10% with random tokens, 10% kept unchanged. This mitigates the mismatch between pre-training (with [MASK]) and fine-tuning (without [MASK]).",
+      "key_ideas": [
+        "80% replaced with [MASK] token",
+        "10% replaced with random vocabulary token",
+        "10% kept unchanged"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "next_sentence_prediction",
+      "name": "Next Sentence Prediction (NSP)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "BERT's second pre-training objective. Given two sentences, predict if the second sentence follows the first in the original text. 50% positive (consecutive) and 50% negative (random) pairs are used for training.",
+      "key_ideas": [
+        "Binary classification: IsNext or NotNext",
+        "Uses [CLS] token representation",
+        "Helps with sentence-pair tasks like QA"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pretraining_data",
+      "name": "Pre-training Data and Procedure",
+      "type": "training",
+      "level": "intermediate",
+      "description": "BERT is pre-trained on BooksCorpus (800M words) and English Wikipedia (2,500M words). Training uses batch size 256, sequence length 512, 1M steps with Adam optimizer and warmup learning rate schedule.",
+      "key_ideas": [
+        "BooksCorpus + Wikipedia (3.3B words total)",
+        "1 million training steps",
+        "Warmup for 10,000 steps, then linear decay"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fine_tuning_approach",
+      "name": "Fine-tuning Approach",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "BERT fine-tuning is straightforward: initialize with pre-trained weights, add a task-specific output layer, and train all parameters end-to-end on labeled data. Most hyperparameters stay the same across tasks.",
+      "key_ideas": [
+        "Add single output layer for each task",
+        "Fine-tune all parameters end-to-end",
+        "Typically 2-4 epochs, learning rate 2e-5 to 5e-5"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cls_token",
+      "name": "[CLS] Token and Classification",
+      "type": "component",
+      "level": "intermediate",
+      "description": "The [CLS] token is prepended to every input sequence. Its final hidden state serves as the aggregate sequence representation for classification tasks. For sentence-pair tasks, it captures the relationship between sentences.",
+      "key_ideas": [
+        "First token of every input sequence",
+        "Final hidden state used for classification",
+        "Aggregates information from entire sequence"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "segment_embeddings",
+      "name": "Segment Embeddings",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Learned embeddings that distinguish sentence A from sentence B in paired inputs. Every token in sentence A gets embedding EA, every token in sentence B gets EB. Essential for tasks involving sentence pairs.",
+      "key_ideas": [
+        "Binary: EA for first sentence, EB for second",
+        "Added to token and position embeddings",
+        "Enables sentence-pair understanding"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "gelu_activation",
+      "name": "GELU Activation Function",
+      "type": "component",
+      "level": "advanced",
+      "description": "Gaussian Error Linear Unit, a smooth approximation of ReLU that BERT uses instead of standard ReLU. GELU(x) = x * P(X <= x) where X ~ N(0,1). Provides smoother gradients.",
+      "key_ideas": [
+        "Smoother than ReLU",
+        "GELU(x) = x * Phi(x)",
+        "Better gradient flow"
+      ],
+      "code_refs": [],
+      "paper_ref": "Hendrycks & Gimpel, 2016 — Gaussian Error Linear Units",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "sentence_classification",
+      "name": "Single Sentence Classification",
+      "type": "application",
+      "level": "advanced",
+      "description": "For tasks like sentiment analysis (SST-2) or linguistic acceptability (CoLA), input the sentence with [CLS], take the final [CLS] representation, and add a classification layer. Achieves SOTA on GLUE single-sentence tasks.",
+      "key_ideas": [
+        "Input: [CLS] sentence [SEP]",
+        "Use [CLS] output for classification",
+        "SST-2: 94.9% accuracy"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "sentence_pair_classification",
+      "name": "Sentence Pair Classification",
+      "type": "application",
+      "level": "advanced",
+      "description": "For tasks like natural language inference (MNLI) or paraphrase detection (MRPC), concatenate sentences with [SEP], use segment embeddings, and classify from [CLS]. BERT excels at capturing inter-sentence relationships.",
+      "key_ideas": [
+        "Input: [CLS] sent_A [SEP] sent_B [SEP]",
+        "Segment embeddings distinguish sentences",
+        "MNLI: 86.7% accuracy"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "question_answering",
+      "name": "Question Answering (SQuAD)",
+      "type": "application",
+      "level": "advanced",
+      "description": "For extractive QA, encode question and passage together. Learn start and end vectors that score each token's probability of being answer boundaries. BERT achieves 93.2 F1 on SQuAD 1.1, surpassing human performance.",
+      "key_ideas": [
+        "Input: [CLS] question [SEP] passage [SEP]",
+        "Predict start and end positions of answer span",
+        "SQuAD 1.1: 93.2 F1 (superhuman)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "token_classification",
+      "name": "Token Classification (NER)",
+      "type": "application",
+      "level": "advanced",
+      "description": "For sequence labeling tasks like Named Entity Recognition, use each token's final hidden representation to predict its label. BERT achieves 96.4 F1 on CoNLL-2003 NER without task-specific architecture.",
+      "key_ideas": [
+        "Each token gets a classification output",
+        "Final hidden state fed to token-level classifier",
+        "CoNLL-2003 NER: 96.4 F1"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "feature_based_approach",
+      "name": "Feature-based Approach",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Alternative to fine-tuning: extract fixed features from pre-trained BERT and use them as input to task-specific models. Concatenating the last 4 hidden layers achieves competitive results on NER.",
+      "key_ideas": [
+        "Use BERT as fixed feature extractor",
+        "Concatenate multiple hidden layers",
+        "Useful when fine-tuning is impractical"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ablation_pretraining_tasks",
+      "name": "Ablation: Pre-training Tasks",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Ablation studies show both MLM and NSP are crucial. Removing NSP hurts QNLI and MNLI significantly. Left-to-right models without MLM perform much worse, confirming the value of deep bidirectionality.",
+      "key_ideas": [
+        "No NSP: -4% on QNLI, -1% on MNLI",
+        "LTR only: significantly worse than bidirectional",
+        "Both objectives contribute to performance"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ablation_model_size",
+      "name": "Ablation: Model Size Effects",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Larger models consistently improve performance even on small datasets. Scaling from BERT-Base to BERT-Large improves MRPC (3,600 examples) from 88.9% to 89.3%, showing pre-training prevents overfitting.",
+      "key_ideas": [
+        "Larger models help even on small datasets",
+        "Pre-training provides regularization",
+        "Scaling improves all task categories"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "comparison_elmo_gpt",
+      "name": "Comparison with ELMo and GPT",
+      "type": "theory",
+      "level": "frontier",
+      "description": "ELMo uses shallow concatenation of independently trained LTR and RTL LSTMs. GPT uses LTR Transformer. Only BERT conditions on both directions in all layers. This deep bidirectionality is key to BERT's superior performance.",
+      "key_ideas": [
+        "ELMo: shallow bidirectional (separate LTR + RTL)",
+        "GPT: unidirectional Transformer",
+        "BERT: deep bidirectional in all layers"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "glue_benchmark",
+      "name": "GLUE Benchmark Results",
+      "type": "application",
+      "level": "frontier",
+      "description": "BERT achieved 80.5% average on GLUE, a 7.7 point improvement over prior SOTA. It set new records on 8 of 9 tasks, demonstrating the universality of pre-trained bidirectional representations.",
+      "key_ideas": [
+        "80.5% average GLUE score",
+        "7.7 point improvement over previous best",
+        "State-of-the-art on 8/9 tasks"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "future_impact",
+      "name": "Impact and Future Directions",
+      "type": "theory",
+      "level": "frontier",
+      "description": "BERT established the pre-train then fine-tune paradigm that dominates NLP. It spawned numerous variants (RoBERTa, ALBERT, DistilBERT) and inspired similar approaches in vision (ViT) and multimodal learning.",
+      "key_ideas": [
+        "Established pre-train + fine-tune paradigm",
+        "Inspired RoBERTa, ALBERT, DistilBERT variants",
+        "Influenced Vision Transformers and multimodal models"
+      ],
+      "code_refs": [],
+      "paper_ref": "Devlin et al., 2018 — BERT: Pre-training of Deep Bidirectional Transformers",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "transformer_encoder",
+      "target": "bert_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "BERT is built on the Transformer encoder architecture"
+    },
+    {
+      "source": "language_model_pretraining",
+      "target": "masked_language_model",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "MLM is BERT's novel approach to pre-training"
+    },
+    {
+      "source": "unidirectional_limitations",
+      "target": "masked_language_model",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "MLM was designed to overcome unidirectional limitations"
+    },
+    {
+      "source": "wordpiece_tokenization",
+      "target": "input_representation",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "WordPiece tokens are part of BERT's input representation"
+    },
+    {
+      "source": "bert_architecture",
+      "target": "input_representation",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "BERT architecture processes the input representation"
+    },
+    {
+      "source": "input_representation",
+      "target": "cls_token",
+      "relationship": "component_of",
+      "weight": 0.9,
+      "description": "[CLS] is a key component of input representation"
+    },
+    {
+      "source": "input_representation",
+      "target": "segment_embeddings",
+      "relationship": "component_of",
+      "weight": 0.9,
+      "description": "Segment embeddings are part of input representation"
+    },
+    {
+      "source": "masked_language_model",
+      "target": "masking_strategy",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "MLM uses the 80-10-10 masking strategy"
+    },
+    {
+      "source": "masked_language_model",
+      "target": "pretraining_data",
+      "relationship": "requires",
+      "weight": 0.9,
+      "description": "MLM is trained on the pre-training corpus"
+    },
+    {
+      "source": "next_sentence_prediction",
+      "target": "pretraining_data",
+      "relationship": "requires",
+      "weight": 0.9,
+      "description": "NSP uses sentence pairs from the corpus"
+    },
+    {
+      "source": "next_sentence_prediction",
+      "target": "cls_token",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "NSP uses [CLS] representation for classification"
+    },
+    {
+      "source": "bert_architecture",
+      "target": "gelu_activation",
+      "relationship": "component_of",
+      "weight": 0.8,
+      "description": "BERT uses GELU instead of ReLU"
+    },
+    {
+      "source": "pretraining_data",
+      "target": "fine_tuning_approach",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Pre-training enables effective fine-tuning"
+    },
+    {
+      "source": "fine_tuning_approach",
+      "target": "sentence_classification",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Fine-tuning adapts BERT for classification"
+    },
+    {
+      "source": "fine_tuning_approach",
+      "target": "sentence_pair_classification",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Fine-tuning adapts BERT for sentence pairs"
+    },
+    {
+      "source": "fine_tuning_approach",
+      "target": "question_answering",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Fine-tuning adapts BERT for QA"
+    },
+    {
+      "source": "fine_tuning_approach",
+      "target": "token_classification",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Fine-tuning adapts BERT for NER"
+    },
+    {
+      "source": "cls_token",
+      "target": "sentence_classification",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "[CLS] output is used for classification"
+    },
+    {
+      "source": "segment_embeddings",
+      "target": "sentence_pair_classification",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Segment embeddings distinguish paired sentences"
+    },
+    {
+      "source": "fine_tuning_approach",
+      "target": "feature_based_approach",
+      "relationship": "alternative_to",
+      "weight": 0.8,
+      "description": "Feature extraction is alternative to fine-tuning"
+    },
+    {
+      "source": "masked_language_model",
+      "target": "ablation_pretraining_tasks",
+      "relationship": "builds_on",
+      "weight": 0.8,
+      "description": "Ablation studies validate MLM importance"
+    },
+    {
+      "source": "next_sentence_prediction",
+      "target": "ablation_pretraining_tasks",
+      "relationship": "builds_on",
+      "weight": 0.8,
+      "description": "Ablation studies validate NSP importance"
+    },
+    {
+      "source": "bert_architecture",
+      "target": "ablation_model_size",
+      "relationship": "builds_on",
+      "weight": 0.8,
+      "description": "Size ablations compare BERT-Base vs BERT-Large"
+    },
+    {
+      "source": "masked_language_model",
+      "target": "comparison_elmo_gpt",
+      "relationship": "builds_on",
+      "weight": 0.9,
+      "description": "MLM enables BERT's deep bidirectionality advantage"
+    },
+    {
+      "source": "sentence_classification",
+      "target": "glue_benchmark",
+      "relationship": "component_of",
+      "weight": 0.9,
+      "description": "Classification tasks are part of GLUE"
+    },
+    {
+      "source": "sentence_pair_classification",
+      "target": "glue_benchmark",
+      "relationship": "component_of",
+      "weight": 0.9,
+      "description": "Sentence pair tasks are part of GLUE"
+    },
+    {
+      "source": "glue_benchmark",
+      "target": "future_impact",
+      "relationship": "enables",
+      "weight": 0.8,
+      "description": "GLUE success established BERT's influence"
+    },
+    {
+      "source": "bert_architecture",
+      "target": "future_impact",
+      "relationship": "enables",
+      "weight": 0.9,
+      "description": "BERT architecture inspired many follow-up models"
+    }
+  ]
+}
