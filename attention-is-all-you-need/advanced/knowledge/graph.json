@@ -1,0 +1,623 @@
+{
+  "nodes": [
+    {
+      "id": "sequence_to_sequence",
+      "name": "Sequence-to-Sequence Models",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "Neural network architectures that map input sequences to output sequences, forming the basis for machine translation and other sequence transduction tasks.",
+      "key_ideas": [
+        "Encoder processes input sequence into hidden representations",
+        "Decoder generates output sequence from encoded representations",
+        "Originally implemented with RNNs or LSTMs"
+      ],
+      "code_refs": [],
+      "paper_ref": "Sutskever et al., 2014 — Sequence to Sequence Learning with Neural Networks",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "attention_mechanism",
+      "name": "Attention Mechanism",
+      "type": "technique",
+      "level": "foundational",
+      "description": "A mechanism that allows models to focus on relevant parts of the input when generating each output element, overcoming fixed-length encoding bottlenecks.",
+      "key_ideas": [
+        "Computes relevance scores between query and key-value pairs",
+        "Creates weighted combination of values based on relevance",
+        "Eliminates information bottleneck in seq2seq models"
+      ],
+      "code_refs": [],
+      "paper_ref": "Bahdanau et al., 2015 — Neural Machine Translation by Jointly Learning to Align and Translate",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "query_key_value",
+      "name": "Query-Key-Value Abstraction",
+      "type": "component",
+      "level": "foundational",
+      "description": "The fundamental abstraction in attention where queries are matched against keys to determine how much each value contributes to the output.",
+      "key_ideas": [
+        "Query represents what we're looking for",
+        "Keys represent what each position offers",
+        "Values contain the actual information to aggregate"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "scaled_dot_product_attention",
+      "name": "Scaled Dot-Product Attention",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The core attention computation in Transformers: Attention(Q,K,V) = softmax(QK^T/√d_k)V, where scaling prevents gradient vanishing in large dimensions.",
+      "key_ideas": [
+        "Dot products compute similarity between queries and keys",
+        "Scaling by √d_k prevents softmax saturation",
+        "More computationally efficient than additive attention"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_head_attention",
+      "name": "Multi-Head Attention",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Running multiple attention operations in parallel with different learned projections, allowing the model to attend to information from different representation subspaces.",
+      "key_ideas": [
+        "8 parallel attention heads with d_k = d_v = 64",
+        "Each head learns different attention patterns",
+        "Outputs concatenated and projected to final dimension"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "self_attention",
+      "name": "Self-Attention",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Attention where queries, keys, and values all come from the same sequence, allowing each position to attend to all positions in the same sequence.",
+      "key_ideas": [
+        "Q, K, V all derived from same input sequence",
+        "Captures dependencies regardless of distance",
+        "O(1) path length vs O(n) for RNNs"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "positional_encoding",
+      "name": "Positional Encoding",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Sinusoidal functions that inject sequence order information into the model since self-attention is permutation-invariant.",
+      "key_ideas": [
+        "Uses sin/cos functions at different frequencies",
+        "PE(pos,2i) = sin(pos/10000^(2i/d_model))",
+        "Enables extrapolation to longer sequences"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "encoder_architecture",
+      "name": "Transformer Encoder",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Stack of 6 identical layers, each with multi-head self-attention and position-wise feed-forward network, plus residual connections and layer normalization.",
+      "key_ideas": [
+        "6 identical stacked layers",
+        "Each layer: self-attention + FFN",
+        "Residual connections around each sublayer"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decoder_architecture",
+      "name": "Transformer Decoder",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Stack of 6 identical layers with masked self-attention, encoder-decoder attention, and feed-forward network, enabling auto-regressive generation.",
+      "key_ideas": [
+        "Masked self-attention prevents attending to future positions",
+        "Cross-attention attends to encoder output",
+        "Auto-regressive: generates one token at a time"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "masked_attention",
+      "name": "Masked Self-Attention",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Self-attention with a causal mask that prevents positions from attending to subsequent positions, preserving the auto-regressive property.",
+      "key_ideas": [
+        "Sets future positions to -infinity before softmax",
+        "Ensures prediction depends only on known outputs",
+        "Essential for decoder during training and inference"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "position_wise_ffn",
+      "name": "Position-wise Feed-Forward Network",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Two linear transformations with ReLU activation applied identically to each position: FFN(x) = max(0, xW1 + b1)W2 + b2.",
+      "key_ideas": [
+        "Inner layer dimension d_ff = 2048 (4x model dimension)",
+        "Applied identically but independently to each position",
+        "Adds non-linearity and capacity to the model"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "residual_connections",
+      "name": "Residual Connections",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Skip connections that add sublayer input to its output, enabling gradient flow and allowing the model to learn identity mappings.",
+      "key_ideas": [
+        "Output = LayerNorm(x + Sublayer(x))",
+        "Enables training of very deep networks",
+        "Borrowed from ResNet architecture"
+      ],
+      "code_refs": [],
+      "paper_ref": "He et al., 2016 — Deep Residual Learning for Image Recognition",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "layer_normalization",
+      "name": "Layer Normalization",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Normalization across features for each sample, stabilizing training and enabling higher learning rates.",
+      "key_ideas": [
+        "Normalizes activations across feature dimension",
+        "Applied after residual addition in Transformer",
+        "Batch-size independent, unlike batch normalization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ba et al., 2016 — Layer Normalization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "encoder_decoder_attention",
+      "name": "Encoder-Decoder Attention",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Cross-attention in decoder where queries come from decoder, but keys and values come from encoder output, enabling the decoder to attend to all input positions.",
+      "key_ideas": [
+        "Queries from decoder's previous layer",
+        "Keys and values from encoder final output",
+        "Every decoder position can attend to all encoder positions"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "learned_embeddings",
+      "name": "Learned Embeddings",
+      "type": "component",
+      "level": "foundational",
+      "description": "Trainable vectors that convert discrete tokens into continuous representations, scaled by √d_model in the Transformer.",
+      "key_ideas": [
+        "Maps tokens to d_model dimensional vectors",
+        "Scaled by √d_model to match positional encoding magnitude",
+        "Shared between encoder, decoder, and output layer"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "label_smoothing",
+      "name": "Label Smoothing",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Regularization technique that prevents overconfident predictions by distributing probability mass from the correct label to other labels.",
+      "key_ideas": [
+        "ε = 0.1 in the Transformer",
+        "Hurts perplexity but improves BLEU",
+        "Encourages more uncertain, better-calibrated predictions"
+      ],
+      "code_refs": [],
+      "paper_ref": "Szegedy et al., 2016 — Rethinking the Inception Architecture for Computer Vision",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "learning_rate_schedule",
+      "name": "Learning Rate Schedule (Warmup)",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Custom learning rate schedule with linear warmup followed by inverse square root decay, critical for Transformer training stability.",
+      "key_ideas": [
+        "Warmup steps = 4000",
+        "lrate = d_model^(-0.5) * min(step^(-0.5), step * warmup^(-1.5))",
+        "Prevents early training instability"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dropout_regularization",
+      "name": "Dropout Regularization",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Dropout applied to attention weights, sublayer outputs, and embeddings with rate 0.1, preventing overfitting.",
+      "key_ideas": [
+        "Applied to attention probabilities",
+        "Applied before residual connection addition",
+        "Also applied to positional encoding sum"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "byte_pair_encoding",
+      "name": "Byte Pair Encoding (BPE)",
+      "type": "tokenization",
+      "level": "foundational",
+      "description": "Subword tokenization that iteratively merges frequent character pairs, balancing vocabulary size and handling of rare words.",
+      "key_ideas": [
+        "Shared source-target vocabulary of ~37K tokens",
+        "Handles rare words via subword units",
+        "Reduces vocabulary while maintaining coverage"
+      ],
+      "code_refs": [],
+      "paper_ref": "Sennrich et al., 2016 — Neural Machine Translation of Rare Words with Subword Units",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "computational_complexity",
+      "name": "Computational Complexity Analysis",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Self-attention has O(n²·d) complexity per layer, making it more efficient than recurrent O(n·d²) when sequence length n < dimension d.",
+      "key_ideas": [
+        "Self-attention: O(n²·d) per layer",
+        "Recurrent: O(n·d²) sequential operations",
+        "Self-attention enables full parallelization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "beam_search",
+      "name": "Beam Search Decoding",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Search algorithm that maintains top-k hypotheses at each step, balancing exploration and computation for sequence generation.",
+      "key_ideas": [
+        "Beam size = 4 in Transformer experiments",
+        "Length penalty α = 0.6",
+        "Trade-off between quality and speed"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bleu_score",
+      "name": "BLEU Score",
+      "type": "application",
+      "level": "foundational",
+      "description": "Standard machine translation metric measuring n-gram overlap between generated and reference translations.",
+      "key_ideas": [
+        "Geometric mean of 1-4 gram precision",
+        "Brevity penalty for short translations",
+        "Transformer: 28.4 EN-DE, 41.8 EN-FR"
+      ],
+      "code_refs": [],
+      "paper_ref": "Papineni et al., 2002 — BLEU: a Method for Automatic Evaluation of Machine Translation",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "transformer_architecture",
+      "name": "The Transformer Architecture",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "The complete encoder-decoder architecture using only attention mechanisms, achieving state-of-the-art translation with unprecedented training efficiency.",
+      "key_ideas": [
+        "Dispenses with recurrence and convolutions entirely",
+        "Trained in 12 hours on 8 P100 GPUs (base model)",
+        "Foundation for BERT, GPT, and modern LLMs"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "attention_visualization",
+      "name": "Attention Pattern Visualization",
+      "type": "application",
+      "level": "frontier",
+      "description": "Interpreting what the model learns by visualizing attention weights, revealing linguistic structure learning like anaphora resolution.",
+      "key_ideas": [
+        "Different heads learn different patterns",
+        "Some heads track syntactic dependencies",
+        "Enables model interpretability research"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "transfer_learning",
+      "name": "Transfer Learning with Transformers",
+      "type": "application",
+      "level": "frontier",
+      "description": "Applying Transformer models trained on one task to other tasks, demonstrated by the paper's success on English constituency parsing.",
+      "key_ideas": [
+        "Generalizes beyond machine translation",
+        "Parser outperforms task-specific models",
+        "Foundation for modern pre-train + fine-tune paradigm"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "sequence_to_sequence",
+      "target": "transformer_architecture",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "Transformer is a seq2seq architecture that replaces RNNs with attention"
+    },
+    {
+      "source": "attention_mechanism",
+      "target": "scaled_dot_product_attention",
+      "relationship": "evolves_to",
+      "weight": 1.0,
+      "description": "Scaled dot-product is the specific attention variant used in Transformers"
+    },
+    {
+      "source": "query_key_value",
+      "target": "scaled_dot_product_attention",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "QKV abstraction is the foundation of scaled dot-product attention"
+    },
+    {
+      "source": "scaled_dot_product_attention",
+      "target": "multi_head_attention",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multi-head attention runs multiple scaled dot-product attentions in parallel"
+    },
+    {
+      "source": "multi_head_attention",
+      "target": "self_attention",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Self-attention is multi-head attention where Q, K, V come from same sequence"
+    },
+    {
+      "source": "self_attention",
+      "target": "encoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Encoder uses self-attention to process input sequences"
+    },
+    {
+      "source": "self_attention",
+      "target": "masked_attention",
+      "relationship": "variant_of",
+      "weight": 1.0,
+      "description": "Masked self-attention is self-attention with future position masking"
+    },
+    {
+      "source": "masked_attention",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Decoder uses masked self-attention for auto-regressive generation"
+    },
+    {
+      "source": "positional_encoding",
+      "target": "encoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Positional encoding adds sequence order information to encoder inputs"
+    },
+    {
+      "source": "positional_encoding",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Positional encoding adds sequence order information to decoder inputs"
+    },
+    {
+      "source": "position_wise_ffn",
+      "target": "encoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "FFN provides non-linearity in each encoder layer"
+    },
+    {
+      "source": "position_wise_ffn",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "FFN provides non-linearity in each decoder layer"
+    },
+    {
+      "source": "residual_connections",
+      "target": "encoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Residual connections enable gradient flow in encoder"
+    },
+    {
+      "source": "residual_connections",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Residual connections enable gradient flow in decoder"
+    },
+    {
+      "source": "layer_normalization",
+      "target": "encoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Layer norm stabilizes encoder training"
+    },
+    {
+      "source": "layer_normalization",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Layer norm stabilizes decoder training"
+    },
+    {
+      "source": "encoder_architecture",
+      "target": "transformer_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Encoder is one half of the Transformer"
+    },
+    {
+      "source": "decoder_architecture",
+      "target": "transformer_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Decoder is one half of the Transformer"
+    },
+    {
+      "source": "encoder_decoder_attention",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Cross-attention connects decoder to encoder output"
+    },
+    {
+      "source": "multi_head_attention",
+      "target": "encoder_decoder_attention",
+      "relationship": "variant_of",
+      "weight": 1.0,
+      "description": "Cross-attention is multi-head attention with different Q and KV sources"
+    },
+    {
+      "source": "learned_embeddings",
+      "target": "encoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Embeddings convert tokens to vectors for encoder"
+    },
+    {
+      "source": "learned_embeddings",
+      "target": "decoder_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Embeddings convert tokens to vectors for decoder"
+    },
+    {
+      "source": "byte_pair_encoding",
+      "target": "learned_embeddings",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "BPE tokenization determines the vocabulary for embeddings"
+    },
+    {
+      "source": "label_smoothing",
+      "target": "transformer_architecture",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "Label smoothing regularizes Transformer training"
+    },
+    {
+      "source": "learning_rate_schedule",
+      "target": "transformer_architecture",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "Warmup schedule is critical for Transformer training"
+    },
+    {
+      "source": "dropout_regularization",
+      "target": "transformer_architecture",
+      "relationship": "optimizes",
+      "weight": 1.0,
+      "description": "Dropout prevents overfitting in Transformer"
+    },
+    {
+      "source": "self_attention",
+      "target": "computational_complexity",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Understanding attention complexity is key to scaling"
+    },
+    {
+      "source": "transformer_architecture",
+      "target": "beam_search",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Beam search is used for Transformer inference"
+    },
+    {
+      "source": "transformer_architecture",
+      "target": "bleu_score",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "BLEU is used to evaluate Transformer translation quality"
+    },
+    {
+      "source": "multi_head_attention",
+      "target": "attention_visualization",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Different attention heads can be visualized to understand model behavior"
+    },
+    {
+      "source": "transformer_architecture",
+      "target": "transfer_learning",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Transformer architecture enables powerful transfer learning"
+    }
+  ]
+}
