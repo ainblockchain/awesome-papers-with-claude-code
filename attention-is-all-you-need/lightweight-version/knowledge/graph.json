@@ -1,0 +1,158 @@
+{
+  "nodes": [
+    {
+      "id": "attention_mechanism",
+      "name": "Attention Mechanism",
+      "type": "technique",
+      "level": "foundational",
+      "description": "A method that weights different parts of the input to focus on what's relevant.",
+      "key_ideas": ["Weights importance of input elements", "Enables selective focus"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "self_attention",
+      "name": "Self-Attention",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Attention applied within a single sequence, comparing each element to all others.",
+      "key_ideas": ["Within-sequence dependencies", "Parallel computation"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "residual_layer_norm",
+      "name": "Residual Connections & Layer Normalization",
+      "type": "component",
+      "level": "foundational",
+      "description": "Techniques that stabilize deep networks through skip connections and normalization.",
+      "key_ideas": ["Skip connections for gradient flow", "Normalization for stability"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "scaled_dot_product",
+      "name": "Scaled Dot-Product Attention",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The core attention formula: softmax(QK^T / sqrt(d_k))V.",
+      "key_ideas": ["Query-Key-Value computation", "Scaling prevents gradient saturation"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_head_attention",
+      "name": "Multi-Head Attention",
+      "type": "component",
+      "level": "intermediate",
+      "description": "Multiple attention heads operating in parallel on different representation subspaces.",
+      "key_ideas": ["Learns diverse attention patterns", "8 heads with d_k=64 per head"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "positional_encoding",
+      "name": "Positional Encoding",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Sine/cosine functions injected into embeddings to encode sequence position.",
+      "key_ideas": ["Position-aware embeddings", "Enables extrapolation to longer sequences"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "encoder_decoder",
+      "name": "Encoder-Decoder Structure",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Stack of 6 identical layers in encoder and decoder with attention and feed-forward sub-layers.",
+      "key_ideas": ["6 stacked layers", "Self-attention + cross-attention patterns"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "transformer_architecture",
+      "name": "Transformer Architecture",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Sequence model based entirely on attention, replacing recurrence and convolution.",
+      "key_ideas": ["Fully attention-based design", "Massively parallel training"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "attention_mechanism",
+      "target": "self_attention",
+      "relationship": "specializes_to",
+      "weight": 1.0,
+      "description": "Self-attention is a special case of attention applied within a sequence."
+    },
+    {
+      "source": "attention_mechanism",
+      "target": "scaled_dot_product",
+      "relationship": "implements",
+      "weight": 1.0,
+      "description": "Scaled dot-product is the specific implementation of attention used."
+    },
+    {
+      "source": "scaled_dot_product",
+      "target": "multi_head_attention",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multiple heads each use scaled dot-product attention."
+    },
+    {
+      "source": "self_attention",
+      "target": "encoder_decoder",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Self-attention is core to the encoder-decoder layers."
+    },
+    {
+      "source": "multi_head_attention",
+      "target": "encoder_decoder",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Multi-head attention modules are used in encoder and decoder."
+    },
+    {
+      "source": "positional_encoding",
+      "target": "encoder_decoder",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Position encoding provides sequence order information to the architecture."
+    },
+    {
+      "source": "residual_layer_norm",
+      "target": "encoder_decoder",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Residual connections and layer norm stabilize the deep stacked layers."
+    },
+    {
+      "source": "encoder_decoder",
+      "target": "transformer_architecture",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "The encoder-decoder is the core of the full Transformer."
+    }
+  ]
+}

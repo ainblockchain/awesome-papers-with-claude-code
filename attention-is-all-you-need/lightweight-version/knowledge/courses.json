@@ -1,0 +1,122 @@
+[
+  {
+    "id": "stage_1_foundations",
+    "title": "Stage 1: Foundations",
+    "description": "Build intuition for attention and the building blocks of Transformers.",
+    "concepts": ["attention_mechanism", "self_attention", "residual_layer_norm"],
+    "lessons": [
+      {
+        "concept_id": "attention_mechanism",
+        "title": "What is Attention?",
+        "prerequisites": [],
+        "key_ideas": ["Selective focus on input", "Weighted importance scores", "Context-aware computation"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why would a model need to focus on certain words instead of treating all words equally? Think about translating a sentence — would every word matter equally?",
+        "explanation": "Attention lets models focus on the most relevant parts of the input. Imagine reading a sentence in a foreign language — you'd zoom in on key words and skim less important ones. That's what attention does.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "self_attention",
+        "title": "Self-Attention: Looking Within",
+        "prerequisites": ["attention_mechanism"],
+        "key_ideas": ["Intra-sequence relationships", "Each position attends to all others", "Parallel computation"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "If a sentence is 'The cat sat on the mat,' which words should 'sat' pay the most attention to? Multiple choice: (1) The, (2) cat, (3) mat, (4) all equally.",
+        "explanation": "Self-attention lets each word look at every other word in the sentence simultaneously. It's like everyone in a group chat can see everyone else's messages at once, enabling rich interdependencies.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "residual_layer_norm",
+        "title": "Residual Connections & Layer Norm",
+        "prerequisites": [],
+        "key_ideas": ["Skip connections", "Training stability", "Gradient flow"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "When stacking many layers in a neural network, what problem do skip connections (residual paths) help solve? (1) Reduce memory (2) Prevent vanishing gradients (3) Speed up inference.",
+        "explanation": "Deep networks suffer when gradients shrink layer-by-layer. Residual connections bypass layers, letting gradients flow directly. Layer norm stabilizes this flow. Together they're like safety railings on a steep staircase.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_2_core_architecture",
+    "title": "Stage 2: Core Architecture",
+    "description": "Understand the complete Transformer architecture and its key innovations.",
+    "concepts": ["scaled_dot_product", "multi_head_attention", "positional_encoding", "encoder_decoder"],
+    "lessons": [
+      {
+        "concept_id": "scaled_dot_product",
+        "title": "Scaled Dot-Product Attention",
+        "prerequisites": ["attention_mechanism"],
+        "key_ideas": ["Query-Key-Value framework", "Softmax scoring", "Dimension scaling"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The formula is Attention(Q,K,V) = softmax(QK^T / √d_k)V. Why divide by √d_k? (1) To save memory (2) To prevent gradients from exploding (3) To make it faster.",
+        "explanation": "When dimensions are large, dot products become huge, causing softmax to focus on tiny differences. Scaling by √d_k keeps values manageable, stabilizing gradients and learning.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multi_head_attention",
+        "title": "Multi-Head Attention",
+        "prerequisites": ["scaled_dot_product"],
+        "key_ideas": ["Parallel representation learning", "8 heads per layer", "Diverse patterns"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why use 8 attention heads instead of 1 bigger head? (1) Faster training (2) Learn different patterns simultaneously (3) Reduce overfitting.",
+        "explanation": "Multiple heads are like having 8 different 'focus cameras' on the input, each learning to attend to different aspects (syntax, semantics, grammar, etc.). They vote together for richer understanding.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "positional_encoding",
+        "title": "Positional Encoding",
+        "prerequisites": ["self_attention"],
+        "key_ideas": ["Sequence order information", "Sine/cosine patterns", "Extrapolation"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Without positional encoding, would the Transformer know the difference between 'cat bit dog' and 'dog bit cat'? (Yes/No).",
+        "explanation": "Self-attention is permutation-invariant — words in any order look the same. Positional encoding injects position info via sine/cosine functions, embedding word order directly into embeddings.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "encoder_decoder",
+        "title": "Encoder-Decoder Structure",
+        "prerequisites": ["multi_head_attention", "positional_encoding", "residual_layer_norm"],
+        "key_ideas": ["6 identical stacked layers", "Self-attention + cross-attention", "Information bottleneck"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The encoder and decoder each have 6 layers. Why is the encoder's output bottlenecked before the decoder reads it? (1) Save memory (2) Force compression of key information (3) Reduce latency.",
+        "explanation": "Information flows through 6 encoder layers, compressed into a single context. The decoder then unpacks this bottleneck. It's like a writer's outline — all information must fit into a single view before expanding the full essay.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_3_transformer_complete",
+    "title": "Stage 3: The Complete Transformer",
+    "description": "Integrate all concepts and understand why Transformers revolutionized NLP.",
+    "concepts": ["transformer_architecture"],
+    "lessons": [
+      {
+        "concept_id": "transformer_architecture",
+        "title": "The Transformer: Putting It All Together",
+        "prerequisites": ["encoder_decoder", "multi_head_attention", "positional_encoding"],
+        "key_ideas": ["No recurrence needed", "Parallel processing", "State-of-the-art results"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "RNNs process sequences token-by-token (slow). Transformers process all tokens in parallel. What enables this parallelization? (1) Self-attention (2) GPUs (3) Positional encoding.",
+        "explanation": "RNNs must wait for previous tokens before computing the next one (O(n) sequential steps). Transformers compute all attention in parallel — each token simultaneously attends to all others. This enables massive speedups and better scaling to long sequences.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]
