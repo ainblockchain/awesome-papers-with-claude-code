@@ -1,0 +1,214 @@
+[
+  {
+    "id": "foundations",
+    "title": "Optimization Foundations",
+    "description": "Background knowledge on gradient descent, momentum, and adaptive learning rates",
+    "concepts": ["sgd", "momentum", "adagrad", "rmsprop"],
+    "lessons": [
+      {
+        "concept_id": "sgd",
+        "title": "Stochastic Gradient Descent (SGD)",
+        "prerequisites": [],
+        "key_ideas": ["Mini-batch gradient computation", "Parameter updates proportional to gradients", "Foundation of all modern optimizers"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "Why is SGD called 'stochastic' rather than just 'gradient descent'?\n1) It uses random parameter initialization\n2) It computes gradients on random mini-batches instead of the full dataset\n3) It adds random noise to the learning rate\nAnswer with a number.",
+        "explanation": "SGD is the workhorse of deep learning. Instead of computing gradients on the entire dataset (which would be prohibitively expensive), SGD takes random mini-batches and updates parameters based on those noisy gradient estimates. This stochasticity actually helps escape local minima! The update rule is simple: θ = θ - α∇L, where α is the learning rate and ∇L is the gradient. Think of it like hiking downhill in fog—you can't see the entire valley, but you can feel the slope under your feet and take a step downward.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "momentum",
+        "title": "Momentum: Accelerating Convergence",
+        "prerequisites": ["sgd"],
+        "key_ideas": ["Velocity vector accumulation", "Acceleration in consistent directions", "Damping of oscillations"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "What does momentum do in optimization?\n1) It makes the algorithm run faster on computers\n2) It accumulates gradient information to accelerate learning in consistent directions\n3) It prevents the algorithm from getting stuck in saddle points\nAnswer with a number.",
+        "explanation": "Momentum is like pushing a ball down a hill. Even if the terrain gets bumpy, the ball keeps rolling in the same direction because it has accumulated energy. In optimization, we track a velocity vector v that accumulates gradients: v = βv + ∇L. At each step, we move in the direction of v rather than just the current gradient. This helps us move faster on consistent downhill slopes while damping out noisy oscillations—especially useful in deep neural networks where the landscape can be quite chaotic.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "adagrad",
+        "title": "AdaGrad: Adaptive Learning Rates",
+        "prerequisites": ["sgd"],
+        "key_ideas": ["Per-parameter adaptive rates", "Accumulated squared gradients", "Better for sparse data"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "What is the main advantage of AdaGrad over standard SGD?\n1) It uses less memory\n2) It adapts the learning rate for each parameter based on gradient history\n3) It guarantees finding the global optimum\nAnswer with a number.",
+        "explanation": "AdaGrad is clever: it divides the learning rate by the square root of accumulated squared gradients for each parameter. Why? Parameters with large, consistent gradients get smaller effective learning rates (they're already making progress), while parameters with small gradients get larger rates (they need more encouragement). This is especially useful for sparse problems like NLP where some parameters appear in many examples while others are rare. However, AdaGrad has a fatal flaw: the accumulated sum never decreases, so learning rates eventually vanish.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "rmsprop",
+        "title": "RMSprop: The Adaptive Learning Rate Fixed",
+        "prerequisites": ["adagrad"],
+        "key_ideas": ["Exponential moving average instead of cumsum", "Adaptive without vanishing rates", "Maintains long-term stability"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "How does RMSprop improve upon AdaGrad?\n1) It uses a running average of squared gradients instead of accumulating them forever\n2) It reduces memory requirements\n3) Both of the above\nAnswer with a number.",
+        "explanation": "RMSprop fixes AdaGrad's dying learning rate problem by using an exponential moving average: v = βv + (1-β)∇L². Only recent gradients matter—old ones fade exponentially. Think of it like a leaky bucket: new water (recent gradients) comes in, but old water (old gradients) leaks out. This keeps the learning rates stable and prevents them from shrinking to zero. β is typically 0.999, so the effective 'window' of history is about 1000 iterations.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "adam_core",
+    "title": "The Adam Algorithm",
+    "description": "Core concepts of the Adam optimizer: first moment, second moment, bias correction, and adaptive learning rates",
+    "concepts": ["first_moment", "second_moment", "bias_correction", "adaptive_lr", "hyperparameter_tuning"],
+    "lessons": [
+      {
+        "concept_id": "first_moment",
+        "title": "First Moment Estimate: Momentum in Adam",
+        "prerequisites": ["momentum"],
+        "key_ideas": ["Exponential moving average of gradients", "m = β₁m + (1-β₁)∇L", "Momentum effect"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "In the Adam algorithm, what does the first moment estimate track?\n1) The average squared magnitude of recent gradients\n2) The mean direction of recent gradients\n3) The rate of change of the learning rate\nAnswer with a number.",
+        "explanation": "Adam maintains two 'memories': the first moment m tracks the mean direction of gradients using m = β₁m + (1-β₁)∇L. This is exactly momentum! Default β₁ = 0.9 means roughly 10 iterations of history. The first moment tells you where the gradient generally points—if gradients keep pointing downhill in the same direction, m accumulates and accelerates your steps. This is especially useful on curved optimization landscapes where you want to move steadily in consistent directions.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "second_moment",
+        "title": "Second Moment Estimate: Adaptive Scaling",
+        "prerequisites": ["rmsprop"],
+        "key_ideas": ["Exponential moving average of squared gradients", "v = β₂v + (1-β₂)∇L²", "Per-parameter scaling"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "What is the purpose of the second moment estimate in Adam?\n1) To estimate the uncentered variance of recent gradients\n2) To prevent parameter updates from being too large\n3) To weight different parameters by their importance\nAnswer with a number.",
+        "explanation": "The second moment v tracks the uncentered variance of gradients: v = β₂v + (1-β₂)∇L². With β₂ = 0.999 (much larger than β₁), the second moment has a longer memory—about 1000 iterations. Why squared gradients? Because variance tells you gradient stability. Parameters with volatile, noisy gradients get divided by a larger v (shrinking their step), while parameters with stable, strong gradients get divided by smaller v (larger steps). It's like having a rough terrain detector for your optimization landscape.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "bias_correction",
+        "title": "Bias Correction: Fixing the Cold Start",
+        "prerequisites": ["first_moment", "second_moment"],
+        "key_ideas": ["m̂ = m / (1 - β₁ᵗ)", "v̂ = v / (1 - β₂ᵗ)", "Reliable from iteration 1"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "Why is bias correction necessary in Adam?\n1) To prevent parameters from diverging\n2) To compensate for the fact that moment estimates are initialized to zero\n3) To maintain constant memory usage\nAnswer with a number.",
+        "explanation": "Here's a subtle but crucial detail: moments m and v start at zero. For the first few iterations, they're severely underestimated because they haven't accumulated much history yet. Bias correction fixes this by dividing by (1 - βᵗ), where t is the iteration number. At t=1: (1 - 0.9¹) = 0.1, so you divide by a small number, amplifying the estimate. At t=1000: (1 - 0.999¹⁰⁰⁰) ≈ 1, so the correction nearly disappears. This ensures reliable estimates from the very first step—no need to 'warm up' the optimizer.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "adaptive_lr",
+        "title": "Putting It Together: Adam's Update Rule",
+        "prerequisites": ["first_moment", "second_moment", "bias_correction"],
+        "key_ideas": ["θ = θ - α·m̂ / (√v̂ + ε)", "Combines momentum and adaptive scaling", "Element-wise per-parameter rates"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "In Adam's update rule θ = θ - α·m̂ / (√v̂ + ε), what does dividing m̂ by √v̂ accomplish?\n1) It makes the update independent of the gradient scale\n2) It normalizes the step size based on gradient variance\n3) It ensures convergence to a critical point\nAnswer with a number.",
+        "explanation": "Adam's magic formula is: θ = θ - α·m̂ / (√v̂ + ε). The numerator m̂ is the momentum direction. The denominator √v̂ is the gradient volatility. Dividing by volatility means: if a parameter's gradients are wildly fluctuating (large v), take smaller steps (cautious); if a parameter's gradients are stable (small v), take larger steps (confident). ε ≈ 1e-8 prevents division by zero. This per-parameter scaling is the key insight—different parameters learn at different effective rates based on their gradient statistics.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "hyperparameter_tuning",
+        "title": "Hyperparameters: Less Tuning, More Robustness",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["α ≈ 0.001 (much higher than SGD)", "β₁ = 0.9, β₂ = 0.999, ε = 1e-8", "Defaults work well across domains"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "Which hyperparameter of Adam is most sensitive and typically requires tuning?\n1) β₁ (first moment decay)\n2) β₂ (second moment decay)\n3) α (learning rate)\nAnswer with a number.",
+        "explanation": "Adam has four hyperparameters: α (learning rate), β₁ (first moment decay), β₂ (second moment decay), and ε (epsilon). The beautiful part? β₁ = 0.9, β₂ = 0.999, and ε = 1e-8 are near-universal defaults that work across computer vision, NLP, and reinforcement learning. The only one you typically tune is α—and Adam is forgiving! A learning rate of 0.001 works for most problems. Compare to SGD where you might need 0.01 for one dataset and 0.0001 for another. This robustness is why Adam became the default optimizer for deep learning.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "adam_applications",
+    "title": "Applications & Special Cases",
+    "description": "How Adam handles different types of data and optimization problems: sparse gradients, noisy objectives, and variants",
+    "concepts": ["sparse_gradients", "gradient_noise", "adamax"],
+    "lessons": [
+      {
+        "concept_id": "sparse_gradients",
+        "title": "Sparse Gradients: NLP & Recommendation Systems",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["Most gradient entries are zero", "Different update frequencies per parameter", "Adam naturally handles sparsity"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "Why is Adam particularly effective for sparse gradient problems?\n1) It skips zero gradients to save computation\n2) Its adaptive learning rates handle parameters with different update frequencies\n3) It is immune to gradient noise\nAnswer with a number.",
+        "explanation": "In NLP embeddings, some words appear in thousands of training examples while others appear once. This creates sparse gradients: most entries are zero, a few are large. SGD struggles here—rare parameters barely move. RMSprop helps by tracking per-parameter statistics. Adam excels because it combines momentum (m̂) with adaptive scaling (v̂). A parameter that updates rarely gets small v (less history), so its adaptive rate √v̂ stays reasonable—it can still make progress. Meanwhile, frequent parameters accumulate large v and take smaller steps. This balance is why Adam dominates NLP.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "gradient_noise",
+        "title": "Noisy and Non-Stationary Objectives",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["High variance in stochastic gradients", "Non-stationary loss landscape", "Exponential averaging damps noise"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "How does Adam handle noisy gradients from small mini-batches?\n1) By using large mini-batches to reduce noise\n2) By smoothing gradients through exponential moving averages in m and v\n3) By increasing the learning rate to overcome noise\nAnswer with a number.",
+        "explanation": "Real optimization landscapes are noisy. A mini-batch of 32 samples gives a very different gradient than a mini-batch of 32 different samples—this is gradient noise. SGD would jitter around wildly. Adam's exponential moving averages (m and v) act like low-pass filters, smoothing out these fluctuations. The first moment m captures the signal direction while dampening noise. The second moment v stabilizes the learning rate by averaging over volatility. Together, they create a robust algorithm that works with mini-batch sizes from 1 to 10,000.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "adamax",
+        "title": "AdaMax: The Infinity Norm Variant",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["Uses max instead of RMS for second moment", "u = max(β₂·u, |∇L|)", "Better on very noisy objectives"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "When might you prefer AdaMax over standard Adam?\n1) When your objective is extremely noisy with occasional huge gradient spikes\n2) When you want faster convergence on well-behaved functions\n3) When your dataset has billions of examples\nAnswer with a number.",
+        "explanation": "AdaMax is a clever variant: instead of RMS (root mean square), it uses the max norm for the second moment: u = max(β₂·u, |∇L|). Why? The max is more robust to outliers. If one mini-batch has a gradient spike (e.g., outlier examples), standard Adam's v grows slowly (averaging effect) while AdaMax's u jumps immediately (max effect). This makes AdaMax more cautious with extreme gradients. You rarely need it—Adam is more popular—but AdaMax shines on unusually noisy objectives like some reinforcement learning problems.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "advanced_topics",
+    "title": "Advanced Theory & Efficiency",
+    "description": "Convergence guarantees, computational considerations, and related theoretical insights",
+    "concepts": ["convergence_analysis", "memory_efficiency", "computational_efficiency"],
+    "lessons": [
+      {
+        "concept_id": "convergence_analysis",
+        "title": "Convergence Guarantees",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["Provable convergence to stationary points", "Regret bounds for convex problems", "Handles non-stationary objectives"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "What does the paper prove about Adam's convergence?\n1) Adam always finds the global optimum\n2) Adam converges to a stationary point with O(1/√T) regret on convex problems\n3) Adam converges faster than any other first-order method\nAnswer with a number.",
+        "explanation": "Adam isn't just heuristic—it has theoretical guarantees. Kingma & Ba prove that Adam converges to a stationary point under standard smoothness assumptions. For convex problems, they prove O(1/√T) regret, meaning cumulative loss grows as the square root of iterations. This matches the best known bound for first-order methods! The proof is non-trivial because Adam must handle sparse gradients, non-stationary objectives, and adaptive learning rates simultaneously. The theory validates what practitioners observe: Adam reliably finds good minima across diverse problems.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "memory_efficiency",
+        "title": "Memory Requirements",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["Two vectors per parameter", "Linear memory overhead", "Scales to billions of parameters"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "How much memory does Adam require compared to the parameters being optimized?\n1) The same as the parameters (stores one copy)\n2) Double the parameters (stores m and v)\n3) Triple or more (stores multiple auxiliaries)\nAnswer with a number.",
+        "explanation": "Adam's memory footprint is elegant. For d parameters, you need to store: the parameters themselves (d values), the first moment m (d values), and the second moment v (d values). That's 3d total—roughly triple the parameters. When training GPT-3 with 175 billion parameters, you need 525 billion floats ≈ 2 TB of memory. This is tractable on modern GPUs (NVIDIA A100s have 80 GB each, you'd need ~25 GPUs). Compare to Newton's method which would need the entire Hessian matrix (d² values)—that's 30 trillion parameters, impossibly huge!",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "computational_efficiency",
+        "title": "Per-Iteration Computational Cost",
+        "prerequisites": ["adaptive_lr"],
+        "key_ideas": ["O(d) time complexity", "Only element-wise operations", "Easily parallelizable"],
+        "code_ref": "",
+        "paper_ref": "Kingma & Ba, 2014",
+        "exercise": "What is Adam's time complexity per optimization step?\n1) O(d²) because it uses squared gradients\n2) O(d) where d is the number of parameters\n3) O(log d) due to efficient data structures\nAnswer with a number.",
+        "explanation": "Each Adam step does: compute gradient (O(d)), update m (O(d)), update v (O(d)), compute bias-corrected m̂ and v̂ (O(d)), update θ (O(d)). Total: O(d) linear in parameter count. No matrix multiplications, no hessian computation, just element-wise operations. Every operation is a multiply, add, or sqrt—perfect for GPUs which can do thousands of these in parallel. This is why Adam scales to billions of parameters while second-order methods don't.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]

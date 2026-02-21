@@ -1,0 +1,13 @@
+{
+  "title": "Adam: A Method for Stochastic Optimization",
+  "description": "Adam combines adaptive learning rate methods with momentum-based optimization. It maintains exponential moving averages of both gradients and squared gradients, with bias correction for stability. Computationally efficient and invariant to diagonal rescaling, Adam became the default optimizer in modern deep learning.",
+  "arxivId": "1412.6980",
+  "githubUrl": "https://github.com/tensorflow/tensor2tensor",
+  "authors": [
+    { "name": "Diederik P. Kingma" },
+    { "name": "Jimmy Ba" }
+  ],
+  "publishedAt": "2014-12-22",
+  "organization": { "name": "Google Brain & OpenAI" },
+  "submittedBy": "community"
+}
