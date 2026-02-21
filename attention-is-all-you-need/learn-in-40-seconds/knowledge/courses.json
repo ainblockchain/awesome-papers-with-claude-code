@@ -1,0 +1,122 @@
+[
+  {
+    "id": "stage_1_foundations",
+    "title": "Stage 1: Why Attention?",
+    "description": "Understand the problem Transformers were built to solve.",
+    "concepts": ["seq2seq","attention_mechanism"],
+    "lessons": [
+      {
+        "concept_id": "seq2seq",
+        "title": "The RNN Bottleneck",
+        "prerequisites": [],
+        "key_ideas": ["sequential processing","hidden state bottleneck"],
+        "code_ref": "",
+        "paper_ref": "Sutskever et al., 2014 — Sequence to Sequence Learning",
+        "exercise": "What is the main weakness of RNN-based seq2seq models?\n1) They require too much memory\n2) They compress all input into one fixed-size vector\n3) They cannot handle variable-length input\nAnswer with a number.",
+        "explanation": "RNNs encode the entire input sentence into a single hidden vector — a bottleneck that loses information for long sequences. Sutskever et al. (2014) showed seq2seq works but struggles as sentence length grows.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "attention_mechanism",
+        "title": "Attention to the Rescue",
+        "prerequisites": ["seq2seq"],
+        "key_ideas": ["context vector","alignment scores"],
+        "code_ref": "",
+        "paper_ref": "Bahdanau et al., 2015 — Neural Machine Translation by Jointly Learning to Align and Translate",
+        "exercise": "What does an attention score between a decoder step and an encoder token represent?\n1) The token's frequency in the vocabulary\n2) How relevant that encoder token is for generating the current output word\n3) The distance between the two tokens\nAnswer with a number.",
+        "explanation": "Bahdanau et al. (2015) let the decoder 'look back' at all encoder states and compute a weighted sum — solving the bottleneck by dynamically focusing on relevant input positions.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_2_transformer",
+    "title": "Stage 2: The Transformer Internals",
+    "description": "Explore the core components that make Transformers work.",
+    "concepts": ["scaled_dot_product","multi_head_attention","positional_encoding","encoder_decoder","ffn"],
+    "lessons": [
+      {
+        "concept_id": "scaled_dot_product",
+        "title": "Scaled Dot-Product Attention",
+        "prerequisites": ["attention_mechanism"],
+        "key_ideas": ["Q/K/V matrices","scaling by √dₖ"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why divide by √dₖ in scaled dot-product attention?\n1) To normalize the output to [0,1]\n2) To prevent dot products from growing large and pushing softmax into low-gradient regions\n3) To reduce memory usage\nAnswer with a number.",
+        "explanation": "Vaswani et al. (2017) compute Attention(Q,K,V)=softmax(QKᵀ/√dₖ)V. The √dₖ scaling keeps gradients healthy when the key dimension is large.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multi_head_attention",
+        "title": "Multi-Head Attention",
+        "prerequisites": ["scaled_dot_product"],
+        "key_ideas": ["parallel heads","subspace diversity"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What is the main benefit of using 8 attention heads instead of 1?\n1) It is 8× faster\n2) Each head can attend to different aspects of the input simultaneously\n3) It uses less GPU memory\nAnswer with a number.",
+        "explanation": "With h=8 heads and dₖ=64, the model jointly attends to information from different representation subspaces — like reading a sentence for grammar, sentiment, and coreference all at once.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "positional_encoding",
+        "title": "Positional Encoding",
+        "prerequisites": ["multi_head_attention"],
+        "key_ideas": ["sin/cos frequencies","position-invariant attention"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why does the Transformer need positional encoding at all?\n1) To speed up training\n2) Because attention alone is permutation-invariant and cannot distinguish token order\n3) To reduce vocabulary size\nAnswer with a number.",
+        "explanation": "Pure attention treats inputs as a set, not a sequence. Vaswani et al. inject sinusoidal PE(pos,2i)=sin(pos/10000^(2i/d)) so the model knows token positions without recurrence.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "ffn",
+        "title": "Position-wise Feed-Forward Network",
+        "prerequisites": ["positional_encoding"],
+        "key_ideas": ["per-position processing","dff=2048"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "True or False: The FFN sub-layer shares weights across all positions in a sequence.\nAnswer True or False.",
+        "explanation": "Each Transformer layer adds a two-layer FFN (dff=2048) applied identically and independently at every position — it stores per-token 'knowledge' while attention handles mixing.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "encoder_decoder",
+        "title": "The Full Transformer",
+        "prerequisites": ["ffn","positional_encoding"],
+        "key_ideas": ["layer stacking","masked self-attention in decoder"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What is the purpose of masking in the decoder's self-attention?\n1) To save memory\n2) To prevent the decoder from attending to future (not-yet-generated) tokens\n3) To ignore padding tokens\nAnswer with a number.",
+        "explanation": "N=6 encoder layers process the input; N=6 decoder layers generate output autoregressively with masked self-attention to ensure predictions depend only on past tokens.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_3_impact",
+    "title": "Stage 3: The LLM Revolution",
+    "description": "See how one paper reshaped all of modern AI.",
+    "concepts": ["impact"],
+    "lessons": [
+      {
+        "concept_id": "impact",
+        "title": "From Transformer to GPT & BERT",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["pre-training paradigm","foundation models"],
+        "code_ref": "",
+        "paper_ref": "Devlin et al., 2018 — BERT; Brown et al., 2020 — GPT-3",
+        "exercise": "Which part of the Transformer does GPT primarily use?\n1) Only the encoder\n2) Only the decoder\n3) Both encoder and decoder equally\nAnswer with a number.",
+        "explanation": "The 2017 Transformer paper launched BERT (encoder-only), GPT (decoder-only), and T5 (full encoder-decoder) — virtually every modern LLM is a scaled Transformer variant.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]

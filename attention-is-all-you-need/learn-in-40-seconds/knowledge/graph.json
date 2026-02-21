@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id":"seq2seq","name":"Seq2Seq with RNN","type":"architecture","level":"foundational","description":"Traditional encoder-decoder sequence models using recurrent networks.","key_ideas":["sequential processing","hidden state bottleneck"],"code_refs":[],"paper_ref":"Sutskever et al., 2014","first_appeared":null,"confidence":1.0},
+    {"id":"attention_mechanism","name":"Attention Mechanism","type":"technique","level":"foundational","description":"Allows models to focus on relevant parts of the input when generating each output token.","key_ideas":["context vector","alignment scores"],"code_refs":[],"paper_ref":"Bahdanau et al., 2015","first_appeared":null,"confidence":1.0},
+    {"id":"scaled_dot_product","name":"Scaled Dot-Product Attention","type":"component","level":"intermediate","description":"Core attention function: softmax(QKᵀ/√dₖ)V — scales queries and keys to prevent vanishing gradients.","key_ideas":["Q/K/V matrices","scaling by √dₖ"],"code_refs":[],"paper_ref":"Vaswani et al., 2017","first_appeared":null,"confidence":1.0},
+    {"id":"multi_head_attention","name":"Multi-Head Attention","type":"component","level":"intermediate","description":"Runs attention in parallel across h=8 heads to capture different representation subspaces.","key_ideas":["parallel heads","subspace diversity"],"code_refs":[],"paper_ref":"Vaswani et al., 2017","first_appeared":null,"confidence":1.0},
+    {"id":"positional_encoding","name":"Positional Encoding","type":"technique","level":"intermediate","description":"Sinusoidal embeddings injected into input to encode token order without recurrence.","key_ideas":["sin/cos frequencies","position-invariant attention"],"code_refs":[],"paper_ref":"Vaswani et al., 2017","first_appeared":null,"confidence":1.0},
+    {"id":"encoder_decoder","name":"Transformer Encoder-Decoder","type":"architecture","level":"advanced","description":"Stack of N=6 identical layers with self-attention and feed-forward sub-layers plus cross-attention in decoder.","key_ideas":["layer stacking","masked self-attention in decoder"],"code_refs":[],"paper_ref":"Vaswani et al., 2017","first_appeared":null,"confidence":1.0},
+    {"id":"ffn","name":"Position-wise FFN","type":"component","level":"advanced","description":"Two linear transformations with ReLU applied identically at each position: FFN(x)=max(0,xW₁+b₁)W₂+b₂.","key_ideas":["per-position processing","dff=2048"],"code_refs":[],"paper_ref":"Vaswani et al., 2017","first_appeared":null,"confidence":1.0},
+    {"id":"impact","name":"Transformer Impact & GPT/BERT","type":"application","level":"frontier","description":"Transformers became the backbone of GPT, BERT, and virtually all modern LLMs.","key_ideas":["pre-training paradigm","foundation models"],"code_refs":[],"paper_ref":"Devlin et al., 2018; Brown et al., 2020","first_appeared":null,"confidence":1.0}
+  ],
+  "edges": [
+    {"source":"seq2seq","target":"attention_mechanism","relationship":"evolves_to","weight":1.0,"description":"Attention was added to fix RNN's bottleneck problem."},
+    {"source":"attention_mechanism","target":"scaled_dot_product","relationship":"evolves_to","weight":1.0,"description":"Scaled dot-product is a fast, parameterless attention variant."},
+    {"source":"scaled_dot_product","target":"multi_head_attention","relationship":"component_of","weight":1.0,"description":"Multi-head attention runs scaled dot-product h times in parallel."},
+    {"source":"multi_head_attention","target":"encoder_decoder","relationship":"component_of","weight":1.0,"description":"Self-attention and cross-attention layers form the Transformer blocks."},
+    {"source":"positional_encoding","target":"encoder_decoder","relationship":"enables","weight":1.0,"description":"Positional encoding gives the attention-only model awareness of token order."},
+    {"source":"ffn","target":"encoder_decoder","relationship":"component_of","weight":1.0,"description":"FFN sub-layer complements attention in every Transformer layer."},
+    {"source":"encoder_decoder","target":"impact","relationship":"evolves_to","weight":1.0,"description":"The Transformer architecture spawned GPT, BERT, and the LLM era."}
+  ]
+}
