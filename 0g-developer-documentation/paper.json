@@ -3,7 +3,7 @@
   "description": "0G 분산 AI 오퍼레이팅 시스템 개발자 가이드 — Chain, Storage, Compute, DA 통합 학습 코스.",
   "githubUrl": "https://github.com/0gfoundation",
   "docsUrl": "https://docs.0g.ai/",
-  "thumbnailUrl": "https://raw.githubusercontent.com/ainblockchain/awesome-papers-with-claude-code/feat/0G-developer-course/0g-developer-documentation/0G.jpg",
+  "thumbnailUrl": "0G.jpg",
   "authors": [
     { "name": "0G Labs" }
   ],
