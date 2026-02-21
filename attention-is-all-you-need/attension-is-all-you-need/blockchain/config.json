@@ -1,0 +1,163 @@
+{
+  "provider_url": "https://mainnet-api.ainetwork.ai",
+  "topic_prefix": "attention-is-all-you-need",
+  "topic_map": {
+    "sequence_transduction": "attention-is-all-you-need/sequence_transduction",
+    "recurrent_neural_networks": "attention-is-all-you-need/recurrent_neural_networks",
+    "attention_mechanism": "attention-is-all-you-need/attention_mechanism",
+    "word_embeddings": "attention-is-all-you-need/word_embeddings",
+    "scaled_dot_product_attention": "attention-is-all-you-need/scaled_dot_product_attention",
+    "multi_head_attention": "attention-is-all-you-need/multi_head_attention",
+    "self_attention": "attention-is-all-you-need/self_attention",
+    "positional_encoding": "attention-is-all-you-need/positional_encoding",
+    "position_wise_ffn": "attention-is-all-you-need/position_wise_ffn",
+    "residual_connections": "attention-is-all-you-need/residual_connections",
+    "encoder_stack": "attention-is-all-you-need/encoder_stack",
+    "decoder_stack": "attention-is-all-you-need/decoder_stack",
+    "encoder_decoder_attention": "attention-is-all-you-need/encoder_decoder_attention",
+    "masked_self_attention": "attention-is-all-you-need/masked_self_attention",
+    "transformer_architecture": "attention-is-all-you-need/transformer_architecture",
+    "byte_pair_encoding": "attention-is-all-you-need/byte_pair_encoding",
+    "learning_rate_warmup": "attention-is-all-you-need/learning_rate_warmup",
+    "dropout_regularization": "attention-is-all-you-need/dropout_regularization",
+    "label_smoothing": "attention-is-all-you-need/label_smoothing",
+    "attention_complexity": "attention-is-all-you-need/attention_complexity",
+    "transformer_generalization": "attention-is-all-you-need/transformer_generalization"
+  },
+  "depth_map": {
+    "sequence_transduction": 1,
+    "recurrent_neural_networks": 1,
+    "attention_mechanism": 1,
+    "word_embeddings": 1,
+    "scaled_dot_product_attention": 2,
+    "multi_head_attention": 2,
+    "self_attention": 2,
+    "positional_encoding": 2,
+    "position_wise_ffn": 2,
+    "residual_connections": 2,
+    "encoder_stack": 2,
+    "decoder_stack": 2,
+    "encoder_decoder_attention": 3,
+    "masked_self_attention": 3,
+    "transformer_architecture": 3,
+    "byte_pair_encoding": 3,
+    "learning_rate_warmup": 3,
+    "dropout_regularization": 3,
+    "label_smoothing": 3,
+    "attention_complexity": 4,
+    "transformer_generalization": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "attention-is-all-you-need",
+      "title": "Attention Is All You Need",
+      "description": "Learning path for the Transformer paper by Vaswani et al., 2017"
+    },
+    {
+      "path": "attention-is-all-you-need/sequence_transduction",
+      "title": "Sequence Transduction Models",
+      "description": "Sequence transduction models transform an input sequence into an output sequence, forming the backbone of tasks like machine translation and text summarization."
+    },
+    {
+      "path": "attention-is-all-you-need/recurrent_neural_networks",
+      "title": "Recurrent Neural Networks",
+      "description": "RNNs process sequences step-by-step, maintaining a hidden state that carries information forward. The inherently sequential nature limits parallelization during training."
+    },
+    {
+      "path": "attention-is-all-you-need/attention_mechanism",
+      "title": "Attention Mechanism",
+      "description": "Attention allows a model to focus on relevant parts of the input when producing each output element, rather than relying solely on a fixed-length context vector."
+    },
+    {
+      "path": "attention-is-all-you-need/word_embeddings",
+      "title": "Word Embeddings",
+      "description": "Word embeddings map discrete tokens to dense continuous vectors of dimension d_model, with shared weights across encoder, decoder, and softmax layers."
+    },
+    {
+      "path": "attention-is-all-you-need/scaled_dot_product_attention",
+      "title": "Scaled Dot-Product Attention",
+      "description": "The core attention operation: Attention(Q,K,V) = softmax(QK^T / sqrt(d_k))V, with scaling to prevent vanishing gradients."
+    },
+    {
+      "path": "attention-is-all-you-need/multi_head_attention",
+      "title": "Multi-Head Attention",
+      "description": "Runs h=8 parallel attention operations on projected subspaces, enabling the model to attend to information from different representation subspaces."
+    },
+    {
+      "path": "attention-is-all-you-need/self_attention",
+      "title": "Self-Attention",
+      "description": "Attention where Q, K, V all come from the same sequence, allowing each position to attend to all other positions with O(1) path length."
+    },
+    {
+      "path": "attention-is-all-you-need/positional_encoding",
+      "title": "Positional Encoding",
+      "description": "Sinusoidal positional encodings inject sequence order information into the Transformer, which has no inherent notion of token position."
+    },
+    {
+      "path": "attention-is-all-you-need/position_wise_ffn",
+      "title": "Position-wise Feed-Forward Networks",
+      "description": "Two-layer FFN applied identically to each position: FFN(x) = max(0, xW1+b1)W2+b2, with inner dimension 4x the model dimension."
+    },
+    {
+      "path": "attention-is-all-you-need/residual_connections",
+      "title": "Residual Connections and Layer Normalization",
+      "description": "Each sub-layer is wrapped with LayerNorm(x + Sublayer(x)), enabling gradient flow through deep stacks and stabilizing training."
+    },
+    {
+      "path": "attention-is-all-you-need/encoder_stack",
+      "title": "Encoder Stack",
+      "description": "N=6 identical layers, each with self-attention and FFN sub-layers, processing the entire input sequence in parallel."
+    },
+    {
+      "path": "attention-is-all-you-need/decoder_stack",
+      "title": "Decoder Stack",
+      "description": "N=6 identical layers with three sub-layers: masked self-attention, encoder-decoder attention, and FFN, generating output autoregressively."
+    },
+    {
+      "path": "attention-is-all-you-need/encoder_decoder_attention",
+      "title": "Encoder-Decoder Attention",
+      "description": "Queries from the decoder attend to keys and values from the encoder output, bridging the information gap between input and output sequences."
+    },
+    {
+      "path": "attention-is-all-you-need/masked_self_attention",
+      "title": "Masked Self-Attention",
+      "description": "Self-attention modified to prevent positions from attending to subsequent positions, preserving the autoregressive property of the decoder."
+    },
+    {
+      "path": "attention-is-all-you-need/transformer_architecture",
+      "title": "The Complete Transformer",
+      "description": "The first sequence transduction model relying entirely on self-attention, achieving state-of-the-art translation with a fraction of training cost."
+    },
+    {
+      "path": "attention-is-all-you-need/byte_pair_encoding",
+      "title": "Byte Pair Encoding",
+      "description": "Subword tokenization that iteratively merges frequent character pairs, creating a shared ~37K token vocabulary that handles rare words effectively."
+    },
+    {
+      "path": "attention-is-all-you-need/learning_rate_warmup",
+      "title": "Learning Rate Warmup Schedule",
+      "description": "Linear warmup for 4000 steps followed by inverse square root decay, preventing early training instability in the Transformer."
+    },
+    {
+      "path": "attention-is-all-you-need/dropout_regularization",
+      "title": "Residual Dropout",
+      "description": "Dropout applied to sub-layer outputs before residual addition and to embedding sums, with P_drop=0.1 critical for preventing overfitting."
+    },
+    {
+      "path": "attention-is-all-you-need/label_smoothing",
+      "title": "Label Smoothing",
+      "description": "Softens target distribution with epsilon=0.1, which hurts perplexity but improves BLEU score by preventing overconfident predictions."
+    },
+    {
+      "path": "attention-is-all-you-need/attention_complexity",
+      "title": "Attention Complexity Analysis",
+      "description": "Self-attention has O(n^2*d) computation with O(1) sequential ops, making it faster than recurrent layers when sequence length < dimension."
+    },
+    {
+      "path": "attention-is-all-you-need/transformer_generalization",
+      "title": "Transformer Generalization",
+      "description": "The Transformer generalizes beyond translation, achieving 92.7 F1 on constituency parsing and laying the foundation for GPT, BERT, and modern LLMs."
+    }
+  ],
+  "x402_lessons": {}
+}
