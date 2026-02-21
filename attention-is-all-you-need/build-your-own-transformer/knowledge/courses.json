@@ -1,0 +1,134 @@
+[
+  {
+    "id": "stage_1_inputs",
+    "title": "Stage 1: Building the Input Pipeline",
+    "description": "Tokenize, embed, and encode position — the data before the first attention layer.",
+    "concepts": ["token_embeddings","attention_head"],
+    "lessons": [
+      {
+        "concept_id": "token_embeddings",
+        "title": "From Token IDs to Vectors",
+        "prerequisites": [],
+        "key_ideas": ["shared embedding weights","sin/cos PE formula"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "In the Transformer, the same weight matrix is used for both input embeddings AND the final output projection. What is the benefit?\n1) It saves parameters and ties input/output representations\n2) It speeds up the forward pass by 2×\n3) It prevents overfitting on short sequences\nAnswer with a number.",
+        "explanation": "Vaswani et al. (2017) share weights between the embedding tables and the pre-softmax linear layer, scaling them by √d_model. This ties the model's understanding of a token as input and output.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "attention_head",
+        "title": "One Attention Head from Scratch",
+        "prerequisites": ["token_embeddings"],
+        "key_ideas": ["linear projections","scaled softmax"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "You have dₖ=64. A dot product QKᵀ could reach values around √64=8. Why is dividing by √dₖ important?\n1) To normalize outputs to exactly 1.0\n2) To prevent softmax from saturating into near-zero gradients\n3) To reduce the number of parameters\nAnswer with a number.",
+        "explanation": "Each head projects inputs to Q, K, V matrices (d_k=64), computes Attention(Q,K,V)=softmax(QKᵀ/√64)V. Without √dₖ scaling, large dot products push softmax into flat regions where gradients vanish.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_2_blocks",
+    "title": "Stage 2: Assembling the Building Blocks",
+    "description": "Wire together multi-head attention, Add&Norm, FFN into encoder and decoder stacks.",
+    "concepts": ["multi_head_attention","add_and_norm","ffn_block","encoder_block","decoder_block"],
+    "lessons": [
+      {
+        "concept_id": "multi_head_attention",
+        "title": "Combining 8 Heads",
+        "prerequisites": ["attention_head"],
+        "key_ideas": ["parallel subspaces","output projection"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "After concatenating 8 attention heads (each dᵥ=64), what shape is the result before the output projection?\n1) (seq_len, 64)\n2) (seq_len, 512)\n3) (seq_len, 8)\nAnswer with a number.",
+        "explanation": "MultiHead(Q,K,V) = Concat(head₁,...,head₈)Wᴼ. With h=8 and dᵥ=64, concat gives 512-dim which the output projection Wᴼ maps back to d_model=512.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "add_and_norm",
+        "title": "Residual Connections & LayerNorm",
+        "prerequisites": ["multi_head_attention"],
+        "key_ideas": ["residual shortcut","LayerNorm over d_model"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "True or False: LayerNorm in the Transformer is applied across the batch dimension.\nAnswer True or False.",
+        "explanation": "The output of each sublayer is LayerNorm(x + Sublayer(x)). LayerNorm normalizes over the d_model=512 dimension (not batch), making it independent of batch size — key for variable-length sequences.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "ffn_block",
+        "title": "The Feed-Forward Sublayer",
+        "prerequisites": ["add_and_norm"],
+        "key_ideas": ["d_ff=2048","per-position identical"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The FFN expands d_model=512 to d_ff=2048 then projects back. What is the expansion ratio?\n1) 2×\n2) 4×\n3) 8×\nAnswer with a number.",
+        "explanation": "FFN(x)=max(0,xW₁+b₁)W₂+b₂ with W₁∈ℝ^{512×2048}. The 4× expansion (d_ff/d_model) is a design choice the authors validated empirically; it's the same ratio used in GPT and BERT.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "encoder_block",
+        "title": "Stacking the Encoder",
+        "prerequisites": ["ffn_block"],
+        "key_ideas": ["N=6 identical layers","self-attention"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why does the Transformer use N=6 layers rather than N=1 large layer?\n1) 6 layers is faster to train\n2) Each layer can refine representations progressively, learning hierarchical features\n3) The paper proved N=6 is the theoretical optimum\nAnswer with a number.",
+        "explanation": "Six identical encoder layers each contain: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. Depth lets the model build increasingly abstract representations, analogous to layers in CNNs.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "decoder_block",
+        "title": "Adding the Decoder",
+        "prerequisites": ["encoder_block"],
+        "key_ideas": ["causal mask","cross-attention"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What does the causal mask in the decoder's self-attention do?\n1) Masks padding tokens\n2) Prevents each position from attending to future positions\n3) Reduces memory by masking half the attention matrix\nAnswer with a number.",
+        "explanation": "Each decoder block has 3 sublayers: masked self-attention (can't see future tokens), cross-attention over encoder output, and FFN — each wrapped with Add&Norm. The mask enforces autoregressive generation.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_3_train_and_run",
+    "title": "Stage 3: Train It & Run It",
+    "description": "Implement the training recipe and generate sequences with your Transformer.",
+    "concepts": ["training_loop","inference_decoding"],
+    "lessons": [
+      {
+        "concept_id": "training_loop",
+        "title": "The Training Recipe",
+        "prerequisites": ["decoder_block"],
+        "key_ideas": ["warmup schedule","label smoothing ε=0.1"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "During warmup, the learning rate increases linearly for 4000 steps, then decays. What problem does warmup solve?\n1) It prevents overfitting on the training set\n2) It avoids large early updates that can destabilize untrained attention weights\n3) It reduces GPU memory usage at the start\nAnswer with a number.",
+        "explanation": "Vaswani et al. use Adam (β₁=0.9, β₂=0.98) with lrate=d_model^{-0.5}·min(step^{-0.5}, step·warmup^{-1.5}). Warmup lets the model stabilize before large gradient updates; label smoothing ε=0.1 improves generalization.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "inference_decoding",
+        "title": "Generating Text: Beam Search & KV Cache",
+        "prerequisites": ["training_loop"],
+        "key_ideas": ["beam search","KV cache"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "At inference, you can cache the encoder's output and only run the decoder for each new token. What does this optimization save?\n1) Recomputing attention over the source sentence every step\n2) Recomputing token embeddings\n3) Recomputing layer normalization\nAnswer with a number.",
+        "explanation": "The encoder runs once over the source; the decoder generates autoregressively using beam search (beam=4, α=0.6 length penalty). KV caching stores past key/value pairs so each new token only attends forward — the basis of efficient LLM inference today.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]

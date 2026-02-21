@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {"id":"token_embeddings","name":"Token & Positional Embeddings","type":"component","level":"foundational","description":"Convert token IDs to dense vectors and add sinusoidal positional encodings.","key_ideas":["shared embedding weights","sin/cos PE formula"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"attention_head","name":"Single Attention Head","type":"component","level":"intermediate","description":"Project Q, K, V then compute softmax(QKᵀ/√dₖ)V for one subspace.","key_ideas":["linear projections","scaled softmax"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"multi_head_attention","name":"Multi-Head Attention","type":"component","level":"intermediate","description":"Run h=8 heads in parallel, concatenate, then project back to d_model.","key_ideas":["parallel subspaces","output projection"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"add_and_norm","name":"Add & Norm","type":"optimization","level":"intermediate","description":"Residual connection followed by LayerNorm stabilizes training in deep stacks.","key_ideas":["residual shortcut","LayerNorm over d_model"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"ffn_block","name":"Position-wise FFN","type":"component","level":"intermediate","description":"Two linear layers with ReLU: FFN(x)=max(0,xW₁+b₁)W₂+b₂, d_ff=2048.","key_ideas":["d_ff=2048","per-position identical"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"encoder_block","name":"Encoder Block","type":"architecture","level":"advanced","description":"Stack of N=6 layers: each is Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm.","key_ideas":["N=6 identical layers","self-attention"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"decoder_block","name":"Decoder Block","type":"architecture","level":"advanced","description":"Like encoder but adds masked self-attention and cross-attention over encoder output.","key_ideas":["causal mask","cross-attention"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"training_loop","name":"Training Loop","type":"training","level":"advanced","description":"Adam optimizer with β₁=0.9, β₂=0.98, warmup for 4000 steps then decay, dropout 0.1.","key_ideas":["warmup schedule","label smoothing ε=0.1"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0},
+    {"id":"inference_decoding","name":"Inference & Decoding","type":"application","level":"frontier","description":"Autoregressive beam search at inference; encoder runs once, decoder runs per token.","key_ideas":["beam search","KV cache"],"code_refs":[],"paper_ref":"Vaswani et al., 2017 — Attention Is All You Need","first_appeared":null,"confidence":1.0}
+  ],
+  "edges": [
+    {"source":"token_embeddings","target":"encoder_block","relationship":"component_of","weight":1.0,"description":"Embeddings feed the first encoder layer."},
+    {"source":"attention_head","target":"multi_head_attention","relationship":"component_of","weight":1.0,"description":"Multi-head attention is h parallel single heads concatenated."},
+    {"source":"multi_head_attention","target":"encoder_block","relationship":"component_of","weight":1.0,"description":"Self-attention sublayer in each encoder block."},
+    {"source":"add_and_norm","target":"encoder_block","relationship":"component_of","weight":1.0,"description":"Wraps every sublayer in encoder and decoder."},
+    {"source":"ffn_block","target":"encoder_block","relationship":"component_of","weight":1.0,"description":"FFN sublayer in each encoder block."},
+    {"source":"encoder_block","target":"decoder_block","relationship":"requires","weight":1.0,"description":"Decoder cross-attends to final encoder output."},
+    {"source":"multi_head_attention","target":"decoder_block","relationship":"component_of","weight":1.0,"description":"Decoder uses masked self-attention and cross-attention heads."},
+    {"source":"decoder_block","target":"training_loop","relationship":"requires","weight":1.0,"description":"Full model needed before training."},
+    {"source":"training_loop","target":"inference_decoding","relationship":"enables","weight":1.0,"description":"Trained weights enable autoregressive generation."}
+  ]
+}
