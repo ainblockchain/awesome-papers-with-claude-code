@@ -1,0 +1,184 @@
+{
+  "provider_url": "https://mainnet-api.ainetwork.ai",
+  "topic_prefix": "direct-preference-optimization-your-language-model",
+  "topic_map": {
+    "language_model_alignment": "direct-preference-optimization-your-language-model/language_model_alignment",
+    "human_preference_data": "direct-preference-optimization-your-language-model/human_preference_data",
+    "supervised_fine_tuning": "direct-preference-optimization-your-language-model/supervised_fine_tuning",
+    "reward_modeling": "direct-preference-optimization-your-language-model/reward_modeling",
+    "kl_divergence_constraint": "direct-preference-optimization-your-language-model/kl_divergence_constraint",
+    "bradley_terry_model": "direct-preference-optimization-your-language-model/bradley_terry_model",
+    "cross_entropy_loss": "direct-preference-optimization-your-language-model/cross_entropy_loss",
+    "rlhf_pipeline": "direct-preference-optimization-your-language-model/rlhf_pipeline",
+    "reward_model_training": "direct-preference-optimization-your-language-model/reward_model_training",
+    "proximal_policy_optimization": "direct-preference-optimization-your-language-model/proximal_policy_optimization",
+    "reference_policy": "direct-preference-optimization-your-language-model/reference_policy",
+    "dpo_reparameterization": "direct-preference-optimization-your-language-model/dpo_reparameterization",
+    "dpo_loss_function": "direct-preference-optimization-your-language-model/dpo_loss_function",
+    "implicit_reward_model": "direct-preference-optimization-your-language-model/implicit_reward_model",
+    "preference_optimization": "direct-preference-optimization-your-language-model/preference_optimization",
+    "reward_equivalence_classes": "direct-preference-optimization-your-language-model/reward_equivalence_classes",
+    "gradient_dynamics": "direct-preference-optimization-your-language-model/gradient_dynamics",
+    "reward_kl_frontier": "direct-preference-optimization-your-language-model/reward_kl_frontier",
+    "control_as_inference": "direct-preference-optimization-your-language-model/control_as_inference",
+    "actor_critic_instability": "direct-preference-optimization-your-language-model/actor_critic_instability",
+    "reward_overoptimization": "direct-preference-optimization-your-language-model/reward_overoptimization",
+    "out_of_distribution_generalization": "direct-preference-optimization-your-language-model/out_of_distribution_generalization",
+    "automated_evaluation": "direct-preference-optimization-your-language-model/automated_evaluation",
+    "scaling_dpo": "direct-preference-optimization-your-language-model/scaling_dpo"
+  },
+  "depth_map": {
+    "language_model_alignment": 1,
+    "human_preference_data": 1,
+    "supervised_fine_tuning": 1,
+    "reward_modeling": 1,
+    "kl_divergence_constraint": 1,
+    "bradley_terry_model": 1,
+    "cross_entropy_loss": 1,
+    "rlhf_pipeline": 2,
+    "reward_model_training": 2,
+    "proximal_policy_optimization": 2,
+    "reference_policy": 2,
+    "dpo_reparameterization": 2,
+    "dpo_loss_function": 2,
+    "implicit_reward_model": 2,
+    "preference_optimization": 2,
+    "reward_equivalence_classes": 3,
+    "gradient_dynamics": 3,
+    "reward_kl_frontier": 3,
+    "control_as_inference": 3,
+    "actor_critic_instability": 3,
+    "reward_overoptimization": 4,
+    "out_of_distribution_generalization": 4,
+    "automated_evaluation": 4,
+    "scaling_dpo": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "direct-preference-optimization-your-language-model",
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "description": "Learning path for the DPO paper by Rafailov et al., 2023"
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/language_model_alignment",
+      "title": "Language Model Alignment",
+      "description": "The problem of making language models produce outputs that align with human values, intentions, and preferences."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/human_preference_data",
+      "title": "Human Preference Data",
+      "description": "Datasets consisting of pairs of model outputs where humans have indicated which response they prefer."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/supervised_fine_tuning",
+      "title": "Supervised Fine-Tuning (SFT)",
+      "description": "The first stage of the alignment pipeline where a pre-trained language model is fine-tuned on high-quality demonstration data."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/reward_modeling",
+      "title": "Reward Modeling",
+      "description": "The approach of training a separate model to predict human preferences, assigning scalar reward scores to model outputs."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/kl_divergence_constraint",
+      "title": "KL Divergence Constraint",
+      "description": "A regularization mechanism that penalizes the trained policy from deviating too far from the reference policy."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/bradley_terry_model",
+      "title": "Bradley-Terry Model",
+      "description": "A probabilistic model for pairwise comparisons that defines the probability of one response being preferred over another."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/cross_entropy_loss",
+      "title": "Cross-Entropy Loss",
+      "description": "A standard classification loss function. DPO's key contribution is reducing alignment to a simple binary cross-entropy objective."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/rlhf_pipeline",
+      "title": "RLHF Pipeline",
+      "description": "The traditional Reinforcement Learning from Human Feedback pipeline: SFT, reward model training, and RL-based policy optimization."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/reward_model_training",
+      "title": "Reward Model Training",
+      "description": "The process of training a neural network to predict human preferences by optimizing the Bradley-Terry likelihood."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/proximal_policy_optimization",
+      "title": "Proximal Policy Optimization (PPO)",
+      "description": "The RL algorithm most commonly used in RLHF to optimize the language model policy against the learned reward model."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/reference_policy",
+      "title": "Reference Policy",
+      "description": "The SFT-trained model that serves as the anchor point for both RLHF and DPO optimization."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/dpo_reparameterization",
+      "title": "DPO Reparameterization",
+      "description": "The central mathematical insight of DPO: expressing the reward function in terms of the optimal policy and reference policy."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/dpo_loss_function",
+      "title": "DPO Loss Function",
+      "description": "The final DPO training objective: a simple binary cross-entropy loss that directly optimizes the policy on preference data."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/implicit_reward_model",
+      "title": "Implicit Reward Model",
+      "description": "The insight that a DPO-trained language model implicitly defines a reward function r(x,y) = β log(π_θ(y|x)/π_ref(y|x))."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/preference_optimization",
+      "title": "Preference Optimization",
+      "description": "The general framework of directly optimizing a model's behavior using human preference data, without intermediate reward modeling."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/reward_equivalence_classes",
+      "title": "Reward Equivalence Classes",
+      "description": "Reward functions differing only by a prompt-dependent constant induce identical preference distributions and optimal policies."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/gradient_dynamics",
+      "title": "DPO Gradient Dynamics",
+      "description": "Analysis of DPO's gradient reveals a self-correcting weighting mechanism scaled by implicit reward model error."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/reward_kl_frontier",
+      "title": "Reward-KL Frontier",
+      "description": "An evaluation methodology plotting the trade-off between expected reward and KL divergence from the reference policy."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/control_as_inference",
+      "title": "Control as Inference",
+      "description": "A theoretical framework connecting optimal control with probabilistic inference, foundational to DPO's derivation."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/actor_critic_instability",
+      "title": "Actor-Critic Instability",
+      "description": "Analysis of why standard actor-critic methods like PPO suffer instability in the RLHF setting."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/reward_overoptimization",
+      "title": "Reward Overoptimization",
+      "description": "The phenomenon where optimizing too aggressively against a reward leads to exploitation of model errors."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/out_of_distribution_generalization",
+      "title": "Out-of-Distribution Generalization",
+      "description": "The ability of aligned models to maintain quality on inputs different from the training distribution."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/automated_evaluation",
+      "title": "Automated Evaluation (GPT-4 as Judge)",
+      "description": "Using large language models as automated evaluators for comparing model outputs at scale."
+    },
+    {
+      "path": "direct-preference-optimization-your-language-model/scaling_dpo",
+      "title": "Scaling DPO to Large Models",
+      "description": "The open challenge of applying DPO to state-of-the-art models orders of magnitude larger than tested."
+    }
+  ],
+  "x402_lessons": {}
+}

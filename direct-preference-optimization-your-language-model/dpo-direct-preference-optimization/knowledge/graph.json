@@ -1,0 +1,607 @@
+{
+  "nodes": [
+    {
+      "id": "language_model_alignment",
+      "name": "Language Model Alignment",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The problem of making language models produce outputs that align with human values, intentions, and preferences. This involves bridging the gap between a model's raw capabilities from pre-training on internet text and desired behavior when deployed as an assistant.",
+      "key_ideas": [
+        "LMs trained on internet text don't inherently follow human preferences",
+        "Alignment requires additional training beyond pre-training",
+        "Human feedback signals guide the model toward desired behavior"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "human_preference_data",
+      "name": "Human Preference Data",
+      "type": "component",
+      "level": "foundational",
+      "description": "Datasets consisting of pairs of model outputs where humans have indicated which response they prefer. This data captures implicit human values and quality standards, forming the foundation for both reward modeling and direct preference optimization.",
+      "key_ideas": [
+        "Pairwise comparisons: (prompt, winner, loser) triples",
+        "Captures nuanced human values hard to specify explicitly",
+        "Quality and quantity of data directly impacts alignment quality"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "supervised_fine_tuning",
+      "name": "Supervised Fine-Tuning (SFT)",
+      "type": "technique",
+      "level": "foundational",
+      "description": "The first stage of the alignment pipeline where a pre-trained language model is fine-tuned on high-quality demonstration data. SFT produces the reference policy (π_ref) that serves as the starting point for both RLHF and DPO.",
+      "key_ideas": [
+        "Standard maximum likelihood training on curated data",
+        "Produces the reference policy π_ref",
+        "Narrows model behavior from broad pre-training to task-specific"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reward_modeling",
+      "name": "Reward Modeling",
+      "type": "technique",
+      "level": "foundational",
+      "description": "The approach of training a separate model to predict human preferences, assigning scalar reward scores to model outputs. The reward model serves as a proxy for human judgment, enabling automated evaluation of language model responses.",
+      "key_ideas": [
+        "Maps (prompt, response) pairs to scalar rewards",
+        "Trained on human comparison data (preferred vs dispreferred)",
+        "Serves as proxy objective for policy optimization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "kl_divergence_constraint",
+      "name": "KL Divergence Constraint",
+      "type": "theory",
+      "level": "foundational",
+      "description": "A regularization mechanism that penalizes the trained policy from deviating too far from the reference policy. The KL constraint prevents reward hacking and ensures the model retains general capabilities while improving on the preference objective.",
+      "key_ideas": [
+        "KL(π_θ || π_ref) measures policy divergence",
+        "Parameter β controls constraint strength",
+        "Prevents degenerate solutions and reward hacking"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bradley_terry_model",
+      "name": "Bradley-Terry Model",
+      "type": "theory",
+      "level": "foundational",
+      "description": "A probabilistic model for pairwise comparisons that defines the probability of one response being preferred over another based on their latent quality scores. In the RLHF/DPO context, it models human preference probabilities using reward function values.",
+      "key_ideas": [
+        "P(y_w > y_l) = σ(r(x, y_w) - r(x, y_l))",
+        "σ is the logistic sigmoid function",
+        "Widely used in ranking and preference learning"
+      ],
+      "code_refs": [],
+      "paper_ref": "Bradley & Terry, 1952; Rafailov et al., 2023",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cross_entropy_loss",
+      "name": "Cross-Entropy Loss",
+      "type": "technique",
+      "level": "foundational",
+      "description": "A standard classification loss function that measures the difference between predicted probability distributions and true labels. DPO's key contribution is reducing the complex RL optimization to a simple binary cross-entropy objective over preference pairs.",
+      "key_ideas": [
+        "Standard loss for binary classification tasks",
+        "DPO reduces alignment to cross-entropy optimization",
+        "Enables use of standard deep learning optimizers"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "rlhf_pipeline",
+      "name": "RLHF Pipeline",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "The traditional Reinforcement Learning from Human Feedback pipeline consisting of three stages: supervised fine-tuning, reward model training, and RL-based policy optimization. While effective, this pipeline is complex, computationally expensive, and requires careful hyperparameter tuning.",
+      "key_ideas": [
+        "Three-stage pipeline: SFT → Reward Model → RL",
+        "Requires sampling from policy during training",
+        "Computationally expensive, needs multiple model copies"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ouyang et al., 2022 — Training Language Models to Follow Instructions; Rafailov et al., 2023",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reward_model_training",
+      "name": "Reward Model Training",
+      "type": "training",
+      "level": "intermediate",
+      "description": "The process of training a neural network to predict human preferences by optimizing the Bradley-Terry likelihood on comparison data. The reward model learns to assign higher scores to preferred responses, creating a differentiable proxy for human judgment.",
+      "key_ideas": [
+        "Optimizes Bradley-Terry log-likelihood on preference pairs",
+        "Learned reward function replaces human evaluator",
+        "Quality depends on diversity and representativeness of comparison data"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "proximal_policy_optimization",
+      "name": "Proximal Policy Optimization (PPO)",
+      "type": "optimization",
+      "level": "intermediate",
+      "description": "The RL algorithm most commonly used in the RLHF pipeline to optimize the language model policy against the learned reward model. PPO uses clipped surrogate objectives to ensure stable policy updates, but requires sampling from the current policy and maintaining multiple model copies.",
+      "key_ideas": [
+        "Clipped surrogate objective for stable updates",
+        "Requires online sampling from current policy",
+        "Needs value function estimation (critic network)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Schulman et al., 2017 — Proximal Policy Optimization; Rafailov et al., 2023",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reference_policy",
+      "name": "Reference Policy",
+      "type": "component",
+      "level": "intermediate",
+      "description": "The SFT-trained model that serves as the anchor point for both RLHF and DPO optimization. The KL divergence penalty is computed relative to this reference, ensuring the optimized policy doesn't drift too far from sensible behavior.",
+      "key_ideas": [
+        "Typically the SFT model (π_sft)",
+        "Anchor for KL divergence regularization",
+        "Must be kept in memory during DPO training for log-probability computation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dpo_reparameterization",
+      "name": "DPO Reparameterization",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The central mathematical insight of DPO: expressing the reward function in terms of the optimal policy, reference policy, and partition function. By substituting r(x,y) = β log(π(y|x)/π_ref(y|x)) + β log Z(x) into the Bradley-Terry model, the partition function cancels, yielding a reward-free objective.",
+      "key_ideas": [
+        "Reward expressed as log-ratio of policies: r = β log(π/π_ref) + β log Z",
+        "Partition function Z(x) cancels in preference probability",
+        "Eliminates need for explicit reward model training"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dpo_loss_function",
+      "name": "DPO Loss Function",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The final DPO training objective: L_DPO = -E[log σ(β(log π_θ(y_w|x)/π_ref(y_w|x) - log π_θ(y_l|x)/π_ref(y_l|x)))]. This simple binary cross-entropy loss directly optimizes the policy on preference data without requiring a separate reward model or RL algorithm.",
+      "key_ideas": [
+        "Binary cross-entropy over preference pairs",
+        "Only requires forward passes through policy and reference model",
+        "β controls deviation from reference policy"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "implicit_reward_model",
+      "name": "Implicit Reward Model",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "The insight that a DPO-trained language model implicitly defines a reward function r(x,y) = β log(π_θ(y|x)/π_ref(y|x)). This means 'your language model is secretly a reward model' — the policy itself encodes reward information that can be extracted without a separate model.",
+      "key_ideas": [
+        "Policy implicitly defines reward: r = β log(π_θ/π_ref)",
+        "No separate reward model needed",
+        "Reward can be extracted from the trained policy"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "preference_optimization",
+      "name": "Preference Optimization",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The general framework of directly optimizing a model's behavior using human preference data, without intermediate reward modeling. DPO is the primary instance, showing that the optimal policy can be found in closed form by reparameterizing the reward function.",
+      "key_ideas": [
+        "Skip reward model, optimize policy directly on preferences",
+        "Closed-form solution exists under Bradley-Terry model",
+        "Simpler implementation with fewer moving parts"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reward_equivalence_classes",
+      "name": "Reward Equivalence Classes",
+      "type": "theory",
+      "level": "advanced",
+      "description": "The theoretical insight that reward functions differing only by a prompt-dependent constant f(x) induce identical preference distributions and optimal policies. This means the reward function is under-determined by preferences, but DPO implicitly learns one canonical representative from each equivalence class.",
+      "key_ideas": [
+        "r(x,y) and r(x,y) + f(x) produce same preferences",
+        "Reward under-determination doesn't affect optimal policy",
+        "DPO naturally selects canonical representative r = β log(π/π_ref)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "gradient_dynamics",
+      "name": "DPO Gradient Dynamics",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Analysis of DPO's gradient reveals an elegant weighting mechanism: updates are scaled by how wrong the implicit reward model is. Examples where the model incorrectly ranks dispreferred over preferred responses receive larger gradient updates, creating a self-correcting learning dynamic.",
+      "key_ideas": [
+        "Weight = σ(r̂(y_l) - r̂(y_w)): higher when model is wrong",
+        "Increases probability of preferred, decreases dispreferred",
+        "Prevents degenerate probability mass concentration"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reward_kl_frontier",
+      "name": "Reward-KL Frontier",
+      "type": "technique",
+      "level": "advanced",
+      "description": "An evaluation methodology that plots the trade-off between expected reward and KL divergence from the reference policy. By varying the KL budget, this frontier reveals how efficiently different algorithms (DPO, PPO, etc.) convert policy divergence into reward improvement.",
+      "key_ideas": [
+        "Plots reward vs KL divergence trade-off",
+        "Higher frontier = more efficient optimization",
+        "DPO achieves better frontiers than PPO in experiments"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "control_as_inference",
+      "name": "Control as Inference",
+      "type": "theory",
+      "level": "advanced",
+      "description": "A theoretical framework connecting optimal control with probabilistic inference, where the reward-maximizing policy is viewed as a posterior distribution. DPO's derivation leverages this connection, treating the alignment problem as inference rather than reinforcement learning.",
+      "key_ideas": [
+        "Optimal policy = posterior in a probabilistic graphical model",
+        "Reward function plays role of log-likelihood",
+        "Connects RL to variational inference"
+      ],
+      "code_refs": [],
+      "paper_ref": "Levine, 2018; Rafailov et al., 2023",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "actor_critic_instability",
+      "name": "Actor-Critic Instability",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Analysis of why standard actor-critic methods like PPO suffer instability in the RLHF setting. The normalization term β log Σ_y π_ref(y|x) exp(r(x,y)/β) acts as an implicit value function. PPO must estimate this separately, introducing approximation error, while DPO naturally incorporates it.",
+      "key_ideas": [
+        "PPO requires separate value function (critic) estimation",
+        "Approximation errors in critic destabilize training",
+        "DPO inherently incorporates the value function through reparameterization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "reward_overoptimization",
+      "name": "Reward Overoptimization",
+      "type": "theory",
+      "level": "frontier",
+      "description": "The phenomenon where optimizing too aggressively against a reward model (or implicit reward) leads to exploitation of model errors rather than genuine quality improvement. While well-documented in RLHF, the paper identifies investigating how reward overoptimization manifests in DPO as an important open question.",
+      "key_ideas": [
+        "Over-optimization exploits reward model imperfections",
+        "Goodhart's Law applied to learned reward functions",
+        "Open question: how does this manifest in DPO vs RLHF?"
+      ],
+      "code_refs": [],
+      "paper_ref": "Gao et al., 2022; Rafailov et al., 2023",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "out_of_distribution_generalization",
+      "name": "Out-of-Distribution Generalization",
+      "type": "application",
+      "level": "frontier",
+      "description": "The ability of aligned models to maintain quality on inputs different from the training distribution. DPO showed promising OOD generalization (trained on Reddit summaries, tested on CNN/DailyMail news), but comprehensive study of DPO vs RLHF generalization remains an open research direction.",
+      "key_ideas": [
+        "DPO outperformed PPO on CNN/DailyMail despite Reddit-only training",
+        "OOD generalization critical for real-world deployment",
+        "Comprehensive comparison with RLHF remains open"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "automated_evaluation",
+      "name": "Automated Evaluation (GPT-4 as Judge)",
+      "type": "application",
+      "level": "frontier",
+      "description": "Using large language models (specifically GPT-4) as automated evaluators for comparing model outputs, replacing expensive human evaluation. The paper validated this approach by showing GPT-4 agreement with human judgments is comparable to inter-human agreement rates (67-79%).",
+      "key_ideas": [
+        "GPT-4 as proxy for human evaluation",
+        "Agreement with humans comparable to inter-annotator agreement",
+        "Enables scalable evaluation but introduces evaluator biases"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "scaling_dpo",
+      "name": "Scaling DPO to Large Models",
+      "type": "application",
+      "level": "frontier",
+      "description": "The open challenge of applying DPO to state-of-the-art models orders of magnitude larger than those tested in the original paper. While DPO's computational simplicity suggests it should scale well, empirical validation at frontier model scales remains important future work.",
+      "key_ideas": [
+        "Original experiments on relatively small models",
+        "Computational simplicity suggests good scaling properties",
+        "Empirical validation at large scale is ongoing in the community"
+      ],
+      "code_refs": [],
+      "paper_ref": "Rafailov et al., 2023 — Direct Preference Optimization",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "reward_modeling",
+      "target": "human_preference_data",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Reward modeling requires human preference data as training signal"
+    },
+    {
+      "source": "rlhf_pipeline",
+      "target": "language_model_alignment",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "RLHF is a concrete approach to the language model alignment problem"
+    },
+    {
+      "source": "reward_model_training",
+      "target": "bradley_terry_model",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Reward model training optimizes the Bradley-Terry preference likelihood"
+    },
+    {
+      "source": "reward_model_training",
+      "target": "reward_modeling",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Reward model training implements the reward modeling approach"
+    },
+    {
+      "source": "reference_policy",
+      "target": "supervised_fine_tuning",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "The reference policy is produced by supervised fine-tuning"
+    },
+    {
+      "source": "proximal_policy_optimization",
+      "target": "reward_model_training",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "PPO optimizes against the trained reward model"
+    },
+    {
+      "source": "reward_model_training",
+      "target": "rlhf_pipeline",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Reward model training is the second stage of the RLHF pipeline"
+    },
+    {
+      "source": "proximal_policy_optimization",
+      "target": "rlhf_pipeline",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "PPO is the RL optimization stage of the RLHF pipeline"
+    },
+    {
+      "source": "dpo_reparameterization",
+      "target": "bradley_terry_model",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "DPO reparameterization substitutes into the Bradley-Terry preference model"
+    },
+    {
+      "source": "dpo_reparameterization",
+      "target": "kl_divergence_constraint",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "DPO derivation starts from the KL-constrained optimization objective"
+    },
+    {
+      "source": "dpo_reparameterization",
+      "target": "reference_policy",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "DPO reparameterization expresses rewards in terms of the reference policy"
+    },
+    {
+      "source": "partition_function_cancellation",
+      "target": "dpo_reparameterization",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Partition function cancellation is the key step that makes DPO reparameterization tractable"
+    },
+    {
+      "source": "implicit_reward_model",
+      "target": "dpo_reparameterization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "The implicit reward model insight follows from the DPO reparameterization"
+    },
+    {
+      "source": "dpo_loss_function",
+      "target": "dpo_reparameterization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "The DPO loss function is derived from the reparameterization"
+    },
+    {
+      "source": "dpo_loss_function",
+      "target": "cross_entropy_loss",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "DPO loss is a binary cross-entropy classification objective"
+    },
+    {
+      "source": "dpo_loss_function",
+      "target": "reference_policy",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "DPO loss computation requires log-probabilities from the reference policy"
+    },
+    {
+      "source": "preference_optimization",
+      "target": "dpo_loss_function",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Preference optimization is the general framework realized by the DPO loss"
+    },
+    {
+      "source": "preference_optimization",
+      "target": "rlhf_pipeline",
+      "relationship": "alternative_to",
+      "weight": 1.0,
+      "description": "Direct preference optimization is an alternative to the full RLHF pipeline"
+    },
+    {
+      "source": "reward_equivalence_classes",
+      "target": "implicit_reward_model",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Reward equivalence classes explain why the implicit reward model is sufficient"
+    },
+    {
+      "source": "gradient_dynamics",
+      "target": "dpo_loss_function",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Gradient analysis examines the learning dynamics of the DPO loss"
+    },
+    {
+      "source": "reward_kl_frontier",
+      "target": "dpo_loss_function",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Reward-KL frontier evaluates DPO's optimization efficiency"
+    },
+    {
+      "source": "reward_kl_frontier",
+      "target": "proximal_policy_optimization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Reward-KL frontier compares DPO against PPO baselines"
+    },
+    {
+      "source": "control_as_inference",
+      "target": "kl_divergence_constraint",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Control-as-inference framework motivates the KL-constrained objective"
+    },
+    {
+      "source": "control_as_inference",
+      "target": "dpo_reparameterization",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "The control-as-inference perspective enables the DPO reparameterization"
+    },
+    {
+      "source": "actor_critic_instability",
+      "target": "proximal_policy_optimization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Actor-critic instability analysis explains PPO's difficulties in RLHF"
+    },
+    {
+      "source": "reward_overoptimization",
+      "target": "preference_optimization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Reward overoptimization is a risk in any preference optimization approach"
+    },
+    {
+      "source": "reward_overoptimization",
+      "target": "gradient_dynamics",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Understanding gradient dynamics helps analyze overoptimization risk"
+    },
+    {
+      "source": "out_of_distribution_generalization",
+      "target": "preference_optimization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "OOD generalization tests the robustness of preference-optimized models"
+    },
+    {
+      "source": "out_of_distribution_generalization",
+      "target": "reward_kl_frontier",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "OOD evaluation extends the reward-KL analysis to new domains"
+    },
+    {
+      "source": "automated_evaluation",
+      "target": "reward_kl_frontier",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Automated evaluation with GPT-4 enables scalable reward-KL frontier analysis"
+    },
+    {
+      "source": "scaling_dpo",
+      "target": "preference_optimization",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "Scaling DPO explores preference optimization at larger model sizes"
+    }
+  ]
+}

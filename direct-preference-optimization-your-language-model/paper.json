@@ -1,0 +1,17 @@
+{
+  "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+  "description": "DPO introduces a simple classification loss that directly optimizes language model policies on human preference data, eliminating the need for reinforcement learning while maintaining theoretical equivalence to the RLHF objective.",
+  "arxivId": "2305.18290",
+  "githubUrl": null,
+  "authors": [
+    { "name": "Rafael Rafailov" },
+    { "name": "Archit Sharma" },
+    { "name": "Eric Mitchell" },
+    { "name": "Stefano Ermon" },
+    { "name": "Christopher D. Manning" },
+    { "name": "Chelsea Finn" }
+  ],
+  "publishedAt": "2023-05-29",
+  "organization": { "name": "Stanford University" },
+  "submittedBy": "community"
+}
