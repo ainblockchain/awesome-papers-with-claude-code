@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {"id": "transformer_architecture", "name": "Transformer Architecture", "type": "architecture", "level": "foundational", "description": "A novel network architecture based entirely on attention mechanisms without recurrence.", "key_ideas": ["No RNN", "Attention only"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "scaled_dot_product_attention", "name": "Scaled Dot-Product Attention", "type": "technique", "level": "intermediate", "description": "Core attention function: Attention(Q,K,V) = softmax(QK^T/√d_k)V.", "key_ideas": ["Query-Key-Value", "Scaling"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "multi_head_attention", "name": "Multi-Head Attention", "type": "component", "level": "intermediate", "description": "Multiple parallel attention mechanisms using 8 heads with different projections.", "key_ideas": ["8 heads", "Parallel"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "encoder_decoder", "name": "Encoder-Decoder Structure", "type": "architecture", "level": "intermediate", "description": "6 stacked layers of self-attention (encoder) and cross-attention (decoder).", "key_ideas": ["Stacked layers", "Cross-attention"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "positional_encoding", "name": "Positional Encoding", "type": "component", "level": "intermediate", "description": "Sinusoidal functions encoding position information since attention has no inherent ordering.", "key_ideas": ["Sin/Cos", "Absolute position"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "feedforward_networks", "name": "Position-wise Feed-Forward Networks", "type": "component", "level": "intermediate", "description": "Two-layer MLP expanding to 2048 dimensions then back to 512.", "key_ideas": ["MLP", "ReLU"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "self_attention", "name": "Self-Attention", "type": "technique", "level": "advanced", "description": "Sequence attending to itself capturing all pairwise relationships in parallel.", "key_ideas": ["Intra-sequence", "Parallel"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "causal_masking", "name": "Causal Masking", "type": "optimization", "level": "advanced", "description": "Masking future positions during decoding to enforce autoregressive generation.", "key_ideas": ["Future blocking", "Autoregressive"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "training_optimization", "name": "Training Optimization", "type": "training", "level": "advanced", "description": "Adam optimizer with warmup scheduling, dropout (0.1), and label smoothing.", "key_ideas": ["Warmup", "Learning rate"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0},
+    {"id": "machine_translation", "name": "Machine Translation Application", "type": "application", "level": "frontier", "description": "Achieves SOTA on WMT 2014: 28.4 BLEU (EN-DE), 41.8 BLEU (EN-FR).", "key_ideas": ["SOTA", "Efficient"], "code_refs": [], "paper_ref": "Vaswani et al., 2017", "first_appeared": null, "confidence": 1.0}
+  ],
+  "edges": [
+    {"source": "transformer_architecture", "target": "encoder_decoder", "relationship": "component_of", "weight": 1.0, "description": "Core structure of Transformer"},
+    {"source": "encoder_decoder", "target": "multi_head_attention", "relationship": "component_of", "weight": 1.0, "description": "Uses multi-head attention"},
+    {"source": "multi_head_attention", "target": "scaled_dot_product_attention", "relationship": "component_of", "weight": 1.0, "description": "Applies scaled dot-product"},
+    {"source": "transformer_architecture", "target": "positional_encoding", "relationship": "requires", "weight": 1.0, "description": "Replaces RNN position info"},
+    {"source": "encoder_decoder", "target": "feedforward_networks", "relationship": "component_of", "weight": 1.0, "description": "Each layer has FFN"},
+    {"source": "encoder_decoder", "target": "self_attention", "relationship": "component_of", "weight": 1.0, "description": "Encoder self-attention"},
+    {"source": "encoder_decoder", "target": "causal_masking", "relationship": "requires", "weight": 1.0, "description": "Decoder masking"},
+    {"source": "transformer_architecture", "target": "machine_translation", "relationship": "enables", "weight": 1.0, "description": "Application domain"}
+  ]
+}

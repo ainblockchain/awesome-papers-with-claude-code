@@ -1,0 +1,146 @@
+[
+  {
+    "id": "course_foundations",
+    "title": "Foundations: Why Attention?",
+    "description": "Understanding the problem Transformers solve",
+    "concepts": ["transformer_architecture"],
+    "lessons": [
+      {
+        "concept_id": "transformer_architecture",
+        "title": "The Transformer Revolution",
+        "prerequisites": [],
+        "key_ideas": ["RNNs process sequentially", "Transformers process in parallel", "Attention replaces recurrence"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "Why is parallel processing important for modern deep learning? A) It makes code simpler B) It enables faster training on GPUs C) It reduces memory usage",
+        "explanation": "Before Transformers, RNNs processed sequences step-by-step, which was slow. Vaswani et al. showed attention mechanisms alone could match RNN performance while processing entire sequences in parallel on GPUs.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_core",
+    "title": "Core: How Attention Works",
+    "description": "The building blocks of Transformer architecture",
+    "concepts": ["scaled_dot_product_attention", "multi_head_attention", "encoder_decoder", "positional_encoding", "feedforward_networks", "self_attention"],
+    "lessons": [
+      {
+        "concept_id": "scaled_dot_product_attention",
+        "title": "Scaled Dot-Product Attention",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": ["Queries match Keys", "Values weighted by scores", "Scaling prevents vanishing gradients"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "What does the scaling factor √d_k prevent? A) Numerical overflow B) Vanishing gradients in the softmax C) Memory leaks",
+        "explanation": "The attention formula Attention(Q,K,V) = softmax(QK^T/√d_k)V divides by √d_k to keep softmax gradients stable. Without scaling, large dot products squash gradients to near-zero.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "multi_head_attention",
+        "title": "Multi-Head Attention: Seeing Multiple Perspectives",
+        "prerequisites": ["scaled_dot_product_attention"],
+        "key_ideas": ["8 parallel attention heads", "Different representation subspaces", "Attention from multiple viewpoints"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "Why use 8 attention heads instead of one? A) Faster computation B) Learn attention from different subspaces simultaneously C) Reduce memory",
+        "explanation": "Multi-head attention runs 8 independent attention mechanisms in parallel, each learning to focus on different aspects (e.g., one head for grammar, another for semantics). Results are concatenated.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "encoder_decoder",
+        "title": "Encoder-Decoder Architecture",
+        "prerequisites": ["multi_head_attention"],
+        "key_ideas": ["6 encoder layers", "6 decoder layers", "Cross-attention between them"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "What does the decoder's cross-attention layer do? A) Attends to itself B) Attends to encoder outputs C) Generates new embeddings",
+        "explanation": "The encoder processes input and outputs representations. The decoder attends to these encoder outputs via cross-attention while generating output token-by-token, combining self-attention (to itself) with encoder context.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "positional_encoding",
+        "title": "Positional Encoding: Adding Sequence Order",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": ["Sinusoidal functions", "No learned parameters", "Encodes absolute position"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "Why do Transformers need positional encoding? A) Attention has no inherent sequence order B) To speed up training C) To reduce embeddings size",
+        "explanation": "Unlike RNNs that process left-to-right, attention treats all positions equally. Sinusoidal positional encodings (sin/cos waves at different frequencies) inject position information before attention computes relationships.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "feedforward_networks",
+        "title": "Position-wise Feed-Forward Networks",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["Two-layer MLP per position", "512→2048→512 expansion", "ReLU nonlinearity"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "What is the purpose of expanding to 2048 dimensions then back to 512? A) Reduce computation B) Add nonlinearity and expressivity C) Match GPU memory",
+        "explanation": "Each layer includes an MLP that expands attention outputs to 2048 dimensions (adding capacity), applies ReLU nonlinearity, then contracts back to 512. This adds expressivity beyond attention.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "self_attention",
+        "title": "Self-Attention: Sequence Attends to Itself",
+        "prerequisites": ["scaled_dot_product_attention"],
+        "key_ideas": ["Positions attend to all other positions", "Computes all relationships in parallel", "Core of encoder"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "How many relationships does self-attention compute for a 10-token sequence? A) 10 B) 100 C) 1024",
+        "explanation": "Self-attention computes how much each position should attend to every other position. For 10 tokens, all 10×10=100 pairwise relationships are computed in parallel, enabling the model to directly relate distant words.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "course_advanced",
+    "title": "Advanced: Training & Results",
+    "description": "Optimization techniques and real-world performance",
+    "concepts": ["causal_masking", "training_optimization", "machine_translation"],
+    "lessons": [
+      {
+        "concept_id": "causal_masking",
+        "title": "Causal Masking: Preventing Future Cheating",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["Mask future tokens", "Prevents decoder from seeing output", "Enables autoregressive generation"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "Why mask future tokens in the decoder? A) Save computation B) Prevent the decoder from 'cheating' by looking ahead C) Increase accuracy",
+        "explanation": "During training, the decoder must not see future ground truth tokens. Causal masking sets future attention weights to -∞ before softmax, forcing attention to zero. This enables autoregressive generation at test time.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "training_optimization",
+        "title": "Training the Transformer",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["Warmup schedule", "Adam optimizer", "Dropout and label smoothing"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "What does the warmup schedule do? A) Initialize weights warmly B) Gradually increase learning rate for 4000 steps C) Reduce training time",
+        "explanation": "Vaswani et al. use Adam optimizer with a custom schedule: linearly increase learning rate for 4000 warmup steps, then decay by steps^-0.5. Dropout (0.1) and label smoothing (ε=0.1) prevent overfitting. 12 hours on 8 P100 GPUs trains the base model.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "machine_translation",
+        "title": "Results: Machine Translation Excellence",
+        "prerequisites": ["transformer_architecture"],
+        "key_ideas": ["28.4 BLEU on EN-DE", "41.8 BLEU on EN-FR", "3.5x faster training"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017",
+        "exercise": "What is the primary advantage of Transformer over RNNs? A) Higher accuracy only B) Faster training while maintaining accuracy C) Smaller model size",
+        "explanation": "The Transformer achieves state-of-the-art 28.4 BLEU (English-German) and 41.8 BLEU (English-French) on WMT 2014, training in just 3.5 days on 8 GPUs — much faster than previous RNN-based approaches.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]
