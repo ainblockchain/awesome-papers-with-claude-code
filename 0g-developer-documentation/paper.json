@@ -1,6 +1,6 @@
 {
   "title": "0G Developer Documentation",
-  "description": "0G 분산 AI 오퍼레이팅 시스템 개발자 가이드 — Chain, Storage, Compute, DA 통합 학습 코스.",
+  "description": "Unlock the full potential of 0G, the world's first decentralized AI operating system designed for high-performance intelligence. Beyond mere theory, engage with live, runnable TypeScript examples that demonstrate how to leverage data availability (DA) and modular storage for AI scalability.",
   "githubUrl": "https://github.com/0gfoundation",
   "docsUrl": "https://docs.0g.ai/",
   "thumbnailUrl": "0G.jpg",
