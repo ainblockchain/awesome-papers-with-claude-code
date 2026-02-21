@@ -1,0 +1,11 @@
+{
+  "title": "0G Developer Documentation",
+  "description": "0G는 세계 최초의 탈중앙화 AI 운영체제입니다. Chain, Storage, Compute, DA 네 가지 핵심 서비스로 AI 인프라를 재정의합니다. 이 코스에서는 AI 튜터가 지갑 설정부터 파일 업로드, AI 추론, 검증 가능한 AI 파이프라인 구축까지 단계별로 안내합니다.",
+  "githubUrl": "https://github.com/0glabs",
+  "authors": [
+    { "name": "0G Labs" }
+  ],
+  "publishedAt": "2024-01-01",
+  "organization": { "name": "0G Labs" },
+  "submittedBy": "community"
+}

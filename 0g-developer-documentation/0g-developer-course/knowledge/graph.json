@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "title": "0G Developer Course Knowledge Graph",
+    "description": "Concept dependency graph for the 0G Developer Course — 25 nodes, 32 typed edges",
+    "source": "0G Labs, 2024 — 0G Developer Documentation (docs.0g.ai)",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "architecture_deep_dive",
+      "label": "Architecture Deep Dive",
+      "module": "0g_foundations",
+      "level": "foundational",
+      "description": "How Chain, Storage, Compute, and DA interconnect"
+    },
+    {
+      "id": "data_flow_model",
+      "label": "Data Flow Model",
+      "module": "0g_foundations",
+      "level": "foundational",
+      "description": "Content-addressing, rootHash lifecycle, Merkle proofs"
+    },
+    {
+      "id": "tokenomics_and_gas",
+      "label": "Tokenomics & Gas",
+      "module": "0g_foundations",
+      "level": "foundational",
+      "description": "Gas fees, storage pricing, compute escrow mechanics"
+    },
+    {
+      "id": "security_model",
+      "label": "Security Model",
+      "module": "0g_foundations",
+      "level": "foundational",
+      "description": "Proof of Random Access, TEE verification, ZK proofs"
+    },
+    {
+      "id": "developer_tooling",
+      "label": "Developer Tooling",
+      "module": "0g_foundations",
+      "level": "foundational",
+      "description": "SDK, CLI, explorers, and Builder Hub"
+    },
+    {
+      "id": "storage_architecture",
+      "label": "Storage Architecture",
+      "module": "storage_sdk",
+      "level": "intermediate",
+      "description": "Log layer vs KV layer, erasure coding, data sharding"
+    },
+    {
+      "id": "log_storage_upload",
+      "label": "Log Storage Upload",
+      "module": "storage_sdk",
+      "level": "intermediate",
+      "description": "ZgFile, Merkle tree computation, indexer upload flow"
+    },
+    {
+      "id": "log_storage_download",
+      "label": "Log Storage Download",
+      "module": "storage_sdk",
+      "level": "intermediate",
+      "description": "Download by rootHash, Merkle proof verification"
+    },
+    {
+      "id": "kv_storage_write",
+      "label": "KV Storage Write",
+      "module": "storage_sdk",
+      "level": "intermediate",
+      "description": "Batcher API, stream IDs, key-value write patterns"
+    },
+    {
+      "id": "kv_storage_read",
+      "label": "KV Storage Read",
+      "module": "storage_sdk",
+      "level": "intermediate",
+      "description": "KvClient, getValue, iteration, consistency model"
+    },
+    {
+      "id": "storage_production_patterns",
+      "label": "Storage Production Patterns",
+      "module": "storage_sdk",
+      "level": "intermediate",
+      "description": "Error handling, retry logic, large file chunking"
+    },
+    {
+      "id": "compute_architecture",
+      "label": "Compute Architecture",
+      "module": "compute_network",
+      "level": "intermediate",
+      "description": "Provider marketplace, Compute Ledger, escrow model"
+    },
+    {
+      "id": "openai_migration",
+      "label": "OpenAI Migration",
+      "module": "compute_network",
+      "level": "intermediate",
+      "description": "2-line migration from OpenAI to 0G Compute"
+    },
+    {
+      "id": "provider_management",
+      "label": "Provider Management",
+      "module": "compute_network",
+      "level": "intermediate",
+      "description": "Discovery, funding, acknowledgement, secret retrieval"
+    },
+    {
+      "id": "inference_advanced",
+      "label": "Advanced Inference",
+      "module": "compute_network",
+      "level": "intermediate",
+      "description": "Streaming, multi-turn, model selection, TEE verification"
+    },
+    {
+      "id": "fine_tuning",
+      "label": "Fine-Tuning",
+      "module": "compute_network",
+      "level": "intermediate",
+      "description": "Custom model training on decentralized GPUs"
+    },
+    {
+      "id": "evm_deployment",
+      "label": "EVM Deployment",
+      "module": "chain_smart_contracts",
+      "level": "advanced",
+      "description": "Hardhat/Foundry setup, evmVersion: cancun requirement"
+    },
+    {
+      "id": "provenance_contracts",
+      "label": "Provenance Contracts",
+      "module": "chain_smart_contracts",
+      "level": "advanced",
+      "description": "Recording rootHashes on-chain, event-driven audit trails"
+    },
+    {
+      "id": "da_layer_integration",
+      "label": "DA Layer Integration",
+      "module": "chain_smart_contracts",
+      "level": "advanced",
+      "description": "DASigners precompile, data availability for rollups"
+    },
+    {
+      "id": "rollup_patterns",
+      "label": "Rollup Patterns",
+      "module": "chain_smart_contracts",
+      "level": "advanced",
+      "description": "OP Stack and Arbitrum Nitro integration with 0G DA"
+    },
+    {
+      "id": "precompile_contracts",
+      "label": "Precompile Contracts",
+      "module": "chain_smart_contracts",
+      "level": "advanced",
+      "description": "DASigners (0x1000), WrappedOGBase (0x1001)"
+    },
+    {
+      "id": "erc7857_infts",
+      "label": "ERC-7857 INFTs",
+      "module": "advanced_patterns",
+      "level": "frontier",
+      "description": "Intelligent NFTs: tokenize AI models with encrypted weights"
+    },
+    {
+      "id": "ai_agent_storage_pattern",
+      "label": "AI Agent Storage Pattern",
+      "module": "advanced_patterns",
+      "level": "frontier",
+      "description": "Store weights on Storage, infer on Compute, record on Chain"
+    },
+    {
+      "id": "goldsky_indexing",
+      "label": "Goldsky Indexing",
+      "module": "advanced_patterns",
+      "level": "frontier",
+      "description": "GraphQL API and database streaming over 0G contract events"
+    },
+    {
+      "id": "full_stack_capstone",
+      "label": "Full-Stack Capstone",
+      "module": "advanced_patterns",
+      "level": "frontier",
+      "description": "End-to-end project: Storage + Compute + Chain pipeline"
+    }
+  ],
+  "edges": [
+    { "from": "architecture_deep_dive", "to": "data_flow_model", "type": "requires" },
+    { "from": "architecture_deep_dive", "to": "tokenomics_and_gas", "type": "requires" },
+    { "from": "architecture_deep_dive", "to": "security_model", "type": "requires" },
+    { "from": "data_flow_model", "to": "developer_tooling", "type": "requires" },
+    { "from": "tokenomics_and_gas", "to": "developer_tooling", "type": "requires" },
+    { "from": "developer_tooling", "to": "storage_architecture", "type": "enables" },
+    { "from": "developer_tooling", "to": "compute_architecture", "type": "enables" },
+    { "from": "developer_tooling", "to": "evm_deployment", "type": "enables" },
+    { "from": "data_flow_model", "to": "storage_architecture", "type": "requires" },
+    { "from": "storage_architecture", "to": "log_storage_upload", "type": "requires" },
+    { "from": "log_storage_upload", "to": "log_storage_download", "type": "requires" },
+    { "from": "storage_architecture", "to": "kv_storage_write", "type": "requires" },
+    { "from": "kv_storage_write", "to": "kv_storage_read", "type": "requires" },
+    { "from": "log_storage_download", "to": "storage_production_patterns", "type": "requires" },
+    { "from": "kv_storage_read", "to": "storage_production_patterns", "type": "requires" },
+    { "from": "tokenomics_and_gas", "to": "compute_architecture", "type": "requires" },
+    { "from": "compute_architecture", "to": "openai_migration", "type": "requires" },
+    { "from": "openai_migration", "to": "provider_management", "type": "requires" },
+    { "from": "provider_management", "to": "inference_advanced", "type": "requires" },
+    { "from": "inference_advanced", "to": "fine_tuning", "type": "evolves_to" },
+    { "from": "security_model", "to": "evm_deployment", "type": "requires" },
+    { "from": "evm_deployment", "to": "provenance_contracts", "type": "requires" },
+    { "from": "log_storage_upload", "to": "provenance_contracts", "type": "component_of" },
+    { "from": "provenance_contracts", "to": "da_layer_integration", "type": "enables" },
+    { "from": "da_layer_integration", "to": "rollup_patterns", "type": "requires" },
+    { "from": "evm_deployment", "to": "precompile_contracts", "type": "requires" },
+    { "from": "da_layer_integration", "to": "precompile_contracts", "type": "component_of" },
+    { "from": "fine_tuning", "to": "erc7857_infts", "type": "evolves_to" },
+    { "from": "storage_production_patterns", "to": "ai_agent_storage_pattern", "type": "enables" },
+    { "from": "erc7857_infts", "to": "ai_agent_storage_pattern", "type": "component_of" },
+    { "from": "provenance_contracts", "to": "goldsky_indexing", "type": "enables" },
+    { "from": "ai_agent_storage_pattern", "to": "full_stack_capstone", "type": "requires" }
+  ]
+}
