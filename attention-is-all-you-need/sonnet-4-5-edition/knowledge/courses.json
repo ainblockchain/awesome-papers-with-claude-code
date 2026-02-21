@@ -1,0 +1,146 @@
+[
+  {
+    "id": "foundations",
+    "title": "Stage 1: Why Attention? From RNNs to Transformers",
+    "description": "Background on seq2seq limitations and how attention solves them.",
+    "concepts": ["seq2seq", "scaled_dot_product_attention", "positional_encoding"],
+    "lessons": [
+      {
+        "concept_id": "seq2seq",
+        "title": "The Problem: RNN Bottlenecks",
+        "prerequisites": [],
+        "key_ideas": ["encoder-decoder with hidden states", "sequential dependency", "bottleneck problem"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What is the main bottleneck of RNN-based seq2seq models?\n1) They use too much memory\n2) All source information must pass through a single fixed-size hidden state\n3) They cannot handle variable-length inputs\nAnswer with a number.",
+        "explanation": "RNN seq2seq models compress entire input sequences into one hidden state vector, creating an information bottleneck that hurts long-sequence performance. The Transformer eliminates this by attending directly to all input positions.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "scaled_dot_product_attention",
+        "title": "The Core: Scaled Dot-Product Attention",
+        "prerequisites": ["seq2seq"],
+        "key_ideas": ["Q, K, V matrices", "softmax(QK^T/√d_k)V", "scaling prevents saturation"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why does the Transformer scale dot products by √d_k before applying softmax?\n1) To make computation faster\n2) To prevent extremely small gradients caused by large dot-product magnitudes\n3) To reduce the number of parameters\nAnswer with a number.",
+        "explanation": "Without scaling, large d_k causes dot products to grow large, pushing softmax into saturation regions with near-zero gradients. Dividing by √d_k keeps gradients healthy.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "positional_encoding",
+        "title": "Order Without Recurrence: Positional Encoding",
+        "prerequisites": ["scaled_dot_product_attention"],
+        "key_ideas": ["sin/cos at different frequencies", "added to token embeddings", "enables position awareness"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why does the Transformer need positional encoding at all?\n1) To reduce the vocabulary size\n2) Because self-attention is permutation-invariant and has no built-in notion of position\n3) To speed up training\nAnswer with a number.",
+        "explanation": "Self-attention treats input as a set, not a sequence — swapping token positions produces identical attention scores. Sinusoidal positional encodings inject unique position signals so the model knows word order.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "architecture",
+    "title": "Stage 2: Inside the Transformer — Architecture Deep Dive",
+    "description": "Multi-head attention, encoder-decoder structure, FFN, and training tricks.",
+    "concepts": ["multi_head_attention", "encoder_decoder", "feed_forward", "residual_layernorm", "masking"],
+    "lessons": [
+      {
+        "concept_id": "multi_head_attention",
+        "title": "Multi-Head Attention: Many Perspectives at Once",
+        "prerequisites": ["scaled_dot_product_attention"],
+        "key_ideas": ["h=8 parallel heads", "d_k=64 per head", "concatenate and project"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What is the main advantage of using multiple attention heads?\n1) It makes the model smaller\n2) Each head can learn to attend to different types of relationships simultaneously\n3) It eliminates the need for positional encoding\nAnswer with a number.",
+        "explanation": "With 8 heads each projecting to 64-dim subspaces, the model simultaneously learns syntactic, semantic, and positional relationships. Outputs are concatenated and linearly projected back to d_model=512.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "encoder_decoder",
+        "title": "The Full Transformer: Encoder & Decoder Stacks",
+        "prerequisites": ["multi_head_attention", "positional_encoding"],
+        "key_ideas": ["6 encoder layers", "6 decoder layers with cross-attention", "causal masking in decoder"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "In the Transformer decoder, cross-attention queries come from the decoder while keys and values come from:\n1) The decoder's previous layer\n2) The encoder's final output\n3) The positional encoding\nAnswer with a number.",
+        "explanation": "Cross-attention lets each decoder position query all encoder positions freely, replacing the fixed-size hidden state of RNNs with a dynamic, direct read from the full encoded source.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "feed_forward",
+        "title": "The FFN: Position-wise Processing",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["two linear layers + ReLU", "512→2048→512", "same weights per position"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "The inner dimension of the Transformer's feed-forward network is 2048, while the model dimension is 512. What ratio is that?\n1) 2x\n2) 4x\n3) 8x\nAnswer with a number.",
+        "explanation": "Each sublayer's FFN expands to 4× the model dimension (2048), applies ReLU, then projects back — identical weights applied independently at every position, adding per-token nonlinearity after attention.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "residual_layernorm",
+        "title": "Add & Norm: Keeping Deep Networks Stable",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["residual skip connection", "LayerNorm after addition", "prevents gradient vanishing"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "What does the 'Add' in 'Add & Norm' refer to?\n1) Adding a bias term\n2) Adding the sublayer output to its input (residual/skip connection)\n3) Adding dropout noise\nAnswer with a number.",
+        "explanation": "Every sublayer output is added to its input before layer normalization: LayerNorm(x + Sublayer(x)). This residual path lets gradients flow directly through deep 6-layer stacks without vanishing.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "masking",
+        "title": "Masking: Preventing the Future from Leaking",
+        "prerequisites": ["encoder_decoder"],
+        "key_ideas": ["causal mask sets future to -∞", "autoregressive generation", "ensures valid probabilities"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Why must the decoder apply a causal mask during training?\n1) To save computation\n2) To prevent positions from attending to future tokens, preserving the autoregressive property\n3) To handle variable-length sequences\nAnswer with a number.",
+        "explanation": "During training the full target sequence is fed at once, but the decoder must predict each token using only past tokens. The causal mask sets future positions to −∞ before softmax, making their attention weights effectively zero.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "impact",
+    "title": "Stage 3: Why It Matters — Performance & Legacy",
+    "description": "Parallelization advantages, SOTA results, and the Transformer's lasting impact.",
+    "concepts": ["parallelization", "transformer_descendants"],
+    "lessons": [
+      {
+        "concept_id": "parallelization",
+        "title": "Parallel Power: Why Transformers Train Faster",
+        "prerequisites": ["multi_head_attention"],
+        "key_ideas": ["O(1) sequential ops vs O(n) for RNN", "O(n²·d) attention complexity", "GPU utilization"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "Compared to RNNs, what is the number of sequential operations required by self-attention for a sequence of length n?\n1) O(n)\n2) O(log n)\n3) O(1)\nAnswer with a number.",
+        "explanation": "Self-attention computes all pairwise interactions in one matrix multiply — O(1) sequential steps versus RNN's O(n) sequential steps, enabling massive GPU parallelism at the cost of O(n²) memory.",
+        "x402_price": "",
+        "x402_gateway": ""
+      },
+      {
+        "concept_id": "transformer_descendants",
+        "title": "The Legacy: BERT, GPT, and Beyond",
+        "prerequisites": ["encoder_decoder", "parallelization"],
+        "key_ideas": ["encoder-only: BERT", "decoder-only: GPT", "encoder-decoder: T5"],
+        "code_ref": "",
+        "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+        "exercise": "GPT-style models use only the Transformer decoder stack. BERT-style models use only the encoder stack. What is the key difference in their attention masking?\n1) GPT uses causal masking; BERT uses bidirectional (no masking)\n2) Both use causal masking\n3) BERT uses causal masking; GPT uses none\nAnswer with a number.",
+        "explanation": "Decoder-only (GPT) applies causal masks for autoregressive generation; encoder-only (BERT) uses full bidirectional attention for representation learning. This single architectural choice drives the generative vs discriminative split in modern LLMs.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]

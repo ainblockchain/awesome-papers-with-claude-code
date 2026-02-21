@@ -1,0 +1,135 @@
+{
+  "nodes": [
+    {
+      "id": "seq2seq",
+      "name": "Sequence-to-Sequence Models",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "RNN/LSTM-based encoder-decoder models for sequence transduction tasks.",
+      "key_ideas": ["encoder-decoder", "hidden state bottleneck"],
+      "code_refs": [],
+      "paper_ref": "Sutskever et al., 2014 — Sequence to Sequence Learning",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "scaled_dot_product_attention",
+      "name": "Scaled Dot-Product Attention",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Attention computed as softmax(QK^T/√d_k)V, scaling to prevent vanishing gradients.",
+      "key_ideas": ["query-key-value", "√d_k scaling"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "multi_head_attention",
+      "name": "Multi-Head Attention",
+      "type": "component",
+      "level": "intermediate",
+      "description": "h parallel attention heads projecting to subspaces to capture diverse relationships.",
+      "key_ideas": ["h=8 heads", "parallel subspace attention"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "positional_encoding",
+      "name": "Positional Encoding",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Sinusoidal encodings added to embeddings to inject sequence order information.",
+      "key_ideas": ["sin/cos frequencies", "order without recurrence"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "encoder_decoder",
+      "name": "Transformer Encoder-Decoder",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "6-layer stacked encoder and decoder with self-attention and cross-attention sublayers.",
+      "key_ideas": ["6 stacked layers", "cross-attention in decoder"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "feed_forward",
+      "name": "Position-wise Feed-Forward Network",
+      "type": "component",
+      "level": "advanced",
+      "description": "Two linear transformations with ReLU applied identically to each position (512→2048→512).",
+      "key_ideas": ["per-position MLP", "dimensionality expansion"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "residual_layernorm",
+      "name": "Residual Connections & Layer Norm",
+      "type": "optimization",
+      "level": "advanced",
+      "description": "Add-&-Norm sublayers stabilize training by preserving gradient flow across deep stacks.",
+      "key_ideas": ["skip connections", "layer normalization"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "masking",
+      "name": "Attention Masking",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Causal masking in decoder prevents attending to future positions during autoregressive generation.",
+      "key_ideas": ["causal mask", "autoregressive decoding"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "parallelization",
+      "name": "Parallelization Advantage",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Self-attention computes all positions simultaneously, enabling O(1) sequential operations vs RNN O(n).",
+      "key_ideas": ["O(1) sequential ops", "GPU efficiency"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "transformer_descendants",
+      "name": "Transformer Descendants",
+      "type": "application",
+      "level": "frontier",
+      "description": "BERT, GPT, T5, and modern LLMs all build on the Transformer as a foundational architecture.",
+      "key_ideas": ["BERT/GPT lineage", "foundation models"],
+      "code_refs": [],
+      "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {"source": "seq2seq", "target": "encoder_decoder", "relationship": "evolves_to", "weight": 1.0, "description": "Transformer replaces RNN seq2seq with attention-based encoder-decoder."},
+    {"source": "scaled_dot_product_attention", "target": "multi_head_attention", "relationship": "component_of", "weight": 1.0, "description": "Multi-head attention runs scaled dot-product attention in parallel."},
+    {"source": "multi_head_attention", "target": "encoder_decoder", "relationship": "component_of", "weight": 1.0, "description": "Encoder and decoder layers are built from multi-head attention blocks."},
+    {"source": "positional_encoding", "target": "encoder_decoder", "relationship": "enables", "weight": 1.0, "description": "Positional encoding provides order awareness without recurrence."},
+    {"source": "feed_forward", "target": "encoder_decoder", "relationship": "component_of", "weight": 1.0, "description": "Each encoder/decoder layer includes a position-wise FFN sublayer."},
+    {"source": "residual_layernorm", "target": "encoder_decoder", "relationship": "optimizes", "weight": 1.0, "description": "Residual + LayerNorm wraps every sublayer in the stack."},
+    {"source": "masking", "target": "encoder_decoder", "relationship": "component_of", "weight": 1.0, "description": "Causal masking is applied in decoder self-attention."},
+    {"source": "parallelization", "target": "multi_head_attention", "relationship": "enables", "weight": 1.0, "description": "Self-attention's parallel nature is the source of training speedup."},
+    {"source": "encoder_decoder", "target": "transformer_descendants", "relationship": "evolves_to", "weight": 1.0, "description": "The Transformer architecture spawned BERT, GPT, and all modern LLMs."}
+  ]
+}
