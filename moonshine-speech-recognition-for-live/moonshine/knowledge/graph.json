@@ -1,0 +1,14 @@
+{"nodes":[
+{"id":"enc_dec","name":"Enc-Dec Transformer","type":"architecture","level":"foundational","description":"음성→텍스트 인코더-디코더 트랜스포머","key_ideas":["인코더 음성 특징 추출","디코더 자동회귀 생성"],"code_refs":[],"paper_ref":"Jeffries 2024","first_appeared":null,"confidence":1.0},
+{"id":"rope","name":"RoPE","type":"technique","level":"intermediate","description":"회전 행렬로 상대적 위치를 인코딩하는 기법","key_ideas":["상대 위치 인코딩","가변 길이 지원"],"code_refs":[],"paper_ref":"Jeffries 2024","first_appeared":null,"confidence":1.0},
+{"id":"var_enc","name":"Variable-Length Encoding","type":"optimization","level":"intermediate","description":"패딩 없이 오디오 길이 비례 연산","key_ideas":["제로 패딩 제거","비례 계산량"],"code_refs":[],"paper_ref":"Jeffries 2024","first_appeared":null,"confidence":1.0},
+{"id":"bpe","name":"Byte-Level BPE","type":"tokenization","level":"foundational","description":"Llama 1/2의 32K 어휘 바이트 수준 토크나이저","key_ideas":["32K 어휘","바이트 분할"],"code_refs":[],"paper_ref":"Jeffries 2024","first_appeared":null,"confidence":1.0},
+{"id":"pseudo","name":"Pseudo-Label Filter","type":"training","level":"advanced","description":"Whisper large v3 의사 레이블을 Levenshtein 거리로 필터링","key_ideas":["노이즈 레이블 정제","환각 감소"],"code_refs":[],"paper_ref":"Jeffries 2024","first_appeared":null,"confidence":1.0},
+{"id":"edge_asr","name":"Edge ASR","type":"application","level":"frontier","description":"엣지 디바이스 실시간 저지연 음성 인식","key_ideas":["5배 연산 절감","엣지 배포"],"code_refs":[],"paper_ref":"Jeffries 2024","first_appeared":null,"confidence":1.0}
+],"edges":[
+{"source":"enc_dec","target":"bpe","relationship":"requires","weight":1.0,"description":"텍스트 생성에 BPE 토크나이저 필요"},
+{"source":"enc_dec","target":"rope","relationship":"builds_on","weight":1.0,"description":"Moonshine은 RoPE 기반 위치 인코딩 사용"},
+{"source":"rope","target":"var_enc","relationship":"enables","weight":1.0,"description":"RoPE가 가변 길이 입력 처리를 가능하게 함"},
+{"source":"pseudo","target":"enc_dec","relationship":"optimizes","weight":1.0,"description":"의사 레이블 필터링으로 훈련 데이터 품질 향상"},
+{"source":"var_enc","target":"edge_asr","relationship":"enables","weight":1.0,"description":"가변 길이 인코딩으로 엣지 저지연 배포 실현"}
+]}

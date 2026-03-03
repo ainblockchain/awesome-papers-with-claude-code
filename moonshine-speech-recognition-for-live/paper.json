@@ -1,0 +1,17 @@
+{
+  "title": "Moonshine: Speech Recognition for Live Transcription and Voice Commands",
+  "description": "Moonshine은 RoPE와 가변 길이 인코딩을 활용해 Whisper 대비 최대 5배 연산량을 줄인 경량 실시간 음성 인식 모델이다.",
+  "arxivId": "2410.15608",
+  "githubUrl": null,
+  "authors": [
+    {"name": "Nat Jeffries"},
+    {"name": "Evan King"},
+    {"name": "Manjunath Kudlur"},
+    {"name": "Guy Nicholson"},
+    {"name": "James Wang"},
+    {"name": "Pete Warden"}
+  ],
+  "publishedAt": "2024-10-21",
+  "organization": {"name": "Useful Sensors"},
+  "submittedBy": "community"
+}
