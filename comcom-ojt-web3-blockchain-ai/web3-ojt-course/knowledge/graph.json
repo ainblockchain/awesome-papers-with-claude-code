@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "title": "Web3, Blockchain & AI Fundamentals Knowledge Graph",
+    "description": "Concept dependency graph for the Web3 OJT Course — 12 nodes, 16 edges",
+    "source": "Common Computer, 2024 — Web3 Blockchain AI OJT Materials",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "web3_protocol",
+      "name": "Web3.0 & Protocol Understanding",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Web1/2/3의 진화 과정과 프로토콜 기반 경제의 개념. 중앙화된 플랫폼에서 사용자 소유 인터넷으로의 패러다임 전환을 이해합니다.",
+      "key_ideas": [
+        "Web1(read) → Web2(read+write) → Web3(read+write+own) evolution",
+        "Protocols replace intermediaries with open cooperation mechanisms",
+        "Trust shifts from social contracts to code-based contracts"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 1",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_101",
+      "name": "DAO 101",
+      "type": "application",
+      "level": "foundational",
+      "description": "탈중앙화 자율 조직(DAO)의 정의, 3가지 핵심 구성요소(스마트 컨트랙트, 거버넌스 토큰, 온체인 트레저리), 점진적 탈중앙화 전략을 학습합니다.",
+      "key_ideas": [
+        "Three pillars: smart contracts (rules), governance tokens (voting), on-chain treasury",
+        "DAO vs corporation: direct democracy vs delegated hierarchy",
+        "Progressive decentralization: PMF → community → protocol handoff"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 2",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_ethereum",
+      "name": "Bitcoin & Ethereum",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "비트코인의 P2P 전자화폐 원리와 이더리움의 튜링 완전 스마트 컨트랙트 플랫폼을 비교하며 블록체인의 기술적 진화를 이해합니다.",
+      "key_ideas": [
+        "Bitcoin: cryptographic proof replaces trusted third parties (Satoshi, 2008)",
+        "Ethereum: Turing-complete smart contracts on a global state machine (Vitalik, 2014)",
+        "EVM, Gas, ERC-20/721 standards, PoW→PoS transition"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 3",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decentralization_consensus",
+      "name": "Decentralization & Consensus",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "탈중앙화의 3가지 축(아키텍처, 정치, 논리), Byzantine 장군 문제, 나카모토 컨센서스, DID와 헤드리스 브랜드 개념을 깊이 있게 탐구합니다.",
+      "key_ideas": [
+        "Three axes: architectural, political, logical decentralization (Vitalik)",
+        "Three justifications: fault tolerance, attack resistance, collusion resistance",
+        "Byzantine fault tolerance and Nakamoto consensus via economic incentives"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 4",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "strong_weak_technology",
+      "name": "Strong & Weak Technology / Metaverse",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Chris Dixon의 강한/약한 기술 프레임워크로 블록체인의 위치를 분석하고, 메타버스의 7가지 필수 요소와 AI/블록체인/XR의 수렴을 조망합니다.",
+      "key_ideas": [
+        "Strong tech reshapes the world; weak tech conforms to it (Chris Dixon)",
+        "Seven metaverse essentials: decentralization, property rights, self-sovereign identity, composability, open source, community ownership, reputation",
+        "Convergence of blockchain (ownership) + AI (intelligence) + XR (space)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 5",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokenology",
+      "name": "Tokenology",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "토큰의 경제적 역할, ERC-20/721 표준, 토크놀로지의 4가지 설계 공간, 교환 수단 토큰의 가치 평가(M×V=P×Q), 메트칼프 법칙을 학습합니다.",
+      "key_ideas": [
+        "Tokenology vs tokenomics: vector (direction+meaning) vs scalar (size only)",
+        "Four design spaces: ownership, alignment, incentive, access",
+        "Equation of exchange M×V=P×Q and Metcalfe's law N² for network valuation"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 6",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nft_fundamentals",
+      "name": "NFTs Authenticate the World",
+      "type": "application",
+      "level": "intermediate",
+      "description": "NFT의 철학적 기초(Type/Token 구분), 8가지 속성, 가치 원천으로서의 커뮤니티, Vitalik의 정당성 이론, 창작자 경제 재구성을 탐구합니다.",
+      "key_ideas": [
+        "Type vs Token: ERC-20 is a type (fungible), ERC-721 is a token (unique)",
+        "NFT value comes from community — 'NFTs are monetized memes' (Naval)",
+        "Legitimacy theory: higher-order pattern of acceptance determines value (Vitalik)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 7",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nft_advanced",
+      "name": "Advanced NFT Concepts",
+      "type": "technique",
+      "level": "advanced",
+      "description": "1,000 True Fans 경제학, Subscribe-to-Mint 모델, 스큐어모프 개념, 진화하는 NFT의 5가지 유형(Lifeforms, Corruptions, Chaos Roads, Fini, Uniswap LP)을 학습합니다.",
+      "key_ideas": [
+        "1,000 True Fans: creators need 1K dedicated fans × $100/yr (Kevin Kelly)",
+        "NFTs transform creator economy: remove intermediaries, granular pricing, users become owners",
+        "Five evolving NFT types: behavior-based, time-based, block-based, real-world-data, DeFi-based"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 8",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ai_blockchain",
+      "name": "AI x Blockchain",
+      "type": "architecture",
+      "level": "advanced",
+      "description": "AI의 롱테일 문제와 크립토의 해법(자율 마켓플레이스), GPU 경제학의 $200B 질문, 블록체인 컴퓨팅의 4가지 시대를 분석합니다.",
+      "key_ideas": [
+        "AI long-tail problem: centralized data monopoly fails at rare cases (a16z)",
+        "Crypto solution: autonomous marketplace with smart contracts + neural networks",
+        "Four eras of blockchain computing: calculator → mainframe → server → cloud"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 9",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ainft",
+      "name": "AINFT",
+      "type": "application",
+      "level": "advanced",
+      "description": "AINFT(Autonomous Intelligent NFT)의 정의, 동적 메타데이터 구조, 3가지 핵심 속성(책임성, 재현성, 가치), AINFT Factory 인프라를 학습합니다.",
+      "key_ideas": [
+        "AINFT = NFT + AI logic + dynamic metadata that grows over time",
+        "Three properties: accountable (on-chain record), reproducible, valuable (component-level rewards)",
+        "AINFT Factory: community API platform for building AINFT tokenomics"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 10",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc_8004",
+      "name": "ERC-8004 Trustless Agents",
+      "type": "architecture",
+      "level": "frontier",
+      "description": "AI 에이전트 경제의 신뢰 문제와 ERC-8004 표준의 3개 레지스트리(Identity, Reputation, Validation), 에이전트 경제 스택을 학습합니다.",
+      "key_ideas": [
+        "ERC-8004 = on-chain trust infrastructure for AI agents",
+        "Three registries: Identity (ERC-721 NFT), Reputation (verified feedback), Validation (zk/TEE/optimistic)",
+        "Agent economy stack: identity → payment (x402) → communication (A2A/MCP) → tools → accounts"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 11",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "type": "application",
+      "level": "frontier",
+      "description": "OpenClaw 자율 디지털 워커 프레임워크, Skills 기반 플러그인, CoinFello Skill의 위임된 권한 모델, 에이전트 경제의 세 기둥(AINFT+ERC-8004+OpenClaw) 수렴을 학습합니다.",
+      "key_ideas": [
+        "OpenClaw: local AI agent framework for autonomous task execution (150K+ GitHub stars)",
+        "Delegated authority model: user delegates narrow permissions, agent never holds keys (ERC-4337 + ERC-7710)",
+        "Three pillars convergence: AINFT (ownership) + ERC-8004 (trust) + OpenClaw (execution)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 12",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "web3_protocol", "target": "dao_101", "relationship": "enables", "weight": 1.0, "description": "Web3 protocol concepts provide the foundation for understanding DAOs" },
+    { "source": "web3_protocol", "target": "bitcoin_ethereum", "relationship": "enables", "weight": 1.0, "description": "Web3 vision motivates blockchain technology development" },
+    { "source": "bitcoin_ethereum", "target": "decentralization_consensus", "relationship": "requires", "weight": 1.0, "description": "Bitcoin/Ethereum implement specific consensus mechanisms" },
+    { "source": "dao_101", "target": "decentralization_consensus", "relationship": "builds_on", "weight": 0.8, "description": "DAO governance deepens understanding of decentralization" },
+    { "source": "web3_protocol", "target": "strong_weak_technology", "relationship": "builds_on", "weight": 0.7, "description": "Web3 paradigm analyzed through strong/weak tech lens" },
+    { "source": "decentralization_consensus", "target": "strong_weak_technology", "relationship": "builds_on", "weight": 0.6, "description": "Decentralization theory informs metaverse design principles" },
+    { "source": "bitcoin_ethereum", "target": "tokenology", "relationship": "requires", "weight": 1.0, "description": "ERC standards and blockchain mechanics underpin token design" },
+    { "source": "dao_101", "target": "tokenology", "relationship": "builds_on", "weight": 0.8, "description": "DAO governance tokens motivate tokenology design" },
+    { "source": "tokenology", "target": "nft_fundamentals", "relationship": "requires", "weight": 1.0, "description": "Token standards (ERC-721) are the technical basis of NFTs" },
+    { "source": "nft_fundamentals", "target": "nft_advanced", "relationship": "builds_on", "weight": 1.0, "description": "Advanced NFT concepts build on fundamental understanding" },
+    { "source": "bitcoin_ethereum", "target": "ai_blockchain", "relationship": "requires", "weight": 0.9, "description": "Blockchain infrastructure needed to understand AI+blockchain convergence" },
+    { "source": "tokenology", "target": "ai_blockchain", "relationship": "builds_on", "weight": 0.7, "description": "Token incentives solve AI data marketplace cold start" },
+    { "source": "nft_advanced", "target": "ainft", "relationship": "requires", "weight": 1.0, "description": "Evolving NFTs are the precursor to AINFT concept" },
+    { "source": "ai_blockchain", "target": "ainft", "relationship": "requires", "weight": 1.0, "description": "AI+blockchain convergence enables autonomous intelligent NFTs" },
+    { "source": "ainft", "target": "erc_8004", "relationship": "enables", "weight": 1.0, "description": "AINFT characters can register in ERC-8004 for agent economy" },
+    { "source": "erc_8004", "target": "openclaw", "relationship": "enables", "weight": 1.0, "description": "ERC-8004 trust layer enables OpenClaw agents to participate in economy" }
+  ]
+}

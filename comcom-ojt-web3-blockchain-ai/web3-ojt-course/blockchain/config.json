@@ -1,0 +1,101 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "comcom-ojt-web3-blockchain-ai",
+  "topic_map": {
+    "web3_protocol": "comcom-ojt-web3-blockchain-ai/web3_protocol",
+    "dao_101": "comcom-ojt-web3-blockchain-ai/dao_101",
+    "bitcoin_ethereum": "comcom-ojt-web3-blockchain-ai/bitcoin_ethereum",
+    "decentralization_consensus": "comcom-ojt-web3-blockchain-ai/decentralization_consensus",
+    "strong_weak_technology": "comcom-ojt-web3-blockchain-ai/strong_weak_technology",
+    "tokenology": "comcom-ojt-web3-blockchain-ai/tokenology",
+    "nft_fundamentals": "comcom-ojt-web3-blockchain-ai/nft_fundamentals",
+    "nft_advanced": "comcom-ojt-web3-blockchain-ai/nft_advanced",
+    "ai_blockchain": "comcom-ojt-web3-blockchain-ai/ai_blockchain",
+    "ainft": "comcom-ojt-web3-blockchain-ai/ainft",
+    "erc_8004": "comcom-ojt-web3-blockchain-ai/erc_8004",
+    "openclaw": "comcom-ojt-web3-blockchain-ai/openclaw"
+  },
+  "depth_map": {
+    "web3_protocol": 1,
+    "dao_101": 1,
+    "bitcoin_ethereum": 1,
+    "decentralization_consensus": 2,
+    "strong_weak_technology": 2,
+    "tokenology": 2,
+    "nft_fundamentals": 2,
+    "ai_blockchain": 3,
+    "nft_advanced": 3,
+    "ainft": 3,
+    "erc_8004": 4,
+    "openclaw": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "comcom-ojt-web3-blockchain-ai",
+      "title": "Web3, Blockchain & AI Fundamentals",
+      "description": "Comprehensive OJT course covering Web3 protocols, DAOs, Bitcoin/Ethereum, tokenomics, NFTs, AI x Blockchain, AINFT, ERC-8004, and the agent economy"
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/web3_protocol",
+      "title": "Web3.0 & Protocol Understanding",
+      "description": "Web1/2/3의 진화 과정과 프로토콜 기반 경제의 개념. 중앙화된 플랫폼에서 사용자 소유 인터넷으로의 패러다임 전환을 이해합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/dao_101",
+      "title": "DAO 101",
+      "description": "탈중앙화 자율 조직(DAO)의 정의, 3가지 핵심 구성요소(스마트 컨트랙트, 거버넌스 토큰, 온체인 트레저리), 점진적 탈중앙화 전략을 학습합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/bitcoin_ethereum",
+      "title": "Bitcoin & Ethereum",
+      "description": "비트코인의 P2P 전자화폐 원리와 이더리움의 튜링 완전 스마트 컨트랙트 플랫폼을 비교하며 블록체인의 기술적 진화를 이해합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/decentralization_consensus",
+      "title": "Decentralization & Consensus",
+      "description": "탈중앙화의 3가지 축(아키텍처, 정치, 논리), Byzantine 장군 문제, 나카모토 컨센서스, DID와 헤드리스 브랜드 개념을 깊이 있게 탐구합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/strong_weak_technology",
+      "title": "Strong & Weak Technology / Metaverse",
+      "description": "Chris Dixon의 강한/약한 기술 프레임워크로 블록체인의 위치를 분석하고, 메타버스의 7가지 필수 요소와 AI/블록체인/XR의 수렴을 조망합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/tokenology",
+      "title": "Tokenology",
+      "description": "토큰의 경제적 역할, ERC-20/721 표준, 토크놀로지의 4가지 설계 공간, 교환 수단 토큰의 가치 평가(M×V=P×Q), 메트칼프 법칙을 학습합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/nft_fundamentals",
+      "title": "NFTs Authenticate the World",
+      "description": "NFT의 철학적 기초(Type/Token 구분), 8가지 속성, 가치 원천으로서의 커뮤니티, Vitalik의 정당성 이론, 창작자 경제 재구성을 탐구합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/nft_advanced",
+      "title": "Advanced NFT Concepts",
+      "description": "1,000 True Fans 경제학, Subscribe-to-Mint 모델, 스큐어모프 개념, 진화하는 NFT의 5가지 유형을 학습합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/ai_blockchain",
+      "title": "AI x Blockchain",
+      "description": "AI의 롱테일 문제와 크립토의 해법(자율 마켓플레이스), GPU 경제학의 $200B 질문, 블록체인 컴퓨팅의 4가지 시대를 분석합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/ainft",
+      "title": "AINFT",
+      "description": "AINFT(Autonomous Intelligent NFT)의 정의, 동적 메타데이터 구조, 3가지 핵심 속성(책임성, 재현성, 가치), AINFT Factory 인프라를 학습합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/erc_8004",
+      "title": "ERC-8004 Trustless Agents",
+      "description": "AI 에이전트 경제의 신뢰 문제와 ERC-8004 표준의 3개 레지스트리(Identity, Reputation, Validation), 에이전트 경제 스택을 학습합니다."
+    },
+    {
+      "path": "comcom-ojt-web3-blockchain-ai/openclaw",
+      "title": "OpenClaw",
+      "description": "OpenClaw 자율 디지털 워커 프레임워크, Skills 기반 플러그인, CoinFello Skill의 위임된 권한 모델, 에이전트 경제의 세 기둥 수렴을 학습합니다."
+    }
+  ],
+  "x402_lessons": {}
+}

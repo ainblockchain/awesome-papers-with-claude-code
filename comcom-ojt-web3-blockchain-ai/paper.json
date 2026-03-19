@@ -1,0 +1,15 @@
+{
+  "title": "Web3, Blockchain & AI Fundamentals",
+  "description": "Web3.0의 기초부터 블록체인 기술, DAO, 토큰 경제, NFT, AI x Blockchain, 에이전트 경제까지 포괄하는 종합 OJT 과정입니다. 12개 챕터를 통해 탈중앙화 기술의 원리와 미래를 체계적으로 학습합니다.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "",
+  "thumbnailUrl": "",
+  "backgroundUrl": "",
+  "authors": [
+    { "name": "Common Computer" }
+  ],
+  "publishedAt": "2024-01-01",
+  "organization": { "name": "Common Computer" },
+  "submittedBy": "community",
+  "sortOrder": 21
+}
