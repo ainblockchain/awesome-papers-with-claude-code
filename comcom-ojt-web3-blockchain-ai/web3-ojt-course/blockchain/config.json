@@ -39,62 +39,62 @@
     {
       "path": "comcom-ojt-web3-blockchain-ai/web3_protocol",
       "title": "Web3.0 & Protocol Understanding",
-      "description": "Web1/2/3의 진화 과정과 프로토콜 기반 경제의 개념. 중앙화된 플랫폼에서 사용자 소유 인터넷으로의 패러다임 전환을 이해합니다."
+      "description": "The evolution of Web1/2/3 and the concept of protocol-based economies. Understanding the paradigm shift from centralized platforms to a user-owned internet."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/dao_101",
       "title": "DAO 101",
-      "description": "탈중앙화 자율 조직(DAO)의 정의, 3가지 핵심 구성요소(스마트 컨트랙트, 거버넌스 토큰, 온체인 트레저리), 점진적 탈중앙화 전략을 학습합니다."
+      "description": "Definition of DAOs, their three core components (smart contracts, governance tokens, on-chain treasury), and progressive decentralization strategies."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/bitcoin_ethereum",
       "title": "Bitcoin & Ethereum",
-      "description": "비트코인의 P2P 전자화폐 원리와 이더리움의 튜링 완전 스마트 컨트랙트 플랫폼을 비교하며 블록체인의 기술적 진화를 이해합니다."
+      "description": "Comparing Bitcoin's P2P electronic cash principles with Ethereum's Turing-complete smart contract platform to understand the technical evolution of blockchain."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/decentralization_consensus",
       "title": "Decentralization & Consensus",
-      "description": "탈중앙화의 3가지 축(아키텍처, 정치, 논리), Byzantine 장군 문제, 나카모토 컨센서스, DID와 헤드리스 브랜드 개념을 깊이 있게 탐구합니다."
+      "description": "Deep exploration of the three axes of decentralization (architectural, political, logical), the Byzantine Generals Problem, Nakamoto consensus, DID, and headless brands."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/strong_weak_technology",
       "title": "Strong & Weak Technology / Metaverse",
-      "description": "Chris Dixon의 강한/약한 기술 프레임워크로 블록체인의 위치를 분석하고, 메타버스의 7가지 필수 요소와 AI/블록체인/XR의 수렴을 조망합니다."
+      "description": "Analyzing blockchain's position through Chris Dixon's strong/weak technology framework, the seven metaverse essentials, and the convergence of AI/blockchain/XR."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/tokenology",
       "title": "Tokenology",
-      "description": "토큰의 경제적 역할, ERC-20/721 표준, 토크놀로지의 4가지 설계 공간, 교환 수단 토큰의 가치 평가(M×V=P×Q), 메트칼프 법칙을 학습합니다."
+      "description": "The economic role of tokens, ERC-20/721 standards, tokenology's four design spaces, medium-of-exchange token valuation (M*V=P*Q), and Metcalfe's Law."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/nft_fundamentals",
       "title": "NFTs Authenticate the World",
-      "description": "NFT의 철학적 기초(Type/Token 구분), 8가지 속성, 가치 원천으로서의 커뮤니티, Vitalik의 정당성 이론, 창작자 경제 재구성을 탐구합니다."
+      "description": "The philosophical foundations of NFTs (Type/Token distinction), eight properties, community as the source of value, Vitalik's legitimacy theory, and reshaping the creator economy."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/nft_advanced",
       "title": "Advanced NFT Concepts",
-      "description": "1,000 True Fans 경제학, Subscribe-to-Mint 모델, 스큐어모프 개념, 진화하는 NFT의 5가지 유형을 학습합니다."
+      "description": "1,000 True Fans economics, the Subscribe-to-Mint model, the skeuomorph concept, and five types of evolving NFTs (Lifeforms, Corruptions, Chaos Roads, Fini, Uniswap LP)."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/ai_blockchain",
       "title": "AI x Blockchain",
-      "description": "AI의 롱테일 문제와 크립토의 해법(자율 마켓플레이스), GPU 경제학의 $200B 질문, 블록체인 컴퓨팅의 4가지 시대를 분석합니다."
+      "description": "AI's long-tail problem and crypto's solution (autonomous marketplaces), the $200B GPU economics question, and the four eras of blockchain computing."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/ainft",
       "title": "AINFT",
-      "description": "AINFT(Autonomous Intelligent NFT)의 정의, 동적 메타데이터 구조, 3가지 핵심 속성(책임성, 재현성, 가치), AINFT Factory 인프라를 학습합니다."
+      "description": "Definition of AINFT (Autonomous Intelligent NFT), dynamic metadata structure, three core properties (accountability, reproducibility, value), and AINFT Factory infrastructure."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/erc_8004",
       "title": "ERC-8004 Trustless Agents",
-      "description": "AI 에이전트 경제의 신뢰 문제와 ERC-8004 표준의 3개 레지스트리(Identity, Reputation, Validation), 에이전트 경제 스택을 학습합니다."
+      "description": "The trust problem in the AI agent economy, ERC-8004's three registries (Identity, Reputation, Validation), and the agent economy stack."
     },
     {
       "path": "comcom-ojt-web3-blockchain-ai/openclaw",
       "title": "OpenClaw",
-      "description": "OpenClaw 자율 디지털 워커 프레임워크, Skills 기반 플러그인, CoinFello Skill의 위임된 권한 모델, 에이전트 경제의 세 기둥 수렴을 학습합니다."
+      "description": "The OpenClaw autonomous digital worker framework, Skills-based plugins, CoinFello Skill's delegated authority model, and the convergence of the agent economy's three pillars (AINFT + ERC-8004 + OpenClaw)."
     }
   ],
   "x402_lessons": {}

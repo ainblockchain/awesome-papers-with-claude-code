@@ -2,8 +2,12 @@
   {
     "id": "web3_blockchain_foundations",
     "title": "Module 1: Web3 & Blockchain Foundations",
-    "description": "Web3.0의 비전, DAO의 구조, 비트코인과 이더리움의 핵심 원리를 학습하며 블록체인 세계의 기초를 다집니다.",
-    "concepts": ["web3_protocol", "dao_101", "bitcoin_ethereum"],
+    "description": "Learn the vision of Web3.0, the structure of DAOs, and the core principles of Bitcoin and Ethereum to build a solid foundation in the blockchain world.",
+    "concepts": [
+      "web3_protocol",
+      "dao_101",
+      "bitcoin_ethereum"
+    ],
     "lessons": [
       {
         "concept_id": "web3_protocol",
@@ -18,15 +22,17 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 1",
-        "exercise": "Web3.0이 Web2.0과 가장 근본적으로 다른 점은 무엇인가요?\n1) 더 빠른 인터넷 속도\n2) 사용자가 데이터와 자산을 직접 소유(own)할 수 있음\n3) 더 많은 소셜 미디어 플랫폼\n4) 모바일 앱의 등장\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 Web3 OJT Chapter 1은 인터넷의 진화 단계를 명쾌하게 정리합니다.\n\n인터넷의 역사를 도서관에 비유해 봅시다. **Web1**은 열람만 가능한 도서관이었습니다 — 책을 읽을 수 있지만, 직접 글을 쓸 수는 없었죠. **Web2**는 누구나 책을 쓸 수 있게 된 도서관입니다. 하지만 문제가 있습니다: 도서관장(플랫폼)이 모든 책의 소유권을 갖고, 열람료를 독점합니다.\n\n**Web3**는 이 패러다임을 뒤집습니다. 저자가 직접 책의 소유권을 갖고, 독자와 직접 거래할 수 있는 탈중앙화된 도서관입니다. 이것을 가능하게 하는 것이 바로 **프로토콜**입니다.\n\n프로토콜은 기업을 대체하는 개방형 협력 메커니즘입니다. 이전에는 거래를 중개하려면 신뢰할 수 있는 제3자(은행, 플랫폼)가 필요했지만, 블록체인 프로토콜은 코드로 신뢰를 구현합니다. 사회적 계약에서 코드 기반 계약으로의 전환이죠.\n\n핵심 통찰은 이렇습니다: Web3는 단순한 기술 업그레이드가 아니라, **소유권의 혁명**입니다. 사용자가 자신의 데이터, 디지털 자산, 심지어 인터넷 인프라의 일부까지 직접 소유할 수 있게 됩니다.",
+        "exercise": "What is the most fundamental difference between Web3.0 and Web2.0?\n1) Faster internet speed\n2) Users can directly own their data and assets\n3) More social media platforms\n4) The emergence of mobile apps\nType the number.",
+        "explanation": "**Common Computer (2024)** Web3 OJT Chapter 1 offers a clear overview of the internet's evolutionary stages.\n\nLet's compare the history of the internet to a library. **Web1** was a read-only library — you could browse books, but couldn't write your own. **Web2** opened the doors for anyone to publish. But there's a catch: the librarian (the platform) owns every book and monopolizes the reading fees.\n\n**Web3** flips this paradigm. It's a decentralized library where authors hold direct ownership of their works and can transact with readers without intermediaries. The mechanism that makes this possible is the **protocol**.\n\nProtocols are open cooperation mechanisms that replace corporations. Previously, facilitating a transaction required a trusted third party — a bank, a platform. Blockchain protocols implement trust through code, marking the shift from social contracts to code-based contracts.\n\nThe key insight is this: Web3 is not simply a technology upgrade — it's a **revolution in ownership**. Users can directly own their data, digital assets, and even parts of internet infrastructure itself.",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "dao_101",
         "title": "DAO 101: Decentralized Autonomous Organizations",
-        "prerequisites": ["web3_protocol"],
+        "prerequisites": [
+          "web3_protocol"
+        ],
         "key_ideas": [
           "DAO = smart contracts (rules) + governance tokens (voting power) + on-chain treasury",
           "DAO vs corporation: direct democracy vs delegated hierarchy",
@@ -36,15 +42,17 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 2",
-        "exercise": "DAO의 3가지 핵심 구성 요소가 아닌 것은?\n1) 스마트 컨트랙트 (자동 집행 규칙)\n2) 거버넌스 토큰 (투표권)\n3) 중앙화된 CEO (최종 의사결정자)\n4) 온체인 트레저리 (공동 금고)\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 Chapter 2에서는 **DAO(Decentralized Autonomous Organization)** 를 탐구합니다.\n\nDAO를 이해하는 가장 쉬운 비유는 **주인 없는 자판기**입니다. 자판기는 규칙(스마트 컨트랙트)에 따라 자동으로 작동하고, 수익은 공동 금고(트레저리)에 모이며, 자판기의 메뉴를 바꾸려면 동전 소유자(토큰 보유자)의 투표가 필요합니다.\n\n기존 회사는 **주주 → 이사회 → 경영진**의 수직적 위임 구조입니다. 반면 DAO는 **토큰 보유자의 직접 투표**로 운영되는 직접 민주주의입니다. CEO가 없고, 코드가 규칙을 집행합니다.\n\n흥미로운 개념은 **점진적 탈중앙화**(Progressive Decentralization)입니다. 처음부터 완전 탈중앙화하면 혼란스럽죠. 그래서 3단계로 진행합니다: (1) 제품/시장 적합성 확보 → Admin 권한 유지, (2) 커뮤니티 참여 확대 → 토큰 배포, (3) 충분한 탈중앙화 달성 → 프로토콜 이양.\n\n코즈의 거래비용 이론에 따르면, 블록체인이 거래비용을 0에 수렴시키면 조직 내재화의 필요성이 해소됩니다. 이것이 DAO가 기존 기업 구조를 대체할 수 있는 경제학적 근거입니다.",
+        "exercise": "Which of the following is NOT one of the three core components of a DAO?\n1) Smart contracts (auto-enforced rules)\n2) Governance tokens (voting rights)\n3) A centralized CEO (final decision-maker)\n4) On-chain treasury (shared fund)\nType the number.",
+        "explanation": "**Common Computer (2024)** Chapter 2 explores the **DAO (Decentralized Autonomous Organization)**.\n\nThe easiest analogy for a DAO is a **vending machine with no owner**. The machine runs automatically according to its rules (smart contracts), revenue flows into a shared vault (treasury), and changing the menu requires a vote from coin holders (token holders).\n\nA traditional corporation follows a top-down delegation structure: **shareholders → board → executives**. A DAO, by contrast, runs on **direct voting by token holders** — a form of direct democracy. There is no CEO; code enforces the rules.\n\nAn interesting concept is **progressive decentralization**. Going fully decentralized from day one would be chaotic, so the process unfolds in three stages: (1) achieve product-market fit while retaining admin authority, (2) expand community participation and distribute tokens, (3) hand off the protocol once sufficient decentralization is reached.\n\nAccording to Coase's transaction cost theory, when blockchain drives transaction costs toward zero, the economic rationale for internalizing activities within a firm dissolves. This is the economic argument for why DAOs can replace traditional corporate structures.",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "bitcoin_ethereum",
         "title": "Bitcoin & Ethereum: The Two Pillars of Blockchain",
-        "prerequisites": ["web3_protocol"],
+        "prerequisites": [
+          "web3_protocol"
+        ],
         "key_ideas": [
           "Bitcoin: P2P electronic cash using cryptographic proof, not trusted third parties (Satoshi, 2008)",
           "Proof-of-Work: SHA-256 mining, difficulty adjustment, longest-chain rule",
@@ -54,23 +62,31 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 3",
-        "exercise": "이더리움이 비트코인과 가장 크게 다른 점은?\n1) 더 빠른 거래 속도만 제공\n2) 튜링 완전(Turing-Complete) 언어로 임의의 스마트 컨트랙트 구현 가능\n3) 더 적은 에너지 소비\n4) 더 많은 코인 발행\n숫자로 답하세요.",
-        "explanation": "**Satoshi Nakamoto (2008)** 의 비트코인 백서는 하나의 근본 문제에서 출발합니다: \"신뢰받는 제3자에 대한 의존성을 어떻게 없앨 것인가?\"\n\n비트코인을 **디지털 금**에 비유할 수 있습니다. 금은 물리적 희소성으로 가치를 보장하지만, 비트코인은 **암호학적 증명**으로 가치를 보장합니다. 각 블록은 이전 블록의 해시를 포함하여 체인을 형성하고, 작업증명(PoW)은 \"1 CPU = 1 투표\" 원칙으로 합의를 이룹니다.\n\n**Vitalik Buterin (2014)** 은 비트코인의 한계를 정확히 짚었습니다. 비트코인은 단순 결제 스크립트만 가능하지만, 이더리움은 **튜링 완전** 언어를 제공합니다. 이더리움은 전 세계가 하나의 컴퓨터처럼 동작하는 상태 머신이죠: `APPLY(S, TX) → S'` — 모든 트랜잭션이 전역 상태를 변경합니다.\n\nEVM(Ethereum Virtual Machine)은 전 세계 노드가 동일하게 실행하는 분산 가상머신이며, **가스(Gas)** 메커니즘이 악의적 코드로부터 네트워크를 보호합니다. 2022년 The Merge를 통해 PoW에서 PoS로 전환하며 에너지 소비를 99.95% 절감했습니다.",
+        "exercise": "What is the most significant difference between Ethereum and Bitcoin?\n1) It only provides faster transaction speeds\n2) It supports arbitrary smart contracts via a Turing-complete language\n3) It consumes less energy\n4) It issues more coins\nType the number.",
+        "explanation": "**Satoshi Nakamoto's (2008)** Bitcoin whitepaper starts from a single fundamental problem: \"How do we eliminate dependence on trusted third parties?\"\n\nThink of Bitcoin as **digital gold**. Physical gold derives its value from scarcity; Bitcoin guarantees value through **cryptographic proof**. Each block contains the hash of the previous block, forming a chain, and Proof-of-Work achieves consensus via the principle of \"1 CPU = 1 vote.\"\n\n**Vitalik Buterin (2014)** identified Bitcoin's limitations precisely. Bitcoin only supports simple payment scripts, but Ethereum provides a **Turing-complete** language. Ethereum operates as a global state machine: `APPLY(S, TX) → S'` — every transaction modifies the global state.\n\nThe EVM (Ethereum Virtual Machine) is a distributed virtual machine that every node in the world runs identically, and the **Gas** mechanism protects the network from malicious code. In 2022, The Merge transitioned Ethereum from PoW to PoS, reducing energy consumption by 99.95%.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "answer": "It supports arbitrary smart contracts via a Turing-complete language"
       }
     ]
   },
   {
     "id": "decentralization_token_economy",
     "title": "Module 2: Decentralization & Token Economy",
-    "description": "탈중앙화의 깊은 원리, 강한/약한 기술 프레임워크, 그리고 토큰 설계의 핵심을 학습합니다.",
-    "concepts": ["decentralization_consensus", "strong_weak_technology", "tokenology"],
+    "description": "Dive deep into the principles of decentralization, the strong vs. weak technology framework, and the essentials of token design.",
+    "concepts": [
+      "decentralization_consensus",
+      "strong_weak_technology",
+      "tokenology"
+    ],
     "lessons": [
       {
         "concept_id": "decentralization_consensus",
         "title": "Decentralization & Consensus Mechanisms",
-        "prerequisites": ["bitcoin_ethereum", "dao_101"],
+        "prerequisites": [
+          "bitcoin_ethereum",
+          "dao_101"
+        ],
         "key_ideas": [
           "Three axes of decentralization: architectural, political, logical (Vitalik Buterin)",
           "Three justifications: fault tolerance, attack resistance, collusion resistance",
@@ -80,15 +96,18 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 4",
-        "exercise": "다음 중 탈중앙화의 3가지 축(Vitalik Buterin)에 해당하지 않는 것은?\n1) 아키텍처적 탈중앙화 (물리적 노드 분산)\n2) 정치적 탈중앙화 (통제 권한 분산)\n3) 경제적 탈중앙화 (부의 균등 분배)\n4) 논리적 탈중앙화 (인터페이스와 데이터 구조)\n숫자로 답하세요.",
-        "explanation": "**Vitalik Buterin**은 탈중앙화를 3가지 독립적인 축으로 분석합니다.\n\n이것을 **건물**에 비유해 봅시다. **아키텍처적 탈중앙화**는 건물이 여러 기둥으로 지지되는 것 — 기둥 하나가 무너져도 건물이 서 있습니다. **정치적 탈중앙화**는 건물 관리위원회에 아무도 독재할 수 없는 것. **논리적 탈중앙화**는 건물의 설계도가 하나인지 여러 개인지입니다.\n\n블록체인의 특이한 위치가 흥미롭습니다: 정치적·아키텍처적으로는 탈중앙화되어 있지만, 논리적으로는 중앙화되어 있습니다 — 전체 네트워크가 하나의 상태처럼 동작하기 때문이죠.\n\n탈중앙화가 필요한 3가지 근거는: (1) **내결함성** — 단일 장애점 제거, (2) **공격 저항성** — 공격 비용이 시스템 규모에 비례, (3) **담합 저항성** — 분산된 참여자의 공모가 어려움. 하지만 **공통 모드 실패**(같은 소프트웨어, 같은 개발팀, 같은 국가)를 경계해야 합니다 — 진정한 탈중앙화는 다양성에서 비롯됩니다.\n\n**DID(Decentralized Identifier)** 와 **헤드리스 브랜드** 개념도 중요합니다. 비트코인은 사토시가 사라진 후에도 커뮤니티가 브랜드를 진화시키는 대표적 헤드리스 브랜드입니다.",
+        "exercise": "Which of the following is NOT one of Vitalik Buterin's three axes of decentralization?\n1) Architectural decentralization (distributing physical nodes)\n2) Political decentralization (distributing control authority)\n3) Economic decentralization (equal distribution of wealth)\n4) Logical decentralization (interface and data structure)\nType the number.",
+        "explanation": "**Vitalik Buterin** analyzes decentralization along three independent axes.\n\nLet's use a **building** as an analogy. **Architectural decentralization** is like a building supported by multiple pillars — if one collapses, the building still stands. **Political decentralization** means no one on the building's management committee can become a dictator. **Logical decentralization** asks whether there is one blueprint or many.\n\nBlockchain occupies a curious position: it is politically and architecturally decentralized, yet logically centralized — because the entire network behaves as a single shared state.\n\nThe three justifications for decentralization are: (1) **fault tolerance** — eliminating single points of failure, (2) **attack resistance** — the cost of an attack scales with the size of the system, (3) **collusion resistance** — it is difficult for dispersed participants to conspire. However, beware of **common mode failures** (same software, same dev team, same country) — true decentralization stems from diversity.\n\n**DID (Decentralized Identifier)** and the **headless brand** concept are also important. Bitcoin is a prime example of a headless brand — even after Satoshi disappeared, the community continued to evolve the brand.",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "strong_weak_technology",
         "title": "Strong & Weak Technology / Metaverse",
-        "prerequisites": ["web3_protocol", "decentralization_consensus"],
+        "prerequisites": [
+          "web3_protocol",
+          "decentralization_consensus"
+        ],
         "key_ideas": [
           "Strong tech reshapes the world to itself; weak tech adapts to the current world (Chris Dixon)",
           "Historical pattern: strong tech wins — Wikipedia over Encarta, iPhone over BlackBerry, Tesla over hybrids",
@@ -98,15 +117,18 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 5",
-        "exercise": "Chris Dixon의 '강한 기술 vs 약한 기술' 프레임워크에서, 퍼블릭 블록체인+암호화폐는 어디에 해당하나요?\n1) 약한 기술 — 현재 세상에 맞추기 때문\n2) 강한 기술 — 세상이 자신에게 맞추기 때문\n3) 둘 다 아님 — 기술이 아니라 금융 상품\n4) 둘 다 해당 — 상황에 따라 다름\n숫자로 답하세요.",
-        "explanation": "**Chris Dixon**의 강한/약한 기술 프레임워크는 기술의 미래를 예측하는 강력한 렌즈입니다.\n\n쉽게 비유하면, **약한 기술**은 기존 도로 위에 더 빠른 마차를 올리는 것이고, **강한 기술**은 아예 새로운 고속도로를 건설하는 것입니다. 약한 기술이 초기에 더 현실적으로 보이지만, 역사는 강한 기술이 새 시대를 정의함을 반복적으로 증명합니다.\n\n대표적 사례들: Wikipedia vs Encarta, iPhone(터치+앱) vs BlackBerry(물리 키보드), Tesla(완전 전기차) vs 하이브리드. 퍼블릭 블록체인+암호화폐는 **강한 기술**이고, 프라이빗 블록체인은 약한 기술입니다.\n\n메타버스의 7가지 필수 요소도 핵심입니다: 탈중앙화, 재산권, 자기주권 정체성, 컴포저빌리티, 오픈소스, 커뮤니티 소유 경제, 정체성과 평판. 이 모두가 갖춰져야 진정한 메타버스가 가능합니다.\n\nWeb3의 GTM(Go-To-Market) 전략도 흥미롭습니다. Web2가 '제품 먼저, 커뮤니티 나중'이라면, Web3는 **목적과 커뮤니티가 먼저**입니다. Compound의 유동성 마이닝이 대표적 사례로, TVL이 1억에서 6억 달러로 폭발적 성장했습니다.",
+        "exercise": "In Chris Dixon's 'strong vs. weak technology' framework, where does public blockchain + cryptocurrency fall?\n1) Weak technology — because it adapts to the current world\n2) Strong technology — because the world adapts to it\n3) Neither — it's a financial product, not a technology\n4) Both — it depends on the situation\nType the number.",
+        "explanation": "**Chris Dixon's** strong vs. weak technology framework is a powerful lens for predicting the future of technology.\n\nPut simply, **weak technology** is like putting a faster horse-drawn carriage on existing roads, while **strong technology** is building an entirely new highway. Weak technology looks more realistic early on, but history repeatedly proves that strong technology defines new eras.\n\nKey examples: Wikipedia vs. Encarta, iPhone (touch + apps) vs. BlackBerry (physical keyboard), Tesla (fully electric) vs. hybrids. Public blockchain + cryptocurrency is a **strong technology**, while private blockchain is a weak technology.\n\nThe seven metaverse essentials are also critical: decentralization, property rights, self-sovereign identity, composability, open source, community-owned economy, and identity with reputation. All of these must be in place for a true metaverse to emerge.\n\nWeb3's GTM (Go-To-Market) strategy is equally interesting. While Web2 follows 'product first, community later,' Web3 puts **purpose and community first**. Compound's liquidity mining is a textbook case — TVL exploded from $100M to $600M.",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "tokenology",
         "title": "Tokenology: The Science of Token Design",
-        "prerequisites": ["bitcoin_ethereum", "dao_101"],
+        "prerequisites": [
+          "bitcoin_ethereum",
+          "dao_101"
+        ],
         "key_ideas": [
           "Tokens enable open network design — solving the funding problem of open protocols",
           "ERC-20 (fungible): transfer(), approve(), balanceOf() / ERC-721 (NFT): ownerOf(), tokenURI()",
@@ -116,23 +138,30 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 6",
-        "exercise": "화폐 수량 방정식 M×V=P×Q에서, 토큰의 가격을 높이려면 어떤 전략이 효과적인가요?\n1) 토큰 속도(V)를 높인다 — 더 빠르게 유통시킨다\n2) 토큰 속도(V)를 낮춘다 — 스테이킹, 거버넌스 등 보유 인센티브를 설계한다\n3) 서비스 거래량(Q)을 줄인다\n4) 토큰 총 공급량(M)을 늘린다\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 Chapter 6은 토큰을 단순한 화폐가 아닌 **네트워크 설계의 도구**로 봅니다.\n\n토큰을 **주차 토큰**에 비유해 봅시다. 일반 토크노믹스는 \"토큰이 몇 개이고 얼마인가?\"만 봅니다(스칼라). 반면 **토크놀로지**는 \"이 토큰이 어떤 행동을 유도하고, 누가 보유해야 하며, 가치는 어디서 발생하는가?\"까지 분석합니다(벡터).\n\n토크놀로지의 4가지 설계 공간은: (1) **소유** — 사용자 소유·운영 서비스, (2) **정렬** — 크리에이터와 팬의 직접 연결, (3) **인센티브** — 검증자·채굴자 조율, (4) **접근** — 서비스 계층화 경험 제공.\n\n가장 실용적인 개념은 **화폐 수량 방정식** M×V=P×Q입니다. 토큰 속도(V)가 높으면 — 즉 사람들이 받자마자 바로 팔면 — 가격이 낮게 유지됩니다. 해결책은 보유 인센티브 설계: 스테이킹, 거버넌스 권한, 수수료 공유 등으로 속도를 낮추는 것입니다.\n\n**메트칼프 법칙**(네트워크 가치 = N²)도 중요합니다. Facebook의 수익이 MAU²에 비례하듯, 비트코인·이더리움도 가격과 메트칼프 법칙이 높은 상관관계를 보입니다.",
+        "exercise": "In the equation of exchange M×V=P×Q, what is an effective strategy to increase token price?\n1) Increase token velocity (V) — circulate faster\n2) Decrease token velocity (V) — design holding incentives like staking and governance\n3) Reduce service transaction volume (Q)\n4) Increase total token supply (M)\nType the number.",
+        "explanation": "**Common Computer (2024)** Chapter 6 views tokens not merely as currency, but as **tools for network design**.\n\nLet's compare tokens to **parking tokens**. Traditional tokenomics only asks \"How many tokens exist and what are they worth?\" (scalar). **Tokenology**, on the other hand, analyzes \"What behavior does this token incentivize, who should hold it, and where does value originate?\" (vector).\n\nTokenology's four design spaces are: (1) **ownership** — user-owned and operated services, (2) **alignment** — direct connection between creators and fans, (3) **incentive** — coordinating validators and miners, (4) **access** — tiered service experiences.\n\nThe most practical concept is the **equation of exchange** M×V=P×Q. When token velocity (V) is high — meaning people sell immediately after receiving — the price stays low. The solution is to design holding incentives: staking, governance rights, and fee sharing to reduce velocity.\n\n**Metcalfe's Law** (network value = N²) is also important. Just as Facebook's revenue scales with MAU², Bitcoin and Ethereum prices also show high correlation with Metcalfe's Law.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "answer": "Decrease token velocity (V) — design holding incentives like staking and governance"
       }
     ]
   },
   {
     "id": "nft_digital_ownership",
     "title": "Module 3: NFT & Digital Ownership",
-    "description": "NFT의 철학적 기초부터 진화하는 NFT 유형, 그리고 AI와 블록체인의 결합까지 디지털 소유권의 미래를 탐구합니다.",
-    "concepts": ["nft_fundamentals", "nft_advanced", "ai_blockchain"],
+    "description": "Explore the future of digital ownership — from the philosophical foundations of NFTs and evolving NFT types to the convergence of AI and blockchain.",
+    "concepts": [
+      "nft_fundamentals",
+      "nft_advanced",
+      "ai_blockchain"
+    ],
     "lessons": [
       {
         "concept_id": "nft_fundamentals",
         "title": "NFTs Authenticate the World",
-        "prerequisites": ["tokenology"],
+        "prerequisites": [
+          "tokenology"
+        ],
         "key_ideas": [
           "Type vs Token: ERC-20 is a type (all identical), ERC-721 is a token (each unique)",
           "NFT = unique on-chain token representing off-chain asset ownership, backed by social contract (Naval)",
@@ -142,15 +171,17 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 7",
-        "exercise": "NFT의 가치를 궁극적으로 결정하는 것은 무엇인가요?\n1) NFT에 사용된 블록체인의 기술적 우수성\n2) NFT 이미지의 해상도와 예술적 품질\n3) 커뮤니티의 사회적 합의와 정당성(Legitimacy)\n4) NFT를 발행한 플랫폼의 시장점유율\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 Chapter 7은 NFT를 철학적 관점에서 접근합니다.\n\n**Type과 Token**의 구분이 출발점입니다. '고양이'라는 개념(Type)은 하나지만, 이 문장에서 '고양이'라는 글자(Token)는 구체적 사례입니다. ERC-20은 Type — 모든 개체가 동일합니다. ERC-721은 Token — 각 개체가 세상에 단 하나입니다.\n\n**Naval Ravikant**는 NFT를 이렇게 정의합니다: \"오프체인 자산의 소유권을 나타내는 고유한 온체인 토큰으로, 창작자와 커뮤니티의 사회적 계약에 의해 뒷받침된다.\" 핵심 통찰은 NFT의 가치가 **기술이 아닌 커뮤니티**에서 온다는 것입니다. \"커뮤니티가 죽으면 NFT도 가치를 잃는다.\"\n\n**Vitalik Buterin**의 **정당성(Legitimacy)** 이론이 이를 뒷받침합니다. 정당성이란 '고차원적 수용의 패턴'입니다. 일론 머스크의 트윗 NFT가 가치 있는 이유는 기술 때문이 아니라, 사회적 정당성 때문입니다. 같은 트윗을 제프 베조스가 NFT로 만들면 가짜가 되죠.\n\nNFT는 또한 창작자 경제를 재구성합니다. Web2에서 YouTube가 30%, Spotify가 수익의 대부분을 가져가지만, NFT는 1차 판매 + 2차 판매 자동 로열티로 창작자에게 직접 가치를 전달합니다.",
+        "exercise": "What ultimately determines the value of an NFT?\n1) The technical superiority of the blockchain it's built on\n2) The resolution and artistic quality of the NFT image\n3) Social consensus and legitimacy from the community\n4) The market share of the platform that issued the NFT\nType the number.",
+        "explanation": "**Common Computer (2024)** Chapter 7 approaches NFTs from a philosophical perspective.\n\nThe distinction between **Type and Token** is the starting point. The concept of 'cat' (Type) is singular, but the word 'cat' in this sentence (Token) is a specific instance. ERC-20 is a Type — every unit is identical. ERC-721 is a Token — each one is unique in the world.\n\n**Naval Ravikant** defines NFTs as: \"A unique on-chain token representing off-chain asset ownership, backed by the social contract between creators and the community.\" The key insight is that NFT value comes **from the community, not from technology**. \"When the community dies, the NFT loses its value.\"\n\n**Vitalik Buterin's** **legitimacy** theory supports this. Legitimacy is a 'higher-order pattern of acceptance.' Elon Musk's tweet NFT has value not because of technology, but because of social legitimacy. If Jeff Bezos minted the same tweet as an NFT, it would be considered fake.\n\nNFTs also reshape the creator economy. In Web2, YouTube takes 30% and Spotify captures most of the revenue, but NFTs deliver value directly to creators through primary sales plus automatic royalties on secondary sales.",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "nft_advanced",
         "title": "Advanced NFT Concepts: Evolving Digital Assets",
-        "prerequisites": ["nft_fundamentals"],
+        "prerequisites": [
+          "nft_fundamentals"
+        ],
         "key_ideas": [
           "1,000 True Fans economics: 1K fans × $100/yr = sustainable creator income (Kevin Kelly)",
           "NFTs transform creator economy: remove intermediaries, granular pricing, users become owners",
@@ -160,15 +191,18 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 8",
-        "exercise": "NFT가 창작자 경제를 바꾸는 3가지 방식 중, 수수료 50%→0% 감소로 가처분 소득이 6배 증가하는 효과는 어떤 방식에 해당하나요?\n1) 세밀한 가격 계층화 (Granular Price Tiering)\n2) 유저를 오너로 만들기 (Making Users Owners)\n3) 중간 착취자 제거 (Remove Rent-Seeking Intermediaries)\n4) 2차 판매 자동 로열티 (Automatic Royalties)\n숫자로 답하세요.",
-        "explanation": "**Kevin Kelly**의 '1,000 True Fans' 에세이(Wired)가 이 장의 출발점입니다.\n\n비유하면, 대형 콘서트장을 채울 필요 없이 **작은 단골 카페**만 있으면 됩니다. 1,000명의 진정한 팬이 연간 $100씩 지불하면 연 $100,000의 수입이 됩니다. 하지만 현실에서 중앙화 플랫폼이 새로운 중개자가 되어 이 비전을 가로막았습니다.\n\nNFT는 3가지 방식으로 창작자 경제를 혁신합니다: (1) **중간 착취자 제거** — 수수료 50%가 0%로 내려가면 가처분 소득이 $20K에서 $120K로 6배 증가합니다. (2) **세밀한 가격 계층화** — NBA Top Shot 카드가 $5부터 $100,000+까지 팬의 열정도에 맞춘 가격을 제시합니다. (3) **유저를 오너로** — 토큰 소유자가 자발적 전파자가 됩니다.\n\n**스큐어모프** 경고도 중요합니다. 전기차에 불필요한 그릴을 다는 것처럼, NFT를 '디지털 그림 소장'으로만 보면 진정한 혁신인 **프로그래머블 소유권**을 놓치게 됩니다.\n\n진화하는 NFT 5가지 유형이 이를 증명합니다: Lifeforms(90일 내 전송 안 하면 소멸), Corruptions(보유 기간에 따라 시각적 진화), Chaos Roads(매 블록마다 변화), Fini(암호화폐 가격에 따라 기분 변화), Uniswap LP NFTs(금융 행위의 시각화).",
+        "exercise": "Among the three ways NFTs transform the creator economy, which one corresponds to the effect of reducing fees from 50% to 0%, resulting in a 6x increase in disposable income?\n1) Granular Price Tiering\n2) Making Users Owners\n3) Removing Rent-Seeking Intermediaries\n4) Automatic Royalties on Secondary Sales\nType the number.",
+        "explanation": "**Kevin Kelly's** '1,000 True Fans' essay (Wired) is the starting point for this chapter.\n\nThink of it this way: you don't need to fill a massive concert arena — all you need is a **small, loyal cafe**. If 1,000 true fans each pay $100 per year, that's $100,000 in annual income. But in practice, centralized platforms became the new intermediaries, blocking this vision.\n\nNFTs revolutionize the creator economy in three ways: (1) **Removing rent-seeking intermediaries** — when fees drop from 50% to 0%, disposable income jumps from $20K to $120K, a 6x increase. (2) **Granular price tiering** — NBA Top Shot cards range from $5 to $100,000+, matching price to fan enthusiasm. (3) **Making users owners** — token holders become voluntary evangelists.\n\nThe **skeuomorph** warning is also important. Just like putting an unnecessary grille on an electric car, viewing NFTs as mere 'collectible digital pictures' misses the real innovation: **programmable ownership**.\n\nFive evolving NFT types prove this: Lifeforms (destroyed if not transferred within 90 days), Corruptions (visually evolve based on holding duration), Chaos Roads (change with every block), Fini (mood shifts with crypto prices), and Uniswap LP NFTs (visualization of financial activity).",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "ai_blockchain",
         "title": "AI x Blockchain: When Intelligence Meets Ownership",
-        "prerequisites": ["bitcoin_ethereum", "tokenology"],
+        "prerequisites": [
+          "bitcoin_ethereum",
+          "tokenology"
+        ],
         "key_ideas": [
           "AI long-tail problem: centralized monopoly fails at rare edge cases (a16z)",
           "Crypto solution: autonomous marketplace — smart contracts + neural networks + token incentives",
@@ -178,23 +212,31 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 9",
-        "exercise": "AI의 '롱테일 문제'에 대한 크립토의 해법은 무엇인가요?\n1) 더 큰 GPU 클러스터를 구매한다\n2) 스마트 컨트랙트 기반 자율 마켓플레이스로 데이터 공급자와 개발자를 연결한다\n3) 중앙 정부가 데이터를 수집하여 배포한다\n4) AI 모델의 크기를 줄여 연산 비용을 낮춘다\n숫자로 답하세요.",
-        "explanation": "**a16z**의 유명한 관찰에서 시작합니다: \"AI는 공산주의적, 크립토는 자유주의적이다.\" (Peter Thiel)\n\nAI의 롱테일 문제를 **지도 만들기**에 비유할 수 있습니다. 대도시 지도는 쉽습니다(내삽). 하지만 산골 오지의 오솔길까지 그리려면 비용이 기하급수적으로 증가합니다(외삽). 거대 기업이 데이터를 독점하면 이 롱테일을 정복할 수 없습니다.\n\n크립토의 해법은 **자율 마켓플레이스**입니다. 스마트 컨트랙트 + 뉴럴 네트워크로 데이터 공급자와 개발자를 직접 연결하고, 토큰 보상으로 콜드 스타트 문제를 해결합니다. 플라이휠: 자본 → 데이터 → 정확도 → 수요 → 자본.\n\n**Sequoia Capital**이 제기한 '$2,000억 질문'도 인상적입니다. GPU 구매 $500억 + 운영 $1,000억 = $1,500억 CapEx인데, 현재 실제 매출은 턱없이 부족합니다. 하지만 역사적으로 통신 버블이 광섬유를 깔아 인터넷 번영을 가져왔듯, AI도 같은 패턴을 따를 것입니다.\n\n블록체인 컴퓨팅의 4가지 시대도 정리합니다: 계산기(Bitcoin, 목적 특화) → 메인프레임(Ethereum, 범용) → 서버(Polkadot/Cosmos, 앱 특화) → 클라우드(미래, 무제한 확장+컴포저빌리티).",
+        "exercise": "What is crypto's solution to AI's 'long-tail problem'?\n1) Purchase larger GPU clusters\n2) Connect data providers and developers through a smart contract-based autonomous marketplace\n3) Have the central government collect and distribute data\n4) Reduce AI model sizes to lower compute costs\nType the number.",
+        "explanation": "We start with **a16z's** famous observation: \"AI is communist, crypto is libertarian.\" (Peter Thiel)\n\nThe AI long-tail problem can be compared to **map-making**. Mapping major cities is straightforward (interpolation). But charting remote mountain trails gets exponentially more expensive (extrapolation). When big corporations monopolize data, conquering the long tail becomes impossible.\n\nCrypto's solution is the **autonomous marketplace**. Smart contracts + neural networks connect data providers directly with developers, and token rewards solve the cold-start problem. The flywheel: capital → data → accuracy → demand → capital.\n\n**Sequoia Capital's** '$200 billion question' is also striking. GPU purchases of $50B + operating costs of $100B = $150B in CapEx, yet actual revenue falls far short. But historically, the telecom bubble laid fiber optics that fueled the internet boom. AI is following the same pattern.\n\nThe four eras of blockchain computing round out the picture: calculator (Bitcoin, purpose-built) → mainframe (Ethereum, general-purpose) → server (Polkadot/Cosmos, app-specific) → cloud (future, unlimited scale + composability).",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "answer": "Connect data providers and developers through a smart contract-based autonomous marketplace"
       }
     ]
   },
   {
     "id": "ai_agent_economy",
     "title": "Module 4: AI Agent Economy & The Future",
-    "description": "AINFT, ERC-8004 에이전트 신뢰 표준, OpenClaw 프레임워크를 학습하며 AI 에이전트 경제의 세 기둥과 미래를 탐구합니다.",
-    "concepts": ["ainft", "erc_8004", "openclaw"],
+    "description": "Study AINFT, the ERC-8004 agent trust standard, and the OpenClaw framework to explore the three pillars of the AI agent economy and its future.",
+    "concepts": [
+      "ainft",
+      "erc_8004",
+      "openclaw"
+    ],
     "lessons": [
       {
         "concept_id": "ainft",
         "title": "AINFT: Autonomous Intelligent NFTs",
-        "prerequisites": ["nft_advanced", "ai_blockchain"],
+        "prerequisites": [
+          "nft_advanced",
+          "ai_blockchain"
+        ],
         "key_ideas": [
           "AINFT = NFT + AI logic + dynamic metadata that grows and evolves over time",
           "Dynamic metadata: specification (AI model params), history (interactions), properties (current state)",
@@ -204,15 +246,17 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 10",
-        "exercise": "클래식 NFT와 AINFT의 가장 핵심적인 차이점은?\n1) AINFT는 더 비싸다\n2) AINFT는 동적 메타데이터로 시간이 지남에 따라 성장하고 진화한다\n3) AINFT는 이더리움에서만 작동한다\n4) AINFT는 이미지가 더 고해상도이다\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 Chapter 10은 NFT를 '살아있는 존재'로 진화시킵니다.\n\n클래식 NFT를 **사진**에 비유한다면, AINFT는 **반려동물**입니다. 사진은 찍은 순간에 고정되지만, 반려동물은 주인과의 상호작용을 통해 성장하고 변화합니다. AINFT의 메타데이터는 3가지로 구성됩니다: specification(AI 모델 사양), history(상호작용 기록), properties(현재 상태 — 레벨, 크레딧, 달성사항).\n\nAINFT의 3가지 핵심 속성은: (1) **책임성** — AI 파이프라인의 모든 관계가 온체인에 불변 기록됩니다. (2) **재현 가능성** — 프로토콜 스택 전체가 공개되어 언제든 재현 가능합니다. (3) **가치** — 긴 파이프라인을 작은 컴포넌트로 분해하여 개별 기여자에게 보상합니다.\n\n**AINFT Factory**는 커뮤니티가 AINFT 토크노믹스를 구축할 수 있는 공통 API 플랫폼입니다. MiniEggs 프로젝트가 대표적 사례인데, 메타버스에서의 모든 순간(하트 주기, 자장가 등)이 AI 성장 데이터가 되어 캐릭터의 성격을 형성합니다.\n\n소유의 의미도 재정의됩니다. 기존 NFT의 소유는 '파일에 대한 권리'였지만, AINFT에서 소유란 **함께 성장하고 기록을 쌓아가는 관계**입니다.",
+        "exercise": "What is the most fundamental difference between a classic NFT and an AINFT?\n1) AINFTs are more expensive\n2) AINFTs grow and evolve over time through dynamic metadata\n3) AINFTs only work on Ethereum\n4) AINFTs have higher-resolution images\nType the number.",
+        "explanation": "**Common Computer (2024)** Chapter 10 evolves the NFT into a 'living entity.'\n\nIf a classic NFT is a **photograph**, an AINFT is a **pet**. A photograph is frozen at the moment it's taken, but a pet grows and changes through interactions with its owner. AINFT metadata consists of three parts: specification (AI model parameters), history (interaction records), and properties (current state — level, credits, achievements).\n\nThe three core properties of AINFTs are: (1) **accountability** — every relationship in the AI pipeline is immutably recorded on-chain. (2) **reproducibility** — the entire protocol stack is open, making reproduction possible at any time. (3) **value** — long pipelines are decomposed into small components, rewarding individual contributors.\n\n**AINFT Factory** is a shared API platform where communities can build AINFT tokenomics. The MiniEggs project is a prime example — every moment in the metaverse (giving hearts, singing lullabies) becomes AI growth data that shapes the character's personality.\n\nThe meaning of ownership is also redefined. Classic NFT ownership meant 'rights to a file,' but in AINFT, ownership means **nurturing a growing relationship and building a shared history**.",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "erc_8004",
         "title": "ERC-8004: On-Chain Trust for AI Agents",
-        "prerequisites": ["ainft"],
+        "prerequisites": [
+          "ainft"
+        ],
         "key_ideas": [
           "ERC-8004 = on-chain trust infrastructure for AI agents to discover, verify, and collaborate",
           "Identity Registry (ERC-721): each agent = one NFT with capabilities, protocols, wallet info",
@@ -222,15 +266,18 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 11",
-        "exercise": "ERC-8004의 3개 레지스트리 중, AI 에이전트의 과거 작업 실적을 투명하게 기록하고 스팸을 암호학적으로 방지하는 것은?\n1) Identity Registry\n2) Reputation Registry\n3) Validation Registry\n4) Transaction Registry\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 Chapter 11은 AI 에이전트 경제의 가장 근본적인 문제를 다룹니다: **처음 만나는 에이전트를 어떻게 신뢰할 것인가?**\n\nERC-8004를 **디지털 세계의 여권+이력서+졸업장 시스템**에 비유할 수 있습니다. 3개의 레지스트리가 이를 구현합니다:\n\n**Identity Registry**는 여권입니다. ERC-721(NFT) 기반으로, 각 에이전트가 하나의 NFT를 가집니다. 에이전트의 기능, 통신 프로토콜(MCP/A2A), 지갑 주소가 담깁니다. 에이전트 신원 자체가 OpenSea에서 거래 가능하다는 것이 혁명적이죠.\n\n**Reputation Registry**는 이력서입니다. 작업 완료 후 평판 피드백을 표준화하고, 암호화 증명으로 실제 작업·결제를 확인하여 스팸을 방지합니다. 리뷰가 많아질수록 평균이 안정화되어 조작이 어려워집니다.\n\n**Validation Registry**는 졸업장/자격증입니다. 세 가지 검증 방식을 지원합니다: 옵티미스틱 검증(이의 없으면 통과), 영지식 증명(작업 공개 없이 수학적 증명), TEE 어테스테이션(하드웨어 수준 보장).\n\n에이전트 경제 스택은: ERC-8004(신원·신뢰) → x402(결제) → A2A/MCP(통신) → MCP(툴) → ERC-6551(계정) 순으로 구성됩니다.",
+        "exercise": "Among ERC-8004's three registries, which one transparently records an AI agent's past work history and prevents spam through cryptographic proofs?\n1) Identity Registry\n2) Reputation Registry\n3) Validation Registry\n4) Transaction Registry\nType the number.",
+        "explanation": "**Common Computer (2024)** Chapter 11 addresses the most fundamental question of the AI agent economy: **How do you trust an agent you've never met?**\n\nThink of ERC-8004 as a **passport + resume + diploma system for the digital world**. Three registries implement this:\n\nThe **Identity Registry** is the passport. Built on ERC-721 (NFT), each agent holds a single NFT containing its capabilities, communication protocols (MCP/A2A), and wallet address. The revolutionary part is that agent identity itself can be traded on OpenSea.\n\nThe **Reputation Registry** is the resume. It standardizes post-task reputation feedback and uses cryptographic proofs to verify actual work and payments, preventing spam. As more reviews accumulate, the average stabilizes, making manipulation increasingly difficult.\n\nThe **Validation Registry** is the diploma/certification. It supports three verification methods: optimistic verification (passes if unchallenged), zero-knowledge proofs (mathematical proof without revealing the work), and TEE attestation (hardware-level guarantees).\n\nThe agent economy stack is: ERC-8004 (identity and trust) → x402 (payments) → A2A/MCP (communication) → MCP (tools) → ERC-6551 (accounts).",
         "x402_price": "",
         "x402_gateway": ""
       },
       {
         "concept_id": "openclaw",
         "title": "OpenClaw: The Autonomous Digital Worker",
-        "prerequisites": ["erc_8004", "ainft"],
+        "prerequisites": [
+          "erc_8004",
+          "ainft"
+        ],
         "key_ideas": [
           "OpenClaw: open-source local AI agent framework — 150K+ GitHub stars, 416K+ monthly npm downloads",
           "Why local: privacy (no data leaks), persistence (24/7), bot detection bypass",
@@ -240,10 +287,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 12",
-        "exercise": "OpenClaw의 CoinFello Skill에서 보안을 위해 사용하는 모델은?\n1) 에이전트가 사용자의 프라이빗 키를 직접 보관\n2) TEE(신뢰 실행 환경) 서버에 키를 저장\n3) 사용자가 좁은 범위의 권한만 위임하고, 서명 키는 항상 사용자 디바이스에 존재\n4) 중앙화된 키 관리 서비스(KMS) 사용\n숫자로 답하세요.",
-        "explanation": "**Common Computer (2024)** 의 마지막 Chapter 12는 AI가 '응답자'에서 '실행자'로 변모하는 패러다임을 다룹니다.\n\nOpenClaw를 **디지털 비서**에 비유합시다. 기존 AI가 '질문하면 답하는 안내 데스크'였다면, OpenClaw는 '직접 은행에 가서 송금하고, 서류를 작성하고, 쇼핑까지 해주는 개인 비서'입니다. 자연어 명령만으로 브라우저, API, 스크립트, 온체인 트랜잭션을 자율 실행합니다.\n\n로컬 실행의 이유가 핵심입니다: (1) **프라이버시** — 지갑 정보가 외부 서버로 나가지 않습니다. (2) **지속성** — 클라우드 중단과 무관하게 24시간 작동. (3) **봇 탐지 우회** — 자연스러운 브라우저 세션 유지.\n\n**CoinFello Skill**의 보안 모델이 특히 중요합니다. 에이전트가 프라이빗 키를 보관하면 해킹 시 전부 탈취당합니다. 대신 **위임된 권한 모델**(ERC-4337 + ERC-7710)을 사용합니다: 사용자가 좁은 범위의 권한만 위임하고, 서명 키는 항상 사용자 디바이스에 존재합니다. 최소 권한 원칙이죠.\n\n최종적으로 **에이전트 경제의 세 기둥**이 수렴합니다: AINFT(소유) + ERC-8004(신뢰) + OpenClaw(실행). 커뮤니티가 AINFT로 AI를 성장시키고, ERC-8004로 신뢰를 확보하고, OpenClaw로 실제 작업을 수행하여 수익을 커뮤니티에 환원합니다.",
+        "exercise": "What security model does OpenClaw's CoinFello Skill use?\n1) The agent directly stores the user's private key\n2) Keys are stored on a TEE (Trusted Execution Environment) server\n3) The user delegates only narrow permissions, and signing keys always remain on the user's device\n4) A centralized Key Management Service (KMS)\nType the number.",
+        "explanation": "**Common Computer (2024)** final Chapter 12 covers the paradigm shift of AI from 'responder' to 'executor.'\n\nThink of OpenClaw as a **digital personal assistant**. If traditional AI was an 'information desk that answers questions,' OpenClaw is a 'personal assistant that goes to the bank, files paperwork, and does your shopping.' It autonomously executes browser actions, API calls, scripts, and on-chain transactions from natural language commands.\n\nThe reasons for local execution are critical: (1) **privacy** — wallet information never leaves the device, (2) **persistence** — runs 24/7 regardless of cloud outages, (3) **bot detection bypass** — maintains natural browser sessions.\n\n**CoinFello Skill's** security model is especially important. If the agent holds private keys, a hack means total loss. Instead, it uses a **delegated authority model** (ERC-4337 + ERC-7710): the user delegates only narrow permissions, and signing keys always remain on the user's device. This is the principle of least privilege.\n\nUltimately, the **three pillars of the agent economy** converge: AINFT (ownership) + ERC-8004 (trust) + OpenClaw (execution). Communities grow AI through AINFTs, establish trust via ERC-8004, and execute real-world tasks through OpenClaw — with revenue flowing back to the community.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "answer": "The user delegates only narrow permissions, and signing keys always remain on the user's device"
       }
     ]
   }
