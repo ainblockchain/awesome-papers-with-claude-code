@@ -27,7 +27,8 @@
             "answer": "It saves parameters and ties input/output representations",
             "explanation": "Vaswani et al. (2017) share weights between the embedding tables and the pre-softmax linear layer, scaling them by √d_model. This ties the model's understanding of a token as input and output."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- shared embedding weights\n- sin/cos PE formula\n\n## Explanation\n\nVaswani et al. (2017) share weights between the embedding tables and the pre-softmax linear layer, scaling them by √d_model. This ties the model's understanding of a token as input and output."
       },
       {
         "concept_id": "attention_head",
@@ -50,7 +51,8 @@
             "answer": "To prevent softmax from saturating into near-zero gradients",
             "explanation": "Each head projects inputs to Q, K, V matrices (d_k=64), computes Attention(Q,K,V)=softmax(QKᵀ/√64)V. Without √dₖ scaling, large dot products push softmax into flat regions where gradients vanish."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- linear projections\n- scaled softmax\n\n## Explanation\n\nEach head projects inputs to Q, K, V matrices (d_k=64), computes Attention(Q,K,V)=softmax(QKᵀ/√64)V. Without √dₖ scaling, large dot products push softmax into flat regions where gradients vanish."
       }
     ]
   },
@@ -87,7 +89,8 @@
             "answer": "(seq_len, 512)",
             "explanation": "MultiHead(Q,K,V) = Concat(head₁,...,head₈)Wᴼ. With h=8 and dᵥ=64, concat gives 512-dim which the output projection Wᴼ maps back to d_model=512."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- parallel subspaces\n- output projection\n\n## Explanation\n\nMultiHead(Q,K,V) = Concat(head₁,...,head₈)Wᴼ. With h=8 and dᵥ=64, concat gives 512-dim which the output projection Wᴼ maps back to d_model=512."
       },
       {
         "concept_id": "add_and_norm",
@@ -110,7 +113,8 @@
             "answer": "False",
             "explanation": "The output of each sublayer is LayerNorm(x + Sublayer(x)). LayerNorm normalizes over the d_model=512 dimension (not batch), making it independent of batch size — key for variable-length sequences."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- residual shortcut\n- LayerNorm over d_model\n\n## Explanation\n\nThe output of each sublayer is LayerNorm(x + Sublayer(x)). LayerNorm normalizes over the d_model=512 dimension (not batch), making it independent of batch size — key for variable-length sequences."
       },
       {
         "concept_id": "ffn_block",
@@ -133,7 +137,8 @@
             "answer": "4×",
             "explanation": "FFN(x)=max(0,xW₁+b₁)W₂+b₂ with W₁∈ℝ^{512×2048}. The 4× expansion (d_ff/d_model) is a design choice the authors validated empirically; it's the same ratio used in GPT and BERT."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- d_ff=2048\n- per-position identical\n\n## Explanation\n\nFFN(x)=max(0,xW₁+b₁)W₂+b₂ with W₁∈ℝ^{512×2048}. The 4× expansion (d_ff/d_model) is a design choice the authors validated empirically; it's the same ratio used in GPT and BERT."
       },
       {
         "concept_id": "encoder_block",
@@ -156,7 +161,8 @@
             "answer": "Each layer can refine representations progressively, learning hierarchical features",
             "explanation": "Six identical encoder layers each contain: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. Depth lets the model build increasingly abstract representations, analogous to layers in CNNs."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- N=6 identical layers\n- self-attention\n\n## Explanation\n\nSix identical encoder layers each contain: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm. Depth lets the model build increasingly abstract representations, analogous to layers in CNNs."
       },
       {
         "concept_id": "decoder_block",
@@ -179,7 +185,8 @@
             "answer": "Prevents each position from attending to future positions",
             "explanation": "Each decoder block has 3 sublayers: masked self-attention (can't see future tokens), cross-attention over encoder output, and FFN — each wrapped with Add&Norm. The mask enforces autoregressive generation."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- causal mask\n- cross-attention\n\n## Explanation\n\nEach decoder block has 3 sublayers: masked self-attention (can't see future tokens), cross-attention over encoder output, and FFN — each wrapped with Add&Norm. The mask enforces autoregressive generation."
       }
     ]
   },
@@ -213,7 +220,8 @@
             "answer": "It avoids large early updates that can destabilize untrained attention weights",
             "explanation": "Vaswani et al. use Adam (β₁=0.9, β₂=0.98) with lrate=d_model^{-0.5}·min(step^{-0.5}, step·warmup^{-1.5}). Warmup lets the model stabilize before large gradient updates; label smoothing ε=0.1 improves generalization."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- warmup schedule\n- label smoothing ε=0.1\n\n## Explanation\n\nVaswani et al. use Adam (β₁=0.9, β₂=0.98) with lrate=d_model^{-0.5}·min(step^{-0.5}, step·warmup^{-1.5}). Warmup lets the model stabilize before large gradient updates; label smoothing ε=0.1 improves generalization."
       },
       {
         "concept_id": "inference_decoding",
@@ -236,7 +244,8 @@
             "answer": "Recomputing attention over the source sentence every step",
             "explanation": "The encoder runs once over the source; the decoder generates autoregressively using beam search (beam=4, α=0.6 length penalty). KV caching stores past key/value pairs so each new token only attends forward — the basis of efficient LLM inference today."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- beam search\n- KV cache\n\n## Explanation\n\nThe encoder runs once over the source; the decoder generates autoregressively using beam search (beam=4, α=0.6 length penalty). KV caching stores past key/value pairs so each new token only attends forward — the basis of efficient LLM inference today."
       }
     ]
   }

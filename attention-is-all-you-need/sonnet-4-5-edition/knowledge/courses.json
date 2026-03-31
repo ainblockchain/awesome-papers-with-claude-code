@@ -29,7 +29,8 @@
             "answer": "All source information must pass through a single fixed-size hidden state",
             "explanation": "RNN seq2seq models compress entire input sequences into one hidden state vector, creating an information bottleneck that hurts long-sequence performance. The Transformer eliminates this by attending directly to all input positions."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- encoder-decoder with hidden states\n- sequential dependency\n- bottleneck problem\n\n## Explanation\n\nRNN seq2seq models compress entire input sequences into one hidden state vector, creating an information bottleneck that hurts long-sequence performance. The Transformer eliminates this by attending directly to all input positions."
       },
       {
         "concept_id": "scaled_dot_product_attention",
@@ -53,7 +54,8 @@
             "answer": "To prevent extremely small gradients caused by large dot-product magnitudes",
             "explanation": "Without scaling, large d_k causes dot products to grow large, pushing softmax into saturation regions with near-zero gradients. Dividing by √d_k keeps gradients healthy."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Q, K, V matrices\n- softmax(QK^T/√d_k)V\n- scaling prevents saturation\n\n## Explanation\n\nWithout scaling, large d_k causes dot products to grow large, pushing softmax into saturation regions with near-zero gradients. Dividing by √d_k keeps gradients healthy."
       },
       {
         "concept_id": "positional_encoding",
@@ -77,7 +79,8 @@
             "answer": "Because self-attention is permutation-invariant and has no built-in notion of position",
             "explanation": "Self-attention treats input as a set, not a sequence — swapping token positions produces identical attention scores. Sinusoidal positional encodings inject unique position signals so the model knows word order."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- sin/cos at different frequencies\n- added to token embeddings\n- enables position awareness\n\n## Explanation\n\nSelf-attention treats input as a set, not a sequence — swapping token positions produces identical attention scores. Sinusoidal positional encodings inject unique position signals so the model knows word order."
       }
     ]
   },
@@ -115,7 +118,8 @@
             "answer": "Each head can learn to attend to different types of relationships simultaneously",
             "explanation": "With 8 heads each projecting to 64-dim subspaces, the model simultaneously learns syntactic, semantic, and positional relationships. Outputs are concatenated and linearly projected back to d_model=512."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- h=8 parallel heads\n- d_k=64 per head\n- concatenate and project\n\n## Explanation\n\nWith 8 heads each projecting to 64-dim subspaces, the model simultaneously learns syntactic, semantic, and positional relationships. Outputs are concatenated and linearly projected back to d_model=512."
       },
       {
         "concept_id": "encoder_decoder",
@@ -140,7 +144,8 @@
             "answer": "The encoder's final output",
             "explanation": "Cross-attention lets each decoder position query all encoder positions freely, replacing the fixed-size hidden state of RNNs with a dynamic, direct read from the full encoded source."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 6 encoder layers\n- 6 decoder layers with cross-attention\n- causal masking in decoder\n\n## Explanation\n\nCross-attention lets each decoder position query all encoder positions freely, replacing the fixed-size hidden state of RNNs with a dynamic, direct read from the full encoded source."
       },
       {
         "concept_id": "feed_forward",
@@ -164,7 +169,8 @@
             "answer": "4x",
             "explanation": "Each sublayer's FFN expands to 4× the model dimension (2048), applies ReLU, then projects back — identical weights applied independently at every position, adding per-token nonlinearity after attention."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- two linear layers + ReLU\n- 512→2048→512\n- same weights per position\n\n## Explanation\n\nEach sublayer's FFN expands to 4× the model dimension (2048), applies ReLU, then projects back — identical weights applied independently at every position, adding per-token nonlinearity after attention."
       },
       {
         "concept_id": "residual_layernorm",
@@ -188,7 +194,8 @@
             "answer": "Adding the sublayer output to its input (residual/skip connection)",
             "explanation": "Every sublayer output is added to its input before layer normalization: LayerNorm(x + Sublayer(x)). This residual path lets gradients flow directly through deep 6-layer stacks without vanishing."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- residual skip connection\n- LayerNorm after addition\n- prevents gradient vanishing\n\n## Explanation\n\nEvery sublayer output is added to its input before layer normalization: LayerNorm(x + Sublayer(x)). This residual path lets gradients flow directly through deep 6-layer stacks without vanishing."
       },
       {
         "concept_id": "masking",
@@ -212,7 +219,8 @@
             "answer": "To prevent positions from attending to future tokens, preserving the autoregressive property",
             "explanation": "During training the full target sequence is fed at once, but the decoder must predict each token using only past tokens. The causal mask sets future positions to −∞ before softmax, making their attention weights effectively zero."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- causal mask sets future to -∞\n- autoregressive generation\n- ensures valid probabilities\n\n## Explanation\n\nDuring training the full target sequence is fed at once, but the decoder must predict each token using only past tokens. The causal mask sets future positions to −∞ before softmax, making their attention weights effectively zero."
       }
     ]
   },
@@ -247,7 +255,8 @@
             "answer": "O(1)",
             "explanation": "Self-attention computes all pairwise interactions in one matrix multiply — O(1) sequential steps versus RNN's O(n) sequential steps, enabling massive GPU parallelism at the cost of O(n²) memory."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- O(1) sequential ops vs O(n) for RNN\n- O(n²·d) attention complexity\n- GPU utilization\n\n## Explanation\n\nSelf-attention computes all pairwise interactions in one matrix multiply — O(1) sequential steps versus RNN's O(n) sequential steps, enabling massive GPU parallelism at the cost of O(n²) memory."
       },
       {
         "concept_id": "transformer_descendants",
@@ -272,7 +281,8 @@
             "answer": "GPT uses causal masking; BERT uses bidirectional (no masking)",
             "explanation": "Decoder-only (GPT) applies causal masks for autoregressive generation; encoder-only (BERT) uses full bidirectional attention for representation learning. This single architectural choice drives the generative vs discriminative split in modern LLMs."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- encoder-only: BERT\n- decoder-only: GPT\n- encoder-decoder: T5\n\n## Explanation\n\nDecoder-only (GPT) applies causal masks for autoregressive generation; encoder-only (BERT) uses full bidirectional attention for representation learning. This single architectural choice drives the generative vs discriminative split in modern LLMs."
       }
     ]
   }

@@ -29,7 +29,8 @@
             "answer": "Attention lets models focus on the most relevant parts of the input rather than treating all words equally.",
             "explanation": "Attention lets models focus on the most relevant parts of the input. Imagine reading a sentence in a foreign language — you'd zoom in on key words and skim less important ones. That's what attention does."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Selective focus on input\n- Weighted importance scores\n- Context-aware computation\n\n## Explanation\n\nAttention lets models focus on the most relevant parts of the input. Imagine reading a sentence in a foreign language — you'd zoom in on key words and skim less important ones. That's what attention does."
       },
       {
         "concept_id": "self_attention",
@@ -53,7 +54,8 @@
             "answer": "cat",
             "explanation": "Self-attention lets each word look at every other word in the sentence simultaneously. It's like everyone in a group chat can see everyone else's messages at once, enabling rich interdependencies."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Intra-sequence relationships\n- Each position attends to all others\n- Parallel computation\n\n## Explanation\n\nSelf-attention lets each word look at every other word in the sentence simultaneously. It's like everyone in a group chat can see everyone else's messages at once, enabling rich interdependencies."
       },
       {
         "concept_id": "residual_layer_norm",
@@ -75,7 +77,8 @@
             "answer": "Prevent vanishing gradients",
             "explanation": "Deep networks suffer when gradients shrink layer-by-layer. Residual connections bypass layers, letting gradients flow directly. Layer norm stabilizes this flow. Together they're like safety railings on a steep staircase."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Skip connections\n- Training stability\n- Gradient flow\n\n## Explanation\n\nDeep networks suffer when gradients shrink layer-by-layer. Residual connections bypass layers, letting gradients flow directly. Layer norm stabilizes this flow. Together they're like safety railings on a steep staircase."
       }
     ]
   },
@@ -112,7 +115,8 @@
             "answer": "To prevent gradients from exploding",
             "explanation": "When dimensions are large, dot products become huge, causing softmax to focus on tiny differences. Scaling by √d_k keeps values manageable, stabilizing gradients and learning."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Query-Key-Value framework\n- Softmax scoring\n- Dimension scaling\n\n## Explanation\n\nWhen dimensions are large, dot products become huge, causing softmax to focus on tiny differences. Scaling by √d_k keeps values manageable, stabilizing gradients and learning."
       },
       {
         "concept_id": "multi_head_attention",
@@ -136,7 +140,8 @@
             "answer": "Learn different patterns simultaneously",
             "explanation": "Multiple heads are like having 8 different 'focus cameras' on the input, each learning to attend to different aspects (syntax, semantics, grammar, etc.). They vote together for richer understanding."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Parallel representation learning\n- 8 heads per layer\n- Diverse patterns\n\n## Explanation\n\nMultiple heads are like having 8 different 'focus cameras' on the input, each learning to attend to different aspects (syntax, semantics, grammar, etc.). They vote together for richer understanding."
       },
       {
         "concept_id": "positional_encoding",
@@ -160,7 +165,8 @@
             "answer": "No",
             "explanation": "Self-attention is permutation-invariant — words in any order look the same. Positional encoding injects position info via sine/cosine functions, embedding word order directly into embeddings."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Sequence order information\n- Sine/cosine patterns\n- Extrapolation\n\n## Explanation\n\nSelf-attention is permutation-invariant — words in any order look the same. Positional encoding injects position info via sine/cosine functions, embedding word order directly into embeddings."
       },
       {
         "concept_id": "encoder_decoder",
@@ -186,7 +192,8 @@
             "answer": "Force compression of key information",
             "explanation": "Information flows through 6 encoder layers, compressed into a single context. The decoder then unpacks this bottleneck. It's like a writer's outline — all information must fit into a single view before expanding the full essay."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 6 identical stacked layers\n- Self-attention + cross-attention\n- Information bottleneck\n\n## Explanation\n\nInformation flows through 6 encoder layers, compressed into a single context. The decoder then unpacks this bottleneck. It's like a writer's outline — all information must fit into a single view before expanding the full essay."
       }
     ]
   },
@@ -222,7 +229,8 @@
             "answer": "Self-attention",
             "explanation": "RNNs must wait for previous tokens before computing the next one (O(n) sequential steps). Transformers compute all attention in parallel — each token simultaneously attends to all others. This enables massive speedups and better scaling to long sequences."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- No recurrence needed\n- Parallel processing\n- State-of-the-art results\n\n## Explanation\n\nRNNs must wait for previous tokens before computing the next one (O(n) sequential steps). Transformers compute all attention in parallel — each token simultaneously attends to all others. This enables massive speedups and better scaling to long sequences."
       }
     ]
   }

@@ -27,7 +27,8 @@
             "answer": "They compress all input into one fixed-size vector",
             "explanation": "RNNs encode the entire input sentence into a single hidden vector — a bottleneck that loses information for long sequences. Sutskever et al. (2014) showed seq2seq works but struggles as sentence length grows."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- sequential processing\n- hidden state bottleneck\n\n## Explanation\n\nRNNs encode the entire input sentence into a single hidden vector — a bottleneck that loses information for long sequences. Sutskever et al. (2014) showed seq2seq works but struggles as sentence length grows."
       },
       {
         "concept_id": "attention_mechanism",
@@ -50,7 +51,8 @@
             "answer": "How relevant that encoder token is for generating the current output word",
             "explanation": "Bahdanau et al. (2015) let the decoder 'look back' at all encoder states and compute a weighted sum — solving the bottleneck by dynamically focusing on relevant input positions."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- context vector\n- alignment scores\n\n## Explanation\n\nBahdanau et al. (2015) let the decoder 'look back' at all encoder states and compute a weighted sum — solving the bottleneck by dynamically focusing on relevant input positions."
       }
     ]
   },
@@ -87,7 +89,8 @@
             "answer": "To prevent dot products from growing large and pushing softmax into low-gradient regions",
             "explanation": "Vaswani et al. (2017) compute Attention(Q,K,V)=softmax(QKᵀ/√dₖ)V. The √dₖ scaling keeps gradients healthy when the key dimension is large."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Q/K/V matrices\n- scaling by √dₖ\n\n## Explanation\n\nVaswani et al. (2017) compute Attention(Q,K,V)=softmax(QKᵀ/√dₖ)V. The √dₖ scaling keeps gradients healthy when the key dimension is large."
       },
       {
         "concept_id": "multi_head_attention",
@@ -110,7 +113,8 @@
             "answer": "Each head can attend to different aspects of the input simultaneously",
             "explanation": "With h=8 heads and dₖ=64, the model jointly attends to information from different representation subspaces — like reading a sentence for grammar, sentiment, and coreference all at once."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- parallel heads\n- subspace diversity\n\n## Explanation\n\nWith h=8 heads and dₖ=64, the model jointly attends to information from different representation subspaces — like reading a sentence for grammar, sentiment, and coreference all at once."
       },
       {
         "concept_id": "positional_encoding",
@@ -133,7 +137,8 @@
             "answer": "Because attention alone is permutation-invariant and cannot distinguish token order",
             "explanation": "Pure attention treats inputs as a set, not a sequence. Vaswani et al. inject sinusoidal PE(pos,2i)=sin(pos/10000^(2i/d)) so the model knows token positions without recurrence."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- sin/cos frequencies\n- position-invariant attention\n\n## Explanation\n\nPure attention treats inputs as a set, not a sequence. Vaswani et al. inject sinusoidal PE(pos,2i)=sin(pos/10000^(2i/d)) so the model knows token positions without recurrence."
       },
       {
         "concept_id": "ffn",
@@ -156,7 +161,8 @@
             "answer": "True",
             "explanation": "Each Transformer layer adds a two-layer FFN (dff=2048) applied identically and independently at every position — it stores per-token 'knowledge' while attention handles mixing."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- per-position processing\n- dff=2048\n\n## Explanation\n\nEach Transformer layer adds a two-layer FFN (dff=2048) applied identically and independently at every position — it stores per-token 'knowledge' while attention handles mixing."
       },
       {
         "concept_id": "encoder_decoder",
@@ -180,7 +186,8 @@
             "answer": "To prevent the decoder from attending to future (not-yet-generated) tokens",
             "explanation": "N=6 encoder layers process the input; N=6 decoder layers generate output autoregressively with masked self-attention to ensure predictions depend only on past tokens."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- layer stacking\n- masked self-attention in decoder\n\n## Explanation\n\nN=6 encoder layers process the input; N=6 decoder layers generate output autoregressively with masked self-attention to ensure predictions depend only on past tokens."
       }
     ]
   },
@@ -213,7 +220,8 @@
             "answer": "Only the decoder",
             "explanation": "The 2017 Transformer paper launched BERT (encoder-only), GPT (decoder-only), and T5 (full encoder-decoder) — virtually every modern LLM is a scaled Transformer variant."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- pre-training paradigm\n- foundation models\n\n## Explanation\n\nThe 2017 Transformer paper launched BERT (encoder-only), GPT (decoder-only), and T5 (full encoder-decoder) — virtually every modern LLM is a scaled Transformer variant."
       }
     ]
   }

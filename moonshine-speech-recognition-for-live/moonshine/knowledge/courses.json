@@ -27,7 +27,8 @@
             "answer": "자동회귀적 텍스트 생성",
             "explanation": "Moonshine은 인코더로 음성 특징을 추출하고 디코더로 텍스트를 한 토큰씩 생성한다. Whisper와 동일한 인코더-디코더 구조를 기반으로 하되 위치 인코딩 방식을 개선했다."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 인코더 음성 특징 추출\n- 디코더 자동회귀 생성\n\n## Explanation\n\nMoonshine은 인코더로 음성 특징을 추출하고 디코더로 텍스트를 한 토큰씩 생성한다. Whisper와 동일한 인코더-디코더 구조를 기반으로 하되 위치 인코딩 방식을 개선했다."
       },
       {
         "concept_id": "bpe",
@@ -50,7 +51,8 @@
             "answer": "32,000 + 768 특수 토큰",
             "explanation": "Moonshine은 Llama 1/2의 바이트 수준 BPE 토크나이저를 재사용해 32,000개 어휘와 768개 특수 토큰을 사용한다."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 32K 어휘\n- Llama 1/2 토크나이저 재사용\n\n## Explanation\n\nMoonshine은 Llama 1/2의 바이트 수준 BPE 토크나이저를 재사용해 32,000개 어휘와 768개 특수 토큰을 사용한다."
       }
     ]
   },
@@ -85,7 +87,8 @@
             "answer": "임의 길이 입력의 상대 위치 인코딩 가능",
             "explanation": "RoPE는 회전 행렬로 토큰 간 상대적 위치를 인코딩한다. Whisper의 고정 30초 절대 위치 임베딩과 달리 임의 길이 오디오를 처리할 수 있다."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 상대 위치 인코딩\n- 가변 길이 지원\n\n## Explanation\n\nRoPE는 회전 행렬로 토큰 간 상대적 위치를 인코딩한다. Whisper의 고정 30초 절대 위치 임베딩과 달리 임의 길이 오디오를 처리할 수 있다."
       },
       {
         "concept_id": "var_enc",
@@ -108,7 +111,8 @@
             "answer": "30초 고정이 아닌 5초만큼만 인코딩하기 때문",
             "explanation": "Whisper는 항상 30초를 인코딩하지만, Moonshine은 실제 오디오 길이만큼만 연산한다. 짧은 음성일수록 연산량이 크게 줄어들어 엣지 디바이스에 적합하다."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 제로 패딩 제거\n- 계산량 비례\n\n## Explanation\n\nWhisper는 항상 30초를 인코딩하지만, Moonshine은 실제 오디오 길이만큼만 연산한다. 짧은 음성일수록 연산량이 크게 줄어들어 엣지 디바이스에 적합하다."
       },
       {
         "concept_id": "pseudo",
@@ -131,7 +135,8 @@
             "answer": "Whisper large v3 의사 레이블 + Levenshtein 필터링",
             "explanation": "레이블 없는 오디오는 Whisper large v3로 의사 레이블을 생성하고, Levenshtein 거리가 먼 것을 제거해 약 200K 시간 고품질 데이터를 구성했다."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- Whisper large v3 교사 모델\n- Levenshtein 거리 필터링\n\n## Explanation\n\n레이블 없는 오디오는 Whisper large v3로 의사 레이블을 생성하고, Levenshtein 거리가 먼 것을 제거해 약 200K 시간 고품질 데이터를 구성했다."
       }
     ]
   },
@@ -165,7 +170,8 @@
             "answer": "5배",
             "explanation": "Moonshine Tiny는 10초 음성 전사 시 Whisper tiny.en 대비 5배 적은 연산으로 동등한 WER(12.66% vs 12.81%)을 달성한다. RoPE와 가변 길이 인코딩의 결합이 엣지 실시간 ASR을 실현한다."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 5배 연산 절감\n- Whisper 동등 WER\n\n## Explanation\n\nMoonshine Tiny는 10초 음성 전사 시 Whisper tiny.en 대비 5배 적은 연산으로 동등한 WER(12.66% vs 12.81%)을 달성한다. RoPE와 가변 길이 인코딩의 결합이 엣지 실시간 ASR을 실현한다."
       }
     ]
   }

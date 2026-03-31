@@ -27,7 +27,8 @@
             "answer": "It grounds generation with retrieved external knowledge",
             "explanation": "RAG augments an LLM at inference time by retrieving relevant passages from a corpus, letting the model answer questions about knowledge it never saw during training."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- retrieve then read\n- grounding hallucinations\n\n## Explanation\n\nRAG augments an LLM at inference time by retrieving relevant passages from a corpus, letting the model answer questions about knowledge it never saw during training."
       },
       {
         "concept_id": "hippocampal_indexing",
@@ -50,7 +51,8 @@
             "answer": "It maintains associative indices binding neocortical patterns",
             "explanation": "The hippocampus does not store memories directly; it holds an index of pointers that bind distributed neocortical representations, enabling fast associative recall from partial cues."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- hippocampus as index\n- neocortex as encoder\n\n## Explanation\n\nThe hippocampus does not store memories directly; it holds an index of pointers that bind distributed neocortical representations, enabling fast associative recall from partial cues."
       }
     ]
   },
@@ -87,7 +89,8 @@
             "answer": "(subject, relation, object) triples",
             "explanation": "HippoRAG uses an instruction-tuned LLM to extract schemaless triples from each passage, turning unstructured text into graph nodes (noun phrases) and edges (semantic relations)."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- subject-relation-object\n- LLM extraction\n\n## Explanation\n\nHippoRAG uses an instruction-tuned LLM to extract schemaless triples from each passage, turning unstructured text into graph nodes (noun phrases) and edges (semantic relations)."
       },
       {
         "concept_id": "knowledge_graph",
@@ -110,7 +113,8 @@
             "answer": "False",
             "explanation": "The KG is built offline during indexing and reused across all queries, making retrieval cheap; it acts as a persistent associative index over the entire corpus."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- corpus-wide graph\n- associative links\n\n## Explanation\n\nThe KG is built offline during indexing and reused across all queries, making retrieval cheap; it acts as a persistent associative index over the entire corpus."
       },
       {
         "concept_id": "synonymy_edges",
@@ -133,7 +137,8 @@
             "answer": "Link semantically similar nodes to handle coreference",
             "explanation": "A retrieval encoder computes similarity between all node pairs; pairs above the 0.8 threshold receive a synonymy edge, allowing the graph to connect mentions of the same entity even when phrased differently."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- embedding similarity\n- threshold 0.8\n\n## Explanation\n\nA retrieval encoder computes similarity between all node pairs; pairs above the 0.8 threshold receive a synonymy edge, allowing the graph to connect mentions of the same entity even when phrased differently."
       },
       {
         "concept_id": "personalized_pagerank",
@@ -157,7 +162,8 @@
             "answer": "It biases the walk toward query-relevant nodes",
             "explanation": "PPR initializes the random walk distribution at query-named-entity nodes, so probability mass flows only through graph neighborhoods relevant to the query, achieving multi-hop reasoning in a single pass."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- seed query nodes\n- probability propagation\n\n## Explanation\n\nPPR initializes the random walk distribution at query-named-entity nodes, so probability mass flows only through graph neighborhoods relevant to the query, achieving multi-hop reasoning in a single pass."
       },
       {
         "concept_id": "node_specificity",
@@ -180,7 +186,8 @@
             "answer": "TF-IDF's IDF component",
             "explanation": "Node specificity = 1 / (number of passages containing the node), a local analogue of inverse document frequency that prevents common, uninformative nodes from dominating PPR scores."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- inverse passage count\n- local IDF\n\n## Explanation\n\nNode specificity = 1 / (number of passages containing the node), a local analogue of inverse document frequency that prevents common, uninformative nodes from dominating PPR scores."
       }
     ]
   },
@@ -215,7 +222,8 @@
             "answer": "10-30× cheaper",
             "explanation": "On MuSiQue and 2WikiMultiHopQA, HippoRAG single-step retrieval matches iterative chain-of-thought retrieval (IRCoT) while costing 10-30× less by replacing repeated LLM calls with one PPR graph traversal."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- MuSiQue\n- 2WikiMultiHopQA\n- 20% gain\n\n## Explanation\n\nOn MuSiQue and 2WikiMultiHopQA, HippoRAG single-step retrieval matches iterative chain-of-thought retrieval (IRCoT) while costing 10-30× less by replacing repeated LLM calls with one PPR graph traversal."
       },
       {
         "concept_id": "hipporag_limits",
@@ -238,7 +246,8 @@
             "answer": "The offline indexing phase requires LLM-based OpenIE which adds upfront cost",
             "explanation": "Building the KG requires calling an LLM for OpenIE on every document, incurring upfront indexing cost; the paper also notes the index is static and does not yet support efficient online updates as corpora grow."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- LLM extraction cost\n- dynamic updates\n\n## Explanation\n\nBuilding the KG requires calling an LLM for OpenIE on every document, incurring upfront indexing cost; the paper also notes the index is static and does not yet support efficient online updates as corpora grow."
       }
     ]
   }

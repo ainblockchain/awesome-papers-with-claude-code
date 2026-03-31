@@ -27,7 +27,8 @@
             "answer": "A fixed context vector",
             "explanation": "Seq2seq models (Sutskever et al., 2014) use an RNN encoder to compress an input sequence into a fixed context vector, then an RNN decoder generates output token by token. The bottleneck of this fixed vector motivated the invention of attention."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- encoder compresses input to context vector\n- decoder generates output token by token\n\n## Explanation\n\nSeq2seq models (Sutskever et al., 2014) use an RNN encoder to compress an input sequence into a fixed context vector, then an RNN decoder generates output token by token. The bottleneck of this fixed vector motivated the invention of attention."
       },
       {
         "concept_id": "attention_mechanism",
@@ -50,7 +51,8 @@
             "answer": "True",
             "explanation": "Bahdanau et al. (2015) introduced attention so the decoder can dynamically focus on different encoder states at each step, computing a weighted sum instead of relying on one fixed vector. This broke the information bottleneck of vanilla seq2seq."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- alignment scores between query and keys\n- weighted sum of values\n\n## Explanation\n\nBahdanau et al. (2015) introduced attention so the decoder can dynamically focus on different encoder states at each step, computing a weighted sum instead of relying on one fixed vector. This broke the information bottleneck of vanilla seq2seq."
       }
     ]
   },
@@ -88,7 +90,8 @@
             "answer": "To prevent softmax from entering near-zero gradient regions",
             "explanation": "Vaswani et al. (2017) compute attention as softmax(QKᵀ/√d_k)V; the √d_k divisor prevents large dot products from pushing softmax into saturation where gradients vanish. Queries, keys, and values are learned projections of the input."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- queries, keys, values abstraction\n- √d_k scaling factor\n\n## Explanation\n\nVaswani et al. (2017) compute attention as softmax(QKᵀ/√d_k)V; the √d_k divisor prevents large dot products from pushing softmax into saturation where gradients vanish. Queries, keys, and values are learned projections of the input."
       },
       {
         "concept_id": "multi_head_attention",
@@ -111,7 +114,8 @@
             "answer": "Attending to information from different representation subspaces simultaneously",
             "explanation": "The Transformer (Vaswani et al., 2017) runs h=8 attention heads in parallel, each learning different relational patterns, then concatenates and projects the results. Think of 8 experts each highlighting different word relationships."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 8 parallel heads in base model\n- concatenate and project outputs\n\n## Explanation\n\nThe Transformer (Vaswani et al., 2017) runs h=8 attention heads in parallel, each learning different relational patterns, then concatenates and projects the results. Think of 8 experts each highlighting different word relationships."
       },
       {
         "concept_id": "positional_encoding",
@@ -134,7 +138,8 @@
             "answer": "Attention is order-invariant, so position must be injected explicitly",
             "explanation": "Because self-attention treats input as a set (not a sequence), Vaswani et al. add sinusoidal positional encodings to token embeddings so the model can distinguish position 1 from position 100. The sin/cos pattern lets it generalize to unseen sequence lengths."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- sine/cosine at varying frequencies\n- added to input embeddings\n\n## Explanation\n\nBecause self-attention treats input as a set (not a sequence), Vaswani et al. add sinusoidal positional encodings to token embeddings so the model can distinguish position 1 from position 100. The sin/cos pattern lets it generalize to unseen sequence lengths."
       },
       {
         "concept_id": "transformer_architecture",
@@ -158,7 +163,8 @@
             "answer": "False",
             "explanation": "Vaswani et al. (2017) stack 6 identical encoder and 6 decoder layers, each using only attention and feed-forward sublayers with residual connections — zero recurrence or convolution. This makes it highly parallelizable on GPUs."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 6 encoder + 6 decoder layers\n- residual connections + layer norm\n\n## Explanation\n\nVaswani et al. (2017) stack 6 identical encoder and 6 decoder layers, each using only attention and feed-forward sublayers with residual connections — zero recurrence or convolution. This makes it highly parallelizable on GPUs."
       },
       {
         "concept_id": "feed_forward_sublayer",
@@ -181,7 +187,8 @@
             "answer": "True",
             "explanation": "Each Transformer layer includes FFN(x)=max(0,xW₁+b₁)W₂+b₂ applied identically and independently to every position (d_model=512, inner dim=2048). The same weights are reused across positions but learned separately from the attention sublayer."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- inner dimension 2048\n- applied position-by-position\n\n## Explanation\n\nEach Transformer layer includes FFN(x)=max(0,xW₁+b₁)W₂+b₂ applied identically and independently to every position (d_model=512, inner dim=2048). The same weights are reused across positions but learned separately from the attention sublayer."
       },
       {
         "concept_id": "encoder_decoder_stacks",
@@ -205,7 +212,8 @@
             "answer": "LayerNorm(x + Sublayer(x))",
             "explanation": "Vaswani et al. wrap every sublayer as LayerNorm(x + Sublayer(x)), combining residual connections with layer normalization for training stability. The decoder adds a third cross-attention sublayer that attends to the encoder output."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- LayerNorm(x + Sublayer(x))\n- cross-attention in decoder\n\n## Explanation\n\nVaswani et al. wrap every sublayer as LayerNorm(x + Sublayer(x)), combining residual connections with layer normalization for training stability. The decoder adds a third cross-attention sublayer that attends to the encoder output."
       }
     ]
   },
@@ -239,7 +247,8 @@
             "answer": "It linearly increases (warmup)",
             "explanation": "Vaswani et al. use Adam with a warmup schedule: lr increases linearly for 4000 steps then decays proportionally to step^(-0.5), preventing early instability. Label smoothing (ε=0.1) and dropout (0.1) further regularize the model."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- 4000-step warmup then decay\n- label smoothing ε=0.1\n\n## Explanation\n\nVaswani et al. use Adam with a warmup schedule: lr increases linearly for 4000 steps then decays proportionally to step^(-0.5), preventing early instability. Label smoothing (ε=0.1) and dropout (0.1) further regularize the model."
       },
       {
         "concept_id": "transformer_applications",
@@ -262,7 +271,8 @@
             "answer": "BERT",
             "explanation": "The Transformer (Vaswani et al., 2017) became the backbone of BERT, GPT, T5, and virtually every modern LLM, as well as vision models like ViT. It is arguably the most impactful architecture in the history of deep learning."
           }
-        ]
+        ],
+        "content": "## Key Ideas\n\n- BERT, GPT built on Transformer\n- vision and multimodal extensions\n\n## Explanation\n\nThe Transformer (Vaswani et al., 2017) became the backbone of BERT, GPT, T5, and virtually every modern LLM, as well as vision models like ViT. It is arguably the most impactful architecture in the history of deep learning."
       }
     ]
   }

@@ -46,12 +46,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Web 1.0 (read-only) → Web 2.0 (read+write, Stateless) → Web 3.0 (read+write+own, Stateful)\n- Core feature of Web 2.0: HTTP, IP are Stateless Protocols — servers don't remember state\n- Core feature of Web 3.0: Stateful Internet — blockchain permanently maintains and updates state\n- Open Source → Open Resource transition: code sharing enables immediate service deployment with usage-based revenue sharing\n- Ownership revolution: In Web 2.0 platforms own data, in Web 3.0 users own their data directly"
       },
       {
         "concept_id": "blockchain_basics",
         "title": "Blockchain Fundamentals",
-        "prerequisites": ["web_evolution"],
+        "prerequisites": [
+          "web_evolution"
+        ],
         "key_ideas": [
           "Blockchain = A tamper-proof ledger shared globally (State Machine)",
           "Asymmetric encryption: Private key (signing) + Public key (verification) for transaction authentication",
@@ -84,12 +87,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Blockchain = A tamper-proof ledger shared globally (State Machine)\n- Asymmetric encryption: Private key (signing) + Public key (verification) for transaction authentication\n- Hash function: Including previous block's fingerprint in next block → chain formation, instant tampering detection\n- EOA (Externally Owned Accounts): Transactions only possible with private key signature\n- Core blockchain property: Data manipulation is extremely difficult (immutability)"
       },
       {
         "concept_id": "consensus_pow_pos",
         "title": "Consensus Mechanisms: PoW vs PoS",
-        "prerequisites": ["blockchain_basics"],
+        "prerequisites": [
+          "blockchain_basics"
+        ],
         "key_ideas": [
           "Consensus mechanism: Rules to decide 'who has the right to write the next block' without a central authority",
           "PoW (Proof of Work): First to solve a math puzzle creates the block — Bitcoin's method",
@@ -122,12 +128,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Consensus mechanism: Rules to decide 'who has the right to write the next block' without a central authority\n- PoW (Proof of Work): First to solve a math puzzle creates the block — Bitcoin's method\n- PoS (Proof of Stake): Random selection from those who stake coins — Ethereum's method (since 2022)\n- The Merge (2022): Ethereum's PoW→PoS transition, 99.95% energy reduction\n- Nothing at Stake problem and Slashing: PoS weakness and its solution"
       },
       {
         "concept_id": "double_spending",
         "title": "The Double Spending Problem and Necessity of Consensus",
-        "prerequisites": ["consensus_pow_pos"],
+        "prerequisites": [
+          "consensus_pow_pos"
+        ],
         "key_ideas": [
           "Double spending: Attempting to pay twice with the same money",
           "Why time order doesn't work: No central clock in distributed systems",
@@ -159,7 +168,8 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Double spending: Attempting to pay twice with the same money\n- Why time order doesn't work: No central clock in distributed systems\n- The real question: Without a central authority, how do we decide which transaction came first?\n- PoW/PoS solution: Don't determine by time, determine by qualification — only one person records"
       }
     ]
   },
@@ -177,7 +187,9 @@
       {
         "concept_id": "platform_lifecycle",
         "title": "The Lifecycle of Centralized Platforms",
-        "prerequisites": ["web_evolution"],
+        "prerequisites": [
+          "web_evolution"
+        ],
         "key_ideas": [
           "Chris Dixon's 3-stage platform lifecycle: Attract → Grow → Extract",
           "Attract: Offer value to users and developers to build the platform",
@@ -210,12 +222,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Chris Dixon's 3-stage platform lifecycle: Attract → Grow → Extract\n- Attract: Offer value to users and developers to build the platform\n- Grow: Platform becomes indispensable, network effects lock users in\n- Extract: Change rules, raise fees, exploit users — Positive-sum → Zero-sum\n- Google example: 'Don't be evil' → Antitrust ruling"
       },
       {
         "concept_id": "bait_and_switch",
         "title": "Bait-and-Switch: Platform Betrayal",
-        "prerequisites": ["platform_lifecycle"],
+        "prerequisites": [
+          "platform_lifecycle"
+        ],
         "key_ideas": [
           "Bait: Attract with free access, open APIs, favorable terms",
           "Switch: Once locked in, change rules, raise fees, restrict access",
@@ -247,12 +262,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Bait: Attract with free access, open APIs, favorable terms\n- Switch: Once locked in, change rules, raise fees, restrict access\n- Result: Developers learn not to build on centralized platforms\n- Historical examples: Twitter API, Facebook platform, Google search"
       },
       {
         "concept_id": "voice_and_exit",
         "title": "Voice and Exit: Solutions Through Decentralization",
-        "prerequisites": ["bait_and_switch"],
+        "prerequisites": [
+          "bait_and_switch"
+        ],
         "key_ideas": [
           "Voice: Governance voting allows rule changes through democratic process",
           "Exit: Can leave at no cost, fork is possible",
@@ -284,12 +302,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Voice: Governance voting allows rule changes through democratic process\n- Exit: Can leave at no cost, fork is possible\n- Why decentralization prevents bait-and-switch: Code is law, open source, fork threat, token incentives\n- Fork: If unhappy with rules, copy the entire system and run your own version"
       },
       {
         "concept_id": "wikipedia_vs_encarta",
         "title": "Wikipedia vs Encarta: Triumph of Decentralization",
-        "prerequisites": ["voice_and_exit"],
+        "prerequisites": [
+          "voice_and_exit"
+        ],
         "key_ideas": [
           "Centralized (Encarta): High initial quality → improves at employee speed only → died",
           "Decentralized (Wikipedia): Initially incomplete → explosive community growth → dominates",
@@ -321,7 +342,8 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Centralized (Encarta): High initial quality → improves at employee speed only → died\n- Decentralized (Wikipedia): Initially incomplete → explosive community growth → dominates\n- Dynamic process comparison: Centralized starts better but decentralized wins long-term\n- 大器晚成 (Late blooming): Great vessels are completed slowly"
       }
     ]
   },
@@ -338,7 +360,9 @@
       {
         "concept_id": "ethereum_evm",
         "title": "Ethereum and Smart Contracts",
-        "prerequisites": ["blockchain_basics"],
+        "prerequisites": [
+          "blockchain_basics"
+        ],
         "key_ideas": [
           "Ethereum innovation: Turing-complete smart contracts — programmable blockchain",
           "EVM (Ethereum Virtual Machine): A virtual machine that runs identically across the entire world",
@@ -370,12 +394,15 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Ethereum innovation: Turing-complete smart contracts — programmable blockchain\n- EVM (Ethereum Virtual Machine): A virtual machine that runs identically across the entire world\n- Gas: Computational cost, defense against malicious code (infinite loops)\n- Smart contracts: Code that executes automatically when conditions are met"
       },
       {
         "concept_id": "layer2_scalability",
         "title": "Layer 2: Solving Scalability",
-        "prerequisites": ["consensus_pow_pos"],
+        "prerequisites": [
+          "consensus_pow_pos"
+        ],
         "key_ideas": [
           "Blockchain Trilemma: Decentralization, Security, Scalability — pick two",
           "Layer 1 limitation: Ethereum ~15 TPS, Visa ~65,000 TPS",
@@ -407,12 +434,16 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- Blockchain Trilemma: Decentralization, Security, Scalability — pick two\n- Layer 1 limitation: Ethereum ~15 TPS, Visa ~65,000 TPS\n- Layer 2 solution: Process transactions off-chain, post results to Layer 1\n- Optimistic Rollups vs ZK-Rollups: Different security assumptions"
       },
       {
         "concept_id": "defi_nft_ecosystem",
         "title": "DeFi and NFTs: The Blockchain Ecosystem",
-        "prerequisites": ["ethereum_evm", "layer2_scalability"],
+        "prerequisites": [
+          "ethereum_evm",
+          "layer2_scalability"
+        ],
         "key_ideas": [
           "DeFi (Decentralized Finance): Financial services without central institutions",
           "NFT (Non-Fungible Token): Proof of digital ownership",
@@ -444,7 +475,8 @@
           }
         ],
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "content": "## Key Ideas\n\n- DeFi (Decentralized Finance): Financial services without central institutions\n- NFT (Non-Fungible Token): Proof of digital ownership\n- CBDC (Central Bank Digital Currency): Government-issued digital money (centralized)\n- FTX collapse: Why decentralization matters — 'not your keys, not your coins'"
       }
     ]
   }
