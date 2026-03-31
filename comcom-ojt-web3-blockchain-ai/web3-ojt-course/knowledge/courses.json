@@ -22,11 +22,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 1",
-        "exercise": "What is the most fundamental difference between Web3.0 and Web2.0?\n1) Faster internet speed\n2) Users can directly own their data and assets\n3) More social media platforms\n4) The emergence of mobile apps\nType the number.",
-        "answer": "Users can directly own their data and assets",
         "explanation": "**Common Computer (2024)** Web3 OJT Chapter 1 offers a clear overview of the internet's evolutionary stages.\n\nLet's compare the history of the internet to a library. **Web1** was a read-only library — you could browse books, but couldn't write your own. **Web2** opened the doors for anyone to publish. But there's a catch: the librarian (the platform) owns every book and monopolizes the reading fees.\n\n**Web3** flips this paradigm. It's a decentralized library where authors hold direct ownership of their works and can transact with readers without intermediaries. The mechanism that makes this possible is the **protocol**.\n\nProtocols are open cooperation mechanisms that replace corporations. Previously, facilitating a transaction required a trusted third party — a bank, a platform. Blockchain protocols implement trust through code, marking the shift from social contracts to code-based contracts.\n\nThe key insight is this: Web3 is not simply a technology upgrade — it's a **revolution in ownership**. Users can directly own their data, digital assets, and even parts of internet infrastructure itself.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "What is the most fundamental difference between Web3.0 and Web2.0?\n1) Faster internet speed\n2) Users can directly own their data and assets\n3) More social media platforms\n4) The emergence of mobile apps\nType the number.",
+            "answer": "Users can directly own their data and assets",
+            "explanation": "**Common Computer (2024)** Web3 OJT Chapter 1 offers a clear overview of the internet's evolutionary stages.\n\nLet's compare the history of the internet to a library. **Web1** was a read-only library — you could browse books, but couldn't write your own. **Web2** opened the doors for anyone to publish. But there's a catch: the librarian (the platform) owns every book and monopolizes the reading fees.\n\n**Web3** flips this paradigm. It's a decentralized library where authors hold direct ownership of their works and can transact with readers without intermediaries. The mechanism that makes this possible is the **protocol**.\n\nProtocols are open cooperation mechanisms that replace corporations. Previously, facilitating a transaction required a trusted third party — a bank, a platform. Blockchain protocols implement trust through code, marking the shift from social contracts to code-based contracts.\n\nThe key insight is this: Web3 is not simply a technology upgrade — it's a **revolution in ownership**. Users can directly own their data, digital assets, and even parts of internet infrastructure itself."
+          }
+        ]
       },
       {
         "concept_id": "dao_101",
@@ -43,11 +48,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 2",
-        "exercise": "Which of the following is NOT one of the three core components of a DAO?\n1) Smart contracts (auto-enforced rules)\n2) Governance tokens (voting rights)\n3) A centralized CEO (final decision-maker)\n4) On-chain treasury (shared fund)\nType the number.",
-        "answer": "A centralized CEO (final decision-maker)",
         "explanation": "**Common Computer (2024)** Chapter 2 explores the **DAO (Decentralized Autonomous Organization)**.\n\nThe easiest analogy for a DAO is a **vending machine with no owner**. The machine runs automatically according to its rules (smart contracts), revenue flows into a shared vault (treasury), and changing the menu requires a vote from coin holders (token holders).\n\nA traditional corporation follows a top-down delegation structure: **shareholders → board → executives**. A DAO, by contrast, runs on **direct voting by token holders** — a form of direct democracy. There is no CEO; code enforces the rules.\n\nAn interesting concept is **progressive decentralization**. Going fully decentralized from day one would be chaotic, so the process unfolds in three stages: (1) achieve product-market fit while retaining admin authority, (2) expand community participation and distribute tokens, (3) hand off the protocol once sufficient decentralization is reached.\n\nAccording to Coase's transaction cost theory, when blockchain drives transaction costs toward zero, the economic rationale for internalizing activities within a firm dissolves. This is the economic argument for why DAOs can replace traditional corporate structures.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Which of the following is NOT one of the three core components of a DAO?\n1) Smart contracts (auto-enforced rules)\n2) Governance tokens (voting rights)\n3) A centralized CEO (final decision-maker)\n4) On-chain treasury (shared fund)\nType the number.",
+            "answer": "A centralized CEO (final decision-maker)",
+            "explanation": "**Common Computer (2024)** Chapter 2 explores the **DAO (Decentralized Autonomous Organization)**.\n\nThe easiest analogy for a DAO is a **vending machine with no owner**. The machine runs automatically according to its rules (smart contracts), revenue flows into a shared vault (treasury), and changing the menu requires a vote from coin holders (token holders).\n\nA traditional corporation follows a top-down delegation structure: **shareholders → board → executives**. A DAO, by contrast, runs on **direct voting by token holders** — a form of direct democracy. There is no CEO; code enforces the rules.\n\nAn interesting concept is **progressive decentralization**. Going fully decentralized from day one would be chaotic, so the process unfolds in three stages: (1) achieve product-market fit while retaining admin authority, (2) expand community participation and distribute tokens, (3) hand off the protocol once sufficient decentralization is reached.\n\nAccording to Coase's transaction cost theory, when blockchain drives transaction costs toward zero, the economic rationale for internalizing activities within a firm dissolves. This is the economic argument for why DAOs can replace traditional corporate structures."
+          }
+        ]
       },
       {
         "concept_id": "bitcoin_ethereum",
@@ -64,11 +74,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 3",
-        "exercise": "What is the most significant difference between Ethereum and Bitcoin?\n1) It only provides faster transaction speeds\n2) It supports arbitrary smart contracts via a Turing-complete language\n3) It consumes less energy\n4) It issues more coins\nType the number.",
         "explanation": "**Satoshi Nakamoto's (2008)** Bitcoin whitepaper starts from a single fundamental problem: \"How do we eliminate dependence on trusted third parties?\"\n\nThink of Bitcoin as **digital gold**. Physical gold derives its value from scarcity; Bitcoin guarantees value through **cryptographic proof**. Each block contains the hash of the previous block, forming a chain, and Proof-of-Work achieves consensus via the principle of \"1 CPU = 1 vote.\"\n\n**Vitalik Buterin (2014)** identified Bitcoin's limitations precisely. Bitcoin only supports simple payment scripts, but Ethereum provides a **Turing-complete** language. Ethereum operates as a global state machine: `APPLY(S, TX) → S'` — every transaction modifies the global state.\n\nThe EVM (Ethereum Virtual Machine) is a distributed virtual machine that every node in the world runs identically, and the **Gas** mechanism protects the network from malicious code. In 2022, The Merge transitioned Ethereum from PoW to PoS, reducing energy consumption by 99.95%.",
         "x402_price": "",
         "x402_gateway": "",
-        "answer": "It supports arbitrary smart contracts via a Turing-complete language"
+        "exercises": [
+          {
+            "question": "What is the most significant difference between Ethereum and Bitcoin?\n1) It only provides faster transaction speeds\n2) It supports arbitrary smart contracts via a Turing-complete language\n3) It consumes less energy\n4) It issues more coins\nType the number.",
+            "answer": "It supports arbitrary smart contracts via a Turing-complete language",
+            "explanation": "**Satoshi Nakamoto's (2008)** Bitcoin whitepaper starts from a single fundamental problem: \"How do we eliminate dependence on trusted third parties?\"\n\nThink of Bitcoin as **digital gold**. Physical gold derives its value from scarcity; Bitcoin guarantees value through **cryptographic proof**. Each block contains the hash of the previous block, forming a chain, and Proof-of-Work achieves consensus via the principle of \"1 CPU = 1 vote.\"\n\n**Vitalik Buterin (2014)** identified Bitcoin's limitations precisely. Bitcoin only supports simple payment scripts, but Ethereum provides a **Turing-complete** language. Ethereum operates as a global state machine: `APPLY(S, TX) → S'` — every transaction modifies the global state.\n\nThe EVM (Ethereum Virtual Machine) is a distributed virtual machine that every node in the world runs identically, and the **Gas** mechanism protects the network from malicious code. In 2022, The Merge transitioned Ethereum from PoW to PoS, reducing energy consumption by 99.95%."
+          }
+        ]
       }
     ]
   },
@@ -98,11 +113,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 4",
-        "exercise": "Which of the following is NOT one of Vitalik Buterin's three axes of decentralization?\n1) Architectural decentralization (distributing physical nodes)\n2) Political decentralization (distributing control authority)\n3) Economic decentralization (equal distribution of wealth)\n4) Logical decentralization (interface and data structure)\nType the number.",
-        "answer": "Economic decentralization (equal distribution of wealth)",
         "explanation": "**Vitalik Buterin** analyzes decentralization along three independent axes.\n\nLet's use a **building** as an analogy. **Architectural decentralization** is like a building supported by multiple pillars — if one collapses, the building still stands. **Political decentralization** means no one on the building's management committee can become a dictator. **Logical decentralization** asks whether there is one blueprint or many.\n\nBlockchain occupies a curious position: it is politically and architecturally decentralized, yet logically centralized — because the entire network behaves as a single shared state.\n\nThe three justifications for decentralization are: (1) **fault tolerance** — eliminating single points of failure, (2) **attack resistance** — the cost of an attack scales with the size of the system, (3) **collusion resistance** — it is difficult for dispersed participants to conspire. However, beware of **common mode failures** (same software, same dev team, same country) — true decentralization stems from diversity.\n\n**DID (Decentralized Identifier)** and the **headless brand** concept are also important. Bitcoin is a prime example of a headless brand — even after Satoshi disappeared, the community continued to evolve the brand.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Which of the following is NOT one of Vitalik Buterin's three axes of decentralization?\n1) Architectural decentralization (distributing physical nodes)\n2) Political decentralization (distributing control authority)\n3) Economic decentralization (equal distribution of wealth)\n4) Logical decentralization (interface and data structure)\nType the number.",
+            "answer": "Economic decentralization (equal distribution of wealth)",
+            "explanation": "**Vitalik Buterin** analyzes decentralization along three independent axes.\n\nLet's use a **building** as an analogy. **Architectural decentralization** is like a building supported by multiple pillars — if one collapses, the building still stands. **Political decentralization** means no one on the building's management committee can become a dictator. **Logical decentralization** asks whether there is one blueprint or many.\n\nBlockchain occupies a curious position: it is politically and architecturally decentralized, yet logically centralized — because the entire network behaves as a single shared state.\n\nThe three justifications for decentralization are: (1) **fault tolerance** — eliminating single points of failure, (2) **attack resistance** — the cost of an attack scales with the size of the system, (3) **collusion resistance** — it is difficult for dispersed participants to conspire. However, beware of **common mode failures** (same software, same dev team, same country) — true decentralization stems from diversity.\n\n**DID (Decentralized Identifier)** and the **headless brand** concept are also important. Bitcoin is a prime example of a headless brand — even after Satoshi disappeared, the community continued to evolve the brand."
+          }
+        ]
       },
       {
         "concept_id": "strong_weak_technology",
@@ -120,11 +140,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 5",
-        "exercise": "In Chris Dixon's 'strong vs. weak technology' framework, where does public blockchain + cryptocurrency fall?\n1) Weak technology — because it adapts to the current world\n2) Strong technology — because the world adapts to it\n3) Neither — it's a financial product, not a technology\n4) Both — it depends on the situation\nType the number.",
-        "answer": "Strong technology — because the world adapts to it",
         "explanation": "**Chris Dixon's** strong vs. weak technology framework is a powerful lens for predicting the future of technology.\n\nPut simply, **weak technology** is like putting a faster horse-drawn carriage on existing roads, while **strong technology** is building an entirely new highway. Weak technology looks more realistic early on, but history repeatedly proves that strong technology defines new eras.\n\nKey examples: Wikipedia vs. Encarta, iPhone (touch + apps) vs. BlackBerry (physical keyboard), Tesla (fully electric) vs. hybrids. Public blockchain + cryptocurrency is a **strong technology**, while private blockchain is a weak technology.\n\nThe seven metaverse essentials are also critical: decentralization, property rights, self-sovereign identity, composability, open source, community-owned economy, and identity with reputation. All of these must be in place for a true metaverse to emerge.\n\nWeb3's GTM (Go-To-Market) strategy is equally interesting. While Web2 follows 'product first, community later,' Web3 puts **purpose and community first**. Compound's liquidity mining is a textbook case — TVL exploded from $100M to $600M.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "In Chris Dixon's 'strong vs. weak technology' framework, where does public blockchain + cryptocurrency fall?\n1) Weak technology — because it adapts to the current world\n2) Strong technology — because the world adapts to it\n3) Neither — it's a financial product, not a technology\n4) Both — it depends on the situation\nType the number.",
+            "answer": "Strong technology — because the world adapts to it",
+            "explanation": "**Chris Dixon's** strong vs. weak technology framework is a powerful lens for predicting the future of technology.\n\nPut simply, **weak technology** is like putting a faster horse-drawn carriage on existing roads, while **strong technology** is building an entirely new highway. Weak technology looks more realistic early on, but history repeatedly proves that strong technology defines new eras.\n\nKey examples: Wikipedia vs. Encarta, iPhone (touch + apps) vs. BlackBerry (physical keyboard), Tesla (fully electric) vs. hybrids. Public blockchain + cryptocurrency is a **strong technology**, while private blockchain is a weak technology.\n\nThe seven metaverse essentials are also critical: decentralization, property rights, self-sovereign identity, composability, open source, community-owned economy, and identity with reputation. All of these must be in place for a true metaverse to emerge.\n\nWeb3's GTM (Go-To-Market) strategy is equally interesting. While Web2 follows 'product first, community later,' Web3 puts **purpose and community first**. Compound's liquidity mining is a textbook case — TVL exploded from $100M to $600M."
+          }
+        ]
       },
       {
         "concept_id": "tokenology",
@@ -142,11 +167,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 6",
-        "exercise": "In the equation of exchange M×V=P×Q, what is an effective strategy to increase token price?\n1) Increase token velocity (V) — circulate faster\n2) Decrease token velocity (V) — design holding incentives like staking and governance\n3) Reduce service transaction volume (Q)\n4) Increase total token supply (M)\nType the number.",
         "explanation": "**Common Computer (2024)** Chapter 6 views tokens not merely as currency, but as **tools for network design**.\n\nLet's compare tokens to **parking tokens**. Traditional tokenomics only asks \"How many tokens exist and what are they worth?\" (scalar). **Tokenology**, on the other hand, analyzes \"What behavior does this token incentivize, who should hold it, and where does value originate?\" (vector).\n\nTokenology's four design spaces are: (1) **ownership** — user-owned and operated services, (2) **alignment** — direct connection between creators and fans, (3) **incentive** — coordinating validators and miners, (4) **access** — tiered service experiences.\n\nThe most practical concept is the **equation of exchange** M×V=P×Q. When token velocity (V) is high — meaning people sell immediately after receiving — the price stays low. The solution is to design holding incentives: staking, governance rights, and fee sharing to reduce velocity.\n\n**Metcalfe's Law** (network value = N²) is also important. Just as Facebook's revenue scales with MAU², Bitcoin and Ethereum prices also show high correlation with Metcalfe's Law.",
         "x402_price": "",
         "x402_gateway": "",
-        "answer": "Decrease token velocity (V) — design holding incentives like staking and governance"
+        "exercises": [
+          {
+            "question": "In the equation of exchange M×V=P×Q, what is an effective strategy to increase token price?\n1) Increase token velocity (V) — circulate faster\n2) Decrease token velocity (V) — design holding incentives like staking and governance\n3) Reduce service transaction volume (Q)\n4) Increase total token supply (M)\nType the number.",
+            "answer": "Decrease token velocity (V) — design holding incentives like staking and governance",
+            "explanation": "**Common Computer (2024)** Chapter 6 views tokens not merely as currency, but as **tools for network design**.\n\nLet's compare tokens to **parking tokens**. Traditional tokenomics only asks \"How many tokens exist and what are they worth?\" (scalar). **Tokenology**, on the other hand, analyzes \"What behavior does this token incentivize, who should hold it, and where does value originate?\" (vector).\n\nTokenology's four design spaces are: (1) **ownership** — user-owned and operated services, (2) **alignment** — direct connection between creators and fans, (3) **incentive** — coordinating validators and miners, (4) **access** — tiered service experiences.\n\nThe most practical concept is the **equation of exchange** M×V=P×Q. When token velocity (V) is high — meaning people sell immediately after receiving — the price stays low. The solution is to design holding incentives: staking, governance rights, and fee sharing to reduce velocity.\n\n**Metcalfe's Law** (network value = N²) is also important. Just as Facebook's revenue scales with MAU², Bitcoin and Ethereum prices also show high correlation with Metcalfe's Law."
+          }
+        ]
       }
     ]
   },
@@ -175,11 +205,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 7",
-        "exercise": "What ultimately determines the value of an NFT?\n1) The technical superiority of the blockchain it's built on\n2) The resolution and artistic quality of the NFT image\n3) Social consensus and legitimacy from the community\n4) The market share of the platform that issued the NFT\nType the number.",
-        "answer": "Social consensus and legitimacy from the community",
         "explanation": "**Common Computer (2024)** Chapter 7 approaches NFTs from a philosophical perspective.\n\nThe distinction between **Type and Token** is the starting point. The concept of 'cat' (Type) is singular, but the word 'cat' in this sentence (Token) is a specific instance. ERC-20 is a Type — every unit is identical. ERC-721 is a Token — each one is unique in the world.\n\n**Naval Ravikant** defines NFTs as: \"A unique on-chain token representing off-chain asset ownership, backed by the social contract between creators and the community.\" The key insight is that NFT value comes **from the community, not from technology**. \"When the community dies, the NFT loses its value.\"\n\n**Vitalik Buterin's** **legitimacy** theory supports this. Legitimacy is a 'higher-order pattern of acceptance.' Elon Musk's tweet NFT has value not because of technology, but because of social legitimacy. If Jeff Bezos minted the same tweet as an NFT, it would be considered fake.\n\nNFTs also reshape the creator economy. In Web2, YouTube takes 30% and Spotify captures most of the revenue, but NFTs deliver value directly to creators through primary sales plus automatic royalties on secondary sales.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "What ultimately determines the value of an NFT?\n1) The technical superiority of the blockchain it's built on\n2) The resolution and artistic quality of the NFT image\n3) Social consensus and legitimacy from the community\n4) The market share of the platform that issued the NFT\nType the number.",
+            "answer": "Social consensus and legitimacy from the community",
+            "explanation": "**Common Computer (2024)** Chapter 7 approaches NFTs from a philosophical perspective.\n\nThe distinction between **Type and Token** is the starting point. The concept of 'cat' (Type) is singular, but the word 'cat' in this sentence (Token) is a specific instance. ERC-20 is a Type — every unit is identical. ERC-721 is a Token — each one is unique in the world.\n\n**Naval Ravikant** defines NFTs as: \"A unique on-chain token representing off-chain asset ownership, backed by the social contract between creators and the community.\" The key insight is that NFT value comes **from the community, not from technology**. \"When the community dies, the NFT loses its value.\"\n\n**Vitalik Buterin's** **legitimacy** theory supports this. Legitimacy is a 'higher-order pattern of acceptance.' Elon Musk's tweet NFT has value not because of technology, but because of social legitimacy. If Jeff Bezos minted the same tweet as an NFT, it would be considered fake.\n\nNFTs also reshape the creator economy. In Web2, YouTube takes 30% and Spotify captures most of the revenue, but NFTs deliver value directly to creators through primary sales plus automatic royalties on secondary sales."
+          }
+        ]
       },
       {
         "concept_id": "nft_advanced",
@@ -196,11 +231,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 8",
-        "exercise": "Among the three ways NFTs transform the creator economy, which one corresponds to the effect of reducing fees from 50% to 0%, resulting in a 6x increase in disposable income?\n1) Granular Price Tiering\n2) Making Users Owners\n3) Removing Rent-Seeking Intermediaries\n4) Automatic Royalties on Secondary Sales\nType the number.",
-        "answer": "Removing Rent-Seeking Intermediaries",
         "explanation": "**Kevin Kelly's** '1,000 True Fans' essay (Wired) is the starting point for this chapter.\n\nThink of it this way: you don't need to fill a massive concert arena — all you need is a **small, loyal cafe**. If 1,000 true fans each pay $100 per year, that's $100,000 in annual income. But in practice, centralized platforms became the new intermediaries, blocking this vision.\n\nNFTs revolutionize the creator economy in three ways: (1) **Removing rent-seeking intermediaries** — when fees drop from 50% to 0%, disposable income jumps from $20K to $120K, a 6x increase. (2) **Granular price tiering** — NBA Top Shot cards range from $5 to $100,000+, matching price to fan enthusiasm. (3) **Making users owners** — token holders become voluntary evangelists.\n\nThe **skeuomorph** warning is also important. Just like putting an unnecessary grille on an electric car, viewing NFTs as mere 'collectible digital pictures' misses the real innovation: **programmable ownership**.\n\nFive evolving NFT types prove this: Lifeforms (destroyed if not transferred within 90 days), Corruptions (visually evolve based on holding duration), Chaos Roads (change with every block), Fini (mood shifts with crypto prices), and Uniswap LP NFTs (visualization of financial activity).",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Among the three ways NFTs transform the creator economy, which one corresponds to the effect of reducing fees from 50% to 0%, resulting in a 6x increase in disposable income?\n1) Granular Price Tiering\n2) Making Users Owners\n3) Removing Rent-Seeking Intermediaries\n4) Automatic Royalties on Secondary Sales\nType the number.",
+            "answer": "Removing Rent-Seeking Intermediaries",
+            "explanation": "**Kevin Kelly's** '1,000 True Fans' essay (Wired) is the starting point for this chapter.\n\nThink of it this way: you don't need to fill a massive concert arena — all you need is a **small, loyal cafe**. If 1,000 true fans each pay $100 per year, that's $100,000 in annual income. But in practice, centralized platforms became the new intermediaries, blocking this vision.\n\nNFTs revolutionize the creator economy in three ways: (1) **Removing rent-seeking intermediaries** — when fees drop from 50% to 0%, disposable income jumps from $20K to $120K, a 6x increase. (2) **Granular price tiering** — NBA Top Shot cards range from $5 to $100,000+, matching price to fan enthusiasm. (3) **Making users owners** — token holders become voluntary evangelists.\n\nThe **skeuomorph** warning is also important. Just like putting an unnecessary grille on an electric car, viewing NFTs as mere 'collectible digital pictures' misses the real innovation: **programmable ownership**.\n\nFive evolving NFT types prove this: Lifeforms (destroyed if not transferred within 90 days), Corruptions (visually evolve based on holding duration), Chaos Roads (change with every block), Fini (mood shifts with crypto prices), and Uniswap LP NFTs (visualization of financial activity)."
+          }
+        ]
       },
       {
         "concept_id": "ai_blockchain",
@@ -218,11 +258,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 9",
-        "exercise": "What is crypto's solution to AI's 'long-tail problem'?\n1) Purchase larger GPU clusters\n2) Connect data providers and developers through a smart contract-based autonomous marketplace\n3) Have the central government collect and distribute data\n4) Reduce AI model sizes to lower compute costs\nType the number.",
         "explanation": "We start with **a16z's** famous observation: \"AI is communist, crypto is libertarian.\" (Peter Thiel)\n\nThe AI long-tail problem can be compared to **map-making**. Mapping major cities is straightforward (interpolation). But charting remote mountain trails gets exponentially more expensive (extrapolation). When big corporations monopolize data, conquering the long tail becomes impossible.\n\nCrypto's solution is the **autonomous marketplace**. Smart contracts + neural networks connect data providers directly with developers, and token rewards solve the cold-start problem. The flywheel: capital → data → accuracy → demand → capital.\n\n**Sequoia Capital's** '$200 billion question' is also striking. GPU purchases of $50B + operating costs of $100B = $150B in CapEx, yet actual revenue falls far short. But historically, the telecom bubble laid fiber optics that fueled the internet boom. AI is following the same pattern.\n\nThe four eras of blockchain computing round out the picture: calculator (Bitcoin, purpose-built) → mainframe (Ethereum, general-purpose) → server (Polkadot/Cosmos, app-specific) → cloud (future, unlimited scale + composability).",
         "x402_price": "",
         "x402_gateway": "",
-        "answer": "Connect data providers and developers through a smart contract-based autonomous marketplace"
+        "exercises": [
+          {
+            "question": "What is crypto's solution to AI's 'long-tail problem'?\n1) Purchase larger GPU clusters\n2) Connect data providers and developers through a smart contract-based autonomous marketplace\n3) Have the central government collect and distribute data\n4) Reduce AI model sizes to lower compute costs\nType the number.",
+            "answer": "Connect data providers and developers through a smart contract-based autonomous marketplace",
+            "explanation": "We start with **a16z's** famous observation: \"AI is communist, crypto is libertarian.\" (Peter Thiel)\n\nThe AI long-tail problem can be compared to **map-making**. Mapping major cities is straightforward (interpolation). But charting remote mountain trails gets exponentially more expensive (extrapolation). When big corporations monopolize data, conquering the long tail becomes impossible.\n\nCrypto's solution is the **autonomous marketplace**. Smart contracts + neural networks connect data providers directly with developers, and token rewards solve the cold-start problem. The flywheel: capital → data → accuracy → demand → capital.\n\n**Sequoia Capital's** '$200 billion question' is also striking. GPU purchases of $50B + operating costs of $100B = $150B in CapEx, yet actual revenue falls far short. But historically, the telecom bubble laid fiber optics that fueled the internet boom. AI is following the same pattern.\n\nThe four eras of blockchain computing round out the picture: calculator (Bitcoin, purpose-built) → mainframe (Ethereum, general-purpose) → server (Polkadot/Cosmos, app-specific) → cloud (future, unlimited scale + composability)."
+          }
+        ]
       }
     ]
   },
@@ -252,11 +297,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 10",
-        "exercise": "What is the most fundamental difference between a classic NFT and an AINFT?\n1) AINFTs are more expensive\n2) AINFTs grow and evolve over time through dynamic metadata\n3) AINFTs only work on Ethereum\n4) AINFTs have higher-resolution images\nType the number.",
-        "answer": "AINFTs grow and evolve over time through dynamic metadata",
         "explanation": "**Common Computer (2024)** Chapter 10 evolves the NFT into a 'living entity.'\n\nIf a classic NFT is a **photograph**, an AINFT is a **pet**. A photograph is frozen at the moment it's taken, but a pet grows and changes through interactions with its owner. AINFT metadata consists of three parts: specification (AI model parameters), history (interaction records), and properties (current state — level, credits, achievements).\n\nThe three core properties of AINFTs are: (1) **accountability** — every relationship in the AI pipeline is immutably recorded on-chain. (2) **reproducibility** — the entire protocol stack is open, making reproduction possible at any time. (3) **value** — long pipelines are decomposed into small components, rewarding individual contributors.\n\n**AINFT Factory** is a shared API platform where communities can build AINFT tokenomics. The MiniEggs project is a prime example — every moment in the metaverse (giving hearts, singing lullabies) becomes AI growth data that shapes the character's personality.\n\nThe meaning of ownership is also redefined. Classic NFT ownership meant 'rights to a file,' but in AINFT, ownership means **nurturing a growing relationship and building a shared history**.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "What is the most fundamental difference between a classic NFT and an AINFT?\n1) AINFTs are more expensive\n2) AINFTs grow and evolve over time through dynamic metadata\n3) AINFTs only work on Ethereum\n4) AINFTs have higher-resolution images\nType the number.",
+            "answer": "AINFTs grow and evolve over time through dynamic metadata",
+            "explanation": "**Common Computer (2024)** Chapter 10 evolves the NFT into a 'living entity.'\n\nIf a classic NFT is a **photograph**, an AINFT is a **pet**. A photograph is frozen at the moment it's taken, but a pet grows and changes through interactions with its owner. AINFT metadata consists of three parts: specification (AI model parameters), history (interaction records), and properties (current state — level, credits, achievements).\n\nThe three core properties of AINFTs are: (1) **accountability** — every relationship in the AI pipeline is immutably recorded on-chain. (2) **reproducibility** — the entire protocol stack is open, making reproduction possible at any time. (3) **value** — long pipelines are decomposed into small components, rewarding individual contributors.\n\n**AINFT Factory** is a shared API platform where communities can build AINFT tokenomics. The MiniEggs project is a prime example — every moment in the metaverse (giving hearts, singing lullabies) becomes AI growth data that shapes the character's personality.\n\nThe meaning of ownership is also redefined. Classic NFT ownership meant 'rights to a file,' but in AINFT, ownership means **nurturing a growing relationship and building a shared history**."
+          }
+        ]
       },
       {
         "concept_id": "erc_8004",
@@ -273,11 +323,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 11",
-        "exercise": "Among ERC-8004's three registries, which one transparently records an AI agent's past work history and prevents spam through cryptographic proofs?\n1) Identity Registry\n2) Reputation Registry\n3) Validation Registry\n4) Transaction Registry\nType the number.",
-        "answer": "Reputation Registry",
         "explanation": "**Common Computer (2024)** Chapter 11 addresses the most fundamental question of the AI agent economy: **How do you trust an agent you've never met?**\n\nThink of ERC-8004 as a **passport + resume + diploma system for the digital world**. Three registries implement this:\n\nThe **Identity Registry** is the passport. Built on ERC-721 (NFT), each agent holds a single NFT containing its capabilities, communication protocols (MCP/A2A), and wallet address. The revolutionary part is that agent identity itself can be traded on OpenSea.\n\nThe **Reputation Registry** is the resume. It standardizes post-task reputation feedback and uses cryptographic proofs to verify actual work and payments, preventing spam. As more reviews accumulate, the average stabilizes, making manipulation increasingly difficult.\n\nThe **Validation Registry** is the diploma/certification. It supports three verification methods: optimistic verification (passes if unchallenged), zero-knowledge proofs (mathematical proof without revealing the work), and TEE attestation (hardware-level guarantees).\n\nThe agent economy stack is: ERC-8004 (identity and trust) → x402 (payments) → A2A/MCP (communication) → MCP (tools) → ERC-6551 (accounts).",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Among ERC-8004's three registries, which one transparently records an AI agent's past work history and prevents spam through cryptographic proofs?\n1) Identity Registry\n2) Reputation Registry\n3) Validation Registry\n4) Transaction Registry\nType the number.",
+            "answer": "Reputation Registry",
+            "explanation": "**Common Computer (2024)** Chapter 11 addresses the most fundamental question of the AI agent economy: **How do you trust an agent you've never met?**\n\nThink of ERC-8004 as a **passport + resume + diploma system for the digital world**. Three registries implement this:\n\nThe **Identity Registry** is the passport. Built on ERC-721 (NFT), each agent holds a single NFT containing its capabilities, communication protocols (MCP/A2A), and wallet address. The revolutionary part is that agent identity itself can be traded on OpenSea.\n\nThe **Reputation Registry** is the resume. It standardizes post-task reputation feedback and uses cryptographic proofs to verify actual work and payments, preventing spam. As more reviews accumulate, the average stabilizes, making manipulation increasingly difficult.\n\nThe **Validation Registry** is the diploma/certification. It supports three verification methods: optimistic verification (passes if unchallenged), zero-knowledge proofs (mathematical proof without revealing the work), and TEE attestation (hardware-level guarantees).\n\nThe agent economy stack is: ERC-8004 (identity and trust) → x402 (payments) → A2A/MCP (communication) → MCP (tools) → ERC-6551 (accounts)."
+          }
+        ]
       },
       {
         "concept_id": "openclaw",
@@ -295,11 +350,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Common Computer, 2024 — Web3 OJT Chapter 12",
-        "exercise": "What security model does OpenClaw's CoinFello Skill use?\n1) The agent directly stores the user's private key\n2) Keys are stored on a TEE (Trusted Execution Environment) server\n3) The user delegates only narrow permissions, and signing keys always remain on the user's device\n4) A centralized Key Management Service (KMS)\nType the number.",
         "explanation": "**Common Computer (2024)** final Chapter 12 covers the paradigm shift of AI from 'responder' to 'executor.'\n\nThink of OpenClaw as a **digital personal assistant**. If traditional AI was an 'information desk that answers questions,' OpenClaw is a 'personal assistant that goes to the bank, files paperwork, and does your shopping.' It autonomously executes browser actions, API calls, scripts, and on-chain transactions from natural language commands.\n\nThe reasons for local execution are critical: (1) **privacy** — wallet information never leaves the device, (2) **persistence** — runs 24/7 regardless of cloud outages, (3) **bot detection bypass** — maintains natural browser sessions.\n\n**CoinFello Skill's** security model is especially important. If the agent holds private keys, a hack means total loss. Instead, it uses a **delegated authority model** (ERC-4337 + ERC-7710): the user delegates only narrow permissions, and signing keys always remain on the user's device. This is the principle of least privilege.\n\nUltimately, the **three pillars of the agent economy** converge: AINFT (ownership) + ERC-8004 (trust) + OpenClaw (execution). Communities grow AI through AINFTs, establish trust via ERC-8004, and execute real-world tasks through OpenClaw — with revenue flowing back to the community.",
         "x402_price": "",
         "x402_gateway": "",
-        "answer": "The user delegates only narrow permissions, and signing keys always remain on the user's device"
+        "exercises": [
+          {
+            "question": "What security model does OpenClaw's CoinFello Skill use?\n1) The agent directly stores the user's private key\n2) Keys are stored on a TEE (Trusted Execution Environment) server\n3) The user delegates only narrow permissions, and signing keys always remain on the user's device\n4) A centralized Key Management Service (KMS)\nType the number.",
+            "answer": "The user delegates only narrow permissions, and signing keys always remain on the user's device",
+            "explanation": "**Common Computer (2024)** final Chapter 12 covers the paradigm shift of AI from 'responder' to 'executor.'\n\nThink of OpenClaw as a **digital personal assistant**. If traditional AI was an 'information desk that answers questions,' OpenClaw is a 'personal assistant that goes to the bank, files paperwork, and does your shopping.' It autonomously executes browser actions, API calls, scripts, and on-chain transactions from natural language commands.\n\nThe reasons for local execution are critical: (1) **privacy** — wallet information never leaves the device, (2) **persistence** — runs 24/7 regardless of cloud outages, (3) **bot detection bypass** — maintains natural browser sessions.\n\n**CoinFello Skill's** security model is especially important. If the agent holds private keys, a hack means total loss. Instead, it uses a **delegated authority model** (ERC-4337 + ERC-7710): the user delegates only narrow permissions, and signing keys always remain on the user's device. This is the principle of least privilege.\n\nUltimately, the **three pillars of the agent economy** converge: AINFT (ownership) + ERC-8004 (trust) + OpenClaw (execution). Communities grow AI through AINFTs, establish trust via ERC-8004, and execute real-world tasks through OpenClaw — with revenue flowing back to the community."
+          }
+        ]
       }
     ]
   }

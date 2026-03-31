@@ -18,11 +18,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Sutskever et al., 2014 — Sequence to Sequence Learning with Neural Networks",
-        "exercise": "In a seq2seq model, what does the encoder produce?\n1) A sequence of tokens\n2) A fixed context vector\n3) An attention matrix\nAnswer with a number.",
-        "answer": "A fixed context vector",
         "explanation": "Seq2seq models (Sutskever et al., 2014) use an RNN encoder to compress an input sequence into a fixed context vector, then an RNN decoder generates output token by token. The bottleneck of this fixed vector motivated the invention of attention.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "In a seq2seq model, what does the encoder produce?\n1) A sequence of tokens\n2) A fixed context vector\n3) An attention matrix\nAnswer with a number.",
+            "answer": "A fixed context vector",
+            "explanation": "Seq2seq models (Sutskever et al., 2014) use an RNN encoder to compress an input sequence into a fixed context vector, then an RNN decoder generates output token by token. The bottleneck of this fixed vector motivated the invention of attention."
+          }
+        ]
       },
       {
         "concept_id": "attention_mechanism",
@@ -36,11 +41,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Bahdanau et al., 2015 — Neural Machine Translation by Jointly Learning to Align and Translate",
-        "exercise": "Attention lets the decoder look at all encoder states at once. True or False?",
-        "answer": "True",
         "explanation": "Bahdanau et al. (2015) introduced attention so the decoder can dynamically focus on different encoder states at each step, computing a weighted sum instead of relying on one fixed vector. This broke the information bottleneck of vanilla seq2seq.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Attention lets the decoder look at all encoder states at once. True or False?",
+            "answer": "True",
+            "explanation": "Bahdanau et al. (2015) introduced attention so the decoder can dynamically focus on different encoder states at each step, computing a weighted sum instead of relying on one fixed vector. This broke the information bottleneck of vanilla seq2seq."
+          }
+        ]
       }
     ]
   },
@@ -69,11 +79,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "Why does the Transformer scale dot products by √d_k?\n1) To increase gradient magnitude\n2) To prevent softmax from entering near-zero gradient regions\n3) To normalize output to unit length\nAnswer with a number.",
-        "answer": "To prevent softmax from entering near-zero gradient regions",
         "explanation": "Vaswani et al. (2017) compute attention as softmax(QKᵀ/√d_k)V; the √d_k divisor prevents large dot products from pushing softmax into saturation where gradients vanish. Queries, keys, and values are learned projections of the input.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Why does the Transformer scale dot products by √d_k?\n1) To increase gradient magnitude\n2) To prevent softmax from entering near-zero gradient regions\n3) To normalize output to unit length\nAnswer with a number.",
+            "answer": "To prevent softmax from entering near-zero gradient regions",
+            "explanation": "Vaswani et al. (2017) compute attention as softmax(QKᵀ/√d_k)V; the √d_k divisor prevents large dot products from pushing softmax into saturation where gradients vanish. Queries, keys, and values are learned projections of the input."
+          }
+        ]
       },
       {
         "concept_id": "multi_head_attention",
@@ -87,11 +102,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "What is the main benefit of using multiple attention heads?\n1) Reducing parameter count\n2) Attending to information from different representation subspaces simultaneously\n3) Speeding up inference\nAnswer with a number.",
-        "answer": "Attending to information from different representation subspaces simultaneously",
         "explanation": "The Transformer (Vaswani et al., 2017) runs h=8 attention heads in parallel, each learning different relational patterns, then concatenates and projects the results. Think of 8 experts each highlighting different word relationships.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "What is the main benefit of using multiple attention heads?\n1) Reducing parameter count\n2) Attending to information from different representation subspaces simultaneously\n3) Speeding up inference\nAnswer with a number.",
+            "answer": "Attending to information from different representation subspaces simultaneously",
+            "explanation": "The Transformer (Vaswani et al., 2017) runs h=8 attention heads in parallel, each learning different relational patterns, then concatenates and projects the results. Think of 8 experts each highlighting different word relationships."
+          }
+        ]
       },
       {
         "concept_id": "positional_encoding",
@@ -105,11 +125,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "Why does the Transformer need positional encodings at all?\n1) Attention is order-invariant, so position must be injected explicitly\n2) To compress the sequence into a fixed vector\n3) To reduce memory usage\nAnswer with a number.",
-        "answer": "Attention is order-invariant, so position must be injected explicitly",
         "explanation": "Because self-attention treats input as a set (not a sequence), Vaswani et al. add sinusoidal positional encodings to token embeddings so the model can distinguish position 1 from position 100. The sin/cos pattern lets it generalize to unseen sequence lengths.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Why does the Transformer need positional encodings at all?\n1) Attention is order-invariant, so position must be injected explicitly\n2) To compress the sequence into a fixed vector\n3) To reduce memory usage\nAnswer with a number.",
+            "answer": "Attention is order-invariant, so position must be injected explicitly",
+            "explanation": "Because self-attention treats input as a set (not a sequence), Vaswani et al. add sinusoidal positional encodings to token embeddings so the model can distinguish position 1 from position 100. The sin/cos pattern lets it generalize to unseen sequence lengths."
+          }
+        ]
       },
       {
         "concept_id": "transformer_architecture",
@@ -124,11 +149,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "The Transformer uses recurrent connections to process sequences. True or False?",
-        "answer": "False",
         "explanation": "Vaswani et al. (2017) stack 6 identical encoder and 6 decoder layers, each using only attention and feed-forward sublayers with residual connections — zero recurrence or convolution. This makes it highly parallelizable on GPUs.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "The Transformer uses recurrent connections to process sequences. True or False?",
+            "answer": "False",
+            "explanation": "Vaswani et al. (2017) stack 6 identical encoder and 6 decoder layers, each using only attention and feed-forward sublayers with residual connections — zero recurrence or convolution. This makes it highly parallelizable on GPUs."
+          }
+        ]
       },
       {
         "concept_id": "feed_forward_sublayer",
@@ -142,11 +172,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "The feed-forward sublayer in the Transformer shares weights across all positions. True or False?",
-        "answer": "True",
         "explanation": "Each Transformer layer includes FFN(x)=max(0,xW₁+b₁)W₂+b₂ applied identically and independently to every position (d_model=512, inner dim=2048). The same weights are reused across positions but learned separately from the attention sublayer.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "The feed-forward sublayer in the Transformer shares weights across all positions. True or False?",
+            "answer": "True",
+            "explanation": "Each Transformer layer includes FFN(x)=max(0,xW₁+b₁)W₂+b₂ applied identically and independently to every position (d_model=512, inner dim=2048). The same weights are reused across positions but learned separately from the attention sublayer."
+          }
+        ]
       },
       {
         "concept_id": "encoder_decoder_stacks",
@@ -161,11 +196,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "What is the formula for each sublayer's output in the Transformer?\n1) Sublayer(x) + x\n2) LayerNorm(x + Sublayer(x))\n3) LayerNorm(Sublayer(x))\nAnswer with a number.",
-        "answer": "LayerNorm(x + Sublayer(x))",
         "explanation": "Vaswani et al. wrap every sublayer as LayerNorm(x + Sublayer(x)), combining residual connections with layer normalization for training stability. The decoder adds a third cross-attention sublayer that attends to the encoder output.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "What is the formula for each sublayer's output in the Transformer?\n1) Sublayer(x) + x\n2) LayerNorm(x + Sublayer(x))\n3) LayerNorm(Sublayer(x))\nAnswer with a number.",
+            "answer": "LayerNorm(x + Sublayer(x))",
+            "explanation": "Vaswani et al. wrap every sublayer as LayerNorm(x + Sublayer(x)), combining residual connections with layer normalization for training stability. The decoder adds a third cross-attention sublayer that attends to the encoder output."
+          }
+        ]
       }
     ]
   },
@@ -190,11 +230,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "What happens to the learning rate during the first 4000 training steps?\n1) It stays constant\n2) It linearly increases (warmup)\n3) It exponentially decays\nAnswer with a number.",
-        "answer": "It linearly increases (warmup)",
         "explanation": "Vaswani et al. use Adam with a warmup schedule: lr increases linearly for 4000 steps then decays proportionally to step^(-0.5), preventing early instability. Label smoothing (ε=0.1) and dropout (0.1) further regularize the model.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "What happens to the learning rate during the first 4000 training steps?\n1) It stays constant\n2) It linearly increases (warmup)\n3) It exponentially decays\nAnswer with a number.",
+            "answer": "It linearly increases (warmup)",
+            "explanation": "Vaswani et al. use Adam with a warmup schedule: lr increases linearly for 4000 steps then decays proportionally to step^(-0.5), preventing early instability. Label smoothing (ε=0.1) and dropout (0.1) further regularize the model."
+          }
+        ]
       },
       {
         "concept_id": "transformer_applications",
@@ -208,11 +253,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Vaswani et al., 2017 — Attention Is All You Need",
-        "exercise": "Which model is directly built on the Transformer architecture?\n1) ResNet\n2) LSTM\n3) BERT\nAnswer with a number.",
-        "answer": "BERT",
         "explanation": "The Transformer (Vaswani et al., 2017) became the backbone of BERT, GPT, T5, and virtually every modern LLM, as well as vision models like ViT. It is arguably the most impactful architecture in the history of deep learning.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Which model is directly built on the Transformer architecture?\n1) ResNet\n2) LSTM\n3) BERT\nAnswer with a number.",
+            "answer": "BERT",
+            "explanation": "The Transformer (Vaswani et al., 2017) became the backbone of BERT, GPT, T5, and virtually every modern LLM, as well as vision models like ViT. It is arguably the most impactful architecture in the history of deep learning."
+          }
+        ]
       }
     ]
   }

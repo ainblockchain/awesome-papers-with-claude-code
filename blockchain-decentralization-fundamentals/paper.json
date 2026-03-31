@@ -1,0 +1,16 @@
+{
+  "title": "Blockchain and Decentralization Fundamentals",
+  "description": "Learn the evolution of the Web (1.0→2.0→3.0), blockchain consensus mechanisms (PoW/PoS), the problems of centralized platforms, and the necessity of decentralization. Understand the essence of the platform economy through Chris Dixon's 'Why Decentralization Matters' and the Google IPO Letter.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "",
+  "thumbnailUrl": "blockchain-decentralization-course/thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    { "name": "Minhyun Kim" },
+    { "name": "Common Computer" }
+  ],
+  "publishedAt": "2024-01-01",
+  "organization": { "name": "Common Computer" },
+  "submittedBy": "community",
+  "sortOrder": 22
+}

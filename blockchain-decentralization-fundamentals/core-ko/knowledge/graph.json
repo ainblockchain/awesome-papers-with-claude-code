@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "title": "블록체인 기초: 인터넷 컴퓨터와 탈중앙화 Knowledge Graph",
+    "description": "Concept dependency graph for Blockchain Fundamentals Lecture 1 — 11 nodes, 14 edges",
+    "source": "김민현, Common Computer — 블록체인 기초 강의 / Chris Dixon 'Why Decentralization Matters'",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "web_evolution",
+      "name": "Web의 진화: 1.0 → 2.0 → 3.0",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Web의 3단계 진화와 Stateless에서 Stateful로의 전환, 소유권의 혁명을 이해합니다.",
+      "key_ideas": [
+        "Web 1.0(읽기) → Web 2.0(읽기+쓰기, Stateless) → Web 3.0(읽기+쓰기+소유, Stateful)",
+        "Stateless Protocol의 한계와 플랫폼 권력의 원천",
+        "Open Source → Open Resource 전환"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 기초 강의 Lesson 01",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "blockchain_basics",
+      "name": "블록체인의 기본 개념",
+      "type": "theory",
+      "level": "foundational",
+      "description": "블록체인의 기본 구조, 비대칭키 암호화, 해시 함수, State Machine 개념을 학습합니다.",
+      "key_ideas": [
+        "블록체인 = 전 세계가 공유하는 변조 불가능한 장부",
+        "비대칭키 암호화와 해시 함수로 체인 형성",
+        "EOA와 개인키 서명의 원리"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 기초 강의 Lesson 01",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "consensus_pow_pos",
+      "name": "합의 메커니즘: PoW vs PoS",
+      "type": "technique",
+      "level": "foundational",
+      "description": "PoW와 PoS의 원리, The Merge, Nothing at Stake 문제와 Slashing을 학습합니다.",
+      "key_ideas": [
+        "PoW: 작업(연산) 증명으로 블록 생성 자격 획득",
+        "PoS: 코인 담보로 블록 생성 자격 획득",
+        "The Merge (2022): 에너지 99.95% 감소"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 기초 강의 Lesson 01",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "double_spending",
+      "name": "이중 지불 문제와 합의의 필요성",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "이중 지불 문제의 본질, 시간으로 판단이 안 되는 이유, PoW/PoS의 해결책을 학습합니다.",
+      "key_ideas": [
+        "이중 지불: 같은 돈으로 두 번 결제하려는 시도",
+        "중앙 시계 없이 순서를 정하는 문제",
+        "자격으로 판단: 한 명만 기록하게 하여 해결"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 기초 강의",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "platform_lifecycle",
+      "name": "중앙화 플랫폼의 생애 주기",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Chris Dixon의 중앙화 플랫폼 3단계 생애 주기와 Google 사례를 학습합니다.",
+      "key_ideas": [
+        "유인 → 성장 → 추출의 3단계",
+        "Positive-sum → Zero-sum 전환",
+        "Google: Don't be evil → 반독점 판결"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bait_and_switch",
+      "name": "Bait-and-Switch: 플랫폼의 배신",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Bait-and-switch의 개념과 역사적 사례, 그 결과를 학습합니다.",
+      "key_ideas": [
+        "Bait(미끼): 자유로운 사용 유인",
+        "Switch(전환): 규칙 변경, 수수료 부과",
+        "결과: 개발자들이 중앙화 플랫폼 기피"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "voice_and_exit",
+      "name": "Voice and Exit: 탈중앙화의 해결책",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Voice(투표권)와 Exit(탈출권), Fork의 개념과 탈중앙화가 Bait-and-switch를 방지하는 원리를 학습합니다.",
+      "key_ideas": [
+        "Voice: 거버넌스 투표로 규칙 변경 가능",
+        "Exit: 비용 없이 떠날 수 있음, Fork 가능",
+        "코드가 법, 오픈소스, Fork 위협, 토큰 인센티브"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "wikipedia_vs_encarta",
+      "name": "Wikipedia vs Encarta: 탈중앙화의 승리",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Wikipedia와 Encarta 사례, 동적 프로세스 비교, 대기만성의 교훈을 학습합니다.",
+      "key_ideas": [
+        "중앙화: 처음 완성도 높음 → 직원 속도로만 개선",
+        "탈중앙화: 처음 불완전 → 커뮤니티 폭발적 성장",
+        "대기만성: 큰 그릇은 늦게 완성된다"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018) / 道德經 41장",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "layer2_scalability",
+      "name": "Layer 2: 확장성 문제의 해결",
+      "type": "architecture",
+      "level": "advanced",
+      "description": "블록체인 트릴레마, Layer 2의 원리, Optimistic/ZK Rollups를 학습합니다.",
+      "key_ideas": [
+        "블록체인 트릴레마: 탈중앙화, 보안, 확장성",
+        "L2: 거래를 모아서 처리, 결과만 L1에 기록",
+        "Optimistic Rollups vs ZK-Rollups"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018) / Ethereum L2 Docs",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "defi_nft_ecosystem",
+      "name": "DeFi와 NFT: 블록체인 생태계",
+      "type": "application",
+      "level": "advanced",
+      "description": "DeFi의 개념과 역사, NFT, CBDC, FTX 사태의 교훈을 학습합니다.",
+      "key_ideas": [
+        "DeFi: 중앙 기관 없는 금융 서비스",
+        "NFT: 디지털 소유권 증명",
+        "FTX 사태: 탈중앙화의 중요성 반증"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 기초 강의 Lesson 02",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_evm",
+      "name": "이더리움과 스마트 컨트랙트",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "이더리움의 혁신, EVM, Gas, 스마트 컨트랙트의 원리를 학습합니다.",
+      "key_ideas": [
+        "Ethereum: Turing-complete 스마트 컨트랙트",
+        "EVM: 전 세계가 동일하게 실행하는 가상머신",
+        "Gas: 연산 비용, 악성 코드 방어"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, Ethereum Whitepaper (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "web_evolution", "target": "blockchain_basics", "relationship": "enables", "weight": 1.0, "description": "Web3 Stateful 개념이 블록체인 이해의 기반" },
+    { "source": "blockchain_basics", "target": "consensus_pow_pos", "relationship": "requires", "weight": 1.0, "description": "블록체인 기본 개념이 합의 메커니즘 이해의 전제" },
+    { "source": "consensus_pow_pos", "target": "double_spending", "relationship": "builds_on", "weight": 1.0, "description": "합의 메커니즘이 이중 지불 문제를 해결" },
+    { "source": "blockchain_basics", "target": "ethereum_evm", "relationship": "requires", "weight": 1.0, "description": "블록체인 기초가 이더리움 이해의 전제" },
+    { "source": "web_evolution", "target": "platform_lifecycle", "relationship": "enables", "weight": 0.9, "description": "Web 2.0 플랫폼의 한계가 생애 주기 이론의 배경" },
+    { "source": "platform_lifecycle", "target": "bait_and_switch", "relationship": "builds_on", "weight": 1.0, "description": "플랫폼 생애 주기의 3단계가 Bait-and-switch 설명" },
+    { "source": "bait_and_switch", "target": "voice_and_exit", "relationship": "enables", "weight": 1.0, "description": "Bait-and-switch 문제가 Voice/Exit 해결책 필요성 제기" },
+    { "source": "voice_and_exit", "target": "wikipedia_vs_encarta", "relationship": "builds_on", "weight": 0.8, "description": "Voice/Exit이 탈중앙화 승리의 메커니즘" },
+    { "source": "consensus_pow_pos", "target": "layer2_scalability", "relationship": "requires", "weight": 1.0, "description": "합의 메커니즘 이해가 L2 이해의 전제" },
+    { "source": "layer2_scalability", "target": "defi_nft_ecosystem", "relationship": "enables", "weight": 0.8, "description": "L2가 DeFi/NFT 생태계 확장을 가능하게 함" },
+    { "source": "ethereum_evm", "target": "defi_nft_ecosystem", "relationship": "requires", "weight": 1.0, "description": "스마트 컨트랙트가 DeFi/NFT의 기술적 기반" },
+    { "source": "double_spending", "target": "voice_and_exit", "relationship": "builds_on", "weight": 0.6, "description": "이중 지불 해결이 신뢰 구조 이해에 기여" },
+    { "source": "wikipedia_vs_encarta", "target": "defi_nft_ecosystem", "relationship": "builds_on", "weight": 0.5, "description": "탈중앙화 승리 원리가 DeFi/NFT 비전의 근거" },
+    { "source": "platform_lifecycle", "target": "defi_nft_ecosystem", "relationship": "enables", "weight": 0.7, "description": "플랫폼 문제 인식이 DeFi/NFT 필요성 설명" }
+  ]
+}

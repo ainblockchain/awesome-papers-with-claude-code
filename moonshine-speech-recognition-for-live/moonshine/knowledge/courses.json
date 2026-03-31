@@ -18,11 +18,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Jeffries et al., 2024 — Moonshine",
-        "exercise": "Moonshine의 디코더 역할은?\n1) 음성 파형 압축\n2) 자동회귀적 텍스트 생성\n3) 노이즈 필터링\n숫자로 답하세요.",
-        "answer": "자동회귀적 텍스트 생성",
         "explanation": "Moonshine은 인코더로 음성 특징을 추출하고 디코더로 텍스트를 한 토큰씩 생성한다. Whisper와 동일한 인코더-디코더 구조를 기반으로 하되 위치 인코딩 방식을 개선했다.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Moonshine의 디코더 역할은?\n1) 음성 파형 압축\n2) 자동회귀적 텍스트 생성\n3) 노이즈 필터링\n숫자로 답하세요.",
+            "answer": "자동회귀적 텍스트 생성",
+            "explanation": "Moonshine은 인코더로 음성 특징을 추출하고 디코더로 텍스트를 한 토큰씩 생성한다. Whisper와 동일한 인코더-디코더 구조를 기반으로 하되 위치 인코딩 방식을 개선했다."
+          }
+        ]
       },
       {
         "concept_id": "bpe",
@@ -36,11 +41,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Jeffries et al., 2024 — Moonshine",
-        "exercise": "Moonshine의 어휘 크기는?\n1) 51,865 (Whisper와 동일)\n2) 32,000 + 768 특수 토큰\n3) 50,000\n숫자로 답하세요.",
-        "answer": "32,000 + 768 특수 토큰",
         "explanation": "Moonshine은 Llama 1/2의 바이트 수준 BPE 토크나이저를 재사용해 32,000개 어휘와 768개 특수 토큰을 사용한다.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Moonshine의 어휘 크기는?\n1) 51,865 (Whisper와 동일)\n2) 32,000 + 768 특수 토큰\n3) 50,000\n숫자로 답하세요.",
+            "answer": "32,000 + 768 특수 토큰",
+            "explanation": "Moonshine은 Llama 1/2의 바이트 수준 BPE 토크나이저를 재사용해 32,000개 어휘와 768개 특수 토큰을 사용한다."
+          }
+        ]
       }
     ]
   },
@@ -66,11 +76,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Jeffries et al., 2024 — Moonshine",
-        "exercise": "RoPE가 Whisper의 절대 위치 임베딩보다 유리한 점은?\n1) 메모리 사용량 감소\n2) 임의 길이 입력의 상대 위치 인코딩 가능\n3) 학습 속도 향상\n숫자로 답하세요.",
-        "answer": "임의 길이 입력의 상대 위치 인코딩 가능",
         "explanation": "RoPE는 회전 행렬로 토큰 간 상대적 위치를 인코딩한다. Whisper의 고정 30초 절대 위치 임베딩과 달리 임의 길이 오디오를 처리할 수 있다.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "RoPE가 Whisper의 절대 위치 임베딩보다 유리한 점은?\n1) 메모리 사용량 감소\n2) 임의 길이 입력의 상대 위치 인코딩 가능\n3) 학습 속도 향상\n숫자로 답하세요.",
+            "answer": "임의 길이 입력의 상대 위치 인코딩 가능",
+            "explanation": "RoPE는 회전 행렬로 토큰 간 상대적 위치를 인코딩한다. Whisper의 고정 30초 절대 위치 임베딩과 달리 임의 길이 오디오를 처리할 수 있다."
+          }
+        ]
       },
       {
         "concept_id": "var_enc",
@@ -84,11 +99,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Jeffries et al., 2024 — Moonshine",
-        "exercise": "5초 오디오를 처리할 때 Moonshine이 빠른 이유는?\n1) 더 빠른 GPU를 사용해서\n2) 30초 고정이 아닌 5초만큼만 인코딩하기 때문\n3) 더 작은 모델이기 때문\n숫자로 답하세요.",
-        "answer": "30초 고정이 아닌 5초만큼만 인코딩하기 때문",
         "explanation": "Whisper는 항상 30초를 인코딩하지만, Moonshine은 실제 오디오 길이만큼만 연산한다. 짧은 음성일수록 연산량이 크게 줄어들어 엣지 디바이스에 적합하다.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "5초 오디오를 처리할 때 Moonshine이 빠른 이유는?\n1) 더 빠른 GPU를 사용해서\n2) 30초 고정이 아닌 5초만큼만 인코딩하기 때문\n3) 더 작은 모델이기 때문\n숫자로 답하세요.",
+            "answer": "30초 고정이 아닌 5초만큼만 인코딩하기 때문",
+            "explanation": "Whisper는 항상 30초를 인코딩하지만, Moonshine은 실제 오디오 길이만큼만 연산한다. 짧은 음성일수록 연산량이 크게 줄어들어 엣지 디바이스에 적합하다."
+          }
+        ]
       },
       {
         "concept_id": "pseudo",
@@ -102,11 +122,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Jeffries et al., 2024 — Moonshine",
-        "exercise": "Moonshine 훈련 데이터 레이블 품질을 높인 방법은?\n1) 인간이 직접 전사\n2) Whisper large v3 의사 레이블 + Levenshtein 필터링\n3) GPT-4o 레이블링\n숫자로 답하세요.",
-        "answer": "Whisper large v3 의사 레이블 + Levenshtein 필터링",
         "explanation": "레이블 없는 오디오는 Whisper large v3로 의사 레이블을 생성하고, Levenshtein 거리가 먼 것을 제거해 약 200K 시간 고품질 데이터를 구성했다.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Moonshine 훈련 데이터 레이블 품질을 높인 방법은?\n1) 인간이 직접 전사\n2) Whisper large v3 의사 레이블 + Levenshtein 필터링\n3) GPT-4o 레이블링\n숫자로 답하세요.",
+            "answer": "Whisper large v3 의사 레이블 + Levenshtein 필터링",
+            "explanation": "레이블 없는 오디오는 Whisper large v3로 의사 레이블을 생성하고, Levenshtein 거리가 먼 것을 제거해 약 200K 시간 고품질 데이터를 구성했다."
+          }
+        ]
       }
     ]
   },
@@ -131,11 +156,16 @@
         ],
         "code_ref": "",
         "paper_ref": "Jeffries et al., 2024 — Moonshine",
-        "exercise": "Moonshine Tiny가 Whisper tiny.en 대비 10초 음성에서 달성한 연산 절감은?\n1) 2배\n2) 3배\n3) 5배\n숫자로 답하세요.",
-        "answer": "5배",
         "explanation": "Moonshine Tiny는 10초 음성 전사 시 Whisper tiny.en 대비 5배 적은 연산으로 동등한 WER(12.66% vs 12.81%)을 달성한다. RoPE와 가변 길이 인코딩의 결합이 엣지 실시간 ASR을 실현한다.",
         "x402_price": "",
-        "x402_gateway": ""
+        "x402_gateway": "",
+        "exercises": [
+          {
+            "question": "Moonshine Tiny가 Whisper tiny.en 대비 10초 음성에서 달성한 연산 절감은?\n1) 2배\n2) 3배\n3) 5배\n숫자로 답하세요.",
+            "answer": "5배",
+            "explanation": "Moonshine Tiny는 10초 음성 전사 시 Whisper tiny.en 대비 5배 적은 연산으로 동등한 WER(12.66% vs 12.81%)을 달성한다. RoPE와 가변 길이 인코딩의 결합이 엣지 실시간 ASR을 실현한다."
+          }
+        ]
       }
     ]
   }

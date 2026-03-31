@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "title": "Blockchain Fundamentals: Internet Computing and Decentralization Knowledge Graph",
+    "description": "Concept dependency graph for Blockchain Fundamentals Lecture 1 — 11 nodes, 14 edges",
+    "source": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture / Chris Dixon 'Why Decentralization Matters'",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "web_evolution",
+      "name": "Evolution of the Web: 1.0 → 2.0 → 3.0",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Understand the 3-stage evolution of the Web, the transition from Stateless to Stateful, and the ownership revolution.",
+      "key_ideas": [
+        "Web 1.0 (read) → Web 2.0 (read+write, Stateless) → Web 3.0 (read+write+own, Stateful)",
+        "Limitations of Stateless Protocol and the source of platform power",
+        "Open Source → Open Resource transition"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 01",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "blockchain_basics",
+      "name": "Blockchain Fundamentals",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Learn the basic structure of blockchain, asymmetric cryptography, hash functions, and State Machine concepts.",
+      "key_ideas": [
+        "Blockchain = A tamper-proof ledger shared globally",
+        "Chain formation through asymmetric cryptography and hash functions",
+        "EOA and private key signing principles"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 01",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "consensus_pow_pos",
+      "name": "Consensus Mechanisms: PoW vs PoS",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Learn the principles of PoW and PoS, The Merge, Nothing at Stake problem, and Slashing.",
+      "key_ideas": [
+        "PoW: Earn block creation rights through proof of work (computation)",
+        "PoS: Earn block creation rights through staking coins",
+        "The Merge (2022): 99.95% energy reduction"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 01",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "double_spending",
+      "name": "Double Spending Problem and Necessity of Consensus",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the essence of double spending, why time-based ordering doesn't work, and how PoW/PoS solve it.",
+      "key_ideas": [
+        "Double spending: Attempting to pay twice with the same money",
+        "The problem of determining order without a central clock",
+        "Solution by qualification: Having only one person record"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "platform_lifecycle",
+      "name": "Lifecycle of Centralized Platforms",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn Chris Dixon's 3-stage lifecycle of centralized platforms and the Google case study.",
+      "key_ideas": [
+        "Three stages: Attract → Grow → Extract",
+        "Positive-sum → Zero-sum transition",
+        "Google: 'Don't be evil' → Antitrust ruling"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bait_and_switch",
+      "name": "Bait-and-Switch: Platform Betrayal",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the concept of bait-and-switch, historical examples, and its consequences.",
+      "key_ideas": [
+        "Bait: Attract with free usage",
+        "Switch: Change rules, impose fees",
+        "Result: Developers avoid centralized platforms"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "voice_and_exit",
+      "name": "Voice and Exit: Solutions Through Decentralization",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn Voice (voting rights) and Exit (right to leave), the concept of Fork, and how decentralization prevents bait-and-switch.",
+      "key_ideas": [
+        "Voice: Ability to change rules through governance voting",
+        "Exit: Ability to leave without cost, Fork is possible",
+        "Code is law, open source, fork threat, token incentives"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "wikipedia_vs_encarta",
+      "name": "Wikipedia vs Encarta: Triumph of Decentralization",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the Wikipedia and Encarta case study, dynamic process comparison, and the lesson of late blooming.",
+      "key_ideas": [
+        "Centralized: High initial quality → improves only at employee speed",
+        "Decentralized: Initially incomplete → explosive community growth",
+        "Late blooming (大器晚成): Great vessels are completed slowly"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018) / 道德經 Chapter 41",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "layer2_scalability",
+      "name": "Layer 2: Solving Scalability",
+      "type": "architecture",
+      "level": "advanced",
+      "description": "Learn the blockchain trilemma, Layer 2 principles, and Optimistic/ZK Rollups.",
+      "key_ideas": [
+        "Blockchain trilemma: Decentralization, Security, Scalability",
+        "L2: Batch transactions, record only results on L1",
+        "Optimistic Rollups vs ZK-Rollups"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018) / Ethereum L2 Docs",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "defi_nft_ecosystem",
+      "name": "DeFi and NFTs: The Blockchain Ecosystem",
+      "type": "application",
+      "level": "advanced",
+      "description": "Learn DeFi concepts and history, NFTs, CBDC, and lessons from the FTX collapse.",
+      "key_ideas": [
+        "DeFi: Financial services without central institutions",
+        "NFT: Proof of digital ownership",
+        "FTX collapse: Proof of why decentralization matters"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 02",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_evm",
+      "name": "Ethereum and Smart Contracts",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Learn Ethereum's innovation, EVM, Gas, and smart contract principles.",
+      "key_ideas": [
+        "Ethereum: Turing-complete smart contracts",
+        "EVM: A virtual machine that runs identically worldwide",
+        "Gas: Computational cost, defense against malicious code"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, Ethereum Whitepaper (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "web_evolution", "target": "blockchain_basics", "relationship": "enables", "weight": 1.0, "description": "Web3 Stateful concept is the foundation for understanding blockchain" },
+    { "source": "blockchain_basics", "target": "consensus_pow_pos", "relationship": "requires", "weight": 1.0, "description": "Blockchain basics are prerequisite for understanding consensus mechanisms" },
+    { "source": "consensus_pow_pos", "target": "double_spending", "relationship": "builds_on", "weight": 1.0, "description": "Consensus mechanisms solve the double spending problem" },
+    { "source": "blockchain_basics", "target": "ethereum_evm", "relationship": "requires", "weight": 1.0, "description": "Blockchain basics are prerequisite for understanding Ethereum" },
+    { "source": "web_evolution", "target": "platform_lifecycle", "relationship": "enables", "weight": 0.9, "description": "Web 2.0 platform limitations are the background for lifecycle theory" },
+    { "source": "platform_lifecycle", "target": "bait_and_switch", "relationship": "builds_on", "weight": 1.0, "description": "Platform lifecycle stages explain bait-and-switch" },
+    { "source": "bait_and_switch", "target": "voice_and_exit", "relationship": "enables", "weight": 1.0, "description": "Bait-and-switch problem raises the need for Voice/Exit solutions" },
+    { "source": "voice_and_exit", "target": "wikipedia_vs_encarta", "relationship": "builds_on", "weight": 0.8, "description": "Voice/Exit is the mechanism for decentralization's victory" },
+    { "source": "consensus_pow_pos", "target": "layer2_scalability", "relationship": "requires", "weight": 1.0, "description": "Understanding consensus mechanisms is prerequisite for L2" },
+    { "source": "layer2_scalability", "target": "defi_nft_ecosystem", "relationship": "enables", "weight": 0.8, "description": "L2 enables expansion of DeFi/NFT ecosystem" },
+    { "source": "ethereum_evm", "target": "defi_nft_ecosystem", "relationship": "requires", "weight": 1.0, "description": "Smart contracts are the technical foundation of DeFi/NFT" },
+    { "source": "double_spending", "target": "voice_and_exit", "relationship": "builds_on", "weight": 0.6, "description": "Solving double spending contributes to understanding trust structures" },
+    { "source": "wikipedia_vs_encarta", "target": "defi_nft_ecosystem", "relationship": "builds_on", "weight": 0.5, "description": "Decentralization victory principles are the basis for DeFi/NFT vision" },
+    { "source": "platform_lifecycle", "target": "defi_nft_ecosystem", "relationship": "enables", "weight": 0.7, "description": "Platform problem awareness explains the need for DeFi/NFT" }
+  ]
+}
