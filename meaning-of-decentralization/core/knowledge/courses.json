@@ -3,7 +3,12 @@
     "id": "foundations_of_decentralization",
     "title": "Foundations of Decentralization",
     "description": "Vitalik Buterin's three axes framework — architectural, political, and logical decentralization",
-    "concepts": ["three_axes_decentralization", "architectural_decentralization", "political_decentralization", "logical_decentralization"],
+    "concepts": [
+      "three_axes_decentralization",
+      "architectural_decentralization",
+      "political_decentralization",
+      "logical_decentralization"
+    ],
     "lessons": [
       {
         "concept_id": "three_axes_decentralization",
@@ -19,7 +24,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "A Content Delivery Network (CDN) like Cloudflare has servers in 200+ cities worldwide, but is operated by a single company. How would you classify it?\n\n1) Architecturally centralized, politically decentralized\n2) Architecturally decentralized, politically centralized\n3) Both architecturally and politically decentralized\n4) Both architecturally and politically centralized\n\nAnswer with a number.",
+        "exercise": "A Content Delivery Network (CDN) like Cloudflare has servers in 200+ cities worldwide, but is operated by a single company. How would you classify it?\n\n1) Architecturally centralized, politically decentralized\n2) Architecturally decentralized, politically centralized\n3) Both architecturally and politically decentralized\n4) Both architecturally and politically centralized",
         "answer": "Architecturally decentralized, politically centralized",
         "explanation": "CDNs are architecturally decentralized (many physical servers worldwide) but politically centralized (one company controls all of them). This distinction is crucial — having many servers doesn't automatically mean decentralization if they're all controlled by the same entity.",
         "x402_price": "",
@@ -28,7 +33,9 @@
       {
         "concept_id": "architectural_decentralization",
         "title": "Architectural Decentralization",
-        "prerequisites": ["three_axes_decentralization"],
+        "prerequisites": [
+          "three_axes_decentralization"
+        ],
         "content": "## What is Architectural Decentralization?\n\nArchitectural decentralization measures the physical distribution of a system. The key questions are:\n- How many physical computers make up the system?\n- How many can fail before the system breaks?\n\n## The Fault Tolerance Connection\n\nImagine a traditional corporation with one headquarters building. If that building has a fire, the company stops functioning. Now imagine 10 identical office buildings in different cities — a fire in one doesn't stop operations.\n\n### Probability Comparison\n\n| Scenario | Probability |\n|----------|------------|\n| 1 computer fails | P(failure) = p |\n| 5 of 10 fail simultaneously | P(failure) = C(10,5) × p⁵ × (1-p)⁵ |\n\nIf individual failure probability is 10%, simultaneous failure of 5/10 machines is approximately **0.001%**.\n\n## Real-World Examples\n\n**Architecturally Centralized:**\n- Traditional corporation (single HQ)\n- Single-server web application\n- Your personal computer\n\n**Architecturally Decentralized:**\n- CDN (servers in many cities)\n- BitTorrent (files on thousands of computers)\n- Blockchain nodes (thousands worldwide)\n\n## The Limits of Architecture Alone\n\nArchitectural decentralization enables fault tolerance but doesn't guarantee it. If all 1000 nodes run the same software with the same bug, they'll all fail together. This is called **common mode failure** — and it's why architecture alone isn't enough.",
         "key_ideas": [
           "Architectural decentralization = physical distribution of computers",
@@ -39,7 +46,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "Why might 1000 blockchain nodes all running the same client software still be vulnerable to failure?\n\n1) Because they're in different countries\n2) Because a bug in the software would affect all nodes simultaneously\n3) Because they use different consensus mechanisms\n4) Because the network is too large to coordinate\n\nAnswer with a number.",
+        "exercise": "Why might 1000 blockchain nodes all running the same client software still be vulnerable to failure?\n\n1) Because they're in different countries\n2) Because a bug in the software would affect all nodes simultaneously\n3) Because they use different consensus mechanisms\n4) Because the network is too large to coordinate",
         "answer": "Because a bug in the software would affect all nodes simultaneously",
         "explanation": "This is called 'common mode failure.' Even with 1000 architecturally distributed nodes, if they all run identical software (e.g., only Geth for Ethereum), a single bug can crash the entire network. This is why blockchain projects encourage multiple independent client implementations.",
         "x402_price": "",
@@ -48,7 +55,9 @@
       {
         "concept_id": "political_decentralization",
         "title": "Political Decentralization",
-        "prerequisites": ["three_axes_decentralization"],
+        "prerequisites": [
+          "three_axes_decentralization"
+        ],
         "content": "## What is Political Decentralization?\n\nPolitical decentralization asks: **Who actually controls the system?** It's not about how many computers exist, but about how many independent individuals or organizations can make decisions.\n\n## The CEO Test\n\nA traditional corporation might have offices worldwide (architectural decentralization), but if one CEO can fire anyone and change any policy, it's politically centralized.\n\n### Classification Examples\n\n| System | Political Status | Reason |\n|--------|-----------------|--------|\n| Corporation | Centralized | CEO has ultimate authority |\n| Common Law | Decentralized | Independent judges decide |\n| Civil Law | Centralized | Single legislature writes rules |\n| Bitcoin | Decentralized | No single entity controls |\n\n## The Relationship Between Architecture and Politics\n\nStructural centralization **often** leads to political centralization, but not always:\n\n**Example:** An online community uses a centralized forum (architectural), but if the community would all move to a different forum if the operator misbehaved, it's **politically decentralized**. The social contract, not the architecture, determines power.\n\n## Why Political Decentralization Matters\n\nPolitical decentralization is the shield against capture and corruption:\n- No single point of coercion (can't bribe/threaten one person)\n- No single point of censorship (can't block one gateway)\n- No single point of failure (can't eliminate one leader)\n\nIn crypto, this manifests as: no CEO to subpoena, no board to lobby, no single developer team to pressure.",
         "key_ideas": [
           "Political decentralization = distribution of control and decision-making",
@@ -59,7 +68,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "A community uses Discord (centralized platform) to coordinate, but all members agree they'd move to another platform if Discord banned them unfairly. Is this community politically centralized or decentralized?\n\n1) Politically centralized because Discord is centralized\n2) Politically decentralized because of the social contract to exit\n3) Neither — political decentralization doesn't apply to communities\n4) It depends on how many members there are\n\nAnswer with a number.",
+        "exercise": "A community uses Discord (centralized platform) to coordinate, but all members agree they'd move to another platform if Discord banned them unfairly. Is this community politically centralized or decentralized?\n\n1) Politically centralized because Discord is centralized\n2) Politically decentralized because of the social contract to exit\n3) Neither — political decentralization doesn't apply to communities\n4) It depends on how many members there are",
         "answer": "Politically decentralized because of the social contract to exit",
         "explanation": "Political decentralization is about control and power, not infrastructure. If a community has a shared agreement to exit if mistreated, the platform operator has no real power over them — the community is politically decentralized despite using centralized infrastructure. This is the power of credible exit threats.",
         "x402_price": "",
@@ -68,7 +77,9 @@
       {
         "concept_id": "logical_decentralization",
         "title": "Logical Decentralization",
-        "prerequisites": ["three_axes_decentralization"],
+        "prerequisites": [
+          "three_axes_decentralization"
+        ],
         "content": "## What is Logical Decentralization?\n\nLogical decentralization asks: **Does the system look and behave like one thing or many?**\n\nThe litmus test: If you cut the system in half (including providers and users), can both halves operate independently?\n\n## The Language Analogy\n\nEnglish speakers could split into two groups tomorrow, and both groups would still have a functional language. English is **logically decentralized** — there's no single 'English database' that everyone must agree on.\n\n### Classification Table\n\n| System | Logically... | Why |\n|--------|-------------|-----|\n| Language | Decentralized | Split speakers can still communicate |\n| BitTorrent | Decentralized | Split network still shares files |\n| Blockchain | **Centralized** | Must agree on ONE state |\n| Law (any) | Centralized | ONE legal code per jurisdiction |\n\n## The Blockchain Paradox\n\nBlockchain is architecturally and politically decentralized but **logically centralized**. This is a feature, not a bug:\n\n- **Why centralized?** Everyone agrees on one state (Alice has 5 ETH, not maybe 5 or maybe 7)\n- **Why is this good?** Single source of truth enables trust without trusted parties\n- **The convenience:** One database everyone can rely on\n\n## Trade-offs of Logical Centralization\n\nJuan Benet (IPFS creator) argues logical decentralization is stronger for:\n- Network partitions (regions lose connectivity)\n- Low-connectivity areas\n- Offline-first applications\n\nBut for financial systems, logical centralization (consensus on a single state) is essential.",
         "key_ideas": [
           "Logical decentralization = can the system be split and still work?",
@@ -79,7 +90,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "Why is blockchain considered logically centralized despite having thousands of independent nodes?\n\n1) Because Vitalik Buterin controls it\n2) Because all nodes must agree on exactly one state\n3) Because it only works in certain countries\n4) Because it requires internet connectivity\n\nAnswer with a number.",
+        "exercise": "Why is blockchain considered logically centralized despite having thousands of independent nodes?\n\n1) Because Vitalik Buterin controls it\n2) Because all nodes must agree on exactly one state\n3) Because it only works in certain countries\n4) Because it requires internet connectivity",
         "answer": "Because all nodes must agree on exactly one state",
         "explanation": "Blockchain maintains a single consensus state — everyone agrees on the exact same account balances and transaction history. If you split the network in half, you don't get two working blockchains; you get a fork that must eventually resolve to ONE chain. This logical centralization is why blockchain works as a trustless source of truth.",
         "x402_price": "",
@@ -91,12 +102,19 @@
     "id": "why_decentralization_matters",
     "title": "Why Decentralization Matters",
     "description": "The three core reasons for pursuing decentralization: fault tolerance, attack resistance, and collusion resistance",
-    "concepts": ["fault_tolerance", "attack_resistance", "collusion_resistance", "common_mode_failure"],
+    "concepts": [
+      "fault_tolerance",
+      "attack_resistance",
+      "collusion_resistance",
+      "common_mode_failure"
+    ],
     "lessons": [
       {
         "concept_id": "fault_tolerance",
         "title": "Fault Tolerance: Surviving Component Failures",
-        "prerequisites": ["architectural_decentralization"],
+        "prerequisites": [
+          "architectural_decentralization"
+        ],
         "content": "## The Core Logic of Fault Tolerance\n\nThe probability that one computer fails is P. The probability that 5 out of 10 computers fail simultaneously is dramatically lower. This is the mathematical foundation of fault tolerance.\n\n## Where We Already Use This\n\nFault tolerance through redundancy isn't new to blockchain:\n\n| Domain | Implementation |\n|--------|---------------|\n| Aviation | Multiple jet engines |\n| Hospitals | Backup power systems |\n| Military | Redundant communication |\n| Finance | Portfolio diversification |\n\n## Applying This to Blockchain\n\nIn blockchain, fault tolerance means:\n- If some nodes go offline, the network continues\n- If some miners/validators are malicious, consensus still works\n- If some regions lose internet, the blockchain persists elsewhere\n\n## The Common Mode Failure Problem\n\nHere's the catch: 4 jet engines don't help if they were all made by the same factory with the same defect. This is **common mode failure** — when components fail for the same reason.\n\n### Blockchain Common Mode Failure Risks:\n\n1. **Software monoculture:** All nodes run identical client with same bug\n2. **Developer capture:** Core research team is compromised\n3. **Geographic concentration:** 70% of miners in one country that bans mining\n4. **Hardware monoculture:** Most ASICs from one manufacturer with backdoor\n5. **Stake concentration:** 70% of PoS coins in one exchange wallet\n\n## Mitigating Common Mode Failure\n\n- Multiple competing client implementations\n- Geographically distributed developers\n- Transparent protocol upgrade discussions\n- Mining algorithm design that resists centralization",
         "key_ideas": [
           "Fault tolerance: system survives component failures",
@@ -107,7 +125,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "In 2021, China banned cryptocurrency mining. How did this relate to blockchain fault tolerance?\n\n1) It proved fault tolerance doesn't work\n2) It eliminated a common mode failure risk by forcing geographic distribution\n3) It made Bitcoin more centralized\n4) It had no effect on fault tolerance\n\nAnswer with a number.",
+        "exercise": "In 2021, China banned cryptocurrency mining. How did this relate to blockchain fault tolerance?\n\n1) It proved fault tolerance doesn't work\n2) It eliminated a common mode failure risk by forcing geographic distribution\n3) It made Bitcoin more centralized\n4) It had no effect on fault tolerance",
         "answer": "It eliminated a common mode failure risk by forcing geographic distribution",
         "explanation": "Before the ban, ~70% of Bitcoin hashpower was in China, creating a common mode failure risk (one government could seize most mining). After the ban, mining distributed to US, Kazakhstan, Canada, Russia. Paradoxically, regulation forced better geographic decentralization and reduced common mode failure risk.",
         "x402_price": "",
@@ -116,7 +134,9 @@
       {
         "concept_id": "attack_resistance",
         "title": "Attack Resistance: The Economics of Coercion",
-        "prerequisites": ["political_decentralization"],
+        "prerequisites": [
+          "political_decentralization"
+        ],
         "content": "## The Pure Economic Argument\n\nIn a pure economic model, if validators collectively have $50M at stake, the security is $50M — regardless of whether it's 1 validator or 100. You might even argue centralization maximizes security (economies of scale).\n\n## Enter Coercion\n\nBut the real world has **coercion** — targeted threats, DoS attacks, legal pressure:\n\n| Scenario | Attack Cost |\n|----------|------------|\n| 1 person with $50M | Threaten 1 person |\n| 10 people with $5M each | Threaten 10 people simultaneously |\n\nCoercing 10 independent parties is dramatically harder than coercing 1.\n\n## The Asymmetry of Attack and Defense\n\nIn modern systems, attackers have an advantage:\n- Destroying a $10M building might cost $100K\n- But destroying a $1M building might only cost $30K\n\nThis means: **Smaller targets have better attack/defense ratios**. Decentralization creates many small targets instead of one big one.\n\n## PoS vs PoW for Attack Resistance\n\nVitalik argues PoS is superior for attack resistance:\n\n| Factor | PoW | PoS |\n|--------|-----|-----|\n| Hardware | Detectable, seizable | Coins are hidden |\n| Location | Mining farms are visible | Stake is digital |\n| Coercion | Target mining facilities | Can't find the coins |\n\n## Geographic Distribution Matters\n\nDevelopers, validators, and infrastructure distributed across jurisdictions make coordinated legal attacks much harder. No single government can shut down a globally distributed network.",
         "key_ideas": [
           "Pure economics: 1×$50M = 10×$5M in security",
@@ -127,7 +147,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "Why does Vitalik argue Proof of Stake is more attack-resistant than Proof of Work?\n\n1) PoS uses less energy\n2) PoS coins can be hidden, while mining hardware is visible and seizable\n3) PoS has more validators\n4) PoS is faster\n\nAnswer with a number.",
+        "exercise": "Why does Vitalik argue Proof of Stake is more attack-resistant than Proof of Work?\n\n1) PoS uses less energy\n2) PoS coins can be hidden, while mining hardware is visible and seizable\n3) PoS has more validators\n4) PoS is faster",
         "answer": "PoS coins can be hidden, while mining hardware is visible and seizable",
         "explanation": "Mining farms are physical infrastructure — they consume electricity, generate heat, and have physical locations that can be raided. Staked coins are just numbers in a wallet. A government can't send police to seize your private key if they don't know which wallet is yours. This makes coercion dramatically harder.",
         "x402_price": "",
@@ -136,7 +156,9 @@
       {
         "concept_id": "collusion_resistance",
         "title": "Collusion Resistance: Good vs Bad Coordination",
-        "prerequisites": ["political_decentralization"],
+        "prerequisites": [
+          "political_decentralization"
+        ],
         "content": "## What is Collusion?\n\nCollusion is hard to define precisely. Vitalik suggests: **'coordination that we don't want.'**\n\nNot all coordination is bad — communities working together is good. But a *subset* coordinating to exploit the rest is collusion.\n\n## Real-World Anti-Collusion Mechanisms\n\n| Domain | Anti-Collusion Rule |\n|--------|--------------------|\n| Business | Antitrust laws |\n| Politics | Campaign coordination limits |\n| Chess | Can't play your friend repeatedly to boost ratings |\n\n## Collusion in Blockchain\n\nBlockchain security proofs assume participants make **independent choices**. When this assumption breaks:\n\n- **Selfish mining:** With 1/3+ hashpower, a cartel can gain unfair advantage\n- **51% attacks:** Majority coordination can rewrite history\n- **Governance capture:** Block producers coordinate to pass self-serving rules\n\n## The Fundamental Paradox\n\nEthereum's community was praised for coordinating to hard fork during a DoS attack in 6 days. But if we encourage 'good' coordination, how do we prevent 'bad' coordination (51% attacks)?\n\n### Three Approaches:\n\n1. **Protocol design:** Build protocols that punish collusion (Casper's slashing)\n2. **Accidental barriers:** Bitcoin's English developers + Chinese miners created 'bicameral' governance by accident\n3. **Social solutions:** Community norms against coordination, transparent communication across stakeholder groups\n\n## The Uncomfortable Truth\n\nWhen 90% of Bitcoin mining power could fit in one conference room, the 'independent actors' assumption was already questionable.",
         "key_ideas": [
           "Collusion = coordination we don't want (subset exploiting the whole)",
@@ -147,7 +169,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "The Ethereum community hard-forked in 6 days to respond to a DoS attack. This is an example of:\n\n1) Bad collusion that should be prevented\n2) Good coordination that creates a paradox for collusion resistance\n3) A failure of decentralization\n4) Normal blockchain operation\n\nAnswer with a number.",
+        "exercise": "The Ethereum community hard-forked in 6 days to respond to a DoS attack. This is an example of:\n\n1) Bad collusion that should be prevented\n2) Good coordination that creates a paradox for collusion resistance\n3) A failure of decentralization\n4) Normal blockchain operation",
         "answer": "Good coordination that creates a paradox for collusion resistance",
         "explanation": "The rapid hard fork demonstrated strong community coordination — which is good when responding to attacks. But it also proves the community CAN coordinate quickly. If they can coordinate for good, what stops them from coordinating for bad (51% attacks)? This is the collusion resistance paradox: how do you encourage good coordination while preventing bad?",
         "x402_price": "",
@@ -156,7 +178,9 @@
       {
         "concept_id": "common_mode_failure",
         "title": "Common Mode Failure: When Everything Breaks Together",
-        "prerequisites": ["fault_tolerance"],
+        "prerequisites": [
+          "fault_tolerance"
+        ],
         "content": "## The Jet Engine Problem\n\nAirplanes have multiple engines for redundancy. But if all 4 engines were manufactured by the same worker who made the same mistake, they might all fail simultaneously. This is **common mode failure**.\n\n## Common Mode Failures in Blockchain\n\nVitalik identifies several blockchain-specific risks:\n\n### Software Monoculture\n- All nodes running Geth? One bug crashes the network.\n- Solution: Multiple client implementations (Geth, Nethermind, Besu, Erigon)\n\n### Developer Capture\n- Research team proposes flawed upgrade? Entire protocol at risk.\n- Solution: Open discussion, multiple research teams, community review\n\n### Geographic Concentration (Pre-2021)\n- 70% of miners in China → government seizure risk\n- Solution: Geographic distribution (now achieved post-ban)\n\n### Hardware Monoculture\n- Most ASICs from Bitmain? Backdoor risk.\n- Solution: Algorithm changes, PoS transition\n\n### Stake Concentration\n- 70% of staked ETH on one exchange? Exchange compromise = network compromise.\n- Solution: Liquid staking distribution, self-custody incentives\n\n## The 2017 Vision vs 2026 Reality\n\n| Risk | 2017 Status | 2026 Status |\n|------|-------------|-------------|\n| Chinese mining | ~70% concentration | Globally distributed |\n| PoS transition | 'Ideally' | Achieved (Sept 2022) |\n| Energy consumption | Major concern | 99.95% reduced |\n| Client diversity | Mostly Geth | Multiple major clients |\n\nThe Merge validated Vitalik's 2017 arguments with real-world implementation.",
         "key_ideas": [
           "Common mode failure: multiple components fail for the same reason",
@@ -167,7 +191,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
-        "exercise": "Why does Ethereum encourage running multiple client implementations (Geth, Nethermind, Besu, etc.)?\n\n1) To make development faster\n2) To reduce energy consumption\n3) To prevent common mode failure from software bugs\n4) To increase transaction speed\n\nAnswer with a number.",
+        "exercise": "Why does Ethereum encourage running multiple client implementations (Geth, Nethermind, Besu, etc.)?\n\n1) To make development faster\n2) To reduce energy consumption\n3) To prevent common mode failure from software bugs\n4) To increase transaction speed",
         "answer": "To prevent common mode failure from software bugs",
         "explanation": "If every node ran Geth and Geth had a consensus-critical bug, the entire network would fail simultaneously. With multiple clients, a bug in one implementation only affects nodes running that client — the network continues with other clients. This is defense against software common mode failure.",
         "x402_price": "",
@@ -179,12 +203,21 @@
     "id": "web3_identity_and_brands",
     "title": "Web3 Identity and Headless Brands",
     "description": "How decentralization changes digital identity and brand ownership — DIDs, self-sovereignty, and community-owned narratives",
-    "concepts": ["did_decentralized_identifiers", "web3_identity_stack", "crypto_pki_trojan_horse", "headless_brands", "bitcoin_headless_brand", "narrative_forks"],
+    "concepts": [
+      "did_decentralized_identifiers",
+      "web3_identity_stack",
+      "crypto_pki_trojan_horse",
+      "headless_brands",
+      "bitcoin_headless_brand",
+      "narrative_forks"
+    ],
     "lessons": [
       {
         "concept_id": "did_decentralized_identifiers",
         "title": "Decentralized Identifiers (DIDs)",
-        "prerequisites": ["three_axes_decentralization"],
+        "prerequisites": [
+          "three_axes_decentralization"
+        ],
         "content": "## The Identity Problem\n\nToday's digital identities are **fragmented and controlled** by others:\n- Corporations see customer relationships as core assets\n- Financial institutions have compliance requirements\n- Governments control passports and licenses\n\nThis creates power asymmetry: platforms control your identity, not you.\n\n## What are DIDs?\n\n**Decentralized Identifiers** are a W3C standard for self-sovereign identification. Unlike usernames (controlled by platforms) or government IDs (controlled by states), DIDs are controlled by you.\n\n### The Four Properties of DIDs\n\n| Property | Meaning |\n|----------|--------|\n| **Decentralized** | No central authority needed to create |\n| **Persistent** | Permanently assigned once created |\n| **Resolvable** | Can retrieve additional information |\n| **Verifiable** | Ownership provable via cryptographic signatures |\n\n## DID Structure\n\nA DID looks like: `did:ethr:0x123...abc`\n\n- **Scheme:** `did` (identifies this as a DID)\n- **Method:** `ethr` (tells systems how to resolve it)\n- **Identifier:** `0x123...abc` (unique within the method)\n\nResolving a DID returns a **DID Document** containing:\n- How to authenticate the entity\n- Claims/attributes about the entity\n- Service endpoints (where to find more data)\n\n## 100+ DID Methods\n\nW3C has registered 100+ DID methods, each with its own Verifiable Data Registry:\n- `did:ethr` — Ethereum accounts\n- `did:btcr` — Bitcoin transactions\n- `did:pkh` — Blockchain-agnostic\n- `did:web` — Traditional web domains (controversial — centralized?)",
         "key_ideas": [
           "Current digital identity is fragmented and controlled by platforms",
@@ -195,7 +228,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nichanan Kesonpat, '1kxnetwork — Web3 Identity Stack' (2022)",
-        "exercise": "What distinguishes DIDs from traditional identifiers like usernames or passport numbers?\n\n1) DIDs are shorter\n2) DIDs don't require a central authority for creation or verification\n3) DIDs are only for blockchain users\n4) DIDs expire after one year\n\nAnswer with a number.",
+        "exercise": "What distinguishes DIDs from traditional identifiers like usernames or passport numbers?\n\n1) DIDs are shorter\n2) DIDs don't require a central authority for creation or verification\n3) DIDs are only for blockchain users\n4) DIDs expire after one year",
         "answer": "DIDs don't require a central authority for creation or verification",
         "explanation": "Usernames require a platform (Twitter, Google) to create and verify. Passport numbers require a government. DIDs can be created by anyone and verified cryptographically without trusting any central party. This is the 'decentralized' property that makes them revolutionary.",
         "x402_price": "",
@@ -204,7 +237,9 @@
       {
         "concept_id": "web3_identity_stack",
         "title": "The Web3 Identity Stack",
-        "prerequisites": ["did_decentralized_identifiers"],
+        "prerequisites": [
+          "did_decentralized_identifiers"
+        ],
         "content": "## Layers of Self-Sovereignty\n\nDigital self-sovereignty requires multiple layers working together:\n\n### Layer 1: Blockchain as Verifiable Data Registry\n\nBlockchains serve as the foundation — immutable, distributed registries for DID issuance:\n- **Ethereum:** `did:ethr` — accounts as identities\n- **Bitcoin:** `did:btcr` — UTXO-based references\n- **Cross-chain:** `did:pkh` — CAIP-10 interoperability\n\n### Layer 2: Decentralized Storage\n\nBlockchains are expensive for large data. Storage layers handle user data:\n\n| Solution | Approach |\n|----------|----------|\n| **Arweave** | Permanent storage with perpetual endowment |\n| **IPFS + Filecoin** | Content-addressed with incentivized pinning |\n| **Sia/Storj** | Encrypted, distributed, erasure-coded |\n\nFor sensitive PII, permissioned IPFS allows GDPR compliance.\n\n### Layer 3: Data Mutability (Ceramic)\n\n**Ceramic** transforms immutable files into dynamic data structures:\n- User updates profile → Ceramic validates → creates new state\n- Maintains history of state changes\n- DIDs verify all updates\n- Enables ComposeDB: decentralized graph database with GraphQL\n\n## Web2 vs Web3 Competition\n\n**Web2:** Google/Facebook own UI + backend + data. New apps start from zero.\n\n**Web3:** Users own data. New apps can build on existing user data. Competition happens on user experience, not data moats.",
         "key_ideas": [
           "Layer 1: Blockchain as immutable DID registry",
@@ -215,7 +250,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nichanan Kesonpat, '1kxnetwork — Web3 Identity Stack' (2022)",
-        "exercise": "Why can't blockchains alone serve as the entire identity infrastructure?\n\n1) Blockchains are too slow\n2) Writing/updating large amounts of user data is expensive on-chain\n3) Blockchains don't support encryption\n4) Blockchains are not decentralized enough\n\nAnswer with a number.",
+        "exercise": "Why can't blockchains alone serve as the entire identity infrastructure?\n\n1) Blockchains are too slow\n2) Writing/updating large amounts of user data is expensive on-chain\n3) Blockchains don't support encryption\n4) Blockchains are not decentralized enough",
         "answer": "Writing/updating large amounts of user data is expensive on-chain",
         "explanation": "Blockchains are excellent for immutable records (DID registrations, credential issuance) but terrible for frequently changing user data (profiles, preferences, activity history). That's why the stack has multiple layers: blockchain for anchoring, decentralized storage for data, and protocols like Ceramic for mutability.",
         "x402_price": "",
@@ -224,7 +259,9 @@
       {
         "concept_id": "crypto_pki_trojan_horse",
         "title": "Cryptocurrency: The PKI Trojan Horse",
-        "prerequisites": ["web3_identity_stack"],
+        "prerequisites": [
+          "web3_identity_stack"
+        ],
         "content": "## The PKI Adoption Problem\n\nPublic Key Infrastructure (PKI) has existed for decades. It enables:\n- Digital signatures (prove you sent something)\n- Encryption (only recipient can read)\n- Authentication (prove who you are)\n\nBut adoption was limited to privacy-conscious technologists. Managing cryptographic keys was too complex for mainstream users.\n\n## The Trojan Horse Effect\n\nCryptocurrency changed everything. Financial incentives drove mass adoption:\n\n| Wave | Incentive | Keys Distributed |\n|------|-----------|------------------|\n| ICO boom | Get rich quick | Millions |\n| DeFi Summer | Yield farming | More millions |\n| NFT craze | Digital ownership | Even more |\n\nSuddenly, people who'd never heard of PKI were managing private keys.\n\n## The Blurring Line\n\nCryptocurrency **blurred the line between what we own and who we are**:\n\n- **Before:** Wallet = money\n- **After:** Wallet = money + art (NFTs) + work history (Kudos) + opinions (governance votes) + social graph (token communities)\n\n**Losing your private key now feels less like losing money and more like losing your passport or social media account.**\n\n## The Foundation for Identity\n\nWith millions of people comfortable managing keys, the Web3 identity stack has its adoption foundation:\n- Key management products/services have matured\n- Users understand custody trade-offs\n- Hardware wallets are mainstream\n- Social recovery is being normalized",
         "key_ideas": [
           "PKI existed for decades but had limited adoption",
@@ -235,7 +272,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nichanan Kesonpat, '1kxnetwork — Web3 Identity Stack' (2022)",
-        "exercise": "Why is cryptocurrency described as a 'Trojan Horse' for public key infrastructure?\n\n1) It hides malware in transactions\n2) It tricked people into managing cryptographic keys through financial incentives\n3) It is secretly controlled by governments\n4) It replaces traditional banking systems\n\nAnswer with a number.",
+        "exercise": "Why is cryptocurrency described as a 'Trojan Horse' for public key infrastructure?\n\n1) It hides malware in transactions\n2) It tricked people into managing cryptographic keys through financial incentives\n3) It is secretly controlled by governments\n4) It replaces traditional banking systems",
         "answer": "It tricked people into managing cryptographic keys through financial incentives",
         "explanation": "The 'Trojan Horse' metaphor means cryptocurrency smuggled PKI adoption into the mainstream under the guise of money-making. People who would never care about 'public key infrastructure' eagerly learned key management when there was money involved. Now those same skills enable self-sovereign identity.",
         "x402_price": "",
@@ -244,7 +281,9 @@
       {
         "concept_id": "headless_brands",
         "title": "Headless Brands",
-        "prerequisites": ["political_decentralization"],
+        "prerequisites": [
+          "political_decentralization"
+        ],
         "content": "## What is a Brand?\n\nA brand is the **total of concepts, expectations, impressions, and reputation** associated with an entity. Brands exist in the minds of people who perceive them.\n\n## From Broadcast to Network Media\n\n**Broadcast era:** Corporations controlled the narrative. TV ads, magazines, press releases — one-way communication.\n\n**Network era:** Anyone can publish. Yelp reviews compete with official marketing. Social media creates infinite counter-narratives.\n\n## The Headless Question\n\nWhen protocol ownership is distributed to users:\n- Who manages the brand?\n- Who controls the narrative?\n- What happens when users are also the workers and investors?\n\n**Answer:** No one. The brand becomes **headless**.\n\n## Traditional vs Headless Brand Management\n\n| Aspect | Traditional | Headless |\n|--------|-------------|----------|\n| Narrative control | Marketing department | No one |\n| Visual identity | Design team | Community forks |\n| Messaging | PR strategy | Emergent memes |\n| Response to crisis | Executive decision | Community coordination |\n\n## The Incentive Problem\n\nWhen users have financial stake (tokens), they're incentivized to spread positive narratives. But without coordination:\n- No unified messaging\n- Competing narratives emerge\n- Brand becomes whatever the community makes of it\n\nThis is the fundamental tension: **strong incentives to promote + no coordination = headless brand.**",
         "key_ideas": [
           "Brand = consensus system maintaining shared beliefs",
@@ -255,7 +294,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Other Internet Research, 'Headless Brands' (2019)",
-        "exercise": "What makes a brand 'headless'?\n\n1) It doesn't have a logo\n2) It has no central entity controlling its narrative or visual identity\n3) It is anonymous\n4) It only exists online\n\nAnswer with a number.",
+        "exercise": "What makes a brand 'headless'?\n\n1) It doesn't have a logo\n2) It has no central entity controlling its narrative or visual identity\n3) It is anonymous\n4) It only exists online",
         "answer": "It has no central entity controlling its narrative or visual identity",
         "explanation": "A headless brand has no CEO, no marketing department, no PR team deciding what the brand means. The narrative emerges from community consensus (or conflict). Bitcoin is the archetypal example — Satoshi created the name and initial identity, then vanished. Everything since is community-driven.",
         "x402_price": "",
@@ -264,7 +303,9 @@
       {
         "concept_id": "bitcoin_headless_brand",
         "title": "Bitcoin: The First Headless Brand",
-        "prerequisites": ["headless_brands"],
+        "prerequisites": [
+          "headless_brands"
+        ],
         "content": "## The Perfect Headless Origin\n\nBitcoin has the most compelling origin story in crypto:\n- Pseudonymous creator (Satoshi Nakamoto)\n- Gave it a name and visual identity\n- Then completely vanished\n\nEvery brand asset since — visuals, messaging, positioning — came from the community.\n\n## Evolving Narratives (Nic Carter)\n\n| Era | Dominant Narrative |\n|-----|--------------------|\n| Early | Electronic cash for cypherpunks |\n| Post-2013 | Censorship-resistant store of value |\n| Post-2017 | Uncorrelated financial asset |\n\nThese narratives sometimes conflict, but each brought new audiences.\n\n## Protocol Properties as Brand\n\nBitcoin's technical choices became brand elements:\n\n- **21 million cap:** 'Hard money' / scarcity narrative\n- **Proof of Work:** 'Work' as cultural metaphor\n- **Non-state currency:** Anti-authority / financial sovereignty\n- **Whitepaper:** Spawned thousands of imitators\n- **'Blockchain':** A phrase mentioned once became an industry\n\n## The Maximalist Culture\n\n**Bitcoin Maximalists** emerged as the most devoted brand advocates:\n- Unwavering belief in Bitcoin's monetary supremacy\n- 'Hyperbitcoinization' as end goal\n- Even extended to diet ('Bitcoin carnivores')\n\nThis tribal identity strengthened the brand but also created divisions.\n\n## The Bus Factor\n\nBitcoin has **no bus factor** — no single person whose loss would damage the brand. Compare to TRON, where Justin Sun's illness announcement caused a 13.5% token price drop in 12 hours.",
         "key_ideas": [
           "Bitcoin: pseudonymous founder who vanished = perfect headless origin",
@@ -275,7 +316,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Other Internet Research, 'Headless Brands' (2019)",
-        "exercise": "When Justin Sun announced health issues, TRON's token price dropped 13.5% in 12 hours. What does this reveal about TRON's brand?\n\n1) TRON is more valuable than Bitcoin\n2) TRON's brand is heavily dependent on its founder (high bus factor)\n3) TRON has better marketing\n4) TRON is more decentralized\n\nAnswer with a number.",
+        "exercise": "When Justin Sun announced health issues, TRON's token price dropped 13.5% in 12 hours. What does this reveal about TRON's brand?\n\n1) TRON is more valuable than Bitcoin\n2) TRON's brand is heavily dependent on its founder (high bus factor)\n3) TRON has better marketing\n4) TRON is more decentralized",
         "answer": "TRON's brand is heavily dependent on its founder (high bus factor)",
         "explanation": "A 13.5% price drop from founder health news shows TRON's value is tied to Justin Sun personally. This is the opposite of headless — TRON has a 'head' (Sun), and threatening that head threatens the whole project. Bitcoin, with no identifiable leader, has no equivalent vulnerability.",
         "x402_price": "",
@@ -284,7 +325,10 @@
       {
         "concept_id": "narrative_forks",
         "title": "Narrative Forks: Exit vs Voice",
-        "prerequisites": ["bitcoin_headless_brand", "collusion_resistance"],
+        "prerequisites": [
+          "bitcoin_headless_brand",
+          "collusion_resistance"
+        ],
         "content": "## Hard Forks as Narrative Forks\n\nBitcoin Cash wasn't just a code fork — it was a **narrative fork**. Two groups with incompatible visions couldn't coexist, so they split.\n\n## The Block Size Debate\n\nThe Bitcoin community fought over block size for years:\n- **Small blockers:** Keep blocks small, scale with Layer 2\n- **Big blockers:** Increase block size, scale on-chain\n\nBoth claimed to be 'the real Bitcoin.'\n\n## Exit vs Voice\n\nAlbert Hirschman's framework from organizational theory:\n\n| Response | Meaning | Crypto Example |\n|----------|---------|----------------|\n| **Voice** | Change from within | Governance votes, BIPs |\n| **Exit** | Leave | Fork to new chain |\n\n## The Paradox of Exit\n\nAllowing exit (forks) can **strengthen** the remaining narrative:\n- BCH fork ended the block size debate for BTC\n- Remaining community unified around small blocks + L2\n- BTC brand emerged stronger; BCH struggled\n\n## On-Chain Governance: Internalizing Exit\n\nProjects like Tezos and Decred tried to prevent forks by **internalizing exit as voice**:\n- Token holders vote on protocol changes\n- Disagreement resolved through governance, not forks\n- The protocol itself handles upgrades\n\nAmoveo explored 'fork futures' — prediction markets deciding which fork would win.\n\n## The Governance-Brand Connection\n\n**Protocol design choices — especially governance — directly affect brand cohesion.** Strong governance can prevent narrative forks; weak governance leads to splintering.",
         "key_ideas": [
           "Hard forks are often narrative forks first",
@@ -295,7 +339,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Other Internet Research, 'Headless Brands' (2019)",
-        "exercise": "After the Bitcoin Cash fork, Bitcoin's block size debate ended and its community unified. This is an example of:\n\n1) Exit weakening the brand\n2) Exit consolidating the remaining narrative\n3) Voice defeating exit\n4) On-chain governance\n\nAnswer with a number.",
+        "exercise": "After the Bitcoin Cash fork, Bitcoin's block size debate ended and its community unified. This is an example of:\n\n1) Exit weakening the brand\n2) Exit consolidating the remaining narrative\n3) Voice defeating exit\n4) On-chain governance",
         "answer": "Exit consolidating the remaining narrative",
         "explanation": "When big blockers exited to Bitcoin Cash, the Bitcoin community no longer had to debate block size. The remaining community unified around small blocks + Layer 2. The exit resolved the conflict and strengthened BTC's brand — while BCH struggled with further forks and narrative fragmentation.",
         "x402_price": "",
@@ -307,7 +351,12 @@
     "id": "distributed_consensus_deep_dive",
     "title": "Distributed Consensus Deep Dive",
     "description": "Technical foundations of consensus algorithms — from FLP impossibility to Nakamoto consensus",
-    "concepts": ["distributed_consensus", "flp_impossibility", "byzantine_fault_tolerance", "nakamoto_consensus"],
+    "concepts": [
+      "distributed_consensus",
+      "flp_impossibility",
+      "byzantine_fault_tolerance",
+      "nakamoto_consensus"
+    ],
     "lessons": [
       {
         "concept_id": "distributed_consensus",
@@ -323,7 +372,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Preethi Kasireddy, 'Understanding Distributed Consensus' (2018)",
-        "exercise": "Why is a 'global clock' impossible in distributed systems?\n\n1) Clocks are too expensive\n2) Physical clocks drift at different rates and can't be perfectly synchronized\n3) Not all computers have clocks\n4) Global clocks violate privacy\n\nAnswer with a number.",
+        "exercise": "Why is a 'global clock' impossible in distributed systems?\n\n1) Clocks are too expensive\n2) Physical clocks drift at different rates and can't be perfectly synchronized\n3) Not all computers have clocks\n4) Global clocks violate privacy",
         "answer": "Physical clocks drift at different rates and can't be perfectly synchronized",
         "explanation": "Even if you synchronize clocks perfectly at time T, they'll drift apart because physical clocks tick at slightly different rates. Over time, the drift accumulates. There's no way to maintain a single consistent time across spatially distributed computers — this fundamental limitation drives consensus algorithm design.",
         "x402_price": "",
@@ -332,7 +381,9 @@
       {
         "concept_id": "flp_impossibility",
         "title": "FLP Impossibility: The Theoretical Limit",
-        "prerequisites": ["distributed_consensus"],
+        "prerequisites": [
+          "distributed_consensus"
+        ],
         "content": "## The Devastating Result\n\nIn 1985, Fischer, Lynch, and Paterson proved something disheartening:\n\n> **Even a single faulty process can prevent deterministic consensus in an asynchronous system.**\n\nThis is the **FLP Impossibility Theorem**.\n\n## Why It Matters\n\nIn asynchronous systems (like the real internet):\n- Messages can be delayed arbitrarily\n- You can't tell if a node is slow or crashed\n- A process can fail at exactly the wrong moment to prevent agreement\n\n**There's no algorithm guaranteed to achieve consensus.**\n\n## Two Paths Around FLP\n\n### Path 1: Synchrony Assumptions (DLS)\n\nDwork, Lynch, and Stockmeyer (1988) introduced **partial synchrony**:\n- The system is asynchronous...\n- But *eventually* becomes synchronous\n- During sync periods, consensus can be reached\n\n**Key insight:** If we can assume some bound on message delay *eventually*, consensus is possible.\n\n### Path 2: Non-determinism (PBFT)\n\nCastro and Liskov (1999) showed:\n- Use randomness/non-determinism\n- Consensus achievable with probability approaching 1\n- Requires 2/3+ honest nodes\n\n**Key insight:** We don't need *guaranteed* consensus, just *very likely* consensus.\n\n## The Profound Implication\n\nFLP doesn't mean consensus is impossible — it means **perfect, guaranteed consensus** is impossible in realistic conditions. Real systems use either:\n- Timeout assumptions (partial synchrony)\n- Probabilistic guarantees (non-deterministic)",
         "key_ideas": [
           "FLP (1985): one faulty process can prevent deterministic consensus",
@@ -343,7 +394,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Fischer, Lynch, Paterson (1985) / Preethi Kasireddy (2018)",
-        "exercise": "What does the FLP Impossibility Theorem actually prove?\n\n1) Blockchain is impossible\n2) Deterministic consensus is impossible in asynchronous systems with even one fault\n3) Bitcoin doesn't work\n4) All consensus algorithms are flawed\n\nAnswer with a number.",
+        "exercise": "What does the FLP Impossibility Theorem actually prove?\n\n1) Blockchain is impossible\n2) Deterministic consensus is impossible in asynchronous systems with even one fault\n3) Bitcoin doesn't work\n4) All consensus algorithms are flawed",
         "answer": "Deterministic consensus is impossible in asynchronous systems with even one fault",
         "explanation": "FLP proves that no *deterministic* algorithm can guarantee consensus in *purely asynchronous* systems with even *one* potential failure. Real systems work around this by adding synchrony assumptions (timeouts) or accepting probabilistic guarantees. Bitcoin uses probabilistic consensus — transactions are never 'absolutely final,' just increasingly unlikely to reverse.",
         "x402_price": "",
@@ -352,7 +403,9 @@
       {
         "concept_id": "byzantine_fault_tolerance",
         "title": "Byzantine Fault Tolerance (BFT)",
-        "prerequisites": ["flp_impossibility"],
+        "prerequisites": [
+          "flp_impossibility"
+        ],
         "content": "## The Byzantine Generals Problem\n\nImagine generals coordinating an attack. Some generals might be traitors sending false messages. How do loyal generals reach agreement?\n\nThis is the **Byzantine fault** — nodes that behave arbitrarily, including maliciously.\n\n## PBFT: Practical Byzantine Fault Tolerance\n\nCastro and Liskov (1999) created the first practical BFT algorithm:\n\n### Requirements\n- Total nodes: n\n- Byzantine nodes: f\n- Need: n ≥ 3f + 1 (equivalently: **2/3+ honest**)\n\n### The Three Phases\n\n```\nClient → Leader: Request\n\n1. PRE-PREPARE\n   Leader assigns sequence number\n   Leader → All: \"Process this request\"\n\n2. PREPARE  \n   Each node validates\n   Node → All: \"I agree with sequence\"\n   (Wait for 2f+1 matching PREPARE messages)\n\n3. COMMIT\n   Node → All: \"I'm committing\"\n   (Wait for 2f+1 matching COMMIT messages)\n   Execute the operation\n\nNodes → Client: Reply\n```\n\n### Why Three Phases?\n- Pre-prepare: Leader proposes\n- Prepare: Nodes verify they see the same proposal\n- Commit: Nodes verify others will also commit\n\nThree phases ensure safety even if leader is Byzantine.\n\n## The Scalability Problem\n\nPBFT has **O(n²) message complexity**:\n- Each phase: everyone sends to everyone\n- n nodes × n messages = n² messages per decision\n\nThis limits PBFT to small validator sets (dozens, not thousands).",
         "key_ideas": [
           "Byzantine fault = arbitrary/malicious behavior",
@@ -363,7 +416,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Castro & Liskov (1999) / Preethi Kasireddy (2018)",
-        "exercise": "Why does PBFT require at least 2/3 of nodes to be honest?\n\n1) It's a legal requirement\n2) Nodes need to distinguish correct messages from Byzantine lies with majority agreement\n3) 2/3 is a random choice\n4) To save bandwidth\n\nAnswer with a number.",
+        "exercise": "Why does PBFT require at least 2/3 of nodes to be honest?\n\n1) It's a legal requirement\n2) Nodes need to distinguish correct messages from Byzantine lies with majority agreement\n3) 2/3 is a random choice\n4) To save bandwidth",
         "answer": "Nodes need to distinguish correct messages from Byzantine lies with majority agreement",
         "explanation": "With Byzantine nodes, you can't trust any individual message. You need enough honest nodes that their agreement overwhelms any Byzantine lies. With f Byzantine nodes, you need 2f+1 honest nodes to have a clear majority. Total: 3f+1, meaning at least 2/3 + 1 must be honest.",
         "x402_price": "",
@@ -372,7 +425,9 @@
       {
         "concept_id": "nakamoto_consensus",
         "title": "Nakamoto Consensus: Bitcoin's Breakthrough",
-        "prerequisites": ["byzantine_fault_tolerance"],
+        "prerequisites": [
+          "byzantine_fault_tolerance"
+        ],
         "content": "## The Revolutionary Approach\n\nBitcoin's **Nakamoto Consensus** broke from traditional BFT:\n\n| Aspect | Traditional BFT | Nakamoto |\n|--------|----------------|----------|\n| Participants | Known, fixed | Anyone (permissionless) |\n| Finality | Absolute | Probabilistic |\n| Sybil resistance | Assumed | Built-in via PoW |\n| Scalability | O(n²) messages | O(1) broadcast |\n\n## How It Works\n\n### 1. Proof of Work\nMiners compete to solve cryptographic puzzles:\n- Find nonce where SHA256(block + nonce) < target\n- Target adjusts to maintain ~10 min blocks\n- Work = real resource expenditure\n\n### 2. Longest Chain Rule\n- Multiple valid blocks can be mined simultaneously (forks)\n- Nodes follow the chain with most accumulated work\n- If 51%+ hashpower is honest, honest chain wins *eventually*\n\n### 3. Probabilistic Finality\n\n| Confirmations | Reversal Probability |\n|---------------|---------------------|\n| 1 | Possible (reorg) |\n| 3 | Unlikely |\n| 6 | ~0.001% (standard threshold) |\n| 100 | Astronomically unlikely |\n\n## The Trade-offs\n\n**Advantages:**\n- Permissionless: anyone can participate\n- Sybil-resistant: can't fake work\n- Scalable: O(1) message broadcast\n\n**Disadvantages:**\n- Energy-intensive\n- Slow finality (~1 hour for confidence)\n- Low throughput (~7 TPS for Bitcoin)\n\n## 2017 Vision → 2022 Reality\n\nVitalik's 2017 essay anticipated PoS. In September 2022, Ethereum's 'Merge' proved the concept:\n- 99.95% energy reduction\n- Maintained security guarantees\n- Enabled future scalability improvements",
         "key_ideas": [
           "Nakamoto consensus: permissionless, probabilistic, PoW-based",
@@ -383,7 +438,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Satoshi Nakamoto (2008) / Preethi Kasireddy (2018)",
-        "exercise": "Why is Nakamoto Consensus considered 'probabilistic' rather than 'deterministic'?\n\n1) It uses random numbers\n2) Transactions are never absolutely final — just increasingly unlikely to reverse\n3) It doesn't always work\n4) The algorithm changes randomly\n\nAnswer with a number.",
+        "exercise": "Why is Nakamoto Consensus considered 'probabilistic' rather than 'deterministic'?\n\n1) It uses random numbers\n2) Transactions are never absolutely final — just increasingly unlikely to reverse\n3) It doesn't always work\n4) The algorithm changes randomly",
         "answer": "Transactions are never absolutely final — just increasingly unlikely to reverse",
         "explanation": "In Nakamoto Consensus, a transaction with 1 confirmation can be reversed if a longer chain appears. With 6 confirmations, reversal is extremely unlikely but theoretically possible. Unlike PBFT where consensus is absolute, Nakamoto provides probabilistic guarantees that approach certainty but never reach it.",
         "x402_price": "",

@@ -3,7 +3,12 @@
     "id": "foundations",
     "title": "DAO Fundamentals",
     "description": "Learn the basics of decentralized autonomous organizations through blockchain fundamentals, DAO definition, TheDAO hack, and why firms exist.",
-    "concepts": ["blockchain_fundamentals", "dao_definition", "the_dao_incident", "firm_existence"],
+    "concepts": [
+      "blockchain_fundamentals",
+      "dao_definition",
+      "the_dao_incident",
+      "firm_existence"
+    ],
     "lessons": [
       {
         "concept_id": "blockchain_fundamentals",
@@ -18,7 +23,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Lecture",
-        "exercise": "What consensus mechanism does Ethereum currently use?\n1) PoW (Proof of Work)\n2) PoS (Proof of Stake)\n3) DPoS (Delegated Proof of Stake)\nAnswer with a number.",
+        "exercise": "What consensus mechanism does Ethereum currently use?\n1) PoW (Proof of Work)\n2) PoS (Proof of Stake)\n3) DPoS (Delegated Proof of Stake)",
         "answer": "PoS (Proof of Stake)",
         "explanation": "Ethereum transitioned from PoW to PoS through 'The Merge' on September 15, 2022. This reduced energy consumption by 99.95%.",
         "x402_price": "",
@@ -27,7 +32,9 @@
       {
         "concept_id": "dao_definition",
         "title": "Definition and Structure of DAOs",
-        "prerequisites": ["blockchain_fundamentals"],
+        "prerequisites": [
+          "blockchain_fundamentals"
+        ],
         "content": "## What is a DAO?\n\n**DAO (Decentralized Autonomous Organization)** is a decentralized autonomous organization. Its operating rules are recorded on the blockchain as smart contract code, running automatically without intervention from specific individuals or corporations.\n\n### Traditional Corporation vs DAO\n\n| Aspect | Traditional Corporation | DAO |\n|--------|------------------------|-----|\n| Decision-Making | Board/CEO decides | Token holders vote |\n| Execution | Employees execute | Smart contract auto-executes |\n| Transparency | Internal info private | All decisions and fund flows public |\n| Participation | Shareholders/employees only | Anyone can join by buying tokens |\n\n## How DAOs Work\n\nA DAO is like a **democracy with rules coded in**:\n\n1. Someone submits a Proposal\n2. Token holders vote\n3. If quorum and approval rate are met\n4. Smart contract automatically executes\n\nNo intermediary manager needs to say \"I'll implement the meeting results.\" The code executes directly.\n\n## Core Values of DAOs\n\n- **Transparency**: All transactions and votes recorded on blockchain\n- **Autonomy**: Operates according to rules without specific individual intervention\n- **Openness**: Anyone can participate by buying tokens\n- **Global**: Collaborate with participants worldwide without borders",
         "key_ideas": [
           "DAO = Organization with operating rules on blockchain as smart contracts",
@@ -37,7 +44,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Lecture",
-        "exercise": "Which correctly describes how decisions are executed in a DAO?\n1) CEO decides, employees execute\n2) Token holders vote, smart contract auto-executes\n3) Operations team decides, dev team manually executes\nAnswer with a number.",
+        "exercise": "Which correctly describes how decisions are executed in a DAO?\n1) CEO decides, employees execute\n2) Token holders vote, smart contract auto-executes\n3) Operations team decides, dev team manually executes",
         "answer": "Token holders vote, smart contract auto-executes",
         "explanation": "The core of a DAO is that token holders make decisions by voting, and results are automatically executed through smart contracts. No intermediary manager intervention is needed.",
         "x402_price": "",
@@ -46,7 +53,9 @@
       {
         "concept_id": "the_dao_incident",
         "title": "TheDAO Hack and Lessons Learned",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## The Birth of TheDAO\n\nIn 2016, **Slock.it** launched **TheDAO** on Ethereum. In just 4 weeks, it raised approximately **$150M (150 million dollars)** worth of ETH and issued 1.2 billion tokens. At the time, 14% of all ETH was invested in TheDAO.\n\n## Re-entrancy Attack\n\nOn June 17, 2016, a hacker exploited a smart contract vulnerability to **drain 30% of the funds**.\n\nA re-entrancy attack is like repeatedly pressing the withdrawal button at an ATM before the balance is updated:\n\n```\n1. Request withdrawal (100 ETH)\n2. ATM starts sending money\n3. Request withdrawal again before balance deduction\n4. Repeat...\n```\n\nSolidity language had only been released for a few months, and security verification tools were lacking.\n\n## Ethereum Hard Fork\n\nThe Ethereum community decided to **hard fork** back to block 1,920,000 (before the hack). After debate between \"Code is Law\" principle and \"we must save the victims\" reality, the fork proceeded.\n\n- Chain agreeing to fork: **Ethereum (ETH)**\n- Chain refusing fork: **Ethereum Classic (ETC)**\n\n## Lessons\n\n1. Importance of smart contract security audits\n2. Risks of early technology and need for gradual growth\n3. Limits of \"Code is Law\" and role of human governance",
         "key_ideas": [
           "2016: TheDAO raised $150M → Re-entrancy attack drained 30%",
@@ -56,7 +65,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
-        "exercise": "What solution did the Ethereum community choose after TheDAO hack?\n1) Negotiate with hacker for fund return\n2) Hard fork to block before the hack\n3) Pay insurance to victims\nAnswer with a number.",
+        "exercise": "What solution did the Ethereum community choose after TheDAO hack?\n1) Negotiate with hacker for fund return\n2) Hard fork to block before the hack\n3) Pay insurance to victims",
         "answer": "Hard fork to block before the hack",
         "explanation": "The Ethereum community hard forked to block 1,920,000, invalidating the hack. This decision resulted in the split between ETH and ETC.",
         "x402_price": "",
@@ -65,7 +74,9 @@
       {
         "concept_id": "firm_existence",
         "title": "Why Firms Exist",
-        "prerequisites": ["blockchain_fundamentals"],
+        "prerequisites": [
+          "blockchain_fundamentals"
+        ],
         "content": "## Economic Reasons for Firm Existence\n\nEconomist **Ronald Coase** explained why firms exist in his 1937 paper \"The Nature of the Firm.\"\n\n### Transaction Cost Minimization\n\nIf you outsource everything to freelancers, **transaction costs** arise each time: drafting contracts, verifying quality, processing payments. Firms internalize these costs by employing workers.\n\n> \"Cost of contracting in the market > Cost of coordinating within the company\" → Firms exist\n\n### Aggregation of Capital and Talent\n\nAccording to Vitalari & Shaughnessy's *The Elastic Enterprise*, firms gather capital and talent in one place to achieve economies of scale.\n\n### Providing Stability\n\nMost people are risk-averse. Firms provide **stable salary and job security**, distributing risks that individuals find difficult to bear alone.\n\n## Complaints About Firms\n\nHowever, most people dislike corporations:\n\n- Limited freedom (work hours, work methods)\n- Political decision-making (politics matters more than skill)\n- Ownership concentration (founders/investors take most)\n\nThese complaints have increased interest in new organizational forms like DAOs.",
         "key_ideas": [
           "Transaction cost minimization — Ronald Coase's key insight",
@@ -75,7 +86,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
-        "exercise": "What is the core reason for firm existence according to Ronald Coase?\n1) Tax reduction\n2) Transaction cost minimization\n3) Government regulation avoidance\nAnswer with a number.",
+        "exercise": "What is the core reason for firm existence according to Ronald Coase?\n1) Tax reduction\n2) Transaction cost minimization\n3) Government regulation avoidance",
         "answer": "Transaction cost minimization",
         "explanation": "Coase explained that firms exist when the cost of coordinating within a company is lower than the cost of contracting in the market each time.",
         "x402_price": "",
@@ -87,12 +98,18 @@
     "id": "decision_frameworks",
     "title": "DAO Decision-Making Frameworks",
     "description": "Learn Vitalik's Convex/Concave framework, DAO vs Corporation debate, and Pod structure.",
-    "concepts": ["convex_concave_decisions", "dao_vs_corporation", "pod_structure"],
+    "concepts": [
+      "convex_concave_decisions",
+      "dao_vs_corporation",
+      "pod_structure"
+    ],
     "lessons": [
       {
         "concept_id": "convex_concave_decisions",
         "title": "Convex vs Concave Decision-Making",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## Key Question: Where is the Best Choice?\n\nVitalik Buterin categorized decision-making into **Convex** and **Concave** in his 2022 essay.\n\n### Convex Situation — \"Being in the middle is the worst\"\n\nSituations where choosing definitively between A or B produces better results.\n\n**Military strategy example**: Splitting forces in half to attack two directions results in insufficient power in both places, losing everywhere. Concentrating on one direction is better.\n\n**Product launch example**: Must decide between February or March launch. \"Half in February, half in March\" is impossible.\n\n→ **Fast solo decision-makers (CEO, leaders)** are advantageous\n\n### Concave Situation — \"Spreading it around is better\"\n\nSituations where the middle value produces better results than extreme choices.\n\n**Research fund example**: Distributing $2M research funds as $1M each to two promising projects has higher success probability than giving $2M to one project.\n\n**Policy example**: A compromise reflecting diverse opinions has fewer side effects than extreme single policies.\n\n→ **Decentralized voting reflecting multiple opinions** is advantageous\n\n## Vitalik's Key Argument\n\n> DAO's decentralized decision-making isn't good for all situations—it should only be used when **the problem is Concave**.\n\nCentralized few handle Convex problems, entire community decides Concave problems—a **hybrid structure** is realistic.",
         "key_ideas": [
           "Convex: Extreme choice is best (military strategy, rapid product decisions)",
@@ -102,7 +119,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "What type is a decision to allocate public goods funding across multiple projects?\n1) Convex — Best to concentrate on one project\n2) Concave — Best to distribute across multiple projects\n3) Neither\nAnswer with a number.",
+        "exercise": "What type is a decision to allocate public goods funding across multiple projects?\n1) Convex — Best to concentrate on one project\n2) Concave — Best to distribute across multiple projects\n3) Neither",
         "answer": "Concave — Best to distribute across multiple projects",
         "explanation": "Fund allocation is a typical Concave situation. Appropriately distributing among multiple promising projects increases overall success probability compared to concentrating on one.",
         "x402_price": "",
@@ -111,7 +128,9 @@
       {
         "concept_id": "dao_vs_corporation",
         "title": "DAO vs Corporation Debate",
-        "prerequisites": ["convex_concave_decisions"],
+        "prerequisites": [
+          "convex_concave_decisions"
+        ],
         "content": "## The Corporation Camp's Argument\n\nCriticism spread that \"Token + Voting structure DAOs don't work,\" along with predictions that \"DAOs will eventually converge to corporate structures.\"\n\n**Key arguments**:\n- Hierarchy makes decision-making efficient\n- Governance principles verified over centuries exist\n- DAOs cannot escape this\n\n## Vitalik's Counter-Argument: DAOs are Sovereigns\n\nAmerican philosopher **Curtis Yarvin** distinguished organizations into primary organizations (Sovereign) and secondary organizations (Contractual/Corporation).\n\n- **Corporation**: Strong external tools (law, enforcement) reduce failure probability\n- **Sovereign**: Risk of incentive structure being attacked or collapsing without external support\n\n> \"DAOs have no 'Sovereign' above them and often perform sovereign functions (currency, arbitration). Therefore, DAOs should learn more from **political science, not corporate management**.\"\n\n## Succession Problem\n\nThe biggest problem for Sovereigns, named by Samo Burja:\n\n> The lack of methods for systems to continuously transition to the next group when founding groups leave\n\nBitcoin works even after Satoshi disappeared. But most DAOs haven't yet proven sustainable structures without core teams.",
         "key_ideas": [
           "Corporation camp: Hierarchy is efficient, DAOs will converge",
@@ -121,7 +140,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "What field does Vitalik argue DAOs should learn from?\n1) Business management\n2) Political science\n3) Computer science\nAnswer with a number.",
+        "exercise": "What field does Vitalik argue DAOs should learn from?\n1) Business management\n2) Political science\n3) Computer science",
         "answer": "Political science",
         "explanation": "Vitalik argued that since DAOs are closer to Sovereigns, not Corporations, they should learn more from political science than business management.",
         "x402_price": "",
@@ -130,7 +149,9 @@
       {
         "concept_id": "pod_structure",
         "title": "Pod Structure and Hybrid Governance",
-        "prerequisites": ["convex_concave_decisions"],
+        "prerequisites": [
+          "convex_concave_decisions"
+        ],
         "content": "## Ukraine DAO Case\n\nAs a counter-example to the notion that DAOs must be \"entirely decentralized,\" there's the **Ukraine DAO's Pod structure**.\n\n### What is Pod Structure?\n\n- **Fundraising**: Decentralized approach (entire community decides)\n- **Fund execution**: **Centralized** task execution within Pods after allocation\n\nLike company departments, Pods operate independently within allocated resources.\n\n## Criteria for Evaluating DAO Decentralization\n\nTwo criteria for evaluating whether a well-built DAO is meaningfully decentralized:\n\n### 1. Pod Autonomy\n\nReceive resources from Core, but make independent decisions otherwise. If Core intervenes in every Pod decision, it's not true decentralization.\n\n### 2. Decentralization and Diversity of Core Governance\n\nDoesn't have to be governance tokens, but needs broader, more diverse participants. If a few whales dictate all decisions, it's no different from centralization.\n\n## Ideal Composition\n\n> The upper level (Core) should focus on **Concave situations**, and the lower level (Pod) should focus on **Convex situations**.\n\n- Core: Fund allocation, long-term direction (Concave) → Decentralized voting\n- Pod: Specific execution, quick decisions (Convex) → Few leaders decide",
         "key_ideas": [
           "Fundraising is decentralized, fund execution is centralized per Pod",
@@ -140,7 +161,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "In Pod structure, how is 'fund execution' carried out?\n1) Entire community vote\n2) Centralized approach within Pods after allocation\n3) Only smart contract auto-execution\nAnswer with a number.",
+        "exercise": "In Pod structure, how is 'fund execution' carried out?\n1) Entire community vote\n2) Centralized approach within Pods after allocation\n3) Only smart contract auto-execution",
         "answer": "Centralized approach within Pods after allocation",
         "explanation": "In Pod structure, fundraising is decentralized, but fund execution is carried out in a centralized manner within Pods for quick task completion.",
         "x402_price": "",
@@ -152,12 +173,18 @@
     "id": "decentralization_cases",
     "title": "Real-World Decentralization Cases",
     "description": "Learn about censorship resistance, Kleros decentralized court, and various DAO application areas.",
-    "concepts": ["censorship_resistance", "kleros_case", "dao_types_overview"],
+    "concepts": [
+      "censorship_resistance",
+      "kleros_case",
+      "dao_types_overview"
+    ],
     "lessons": [
       {
         "concept_id": "censorship_resistance",
         "title": "Censorship Resistance and Decentralization",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## What is Censorship Resistance?\n\nOne of decentralization's core values is **Censorship Resistance**—the ability to resist when certain powers try to block information or services.\n\n## Case 1: Pirate Bay & Sci-Hub\n\n**Pirate Bay** (torrent search site) and **Sci-Hub** (free academic paper sharing) faced numerous legal attacks.\n\n- Only small groups managing domains faced legal risk\n- Original data remained decentralized\n- Even when domains were blocked, operations continued via mirror sites\n\n## Case 2: BitTorrent\n\nBitTorrent demonstrates even stronger censorship resistance:\n\n- Anyone can join or leave file maintenance at any time\n- No central server means \"no server to take down\"\n- Popular files are shared by thousands simultaneously\n\n## DAO's Censorship Resistance\n\nWhat DAOs aim for is not \"permanently evading censorship.\"\n\n> It's about **maintaining organizational stability under uncertainty and interference**.\n\nOnce smart contracts are deployed on blockchain:\n- Continue operating even if dev team disappears\n- Accessible from other countries even if one country bans it\n- Cannot shut down servers (there are none)",
         "key_ideas": [
           "Censorship resistance = Ability to resist power's blocking attempts",
@@ -167,7 +194,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "Why does BitTorrent have strong censorship resistance?\n1) Has a strong legal team\n2) Has no central server\n3) Has agreements with governments\nAnswer with a number.",
+        "exercise": "Why does BitTorrent have strong censorship resistance?\n1) Has a strong legal team\n2) Has no central server\n3) Has agreements with governments",
         "answer": "Has no central server",
         "explanation": "BitTorrent has a P2P structure with no central server. With 'no server to take down,' censorship is very difficult.",
         "x402_price": "",
@@ -176,7 +203,9 @@
       {
         "concept_id": "kleros_case",
         "title": "Kleros Decentralized Court Case Study",
-        "prerequisites": ["censorship_resistance"],
+        "prerequisites": [
+          "censorship_resistance"
+        ],
         "content": "## What is Kleros?\n\n**Kleros** is a Paris, France-based decentralized dispute resolution platform. Instead of traditional courts' slow and expensive procedures, it provides fast and cheap blockchain-based arbitration.\n\n## How It Works\n\n1. **Dispute arises**: Two parties cannot agree\n2. **Juror selection**: **3,000 jurors randomly selected** from PNK token stakers in relevant category\n3. **Evidence review**: Jurors don't know each other, review evidence within 3 days\n4. **Voting**: Each votes according to their judgment\n5. **Execution**: Compensation automatically paid via smart contract two days later\n\n## Trustworthy Fairness\n\nWhen a DAO's main concern is not resisting the state but **performing some state functions (especially infrastructure management)**, decentralization becomes the **basis for fairness**.\n\n- No specific person can manipulate results\n- Random selection prevents collusion\n- All processes transparently recorded\n\n## Limitation: Case #1170 Controversy\n\nHowever, Kleros has limitations. In **Case #1170**, allegations arose that insiders mobilized large amounts of PNK tokens to guide decisions in their desired direction.\n\nTo address this:\n- Further distribution of token supply\n- Introduction of non-token governance elements\n\nwere suggested as needed.",
         "key_ideas": [
           "Kleros = Decentralized dispute resolution platform",
@@ -186,7 +215,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "How are jurors selected in Kleros?\n1) Selected among law degree holders\n2) Randomly selected from PNK token stakers\n3) Nominated by disputing parties\nAnswer with a number.",
+        "exercise": "How are jurors selected in Kleros?\n1) Selected among law degree holders\n2) Randomly selected from PNK token stakers\n3) Nominated by disputing parties",
         "answer": "Randomly selected from PNK token stakers",
         "explanation": "Kleros randomly selects jurors from those who have staked PNK tokens, matching the relevant dispute category.",
         "x402_price": "",
@@ -195,7 +224,9 @@
       {
         "concept_id": "dao_types_overview",
         "title": "15 Application Areas of DAOs",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## World Being Transformed by DAOs\n\nAragon Blog's 2021 \"15 Ways the World is Being Transformed by DAOs\" summarized the various areas where DAOs are being applied.\n\n### 1. Developer Collectives\n\n- **BadgerDAO**: Brings Bitcoin to DeFi, develops synthetic BTC tracking tools\n- **Gitcoin**: Developer ecosystem for building decentralized web, distributed $22.8M\n- **API3**: Multi-chain network solving blockchain oracle problems\n\n### 2. Worker Collectives\n\n- **Raid Guild**, **dOrg**: Web3-focused design/development agencies\n- Modern revival of medieval guilds\n- Enables global worker coordination\n\n### 3. Art Collectives\n\n- **PleasrDAO**: Started as Telegram group, bought NFT for 310 ETH ($525,000)\n- Holds the most iconic NFTs in crypto history\n\n### 4. Metaverse / Virtual Worlds\n\n- **Decentraland**: \"Fully decentralized metaverse\"\n- Destroyed founding smart contract private keys\n- $MANA token for security council, dev grants, LAND policy voting\n\n### 5. Asset Management & Venture Capital\n\n- **BitDAO** (now Mantle): Raised $230M → Pivoted to L2 network\n- **Metacartel Ventures**: Focused on distributed systems and DeFi investment\n\n### Other Areas\n\nInsurance, trusts, project fundraising, fan ownership, real estate, media, politics, etc.",
         "key_ideas": [
           "Developer Collectives: BadgerDAO, Gitcoin, API3",
@@ -205,7 +236,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
-        "exercise": "Where did PleasrDAO first form?\n1) Twitter\n2) Telegram\n3) Discord\nAnswer with a number.",
+        "exercise": "Where did PleasrDAO first form?\n1) Twitter\n2) Telegram\n3) Discord",
         "answer": "Telegram",
         "explanation": "PleasrDAO started as a Telegram group, grew after purchasing pplpleasr's NFT for 310 ETH ($525,000).",
         "x402_price": "",
@@ -217,12 +248,19 @@
     "id": "paradigm_shift",
     "title": "Organizational Paradigm Shift",
     "description": "Learn the transition from Organization Man to Blockchain Man, Fat Protocol thesis, and Bitcoin thriving without a firm.",
-    "concepts": ["organization_man", "blockchain_man", "fat_protocol_thesis", "bitcoin_without_firm"],
+    "concepts": [
+      "organization_man",
+      "blockchain_man",
+      "fat_protocol_thesis",
+      "bitcoin_without_firm"
+    ],
     "lessons": [
       {
         "concept_id": "organization_man",
         "title": "Organization Man and Social Ethic",
-        "prerequisites": ["firm_existence"],
+        "prerequisites": [
+          "firm_existence"
+        ],
         "content": "## The Birth of Organization Man\n\n**William Whyte** captured in his 1956 book \"The Organization Man\" that American society's core values had shifted from **individualism → collectivism (Social Ethic)**.\n\nSinclair Lewis's novel *Babbitt* (1922) perfectly depicted this prototype.\n\n## Three Tenets of Social Ethic\n\n1. Belief that **the group is the source of creativity**\n2. Belief that **'belongingness' is the ultimate human need**\n3. Belief that **belongingness can be achieved through application of science**\n\n> \"Humans exist as units of society. Alone, they are isolated and meaningless; only through cooperation within groups do they become valuable.\"\n\n## Why Was Belongingness Emphasized?\n\nSimple: **Participation → Tremendous improvement in quality of life**\n\nThe improved living standards of 20th century developed nations were a direct result of large corporations (Organizations). Technologies of the Second Industrial Revolution (mass production, steel, scientific management) created a society dominated by large corporations utilizing economies of scale.\n\nOrganization Man was individuals' **rational adaptation** to this:\n\n- Lifetime employment guarantee\n- Stable salary increases\n- Social status and identity\n\n## However...\n\nThis system began to shake in the 21st century. Lifetime employment disappeared, and the myth of corporate efficiency crumbled.",
         "key_ideas": [
           "Organization Man: Named by William Whyte in 1956",
@@ -232,7 +270,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
-        "exercise": "What value shift in 20th century American society did William Whyte capture in 'Organization Man'?\n1) Collectivism → Individualism\n2) Individualism → Collectivism (Social Ethic)\n3) Capitalism → Socialism\nAnswer with a number.",
+        "exercise": "What value shift in 20th century American society did William Whyte capture in 'Organization Man'?\n1) Collectivism → Individualism\n2) Individualism → Collectivism (Social Ethic)\n3) Capitalism → Socialism",
         "answer": "Individualism → Collectivism (Social Ethic)",
         "explanation": "Whyte captured that American society's core values shifted from individualism to collectivism (Social Ethic).",
         "x402_price": "",
@@ -241,7 +279,9 @@
       {
         "concept_id": "blockchain_man",
         "title": "Blockchain Man and the New Paradigm",
-        "prerequisites": ["organization_man"],
+        "prerequisites": [
+          "organization_man"
+        ],
         "content": "## Transaction Costs and Organization Size\n\nTaylor Pearson predicted a new human type in his 2017 essay \"The Blockchain Man.\"\n\n> \"If the internet lowered transaction costs by one order of magnitude, blockchain will lower transaction costs by **another order of magnitude over the next 20 years**.\"\n\nFollowing Ronald Coase's theory:\n\n> As transaction costs approach zero, the optimal firm size converges to **one person**.\n\nThat person is **The Blockchain Man**.\n\n## The Prototype of Blockchain Man: Frontier Scientists\n\nIn the Organization era, the group closest to Blockchain Man was **immigrant scientists**:\n\n- Claude Shannon at Bell Labs (Information Theory)\n- Irving Langmuir at GE (New incandescent bulbs)\n\nEccentric scientists who explored fundamental problems without organizational direction produced the greatest achievements.\n\n## Hollywood Model\n\nThe Blockchain Man's career is a **combination of lifestyle business owner and free agent**.\n\n- **'Project-based collaboration'** becomes the mainstream job model, not 'lifetime corporate career ladder'\n- Like filming a movie, teams gather and disperse for each project\n\n## Rise of City-States\n\nAs nations try to regulate cryptocurrency, Blockchain Man was predicted to move to **city-state regions** like Estonia, Switzerland, Singapore that attract high earners.\n\n(However, as of 2026, nation-states haven't disappeared, and governments have moved toward strengthening crypto regulation.)",
         "key_ideas": [
           "Blockchain will lower transaction costs by another order of magnitude",
@@ -251,7 +291,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
-        "exercise": "What career model did Taylor Pearson predict for Blockchain Man?\n1) Lifetime corporate career ladder\n2) Civil servant-type stability seeking\n3) Hollywood model (project-based collaboration)\nAnswer with a number.",
+        "exercise": "What career model did Taylor Pearson predict for Blockchain Man?\n1) Lifetime corporate career ladder\n2) Civil servant-type stability seeking\n3) Hollywood model (project-based collaboration)",
         "answer": "Hollywood model (project-based collaboration)",
         "explanation": "Pearson predicted Blockchain Man's career would be project-based collaboration (Hollywood model), not lifetime employment.",
         "x402_price": "",
@@ -260,7 +300,9 @@
       {
         "concept_id": "fat_protocol_thesis",
         "title": "Fat Protocol Thesis",
-        "prerequisites": ["blockchain_man"],
+        "prerequisites": [
+          "blockchain_man"
+        ],
         "content": "## Internet: Thin Protocol + Fat Application\n\nInternet's foundational protocols (HTTP, SMTP, TCP/IP) are **free open standards**. Nobody pays for the SMTP protocol itself that sends emails.\n\nInstead, applications built on top captured all the value:\n\n| Layer | Examples | Value |\n|-------|----------|-------|\n| Protocol | HTTP, SMTP | $0 (free) |\n| Application | Google, Facebook, Amazon | Hundreds of trillions |\n\nThe internet had a **thin protocol + fat application** structure.\n\n## Blockchain: Fat Protocol + Thin Application\n\nBlockchain protocols have **built-in tokens**. Using the Ethereum protocol requires ETH, and ETH price rises with network usage.\n\n| Layer | Examples | Value |\n|-------|----------|-------|\n| Protocol | Ethereum (ETH), Solana (SOL) | Hundreds of trillions |\n| Application | Uniswap, OpenSea, etc. | Relatively smaller value |\n\nBlockchain has a **fat protocol + thin application** structure.\n\n## Investment Implications\n\nIf this structure is correct, the greatest value in crypto accumulates in **base infrastructure tokens (ETH, SOL, etc.)**, not application services.\n\n## Current Debate (2026 Update)\n\nIn reality, massive value has also been created in DeFi, NFT, and L2 applications, leading to counter-arguments that the Fat Protocol thesis isn't entirely correct. Value distribution between protocol vs application layers remains debated.",
         "key_ideas": [
           "Internet: Thin protocol (free) + Fat application (Google, Facebook)",
@@ -270,7 +312,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
-        "exercise": "According to the Fat Protocol thesis, where does the greatest value accumulate in blockchain?\n1) Application services (Uniswap, OpenSea, etc.)\n2) Base protocols (ETH, SOL, etc.)\n3) Wallet services\nAnswer with a number.",
+        "exercise": "According to the Fat Protocol thesis, where does the greatest value accumulate in blockchain?\n1) Application services (Uniswap, OpenSea, etc.)\n2) Base protocols (ETH, SOL, etc.)\n3) Wallet services",
         "answer": "Base protocols (ETH, SOL, etc.)",
         "explanation": "According to the Fat Protocol thesis, blockchain has a fat protocol structure, so the greatest value accumulates in base infrastructure tokens (ETH, SOL, etc.).",
         "x402_price": "",
@@ -279,7 +321,9 @@
       {
         "concept_id": "bitcoin_without_firm",
         "title": "Bitcoin Thriving Without a Firm",
-        "prerequisites": ["firm_existence"],
+        "prerequisites": [
+          "firm_existence"
+        ],
         "content": "## Bitcoin's Innovation\n\nThe software Satoshi Nakamoto released in January 2009 combined cryptography and incentives to achieve a **sustainable digital service (value storage and transfer ledger) without a legal entity**.\n\n## Bitcoin's Three Types of Workers\n\n| Worker | Role | Compensation |\n|--------|------|-------------|\n| Miners | Block creation, transaction validation | Performance measured by PoW, directly rewarded in BTC by protocol |\n| Developers | Code improvement, bug fixes | Hold BTC → Indirectly rewarded through value appreciation |\n| Users | Network usage, promotion | Hold BTC → Indirectly rewarded through value appreciation |\n\nMiner contributions are **objectively measured** and hard to game. All that's needed is electricity and internet.\n\n## Market Cap Comparison\n\n**2017**: Bitcoin market cap ~$100B ≈ Goldman Sachs market cap ~$90B\n\n**2026 now**: Bitcoin market cap ~$1.7-1.8T, **tens of times** larger than Goldman Sachs\n\nGoldman Sachs now holds approximately $1.9B in Bitcoin ETF positions, having **converted to an institutional investor**.\n\n## New Characteristics of Decentralized Organizations\n\nBitcoin adds these new characteristics to firms' advantages (transaction cost minimization, capital/talent aggregation):\n\n1. **Few founders, executives, investors don't monopolize ownership**\n2. **No single entity controls data**\n3. Decision-making authority is distributed, with **checks and balances** among diverse market participants",
         "key_ideas": [
           "Miners: Performance measured by PoW, directly rewarded in BTC by protocol",
@@ -289,7 +333,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
-        "exercise": "How are Bitcoin miners compensated?\n1) Paid salary by a company\n2) Directly rewarded in BTC by protocol\n3) Only through user fees\nAnswer with a number.",
+        "exercise": "How are Bitcoin miners compensated?\n1) Paid salary by a company\n2) Directly rewarded in BTC by protocol\n3) Only through user fees",
         "answer": "Directly rewarded in BTC by protocol",
         "explanation": "Bitcoin miners have their performance objectively measured by PoW (Proof of Work) and are directly rewarded with newly issued BTC by the protocol.",
         "x402_price": "",
@@ -301,12 +345,20 @@
     "id": "building_daos",
     "title": "DAO Building Strategies",
     "description": "Learn decentralized organization barriers, progressive decentralization, Howey Test, and Exit to Community.",
-    "concepts": ["decentralized_org_barriers", "progressive_decentralization", "howey_test", "exit_to_community"],
+    "concepts": [
+      "decentralized_org_barriers",
+      "progressive_decentralization",
+      "howey_test",
+      "exit_to_community"
+    ],
     "lessons": [
       {
         "concept_id": "decentralized_org_barriers",
         "title": "Key Barriers for Decentralized Organizations",
-        "prerequisites": ["bitcoin_without_firm", "the_dao_incident"],
+        "prerequisites": [
+          "bitcoin_without_firm",
+          "the_dao_incident"
+        ],
         "content": "## Barrier 1: Decentralized Decision-Making is Hard\n\nThere are no governance best practices yet. Bitcoin's fully decentralized governance is suitable for a **value storage protocol that needs almost no changes**.\n\nBut it's not suitable for early technology projects that need rapid iteration.\n\n> **Some centralized decision-making is needed initially**, with design aiming for decentralization long-term.\n\n## Barrier 2: Difficulty Measuring Contributions\n\nBitcoin mining contributions are objectively measured and hard to game. It's clear who provided how much hash power.\n\nBut **most labor types are difficult to accurately measure contribution**:\n\n- Marketing campaign effectiveness?\n- Design improvement value?\n- Community management contribution?\n\nCentralized human judgment is often needed for resource allocation.\n\n## Barrier 3: Misuse and Ambiguity of 'Decentralization'\n\n- Some consider **everything except Bitcoin centralized** (extreme maximalism)\n- Others **disguise centralized ICOs as decentralized organizations** (fraudulent marketing)\n\nAs \"decentralization\" became misused as a marketing term, what's actually decentralized became unclear.",
         "key_ideas": [
           "Decentralized decision-making is hard — No governance best practices yet",
@@ -316,7 +368,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
-        "exercise": "For what project type is Bitcoin's fully decentralized governance suitable?\n1) Early startups needing rapid iteration\n2) Value storage protocols needing almost no changes\n3) Complex DeFi protocols needing intricate decision-making\nAnswer with a number.",
+        "exercise": "For what project type is Bitcoin's fully decentralized governance suitable?\n1) Early startups needing rapid iteration\n2) Value storage protocols needing almost no changes\n3) Complex DeFi protocols needing intricate decision-making",
         "answer": "Value storage protocols needing almost no changes",
         "explanation": "Bitcoin's fully decentralized governance is suitable for value storage protocols that need almost no changes. Projects needing rapid iteration need initial centralization.",
         "x402_price": "",
@@ -325,7 +377,9 @@
       {
         "concept_id": "progressive_decentralization",
         "title": "Progressive Decentralization Strategy",
-        "prerequisites": ["decentralized_org_barriers"],
+        "prerequisites": [
+          "decentralized_org_barriers"
+        ],
         "content": "## a16z's Playbook\n\n**Jesse Walden** (a16z crypto) presented three components of crypto success in his 2020 \"Progressive Decentralization.\"\n\n### Stage 1: Product/Market Fit (PMF)\n\n**Don't pretend to be decentralized at this stage.**\n\n- Core team leads all product decisions\n- Hold admin privileges over smart contracts\n- **No token launch**: Reliance on core team effort risks meeting Howey Test securities classification criteria\n\nIf early users complain about core team control, it's actually a **good sign**. But transparency about control's existence is essential.\n\n### Stage 2: Community Participation\n\nWhen early traction signals appear (growing user base, developer ecosystem), it's time to invest in community harmony.\n\n- **Technical constraints**: Compound v2.2's 48-hour waiting period (gives escape time)\n- **Introduce fees**: After strong network effects form\n- **Test token distribution**: First to a permissioned group\n\n### Stage 3: Sufficient Decentralization\n\nThe final stage after achieving PMF, strong community, and sustainable incentive model.\n\nTeam \"exits to community\" through **broad token distribution**.",
         "key_ideas": [
           "Stage 1: PMF — Core team leads all decisions, no token launch",
@@ -335,7 +389,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
-        "exercise": "What should NOT be done in Stage 1 (PMF) of the progressive decentralization playbook?\n1) Core team leading product decisions\n2) Token launch\n3) Holding smart contract admin privileges\nAnswer with a number.",
+        "exercise": "What should NOT be done in Stage 1 (PMF) of the progressive decentralization playbook?\n1) Core team leading product decisions\n2) Token launch\n3) Holding smart contract admin privileges",
         "answer": "Token launch",
         "explanation": "Launching tokens in Stage 1 (PMF) risks meeting Howey Test securities classification criteria due to reliance on core team effort.",
         "x402_price": "",
@@ -344,7 +398,9 @@
       {
         "concept_id": "howey_test",
         "title": "Howey Test and Securities Classification",
-        "prerequisites": ["progressive_decentralization"],
+        "prerequisites": [
+          "progressive_decentralization"
+        ],
         "content": "## What is the Howey Test?\n\nCriteria from a 1946 US Supreme Court case for determining whether an asset is a **security**.\n\n| Requirement | Description |\n|-------------|-------------|\n| ① Investment of money (value)? | Did you pay money to buy the token? |\n| ② Common enterprise? | Is that money used for a joint project? |\n| ③ Expectation of profits? | Do you expect token price to rise? |\n| ④ Reliance on others' efforts? | Does profit come from others' (team, founders) efforts? |\n\n**If all four apply → Likely classified as a security.**\n\n## Applied to Crypto\n\nIn ICOs or token sales, if buyers expected \"token price will rise if the founding team works hard,\" requirement ④ is met. In this case, the token is classified as a security and becomes subject to SEC regulation.\n\n## Why 'Sufficient Decentralization' is the Solution\n\nIf the protocol operates autonomously without a team:\n\n> No longer \"relying on others' (team) efforts\" → Requirement ④ not met → **May not be a security**\n\nThis is the basis for a16z presenting \"progressive decentralization\" as a regulatory compliance strategy.\n\n## Real Cases\n\n| Project | Result |\n|---------|--------|\n| Kik (KIN token) | SEC lawsuit → $5M fine (2020) |\n| Ripple (XRP) | SEC lawsuit → Partial win in 2023 (exchange sales = non-security, institutional sales = security) |\n| Ethereum | SEC essentially recognized \"currently decentralized, therefore not a security\" |",
         "key_ideas": [
           "4 requirements: Investment, common enterprise, profit expectation, reliance on others' efforts",
@@ -354,7 +410,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
-        "exercise": "Why does 'sufficient decentralization' help with non-security determination in the Howey Test?\n1) Investment amount decreases\n2) No longer relying on others' efforts\n3) Profit expectation disappears\nAnswer with a number.",
+        "exercise": "Why does 'sufficient decentralization' help with non-security determination in the Howey Test?\n1) Investment amount decreases\n2) No longer relying on others' efforts\n3) Profit expectation disappears",
         "answer": "No longer relying on others' efforts",
         "explanation": "When sufficiently decentralized, the protocol operates autonomously without a team, so Howey Test requirement ④ (reliance on others' efforts) is not met.",
         "x402_price": "",
@@ -363,7 +419,10 @@
       {
         "concept_id": "exit_to_community",
         "title": "Exit to Community",
-        "prerequisites": ["howey_test", "dao_types_overview"],
+        "prerequisites": [
+          "howey_test",
+          "dao_types_overview"
+        ],
         "content": "## What is Exit to Community?\n\nTraditional startup exits are **IPO (Initial Public Offering)** or **M&A (Merger & Acquisition)**. Founders and investors sell their shares and leave.\n\nDAO's new exit strategy is **Exit to Community**:\n\n> Team \"exits to community\" — Airdrops tokens to users and contributors according to a predetermined plan\n\n## What's Achieved\n\n### 1. Platform Risk Removal\n\nCore team transfers majority ownership (fees, control) of the application. Team can no longer change rules at will.\n\n### 2. Token Transition to Non-Security\n\nSufficient decentralization can avoid Howey Test's \"reliance on others' efforts\" requirement.\n\n### 3. Cooperative Economic Model\n\nUser-owners realize **increasing returns through cooperative economic model**. Platform growth directly returns to users.\n\n## Success Cases (2026)\n\n| Project | Token | Description |\n|---------|-------|-------------|\n| Uniswap | UNI | Large-scale airdrop to users in September 2020 |\n| Compound | COMP | Pioneer of DeFi governance tokens |\n| Optimism | OP | Airdrop to L2 users |\n| Arbitrum | ARB | Largest L2 airdrop in 2023 |\n\nHowever, legal standards for 'sufficient decentralization' remain unclear as of 2026.",
         "key_ideas": [
           "Core team transfers majority ownership (fees, control)",
@@ -373,7 +432,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
-        "exercise": "What is a representative DeFi protocol that successfully executed Exit to Community?\n1) FTX\n2) Uniswap\n3) Binance\nAnswer with a number.",
+        "exercise": "What is a representative DeFi protocol that successfully executed Exit to Community?\n1) FTX\n2) Uniswap\n3) Binance",
         "answer": "Uniswap",
         "explanation": "Uniswap is a representative case that successfully executed Exit to Community by airdropping UNI tokens to users on a large scale in September 2020.",
         "x402_price": "",

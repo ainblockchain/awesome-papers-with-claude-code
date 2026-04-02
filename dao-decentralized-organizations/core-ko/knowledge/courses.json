@@ -3,7 +3,12 @@
     "id": "foundations",
     "title": "DAO 기초 개념",
     "description": "블록체인 기초, DAO의 정의, TheDAO 해킹 사건을 통해 탈중앙화 자율 조직의 기본을 학습한다.",
-    "concepts": ["blockchain_fundamentals", "dao_definition", "the_dao_incident", "firm_existence"],
+    "concepts": [
+      "blockchain_fundamentals",
+      "dao_definition",
+      "the_dao_incident",
+      "firm_existence"
+    ],
     "lessons": [
       {
         "concept_id": "blockchain_fundamentals",
@@ -18,7 +23,7 @@
         ],
         "code_ref": "",
         "paper_ref": "김민현, Common Computer — 블록체인 강의",
-        "exercise": "이더리움은 현재 어떤 합의 메커니즘을 사용하는가?\n1) PoW (작업증명)\n2) PoS (지분증명)\n3) DPoS (위임지분증명)\n숫자로 답하시오.",
+        "exercise": "이더리움은 현재 어떤 합의 메커니즘을 사용하는가?\n1) PoW (작업증명)\n2) PoS (지분증명)\n3) DPoS (위임지분증명)",
         "answer": "PoS (지분증명)",
         "explanation": "이더리움은 2022년 9월 15일 'The Merge'를 통해 PoW에서 PoS로 전환했다. 이를 통해 에너지 소비를 99.95% 줄였다.",
         "x402_price": "",
@@ -27,7 +32,9 @@
       {
         "concept_id": "dao_definition",
         "title": "DAO의 정의와 구조",
-        "prerequisites": ["blockchain_fundamentals"],
+        "prerequisites": [
+          "blockchain_fundamentals"
+        ],
         "content": "## DAO란 무엇인가?\n\n**DAO(Decentralized Autonomous Organization)**는 탈중앙화 자율 조직이다. 운영 규칙이 스마트컨트랙트 코드로 블록체인에 기록되어, 특정 개인이나 기업의 개입 없이 자동으로 작동한다.\n\n### 전통 기업 vs DAO\n\n| 구분 | 전통 기업 | DAO |\n|------|----------|-----|\n| 의사결정 | 이사회·대표이사가 결정 | 토큰 보유자가 투표로 결정 |\n| 실행 | 직원이 실행 | 스마트컨트랙트가 자동 실행 |\n| 투명성 | 내부 정보 비공개 | 모든 결정과 자금 흐름 공개 |\n| 참여 | 주주·직원만 | 누구나 토큰 구매로 참여 |\n\n## DAO의 작동 원리\n\nDAO는 마치 **규칙이 코드로 박힌 민주주의**와 같다:\n\n1. 누군가 제안(Proposal)을 올린다\n2. 토큰 보유자들이 투표한다\n3. 정족수와 찬성률이 충족되면\n4. 스마트컨트랙트가 자동으로 실행한다\n\n중간 관리자가 \"회의 결과를 반영하겠습니다\"라고 말할 필요가 없다. 코드가 바로 실행된다.\n\n## DAO의 핵심 가치\n\n- **투명성**: 모든 거래와 투표가 블록체인에 기록\n- **자율성**: 특정인의 개입 없이 규칙대로 작동\n- **개방성**: 누구나 토큰을 사서 참여 가능\n- **글로벌**: 국경 없이 전 세계 참여자와 협업",
         "key_ideas": [
           "DAO = 운영 규칙이 스마트컨트랙트로 블록체인에 기록된 조직",
@@ -37,7 +44,7 @@
         ],
         "code_ref": "",
         "paper_ref": "김민현, Common Computer — 블록체인 강의",
-        "exercise": "DAO에서 의사결정이 실행되는 과정을 올바르게 설명한 것은?\n1) 대표이사가 결정하고 직원이 실행\n2) 토큰 보유자가 투표하고 스마트컨트랙트가 자동 실행\n3) 운영팀이 결정하고 개발팀이 수동 실행\n숫자로 답하시오.",
+        "exercise": "DAO에서 의사결정이 실행되는 과정을 올바르게 설명한 것은?\n1) 대표이사가 결정하고 직원이 실행\n2) 토큰 보유자가 투표하고 스마트컨트랙트가 자동 실행\n3) 운영팀이 결정하고 개발팀이 수동 실행",
         "answer": "토큰 보유자가 투표하고 스마트컨트랙트가 자동 실행",
         "explanation": "DAO의 핵심은 토큰 보유자가 투표로 의사결정하고, 그 결과가 스마트컨트랙트를 통해 자동으로 실행된다는 것이다. 중간 관리자의 개입이 필요 없다.",
         "x402_price": "",
@@ -46,7 +53,9 @@
       {
         "concept_id": "the_dao_incident",
         "title": "TheDAO 해킹 사건과 교훈",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## TheDAO의 탄생\n\n2016년 **Slock.it**이 이더리움에 **TheDAO**를 런칭했다. 불과 4주 만에 ETH 기준 약 **$150M(1억 5천만 달러)**를 모금하고 12억 개의 토큰을 발행했다. 당시 이더리움 전체 ETH의 14%가 TheDAO에 투자되었다.\n\n## 재진입 공격 (Re-entrancy Attack)\n\n2016년 6월 17일, 해커는 스마트컨트랙트의 취약점을 이용해 **자금의 30%를 탈취**했다.\n\n재진입 공격은 마치 ATM에서 출금할 때 잔액 확인 전에 계속 출금 버튼을 누르는 것과 같다:\n\n```\n1. 출금 요청 (100 ETH)\n2. ATM이 돈을 보내기 시작\n3. 잔액 차감 전에 다시 출금 요청\n4. 반복...\n```\n\nSolidity 언어가 출시된 지 수개월밖에 안 된 시점이었고, 보안 검증 도구가 부족했다.\n\n## 이더리움 하드포크\n\n이더리움 커뮤니티는 해킹 이전 블록(1,920,000)으로 **하드포크**를 결정했다. \"코드가 법이다(Code is Law)\"는 원칙과 \"피해자를 구해야 한다\"는 현실 사이의 논쟁 끝에 포크가 진행되었다.\n\n- 포크에 동의한 체인: **Ethereum (ETH)**\n- 포크를 거부한 체인: **Ethereum Classic (ETC)**\n\n## 교훈\n\n1. 스마트컨트랙트 보안 감사(Audit)의 중요성\n2. 초기 기술의 위험성과 점진적 성장 필요\n3. \"코드가 법이다\"의 한계와 인간 거버넌스의 역할",
         "key_ideas": [
           "2016년 TheDAO가 $150M 모금 → 재진입 공격으로 30% 탈취",
@@ -56,7 +65,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
-        "exercise": "TheDAO 해킹 사건 이후 이더리움 커뮤니티가 선택한 해결책은?\n1) 해커에게 협상하여 자금 반환 요청\n2) 해킹 이전 블록으로 하드포크\n3) 피해자들에게 보험금 지급\n숫자로 답하시오.",
+        "exercise": "TheDAO 해킹 사건 이후 이더리움 커뮤니티가 선택한 해결책은?\n1) 해커에게 협상하여 자금 반환 요청\n2) 해킹 이전 블록으로 하드포크\n3) 피해자들에게 보험금 지급",
         "answer": "해킹 이전 블록으로 하드포크",
         "explanation": "이더리움 커뮤니티는 블록 1,920,000으로 하드포크하여 해킹을 무효화했다. 이 결정으로 ETH와 ETC가 분리되었다.",
         "x402_price": "",
@@ -65,7 +74,9 @@
       {
         "concept_id": "firm_existence",
         "title": "기업은 왜 존재하는가",
-        "prerequisites": ["blockchain_fundamentals"],
+        "prerequisites": [
+          "blockchain_fundamentals"
+        ],
         "content": "## 기업의 경제학적 존재 이유\n\n경제학자 **Ronald Coase**는 1937년 논문 \"기업의 본질(The Nature of the Firm)\"에서 기업의 존재 이유를 설명했다.\n\n### 거래비용 최소화\n\n모든 일을 프리랜서에게 맡기면 매번 계약서 작성, 품질 검증, 대금 지불 등의 **거래비용**이 발생한다. 기업은 직원을 고용해 이 비용을 내부화한다.\n\n> \"시장에서 계약하는 비용 > 회사 내부에서 조율하는 비용\" → 기업이 존재\n\n### 자본과 인력의 집적\n\nVitalari & Shaughnessy의 *The Elastic Enterprise*에 따르면, 기업은 자본과 인력을 한 곳에 모아 규모의 경제를 실현한다.\n\n### 안정성 제공\n\n대부분의 사람들은 위험 회피적이다. 기업은 **안정적인 급여와 고용 보장**을 제공하여 개인이 감당하기 어려운 위험을 분산한다.\n\n## 기업에 대한 불만\n\n그러나 대부분의 사람들은 기업을 싫어한다:\n\n- 자유도 제한 (출퇴근 시간, 업무 방식)\n- 정치적 의사결정 (실력보다 정치가 중요)\n- 소유권 집중 (창업자/투자자가 대부분 가져감)\n\n이러한 불만이 DAO와 같은 새로운 조직 형태에 대한 관심을 높였다.",
         "key_ideas": [
           "거래비용 최소화 — Ronald Coase의 핵심 통찰",
@@ -75,7 +86,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
-        "exercise": "Ronald Coase가 설명한 기업의 핵심 존재 이유는?\n1) 세금 절감\n2) 거래비용 최소화\n3) 정부 규제 회피\n숫자로 답하시오.",
+        "exercise": "Ronald Coase가 설명한 기업의 핵심 존재 이유는?\n1) 세금 절감\n2) 거래비용 최소화\n3) 정부 규제 회피",
         "answer": "거래비용 최소화",
         "explanation": "Coase는 시장에서 매번 계약하는 비용보다 회사 내부에서 조율하는 비용이 더 낮을 때 기업이 존재한다고 설명했다.",
         "x402_price": "",
@@ -87,12 +98,18 @@
     "id": "decision_frameworks",
     "title": "DAO 의사결정 프레임워크",
     "description": "Vitalik의 Convex/Concave 프레임워크, DAO vs Corporation 논쟁, Pod 구조를 학습한다.",
-    "concepts": ["convex_concave_decisions", "dao_vs_corporation", "pod_structure"],
+    "concepts": [
+      "convex_concave_decisions",
+      "dao_vs_corporation",
+      "pod_structure"
+    ],
     "lessons": [
       {
         "concept_id": "convex_concave_decisions",
         "title": "Convex vs Concave 의사결정",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## 핵심 질문: 최선의 선택이 어디에 있는가?\n\nVitalik Buterin은 2022년 에세이에서 의사결정을 **Convex**와 **Concave**로 구분했다.\n\n### Convex 상황 — \"어중간한 게 최악이다\"\n\nA와 B 중 하나를 확실히 골라야 더 나은 결과가 나오는 상황이다.\n\n**군사 전략 예시**: 병력을 두 방향에 반씩 나눠 투입하면 두 곳 다 전력이 부족해 모두 진다. 한 방향에 집중하는 것이 낫다.\n\n**제품 출시 예시**: 2월 출시와 3월 출시 중 결정해야 한다. \"2월 반, 3월 반\"으로 출시하는 건 불가능하다.\n\n→ **빠른 단독 결정자(CEO, 리더)**가 유리한 상황\n\n### Concave 상황 — \"나눠주는 게 더 낫다\"\n\n선택지의 중간값이 극단적 선택보다 더 나은 결과를 내는 상황이다.\n\n**연구비 배분 예시**: $200만 연구비를 유망한 두 프로젝트에 $100만씩 나눠주는 것이 한 프로젝트에 $200만을 몰아주는 것보다 성공 확률이 높다.\n\n**정책 결정 예시**: 다양한 의견을 반영한 절충안이 극단적 단일 정책보다 부작용이 적다.\n\n→ **여러 사람의 의견을 반영하는 탈중앙화 투표**가 유리한 상황\n\n## Vitalik의 핵심 주장\n\n> DAO의 탈중앙화된 의사결정은 모든 상황에 좋은 게 아니라, **문제가 Concave할 때만** 써야 한다.\n\nConvex한 문제는 중앙화된 소수가 처리하고, Concave한 문제는 커뮤니티 전체가 결정하는 **혼합 구조**가 현실적이다.",
         "key_ideas": [
           "Convex: 극단적 선택이 최선 (군사 전략, 빠른 제품 결정)",
@@ -102,7 +119,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "공공재 자금을 여러 프로젝트에 배분하는 결정은 어떤 유형에 해당하는가?\n1) Convex — 한 프로젝트에 몰아주는 것이 최선\n2) Concave — 여러 프로젝트에 나눠주는 것이 최선\n3) 둘 다 아님\n숫자로 답하시오.",
+        "exercise": "공공재 자금을 여러 프로젝트에 배분하는 결정은 어떤 유형에 해당하는가?\n1) Convex — 한 프로젝트에 몰아주는 것이 최선\n2) Concave — 여러 프로젝트에 나눠주는 것이 최선\n3) 둘 다 아님",
         "answer": "Concave — 여러 프로젝트에 나눠주는 것이 최선",
         "explanation": "자금 배분은 대표적인 Concave 상황이다. 여러 유망한 프로젝트에 적절히 분배하는 것이 한 곳에 몰아주는 것보다 전체 성공 확률을 높인다.",
         "x402_price": "",
@@ -111,7 +128,9 @@
       {
         "concept_id": "dao_vs_corporation",
         "title": "DAO vs Corporation 논쟁",
-        "prerequisites": ["convex_concave_decisions"],
+        "prerequisites": [
+          "convex_concave_decisions"
+        ],
         "content": "## Corporation파의 주장\n\n\"Token + Voting 구조의 DAO가 작동하지 않는다\"는 비판과 함께, \"DAO도 결국 Corporation과 같은 구조로 수렴할 것\"이라는 예측이 확산되었다.\n\n**핵심 논거**:\n- 위계(Hierarchy)가 의사결정을 효율화한다\n- 수백 년간 검증된 거버넌스 원리가 있다\n- DAO도 결국 이를 벗어날 수 없다\n\n## Vitalik의 반론: DAO는 Sovereign이다\n\n미국 철학자 **Curtis Yarvin**은 조직을 1차 조직(Sovereign)과 2차 조직(Contractual/Corporation)으로 구분했다.\n\n- **Corporation**: 강력한 외부 도구들(법, 집행력)이 있어 실패 확률이 낮음\n- **Sovereign**: 외부 지지 없이 인센티브 구조가 공격받거나 붕괴될 위험\n\n> \"DAO는 상위에 '주권(Sovereign)'이 없고, 주권적 기능(통화, 중재 등)을 수행하는 경우가 많다. 따라서 DAO가 배울 것이 더 많은 것은 **Corporation이 아닌 정치학**이다.\"\n\n## 계승 문제 (Succession Problem)\n\nSamo Burja가 명명한 Sovereign의 가장 큰 문제:\n\n> 창립 그룹이 떠날 때 시스템이 다음 그룹으로 연속성 있게 전환되는 방법의 부재\n\n비트코인은 사토시가 사라진 후에도 작동한다. 하지만 대부분의 DAO는 핵심 팀 없이 지속 가능한 구조를 아직 증명하지 못했다.",
         "key_ideas": [
           "Corporation파: 위계가 효율적, DAO도 수렴할 것",
@@ -121,7 +140,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "Vitalik이 DAO가 배워야 한다고 주장한 분야는?\n1) 기업 경영학\n2) 정치학\n3) 컴퓨터 공학\n숫자로 답하시오.",
+        "exercise": "Vitalik이 DAO가 배워야 한다고 주장한 분야는?\n1) 기업 경영학\n2) 정치학\n3) 컴퓨터 공학",
         "answer": "정치학",
         "explanation": "Vitalik은 DAO가 Corporation이 아닌 Sovereign(주권)에 가깝기 때문에, 기업 경영학보다 정치학에서 배울 것이 더 많다고 주장했다.",
         "x402_price": "",
@@ -130,7 +149,9 @@
       {
         "concept_id": "pod_structure",
         "title": "Pod 구조와 혼합 거버넌스",
-        "prerequisites": ["convex_concave_decisions"],
+        "prerequisites": [
+          "convex_concave_decisions"
+        ],
         "content": "## 우크라이나 DAO 사례\n\nDAO가 단순히 \"전부 탈중앙\"이어야 한다는 관념에 대한 반례로 **우크라이나 DAO의 Pod 구조**가 있다.\n\n### Pod 구조란?\n\n- **자금 조달**: 탈중앙화 방식 (커뮤니티 전체가 결정)\n- **자금 집행**: Pod에 할당된 이후 **중앙화된 방식**으로 태스크 수행\n\n마치 회사의 부서처럼, Pod는 할당받은 자원 내에서 독립적으로 운영된다.\n\n## DAO의 탈중앙화 평가 기준\n\n잘 구축된 DAO가 의미 있게 탈중앙화되었는지 평가하는 두 가지 기준:\n\n### 1. Pod들의 자율성\n\n코어로부터 리소스를 받되, 그 외 의사결정은 독립적으로 수행해야 한다. 코어가 Pod의 모든 결정에 개입한다면 진정한 탈중앙화가 아니다.\n\n### 2. Core 거버넌스의 탈중앙화와 다양성\n\n꼭 거버넌스 토큰일 필요는 없지만, 더 넓고 다양한 참여자가 필요하다. 소수의 고래(whale)가 모든 결정을 좌지우지한다면 중앙화된 것과 다름없다.\n\n## 이상적인 구성\n\n> 상위 레벨(Core)은 **Concave 상황**에 집중하고, 하위 레벨(Pod)은 **Convex 상황**에 집중하는 구성이 이상적이다.\n\n- Core: 자금 배분, 장기 방향 설정 (Concave) → 탈중앙화 투표\n- Pod: 구체적 실행, 빠른 결정 (Convex) → 소수 리더가 결정",
         "key_ideas": [
           "자금 조달은 탈중앙화, 자금 집행은 Pod 단위 중앙화",
@@ -140,7 +161,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "Pod 구조에서 '자금 집행'은 어떤 방식으로 이루어지는가?\n1) 커뮤니티 전체 투표\n2) Pod에 할당 후 중앙화된 방식\n3) 스마트컨트랙트 자동 실행만\n숫자로 답하시오.",
+        "exercise": "Pod 구조에서 '자금 집행'은 어떤 방식으로 이루어지는가?\n1) 커뮤니티 전체 투표\n2) Pod에 할당 후 중앙화된 방식\n3) 스마트컨트랙트 자동 실행만",
         "answer": "Pod에 할당 후 중앙화된 방식",
         "explanation": "Pod 구조에서 자금 조달은 탈중앙화 방식이지만, 자금 집행은 Pod에 할당된 이후 중앙화된 방식으로 빠르게 태스크를 수행한다.",
         "x402_price": "",
@@ -152,12 +173,18 @@
     "id": "decentralization_cases",
     "title": "탈중앙화의 실제 사례",
     "description": "검열저항성, Kleros 분산 법원, 다양한 DAO 적용 영역을 학습한다.",
-    "concepts": ["censorship_resistance", "kleros_case", "dao_types_overview"],
+    "concepts": [
+      "censorship_resistance",
+      "kleros_case",
+      "dao_types_overview"
+    ],
     "lessons": [
       {
         "concept_id": "censorship_resistance",
         "title": "검열저항성과 탈중앙화",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## 검열저항성이란?\n\n탈중앙화의 핵심 가치 중 하나는 **검열저항성(Censorship Resistance)**이다. 특정 권력이 정보나 서비스를 차단하려 해도 저항할 수 있는 능력이다.\n\n## 사례 1: Pirate Bay & Sci-Hub\n\n**Pirate Bay**(토렌트 검색 사이트)와 **Sci-Hub**(학술 논문 무료 공유)는 수많은 법적 공격을 받았다.\n\n- 도메인을 관리하는 소수 그룹만 법적 위험에 노출\n- 원본 데이터는 탈중앙화 상태로 유지\n- 도메인이 차단되어도 미러 사이트로 계속 운영\n\n## 사례 2: BitTorrent\n\nBitTorrent는 더 강력한 검열저항성을 보여준다:\n\n- 누구든지 언제든 파일 유지에 참여하거나 중단 가능\n- 특정 서버가 없어 \"내려야 할 서버\"가 없음\n- 인기 있는 파일은 수천 명이 동시에 공유\n\n## DAO의 검열저항성\n\nDAO가 지향하는 구조는 \"영구적으로 검열을 회피\"하는 것이 목적이 아니다.\n\n> **불확실한 상황과 방해 속에서 조직을 안정적으로 유지**하기 위함이다.\n\n스마트컨트랙트가 블록체인에 배포되면:\n- 개발팀이 사라져도 계속 작동\n- 특정 국가가 금지해도 다른 국가에서 접근 가능\n- 서버를 닫을 수 없음 (서버가 없으니까)",
         "key_ideas": [
           "검열저항성 = 권력의 차단 시도에 저항하는 능력",
@@ -167,7 +194,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "BitTorrent가 강력한 검열저항성을 갖는 이유는?\n1) 강력한 법률팀이 있어서\n2) 중앙 서버가 없어서\n3) 정부와 협약을 맺어서\n숫자로 답하시오.",
+        "exercise": "BitTorrent가 강력한 검열저항성을 갖는 이유는?\n1) 강력한 법률팀이 있어서\n2) 중앙 서버가 없어서\n3) 정부와 협약을 맺어서",
         "answer": "중앙 서버가 없어서",
         "explanation": "BitTorrent는 P2P 구조로 중앙 서버가 없다. '내려야 할 서버'가 없기 때문에 검열이 매우 어렵다.",
         "x402_price": "",
@@ -176,7 +203,9 @@
       {
         "concept_id": "kleros_case",
         "title": "Kleros 분산 법원 사례",
-        "prerequisites": ["censorship_resistance"],
+        "prerequisites": [
+          "censorship_resistance"
+        ],
         "content": "## Kleros란?\n\n**Kleros**는 프랑스 파리 기반의 탈중앙 분쟁 해결 플랫폼이다. 전통 법원의 느리고 비싼 절차 대신, 블록체인 기반의 빠르고 저렴한 중재를 제공한다.\n\n## 작동 방식\n\n1. **분쟁 발생**: 두 당사자가 합의하지 못함\n2. **배심원 선별**: PNK 토큰 스테이킹 보유자 중 해당 카테고리에 맞는 배심원 **3,000명을 무작위 선별**\n3. **증거 검토**: 배심원들은 서로 알지 못하고, 3일 내 증거를 검토\n4. **투표**: 각자 판단에 따라 투표\n5. **집행**: 이틀 후 스마트컨트랙트로 배상금 자동 지급\n\n## 신뢰할 수 있는 공정성\n\nDAO의 주요 관심사가 국가에 저항하는 것이 아니라 **국가의 일부 기능(특히 인프라스트럭처 관리)**을 수행하는 경우, 탈중앙화는 **공정성의 근거**가 된다.\n\n- 특정인이 결과를 조작할 수 없음\n- 무작위 선별로 담합 방지\n- 모든 과정이 투명하게 기록\n\n## 한계: Case #1170 논란\n\n그러나 Kleros에도 한계가 있다. **Case #1170**에서 내부자들이 대량의 PNK 토큰을 동원해 원하는 방향으로 결정을 유도했다는 의혹이 제기되었다.\n\n이를 해결하기 위해:\n- 토큰 공급의 추가 분산\n- 비토큰 거버넌스 요소 도입\n\n이 필요하다고 지적되었다.",
         "key_ideas": [
           "Kleros = 탈중앙 분쟁 해결 플랫폼",
@@ -186,7 +215,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
-        "exercise": "Kleros에서 배심원이 선별되는 방식은?\n1) 법학 학위 보유자 중 선발\n2) PNK 토큰 스테이커 중 무작위 선별\n3) 분쟁 당사자가 지명\n숫자로 답하시오.",
+        "exercise": "Kleros에서 배심원이 선별되는 방식은?\n1) 법학 학위 보유자 중 선발\n2) PNK 토큰 스테이커 중 무작위 선별\n3) 분쟁 당사자가 지명",
         "answer": "PNK 토큰 스테이커 중 무작위 선별",
         "explanation": "Kleros는 PNK 토큰을 스테이킹한 사람들 중에서 해당 분쟁 카테고리에 맞는 배심원을 무작위로 선별한다.",
         "x402_price": "",
@@ -195,7 +224,9 @@
       {
         "concept_id": "dao_types_overview",
         "title": "DAO의 15가지 적용 영역",
-        "prerequisites": ["dao_definition"],
+        "prerequisites": [
+          "dao_definition"
+        ],
         "content": "## DAO가 변환하고 있는 세계\n\nAragon Blog는 2021년 \"15 Ways the World is Being Transformed by DAOs\"에서 DAO가 적용되는 다양한 영역을 정리했다.\n\n### 1. 개발자 집단 (Developer Collectives)\n\n- **BadgerDAO**: DeFi에 비트코인을 도입, 합성 BTC 추적 도구 개발\n- **Gitcoin**: 탈중앙 웹 구축을 위한 개발자 생태계, $2,280만 배분\n- **API3**: 블록체인 오라클 문제 해결을 위한 다중 체인 네트워크\n\n### 2. 노동자 집단 (Worker Collectives)\n\n- **Raid Guild**, **dOrg**: Web3 집중 디자인·개발 에이전시\n- 중세 길드의 현대적 부활\n- 전 세계 노동자 전략 조율 가능\n\n### 3. 예술 집단 (Art Collectives)\n\n- **PleasrDAO**: Telegram 그룹으로 시작해 310 ETH($525,000)에 NFT 구매\n- 크립토 역사상 가장 상징적인 NFT들을 보유\n\n### 4. 메타버스 / 가상 세계\n\n- **Decentraland**: \"완전한 탈중앙 메타버스\"\n- 설립 스마트컨트랙트의 개인키를 폐기\n- $MANA 토큰으로 보안 위원회·개발 보조금·LAND 정책 투표\n\n### 5. 자산 관리 & 벤처 캐피탈\n\n- **BitDAO** (현 Mantle): $2억 3,000만 모금 → L2 네트워크로 피벗\n- **Metacartel Ventures**: 분산 시스템과 DeFi 투자 집중\n\n### 기타 영역\n\n보험, 신탁, 프로젝트 펀드레이징, 팬 소유권, 부동산, 미디어, 정치 등",
         "key_ideas": [
           "개발자 집단: BadgerDAO, Gitcoin, API3",
@@ -205,7 +236,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
-        "exercise": "PleasrDAO가 처음 형성된 곳은?\n1) 트위터\n2) 텔레그램\n3) 디스코드\n숫자로 답하시오.",
+        "exercise": "PleasrDAO가 처음 형성된 곳은?\n1) 트위터\n2) 텔레그램\n3) 디스코드",
         "answer": "텔레그램",
         "explanation": "PleasrDAO는 Telegram 그룹으로 시작해 310 ETH($525,000)에 pplpleasr의 NFT를 구매한 후 성장했다.",
         "x402_price": "",
@@ -217,12 +248,19 @@
     "id": "paradigm_shift",
     "title": "조직 패러다임의 전환",
     "description": "Organization Man에서 Blockchain Man으로의 전환, Fat Protocol 테제, 기업 없이 번성하는 비트코인을 학습한다.",
-    "concepts": ["organization_man", "blockchain_man", "fat_protocol_thesis", "bitcoin_without_firm"],
+    "concepts": [
+      "organization_man",
+      "blockchain_man",
+      "fat_protocol_thesis",
+      "bitcoin_without_firm"
+    ],
     "lessons": [
       {
         "concept_id": "organization_man",
         "title": "Organization Man과 Social Ethic",
-        "prerequisites": ["firm_existence"],
+        "prerequisites": [
+          "firm_existence"
+        ],
         "content": "## Organization Man의 탄생\n\n**William Whyte**는 1956년 저서 \"The Organization Man\"에서 20세기 미국 사회의 핵심 가치가 **개인주의 → 집단주의(Social Ethic)**로 전환되었음을 포착했다.\n\nSinclair Lewis의 소설 *Babbitt*(1922)이 그 원형을 완벽하게 묘사했다.\n\n## Social Ethic의 세 가지 신조\n\n1. **집단이 창의성의 원천**이라는 믿음\n2. **'소속감(belongingness)'이 개인의 궁극적 욕구**라는 믿음\n3. **과학의 적용을 통해 소속감을 달성**할 수 있다는 믿음\n\n> \"인간은 사회의 단위로 존재한다. 혼자서는 고립되고 의미 없으며, 집단 속에서 협력할 때만 가치 있는 존재가 된다.\"\n\n## 왜 소속감이 강조되었나?\n\n단순하다: **참여 → 막대한 삶의 질 향상**\n\n20세기 선진국의 생활 수준 향상은 대기업(Organization)의 직접적 결과였다. 제2차 산업혁명의 기술(대량생산, 철강, 과학적 경영)이 규모의 경제를 활용하는 대기업 지배 사회를 만들었다.\n\nOrganization Man은 이에 대한 **개인의 합리적 적응**이었다:\n\n- 평생 고용 보장\n- 안정적인 급여 상승\n- 사회적 지위와 정체성\n\n## 그러나...\n\n이 시스템은 21세기에 들어 흔들리기 시작했다. 평생 고용은 사라지고, 대기업의 효율성 신화도 무너졌다.",
         "key_ideas": [
           "Organization Man: 1956년 William Whyte가 명명",
@@ -232,7 +270,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
-        "exercise": "William Whyte가 \"Organization Man\"에서 포착한 20세기 미국 사회의 가치 전환은?\n1) 집단주의 → 개인주의\n2) 개인주의 → 집단주의(Social Ethic)\n3) 자본주의 → 사회주의\n숫자로 답하시오.",
+        "exercise": "William Whyte가 \"Organization Man\"에서 포착한 20세기 미국 사회의 가치 전환은?\n1) 집단주의 → 개인주의\n2) 개인주의 → 집단주의(Social Ethic)\n3) 자본주의 → 사회주의",
         "answer": "개인주의 → 집단주의(Social Ethic)",
         "explanation": "Whyte는 미국 사회의 핵심 가치가 개인주의에서 집단주의(Social Ethic)로 전환되었음을 포착했다.",
         "x402_price": "",
@@ -241,7 +279,9 @@
       {
         "concept_id": "blockchain_man",
         "title": "Blockchain Man과 새로운 패러다임",
-        "prerequisites": ["organization_man"],
+        "prerequisites": [
+          "organization_man"
+        ],
         "content": "## 거래비용과 조직 규모\n\nTaylor Pearson은 2017년 에세이 \"The Blockchain Man\"에서 새로운 인간형을 예언했다.\n\n> \"인터넷이 거래비용을 한 자릿수 낮췄다면, 블록체인은 향후 20년간 거래비용을 **또 한 번 한 자릿수 낮출 것**이다.\"\n\nRonald Coase의 이론을 따르면:\n\n> 거래비용이 0에 수렴할수록 기업의 균형 규모는 **1인**으로 수렴한다.\n\n그 사람이 **The Blockchain Man**이다.\n\n## Blockchain Man의 원형: 프론티어 과학자\n\nOrganization 시대에 Blockchain Man에 가장 가까운 집단은 **이민자 과학자들**이었다:\n\n- Bell Labs의 Claude Shannon (정보이론)\n- GE의 Irving Langmuir (새로운 백열전구)\n\n조직의 지시 없이 기초 문제를 탐구한 괴짜 과학자들이 가장 큰 성과를 냈다.\n\n## 할리우드 모델\n\nBlockchain Man의 경력은 **라이프스타일 비즈니스 오너와 프리에이전트의 조합**이다.\n\n- '평생직장 커리어 사다리'가 아닌 **'프로젝트 단위 협업'**이 주류 직업 모델\n- 영화 한 편 촬영하듯, 프로젝트마다 팀이 모이고 흩어짐\n\n## 도시국가의 부상\n\n국가들이 암호화폐를 규제하려 할수록, Blockchain Man은 에스토니아·스위스·싱가포르 같이 고소득자를 유치하는 **도시국가형 지역**으로 이동할 것이라 예측했다.\n\n(단, 2026년 현재 국민국가의 소멸은 발생하지 않았고, 각국 정부가 크립토 규제를 강화하는 방향으로 움직였다.)",
         "key_ideas": [
           "블록체인이 거래비용을 다시 한 자릿수 낮출 것",
@@ -251,7 +291,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
-        "exercise": "Taylor Pearson이 예측한 Blockchain Man의 커리어 모델은?\n1) 평생직장 커리어 사다리\n2) 공무원형 안정 추구\n3) 할리우드 모델 (프로젝트 단위 협업)\n숫자로 답하시오.",
+        "exercise": "Taylor Pearson이 예측한 Blockchain Man의 커리어 모델은?\n1) 평생직장 커리어 사다리\n2) 공무원형 안정 추구\n3) 할리우드 모델 (프로젝트 단위 협업)",
         "answer": "할리우드 모델 (프로젝트 단위 협업)",
         "explanation": "Pearson은 Blockchain Man의 커리어가 평생직장이 아닌 프로젝트 단위 협업(할리우드 모델)이 될 것이라 예측했다.",
         "x402_price": "",
@@ -260,7 +300,9 @@
       {
         "concept_id": "fat_protocol_thesis",
         "title": "Fat Protocol 테제",
-        "prerequisites": ["blockchain_man"],
+        "prerequisites": [
+          "blockchain_man"
+        ],
         "content": "## 인터넷: 얇은 프로토콜 + 두꺼운 응용\n\n인터넷의 기반 프로토콜(HTTP, SMTP, TCP/IP)은 **무료 공개 표준**이다. 이메일을 보내는 SMTP 프로토콜 자체에는 아무도 돈을 내지 않는다.\n\n대신 그 위에 올라탄 응용이 가치를 독식했다:\n\n| 계층 | 예시 | 가치 |\n|------|------|------|\n| 프로토콜 | HTTP, SMTP | 0원 (공짜) |\n| 응용 | Google, Facebook, Amazon | 수백~수천조 원 |\n\n인터넷은 **얇은 프로토콜(thin protocol) + 두꺼운 응용(fat application)** 구조였다.\n\n## 블록체인: 두꺼운 프로토콜 + 얇은 응용\n\n블록체인 프로토콜에는 **토큰이 내장**되어 있다. 이더리움 프로토콜을 쓰려면 ETH가 필요하고, ETH 가격은 네트워크 사용량에 따라 오른다.\n\n| 계층 | 예시 | 가치 |\n|------|------|------|\n| 프로토콜 | 이더리움(ETH), 솔라나(SOL) | 수백조 원 |\n| 응용 | Uniswap, OpenSea 등 | 상대적으로 작은 가치 |\n\n블록체인은 **두꺼운 프로토콜(fat protocol) + 얇은 응용(thin application)** 구조가 된다.\n\n## 투자 시사점\n\n이 구조가 맞다면, 크립토에서 가장 큰 가치는 응용 서비스가 아니라 **기반 인프라 토큰(ETH, SOL 등)**에 누적된다.\n\n## 현재 논쟁 (2026년 업데이트)\n\n실제로는 DeFi·NFT·L2 응용에서도 막대한 가치가 창출되어, Fat Protocol 테제가 완전히 맞지는 않는다는 반론이 있다. 프로토콜 vs 응용 계층의 가치 분배는 계속 논쟁 중이다.",
         "key_ideas": [
           "인터넷: 얇은 프로토콜(무료) + 두꺼운 응용(Google, Facebook)",
@@ -270,7 +312,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
-        "exercise": "Fat Protocol 테제에 따르면 블록체인에서 가장 큰 가치가 축적되는 곳은?\n1) 응용 서비스 (Uniswap, OpenSea 등)\n2) 기반 프로토콜 (ETH, SOL 등)\n3) 지갑 서비스\n숫자로 답하시오.",
+        "exercise": "Fat Protocol 테제에 따르면 블록체인에서 가장 큰 가치가 축적되는 곳은?\n1) 응용 서비스 (Uniswap, OpenSea 등)\n2) 기반 프로토콜 (ETH, SOL 등)\n3) 지갑 서비스",
         "answer": "기반 프로토콜 (ETH, SOL 등)",
         "explanation": "Fat Protocol 테제에 따르면 블록체인은 두꺼운 프로토콜 구조이므로, 가장 큰 가치가 기반 인프라 토큰(ETH, SOL 등)에 누적된다.",
         "x402_price": "",
@@ -279,7 +321,9 @@
       {
         "concept_id": "bitcoin_without_firm",
         "title": "기업 없이 번성하는 비트코인",
-        "prerequisites": ["firm_existence"],
+        "prerequisites": [
+          "firm_existence"
+        ],
         "content": "## 비트코인의 혁신\n\n2009년 1월 사토시 나카모토가 배포한 소프트웨어는 암호학과 인센티브를 결합하여, **법인 없이도 지속되는 디지털 서비스**(가치 저장·이전 원장)를 실현했다.\n\n## 비트코인의 세 종류 워커\n\n| 워커 | 역할 | 보상 방식 |\n|------|------|----------|\n| 채굴자 | 블록 생성, 트랜잭션 검증 | PoW로 성과 측정, 프로토콜에서 BTC로 직접 보상 |\n| 개발자 | 코드 개선, 버그 수정 | BTC 보유 → 가치 상승으로 간접 보상 |\n| 사용자 | 네트워크 이용, 홍보 | BTC 보유 → 가치 상승으로 간접 보상 |\n\n채굴자의 기여는 **객관적으로 측정**되어 게임하기 어렵다. 필요한 것은 전기와 인터넷뿐이다.\n\n## 시가총액 비교\n\n**2017년**: 비트코인 시총 ~$1,000억 ≈ Goldman Sachs 시총 ~$900억\n\n**2026년 현재**: 비트코인 시총 ~$1.7~1.8조, Goldman Sachs의 **수십 배** 초과\n\nGoldman Sachs는 현재 약 $19억 규모의 Bitcoin ETF 포지션을 보유하는 등 **기관 투자자로 전환**했다.\n\n## 탈중앙 조직의 새로운 특성\n\n비트코인은 기업의 장점(거래비용 최소화, 자본·인재 집적)에 아래 새로운 특성을 추가:\n\n1. 소수 창업자·임직원·투자자가 **소유권을 독점하지 않는다**\n2. **데이터를 특정 주체가 통제하지 않는다**\n3. 의사결정 권한이 분산되고, 다양한 시장 참여자들의 **견제와 균형**이 작동한다",
         "key_ideas": [
           "채굴자: PoW로 성과 측정, 프로토콜에서 BTC로 직접 보상",
@@ -289,7 +333,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
-        "exercise": "비트코인에서 채굴자가 보상받는 방식은?\n1) 회사에서 급여로 지급\n2) 프로토콜에서 BTC로 직접 보상\n3) 사용자 수수료만\n숫자로 답하시오.",
+        "exercise": "비트코인에서 채굴자가 보상받는 방식은?\n1) 회사에서 급여로 지급\n2) 프로토콜에서 BTC로 직접 보상\n3) 사용자 수수료만",
         "answer": "프로토콜에서 BTC로 직접 보상",
         "explanation": "비트코인 채굴자는 PoW(작업증명)로 성과가 객관적으로 측정되며, 프로토콜에서 새로 발행되는 BTC로 직접 보상받는다.",
         "x402_price": "",
@@ -301,12 +345,20 @@
     "id": "building_daos",
     "title": "DAO 구축 전략",
     "description": "탈중앙 조직의 장벽, 단계적 탈중앙화, Howey Test, Exit to Community를 학습한다.",
-    "concepts": ["decentralized_org_barriers", "progressive_decentralization", "howey_test", "exit_to_community"],
+    "concepts": [
+      "decentralized_org_barriers",
+      "progressive_decentralization",
+      "howey_test",
+      "exit_to_community"
+    ],
     "lessons": [
       {
         "concept_id": "decentralized_org_barriers",
         "title": "탈중앙 조직의 주요 장벽",
-        "prerequisites": ["bitcoin_without_firm", "the_dao_incident"],
+        "prerequisites": [
+          "bitcoin_without_firm",
+          "the_dao_incident"
+        ],
         "content": "## 장벽 1: 탈중앙화된 의사결정은 어렵다\n\n거버넌스 모범 사례가 아직 없다. 비트코인의 완전히 탈중앙화된 거버넌스는 **변화가 거의 필요 없는 가치 저장 프로토콜**에는 적합하다.\n\n하지만 빠른 이터레이션이 필요한 초기 기술 프로젝트에는 적합하지 않다.\n\n> **초기에는 일정 수준의 의사결정 중앙화가 필요**하며, 장기적으로 탈중앙화를 지향하는 설계가 현실적이다.\n\n## 장벽 2: 기여도 측정의 어려움\n\n비트코인의 채굴 기여는 객관적으로 측정되어 게임하기 어렵다. 누가 얼마나 많은 해시파워를 제공했는지 명확하다.\n\n하지만 **대부분의 노동은 기여도를 정확히 측정하기 어렵다**:\n\n- 마케팅 캠페인의 효과?\n- 디자인 개선의 가치?\n- 커뮤니티 관리의 기여?\n\n자원 배분을 위해 중앙화된 인간의 판단이 필요한 경우가 많다.\n\n## 장벽 3: '탈중앙화'의 남용과 불명확성\n\n- 일부는 **비트코인 외 모든 것을 중앙화**로 간주한다 (극단적 맥시멀리즘)\n- 다른 이들은 **중앙화된 ICO를 탈중앙 조직으로 위장**한다 (사기성 마케팅)\n\n\"탈중앙화\"라는 단어가 마케팅 용어로 남용되면서, 실제로 무엇이 탈중앙화인지 불명확해졌다.",
         "key_ideas": [
           "탈중앙화된 의사결정은 어렵다 — 거버넌스 모범 사례 부재",
@@ -316,7 +368,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
-        "exercise": "비트코인의 완전 탈중앙화 거버넌스가 적합한 프로젝트 유형은?\n1) 빠른 이터레이션이 필요한 초기 스타트업\n2) 변화가 거의 필요 없는 가치 저장 프로토콜\n3) 복잡한 의사결정이 필요한 DeFi 프로토콜\n숫자로 답하시오.",
+        "exercise": "비트코인의 완전 탈중앙화 거버넌스가 적합한 프로젝트 유형은?\n1) 빠른 이터레이션이 필요한 초기 스타트업\n2) 변화가 거의 필요 없는 가치 저장 프로토콜\n3) 복잡한 의사결정이 필요한 DeFi 프로토콜",
         "answer": "변화가 거의 필요 없는 가치 저장 프로토콜",
         "explanation": "비트코인의 완전 탈중앙화 거버넌스는 변화가 거의 필요 없는 가치 저장 프로토콜에 적합하다. 빠른 이터레이션이 필요한 프로젝트에는 초기 중앙화가 필요하다.",
         "x402_price": "",
@@ -325,7 +377,9 @@
       {
         "concept_id": "progressive_decentralization",
         "title": "단계적 탈중앙화 전략",
-        "prerequisites": ["decentralized_org_barriers"],
+        "prerequisites": [
+          "decentralized_org_barriers"
+        ],
         "content": "## a16z의 플레이북\n\n**Jesse Walden**(a16z crypto)은 2020년 \"Progressive Decentralization\"에서 크립토 성공의 세 가지 구성 요소를 제시했다.\n\n### 1단계: Product/Market Fit (PMF)\n\n**이 단계에서 탈중앙화의 흉내는 내지 말아야 한다.**\n\n- 코어 팀이 모든 제품 결정을 주도\n- 스마트컨트랙트에 대한 관리자 권한 보유\n- **토큰 런칭 금지**: 핵심 팀의 노력에 대한 의존이 Howey Test의 증권 분류 기준 충족 위험\n\n코어 팀의 통제에 대해 초기 사용자가 불만을 제기한다면, 이는 오히려 **좋은 신호**. 단, 통제의 존재를 투명하게 공개해야 한다.\n\n### 2단계: Community Participation\n\n초기 트랙션 신호(성장하는 사용자 기반, 개발자 생태계)가 보이면 커뮤니티 조화 강화에 투자할 시점.\n\n- **기술적 제약**: Compound v2.2의 48시간 대기 기간 (탈출 시간 부여)\n- **수수료 도입**: 강력한 네트워크 효과가 생긴 이후 도입\n- **토큰 배분 테스트**: 허가된 그룹에게 먼저 배분\n\n### 3단계: Sufficient Decentralization\n\nPMF 달성, 강력한 커뮤니티, 지속 가능한 인센티브 모델 구축이 완료된 마지막 단계.\n\n**광범위한 토큰 배분**을 통해 팀이 \"커뮤니티로 엑시트(exit to the community)\".",
         "key_ideas": [
           "1단계: PMF — 코어 팀이 모든 결정 주도, 토큰 런칭 금지",
@@ -335,7 +389,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
-        "exercise": "단계적 탈중앙화 플레이북에서 1단계(PMF)에 해서는 안 되는 것은?\n1) 코어 팀이 제품 결정 주도\n2) 토큰 런칭\n3) 스마트컨트랙트 관리자 권한 보유\n숫자로 답하시오.",
+        "exercise": "단계적 탈중앙화 플레이북에서 1단계(PMF)에 해서는 안 되는 것은?\n1) 코어 팀이 제품 결정 주도\n2) 토큰 런칭\n3) 스마트컨트랙트 관리자 권한 보유",
         "answer": "토큰 런칭",
         "explanation": "1단계(PMF)에서 토큰을 런칭하면 핵심 팀의 노력에 대한 의존이 Howey Test의 증권 분류 기준을 충족시킬 위험이 있다.",
         "x402_price": "",
@@ -344,7 +398,9 @@
       {
         "concept_id": "howey_test",
         "title": "Howey Test와 증권 분류",
-        "prerequisites": ["progressive_decentralization"],
+        "prerequisites": [
+          "progressive_decentralization"
+        ],
         "content": "## Howey Test란?\n\n1946년 미국 대법원 판례에서 유래한 기준으로, 어떤 자산이 **증권(security)**인지 판단하는 네 가지 요건이다.\n\n| 요건 | 설명 |\n|------|------|\n| ① 돈(가치)을 투자했는가? | 토큰을 사기 위해 돈을 냈는가? |\n| ② 공동 사업에 참여하는가? | 그 돈이 공동 프로젝트에 쓰이는가? |\n| ③ 이익을 기대하는가? | 토큰 가격이 오를 것을 기대하는가? |\n| ④ 타인의 노력에 의존하는가? | 이익이 다른 사람(팀, 창업자)의 노력에서 나오는가? |\n\n**네 가지 모두 해당되면 → 증권**으로 분류될 가능성이 높다.\n\n## 크립토에 적용\n\nICO나 토큰 판매 시, 구매자가 \"창업팀이 열심히 개발하면 토큰 가격이 오를 것\"을 기대했다면 ④번 요건을 충족한다. 이 경우 토큰이 증권으로 분류되어 SEC 규제 대상이 된다.\n\n## '충분한 탈중앙화'가 해결책인 이유\n\n팀이 없어도 프로토콜이 자율적으로 운영된다면:\n\n> \"타인(팀)의 노력에 의존\"하지 않게 됨 → ④번 요건 미충족 → **증권이 아닐 수 있다**\n\n이것이 a16z가 \"단계적 탈중앙화\"를 규제 준수 전략으로 제시하는 근거다.\n\n## 실제 사례\n\n| 프로젝트 | 결과 |\n|----------|------|\n| Kik (KIN 토큰) | SEC 소송 → $500만 벌금 (2020) |\n| Ripple (XRP) | SEC 소송 → 2023년 일부 승소 (거래소 판매분은 비증권, 기관 판매분은 증권) |\n| 이더리움 | SEC가 \"현재 탈중앙화되어 있어 증권이 아니다\"고 사실상 인정 |",
         "key_ideas": [
           "4가지 요건: 투자, 공동 사업, 이익 기대, 타인의 노력에 의존",
@@ -354,7 +410,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
-        "exercise": "Howey Test에서 '충분한 탈중앙화'가 비증권 판정에 도움이 되는 이유는?\n1) 투자금이 줄어들어서\n2) 타인의 노력에 의존하지 않게 되어서\n3) 이익 기대가 사라져서\n숫자로 답하시오.",
+        "exercise": "Howey Test에서 '충분한 탈중앙화'가 비증권 판정에 도움이 되는 이유는?\n1) 투자금이 줄어들어서\n2) 타인의 노력에 의존하지 않게 되어서\n3) 이익 기대가 사라져서",
         "answer": "타인의 노력에 의존하지 않게 되어서",
         "explanation": "충분히 탈중앙화되면 팀이 없어도 프로토콜이 자율 운영되므로, Howey Test의 ④번 요건(타인의 노력에 의존)을 충족하지 않게 된다.",
         "x402_price": "",
@@ -363,7 +419,10 @@
       {
         "concept_id": "exit_to_community",
         "title": "Exit to Community",
-        "prerequisites": ["howey_test", "dao_types_overview"],
+        "prerequisites": [
+          "howey_test",
+          "dao_types_overview"
+        ],
         "content": "## Exit to Community란?\n\n전통적인 스타트업 엑시트는 **IPO(기업공개)** 또는 **M&A(인수합병)**다. 창업자와 투자자가 지분을 팔고 나간다.\n\nDAO의 새로운 엑시트 전략은 **Exit to Community**다:\n\n> 팀이 \"커뮤니티로 엑시트\" — 사전 계획에 따라 사용자·기여자에게 토큰 에어드롭\n\n## 달성되는 것들\n\n### 1. 플랫폼 리스크 제거\n\n코어 팀이 응용 프로그램의 과반수 소유권(수수료, 제어권)을 양도한다. 더 이상 팀이 마음대로 규칙을 바꿀 수 없다.\n\n### 2. 토큰의 비증권 전환\n\n충분한 탈중앙화로 Howey Test의 \"타인의 노력에 의존\" 요건을 피할 수 있다.\n\n### 3. 협동조합 경제 모델\n\n사용자-오너들은 **협동조합 경제 모델**로 규모의 수익 증가를 실현한다. 플랫폼의 성장이 사용자에게 직접 돌아간다.\n\n## 성공 사례 (2026년 기준)\n\n| 프로젝트 | 토큰 | 내용 |\n|----------|------|------|\n| Uniswap | UNI | 2020년 9월 사용자에게 대규모 에어드롭 |\n| Compound | COMP | DeFi 거버넌스 토큰의 선구자 |\n| Optimism | OP | L2 사용자에게 에어드롭 |\n| Arbitrum | ARB | 2023년 L2 최대 규모 에어드롭 |\n\n단, '충분한 탈중앙화'의 법적 기준은 2026년 현재도 명확히 확립되지 않았다.",
         "key_ideas": [
           "코어 팀이 과반수 소유권(수수료, 제어권)을 양도",
@@ -373,7 +432,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
-        "exercise": "Exit to Community를 성공적으로 실행한 DeFi 프로토콜의 대표 사례는?\n1) FTX\n2) Uniswap\n3) Binance\n숫자로 답하시오.",
+        "exercise": "Exit to Community를 성공적으로 실행한 DeFi 프로토콜의 대표 사례는?\n1) FTX\n2) Uniswap\n3) Binance",
         "answer": "Uniswap",
         "explanation": "Uniswap은 2020년 9월 UNI 토큰을 사용자에게 대규모 에어드롭하며 Exit to Community를 성공적으로 실행한 대표 사례다.",
         "x402_price": "",
