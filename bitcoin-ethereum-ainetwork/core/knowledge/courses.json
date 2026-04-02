@@ -23,7 +23,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
-        "exercise": "What was the core problem Satoshi Nakamoto tried to solve in the Bitcoin whitepaper?\n1) Improving internet speed\n2) Trustworthy digital payments without third parties\n3) Developing a new programming language\n4) Increasing bank profits",
+        "exercise": "What was the core problem Satoshi Nakamoto tried to solve in the Bitcoin whitepaper?\n1) Trustworthy digital payments without third parties\n2) Creating a decentralized storage network resistant to censorship\n3) Building a programmable platform for automated financial contracts\n4) Designing a privacy-preserving communication protocol for the internet",
         "answer": "Trustworthy digital payments without third parties",
         "explanation": "Satoshi wanted to create a P2P electronic payment system that could be trusted through cryptographic proof alone, without needing financial institutions as third parties. This is the core goal of Bitcoin."
       },
@@ -42,7 +42,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
-        "exercise": "What is the double-spending problem?\n1) Paying fees twice\n2) Attempting to send the same coin to multiple people simultaneously\n3) Bitcoin price doubling\n4) Having two wallets",
+        "exercise": "What is the double-spending problem?\n1) Attempting to send the same coin to multiple people simultaneously\n2) A transaction being confirmed on two competing blockchain forks at once\n3) Miners including the same transaction in consecutive blocks by mistake\n4) Users paying both a base fee and a priority fee for a single transaction",
         "answer": "Attempting to send the same coin to multiple people simultaneously",
         "explanation": "Double-spending is a fraudulent attempt to send the same digital coin to multiple people. Bitcoin prevents this through a public ledger and consensus mechanism."
       },
@@ -61,7 +61,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
-        "exercise": "What must a miner find in PoW?\n1) Another miner's password\n2) A nonce where SHA-256 hash meets certain conditions\n3) Exchange price information\n4) A user's private key",
+        "exercise": "What must a miner find in PoW?\n1) A nonce where SHA-256 hash meets certain conditions\n2) A valid digital signature that authenticates the entire block of transactions\n3) The Merkle root that matches all pending transactions in the mempool\n4) A peer node willing to propagate the block across the network first",
         "answer": "A nonce where SHA-256 hash meets certain conditions",
         "explanation": "Miners must find a nonce that, when combined with block data, produces a hash meeting the target difficulty (starting with a certain number of zeros). This process is 'mining'."
       },
@@ -80,7 +80,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
-        "exercise": "What is Bitcoin's maximum supply?\n1) Unlimited\n2) 100 million BTC\n3) 21 million BTC\n4) 1 million BTC",
+        "exercise": "What is Bitcoin's maximum supply?\n1) 21 million BTC\n2) 42 million BTC\n3) 18.5 million BTC\n4) 100 million BTC",
         "answer": "21 million BTC",
         "explanation": "Bitcoin is designed with a maximum supply of 21 million BTC. Through halving, it gradually approaches this limit, with the last bitcoin expected to be mined around 2140."
       }
@@ -111,7 +111,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
-        "exercise": "What is the main advantage of SPV?\n1) Higher security\n2) Payment verification possible without full blockchain\n3) Faster mining speed\n4) Lower transaction fees",
+        "exercise": "What is the main advantage of SPV?\n1) Payment verification possible without full blockchain\n2) Transactions are confirmed faster by skipping full node validation\n3) Users can mine blocks with significantly reduced computational resources\n4) Private keys are stored more securely through simplified key management",
         "answer": "Payment verification possible without full blockchain",
         "explanation": "SPV (Simplified Payment Verification) enables transaction verification using only block headers and Merkle proofs, without storing the 600GB+ full blockchain. Suitable for mobile wallets."
       },
@@ -130,7 +130,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "What constitutes Bitcoin's 'State'?\n1) All users' passwords\n2) All unspent transaction outputs (UTXO)\n3) Miners' IP addresses\n4) All smart contract code",
+        "exercise": "What constitutes Bitcoin's 'State'?\n1) All unspent transaction outputs (UTXO)\n2) The complete history of all broadcast transactions\n3) The active mining nodes and their hash rates\n4) The Merkle tree of all block headers to the tip",
         "answer": "All unspent transaction outputs (UTXO)",
         "explanation": "Bitcoin's state is the set of UTXOs (Unspent Transaction Outputs). Each UTXO represents bitcoin not yet spent and defines who owns how much."
       },
@@ -149,7 +149,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "Why doesn't Bitcoin Script support loops?\n1) Technically impossible to implement\n2) To prevent infinite loops\n3) Due to copyright issues\n4) To increase mining speed",
+        "exercise": "Why doesn't Bitcoin Script support loops?\n1) To prevent infinite loops\n2) To keep the language formally verifiable\n3) To reduce transaction data size on-chain\n4) To ensure backward compatibility with Satoshi's client",
         "answer": "To prevent infinite loops",
         "explanation": "Bitcoin Script intentionally excludes loops to prevent network paralysis (DoS attacks) from infinite loops. Ethereum solved this with the Gas concept."
       }
@@ -183,7 +183,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "Can a smart contract in Ethereum initiate a transaction on its own?\n1) Yes, anytime\n2) No, an EOA must trigger it first\n3) Only at specific times\n4) Only if another contract allows it",
+        "exercise": "Can a smart contract in Ethereum initiate a transaction on its own?\n1) Yes, when predefined on-chain conditions are met\n2) No, an EOA must trigger it first\n3) Yes, through scheduled callbacks in the EVM\n4) No, but it can send messages to other contracts independently",
         "answer": "No, an EOA must trigger it first",
         "explanation": "Contract accounts can call other contracts via messages, but the first transaction on the chain must be signed and initiated by an EOA (Externally Owned Account)."
       },
@@ -202,7 +202,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "After EIP-1559, what happens to the Base Fee?\n1) Goes to miners\n2) Refunded to users\n3) Burned\n4) Donated to foundation",
+        "exercise": "After EIP-1559, what happens to the Base Fee?\n1) Distributed to validators\n2) Burned\n3) Sent to the protocol treasury\n4) Rolled into the next block's fee pool",
         "answer": "Burned",
         "explanation": "After EIP-1559, the Base Fee is completely burned. This can reduce ETH supply, sometimes causing deflation when network usage is high."
       },
@@ -221,7 +221,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "Which is the most expensive data storage space in the EVM?\n1) Stack\n2) Memory\n3) Storage\n4) All the same",
+        "exercise": "Which is the most expensive data storage space in the EVM?\n1) Stack\n2) Memory\n3) Storage\n4) Calldata",
         "answer": "Storage",
         "explanation": "Storage is the most expensive because it must be permanently stored across all nodes. Stack and Memory are relatively cheap as they reset after transaction execution."
       },
@@ -240,7 +240,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "How much must be staked to become an Ethereum validator?\n1) 1 ETH\n2) 10 ETH\n3) 32 ETH\n4) 100 ETH",
+        "exercise": "How much must be staked to become an Ethereum validator?\n1) 16 ETH\n2) 32 ETH\n3) 64 ETH\n4) 128 ETH",
         "answer": "32 ETH",
         "explanation": "To become a solo validator in Ethereum PoS, you must stake 32 ETH. Smaller amounts can participate through staking pools like Lido or Rocket Pool."
       },
@@ -259,7 +259,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "What is ERC-20 a standard for?\n1) NFT minting\n2) Fungible Tokens\n3) Smart contract security\n4) Gas fee reduction",
+        "exercise": "What is ERC-20 a standard for?\n1) Fungible Tokens\n2) Non-Fungible Tokens\n3) Liquidity pool interfaces\n4) Multi-signature wallets",
         "answer": "Fungible Tokens",
         "explanation": "ERC-20 is the standard for Fungible Tokens. All tokens have equal value, and thousands of tokens like USDC, DAI, and UNI follow this standard."
       },
@@ -278,7 +278,7 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
-        "exercise": "What is the main purpose of Layer 2 solutions?\n1) Revert Ethereum to PoW\n2) Overcome mainnet scalability limitations\n3) Issue new coins\n4) Delete smart contracts",
+        "exercise": "What is the main purpose of Layer 2 solutions?\n1) Overcome mainnet scalability limitations\n2) Provide privacy-preserving transactions not possible on Layer 1\n3) Enable cross-chain interoperability between different blockchains\n4) Replace the Ethereum Virtual Machine with a more efficient runtime",
         "answer": "Overcome mainnet scalability limitations",
         "explanation": "Layer 2 solutions (Arbitrum, Optimism, etc.) overcome Ethereum mainnet (L1) scalability limitations. Transactions are processed on L2, with only final proofs/settlements on L1."
       }
@@ -311,7 +311,7 @@
         ],
         "code_ref": "",
         "paper_ref": "AI Network, 'Architecture Paper' (2018-2021) / 'Whitepaper' (2025)",
-        "exercise": "What is the 'paradox of open source AI' that AI Network aims to solve?\n1) Open source code is too complex\n2) Open source AI is public but requires enormous resources to run\n3) Open source licenses are confusing\n4) Open source AI quality is low",
+        "exercise": "What is the 'paradox of open source AI' that AI Network aims to solve?\n1) Open source AI is public but requires enormous resources to run\n2) Open source AI models are freely available but lack standardized evaluation benchmarks\n3) Open source AI frameworks are powerful but require proprietary hardware accelerators\n4) Open source AI communities produce models quickly but cannot maintain them long-term",
         "answer": "Open source AI is public but requires enormous resources to run",
         "explanation": "Open source AI models (e.g., LLaMA) have public code, but actually running them requires high-end GPUs. AI Network aims to lower this resource barrier through distributed computing."
       },
@@ -330,7 +330,7 @@
         ],
         "code_ref": "",
         "paper_ref": "AI Network, 'Architecture Paper' (2018-2021)",
-        "exercise": "What is the role of SRE in Deep Computing?\n1) Data storage\n2) Code execution environment (CPU role)\n3) Transaction verification\n4) Token issuance",
+        "exercise": "What is the role of SRE in Deep Computing?\n1) Code execution environment (CPU role)\n2) Persistent data layer for storing model weights and training datasets\n3) Consensus engine that validates computation results across nodes\n4) Communication bus that routes messages between distributed workers",
         "answer": "Code execution environment (CPU role)",
         "explanation": "SRE (Secure Runtime Environment) corresponds to the CPU in Von Neumann architecture. It executes AI workloads in an isolated environment and returns results."
       },
@@ -368,7 +368,7 @@
         ],
         "code_ref": "",
         "paper_ref": "AI Network, 'Whitepaper' (2025)",
-        "exercise": "Where is actual AI computation performed in AI Network?\n1) On-chain (all nodes)\n2) Off-chain (selected Worker's SRE)\n3) Central server\n4) Client's browser",
+        "exercise": "Where is actual AI computation performed in AI Network?\n1) On-chain, executed by all validator nodes to ensure consensus on results\n2) Off-chain (selected Worker's SRE)\n3) In a federated cloud environment managed by the AI Network Foundation\n4) On the Client's local machine using resources coordinated by the blockchain",
         "answer": "Off-chain (selected Worker's SRE)",
         "explanation": "AI Network doesn't perform heavy AI computation on-chain. The blockchain only records task requests/results, while actual computation is performed off-chain in Worker's SRE (Secure Runtime Environment)."
       },
@@ -387,7 +387,7 @@
         ],
         "code_ref": "",
         "paper_ref": "AI Network, 'Whitepaper' (2025)",
-        "exercise": "What problem does AIN token's 'Preemptive Buying' solve?\n1) Transaction speed\n2) Resource cost uncertainty due to cryptocurrency price volatility\n3) Smart contract security\n4) Network scalability",
+        "exercise": "What problem does AIN token's 'Preemptive Buying' solve?\n1) Resource cost uncertainty due to cryptocurrency price volatility\n2) Network congestion during peak demand periods for AI computation\n3) Fair distribution of computing resources among competing task requests\n4) Preventing spam transactions that could overload the task scheduling system",
         "answer": "Resource cost uncertainty due to cryptocurrency price volatility",
         "explanation": "Through Preemptive Buying, companies can secure a fixed amount of computing resources regardless of AIN price fluctuations. This enables budget planning and cost prediction."
       }
@@ -436,7 +436,7 @@
         ],
         "code_ref": "",
         "paper_ref": "AI Network, 'Whitepaper' (2025)",
-        "exercise": "What is the key difference between Open Resource and Open Source?\n1) Stricter license\n2) Provides not just code but execution resources\n3) Code is private\n4) Not free",
+        "exercise": "What is the key difference between Open Resource and Open Source?\n1) Provides not just code but execution resources\n2) Implements decentralized governance over the development roadmap\n3) Requires contributors to stake tokens before submitting code changes\n4) Distributes revenue from commercial usage back to open source maintainers",
         "answer": "Provides not just code but execution resources",
         "explanation": "Open Source only publishes code, but Open Resource provides code + execution environment (computing resources) through the network. This enables anyone to actually use open source AI."
       }
