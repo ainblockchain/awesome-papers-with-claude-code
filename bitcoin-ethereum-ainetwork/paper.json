@@ -31,5 +31,8 @@
       "title": "Bitcoin, Ethereum, AI Network"
     }
   ],
-  "thumbnailUrl": "thumbnail.png"
+  "thumbnailUrl": "thumbnail.png",
+  "organization": {
+    "name": "Common Computer"
+  }
 }

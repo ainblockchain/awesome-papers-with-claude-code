@@ -59,5 +59,8 @@
     "Smart Contracts",
     "On-Chain AI"
   ],
-  "thumbnailUrl": "thumbnail.png"
+  "thumbnailUrl": "thumbnail.png",
+  "organization": {
+    "name": "Common Computer"
+  }
 }

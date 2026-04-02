@@ -37,5 +37,8 @@
       "title": "DAO & 탈중앙화 조직"
     }
   ],
-  "thumbnailUrl": "thumbnail.png"
+  "thumbnailUrl": "thumbnail.png",
+  "organization": {
+    "name": "Common Computer"
+  }
 }
