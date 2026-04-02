@@ -1,4 +1,4 @@
-# 강한 기술과 약한 기술 학습 경로
+# 강한 기술과 약한 기술
 
 Chris Dixon의 "Strong and Weak Technologies" (2019),
 a16z crypto의 "7 Essential Ingredients of a Metaverse" (2022),

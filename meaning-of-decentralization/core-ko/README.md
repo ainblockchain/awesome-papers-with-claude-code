@@ -1,4 +1,4 @@
-# 탈중앙화의 의미 학습 경로
+# 탈중앙화의 의미
 
 Vitalik Buterin의 "The Meaning of Decentralization" (2017)과
 Web3 정체성, 헤드리스 브랜드, 분산 합의에 관한 보충 자료를 기반으로 한

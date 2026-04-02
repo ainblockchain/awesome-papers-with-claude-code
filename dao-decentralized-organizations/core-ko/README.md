@@ -1,4 +1,4 @@
-# DAO & 탈중앙화 조직 학습 경로
+# DAO & 탈중앙화 조직
 
 Claude Code 기반의 인터랙티브 학습 경로입니다.
 김민현(Common Computer) 블록체인 강의 시리즈 및 Vitalik Buterin, Taylor Pearson, Aragon, Nick Tomaino, Jesse Walden의 글을 기반으로 합니다.

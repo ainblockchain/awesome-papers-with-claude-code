@@ -1,4 +1,4 @@
-# Bitcoin, Ethereum, AI Network 학습 경로
+# Bitcoin, Ethereum, AI Network
 
 Claude Code 기반 인터랙티브 학습 경로 — 사토시 나카모토의 비트코인 백서(2008),
 Vitalik Buterin의 이더리움 백서(2014), AI Network 아키텍처/백서(2018-2025) 기반.

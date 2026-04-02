@@ -1,4 +1,4 @@
-# NFT 철학과 기술 학습 경로
+# NFT 철학과 기술
 
 Token Identity Theory와 Donald Davidson의 Anomalous Monism을 통한 NFT의 철학적 기반 탐구, ERC-20/721/1155 표준을 통한 기술적 구현 이해, a16z State of Crypto 2023을 통한 시장 사이클 분석, Vitalik Buterin의 정당성(Legitimacy) 개념을 통한 NFT 가치 발견을 위한 Claude Code 기반 인터랙티브 학습 코스입니다.
 

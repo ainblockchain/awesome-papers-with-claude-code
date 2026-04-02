@@ -1,4 +1,4 @@
-# AI, Blockchain & The Long Tail 학습 경로
+# AI, Blockchain & The Long Tail
 
 Claude Code 기반 인터랙티브 학습 경로로,
 AI와 블록체인 기술의 교차점을 탐구합니다.
