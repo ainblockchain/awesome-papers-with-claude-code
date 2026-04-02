@@ -1,0 +1,53 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "meaning-of-decentralization",
+  "topic_map": {
+    "three_axes_decentralization": "meaning-of-decentralization/three_axes_decentralization",
+    "architectural_decentralization": "meaning-of-decentralization/architectural_decentralization",
+    "political_decentralization": "meaning-of-decentralization/political_decentralization",
+    "logical_decentralization": "meaning-of-decentralization/logical_decentralization",
+    "fault_tolerance": "meaning-of-decentralization/fault_tolerance",
+    "attack_resistance": "meaning-of-decentralization/attack_resistance",
+    "collusion_resistance": "meaning-of-decentralization/collusion_resistance",
+    "common_mode_failure": "meaning-of-decentralization/common_mode_failure",
+    "did_decentralized_identifiers": "meaning-of-decentralization/did_decentralized_identifiers",
+    "web3_identity_stack": "meaning-of-decentralization/web3_identity_stack",
+    "crypto_pki_trojan_horse": "meaning-of-decentralization/crypto_pki_trojan_horse",
+    "headless_brands": "meaning-of-decentralization/headless_brands",
+    "bitcoin_headless_brand": "meaning-of-decentralization/bitcoin_headless_brand",
+    "narrative_forks": "meaning-of-decentralization/narrative_forks",
+    "distributed_consensus": "meaning-of-decentralization/distributed_consensus",
+    "flp_impossibility": "meaning-of-decentralization/flp_impossibility",
+    "byzantine_fault_tolerance": "meaning-of-decentralization/byzantine_fault_tolerance",
+    "nakamoto_consensus": "meaning-of-decentralization/nakamoto_consensus"
+  },
+  "depth_map": {
+    "three_axes_decentralization": 1,
+    "architectural_decentralization": 1,
+    "political_decentralization": 1,
+    "logical_decentralization": 1,
+    "fault_tolerance": 2,
+    "attack_resistance": 2,
+    "collusion_resistance": 2,
+    "common_mode_failure": 2,
+    "did_decentralized_identifiers": 2,
+    "web3_identity_stack": 2,
+    "crypto_pki_trojan_horse": 2,
+    "headless_brands": 3,
+    "bitcoin_headless_brand": 3,
+    "narrative_forks": 3,
+    "distributed_consensus": 1,
+    "flp_impossibility": 3,
+    "byzantine_fault_tolerance": 3,
+    "nakamoto_consensus": 3
+  },
+  "topics_to_register": [
+    {
+      "path": "meaning-of-decentralization",
+      "title": "탈중앙화의 의미",
+      "description": "Vitalik Buterin의 탈중앙화 프레임워크, Web3 정체성, 헤드리스 브랜드, 분산 합의 학습 경로"
+    }
+  ],
+  "x402_lessons": {}
+}

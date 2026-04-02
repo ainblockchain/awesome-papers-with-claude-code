@@ -1,0 +1,28 @@
+{
+  "title": "The Meaning of Decentralization",
+  "description": "Explore Vitalik Buterin's seminal essay on the three axes of decentralization (architectural, political, logical), Web3 identity stack, headless brands, and distributed consensus algorithms.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "Vitalik Buterin"
+    },
+    {
+      "name": "Nichanan Kesonpat"
+    },
+    {
+      "name": "Other Internet Research"
+    },
+    {
+      "name": "Preethi Kasireddy"
+    }
+  ],
+  "publishedAt": "2017-02-06",
+  "organization": {
+    "name": "Ethereum Foundation"
+  },
+  "submittedBy": "community",
+  "sortOrder": 25
+}

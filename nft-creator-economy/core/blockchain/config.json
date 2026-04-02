@@ -1,0 +1,136 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "nft-creator-economy",
+  "topic_map": {
+    "thousand_true_fans": "nft-creator-economy/thousand_true_fans",
+    "creator_middleman_problem": "nft-creator-economy/creator_middleman_problem",
+    "nft_definition": "nft-creator-economy/nft_definition",
+    "rent_seeking_removal": "nft-creator-economy/rent_seeking_removal",
+    "price_tier_granularity": "nft-creator-economy/price_tier_granularity",
+    "user_as_owner": "nft-creator-economy/user_as_owner",
+    "subscribe_to_mint": "nft-creator-economy/subscribe_to_mint",
+    "genesis_drop": "nft-creator-economy/genesis_drop",
+    "collectible_series": "nft-creator-economy/collectible_series",
+    "writing_nfts": "nft-creator-economy/writing_nfts",
+    "web_evolution": "nft-creator-economy/web_evolution",
+    "platform_ownership": "nft-creator-economy/platform_ownership",
+    "creator_dao": "nft-creator-economy/creator_dao",
+    "curator_economy": "nft-creator-economy/curator_economy",
+    "skeuomorphism_vs_native": "nft-creator-economy/skeuomorphism_vs_native",
+    "nft_royalty_challenge": "nft-creator-economy/nft_royalty_challenge",
+    "hype_cycle": "nft-creator-economy/hype_cycle"
+  },
+  "depth_map": {
+    "thousand_true_fans": 1,
+    "creator_middleman_problem": 1,
+    "nft_definition": 1,
+    "rent_seeking_removal": 2,
+    "price_tier_granularity": 2,
+    "user_as_owner": 2,
+    "subscribe_to_mint": 3,
+    "genesis_drop": 3,
+    "collectible_series": 3,
+    "writing_nfts": 3,
+    "web_evolution": 1,
+    "platform_ownership": 2,
+    "creator_dao": 3,
+    "curator_economy": 3,
+    "skeuomorphism_vs_native": 3,
+    "nft_royalty_challenge": 4,
+    "hype_cycle": 2
+  },
+  "topics_to_register": [
+    {
+      "path": "nft-creator-economy",
+      "title": "NFTs and the Creator Economy",
+      "description": "Learning path exploring how NFTs and blockchain enable direct creator-fan relationships, from Kevin Kelly's 1000 True Fans to Web3 market realities"
+    },
+    {
+      "path": "nft-creator-economy/thousand_true_fans",
+      "title": "1000 True Fans Theory",
+      "description": "Kevin Kelly's 2008 theory that creators need only 1,000 true fans paying ~$100/year to make a living, rather than millions of casual followers"
+    },
+    {
+      "path": "nft-creator-economy/creator_middleman_problem",
+      "title": "Creator Middleman Problem",
+      "description": "Centralized social platforms became new intermediaries between creators and fans, inserting ads and algorithmic recommendations while capturing most revenue"
+    },
+    {
+      "path": "nft-creator-economy/nft_definition",
+      "title": "NFT Definition",
+      "description": "Non-Fungible Token - a blockchain-based record representing unique digital media with verifiable history, provenance, and programmable capabilities"
+    },
+    {
+      "path": "nft-creator-economy/rent_seeking_removal",
+      "title": "Rent-Seeking Removal",
+      "description": "Blockchain-based ownership eliminates rent-seeking intermediaries by giving users full control of purchased NFTs, limiting platform fees through competition"
+    },
+    {
+      "path": "nft-creator-economy/price_tier_granularity",
+      "title": "Fine-Grained Price Tiering",
+      "description": "NFTs enable creators to capture more consumer surplus through granular pricing from $100K+ items for superfans to $1 items for casual supporters"
+    },
+    {
+      "path": "nft-creator-economy/user_as_owner",
+      "title": "Users as Owners",
+      "description": "Crypto networks turn users into owners through tokens, creating genuine P2P marketing and reducing customer acquisition costs to near zero"
+    },
+    {
+      "path": "nft-creator-economy/subscribe_to_mint",
+      "title": "Subscribe to Mint",
+      "description": "Mirror.xyz product requiring email subscription to mint NFTs, bootstrapping direct creator-collector communication channels for long-term engagement"
+    },
+    {
+      "path": "nft-creator-economy/genesis_drop",
+      "title": "Genesis Drop",
+      "description": "NFT collectible featuring project logo/mascot at launch, adding credibility and catalyzing community formation around project genesis"
+    },
+    {
+      "path": "nft-creator-economy/collectible_series",
+      "title": "Collectible Series",
+      "description": "Recurring NFT drops providing consistent incentives for new follower subscriptions and brand asset collection completion by existing holders"
+    },
+    {
+      "path": "nft-creator-economy/writing_nfts",
+      "title": "Writing NFTs",
+      "description": "Mirror's approach to tokenizing written content, allowing bootstrapped audiences to collect posts with creators capturing 100% of revenue"
+    },
+    {
+      "path": "nft-creator-economy/web_evolution",
+      "title": "Web Evolution",
+      "description": "Three phases: Web1 (static sites), Web2 (social/mobile/cloud), Web3 (crypto/AI/decentralization) representing shift from read to read-write to read-write-own"
+    },
+    {
+      "path": "nft-creator-economy/platform_ownership",
+      "title": "Platform Ownership via Tokens",
+      "description": "Web3 enables users to own platforms through tokens, shifting power from centralized corporations to distributed communities"
+    },
+    {
+      "path": "nft-creator-economy/creator_dao",
+      "title": "Creator DAO",
+      "description": "Decentralized Autonomous Organizations for creators using smart contracts for incorporation, funding, governance, and immediate token liquidity"
+    },
+    {
+      "path": "nft-creator-economy/curator_economy",
+      "title": "Curator Economy",
+      "description": "Future where curators act like angel investors, building portfolios of NFTs/tokens and proving discovery of creators through transparent on-chain records"
+    },
+    {
+      "path": "nft-creator-economy/skeuomorphism_vs_native",
+      "title": "Skeuomorphism vs Crypto-Native",
+      "description": "Tension between familiar designs mimicking physical objects (YouTube NFTs, Tweet NFTs) versus designs leveraging blockchain's unique properties"
+    },
+    {
+      "path": "nft-creator-economy/nft_royalty_challenge",
+      "title": "NFT Royalty Challenge",
+      "description": "2023 marketplace wars collapsed automatic royalties - OpenSea made royalties optional, Blur enforced 0.5% minimum, revealing gap between code and market reality"
+    },
+    {
+      "path": "nft-creator-economy/hype_cycle",
+      "title": "NFT Hype Cycle",
+      "description": "NFTs followed Gartner Hype Cycle reaching Peak of Inflated Expectations in 2021 ($29B art market), then 93% crash by 2024, with ongoing evolution to practical use cases"
+    }
+  ],
+  "x402_lessons": {}
+}

@@ -1,0 +1,143 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "strong-weak-technologies",
+  "topic_map": {
+    "strong_vs_weak_tech": "strong-weak-technologies/strong_vs_weak_tech",
+    "hype_cycle": "strong-weak-technologies/hype_cycle",
+    "unreasonable_man": "strong-weak-technologies/unreasonable_man",
+    "decentralization_axis": "strong-weak-technologies/decentralization_axis",
+    "property_rights": "strong-weak-technologies/property_rights",
+    "self_sovereign_identity": "strong-weak-technologies/self_sovereign_identity",
+    "composability": "strong-weak-technologies/composability",
+    "openness": "strong-weak-technologies/openness",
+    "community_ownership": "strong-weak-technologies/community_ownership",
+    "social_immersion": "strong-weak-technologies/social_immersion",
+    "cold_start_problem": "strong-weak-technologies/cold_start_problem",
+    "tokens_as_gtm": "strong-weak-technologies/tokens_as_gtm",
+    "web3_gtm_stakeholders": "strong-weak-technologies/web3_gtm_stakeholders",
+    "defi_dao_gtm": "strong-weak-technologies/defi_dao_gtm",
+    "social_dao_gtm": "strong-weak-technologies/social_dao_gtm",
+    "scissor_labels": "strong-weak-technologies/scissor_labels",
+    "narrative_wars": "strong-weak-technologies/narrative_wars",
+    "future_orientation": "strong-weak-technologies/future_orientation"
+  },
+  "depth_map": {
+    "strong_vs_weak_tech": 1,
+    "hype_cycle": 1,
+    "unreasonable_man": 2,
+    "decentralization_axis": 1,
+    "property_rights": 2,
+    "self_sovereign_identity": 2,
+    "composability": 2,
+    "openness": 2,
+    "community_ownership": 2,
+    "social_immersion": 2,
+    "cold_start_problem": 1,
+    "tokens_as_gtm": 2,
+    "web3_gtm_stakeholders": 2,
+    "defi_dao_gtm": 3,
+    "social_dao_gtm": 3,
+    "scissor_labels": 1,
+    "narrative_wars": 2,
+    "future_orientation": 3
+  },
+  "topics_to_register": [
+    {
+      "path": "strong-weak-technologies",
+      "title": "Strong and Weak Technologies",
+      "description": "Learning path covering strong vs weak technology pairs, metaverse ingredients, Web3 GTM strategies, and narrative dynamics"
+    },
+    {
+      "path": "strong-weak-technologies/strong_vs_weak_tech",
+      "title": "Strong vs Weak Technologies",
+      "description": "Chris Dixon's framework distinguishing technology pairs where strong forms reshape the world while weak forms adapt to it. Strong tech captivates enthusiasts and follows hype cycles, while weak tech appears safer to incumbents."
+    },
+    {
+      "path": "strong-weak-technologies/hype_cycle",
+      "title": "Hype Cycle",
+      "description": "Perez/Gartner model describing how strong technologies progress: innovation trigger, peak of inflated expectations, trough of disillusionment, slope of enlightenment, plateau of productivity."
+    },
+    {
+      "path": "strong-weak-technologies/unreasonable_man",
+      "title": "The Unreasonable Man",
+      "description": "George Bernard Shaw's concept that progress depends on those who persist in adapting the world to their vision. Weak tech adapts to the current world; strong tech makes the world adapt to it."
+    },
+    {
+      "path": "strong-weak-technologies/decentralization_axis",
+      "title": "Decentralization as Essential Ingredient",
+      "description": "The dominant and fundamental principle of a proper metaverse. Systems not owned or operated by a single entity or oligarchy, enabled by blockchain's code-enforced commitments."
+    },
+    {
+      "path": "strong-weak-technologies/property_rights",
+      "title": "Property Rights in Digital Worlds",
+      "description": "The principle that digital asset purchases should grant true ownership like physical world, not rentals. Enabled by cryptography, blockchain, and NFTs to convert digital serfs into homesteaders."
+    },
+    {
+      "path": "strong-weak-technologies/self_sovereign_identity",
+      "title": "Self-Sovereign Identity",
+      "description": "Identity that persists across metaverse without dependence on centralized providers. Web3 cryptography enables authentication without surveillance-based social login."
+    },
+    {
+      "path": "strong-weak-technologies/composability",
+      "title": "Composability",
+      "description": "Ability to combine software components like Lego blocks. Each component written once, reused forever. Strong form enables permissionless modification across entire stack, as demonstrated by DeFi."
+    },
+    {
+      "path": "strong-weak-technologies/openness",
+      "title": "Openness and Open Source",
+      "description": "Transparent code, algorithms, and protocols as public goods. Essential for true composability and community trust. Enables safer software and reduces information asymmetry."
+    },
+    {
+      "path": "strong-weak-technologies/community_ownership",
+      "title": "Community Ownership",
+      "description": "Stakeholders have governance voice proportional to participation, not corporate edicts. Tokens align network participants toward common good. DAOs experiment with flexible governance."
+    },
+    {
+      "path": "strong-weak-technologies/social_immersion",
+      "title": "Social Immersion",
+      "description": "Metaverse requires social immersion, not necessarily VR/AR hardware. The Trojan horse narrative from Big Tech. What matters is enabled activities: hangouts, work, socializing."
+    },
+    {
+      "path": "strong-weak-technologies/cold_start_problem",
+      "title": "Cold Start Problem",
+      "description": "How to bootstrap a network from nothing. Web2 uses traditional sales/marketing funnels. Web3 uses tokens to reward early users before network effects kick in."
+    },
+    {
+      "path": "strong-weak-technologies/tokens_as_gtm",
+      "title": "Tokens as GTM Catalyst",
+      "description": "Tokens provide alternative to cold start problem by rewarding early contributions. Compound's COMP liquidity mining drove TVL from $100M to $600M. Tokens attract but don't guarantee retention."
+    },
+    {
+      "path": "strong-weak-technologies/web3_gtm_stakeholders",
+      "title": "Web3 GTM Stakeholders",
+      "description": "Web3 GTM targets customers, developers, investors, and partners — not just customers. Community roles more important than sales/marketing roles. Focus on purpose and community ownership."
+    },
+    {
+      "path": "strong-weak-technologies/defi_dao_gtm",
+      "title": "DeFi DAO GTM",
+      "description": "DeFi protocols start centralized, progressively decentralize via governance tokens and DAO. Value accrues differently than Web2. TVL is canonical metric but integrations and community health matter more."
+    },
+    {
+      "path": "strong-weak-technologies/social_dao_gtm",
+      "title": "Social and Cultural DAO GTM",
+      "description": "GTM centers on clear purpose and organic community growth. ConstitutionDAO raised $47M without roadmap, execution plan, or token. Purpose can precede method. Metrics include Discord activity and governance participation."
+    },
+    {
+      "path": "strong-weak-technologies/scissor_labels",
+      "title": "Scissor Labels",
+      "description": "Categorization terms that gain widespread recognition as trend names but lack agreed definitions. Controlling the definition means controlling the trend narrative. Examples: Hyperpop, Metaverse, Web3."
+    },
+    {
+      "path": "strong-weak-technologies/narrative_wars",
+      "title": "Narrative Wars",
+      "description": "Scissor labels become battlegrounds for narrative control. In VC-funded spaces, being inside the label definition affects funding. Binary debates obscure real stakes: community preservation, cultural capital."
+    },
+    {
+      "path": "strong-weak-technologies/future_orientation",
+      "title": "Future Orientation vs Scissor Debate",
+      "description": "Productive engagement with scissor labels: identify real stakes, introduce spectrums/subcategories, or ignore and focus on the interesting idea underneath. Best approach: keep creating forward."
+    }
+  ],
+  "x402_lessons": {}
+}

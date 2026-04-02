@@ -1,0 +1,143 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "ai-blockchain-longtail",
+  "topic_map": {
+    "ai_centralization": "ai-blockchain-longtail/ai_centralization",
+    "robot_hivemind": "ai-blockchain-longtail/robot_hivemind",
+    "long_tail_problem": "ai-blockchain-longtail/long_tail_problem",
+    "neural_network_limits": "ai-blockchain-longtail/neural_network_limits",
+    "world_computer": "ai-blockchain-longtail/world_computer",
+    "smart_contracts": "ai-blockchain-longtail/smart_contracts",
+    "two_sided_markets": "ai-blockchain-longtail/two_sided_markets",
+    "cold_start_problem": "ai-blockchain-longtail/cold_start_problem",
+    "autonomous_marketplace": "ai-blockchain-longtail/autonomous_marketplace",
+    "data_quality": "ai-blockchain-longtail/data_quality",
+    "private_smart_contracts": "ai-blockchain-longtail/private_smart_contracts",
+    "decentralized_hivemind": "ai-blockchain-longtail/decentralized_hivemind",
+    "market_power": "ai-blockchain-longtail/market_power",
+    "gpu_question": "ai-blockchain-longtail/gpu_question",
+    "ainft_concept": "ai-blockchain-longtail/ainft_concept",
+    "composability": "ai-blockchain-longtail/composability",
+    "flash_loans": "ai-blockchain-longtail/flash_loans",
+    "l2_scaling": "ai-blockchain-longtail/l2_scaling"
+  },
+  "depth_map": {
+    "ai_centralization": 1,
+    "robot_hivemind": 1,
+    "long_tail_problem": 1,
+    "neural_network_limits": 1,
+    "world_computer": 2,
+    "smart_contracts": 2,
+    "two_sided_markets": 2,
+    "cold_start_problem": 2,
+    "autonomous_marketplace": 3,
+    "data_quality": 3,
+    "private_smart_contracts": 3,
+    "decentralized_hivemind": 3,
+    "market_power": 3,
+    "gpu_question": 4,
+    "ainft_concept": 4,
+    "composability": 4,
+    "flash_loans": 4,
+    "l2_scaling": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "ai-blockchain-longtail",
+      "title": "AI × 블록체인: 롱테일 문제와 탈중앙화 지능",
+      "description": "블록체인과 탈중앙화 시장이 AI의 중앙화와 롱테일 도전을 해결하는 방법을 탐구하는 학습 경로"
+    },
+    {
+      "path": "ai-blockchain-longtail/ai_centralization",
+      "title": "AI 중앙화",
+      "description": "AI는 막대한 자원과 데이터를 가진 거대 기술 기업이 지배하는 게임이 되었다"
+    },
+    {
+      "path": "ai-blockchain-longtail/robot_hivemind",
+      "title": "로봇 하이브마인드",
+      "description": "로봇들이 학습 경험을 공유하는 집단 지성 시스템 구축"
+    },
+    {
+      "path": "ai-blockchain-longtail/long_tail_problem",
+      "title": "롱테일 문제",
+      "description": "AI에서 엣지 케이스와 변형을 처리하는 도전, 막대한 양의 데이터가 필요함"
+    },
+    {
+      "path": "ai-blockchain-longtail/neural_network_limits",
+      "title": "신경망의 한계",
+      "description": "신경망은 뛰어난 보간기이지만 형편없는 외삽기로, 방대한 훈련 데이터가 필요함"
+    },
+    {
+      "path": "ai-blockchain-longtail/world_computer",
+      "title": "탈중앙화 월드 컴퓨터",
+      "description": "커뮤니티가 소유한 신뢰 없는, 허가 없는 글로벌 컴퓨팅 플랫폼으로서의 이더리움"
+    },
+    {
+      "path": "ai-blockchain-longtail/smart_contracts",
+      "title": "스마트 컨트랙트",
+      "description": "외부 간섭 없이 결정론적으로 실행되는 주권적 프로그램"
+    },
+    {
+      "path": "ai-blockchain-longtail/two_sided_markets",
+      "title": "양면 시장",
+      "description": "데이터 공급자와 AI 서비스 소비자를 연결하는 크립토 기반 마켓플레이스"
+    },
+    {
+      "path": "ai-blockchain-longtail/cold_start_problem",
+      "title": "콜드 스타트 문제",
+      "description": "순수 현금 보조금 대신 소유권 토큰을 통한 마켓플레이스 부트스트래핑 해결"
+    },
+    {
+      "path": "ai-blockchain-longtail/autonomous_marketplace",
+      "title": "자율 마켓플레이스",
+      "description": "토큰 소유권을 통해 참여를 인센티브하는 자체 자금 조달 AI 마켓플레이스"
+    },
+    {
+      "path": "ai-blockchain-longtail/data_quality",
+      "title": "데이터 품질 측정",
+      "description": "기여된 데이터의 신호를 신뢰성 있게 측정하고 품질과 노이즈를 구별하는 메커니즘"
+    },
+    {
+      "path": "ai-blockchain-longtail/private_smart_contracts",
+      "title": "프라이빗 스마트 컨트랙트",
+      "description": "검증 가능한 실행을 유지하면서 신경망 모델을 보호하기 위해 zk-SNARK 사용"
+    },
+    {
+      "path": "ai-blockchain-longtail/decentralized_hivemind",
+      "title": "탈중앙화 자율 하이브마인드",
+      "description": "집단 지성을 가진 풀뿌리 노력에서 나타나는 자율 AI 엔티티"
+    },
+    {
+      "path": "ai-blockchain-longtail/market_power",
+      "title": "AI를 위한 시장의 힘",
+      "description": "탈중앙화 AI 개발 조정에 적용된 Adam Smith의 보이지 않는 손"
+    },
+    {
+      "path": "ai-blockchain-longtail/gpu_question",
+      "title": "AI의 GPU 질문",
+      "description": "GPU 인프라 투자와 실제 AI 수익 창출 간의 $200B-$600B 격차"
+    },
+    {
+      "path": "ai-blockchain-longtail/ainft_concept",
+      "title": "AINFT",
+      "description": "AI를 책임감 있고, 재현 가능하고, 가치 있게 만드는 AI 컴포넌트의 불변 식별자"
+    },
+    {
+      "path": "ai-blockchain-longtail/composability",
+      "title": "블록체인 조합성",
+      "description": "Calculator에서 Cloud까지 다양한 조합성 정도를 가진 블록체인 컴퓨팅의 4가지 시대"
+    },
+    {
+      "path": "ai-blockchain-longtail/flash_loans",
+      "title": "플래시 대출 & 원자 트랜잭션",
+      "description": "단일 원자 트랜잭션을 통한 신뢰 없는 조합성을 보여주는 Marble 예시"
+    },
+    {
+      "path": "ai-blockchain-longtail/l2_scaling",
+      "title": "레이어 2 스케일링",
+      "description": "전통적인 샤딩에서 Danksharding을 통한 롤업 중심 스케일링으로의 진화"
+    }
+  ],
+  "x402_lessons": {}
+}

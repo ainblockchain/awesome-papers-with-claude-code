@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "title": "DAO & 탈중앙화 조직 지식 그래프",
+    "description": "DAO와 탈중앙화 조직에 대한 개념 의존성 그래프 — 18개 노드, 22개 엣지",
+    "source": "김민현, Common Computer — 블록체인 강의 시리즈 / Vitalik Buterin, Taylor Pearson, Aragon, Nick Tomaino, Jesse Walden",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "blockchain_fundamentals",
+      "name": "블록체인 기초 개념",
+      "type": "theory",
+      "level": "foundational",
+      "description": "블록체인의 기본 원리, 합의 메커니즘(PoW/PoS), 스마트컨트랙트, 코인과 토큰의 차이를 학습한다.",
+      "key_ideas": [
+        "블록체인 = 전 세계에 분산 저장되는 변조 불가능한 장부",
+        "PoW(작업증명) vs PoS(지분증명) 합의 메커니즘",
+        "스마트컨트랙트: 조건 충족 시 자동 실행되는 코드",
+        "코인(자체 체인) vs 토큰(다른 체인 위 발행)"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 강의",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_definition",
+      "name": "DAO의 정의와 구조",
+      "type": "theory",
+      "level": "foundational",
+      "description": "탈중앙화 자율 조직(DAO)의 정의, 전통 기업과의 차이, 토큰 기반 거버넌스 구조를 학습한다.",
+      "key_ideas": [
+        "DAO = 운영 규칙이 스마트컨트랙트로 블록체인에 기록된 조직",
+        "전통 기업: 이사회 결정 → 직원 실행",
+        "DAO: 토큰 보유자 투표 → 스마트컨트랙트 자동 실행",
+        "중간 관리자 없이 자동으로 작동"
+      ],
+      "code_refs": [],
+      "paper_ref": "김민현, Common Computer — 블록체인 강의",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "the_dao_incident",
+      "name": "TheDAO 해킹 사건과 교훈",
+      "type": "theory",
+      "level": "foundational",
+      "description": "2016년 TheDAO 해킹 사건의 경위, 재진입 공격, 이더리움 하드포크 결정을 학습한다.",
+      "key_ideas": [
+        "2016년 Slock.it이 이더리움에 TheDAO 런칭 → $150M 모금",
+        "재진입 공격(re-entrancy exploit)으로 자금 30% 탈취",
+        "이더리움 커뮤니티의 하드포크 결정 (블록 1,920,000)",
+        "스마트컨트랙트 보안의 중요성 교훈"
+      ],
+      "code_refs": [],
+      "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "convex_concave_decisions",
+      "name": "Convex vs Concave 의사결정",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Vitalik Buterin의 Convex/Concave 의사결정 프레임워크를 학습한다. 언제 중앙화가, 언제 탈중앙화가 더 효과적인지 이해한다.",
+      "key_ideas": [
+        "Convex: 극단적 선택이 최선 (군사 전략, 빠른 제품 결정)",
+        "Concave: 중간값/절충안이 최선 (자금 배분, 정책 결정)",
+        "Convex 문제 → 중앙화된 소수가 처리",
+        "Concave 문제 → 커뮤니티 전체가 결정"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_vs_corporation",
+      "name": "DAO vs Corporation 논쟁",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "DAO가 결국 기업 구조로 수렴할 것이라는 비판과 Vitalik의 반론을 학습한다.",
+      "key_ideas": [
+        "Corporation파: 위계가 의사결정을 효율화, DAO도 수렴할 것",
+        "Vitalik: DAO는 Corporation이 아닌 Sovereign(주권)에 가깝다",
+        "DAO가 배울 것은 기업 경영학이 아닌 정치학",
+        "계승 문제(Succession Problem)가 핵심 도전"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pod_structure",
+      "name": "Pod 구조와 혼합 거버넌스",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "우크라이나 DAO 사례를 통해 탈중앙화와 중앙화를 혼합한 Pod 구조를 학습한다.",
+      "key_ideas": [
+        "자금 조달: 탈중앙화 방식",
+        "자금 집행: Pod에 할당 후 중앙화된 방식으로 태스크 수행",
+        "상위 레벨(Core): Concave 상황에 집중",
+        "하위 레벨(Pod): Convex 상황에 집중"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "censorship_resistance",
+      "name": "검열저항성과 탈중앙화",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "탈중앙화가 검열저항성을 제공하는 원리와 Pirate Bay, Sci-Hub, BitTorrent 사례를 학습한다.",
+      "key_ideas": [
+        "Pirate Bay, Sci-Hub: 도메인 관리자만 법적 위험, 데이터는 탈중앙화 유지",
+        "BitTorrent: 누구든 참여/이탈해도 파일 유지",
+        "DAO의 검열저항성: 영구 회피가 아닌 안정적 유지가 목적",
+        "불확실한 상황에서 조직을 안정적으로 유지"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "kleros_case",
+      "name": "Kleros 분산 법원 사례",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Kleros 탈중앙 분쟁 해결 플랫폼을 통해 '신뢰할 수 있는 공정성'으로서의 탈중앙화를 학습한다.",
+      "key_ideas": [
+        "PNK 토큰 스테이킹 보유자 중 배심원 3,000명 무작위 선별",
+        "배심원들은 서로 알지 못하고 3일 내 증거 검토 후 투표",
+        "스마트컨트랙트로 배상금 자동 지급",
+        "한계: Case #1170 내부자 토큰 동원 논란"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "organization_man",
+      "name": "Organization Man과 Social Ethic",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "William Whyte의 Organization Man 개념과 20세기 기업 중심 사회의 형성 배경을 학습한다.",
+      "key_ideas": [
+        "Organization Man: 1956년 William Whyte가 명명",
+        "개인주의 → 집단주의(Social Ethic) 전환",
+        "소속감(belongingness)이 개인의 궁극적 욕구라는 믿음",
+        "20세기 대기업 지배 사회의 합리적 적응"
+      ],
+      "code_refs": [],
+      "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "blockchain_man",
+      "name": "Blockchain Man과 새로운 패러다임",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Taylor Pearson의 Blockchain Man 개념과 거래비용 감소에 따른 조직 규모 변화를 학습한다.",
+      "key_ideas": [
+        "인터넷이 거래비용을 한 자릿수 낮추고, 블록체인이 다시 한 자릿수 낮출 것",
+        "거래비용이 0에 수렴할수록 기업의 균형 규모는 1인으로 수렴",
+        "프론티어 과학자형 인간이 Blockchain Man의 원형",
+        "할리우드 모델: 프로젝트 단위 협업이 주류 직업 모델"
+      ],
+      "code_refs": [],
+      "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fat_protocol_thesis",
+      "name": "Fat Protocol 테제",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "인터넷과 블록체인의 가치 분배 구조 차이를 설명하는 Fat Protocol 테제를 학습한다.",
+      "key_ideas": [
+        "인터넷: 얇은 프로토콜(무료) + 두꺼운 응용(Google, Facebook)",
+        "블록체인: 두꺼운 프로토콜(ETH, SOL) + 얇은 응용",
+        "블록체인 프로토콜에는 토큰이 내장되어 있어 가치를 직접 축적",
+        "현재 논쟁: DeFi/NFT 응용에서도 막대한 가치 창출됨"
+      ],
+      "code_refs": [],
+      "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_types_overview",
+      "name": "DAO의 15가지 적용 영역",
+      "type": "application",
+      "level": "intermediate",
+      "description": "개발자 집단, 노동자 집단, 예술 집단, 자산 관리 등 DAO가 변환하고 있는 다양한 영역을 학습한다.",
+      "key_ideas": [
+        "개발자 집단: BadgerDAO, Gitcoin, API3",
+        "노동자 집단: Raid Guild, dOrg — 중세 길드의 현대적 부활",
+        "예술 집단: PleasrDAO — 크립토 역사상 상징적 NFT 보유",
+        "메타버스: Decentraland — 완전한 탈중앙 메타버스"
+      ],
+      "code_refs": [],
+      "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "firm_existence",
+      "name": "기업의 존재 이유",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Ronald Coase의 거래비용 이론과 기업이 존재하는 경제학적 이유를 학습한다.",
+      "key_ideas": [
+        "거래비용 최소화 — Ronald Coase, '기업의 본질' (1937)",
+        "자본과 인력의 집적 — Vitalari & Shaughnessy",
+        "위험 회피적 인간에게 안정성과 고용 보장 제공",
+        "대부분의 사람들은 기업을 싫어하지만 필요"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_without_firm",
+      "name": "기업 없이 번성하는 비트코인",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "비트코인이 법인 없이도 지속되는 디지털 서비스를 실현한 방식을 학습한다.",
+      "key_ideas": [
+        "채굴자: PoW로 성과 측정, 프로토콜에서 BTC로 직접 보상",
+        "개발자/사용자: BTC 보유 → 가치 상승으로 간접 보상",
+        "2017년 비트코인 시총 $1000억 > Goldman Sachs 시총",
+        "2026년 비트코인 시총 ~$1.7조, Goldman Sachs의 수십 배"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decentralized_org_barriers",
+      "name": "탈중앙 조직의 주요 장벽",
+      "type": "theory",
+      "level": "advanced",
+      "description": "탈중앙화된 의사결정의 어려움, 기여도 측정 문제, '탈중앙화'의 남용을 학습한다.",
+      "key_ideas": [
+        "탈중앙화된 의사결정은 어렵다 — 거버넌스 모범 사례 부재",
+        "대부분의 노동 유형에서 기여도를 정확히 측정하기 어렵다",
+        "'탈중앙화'의 남용과 불명확성",
+        "초기에는 일정 수준의 의사결정 중앙화가 필요"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "progressive_decentralization",
+      "name": "단계적 탈중앙화 전략",
+      "type": "technique",
+      "level": "advanced",
+      "description": "a16z의 단계적 탈중앙화 플레이북 — PMF → 커뮤니티 참여 → 충분한 탈중앙화 순서를 학습한다.",
+      "key_ideas": [
+        "1단계: Product/Market Fit — 코어 팀이 모든 결정 주도",
+        "2단계: Community Participation — 커뮤니티 조화 강화",
+        "3단계: Sufficient Decentralization — 광범위한 토큰 배분",
+        "실패 패턴: 커뮤니티 소유권을 먼저 추구하면 투기꾼만 유도"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "howey_test",
+      "name": "Howey Test와 증권 분류",
+      "type": "theory",
+      "level": "advanced",
+      "description": "크립토 토큰이 증권으로 분류되는 기준인 Howey Test를 학습한다.",
+      "key_ideas": [
+        "4가지 요건: 투자, 공동 사업, 이익 기대, 타인의 노력에 의존",
+        "네 가지 모두 해당되면 증권으로 분류",
+        "충분한 탈중앙화 → 타인의 노력에 의존하지 않음 → 비증권",
+        "사례: Kik $500만 벌금, Ripple 일부 승소, 이더리움 비증권 인정"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "exit_to_community",
+      "name": "Exit to Community",
+      "type": "technique",
+      "level": "frontier",
+      "description": "팀이 커뮤니티로 엑시트하는 방식과 협동조합 경제 모델을 학습한다.",
+      "key_ideas": [
+        "코어 팀이 과반수 소유권(수수료, 제어권)을 양도",
+        "토큰이 비증권으로 전환 가능",
+        "사용자-오너들은 협동조합 경제 모델로 규모의 수익 증가",
+        "성공 사례: Uniswap(UNI), Compound(COMP), Optimism(OP), Arbitrum(ARB)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "blockchain_fundamentals", "target": "dao_definition", "relationship": "requires", "weight": 1.0, "description": "블록체인 기초 이해가 DAO 정의 학습의 선행 조건" },
+    { "source": "dao_definition", "target": "the_dao_incident", "relationship": "builds_on", "weight": 1.0, "description": "DAO 정의를 알아야 TheDAO 사건의 맥락을 이해" },
+    { "source": "dao_definition", "target": "convex_concave_decisions", "relationship": "enables", "weight": 1.0, "description": "DAO 구조 이해가 의사결정 프레임워크 학습을 가능하게 함" },
+    { "source": "convex_concave_decisions", "target": "dao_vs_corporation", "relationship": "builds_on", "weight": 1.0, "description": "Convex/Concave 개념이 DAO vs Corporation 논쟁의 기초" },
+    { "source": "convex_concave_decisions", "target": "pod_structure", "relationship": "enables", "weight": 1.0, "description": "의사결정 프레임워크가 Pod 구조 설계의 근거" },
+    { "source": "dao_definition", "target": "censorship_resistance", "relationship": "enables", "weight": 0.8, "description": "DAO의 탈중앙화 특성이 검열저항성의 기초" },
+    { "source": "censorship_resistance", "target": "kleros_case", "relationship": "builds_on", "weight": 0.9, "description": "검열저항성 개념이 Kleros 사례 분석의 배경" },
+    { "source": "dao_definition", "target": "organization_man", "relationship": "alternative_to", "weight": 0.7, "description": "DAO는 Organization Man 시대의 대안적 조직 형태" },
+    { "source": "organization_man", "target": "blockchain_man", "relationship": "evolves_to", "weight": 1.0, "description": "Organization Man에서 Blockchain Man으로의 진화" },
+    { "source": "blockchain_man", "target": "fat_protocol_thesis", "relationship": "builds_on", "weight": 0.8, "description": "Blockchain Man 개념이 Fat Protocol 테제와 연결" },
+    { "source": "dao_definition", "target": "dao_types_overview", "relationship": "enables", "weight": 1.0, "description": "DAO 정의 이해가 다양한 적용 영역 학습의 기초" },
+    { "source": "blockchain_fundamentals", "target": "firm_existence", "relationship": "enables", "weight": 0.7, "description": "블록체인 이해가 기업 존재 이유 재검토를 가능하게 함" },
+    { "source": "firm_existence", "target": "bitcoin_without_firm", "relationship": "builds_on", "weight": 1.0, "description": "기업 존재 이유를 알아야 비트코인의 혁신을 이해" },
+    { "source": "bitcoin_without_firm", "target": "decentralized_org_barriers", "relationship": "enables", "weight": 1.0, "description": "비트코인 사례가 탈중앙 조직의 장벽 논의를 가능하게 함" },
+    { "source": "decentralized_org_barriers", "target": "progressive_decentralization", "relationship": "enables", "weight": 1.0, "description": "장벽 이해가 단계적 탈중앙화 전략 학습의 동기" },
+    { "source": "progressive_decentralization", "target": "howey_test", "relationship": "builds_on", "weight": 1.0, "description": "단계적 탈중앙화가 Howey Test 대응 전략과 연결" },
+    { "source": "howey_test", "target": "exit_to_community", "relationship": "enables", "weight": 1.0, "description": "Howey Test 이해가 Exit to Community 전략의 근거" },
+    { "source": "the_dao_incident", "target": "decentralized_org_barriers", "relationship": "builds_on", "weight": 0.8, "description": "TheDAO 사건이 탈중앙 조직의 장벽을 보여주는 역사적 사례" },
+    { "source": "kleros_case", "target": "progressive_decentralization", "relationship": "builds_on", "weight": 0.6, "description": "Kleros 사례가 단계적 탈중앙화의 실제 적용 예시" },
+    { "source": "dao_types_overview", "target": "exit_to_community", "relationship": "builds_on", "weight": 0.7, "description": "다양한 DAO 유형이 Exit to Community의 실제 사례" },
+    { "source": "fat_protocol_thesis", "target": "progressive_decentralization", "relationship": "enables", "weight": 0.6, "description": "가치 분배 이해가 탈중앙화 전략 설계에 영향" },
+    { "source": "dao_vs_corporation", "target": "decentralized_org_barriers", "relationship": "builds_on", "weight": 0.8, "description": "DAO vs Corporation 논쟁이 탈중앙 조직의 장벽 이해에 기여" }
+  ]
+}

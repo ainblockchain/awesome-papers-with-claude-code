@@ -1,0 +1,28 @@
+{
+  "title": "NFTs and the Creator Economy",
+  "description": "Explore how NFTs enable direct creator-to-fan monetization, the thousand true fans theory, Web3 creator tools, and the evolution from skeuomorphic to crypto-native designs.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "https://cdixon.org/2021/02/27/NFTs-and-a-thousand-true-fans",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "Chris Dixon"
+    },
+    {
+      "name": "Kevin Kelly"
+    },
+    {
+      "name": "Patrick Rivera"
+    },
+    {
+      "name": "Mirror.xyz Team"
+    }
+  ],
+  "publishedAt": "2021-02-27",
+  "organization": {
+    "name": "a16z crypto"
+  },
+  "submittedBy": "community",
+  "sortOrder": 8
+}

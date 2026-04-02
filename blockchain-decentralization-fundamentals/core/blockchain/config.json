@@ -1,0 +1,94 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "blockchain-decentralization-fundamentals",
+  "topic_map": {
+    "web_evolution": "blockchain-decentralization-fundamentals/web_evolution",
+    "blockchain_basics": "blockchain-decentralization-fundamentals/blockchain_basics",
+    "consensus_pow_pos": "blockchain-decentralization-fundamentals/consensus_pow_pos",
+    "double_spending": "blockchain-decentralization-fundamentals/double_spending",
+    "platform_lifecycle": "blockchain-decentralization-fundamentals/platform_lifecycle",
+    "bait_and_switch": "blockchain-decentralization-fundamentals/bait_and_switch",
+    "voice_and_exit": "blockchain-decentralization-fundamentals/voice_and_exit",
+    "wikipedia_vs_encarta": "blockchain-decentralization-fundamentals/wikipedia_vs_encarta",
+    "layer2_scalability": "blockchain-decentralization-fundamentals/layer2_scalability",
+    "defi_nft_ecosystem": "blockchain-decentralization-fundamentals/defi_nft_ecosystem",
+    "ethereum_evm": "blockchain-decentralization-fundamentals/ethereum_evm"
+  },
+  "depth_map": {
+    "web_evolution": 1,
+    "blockchain_basics": 1,
+    "consensus_pow_pos": 1,
+    "double_spending": 2,
+    "platform_lifecycle": 2,
+    "bait_and_switch": 2,
+    "voice_and_exit": 2,
+    "wikipedia_vs_encarta": 2,
+    "layer2_scalability": 3,
+    "defi_nft_ecosystem": 3,
+    "ethereum_evm": 2
+  },
+  "topics_to_register": [
+    {
+      "path": "blockchain-decentralization-fundamentals",
+      "title": "Blockchain Fundamentals: Internet Computing and Decentralization",
+      "description": "Learning path for Blockchain Fundamentals Lecture 1 — 11 concepts covering Web evolution, blockchain basics, consensus, decentralization, and ecosystem"
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/web_evolution",
+      "title": "Evolution of the Web: 1.0 → 2.0 → 3.0",
+      "description": "Understand the 3-stage evolution of the Web, the transition from Stateless to Stateful, and the ownership revolution."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/blockchain_basics",
+      "title": "Blockchain Fundamentals",
+      "description": "Learn the basic structure of blockchain, asymmetric cryptography, hash functions, and State Machine concepts."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/consensus_pow_pos",
+      "title": "Consensus Mechanisms: PoW vs PoS",
+      "description": "Learn the principles of PoW and PoS, The Merge, Nothing at Stake problem, and Slashing."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/double_spending",
+      "title": "Double Spending Problem and Necessity of Consensus",
+      "description": "Learn the essence of double spending, why time-based ordering doesn't work, and how PoW/PoS solve it."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/platform_lifecycle",
+      "title": "Lifecycle of Centralized Platforms",
+      "description": "Learn Chris Dixon's 3-stage lifecycle of centralized platforms and the Google case study."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/bait_and_switch",
+      "title": "Bait-and-Switch: Platform Betrayal",
+      "description": "Learn the concept of bait-and-switch, historical examples, and its consequences."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/voice_and_exit",
+      "title": "Voice and Exit: Solutions Through Decentralization",
+      "description": "Learn Voice (voting rights) and Exit (right to leave), the concept of Fork, and how decentralization prevents bait-and-switch."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/wikipedia_vs_encarta",
+      "title": "Wikipedia vs Encarta: Triumph of Decentralization",
+      "description": "Learn the Wikipedia and Encarta case study, dynamic process comparison, and the lesson of late blooming."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/layer2_scalability",
+      "title": "Layer 2: Solving Scalability",
+      "description": "Learn the blockchain trilemma, Layer 2 principles, and Optimistic/ZK Rollups."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/defi_nft_ecosystem",
+      "title": "DeFi and NFTs: The Blockchain Ecosystem",
+      "description": "Learn DeFi concepts and history, NFTs, CBDC, and lessons from the FTX collapse."
+    },
+    {
+      "path": "blockchain-decentralization-fundamentals/ethereum_evm",
+      "title": "Ethereum and Smart Contracts",
+      "description": "Learn Ethereum's innovation, EVM, Gas, and smart contract principles."
+    }
+  ],
+  "x402_lessons": {}
+}

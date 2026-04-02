@@ -1,0 +1,34 @@
+{
+  "title": "Strong and Weak Technologies",
+  "description": "Explore Chris Dixon's framework of strong vs weak technologies, a16z's 7 essential ingredients of a metaverse, Web3 go-to-market strategies with tokens, and scissor labels in narrative wars.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "https://cdixon.org/2019/01/08/strong-and-weak-technologies",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "Chris Dixon"
+    },
+    {
+      "name": "Elizabeth Harkavy"
+    },
+    {
+      "name": "Eddy Lazzarin"
+    },
+    {
+      "name": "Arianna Simpson"
+    },
+    {
+      "name": "Maggie Hsu"
+    },
+    {
+      "name": "John Palmer"
+    }
+  ],
+  "publishedAt": "2019-01-08",
+  "organization": {
+    "name": "a16z crypto"
+  },
+  "submittedBy": "community",
+  "sortOrder": 30
+}

@@ -1,0 +1,157 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "bitcoin-ethereum-ainetwork",
+  "topic_map": {
+    "bitcoin_introduction": "bitcoin-ethereum-ainetwork/bitcoin_introduction",
+    "bitcoin_transactions": "bitcoin-ethereum-ainetwork/bitcoin_transactions",
+    "proof_of_work": "bitcoin-ethereum-ainetwork/proof_of_work",
+    "bitcoin_incentive": "bitcoin-ethereum-ainetwork/bitcoin_incentive",
+    "bitcoin_spv": "bitcoin-ethereum-ainetwork/bitcoin_spv",
+    "bitcoin_state_transition": "bitcoin-ethereum-ainetwork/bitcoin_state_transition",
+    "bitcoin_script_limits": "bitcoin-ethereum-ainetwork/bitcoin_script_limits",
+    "ethereum_accounts": "bitcoin-ethereum-ainetwork/ethereum_accounts",
+    "ethereum_gas": "bitcoin-ethereum-ainetwork/ethereum_gas",
+    "ethereum_evm": "bitcoin-ethereum-ainetwork/ethereum_evm",
+    "ethereum_merge": "bitcoin-ethereum-ainetwork/ethereum_merge",
+    "ethereum_applications": "bitcoin-ethereum-ainetwork/ethereum_applications",
+    "ethereum_scalability": "bitcoin-ethereum-ainetwork/ethereum_scalability",
+    "ain_vision": "bitcoin-ethereum-ainetwork/ain_vision",
+    "deep_computing": "bitcoin-ethereum-ainetwork/deep_computing",
+    "ain_roles": "bitcoin-ethereum-ainetwork/ain_roles",
+    "ain_execution_model": "bitcoin-ethereum-ainetwork/ain_execution_model",
+    "ain_token": "bitcoin-ethereum-ainetwork/ain_token",
+    "ml_patterns": "bitcoin-ethereum-ainetwork/ml_patterns",
+    "open_resource": "bitcoin-ethereum-ainetwork/open_resource"
+  },
+  "depth_map": {
+    "bitcoin_introduction": 1,
+    "bitcoin_transactions": 1,
+    "proof_of_work": 1,
+    "bitcoin_incentive": 2,
+    "bitcoin_spv": 2,
+    "bitcoin_state_transition": 2,
+    "bitcoin_script_limits": 2,
+    "ethereum_accounts": 2,
+    "ethereum_gas": 2,
+    "ethereum_evm": 2,
+    "ethereum_merge": 2,
+    "ethereum_applications": 2,
+    "ethereum_scalability": 3,
+    "ain_vision": 2,
+    "deep_computing": 3,
+    "ain_roles": 3,
+    "ain_execution_model": 3,
+    "ain_token": 3,
+    "ml_patterns": 4,
+    "open_resource": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "bitcoin-ethereum-ainetwork",
+      "title": "Bitcoin, Ethereum, AI Network",
+      "description": "비트코인, 이더리움, AI Network의 백서와 아키텍처를 다루는 학습 경로"
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_introduction",
+      "title": "비트코인의 탄생 배경",
+      "description": "2008년 금융 위기 속에서 사토시 나카모토가 비트코인을 제안한 배경과 신뢰 기반 금융 시스템의 문제점을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_transactions",
+      "title": "비트코인 트랜잭션 구조",
+      "description": "디지털 서명 체인으로 정의되는 전자 코인과 이중지불 문제의 해결 방식을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/proof_of_work",
+      "title": "작업 증명 (Proof of Work)",
+      "description": "Adam Back의 Hashcash에서 영감받은 PoW 시스템과 'one-CPU-one-vote' 원칙을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_incentive",
+      "title": "비트코인 인센티브 구조",
+      "description": "블록 보상과 트랜잭션 수수료로 구성된 비트코인의 인센티브 메커니즘과 반감기(Halving)를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_spv",
+      "title": "SPV와 Merkle Tree",
+      "description": "Simplified Payment Verification과 Merkle Tree를 통한 디스크 공간 재확보 메커니즘을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_state_transition",
+      "title": "비트코인의 상태 전이 시스템",
+      "description": "비트코인을 UTXO 기반 상태 전이 시스템으로 이해하는 관점을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_script_limits",
+      "title": "비트코인 스크립트의 한계",
+      "description": "비트코인 스크립트의 4가지 주요 한계와 이더리움 탄생의 동기를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_accounts",
+      "title": "이더리움 계정 구조",
+      "description": "이더리움의 EOA와 컨트랙트 계정, 4가지 필드 구조를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_gas",
+      "title": "Gas와 수수료 모델",
+      "description": "이더리움의 Gas 메커니즘과 EIP-1559 이후 수수료 구조 변화를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_evm",
+      "title": "EVM과 코드 실행",
+      "description": "Ethereum Virtual Machine의 3가지 저장 공간과 Solidity 언어를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_merge",
+      "title": "The Merge와 PoS 전환",
+      "description": "2022년 9월 이더리움의 PoW에서 PoS로의 전환(The Merge)을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_applications",
+      "title": "이더리움 응용 분야",
+      "description": "토큰 시스템, 금융 파생상품, DAO 등 이더리움 백서에서 제안된 응용 분야를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_scalability",
+      "title": "이더리움 확장성 과제",
+      "description": "모든 트랜잭션이 모든 노드에서 처리되어야 하는 확장성 문제와 Layer 2 해결책을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_vision",
+      "title": "AI Network 비전",
+      "description": "AI Network의 비전 — 글로벌 컴퓨터 네트워크와 Open Resource 이니셔티브를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/deep_computing",
+      "title": "Deep Computing Architecture",
+      "description": "AI Network의 Deep Computing — SRE, Big Storage, AIN Blockchain Protocol의 3가지 컴포넌트를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_roles",
+      "title": "AI Network 역할 시스템",
+      "description": "Admin, Evaluator, Worker, Client의 4가지 역할과 평판 트리(RTree)를 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_execution_model",
+      "title": "AI Network 실행 모델",
+      "description": "이벤트 기반 오프체인 실행 모델과 Post-Consensus 프로토콜을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_token",
+      "title": "AIN 토큰 경제",
+      "description": "AIN 토큰의 유틸리티와 선매(Preemptive Buying) 옵션을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ml_patterns",
+      "title": "AI Network ML 패턴",
+      "description": "분산 컴퓨팅, 손실 함수 최적화, 데이터 병렬화, 강화 학습 패턴을 학습한다."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/open_resource",
+      "title": "Open Source to Open Resource",
+      "description": "오픈소스 AI를 주권 에이전트(Open Resource)로 변환하는 AI Network의 핵심 개념을 학습한다."
+    }
+  ],
+  "x402_lessons": {}
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Token Standards and Crypto Economics",
+  "description": "Learn ERC-20 and ERC-721 token standards, Chris Dixon's token breakthrough insights, a16z Tokenology framework, and crypto valuation methods using Metcalfe's Law, NVT and PMR ratios.",
+  "githubUrl": "https://github.com/ethereum",
+  "docsUrl": "https://ethereum.org/en/developers/docs/standards/tokens/",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "Fabian Vogelsteller"
+    },
+    {
+      "name": "William Entriken"
+    },
+    {
+      "name": "Chris Dixon"
+    },
+    {
+      "name": "Guy Wuollet"
+    },
+    {
+      "name": "Jacob Franek"
+    }
+  ],
+  "publishedAt": "2015-11-19",
+  "organization": {
+    "name": "Ethereum Foundation / a16z crypto"
+  },
+  "submittedBy": "community",
+  "sortOrder": 26
+}

@@ -14,6 +14,7 @@
         "concept_id": "web_evolution",
         "title": "The Evolution of the Web: 1.0 → 2.0 → 3.0",
         "prerequisites": [],
+        "content": "## The Three Eras of the Web\n\nThe Web has evolved through three distinct stages, each fundamentally changing how humans interact with information and each other.\n\n### Web 1.0: Read-Only (1990s)\n\nThe first generation of the Web was essentially a digital library. Static HTML pages presented information, and users could only **read** content. Think of early Yahoo!, GeoCities, and personal homepages. There was no user interaction beyond clicking links.\n\n### Web 2.0: Read + Write, but Stateless (2000s-present)\n\nWeb 2.0 brought interactivity. Users could now **create** content: blog posts, social media updates, YouTube videos. However, the underlying protocols (HTTP, IP) are **Stateless** -- servers do not inherently remember who you are between requests.\n\nTo solve this, platforms invented cookies, sessions, and databases to track users. But here is the critical insight: **this state data lives on platform servers**. Facebook knows your friends, Google knows your searches, Amazon knows your purchases. The platforms own the data, and this ownership became the source of their enormous power.\n\n**Analogy**: Imagine a library where you can write notes in books, but the librarian keeps all notes in a locked filing cabinet only they can access.\n\n### Web 3.0: Read + Write + Own, Stateful (emerging)\n\nWeb 3.0 introduces a paradigm shift: the internet itself becomes **Stateful** through blockchain. The blockchain permanently records and maintains state -- account balances, ownership records, transaction histories -- without any single platform controlling that data.\n\nThis is the **ownership revolution**: users own their data, their digital assets, and their identity. The transition from Open Source (shared code) to **Open Resource** (shared code that is immediately deployable as a service with automatic revenue sharing) represents a fundamentally new economic model for the internet.\n\n## Key Insight\n\nThe progression is not just about technology but about **power**: who controls the state of the internet. In Web 2.0, platforms control state and extract value. In Web 3.0, users control state and retain value.",
         "key_ideas": [
           "Web 1.0 (read-only) → Web 2.0 (read+write, Stateless) → Web 3.0 (read+write+own, Stateful)",
           "Core feature of Web 2.0: HTTP, IP are Stateless Protocols — servers don't remember state",
@@ -23,31 +24,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 01",
-        "exercises": [
-          {
-            "question": "What is the most fundamental technical difference between Web 2.0 and Web 3.0?\n1) Internet speed increased\n2) Transition from Stateless to Stateful\n3) Social media emerged\n4) Mobile apps were created\nEnter the number.",
-            "answer": "Transition from Stateless to Stateful",
-            "explanation": "Web 2.0's HTTP and IP protocols are **Stateless** (don't store state). Servers don't remember users, so we had to artificially manage state with cookies and sessions. Platforms owning this data became their source of power.\n\nWeb 3.0's blockchain is **Stateful** (stores state). The blockchain itself permanently records all transactions and states. This enables global consensus on \"how much is my asset\" without a central server.\n\nOwnership, decentralization, DeFi — all Web 3.0 innovations are results made possible by this Stateful characteristic."
-          },
-          {
-            "question": "Why can users directly own their data in Web 3.0?\n1) Because bigger servers are used\n2) Because blockchain stores state in a distributed manner\n3) Because governments regulate it\n4) Because internet speed increased\nEnter the number.",
-            "answer": "Because blockchain stores state in a distributed manner",
-            "explanation": "In Web 2.0, my photos, posts, and follower data are stored on Instagram's servers. What if Instagram deletes your account? You lose everything.\n\nIn Web 3.0, my assets (tokens, NFTs, etc.) are **distributed across the blockchain**. Thousands of computers worldwide hold identical records. Even if a specific platform disappears, my assets remain intact and accessible through other services.\n\nThis is the \"ownership revolution.\" Since data exists on the blockchain rather than platform servers, true ownership becomes possible."
-          },
-          {
-            "question": "What does the transition from Open Source to Open Resource mean?\n1) Making code private\n2) Code sharing enables immediate service deployment with shared revenue\n3) Abolishing open source licenses\n4) Developers work for free\nEnter the number.",
-            "answer": "Code sharing enables immediate service deployment with shared revenue",
-            "explanation": "Current (Web 2.0) problem: Even when developers share code as open source, running actual services requires paid infrastructure like AWS. 99% end up operating at a loss.\n\nOpen Resource (Web 3.0) vision: When code is shared, it's **immediately deployed as a service on the blockchain**, with **automatic revenue sharing** based on usage with resource providers.\n\nWhen this lecture was created (~2018), this vision was a future blueprint. Centralized AI like ChatGPT grew first, but from 2024-2025, the concept of \"on-chain AI agents\" is materializing through a different path. A case of 'late blooming' (大器晚成)."
-          },
-          {
-            "question": "What problem arose from Web 2.0's Stateless characteristic?\n1) Internet became too fast\n2) Platforms came to own user data\n3) Too many websites were created\n4) Mobile apps couldn't be made\nEnter the number.",
-            "answer": "Platforms came to own user data",
-            "explanation": "HTTP is Stateless. Even when you log into a shopping site, the server asks \"who are you?\" when you go to the next page.\n\nTo solve this problem, state was stored using **cookies, sessions, and databases**. But where is this data stored? On **platform servers**.\n\nAs a result, GAFA (Google, Apple, Facebook, Amazon) came to own data of billions of users, which became the source of their power. Users lost control over their data and had no choice but to follow even when platforms changed rules arbitrarily."
-          }
-        ],
+        "exercise": "What is the most fundamental technical difference between Web 2.0 and Web 3.0?\n1) Internet speed increased\n2) Transition from Stateless to Stateful\n3) Social media emerged\n4) Mobile apps were created\nEnter the number.",
+        "answer": "Transition from Stateless to Stateful",
+        "explanation": "Web 2.0's HTTP and IP protocols are Stateless (don't store state). Servers don't remember users, so we had to artificially manage state with cookies and sessions. Platforms owning this data became their source of power. Web 3.0's blockchain is Stateful (stores state) -- the blockchain itself permanently records all transactions and states. Ownership, decentralization, DeFi -- all Web 3.0 innovations are results made possible by this Stateful characteristic.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Web 1.0 (read-only) → Web 2.0 (read+write, Stateless) → Web 3.0 (read+write+own, Stateful)\n- Core feature of Web 2.0: HTTP, IP are Stateless Protocols — servers don't remember state\n- Core feature of Web 3.0: Stateful Internet — blockchain permanently maintains and updates state\n- Open Source → Open Resource transition: code sharing enables immediate service deployment with usage-based revenue sharing\n- Ownership revolution: In Web 2.0 platforms own data, in Web 3.0 users own their data directly"
+        "x402_gateway": ""
       },
       {
         "concept_id": "blockchain_basics",
@@ -55,6 +36,7 @@
         "prerequisites": [
           "web_evolution"
         ],
+        "content": "## What is a Blockchain?\n\nAt its core, a blockchain is a **tamper-proof ledger shared globally** -- a State Machine that records every transaction and maintains a consistent view of the world across thousands of computers.\n\n### Asymmetric Cryptography: The Key Pair\n\nBlockchain security rests on **asymmetric encryption**. Every user has two mathematically linked keys:\n\n- **Private key**: A secret key only you know. Used to **sign** transactions, proving you authorized them.\n- **Public key**: Derived from the private key but shareable with anyone. Used to **verify** that a signature is genuine.\n\n**Analogy**: Your private key is like a wax seal stamp that only you possess. Your public key is like the pattern the seal leaves -- anyone can verify the pattern matches your stamp, but no one can forge the stamp itself.\n\n### Hash Functions: The Chain in Blockchain\n\nA hash function takes any input and produces a fixed-length \"fingerprint.\" Even changing a single bit completely changes the output. In blockchain, each block contains the **hash of the previous block**, forming a chain:\n\n```\nBlock #99 → hash(Block #99) stored in Block #100 → hash(Block #100) stored in Block #101...\n```\n\nIf you tamper with Block #99, its hash changes, which no longer matches what Block #100 recorded. This inconsistency cascades through every subsequent block. To successfully forge history, you would need to recompute **all subsequent blocks** faster than the entire network adds new ones -- practically impossible.\n\n### EOA: Externally Owned Accounts\n\nTransactions on blockchain require signing with a **private key**. This is the principle behind EOA (Externally Owned Account): only the person holding the private key outside the blockchain can control the account. No bank, no government, no platform can move your assets without your private key.\n\n### The State Machine Model\n\nBlockchain operates as a global State Machine:\n- **State S**: Current snapshot (Alice has 100 tokens, Bob has 50)\n- **Transaction TX**: Input that changes state (Alice sends 30 to Bob)\n- **New State S'**: Result after applying input (Alice has 70, Bob has 80)\n\nEthereum formalizes this: `APPLY(S, TX) → S'`",
         "key_ideas": [
           "Blockchain = A tamper-proof ledger shared globally (State Machine)",
           "Asymmetric encryption: Private key (signing) + Public key (verification) for transaction authentication",
@@ -64,31 +46,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 01",
-        "exercises": [
-          {
-            "question": "How is the 'chain' formed in blockchain?\n1) Blocks are connected by physical cables\n2) Each block contains the hash value of the previous block\n3) A central server manages block order\n4) Blocks are automatically sorted by time\nEnter the number.",
-            "answer": "Each block contains the hash value of the previous block",
-            "explanation": "A hash function transforms any data into a fixed-length \"fingerprint.\" Even changing 1 bit completely changes the hash value.\n\nIn blockchain, each block contains **the hash value of the previous block**. This connection forms the chain.\n\nWhat if you manipulate a past block? That block's hash changes, and it won't match the \"previous hash\" stored in the next block. The next block too, and the next... inconsistencies cascade.\n\nTo manipulate the past, you'd need to **recreate all subsequent blocks**, which is practically impossible. This is blockchain's immutability."
-          },
-          {
-            "question": "What is absolutely required to send a transaction on blockchain?\n1) Central bank approval\n2) Signing with private key\n3) Government-issued ID\n4) Platform account\nEnter the number.",
-            "answer": "Signing with private key",
-            "explanation": "Blockchain uses **asymmetric encryption**.\n\n- **Private key**: A secret key only you know. Used to sign transactions.\n- **Public key**: A key anyone can see. Used to verify signatures are genuine.\n\nBanks verify identity with ID + password. In blockchain, **private key signature** serves that role. You cannot move your assets without your private key.\n\nThis is the principle of EOA (Externally Owned Account). \"Externally owned account\" — only the person with the private key outside the blockchain can control it."
-          },
-          {
-            "question": "Why is blockchain called a 'State Machine'?\n1) Because it records state (balances, ownership, etc.) and changes state through transactions\n2) Because it operates automatically like a machine\n3) Because it's operated by each state in the US\n4) Because state changes frequently\nEnter the number.",
-            "answer": "Because it records state (balances, ownership, etc.) and changes state through transactions",
-            "explanation": "State Machine is a computer science concept:\n- **State**: Current system snapshot (e.g., Alice's balance 100, Bob's balance 50)\n- **Input (Transaction)**: Command that changes state (e.g., Alice→Bob transfer 30)\n- **New State**: Result after applying input (e.g., Alice's balance 70, Bob's balance 80)\n\nBlockchain is a **globally shared State Machine**. All nodes maintain identical state, and when a transaction occurs, everyone updates state identically.\n\nEthereum's formula: `APPLY(S, TX) → S'` — Apply transaction TX to current state S to get new state S'."
-          },
-          {
-            "question": "What makes data manipulation on blockchain extremely difficult?\n1) Government regulations\n2) The chain structure formed by hash values\n3) Server security\n4) User passwords\nEnter the number.",
-            "answer": "The chain structure formed by hash values",
-            "explanation": "Each block includes the hash of the previous block. This creates a chain where:\n\n1. If you change block #100's data, its hash changes\n2. Block #101 stored #100's old hash, so there's a mismatch\n3. You'd need to change #101's recorded hash... but then #101's own hash changes\n4. This cascades through every subsequent block\n\nTo successfully forge, you'd need to recompute **all subsequent blocks** faster than the entire network adds new ones — practically impossible.\n\nThis is why blockchain is called \"tamper-proof\" or \"immutable.\""
-          }
-        ],
+        "exercise": "How is the 'chain' formed in blockchain?\n1) Blocks are connected by physical cables\n2) Each block contains the hash value of the previous block\n3) A central server manages block order\n4) Blocks are automatically sorted by time\nEnter the number.",
+        "answer": "Each block contains the hash value of the previous block",
+        "explanation": "A hash function transforms any data into a fixed-length fingerprint. Even changing 1 bit completely changes the hash value. Each block contains the hash value of the previous block, forming the chain. If you manipulate a past block, that block's hash changes, causing a mismatch with the next block's stored hash. This cascades through every subsequent block, making tampering practically detectable and the chain immutable.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Blockchain = A tamper-proof ledger shared globally (State Machine)\n- Asymmetric encryption: Private key (signing) + Public key (verification) for transaction authentication\n- Hash function: Including previous block's fingerprint in next block → chain formation, instant tampering detection\n- EOA (Externally Owned Accounts): Transactions only possible with private key signature\n- Core blockchain property: Data manipulation is extremely difficult (immutability)"
+        "x402_gateway": ""
       },
       {
         "concept_id": "consensus_pow_pos",
@@ -96,6 +58,7 @@
         "prerequisites": [
           "blockchain_basics"
         ],
+        "content": "## The Consensus Problem\n\nIn a decentralized network with no central authority, how do thousands of computers agree on who has the right to write the next block? This is the **consensus problem**, and two major solutions have emerged.\n\n### PoW: Proof of Work (Bitcoin's Method)\n\nPoW works like a math competition:\n1. Thousands of miners race to solve a cryptographic puzzle (finding a hash with a specific number of leading zeros)\n2. The **first to solve it** earns the right to create the next block\n3. The winner receives a block reward (newly minted coins)\n4. Other nodes verify the solution (easy to verify, hard to find) and accept the block\n\nThe \"work\" is the massive computational effort required. This cost makes attacking the network economically irrational -- honest mining is more profitable than cheating.\n\n**Analogy**: Imagine a lottery where tickets cost real electricity. The winner gets to write the next page of the global ledger. Cheating would mean wasting all that electricity for nothing.\n\n### PoS: Proof of Stake (Ethereum's Method since 2022)\n\nPoS replaces computation with economic collateral:\n1. Validators **stake** coins as a security deposit (32 ETH minimum for Ethereum)\n2. The protocol randomly selects a validator to propose the next block\n3. Other validators verify and attest to the block\n4. Honest validators earn staking rewards; dishonest ones get **slashed** (their stake is confiscated)\n\n### The Merge (September 2022)\n\nEthereum's transition from PoW to PoS was historic -- the largest blockchain network upgrade ever. It reduced energy consumption by **99.95%**, eliminating the environmental criticism that plagued proof-of-work chains.\n\n### Nothing at Stake Problem and Slashing\n\nIn PoW, mining on two chains means splitting your hashpower (costly). In PoS, voting on two chains costs nothing -- just clicking twice. This **Nothing at Stake** problem is solved by **Slashing**: if caught double-voting, your staked coins are confiscated. This transforms \"nothing at stake\" into \"everything at stake.\"",
         "key_ideas": [
           "Consensus mechanism: Rules to decide 'who has the right to write the next block' without a central authority",
           "PoW (Proof of Work): First to solve a math puzzle creates the block — Bitcoin's method",
@@ -105,31 +68,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 01",
-        "exercises": [
-          {
-            "question": "What is the 'work' in PoW (Proof of Work)?\n1) Actual physical labor\n2) Computer calculations solving math problems\n3) Holding coins\n4) Connecting to the network\nEnter the number.",
-            "answer": "Computer calculations solving math problems",
-            "explanation": "PoW is like a competition:\n\n**The Problem**: \"Find a number (nonce) that, when combined with block data and hashed, produces a result starting with a certain number of zeros\"\n\nThis is pure trial and error. Computers try billions of random numbers until they find one that works. The first to find it wins the right to create the block.\n\n**Why do this?**\n- Creating a block requires massive computational effort (cost)\n- Cheating would mean wasting all that electricity\n- Honest work is more profitable than attacking\n\nThis is Bitcoin's security model: make attacking more expensive than cooperating."
-          },
-          {
-            "question": "How does PoS (Proof of Stake) select block creators?\n1) Based on computing power\n2) Random selection from those who staked coins\n3) Government designation\n4) First-come-first-served\nEnter the number.",
-            "answer": "Random selection from those who staked coins",
-            "explanation": "PoS works like a lottery where your tickets = staked coins:\n\n1. **Staking**: Lock up coins as collateral (minimum 32 ETH for Ethereum)\n2. **Selection**: Protocol randomly picks a validator to propose the next block\n3. **Validation**: Other validators verify and attest to the block\n4. **Rewards**: Honest validators earn staking rewards\n\n**Why stake coins?**\n- You have \"skin in the game\"\n- If you cheat, your staked coins get **slashed** (confiscated)\n- Honest behavior is rewarded\n\n**Isn't this unfair for poor people?** That's a valid concern. Solutions:\n- Staking pools: Pool money together to reach minimum\n- Liquid staking (Lido, etc.): Stake any amount, receive stETH\n- 32 ETH minimum prevents network spam from millions of tiny validators"
-          },
-          {
-            "question": "What was achieved through Ethereum's 'The Merge' in 2022?\n1) Internet speed doubled\n2) 99.95% energy consumption reduction\n3) Transaction fees became free\n4) New coins were issued\nEnter the number.",
-            "answer": "99.95% energy consumption reduction",
-            "explanation": "Before The Merge (PoW era):\n- Ethereum used as much electricity as a medium-sized country\n- Massive GPU farms running 24/7 solving puzzles\n- Environmental criticism was severe\n\nAfter The Merge (PoS era):\n- Energy consumption dropped by **99.95%**\n- No more puzzle-solving competition\n- Security comes from economic stake, not electricity\n\nThe Merge was historic:\n- Largest blockchain network upgrade ever\n- Changed the engine while the plane was flying\n- Proved PoS can secure a major network"
-          },
-          {
-            "question": "What is the 'Nothing at Stake' problem in PoS?\n1) Validators have nothing to lose\n2) Validators can vote on multiple chains without cost\n3) There's no reward for staking\n4) Network has no security\nEnter the number.",
-            "answer": "Validators can vote on multiple chains without cost",
-            "explanation": "In PoW: Mining on two chains = dividing your hashpower = costs double electricity\nIn PoS: Voting on two chains = just clicking twice = costs nothing\n\n**The Problem**:\nWhen the chain forks, rational validators could vote on ALL forks. Why not? It's free! But this breaks consensus — we need everyone to agree on ONE chain.\n\n**The Solution — Slashing**:\n- If caught voting on multiple chains: **your stake is confiscated**\n- Typically 1/32 of stake burned per offense\n- Detection is automatic through cryptographic proofs\n\nSlashing makes \"nothing at stake\" into \"everything at stake.\" The punishment outweighs any potential gain from double-voting."
-          }
-        ],
+        "exercise": "What is the 'work' in PoW (Proof of Work)?\n1) Actual physical labor\n2) Computer calculations solving math problems\n3) Holding coins\n4) Connecting to the network\nEnter the number.",
+        "answer": "Computer calculations solving math problems",
+        "explanation": "PoW requires miners to solve a cryptographic puzzle: finding a nonce that, when combined with block data and hashed, produces a result starting with a certain number of zeros. This is pure trial-and-error computation that consumes massive electricity. The first to find a valid solution wins the right to create the block and receive the reward. This cost is what makes attacking Bitcoin more expensive than cooperating.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Consensus mechanism: Rules to decide 'who has the right to write the next block' without a central authority\n- PoW (Proof of Work): First to solve a math puzzle creates the block — Bitcoin's method\n- PoS (Proof of Stake): Random selection from those who stake coins — Ethereum's method (since 2022)\n- The Merge (2022): Ethereum's PoW→PoS transition, 99.95% energy reduction\n- Nothing at Stake problem and Slashing: PoS weakness and its solution"
+        "x402_gateway": ""
       },
       {
         "concept_id": "double_spending",
@@ -137,6 +80,7 @@
         "prerequisites": [
           "consensus_pow_pos"
         ],
+        "content": "## The Core Problem of Digital Money\n\nDigital data is trivially copyable. If you send a music file to a friend, you still have a copy. What if you could do the same with money? This is the **double spending problem**: attempting to spend the same digital money twice.\n\n### Why Traditional Solutions Use Central Authorities\n\nBanks solve this easily: a central server tracks balances. When you send $100 to Alice, the bank deducts from your account first. If you try to send the same $100 to Bob, the bank rejects it -- insufficient funds. But this requires **trusting** the bank, which can freeze accounts, impose fees, and restrict access.\n\n### Why Time-Based Ordering Fails\n\nYou might think: \"Just check timestamps to see which transaction came first!\" This fails for three reasons:\n\n1. **No central clock**: Thousands of computers worldwide have slightly different clocks, and clocks can be manipulated\n2. **Network delays**: A transaction from Korea to the US takes ~0.1 seconds; during that time, conflicting transactions can occur\n3. **Simultaneous attack**: An attacker can deliberately broadcast two conflicting transactions at the exact same moment\n\n**Analogy**: Two people in different countries both claim they called you first. Without a central phone log, whose local time do you trust?\n\n### The Brilliant Solution: Qualification, Not Time\n\nSatoshi Nakamoto's insight was revolutionary: **don't ask \"which came first?\" -- ask \"who gets to write?\"**\n\nPoW/PoS select ONE authority per block through competition (PoW) or lottery (PoS). That authority's ordering becomes the truth:\n\n1. One person earns the right to write a block\n2. They record \"Alice gets the $100\" in the block\n3. All nodes worldwide copy this record\n4. Your balance is now $0 globally\n5. The transaction to Bob? Rejected -- insufficient funds\n\n### Economic Security\n\nAttacking the network requires controlling 51%+ of mining power (PoW) or staked coins (PoS) -- costing billions of dollars. Even if successful, the attack would crash the coin's value, destroying the attacker's own investment. **Attack cost > attack benefit**, so rational actors cooperate. This is **Trustless Trust**: you don't trust people, you trust economic incentive structures.",
         "key_ideas": [
           "Double spending: Attempting to pay twice with the same money",
           "Why time order doesn't work: No central clock in distributed systems",
@@ -145,31 +89,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture",
-        "exercises": [
-          {
-            "question": "What is the 'double spending' problem?\n1) Spending more than you have\n2) Attempting to pay twice with the same money\n3) Transaction fees being too high\n4) Network being too slow\nEnter the number.",
-            "answer": "Attempting to pay twice with the same money",
-            "explanation": "Imagine you have $100 in a digital wallet. You send $100 to Alice. Before that transaction is confirmed, you ALSO send $100 to Bob.\n\nIn the physical world, this is impossible — if you hand cash to Alice, you don't have it to give to Bob.\n\nIn the digital world, copying data is trivial. Without proper controls, you could broadcast two conflicting transactions simultaneously:\n- \"Pay $100 to Alice\"\n- \"Pay $100 to Bob\"\n\n**The Question**: Which one is valid? How do we decide?\n\nTraditional answer: A central bank decides (Visa, PayPal). But that's centralization — single point of failure, censorship, etc.\n\nBlockchain answer: Decentralized consensus."
-          },
-          {
-            "question": "Why can't we simply use timestamps to determine transaction order?\n1) Computers don't have clocks\n2) There's no single trusted clock in a distributed network\n3) Timestamps are too slow\n4) Timestamps cost money\nEnter the number.",
-            "answer": "There's no single trusted clock in a distributed network",
-            "explanation": "You might think: \"Just check which transaction was sent first by timestamp!\"\n\nThe problem: **Whose clock do we trust?**\n\n- My computer says 10:00:00.001\n- Your computer says 10:00:00.002\n- Network delays vary unpredictably\n- Clocks drift and can be manipulated\n\nIn centralized systems (Visa), the central server's clock is authoritative. In decentralized systems, there IS no central authority.\n\n**Real-world analogy**: Two people in different countries claim they called you first. Without a central phone company log, how do you prove who actually called first? Their local time means nothing if clocks aren't perfectly synchronized.\n\nThis is why blockchain doesn't rely on time — it relies on **consensus about who has the right to record**."
-          },
-          {
-            "question": "How do PoW/PoS solve the double spending problem?\n1) By using faster internet\n2) By letting only qualified validators record transactions\n3) By using bigger servers\n4) By checking all timestamps\nEnter the number.",
-            "answer": "By letting only qualified validators record transactions",
-            "explanation": "The brilliant insight of Satoshi Nakamoto:\n\n**Don't ask \"which came first?\" — ask \"who gets to write?\"**\n\nPoW approach:\n1. Millions of transactions are broadcast\n2. Miners compete to solve a puzzle\n3. Winner earns the right to write ONE block\n4. That block includes their chosen transaction order\n5. Conflicting transaction? Rejected. Already spent.\n\nPoS approach:\n1. Protocol randomly selects ONE validator\n2. That validator proposes a block with their transaction order\n3. Other validators verify and attest\n4. Consensus achieved\n\n**Key insight**: Instead of arguing about time, we select ONE authority per block through competition (PoW) or lottery (PoS). That authority's ordering becomes the truth.\n\nThis is how \"who writes\" replaces \"what time\" as the source of truth."
-          },
-          {
-            "question": "Why is the double spending problem harder in decentralized systems?\n1) Internet is slower\n2) Computers are weaker\n3) There's no central authority to decide which transaction is valid\n4) There are more users\nEnter the number.",
-            "answer": "There's no central authority to decide which transaction is valid",
-            "explanation": "Centralized solution (easy):\n- PayPal processes your transaction\n- Their database says: \"Balance was $100, now $0\"\n- Second transaction? Rejected. \"Insufficient funds.\"\n- Done. Single source of truth.\n\nDecentralized challenge (hard):\n- No single database\n- Thousands of computers worldwide\n- Each sees transactions at slightly different times\n- Network delays, latency differences\n- Some might see \"Pay Alice\" first, others see \"Pay Bob\" first\n\n**The Byzantine Generals Problem**: How do distributed parties agree on truth when communication is unreliable and some parties might be malicious?\n\nBlockchain's consensus mechanisms (PoW/PoS) are the solution — they create agreement without requiring trust in any single party."
-          }
-        ],
+        "exercise": "What is the 'double spending' problem?\n1) Spending more than you have\n2) Attempting to pay twice with the same money\n3) Transaction fees being too high\n4) Network being too slow\nEnter the number.",
+        "answer": "Attempting to pay twice with the same money",
+        "explanation": "Double spending means trying to spend the same digital money twice -- for example, sending $100 to Alice and simultaneously sending the same $100 to Bob. In the physical world, this is impossible (you hand cash to Alice, you no longer have it). In the digital world, data is trivially copyable. Blockchain solves this through consensus mechanisms: PoW/PoS select one authority per block who determines the canonical transaction ordering, making double spending impossible.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Double spending: Attempting to pay twice with the same money\n- Why time order doesn't work: No central clock in distributed systems\n- The real question: Without a central authority, how do we decide which transaction came first?\n- PoW/PoS solution: Don't determine by time, determine by qualification — only one person records"
+        "x402_gateway": ""
       }
     ]
   },
@@ -190,6 +114,7 @@
         "prerequisites": [
           "web_evolution"
         ],
+        "content": "## Chris Dixon's Platform Lifecycle Theory\n\nIn his 2018 article \"Why Decentralization Matters,\" **Chris Dixon** (partner at a16z crypto) identified a predictable 3-stage lifecycle that centralized platforms follow. This framework explains why even well-intentioned platforms eventually exploit their users.\n\n### Stage 1: Attract\n\n\"Come build on our platform! It's free!\"\n\nThe platform offers tremendous value to users, developers, and businesses. APIs are free, fees are zero, and the platform actively nurtures its ecosystem. This is a **positive-sum** relationship where both the platform and participants benefit. Early Google exemplified this: the best search engine, no ads, \"Don't be evil.\"\n\n### Stage 2: Grow\n\nNetwork effects kick in. Users attract more users. Switching costs rise as people invest time, content, and relationships into the platform. The platform becomes essential infrastructure -- everyone uses Google because everyone uses Google. Platform power over users and third parties steadily increases.\n\n### Stage 3: Extract\n\n\"Now you can't live without us.\"\n\nThe relationship shifts from **positive-sum to zero-sum**. The platform raises fees, changes rules, competes with its own developers, and extracts maximum value. Shareholders demand quarterly growth, and when new user acquisition slows, the only option is extracting more from existing users.\n\n## The Google Case Study\n\n- **2004**: IPO letter declares \"Don't be evil\" and promises to prioritize long-term user value\n- **2018**: \"Don't be evil\" removed from Code of Conduct\n- **2024**: US federal court rules Google illegally monopolized search, citing billions in payments to be the default search engine\n\n**Analogy**: Think of it like a landlord who offers cheap rent to fill an empty building, then raises rent once everyone's moved in and has nowhere else to go. The incentive structure guarantees exploitation once lock-in is achieved.",
         "key_ideas": [
           "Chris Dixon's 3-stage platform lifecycle: Attract → Grow → Extract",
           "Attract: Offer value to users and developers to build the platform",
@@ -199,31 +124,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
-        "exercises": [
-          {
-            "question": "What are the three stages in Chris Dixon's centralized platform lifecycle?\n1) Build → Sell → Exit\n2) Attract → Grow → Extract\n3) Start → Middle → End\n4) Create → Market → Profit\nEnter the number.",
-            "answer": "Attract → Grow → Extract",
-            "explanation": "Chris Dixon, partner at a16z (Andreessen Horowitz), identified a predictable pattern:\n\n**Stage 1 — Attract**:\nPlatform offers amazing value. Free services, open APIs, developer-friendly. \"Come build on us!\"\nExample: Early Google — best search, no ads, \"Don't be evil\"\n\n**Stage 2 — Grow**:\nNetwork effects kick in. Users attract more users. Switching becomes costly. Platform becomes essential.\nExample: Everyone uses Google because everyone uses Google\n\n**Stage 3 — Extract**:\nLock-in complete. Platform changes rules. Raises fees. Promotes own products. Users/developers have no choice.\nExample: Google prioritizes ads, demotes competitors, faces antitrust lawsuits\n\nThis is the inevitable trajectory of centralized platforms with shareholder pressure."
-          },
-          {
-            "question": "What is the 'Extract' phase in platform lifecycle?\n1) Users take value from the platform\n2) Platform changes rules and extracts value from users\n3) Platform creates new features\n4) Platform expands globally\nEnter the number.",
-            "answer": "Platform changes rules and extracts value from users",
-            "explanation": "The Extract phase characteristics:\n\n**Rule Changes**:\n- API access suddenly requires expensive licenses\n- Revenue share drops from 70% to 50%\n- Features become paid-only\n\n**Relationship Shift**:\n- From \"we grow together\" (positive-sum)\n- To \"my gain = your loss\" (zero-sum)\n- Platform vs users/developers\n\n**Real Examples**:\n- Twitter API: Free → $42,000/month\n- App Store: 30% tax on all revenue\n- Amazon: Copies bestselling 3rd party products\n\n**Why inevitable?**\n- Shareholders demand growth\n- Easy growth is over\n- Extraction from existing users is easier than innovation"
-          },
-          {
-            "question": "What does Google's journey from 'Don't be evil' to antitrust ruling demonstrate?\n1) Google became more ethical\n2) The inevitable extraction phase of centralized platforms\n3) Government overreach\n4) Technology becoming obsolete\nEnter the number.",
-            "answer": "The inevitable extraction phase of centralized platforms",
-            "explanation": "**2004 (Attract/Grow phase)**:\nGoogle IPO letter: \"Don't be evil... We believe strongly that in the long term, we will be better served... by a company that does good things for the world even if we forgo some short term gains.\"\n\n**2024 (Extract phase)**:\nUS antitrust ruling: Google maintains illegal monopoly. Pays $20B+ annually to be default search. Manipulates results to favor own products.\n\n**The transformation**:\n- Same company, same founders\n- Different phase of lifecycle\n- Shareholder pressure → extraction\n\nThis isn't about evil individuals. It's about **structural incentives**. Centralized platforms with fiduciary duty to shareholders will eventually extract. The incentives guarantee it.\n\nDecentralization aims to change these structural incentives."
-          },
-          {
-            "question": "Why do platforms shift from positive-sum to zero-sum relationships?\n1) Users become less valuable\n2) Lock-in is complete so platform can prioritize shareholders over users\n3) Technology improves\n4) Regulations change\nEnter the number.",
-            "answer": "Lock-in is complete so platform can prioritize shareholders over users",
-            "explanation": "**Positive-sum (early stage)**:\n- Platform grows = developers profit = users benefit\n- Everyone wins together\n- Aligned incentives\n\n**Zero-sum (extract stage)**:\n- Platform's gain = developers' loss\n- Every dollar platform takes is dollar developers don't get\n- Misaligned incentives\n\n**Why the shift happens**:\n\n1. **Lock-in complete**: Users can't leave (all friends on Facebook)\n2. **Switching cost high**: Years of data, followers, reputation\n3. **Shareholders demand returns**: Can't grow users forever, must grow revenue\n4. **Developers captive**: Built entire businesses on platform APIs\n\nThis is why Dixon argues we need decentralized alternatives — to break this cycle by removing the central party that can exploit its position."
-          }
-        ],
+        "exercise": "What are the three stages in Chris Dixon's centralized platform lifecycle?\n1) Build → Sell → Exit\n2) Attract → Grow → Extract\n3) Start → Middle → End\n4) Create → Market → Profit\nEnter the number.",
+        "answer": "Attract → Grow → Extract",
+        "explanation": "Chris Dixon identified a predictable 3-stage lifecycle: Attract (offer value, positive-sum), Grow (network effects, lock-in), and Extract (change rules, zero-sum). This is driven by structural incentives -- shareholder pressure demands growth, and once user acquisition slows, extracting from existing users becomes the rational strategy. Google's journey from 'Don't be evil' to antitrust ruling illustrates this trajectory.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Chris Dixon's 3-stage platform lifecycle: Attract → Grow → Extract\n- Attract: Offer value to users and developers to build the platform\n- Grow: Platform becomes indispensable, network effects lock users in\n- Extract: Change rules, raise fees, exploit users — Positive-sum → Zero-sum\n- Google example: 'Don't be evil' → Antitrust ruling"
+        "x402_gateway": ""
       },
       {
         "concept_id": "bait_and_switch",
@@ -231,6 +136,7 @@
         "prerequisites": [
           "platform_lifecycle"
         ],
+        "content": "## What is Bait-and-Switch?\n\nBait-and-switch is the pattern where platforms **attract** users and developers with favorable terms, then **change the rules** once lock-in is complete. It is the Extract stage in action.\n\n### Historical Examples\n\nChris Dixon documented several cases in \"Why Decentralization Matters\":\n\n**Microsoft vs Netscape (1990s)**: Microsoft distributed Internet Explorer for free and bundled it with Windows, destroying Netscape's 90% browser market share. Netscape was eventually acquired by AOL and development ceased in 2008.\n\n**Twitter vs Third-Party Clients**: Twitter opened its API (\"Build great Twitter apps!\"), fostering a thriving ecosystem including Tweetbot and Twitterrific. Then it gradually restricted API access, limited third-party features, and in 2023 priced the API at $42,000/month -- killing most independent apps.\n\n**App Store \"Apple Tax\"**: Apple and Google invited developers to build apps for billions of users, then imposed a **30% commission** on all revenue, arbitrarily rejected apps, and absorbed popular third-party features into the OS (flashlight apps became a built-in feature).\n\n### Why Developers Can't Leave\n\nBy the time the \"switch\" happens, developers have:\n- Years of code built on platform-specific APIs\n- Customers who only use that platform\n- Reputations and followers that can't be migrated\n- Too much investment to start over elsewhere\n\nThis **lock-in effect** means even when conditions worsen, leaving is more costly than staying.\n\n### The Chilling Effect on Innovation\n\nThe long-term consequence is devastating: the best entrepreneurs, developers, and investors learn **not to build on centralized platforms**. Innovation stagnates because talented people choose safer paths rather than building on quicksand.\n\n**Analogy**: Imagine a farmer who plants crops on rented land, only to have the landlord change the lease terms after harvest season. Next time, the farmer will think twice about planting anything at all.\n\n## Why This Is Structural, Not Personal\n\nBait-and-switch is not about evil founders. It is about **structural incentives**: shareholder pressure, monopoly power, and fiduciary duty create a system where extraction becomes the rational choice once lock-in is achieved. The structure guarantees the outcome.",
         "key_ideas": [
           "Bait: Attract with free access, open APIs, favorable terms",
           "Switch: Once locked in, change rules, raise fees, restrict access",
@@ -239,31 +145,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
-        "exercises": [
-          {
-            "question": "What is 'bait-and-switch' in the context of platforms?\n1) Changing platform colors\n2) Attracting users with good terms then changing rules once they're locked in\n3) Switching to a new platform\n4) Updating the user interface\nEnter the number.",
-            "answer": "Attracting users with good terms then changing rules once they're locked in",
-            "explanation": "**The Bait**:\n- \"Our API is free and open!\"\n- \"Developers keep 70% of revenue!\"\n- \"Build whatever you want on our platform!\"\n- Early developers prosper, attract more developers\n\n**The Switch**:\n- \"API now costs $42,000/month\"\n- \"Actually, we're taking 30%... make that 50%\"\n- \"That feature competes with us, you're banned\"\n- Developers' businesses destroyed overnight\n\n**Why it works**:\nBy the time the switch happens, developers have:\n- Years of code built on the platform\n- Customers who only use that platform\n- No viable alternatives\n- Too much invested to leave\n\nThis is the platform power play: promise a garden, build walls."
-          },
-          {
-            "question": "What happened to apps built on Twitter's API as an example of bait-and-switch?\n1) They became more profitable\n2) Twitter raised API prices dramatically, killing many businesses\n3) They were acquired by Twitter\n4) They expanded internationally\nEnter the number.",
-            "answer": "Twitter raised API prices dramatically, killing many businesses",
-            "explanation": "**The Bait (2006-2012)**:\n- Twitter encouraged developer ecosystem\n- Free API access\n- \"Build great Twitter apps!\"\n- Tweetbot, Twitterrific, hundreds of apps flourished\n\n**The Switch (2012-2023)**:\n- 2012: Limited API tokens, restricted competitors\n- 2018: Removed key API features\n- 2023: API price → $42,000/month\n- Many developers' life work destroyed\n\n**The aftermath**:\n- Third-party Twitter clients essentially died\n- Developers learned: Don't build on centralized platforms\n- Innovation moved elsewhere\n- Trust in platforms evaporated\n\nThis pattern repeated across Facebook, Google, Apple. The lesson: if a company CAN exploit you eventually, they WILL."
-          },
-          {
-            "question": "Why is bait-and-switch bad for overall innovation?\n1) It makes platforms grow faster\n2) Developers stop building on platforms they can't trust\n3) Users get more features\n4) Competition increases\nEnter the number.",
-            "answer": "Developers stop building on platforms they can't trust",
-            "explanation": "**Short-term**: Platform extracts maximum value\n**Long-term**: Innovation ecosystem dies\n\n**Developer calculus changes**:\n- Before: \"Build on the biggest platform for maximum reach\"\n- After: \"Building there = building on quicksand\"\n- Smart developers avoid centralized platforms entirely\n\n**The chilling effect**:\n- Best ideas never get built\n- Entrepreneurs choose safer paths\n- Platform becomes stagnant\n- Users lose potential innovation\n\n**Why this matters for Web 3.0**:\nDecentralized platforms CANNOT bait-and-switch:\n- Rules encoded in smart contracts\n- Can't be changed by single entity\n- Developers can trust the platform\n\nThis trust enables innovation that centralized platforms killed."
-          },
-          {
-            "question": "Why do centralized platforms inevitably resort to bait-and-switch?\n1) Founders are evil\n2) Structural incentives: shareholder pressure and monopoly power make it rational\n3) Users demand it\n4) Regulations require it\nEnter the number.",
-            "answer": "Structural incentives: shareholder pressure and monopoly power make it rational",
-            "explanation": "**It's not about evil people**:\n- Same founders, same company\n- But different phase, different incentives\n\n**Structural forces at play**:\n\n1. **Shareholder pressure**: Must show quarterly growth\n2. **Monopoly power**: Can extract without losing users\n3. **Fiduciary duty**: Legally must maximize shareholder value\n4. **Competition eliminated**: No need to be nice anymore\n\n**The math changes**:\n- Attract phase: Being nice = growth = stock up\n- Extract phase: Being nice = leaving money on table = fired CEO\n\n**Dixon's point**: This isn't a bug, it's a feature of centralized platforms. The ONLY way to prevent it is to remove the central party that has the power and incentive to exploit.\n\nDecentralization changes the structure, not the people."
-          }
-        ],
+        "exercise": "What is 'bait-and-switch' in the context of platforms?\n1) Changing platform colors\n2) Attracting users with good terms then changing rules once they're locked in\n3) Switching to a new platform\n4) Updating the user interface\nEnter the number.",
+        "answer": "Attracting users with good terms then changing rules once they're locked in",
+        "explanation": "Bait-and-switch is the pattern where platforms first attract developers and users with favorable terms (free APIs, low fees, open ecosystems), then change the rules once users are locked in and switching costs are too high to leave. Twitter raising API prices to $42,000/month and Apple imposing 30% commissions are classic examples. This is why decentralization matters -- smart contracts and open source code prevent unilateral rule changes.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Bait: Attract with free access, open APIs, favorable terms\n- Switch: Once locked in, change rules, raise fees, restrict access\n- Result: Developers learn not to build on centralized platforms\n- Historical examples: Twitter API, Facebook platform, Google search"
+        "x402_gateway": ""
       },
       {
         "concept_id": "voice_and_exit",
@@ -271,6 +157,7 @@
         "prerequisites": [
           "bait_and_switch"
         ],
+        "content": "## The Hirschman Framework\n\nEconomist **Albert O. Hirschman** proposed in his 1970 book \"Exit, Voice, and Loyalty\" that when people are dissatisfied with an organization, they have two options:\n\n- **Voice**: Express dissatisfaction and try to change the system from within\n- **Exit**: Leave the system entirely\n\nChris Dixon applied this framework to explain why decentralized networks solve the platform problem.\n\n### Centralized Platforms: Neither Voice Nor Exit\n\n**No Voice**: If you dislike Twitter's policies, you cannot vote to change them. Customer support ignores complaints, and individual shareholders have negligible influence. Platform executives make unilateral decisions.\n\n**Costly Exit**: Leaving Instagram means losing years of followers, photos, and social connections. The switching cost is so high that users tolerate worsening conditions.\n\n### Decentralized Networks: Both Voice AND Exit\n\n**Voice through Governance**: Token holders vote on protocol changes. Uniswap's UNI holders control a $3B+ treasury. MakerDAO's community voted to rebrand to Sky in 2024. Compound's COMP holders set interest rate models. You are a **citizen**, not just a customer.\n\n**Exit through Portability**: Your assets live in your wallet, not on a platform server. You can take your tokens and NFTs to any compatible service. On-chain data is publicly accessible, enabling true data portability.\n\n### Fork: The Ultimate Exit\n\nBlockchain code is **open source**. If you disagree with the rules, you can copy the entire system and start your own version:\n\n- **Ethereum Classic (2016)**: Community split over DAO hack response -- one chain rolled back, the other preserved immutability\n- **Bitcoin Cash (2017)**: Disagreement over block size -- larger blocks vs. original design\n\nThe **threat of fork** keeps network operators honest. If they exploit users, users fork and leave -- taking the code with them.\n\n### Four Pillars Preventing Bait-and-Switch\n\n1. **Code is law**: Rules are in smart contracts, not policy documents\n2. **Open source**: Anyone can verify and copy the code\n3. **Fork threat**: Exploitation triggers user exodus with a clone\n4. **Token alignment**: Network value = token value, so operators who harm users harm themselves\n\n**Analogy**: Imagine if unhappy Instagram users could copy ALL of Instagram's code, ALL user data, and run their own version. Centralized platforms would never exploit users if this were possible. In Web3, it IS possible.",
         "key_ideas": [
           "Voice: Governance voting allows rule changes through democratic process",
           "Exit: Can leave at no cost, fork is possible",
@@ -279,31 +166,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018)",
-        "exercises": [
-          {
-            "question": "What is 'Voice' in the context of decentralized platforms?\n1) Audio features\n2) Ability to vote on governance and change rules\n3) Customer support\n4) Marketing\nEnter the number.",
-            "answer": "Ability to vote on governance and change rules",
-            "explanation": "**In centralized platforms**:\n- CEO decides rules\n- Users have no say\n- \"If you don't like it, leave\"\n\n**In decentralized platforms (Voice)**:\n- Token holders vote on proposals\n- Protocol changes require community consensus\n- Users ARE the governance\n\n**How it works**:\n1. Anyone can propose changes (e.g., \"Reduce fees from 0.3% to 0.1%\")\n2. Token holders vote (1 token = 1 vote, or variants)\n3. If passed, smart contract executes the change\n4. No single entity can override the community\n\n**Real examples**:\n- Uniswap governance: UNI holders control $3B+ treasury\n- Compound: COMP holders set interest rate models\n- MakerDAO: MKR holders control DAI stability\n\nVoice means you're not at mercy of a company — you're a citizen, not a customer."
-          },
-          {
-            "question": "What is 'Exit' in the context of decentralized platforms?\n1) Closing your account\n2) Being able to leave with your assets and even fork the entire system\n3) Logging out\n4) Changing your password\nEnter the number.",
-            "answer": "Being able to leave with your assets and even fork the entire system",
-            "explanation": "**In centralized platforms**:\n- Leaving = losing everything\n- Your followers, posts, reputation — gone\n- High switching cost = lock-in\n\n**In decentralized platforms (Exit)**:\n- Take your assets (tokens, NFTs) to any other platform\n- Interoperability: same assets work across different apps\n- **Fork**: Don't like the rules? Copy entire system!\n\n**Fork — the ultimate Exit**:\n- All code is open source\n- Anyone can copy the entire protocol\n- Start your own version with different rules\n- Example: Ethereum → Ethereum Classic fork\n\n**Why Exit prevents exploitation**:\n- Platform tries to extract? Users fork.\n- Threat of fork keeps platforms honest\n- No lock-in = no exploitation\n\nVoice + Exit = users have BOTH democratic power AND the freedom to leave. Centralized platforms offer neither."
-          },
-          {
-            "question": "Why can't decentralized platforms perform bait-and-switch?\n1) They're too small\n2) No central party can unilaterally change the rules\n3) Users are smarter\n4) Government prevents it\nEnter the number.",
-            "answer": "No central party can unilaterally change the rules",
-            "explanation": "**Centralized platform**:\n- CEO wakes up: \"Let's charge 30% fees now\"\n- Done. Developers have no recourse.\n\n**Decentralized platform**:\n- Anyone proposes: \"Let's charge 30% fees\"\n- Community votes: \"REJECTED\" (bad for users)\n- Even if passed: Users can FORK with old rules\n\n**Four pillars preventing bait-and-switch**:\n\n1. **Code is law**: Rules are in smart contracts, not policy documents\n2. **Open source**: Anyone can verify and copy\n3. **Fork threat**: Exploitation = users leave with clone\n4. **Token alignment**: Protocol owners ARE the users\n\n**Real example**:\nUniswap tried to add a 0.15% fee to interface. Response? Dozens of alternative interfaces appeared instantly. They can't extract because users can always go elsewhere — with the SAME liquidity pools.\n\nStructure makes exploitation irrational, not just illegal."
-          },
-          {
-            "question": "What is a 'fork' in blockchain/Web3 context?\n1) A eating utensil\n2) Copying the entire codebase and running an independent version\n3) A type of cryptocurrency\n4) A software bug\nEnter the number.",
-            "answer": "Copying the entire codebase and running an independent version",
-            "explanation": "**Fork = copying the entire system**:\n- All code is open source\n- Anyone can download, modify, redeploy\n- Create your own version with different rules\n\n**Famous forks**:\n- Bitcoin → Bitcoin Cash (bigger blocks)\n- Ethereum → Ethereum Classic (DAO hack response)\n- Uniswap → SushiSwap (different tokenomics)\n\n**Why forks matter for governance**:\n\nImagine if unhappy Instagram users could:\n1. Copy ALL of Instagram's code\n2. Copy ALL user data\n3. Run their own \"Instaverse\" with better rules\n4. Users seamlessly migrate with followers intact\n\nCentralized platforms would NEVER exploit users if this was possible. In Web3, it IS possible. The threat keeps platforms honest.\n\n**Fork = ultimate check on power**: If governance fails, exit is always available."
-          }
-        ],
+        "exercise": "What is 'Voice' in the context of decentralized platforms?\n1) Audio features\n2) Ability to vote on governance and change rules\n3) Customer support\n4) Marketing\nEnter the number.",
+        "answer": "Ability to vote on governance and change rules",
+        "explanation": "Voice in decentralized platforms means token holders can vote on governance proposals to change protocol rules. Unlike centralized platforms where executives make unilateral decisions, decentralized protocols give users democratic power -- Uniswap's UNI holders control a multi-billion dollar treasury, and MakerDAO's community voted to rebrand entirely. Combined with Exit (portability and fork capability), this structurally prevents the bait-and-switch pattern.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Voice: Governance voting allows rule changes through democratic process\n- Exit: Can leave at no cost, fork is possible\n- Why decentralization prevents bait-and-switch: Code is law, open source, fork threat, token incentives\n- Fork: If unhappy with rules, copy the entire system and run your own version"
+        "x402_gateway": ""
       },
       {
         "concept_id": "wikipedia_vs_encarta",
@@ -311,6 +178,7 @@
         "prerequisites": [
           "voice_and_exit"
         ],
+        "content": "## The Tale of Two Encyclopedias\n\nThe Wikipedia vs Encarta story is one of the most powerful demonstrations of decentralization's long-term advantage over centralization.\n\n### Encarta (Centralized)\n\nMicrosoft Encarta launched in 1993 with massive corporate backing:\n- Professional editors and fact-checkers\n- Beautiful multimedia presentation\n- Polished, comprehensive, and reliable from day one\n- Annual DVD releases with curated updates\n- **2009**: 62,000 articles. Service discontinued.\n\n### Wikipedia (Decentralized)\n\nWikipedia launched in 2001 as a volunteer-driven experiment:\n- Anyone could edit, no credentials required\n- Initially rough, incomplete, and error-prone\n- Critics scoffed: \"How can amateurs compete with professionals?\"\n- **2009**: 3,000,000+ articles. Growing exponentially.\n- **2024**: 60+ million articles across 300+ languages. Essential internet infrastructure.\n\n### The Dynamic Process\n\nThe key insight is that **static snapshots are misleading**. In 2002, Encarta was objectively better. But the growth trajectories told a different story:\n\n- **Encarta**: Improved at the speed of Microsoft's editorial team (linear growth)\n- **Wikipedia**: Improved at the speed of millions of passionate volunteers (exponential growth)\n\nAt some crossover point, the exponential curve overtook the linear one, and the gap has only widened since.\n\n## Great Vessels Are Completed Slowly\n\nThe Chinese concept **\"da qi wan cheng\" (great vessels are completed slowly)** from the Dao De Jing (Chapter 41) captures this principle perfectly. Great things appear incomplete or underwhelming at first, but achieve extraordinary outcomes through persistent compound growth.\n\n**Applied to blockchain**: Bitcoin, Ethereum, and Web3 were mocked as slow, inconvenient, and useless when they launched. But the decentralized growth model means they improve at the rate of their entire global community, not at the rate of any single company's engineering team.\n\n### The Broader Pattern\n\nThis pattern repeats across technology:\n- **Linux** vs proprietary Unix → Linux dominates servers\n- **Bitcoin** vs traditional finance → $1T+ asset class\n- **Open source** vs closed software → Most internet infrastructure is open source\n\n**Analogy**: A single professional gardener maintains a beautiful private garden. But a community of a million volunteer gardeners, even if each contributes a little, eventually creates something no single gardener could match.\n\n## The Lesson for Web3\n\nDon't judge decentralized systems by their initial state. Judge them by their **rate of improvement** and their ability to harness collective intelligence at scale.",
         "key_ideas": [
           "Centralized (Encarta): High initial quality → improves at employee speed only → died",
           "Decentralized (Wikipedia): Initially incomplete → explosive community growth → dominates",
@@ -319,31 +187,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018) / 道德經 Chapter 41",
-        "exercises": [
-          {
-            "question": "What happened to Microsoft Encarta vs Wikipedia?\n1) Encarta won and Wikipedia shut down\n2) Wikipedia started poorly but grew to dominate, Encarta died\n3) Both equally successful\n4) Government shut both down\nEnter the number.",
-            "answer": "Wikipedia started poorly but grew to dominate, Encarta died",
-            "explanation": "**The tale of two encyclopedias**:\n\n**Encarta (Centralized)**:\n- Microsoft product, professional editors\n- 1993 launch: Polished, beautiful, comprehensive\n- Annual DVD releases\n- 2009: Discontinued. Dead.\n\n**Wikipedia (Decentralized)**:\n- Volunteer contributors, anyone can edit\n- 2001 launch: Rough, incomplete, errors everywhere\n- Critics: \"How can amateurs compete with professionals?\"\n- 2024: 60+ million articles, 300+ languages, essential infrastructure\n\n**What happened?**\n- Encarta: Improved at speed of Microsoft employees\n- Wikipedia: Improved at speed of MILLIONS of passionate volunteers\n- Collective effort overwhelmed corporate resources\n\nThis is the power of decentralized systems: harnessing collective intelligence."
-          },
-          {
-            "question": "What does '大器晚成' (great vessels are completed slowly) mean for decentralized systems?\n1) Decentralized systems are always late\n2) Decentralized systems start worse but achieve greater things through compound growth\n3) Chinese vessels are better\n4) We should work slowly\nEnter the number.",
-            "answer": "Decentralized systems start worse but achieve greater things through compound growth",
-            "explanation": "**大器晚成 (dà qì wǎn chéng)** — from 道德經 (Tao Te Ching) Chapter 41:\n\"Great vessels take long to complete\"\n\n**Applied to decentralized systems**:\n\n**Year 1**: Centralized looks better\n- Wikipedia: Embarrassingly bad articles, vandalism\n- Encarta: Professional, reliable, polished\n\n**Year 5**: Gap narrows\n- Wikipedia: Growing rapidly, self-correcting\n- Encarta: Same team, same pace\n\n**Year 10**: Crossover\n- Wikipedia: Now more comprehensive than Encarta\n- Encarta: Can't compete with millions of contributors\n\n**Year 20**: Domination\n- Wikipedia: Essential infrastructure of the internet\n- Encarta: A footnote in history\n\n**The lesson**: Don't judge decentralized systems by their initial state. Judge them by their rate of improvement."
-          },
-          {
-            "question": "Why did Wikipedia succeed despite starting with lower quality than Encarta?\n1) Better marketing\n2) Explosive growth from community contributions that centralized teams can't match\n3) Microsoft gave up\n4) Wikipedia had more funding\nEnter the number.",
-            "answer": "Explosive growth from community contributions that centralized teams can't match",
-            "explanation": "**The math of growth**:\n\n**Encarta's growth**: Linear\n- 100 employees → 100 units of improvement/year\n- Budget constraints, hiring limits\n- Growth = employee count × productivity\n\n**Wikipedia's growth**: Exponential\n- 100 users → 1,000 → 100,000 → millions\n- Each user can contribute\n- Growth compounds as community grows\n\n**Why decentralized scales better**:\n\n1. **No hiring bottleneck**: Anyone can contribute\n2. **Intrinsic motivation**: Passion > salary\n3. **Distributed knowledge**: Expert in X writes about X\n4. **Self-correcting**: Errors get fixed by community\n5. **Network effects**: More content → more users → more content\n\n**The insight**: Centralized systems are limited by their payroll. Decentralized systems are limited only by how many people care."
-          },
-          {
-            "question": "What general principle does the Wikipedia vs Encarta case demonstrate?\n1) Centralized systems always fail\n2) In the long run, decentralized systems with aligned incentives outperform centralized ones\n3) Encyclopedias are outdated\n4) Microsoft makes bad products\nEnter the number.",
-            "answer": "In the long run, decentralized systems with aligned incentives outperform centralized ones",
-            "explanation": "**The broader principle**:\n\nDecentralized systems win when:\n1. **Task is parallelizable**: Many can work simultaneously\n2. **Incentives are aligned**: Contributors benefit from success\n3. **Quality can be verified**: Community can spot errors\n4. **Time is allowed**: For compound growth to work\n\n**Applications beyond Wikipedia**:\n- **Linux** vs proprietary Unix → Linux dominates\n- **Bitcoin** vs traditional finance → $1T+ asset class\n- **Ethereum** vs corporate blockchains → Ethereum wins\n- **Open source** vs closed software → Most infrastructure is open\n\n**Why this matters for blockchain**:\n- DeFi vs banks: Same pattern emerging\n- NFTs vs traditional ownership: Same pattern\n- DAOs vs corporations: Same pattern\n\nThe Wikipedia vs Encarta story isn't just history — it's a preview of what's coming across industries."
-          }
-        ],
+        "exercise": "What happened to Microsoft Encarta vs Wikipedia?\n1) Encarta won and Wikipedia shut down\n2) Wikipedia started poorly but grew to dominate, Encarta died\n3) Both equally successful\n4) Government shut both down\nEnter the number.",
+        "answer": "Wikipedia started poorly but grew to dominate, Encarta died",
+        "explanation": "Encarta started with professional quality but improved only at the speed of Microsoft's editorial team (linear). Wikipedia started rough but improved at the speed of millions of volunteers (exponential). By 2009, Wikipedia had 3M+ articles while Encarta had 62K and was discontinued. This demonstrates that decentralized systems with aligned incentives eventually outperform centralized ones through compound community growth -- the principle of 'great vessels are completed slowly.'",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Centralized (Encarta): High initial quality → improves at employee speed only → died\n- Decentralized (Wikipedia): Initially incomplete → explosive community growth → dominates\n- Dynamic process comparison: Centralized starts better but decentralized wins long-term\n- 大器晚成 (Late blooming): Great vessels are completed slowly"
+        "x402_gateway": ""
       }
     ]
   },
@@ -363,6 +211,7 @@
         "prerequisites": [
           "blockchain_basics"
         ],
+        "content": "## Ethereum's Innovation\n\nIn 2014, **Vitalik Buterin** published the Ethereum whitepaper with a radical question: \"What if we could run ANY program on the blockchain?\" Bitcoin could only do simple transactions (send value from A to B). Ethereum introduced **Turing-complete smart contracts** -- a programmable blockchain.\n\n**Analogy**: Bitcoin is a calculator (addition and subtraction only). Ethereum is a full computer (any program you can imagine).\n\n### What Turing-Complete Means\n\nA Turing-complete system can theoretically perform any computation given enough time and resources. This means Ethereum can run:\n- **DeFi protocols**: Lending, trading, derivatives\n- **NFT contracts**: Digital ownership and royalties\n- **DAOs**: Decentralized organizations with code-based governance\n- **Games, social networks**, and anything else programmable\n\nThis is why Ethereum is called the **\"World Computer.\"**\n\n## EVM: The Ethereum Virtual Machine\n\nThe EVM is a standardized execution environment that runs identically on every Ethereum node worldwide. Given the same input, every node produces the **guaranteed same output** regardless of underlying hardware or operating system.\n\nThis deterministic execution is what enables **global consensus on computation**, not just data. When a smart contract executes, thousands of nodes worldwide run the same code and agree on the result.\n\n## Gas: Computational Fuel\n\nTuring-completeness introduces a danger: **infinite loops**. If someone deploys `while(true) {}`, it could freeze the entire network. Gas solves this:\n\n- Every operation costs a measured amount of gas\n- Users set a gas limit per transaction\n- If gas runs out, the transaction reverts automatically\n- Infinite loops simply consume gas until depleted, then stop\n\n**Gas economics**: Total cost = Gas Used x Gas Price (in gwei). A simple transfer costs ~21,000 gas; a complex DeFi swap might cost ~200,000 gas.\n\n## Smart Contracts: Code is Law\n\nA smart contract is code deployed on blockchain that **executes automatically** when conditions are met. Unlike traditional contracts enforced by courts, smart contracts are enforced by code:\n\n```\nif (buyer sends 100 ETH) {\n    transfer NFT ownership to buyer;\n}\n```\n\nOnce deployed, smart contracts are **immutable** (cannot be changed), **deterministic** (same input = same output), and **trustless** (no need to trust a counterparty). This is the foundation of \"Code is Law.\"",
         "key_ideas": [
           "Ethereum innovation: Turing-complete smart contracts — programmable blockchain",
           "EVM (Ethereum Virtual Machine): A virtual machine that runs identically across the entire world",
@@ -371,31 +220,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Vitalik Buterin, Ethereum Whitepaper (2014)",
-        "exercises": [
-          {
-            "question": "What is Ethereum's main innovation compared to Bitcoin?\n1) Faster transactions\n2) Turing-complete smart contracts (programmable blockchain)\n3) Lower fees\n4) Better branding\nEnter the number.",
-            "answer": "Turing-complete smart contracts (programmable blockchain)",
-            "explanation": "**Bitcoin**: Programmable money\n- Can send value A→B\n- Limited scripting (not Turing-complete)\n- Intentionally simple\n\n**Ethereum**: Programmable everything\n- Can run ANY computation\n- Turing-complete (can compute anything computable)\n- World computer\n\n**What 'Turing-complete' means**:\n- Can run loops, conditionals, any algorithm\n- Same computational power as any computer\n- Limited only by gas (cost)\n\n**Why this matters**:\n- DeFi protocols\n- NFT contracts\n- DAOs\n- Games\n- Any application you can imagine\n\nBitcoin asked: \"Can we decentralize money?\"\nEthereum asked: \"Can we decentralize computation?\"\n\nThe answer to both: Yes."
-          },
-          {
-            "question": "What is the EVM (Ethereum Virtual Machine)?\n1) A physical computer\n2) A standardized execution environment that runs identically on all nodes\n3) A video game\n4) A type of cryptocurrency\nEnter the number.",
-            "answer": "A standardized execution environment that runs identically on all nodes",
-            "explanation": "**The problem**:\nIf my Mac runs code differently than your PC, how can we agree on results?\n\n**The solution — EVM**:\n- A virtual machine specification\n- Every Ethereum node runs an EVM\n- Given same input → GUARANTEED same output\n- Regardless of underlying hardware/OS\n\n**How it works**:\n1. You submit a transaction (smart contract call)\n2. Every node runs it in their EVM\n3. All get identical results\n4. Consensus achieved\n\n**Analogy**:\nEVM is like a universal translator. Whether you have Mac, Windows, Linux, ARM, x86 — the EVM speaks one language that produces identical results everywhere.\n\nThis is what enables global consensus on computation, not just data."
-          },
-          {
-            "question": "Why does Ethereum use 'Gas' for transactions?\n1) Environmental reasons\n2) To measure and limit computational cost, preventing infinite loops\n3) To power vehicles\n4) For marketing\nEnter the number.",
-            "answer": "To measure and limit computational cost, preventing infinite loops",
-            "explanation": "**The danger of Turing-completeness**:\n- Can run ANY code... including infinite loops!\n- Malicious code: `while(true) { }` → Freeze network forever?\n\n**Gas solves this**:\n- Every operation costs gas\n- Users set gas limit per transaction\n- Run out of gas → transaction reverts\n- Infinite loop? Runs until gas depleted, then stops.\n\n**Gas economics**:\n- Gas = work units (like CPU cycles)\n- Gas Price = how much you pay per unit (in ETH)\n- Total cost = Gas Used × Gas Price\n\n**Example**:\n- Simple transfer: ~21,000 gas\n- Complex DeFi swap: ~200,000 gas\n- If gas price = 20 gwei: 21,000 × 20 gwei = 0.00042 ETH\n\nGas aligns incentives: attackers pay for their attacks, making attacks expensive."
-          },
-          {
-            "question": "What is a 'smart contract'?\n1) A legal document stored digitally\n2) Code deployed on blockchain that executes automatically when conditions are met\n3) A very intelligent agreement\n4) An AI system\nEnter the number.",
-            "answer": "Code deployed on blockchain that executes automatically when conditions are met",
-            "explanation": "**Traditional contract**:\n- Written in legal language\n- Enforced by courts\n- Can be disputed, delayed, ignored\n\n**Smart contract**:\n- Written in code\n- Enforced by blockchain\n- Executes automatically, no interpretation needed\n\n**Example — Escrow**:\n```\nif (buyer_confirmed AND seller_shipped) {\n    transfer(money, seller);\n} else if (30_days_passed) {\n    transfer(money, buyer); // refund\n}\n```\n\n**Key properties**:\n1. **Immutable**: Once deployed, can't be changed\n2. **Deterministic**: Same input = same output, always\n3. **Trustless**: Don't need to trust counterparty\n4. **Automatic**: Code runs when conditions trigger\n\n\"Code is law\" — the smart contract does exactly what it's programmed to do, nothing more, nothing less."
-          }
-        ],
+        "exercise": "What is Ethereum's main innovation compared to Bitcoin?\n1) Faster transactions\n2) Turing-complete smart contracts (programmable blockchain)\n3) Lower fees\n4) Better branding\nEnter the number.",
+        "answer": "Turing-complete smart contracts (programmable blockchain)",
+        "explanation": "Bitcoin can only perform simple scripted transactions (send value A to B). Ethereum introduced Turing-complete smart contracts, meaning any computation can be programmed and executed on the blockchain. This enabled DeFi, NFTs, DAOs, games, and any conceivable application. Vitalik Buterin's insight was to evolve blockchain from 'decentralized money' (Bitcoin) to 'decentralized computation' (Ethereum).",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Ethereum innovation: Turing-complete smart contracts — programmable blockchain\n- EVM (Ethereum Virtual Machine): A virtual machine that runs identically across the entire world\n- Gas: Computational cost, defense against malicious code (infinite loops)\n- Smart contracts: Code that executes automatically when conditions are met"
+        "x402_gateway": ""
       },
       {
         "concept_id": "layer2_scalability",
@@ -403,6 +232,7 @@
         "prerequisites": [
           "consensus_pow_pos"
         ],
+        "content": "## The Blockchain Trilemma\n\nCoined by Vitalik Buterin, the **blockchain trilemma** states you can only optimize for two of three properties:\n\n1. **Decentralization**: Many independent validators\n2. **Security**: Resistant to attacks\n3. **Scalability**: High transaction throughput\n\nEthereum chose decentralization + security, sacrificing scalability. The result: ~15 TPS (transactions per second) compared to Visa's ~65,000 TPS. During the 2021 NFT boom, simple transfers cost $50+ in gas fees.\n\n## Layer 2: The Solution\n\nThe key insight is that **not every transaction needs full Layer 1 security**. Layer 2 solutions process thousands of transactions off-chain, then batch the results and post a single summary transaction to Layer 1.\n\n**Analogy**: L1 is like the Supreme Court (slow, expensive, but ultimate authority). L2 is like local mediation (fast, cheap, handles most cases). Only disputes escalate to the Supreme Court.\n\n### How It Works\n\n1. Thousands of transactions are processed on L2\n2. Results are compressed into a **Rollup**\n3. Only the compressed data is recorded on L1\n4. L1 provides final verification → L2 inherits L1's security\n\n**Result**: Fees dropped from $50 to ~$0.02. Throughput increased to thousands of TPS. L2 daily transaction volume now exceeds L1 by **10x or more**.\n\n## Optimistic Rollups vs ZK-Rollups\n\n**Optimistic Rollups** (Arbitrum, Base, Optimism): \"Innocent until proven guilty.\" Transactions are assumed valid. Anyone can submit a fraud proof within a ~7-day challenge window. If fraud is proven, the transaction is reverted.\n\n**ZK-Rollups** (zkSync, StarkNet): \"Prove your innocence upfront.\" Every batch includes a cryptographic validity proof (zero-knowledge proof). Math guarantees correctness with no challenge period needed -- instant finality.\n\n| Aspect | Optimistic | ZK |\n|--------|-----------|----|\n| Withdrawal | ~7 days | Instant |\n| Proof cost | Low | High |\n| EVM compatibility | Easy | Harder |\n| Maturity | More mature | Rapidly improving |\n\n### 2024 Landscape\n\n**Base** (Coinbase-backed) became the fastest-growing L2, capturing 55% of L2 transaction volume. The March 2024 **Dencun upgrade** (EIP-4844) introduced blob transactions, reducing L2 data costs by an additional 90%. Chris Dixon's 2018 prediction that \"the next few years will focus on infrastructure layer construction\" proved accurate.",
         "key_ideas": [
           "Blockchain Trilemma: Decentralization, Security, Scalability — pick two",
           "Layer 1 limitation: Ethereum ~15 TPS, Visa ~65,000 TPS",
@@ -411,31 +241,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Chris Dixon, 'Why Decentralization Matters' (2018) / Ethereum L2 Docs",
-        "exercises": [
-          {
-            "question": "What is the 'Blockchain Trilemma'?\n1) Three types of cryptocurrency\n2) The tradeoff between decentralization, security, and scalability\n3) Three blockchain companies\n4) Three mining methods\nEnter the number.",
-            "answer": "The tradeoff between decentralization, security, and scalability",
-            "explanation": "**The Trilemma** (coined by Vitalik Buterin):\n\nPick any two:\n1. **Decentralization**: Many independent validators\n2. **Security**: Resistant to attacks\n3. **Scalability**: High transaction throughput\n\n**Why only two?**\n\n- **Decentralized + Secure**: Every node validates everything → slow\n- **Secure + Scalable**: Fewer validators → centralization\n- **Scalable + Decentralized**: Less validation → security risk\n\n**Real examples**:\n- **Bitcoin/Ethereum L1**: Decentralized + Secure (7-15 TPS)\n- **Solana**: Scalable + (somewhat) Secure (~2000 TPS, fewer validators)\n- **Traditional DB**: Scalable + Secure (no decentralization)\n\n**The question**: Can we break the trilemma? Layer 2s try to do exactly that."
-          },
-          {
-            "question": "How do Layer 2 solutions improve scalability?\n1) By using faster computers\n2) By processing transactions off-chain and posting only results to Layer 1\n3) By reducing security\n4) By centralizing the network\nEnter the number.",
-            "answer": "By processing transactions off-chain and posting only results to Layer 1",
-            "explanation": "**Layer 1 bottleneck**:\n- Every node processes every transaction\n- Ethereum: ~15 transactions per second\n- Visa: ~65,000 TPS\n- Problem: Can't scale to global usage\n\n**Layer 2 insight**:\n- Not every transaction needs full L1 security\n- Process thousands of transactions off-chain\n- Batch results and post ONE transaction to L1\n- L1 security inherited, but much higher throughput\n\n**Analogy — Court system**:\n- L1 = Supreme Court (slow, expensive, ultimate authority)\n- L2 = Local mediation (fast, cheap, handles most cases)\n- Only disputes escalate to Supreme Court\n\n**Result**:\n- L2 throughput: 1,000-10,000+ TPS\n- Costs: 10-100x cheaper than L1\n- Security: Inherits L1 (with some assumptions)"
-          },
-          {
-            "question": "What is the main difference between Optimistic Rollups and ZK-Rollups?\n1) Optimistic is faster, ZK is slower\n2) Optimistic assumes transactions are valid unless challenged; ZK proves validity mathematically\n3) Optimistic is more expensive\n4) ZK only works with Ethereum\nEnter the number.",
-            "answer": "Optimistic assumes transactions are valid unless challenged; ZK proves validity mathematically",
-            "explanation": "**Optimistic Rollups** (Arbitrum, Optimism):\n- \"Innocent until proven guilty\"\n- Assume all transactions valid\n- Anyone can challenge with fraud proof\n- Challenge window: ~7 days\n- If fraud proven → transaction reverted, attacker slashed\n\n**ZK-Rollups** (zkSync, StarkNet):\n- \"Prove your innocence upfront\"\n- Generate cryptographic validity proof\n- Math guarantees correctness\n- No challenge period needed\n- Instant finality\n\n**Tradeoffs**:\n\n| Aspect | Optimistic | ZK |\n|--------|------------|----|\n| Withdrawal time | ~7 days | Instant |\n| Proof cost | Low | High (complex math) |\n| Compatibility | Easy (EVM-compatible) | Harder (ZK circuits) |\n| Maturity | More mature | Rapidly improving |\n\n**Current landscape**:\n- Optimistic: More adoption today (easier to build)\n- ZK: The future (better properties, catching up)"
-          },
-          {
-            "question": "Why do we need Layer 2 if Layer 1 could just increase block size?\n1) Bigger blocks would make running nodes too expensive, reducing decentralization\n2) It's technically impossible\n3) Layer 2 is cheaper to develop\n4) Layer 1 developers are lazy\nEnter the number.",
-            "answer": "Bigger blocks would make running nodes too expensive, reducing decentralization",
-            "explanation": "**The naive solution**: \"Just make blocks bigger!\"\n\n**Why it fails**:\n\n1. **Storage costs explode**:\n   - Bigger blocks = more data to store\n   - Full node: 1TB+ → 10TB+ → unmanageable\n   - Only data centers can run nodes\n\n2. **Bandwidth requirements**:\n   - More data per block = faster internet needed\n   - Excludes nodes in developing countries\n   - Network becomes centralized\n\n3. **Validation time**:\n   - More transactions = more time to validate\n   - Slower block times OR centralization\n\n**Result of big blocks**:\n- Fewer people can run nodes\n- Network centralizes to rich operators\n- Censorship becomes possible\n- Defeats the purpose of blockchain\n\n**L2 solution**:\n- Keep L1 decentralized (small blocks)\n- Scale computation on L2\n- Best of both worlds\n\nThis is why Ethereum chose \"rollup-centric roadmap\" over big blocks."
-          }
-        ],
+        "exercise": "What is the 'Blockchain Trilemma'?\n1) Three types of cryptocurrency\n2) The tradeoff between decentralization, security, and scalability\n3) Three blockchain companies\n4) Three mining methods\nEnter the number.",
+        "answer": "The tradeoff between decentralization, security, and scalability",
+        "explanation": "The Blockchain Trilemma (coined by Vitalik Buterin) states that a blockchain can only fully optimize two of three properties: decentralization, security, and scalability. Ethereum chose decentralization + security, resulting in only ~15 TPS. Layer 2 solutions break this trilemma by processing transactions off-chain while inheriting Layer 1's security, achieving thousands of TPS at a fraction of the cost.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- Blockchain Trilemma: Decentralization, Security, Scalability — pick two\n- Layer 1 limitation: Ethereum ~15 TPS, Visa ~65,000 TPS\n- Layer 2 solution: Process transactions off-chain, post results to Layer 1\n- Optimistic Rollups vs ZK-Rollups: Different security assumptions"
+        "x402_gateway": ""
       },
       {
         "concept_id": "defi_nft_ecosystem",
@@ -444,6 +254,7 @@
           "ethereum_evm",
           "layer2_scalability"
         ],
+        "content": "## The Blockchain Application Layer\n\nWith smart contracts (Ethereum) and scalability (Layer 2) in place, a rich ecosystem of applications has emerged. The major categories include payments, store of value, decentralized finance, and creator monetization.\n\n## DeFi: Decentralized Finance\n\nDeFi replaces traditional financial intermediaries (banks, brokers, insurers) with **smart contracts** that execute automatically.\n\n### Key DeFi Protocols\n\n- **MakerDAO** (rebranded to Sky in 2024): Collateralized lending -- deposit crypto, borrow stablecoins (DAI)\n- **Uniswap**: Decentralized exchange (DEX) -- trade tokens without a centralized intermediary\n- **Aave**: Lending and borrowing with algorithmically adjusted interest rates\n\n### DeFi Characteristics\n\n- 24/7 operation (no bank hours)\n- Permissionless access (no credit score required)\n- Transparent (all transactions visible on-chain)\n- Composable (\"Money Legos\" -- protocols stack together)\n\nDeFi TVL peaked at ~$180B in November 2021, crashed through the LUNA/Terra collapse and FTX bankruptcy in 2022, and is recovering on L2 infrastructure.\n\n## The FTX Lesson: \"Not Your Keys, Not Your Coins\"\n\nFTX, the world's second-largest crypto exchange, collapsed in 2022 when it secretly lent user funds to its sister company Alameda Research, which lost the money. $8 billion in user funds vanished because users trusted a **centralized custodian** with their assets.\n\nThe irony: FTX collapsed because it was centralized -- the exact problem blockchain was designed to solve. In DeFi, assets stay in YOUR wallet, smart contracts (not humans) execute trades, and code is auditable.\n\n**Analogy**: Keeping your crypto on an exchange is like storing gold in someone else's vault. If they secretly sell your gold, you have no recourse. Self-custody means keeping the gold in your own safe.\n\n## NFTs: Digital Ownership\n\n**Non-Fungible Tokens** prove unique digital ownership on blockchain. Unlike Bitcoin (fungible: 1 BTC = 1 BTC), each NFT is distinct.\n\nNFT history: CryptoKitties (2017) proved the concept, the 2021-2022 boom saw Beeple sell for $69M, and the subsequent crash burst the speculative bubble. But NFTs as a technology for creator monetization, event tickets, and digital credentials remain viable.\n\n## CBDC: The Centralized Counterpoint\n\n**Central Bank Digital Currencies** are government-issued digital money. China's e-CNY is already in use by hundreds of millions. Unlike crypto, CBDCs are centralized -- governments can track every transaction and freeze accounts at will.\n\nThe philosophical tension: the same underlying technology (digital ledgers) can serve opposite purposes depending on who controls it. Decentralized crypto prioritizes individual freedom; CBDCs prioritize state control. This tension will define the next era of digital finance.",
         "key_ideas": [
           "DeFi (Decentralized Finance): Financial services without central institutions",
           "NFT (Non-Fungible Token): Proof of digital ownership",
@@ -452,31 +263,11 @@
         ],
         "code_ref": "",
         "paper_ref": "Minhyun Kim, Common Computer — Blockchain Fundamentals Lecture Lesson 02",
-        "exercises": [
-          {
-            "question": "What is DeFi (Decentralized Finance)?\n1) Finance for decentralized workers\n2) Financial services built on blockchain without central intermediaries\n3) A new bank\n4) Cryptocurrency trading\nEnter the number.",
-            "answer": "Financial services built on blockchain without central intermediaries",
-            "explanation": "**Traditional Finance (TradFi)**:\n- Banks custody your money\n- Banks decide who gets loans\n- Banks set interest rates\n- Banks can freeze accounts\n- Banks take profit margin\n\n**Decentralized Finance (DeFi)**:\n- YOU custody your money\n- Algorithms decide loans (collateralized)\n- Market sets interest rates\n- No one can freeze your wallet\n- Protocol fees → token holders\n\n**Major DeFi categories**:\n- **DEXs** (Uniswap): Trade without exchange\n- **Lending** (Aave, Compound): Lend/borrow permissionlessly\n- **Stablecoins** (DAI, USDC): Stable value tokens\n- **Derivatives** (dYdX): Perpetuals, options on-chain\n\n**The vision**: \"Be your own bank\" — access all financial services with just a wallet, no permission needed, available 24/7, globally."
-          },
-          {
-            "question": "What does an NFT (Non-Fungible Token) represent?\n1) Cryptocurrency like Bitcoin\n2) Proof of unique digital ownership recorded on blockchain\n3) A type of DeFi\n4) Virtual currency for games\nEnter the number.",
-            "answer": "Proof of unique digital ownership recorded on blockchain",
-            "explanation": "**Fungible vs Non-Fungible**:\n- **Fungible**: Interchangeable (my $1 = your $1, my BTC = your BTC)\n- **Non-Fungible**: Unique (my house ≠ your house, Mona Lisa ≠ other paintings)\n\n**What NFTs enable**:\n- Prove you own THIS SPECIFIC digital item\n- Verifiable on blockchain\n- Transferable\n- Programmable (royalties, access rights)\n\n**Use cases beyond art**:\n- **Gaming**: Own in-game items across games\n- **Tickets**: Verifiable, transferable event access\n- **Credentials**: Degrees, certifications\n- **Real estate**: Fractional property ownership\n- **Identity**: Self-sovereign digital ID\n\n**The insight**: Before NFTs, digital items couldn't be \"owned\" — just licensed. NFTs create true digital property rights."
-          },
-          {
-            "question": "What lesson does the FTX collapse teach about decentralization?\n1) Centralized exchanges are always safe\n2) 'Not your keys, not your coins' — centralized custody has counterparty risk\n3) DeFi caused FTX to fail\n4) Cryptocurrency is too risky\nEnter the number.",
-            "answer": "'Not your keys, not your coins' — centralized custody has counterparty risk",
-            "explanation": "**What happened at FTX (2022)**:\n- Centralized exchange, trusted custodian\n- Users deposited billions\n- FTX secretly lent user funds to Alameda Research\n- Alameda lost the money\n- FTX couldn't honor withdrawals\n- $8 billion in user funds — gone\n\n**The lesson**:\n- \"Not your keys, not your coins\"\n- Trusted third parties = security holes\n- Even \"reputable\" companies can defraud you\n\n**Contrast with DeFi**:\n- Assets stay in YOUR wallet\n- Smart contracts, not humans, execute trades\n- Code is auditable, verifiable\n- No one can \"borrow\" your funds without permission\n\n**The irony**:\nFTX collapsed because it was CENTRALIZED — the exact problem blockchain was created to solve. The solution existed; users just didn't use it."
-          },
-          {
-            "question": "Why is 'not your keys, not your coins' important?\n1) Keys are valuable for decoration\n2) Without private key control, a third party can lose or steal your assets\n3) Keys make transactions faster\n4) Government requires key ownership\nEnter the number.",
-            "answer": "Without private key control, a third party can lose or steal your assets",
-            "explanation": "**Your keys = your control**:\n- Private key = only way to move your crypto\n- You hold keys → only YOU can move assets\n- Exchange holds keys → THEY can move assets\n\n**What can go wrong with custodians**:\n1. **Hacks**: Exchange gets hacked, your funds stolen\n2. **Fraud**: FTX-style misappropriation\n3. **Bankruptcy**: Creditors may claim \"your\" funds\n4. **Censorship**: Government orders freeze\n5. **Shutdown**: Platform closes, complex recovery\n\n**Self-custody benefits**:\n- No counterparty risk\n- Censorship resistant\n- 24/7 access\n- Global portability\n\n**The tradeoff**:\n- Self-custody: YOU are responsible for security\n- Lose your keys? Funds gone forever.\n- But: Controllable risk vs uncontrollable risk\n\n**Mantra**: \"Don't trust, verify.\" In crypto, you have the option to verify — use it."
-          }
-        ],
+        "exercise": "What lesson does the FTX collapse teach about decentralization?\n1) Centralized exchanges are always safe\n2) 'Not your keys, not your coins' — centralized custody has counterparty risk\n3) DeFi caused FTX to fail\n4) Cryptocurrency is too risky\nEnter the number.",
+        "answer": "'Not your keys, not your coins' — centralized custody has counterparty risk",
+        "explanation": "FTX collapsed because it was a centralized custodian that secretly misappropriated $8 billion in user funds. Users who trusted FTX with their assets lost everything. In contrast, DeFi protocols keep assets in users' own wallets, with smart contracts (not humans) executing trades. The lesson is 'not your keys, not your coins' -- without private key control, a third party can lose or steal your assets. FTX's failure proved why the decentralization principles blockchain was built on actually matter.",
         "x402_price": "",
-        "x402_gateway": "",
-        "content": "## Key Ideas\n\n- DeFi (Decentralized Finance): Financial services without central institutions\n- NFT (Non-Fungible Token): Proof of digital ownership\n- CBDC (Central Bank Digital Currency): Government-issued digital money (centralized)\n- FTX collapse: Why decentralization matters — 'not your keys, not your coins'"
+        "x402_gateway": ""
       }
     ]
   }

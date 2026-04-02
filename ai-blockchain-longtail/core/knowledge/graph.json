@@ -1,0 +1,176 @@
+{
+  "nodes": [
+    {
+      "id": "ai_centralization",
+      "label": "AI Centralization",
+      "description": "AI has become a game dominated by big tech companies with massive resources and data"
+    },
+    {
+      "id": "robot_hivemind",
+      "label": "Robot Hivemind",
+      "description": "Building collective intelligence systems where robots share learning experiences"
+    },
+    {
+      "id": "long_tail_problem",
+      "label": "Long-Tail Problem",
+      "description": "The challenge of handling edge cases and variations in AI that require massive amounts of data"
+    },
+    {
+      "id": "neural_network_limits",
+      "label": "Neural Network Limits",
+      "description": "Neural networks are excellent interpolators but poor extrapolators, requiring vast training data"
+    },
+    {
+      "id": "world_computer",
+      "label": "Decentralized World Computer",
+      "description": "Ethereum as a trustless, permissionless global computing platform owned by the community"
+    },
+    {
+      "id": "smart_contracts",
+      "label": "Smart Contracts",
+      "description": "Sovereign programs that execute deterministically without external interference"
+    },
+    {
+      "id": "two_sided_markets",
+      "label": "Two-Sided Markets",
+      "description": "Crypto-enabled marketplaces connecting data suppliers with AI service consumers"
+    },
+    {
+      "id": "cold_start_problem",
+      "label": "Cold-Start Problem",
+      "description": "Solving marketplace bootstrapping through ownership tokens instead of pure cash subsidies"
+    },
+    {
+      "id": "autonomous_marketplace",
+      "label": "Autonomous Marketplace",
+      "description": "Self-funding AI marketplaces that incentivize participation through token ownership"
+    },
+    {
+      "id": "data_quality",
+      "label": "Data Quality Measurement",
+      "description": "Mechanisms to reliably measure signal in contributed data and distinguish quality from noise"
+    },
+    {
+      "id": "private_smart_contracts",
+      "label": "Private Smart Contracts",
+      "description": "Using zk-SNARKs to protect neural network models while maintaining verifiable execution"
+    },
+    {
+      "id": "decentralized_hivemind",
+      "label": "Decentralized Autonomous Hivemind",
+      "description": "Autonomous AI entities emerging from grassroots efforts with collective intelligence"
+    },
+    {
+      "id": "market_power",
+      "label": "Market Power for AI",
+      "description": "Adam Smith's invisible hand applied to decentralized AI development coordination"
+    },
+    {
+      "id": "gpu_question",
+      "label": "AI's GPU Question",
+      "description": "The $200B-$600B gap between GPU infrastructure investment and actual AI revenue generation"
+    },
+    {
+      "id": "ainft_concept",
+      "label": "AINFT",
+      "description": "Immutable identifiers for AI components making AI accountable, reproducible, and valuable"
+    },
+    {
+      "id": "composability",
+      "label": "Blockchain Composability",
+      "description": "Four eras of blockchain computing from Calculator to Cloud with varying degrees of composability"
+    },
+    {
+      "id": "flash_loans",
+      "label": "Flash Loans & Atomic Transactions",
+      "description": "Marble example showing trustless composability through single atomic transactions"
+    },
+    {
+      "id": "l2_scaling",
+      "label": "Layer 2 Scaling",
+      "description": "Evolution from traditional sharding to rollup-centric scaling with Danksharding"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ai_centralization",
+      "target": "long_tail_problem",
+      "relationship": "faces"
+    },
+    {
+      "source": "robot_hivemind",
+      "target": "long_tail_problem",
+      "relationship": "encounters"
+    },
+    {
+      "source": "long_tail_problem",
+      "target": "neural_network_limits",
+      "relationship": "caused_by"
+    },
+    {
+      "source": "world_computer",
+      "target": "smart_contracts",
+      "relationship": "enables"
+    },
+    {
+      "source": "smart_contracts",
+      "target": "two_sided_markets",
+      "relationship": "creates"
+    },
+    {
+      "source": "two_sided_markets",
+      "target": "cold_start_problem",
+      "relationship": "must_solve"
+    },
+    {
+      "source": "cold_start_problem",
+      "target": "autonomous_marketplace",
+      "relationship": "solved_by"
+    },
+    {
+      "source": "autonomous_marketplace",
+      "target": "data_quality",
+      "relationship": "requires"
+    },
+    {
+      "source": "autonomous_marketplace",
+      "target": "private_smart_contracts",
+      "relationship": "requires"
+    },
+    {
+      "source": "private_smart_contracts",
+      "target": "decentralized_hivemind",
+      "relationship": "enables"
+    },
+    {
+      "source": "market_power",
+      "target": "decentralized_hivemind",
+      "relationship": "coordinates"
+    },
+    {
+      "source": "gpu_question",
+      "target": "ai_centralization",
+      "relationship": "challenges"
+    },
+    {
+      "source": "ainft_concept",
+      "target": "decentralized_hivemind",
+      "relationship": "implements"
+    },
+    {
+      "source": "composability",
+      "target": "flash_loans",
+      "relationship": "enables"
+    },
+    {
+      "source": "composability",
+      "target": "l2_scaling",
+      "relationship": "evolves_to"
+    },
+    {
+      "source": "l2_scaling",
+      "target": "autonomous_marketplace",
+      "relationship": "scales"
+    }
+  ]
+}

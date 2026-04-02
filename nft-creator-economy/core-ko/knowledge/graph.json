@@ -1,0 +1,239 @@
+{
+  "nodes": [
+    {
+      "id": "thousand_true_fans",
+      "label": "1000 True Fans Theory",
+      "description": "Kevin Kelly's 2008 theory that creators need only 1,000 true fans paying ~$100/year to make a living, rather than millions of casual followers",
+      "domain": "creator_economy",
+      "depth": 1
+    },
+    {
+      "id": "creator_middleman_problem",
+      "label": "Creator Middleman Problem",
+      "description": "Centralized social platforms became new intermediaries between creators and fans, inserting ads and algorithmic recommendations while capturing most revenue",
+      "domain": "platform_economics",
+      "depth": 1
+    },
+    {
+      "id": "nft_definition",
+      "label": "NFT Definition",
+      "description": "Non-Fungible Token - a blockchain-based record representing unique digital media with verifiable history, provenance, and programmable capabilities",
+      "domain": "blockchain_fundamentals",
+      "depth": 1
+    },
+    {
+      "id": "rent_seeking_removal",
+      "label": "Rent-Seeking Removal",
+      "description": "Blockchain-based ownership eliminates rent-seeking intermediaries by giving users full control of purchased NFTs, limiting platform fees through competition",
+      "domain": "economic_mechanisms",
+      "depth": 2
+    },
+    {
+      "id": "price_tier_granularity",
+      "label": "Fine-Grained Price Tiering",
+      "description": "NFTs enable creators to capture more consumer surplus through granular pricing from $100K+ items for superfans to $1 items for casual supporters",
+      "domain": "pricing_strategy",
+      "depth": 2
+    },
+    {
+      "id": "user_as_owner",
+      "label": "Users as Owners",
+      "description": "Crypto networks turn users into owners through tokens, creating genuine P2P marketing and reducing customer acquisition costs to near zero",
+      "domain": "growth_mechanisms",
+      "depth": 2
+    },
+    {
+      "id": "subscribe_to_mint",
+      "label": "Subscribe to Mint",
+      "description": "Mirror.xyz product requiring email subscription to mint NFTs, bootstrapping direct creator-collector communication channels for long-term engagement",
+      "domain": "creator_tools",
+      "depth": 3
+    },
+    {
+      "id": "genesis_drop",
+      "label": "Genesis Drop",
+      "description": "NFT collectible featuring project logo/mascot at launch, adding credibility and catalyzing community formation around project genesis",
+      "domain": "launch_strategies",
+      "depth": 3
+    },
+    {
+      "id": "collectible_series",
+      "label": "Collectible Series",
+      "description": "Recurring NFT drops providing consistent incentives for new follower subscriptions and brand asset collection completion by existing holders",
+      "domain": "engagement_strategies",
+      "depth": 3
+    },
+    {
+      "id": "writing_nfts",
+      "label": "Writing NFTs",
+      "description": "Mirror's approach to tokenizing written content, allowing bootstrapped audiences to collect posts with creators capturing 100% of revenue",
+      "domain": "content_monetization",
+      "depth": 3
+    },
+    {
+      "id": "web_evolution",
+      "label": "Web Evolution",
+      "description": "Three phases: Web1 (static sites), Web2 (social/mobile/cloud), Web3 (crypto/AI/decentralization) representing shift from read to read-write to read-write-own",
+      "domain": "internet_history",
+      "depth": 1
+    },
+    {
+      "id": "platform_ownership",
+      "label": "Platform Ownership via Tokens",
+      "description": "Web3 enables users to own platforms through tokens, shifting power from centralized corporations to distributed communities",
+      "domain": "decentralization",
+      "depth": 2
+    },
+    {
+      "id": "creator_dao",
+      "label": "Creator DAO",
+      "description": "Decentralized Autonomous Organizations for creators using smart contracts for incorporation, funding, governance, and immediate token liquidity",
+      "domain": "organizational_models",
+      "depth": 3
+    },
+    {
+      "id": "curator_economy",
+      "label": "Curator Economy",
+      "description": "Future where curators act like angel investors, building portfolios of NFTs/tokens and proving discovery of creators through transparent on-chain records",
+      "domain": "curation_models",
+      "depth": 3
+    },
+    {
+      "id": "skeuomorphism_vs_native",
+      "label": "Skeuomorphism vs Crypto-Native",
+      "description": "Tension between familiar designs mimicking physical objects (YouTube NFTs, Tweet NFTs) versus designs leveraging blockchain's unique properties",
+      "domain": "design_philosophy",
+      "depth": 3
+    },
+    {
+      "id": "nft_royalty_challenge",
+      "label": "NFT Royalty Challenge",
+      "description": "2023 marketplace wars collapsed automatic royalties - OpenSea made royalties optional, Blur enforced 0.5% minimum, revealing gap between code and market reality",
+      "domain": "market_evolution",
+      "depth": 4
+    },
+    {
+      "id": "hype_cycle",
+      "label": "NFT Hype Cycle",
+      "description": "NFTs followed Gartner Hype Cycle reaching Peak of Inflated Expectations in 2021 ($29B art market), then 93% crash by 2024, with ongoing evolution to practical use cases",
+      "domain": "market_dynamics",
+      "depth": 2
+    }
+  ],
+  "edges": [
+    {
+      "source": "thousand_true_fans",
+      "target": "creator_middleman_problem",
+      "relationship": "undermined_by",
+      "description": "Kelly's vision was derailed by centralized platforms becoming new middlemen"
+    },
+    {
+      "source": "nft_definition",
+      "target": "creator_middleman_problem",
+      "relationship": "addresses",
+      "description": "NFTs provide technology to return to direct creator-fan relationships"
+    },
+    {
+      "source": "nft_definition",
+      "target": "rent_seeking_removal",
+      "relationship": "enables",
+      "description": "Blockchain-based ownership limits platform power to extract fees"
+    },
+    {
+      "source": "nft_definition",
+      "target": "price_tier_granularity",
+      "relationship": "enables",
+      "description": "NFTs allow fine-grained pricing from dollars to hundreds of thousands"
+    },
+    {
+      "source": "nft_definition",
+      "target": "user_as_owner",
+      "relationship": "enables",
+      "description": "NFT ownership creates sense of investment and community participation"
+    },
+    {
+      "source": "rent_seeking_removal",
+      "target": "thousand_true_fans",
+      "relationship": "revives",
+      "description": "Removing platform fees makes direct fan support economically viable"
+    },
+    {
+      "source": "price_tier_granularity",
+      "target": "thousand_true_fans",
+      "relationship": "implements",
+      "description": "Variable pricing captures different levels of fan enthusiasm"
+    },
+    {
+      "source": "user_as_owner",
+      "target": "subscribe_to_mint",
+      "relationship": "exemplified_by",
+      "description": "Subscribe to Mint turns collectors into engaged community members"
+    },
+    {
+      "source": "subscribe_to_mint",
+      "target": "genesis_drop",
+      "relationship": "supports",
+      "description": "Subscribe to Mint is ideal mechanism for genesis drops"
+    },
+    {
+      "source": "subscribe_to_mint",
+      "target": "collectible_series",
+      "relationship": "supports",
+      "description": "Email list enables ongoing series drops to engaged audience"
+    },
+    {
+      "source": "subscribe_to_mint",
+      "target": "writing_nfts",
+      "relationship": "integrates_with",
+      "description": "Bootstrapped audience can collect Writing NFTs from Mirror posts"
+    },
+    {
+      "source": "web_evolution",
+      "target": "creator_middleman_problem",
+      "relationship": "explains",
+      "description": "Web2 phase brought social platforms that became middlemen"
+    },
+    {
+      "source": "web_evolution",
+      "target": "platform_ownership",
+      "relationship": "leads_to",
+      "description": "Web3 phase enables user ownership through tokens"
+    },
+    {
+      "source": "platform_ownership",
+      "target": "creator_dao",
+      "relationship": "enables",
+      "description": "Token-based ownership allows DAO governance models"
+    },
+    {
+      "source": "platform_ownership",
+      "target": "curator_economy",
+      "relationship": "enables",
+      "description": "Transparent ownership enables curator investment model"
+    },
+    {
+      "source": "creator_dao",
+      "target": "user_as_owner",
+      "relationship": "exemplifies",
+      "description": "DAOs turn community members into literal co-owners"
+    },
+    {
+      "source": "skeuomorphism_vs_native",
+      "target": "nft_definition",
+      "relationship": "design_approach_for",
+      "description": "Choice between familiar metaphors vs blockchain-native experiences"
+    },
+    {
+      "source": "nft_royalty_challenge",
+      "target": "nft_definition",
+      "relationship": "complicates",
+      "description": "Promised automatic royalties failed under market competition"
+    },
+    {
+      "source": "hype_cycle",
+      "target": "nft_definition",
+      "relationship": "contextualizes",
+      "description": "NFT adoption followed typical technology hype and crash pattern"
+    }
+  ]
+}

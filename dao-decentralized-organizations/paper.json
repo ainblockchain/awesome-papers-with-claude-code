@@ -1,0 +1,31 @@
+{
+  "id": "dao-decentralized-organizations",
+  "title": "DAO & Decentralized Organizations",
+  "title_ko": "DAO & 탈중앙화 조직",
+  "authors": [
+    "Minhyun Kim",
+    "Vitalik Buterin",
+    "Taylor Pearson",
+    "Nick Tomaino",
+    "Jesse Walden"
+  ],
+  "year": 2022,
+  "source": "Common Computer Blockchain Lecture Series",
+  "description": "Comprehensive course on DAOs and decentralized organizations covering fundamentals, decision-making frameworks, real-world cases, and building strategies.",
+  "description_ko": "DAO와 탈중앙화 조직에 대한 종합 코스: 기초 개념, 의사결정 프레임워크, 실제 사례, 구축 전략을 다룬다.",
+  "sortOrder": 2,
+  "series": "blockchain-fundamentals",
+  "courses": [
+    {
+      "slug": "core",
+      "language": "en",
+      "title": "DAO & Decentralized Organizations"
+    },
+    {
+      "slug": "core-ko",
+      "language": "ko",
+      "title": "DAO & 탈중앙화 조직"
+    }
+  ],
+  "thumbnailUrl": "thumbnail.png"
+}

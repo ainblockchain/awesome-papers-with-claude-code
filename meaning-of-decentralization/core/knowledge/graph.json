@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "title": "The Meaning of Decentralization Knowledge Graph",
+    "description": "Concept dependency graph covering Vitalik's three axes of decentralization, Web3 identity, headless brands, and distributed consensus — 18 nodes, 22 edges",
+    "source": "Vitalik Buterin 'The Meaning of Decentralization' (2017), Nichanan Kesonpat 'Web3 Identity Stack' (2022), Other Internet 'Headless Brands' (2019), Preethi Kasireddy 'Distributed Consensus' (2018)",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "three_axes_decentralization",
+      "name": "Three Axes of Decentralization",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Vitalik Buterin's framework distinguishing architectural, political, and logical decentralization as independent dimensions of system design.",
+      "key_ideas": [
+        "Architectural: How many physical computers comprise the system",
+        "Political: How many individuals/organizations control those computers",
+        "Logical: Does the system appear as a single monolithic object or an amorphous swarm"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "architectural_decentralization",
+      "name": "Architectural Decentralization",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The physical distribution of computers in a system — how many machines exist and how many can fail before the system breaks.",
+      "key_ideas": [
+        "Measures fault tolerance at the hardware level",
+        "CDNs are architecturally decentralized but politically centralized",
+        "Traditional corporations are architecturally centralized (single HQ)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "political_decentralization",
+      "name": "Political Decentralization",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The distribution of control over a system — how many individuals or organizations can make decisions about its operation.",
+      "key_ideas": [
+        "Traditional corporations: CEO = single point of political control",
+        "Common law: Judges make independent decisions = politically decentralized",
+        "Structural centralization often leads to political centralization, but not always"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "logical_decentralization",
+      "name": "Logical Decentralization",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Whether a system's interface and data structures appear as a single object or a swarm — can the system be split and continue operating independently?",
+      "key_ideas": [
+        "Blockchain is logically centralized: single consensus state",
+        "Language is logically decentralized: can split and both halves work",
+        "Logical centralization provides convenience (single database)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fault_tolerance",
+      "name": "Fault Tolerance",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "The ability of a system to continue operating despite component failures — a key reason for pursuing decentralization.",
+      "key_ideas": [
+        "Probability of 5/10 machines failing simultaneously is much lower than 1 machine failing",
+        "Common mode failure: All components fail for the same reason (same bug, same manufacturer)",
+        "Requires multiple client implementations, geographically distributed developers"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "attack_resistance",
+      "name": "Attack Resistance",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "The cost of attacking a decentralized system increases with the number of independent participants — coercion becomes harder at scale.",
+      "key_ideas": [
+        "1 person with $50M is easier to coerce than 10 people with $5M each",
+        "Smaller targets have better attack/defense cost ratios",
+        "PoS > PoW for attack resistance: coins are easier to hide than mining hardware"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "collusion_resistance",
+      "name": "Collusion Resistance",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Preventing unwanted coordination among system participants — distinguishing beneficial cooperation from harmful collusion.",
+      "key_ideas": [
+        "Collusion = coordination we don't want (like antitrust violations)",
+        "Selfish mining: 1/3+ hashpower enables unfair advantage",
+        "Paradox: How to encourage 'good' cooperation while preventing 'bad' collusion"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "common_mode_failure",
+      "name": "Common Mode Failure",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "When multiple components fail for the same reason — a critical vulnerability that decentralization must address.",
+      "key_ideas": [
+        "4 jet engines from the same factory can all fail if one worker made errors",
+        "Same client software bug affecting all nodes",
+        "70% of miners in one country = government seizure risk"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'The Meaning of Decentralization' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "did_decentralized_identifiers",
+      "name": "Decentralized Identifiers (DIDs)",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "W3C standard for self-sovereign identifiers that don't require central authorities for creation or verification.",
+      "key_ideas": [
+        "Four properties: Decentralized, Persistent, Resolvable, Verifiable",
+        "DID Document contains authentication methods and service endpoints",
+        "100+ DID methods registered, each with its own Verifiable Data Registry"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nichanan Kesonpat, '1kxnetwork — Web3 Identity Stack' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "web3_identity_stack",
+      "name": "Web3 Identity Stack",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Layered architecture for digital self-sovereignty: blockchain registry → decentralized storage → data composability → authentication.",
+      "key_ideas": [
+        "Layer 1: Blockchain as Verifiable Data Registry",
+        "Layer 2: Decentralized storage (IPFS, Arweave, Filecoin)",
+        "Layer 3: Data mutability protocols (Ceramic, ComposeDB)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nichanan Kesonpat, '1kxnetwork — Web3 Identity Stack' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "crypto_pki_trojan_horse",
+      "name": "Cryptocurrency as PKI Trojan Horse",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Cryptocurrency incentives accelerated public key infrastructure adoption — financial motivation drove key management to mainstream users.",
+      "key_ideas": [
+        "ICO, DeFi, NFT 'carrots' put more keys in user hands than ever before",
+        "Losing private key now means losing identity, not just money",
+        "Cryptocurrency blurred the line between what we own and who we are"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nichanan Kesonpat, '1kxnetwork — Web3 Identity Stack' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "headless_brands",
+      "name": "Headless Brands",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Brands without central management — when protocol ownership is distributed to users, no single entity controls the narrative.",
+      "key_ideas": [
+        "Brand = consensus system maintaining shared beliefs",
+        "Traditional broadcast media gave corporations narrative control",
+        "Network media made brands unstable — anyone can publish counter-narratives"
+      ],
+      "code_refs": [],
+      "paper_ref": "Other Internet Research, 'Headless Brands' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_headless_brand",
+      "name": "Bitcoin: The First Headless Brand",
+      "type": "application",
+      "level": "advanced",
+      "description": "Bitcoin established the archetype of headless branding — strong origin story, anonymous founder, community-evolved narratives.",
+      "key_ideas": [
+        "Satoshi created name and visual identity, then vanished",
+        "Brand evolved: e-cash → censorship-resistant store of value → uncorrelated asset",
+        "Protocol properties became brand elements: 21M cap, PoW, whitepaper"
+      ],
+      "code_refs": [],
+      "paper_ref": "Other Internet Research, 'Headless Brands' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "narrative_forks",
+      "name": "Narrative Forks and Exit vs Voice",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Hard forks as narrative divergence — the tension between allowing exit (fork) and providing voice (governance) in decentralized systems.",
+      "key_ideas": [
+        "Bitcoin Cash fork was primarily a narrative fork",
+        "Exit can consolidate remaining narrative (BCH departure ended block size debate)",
+        "On-chain governance (Tezos, Decred) internalizes exit as voice"
+      ],
+      "code_refs": [],
+      "paper_ref": "Other Internet Research, 'Headless Brands' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "distributed_consensus",
+      "name": "Distributed Consensus Fundamentals",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The challenge of achieving agreement across spatially separated computers without a global clock or guaranteed message delivery.",
+      "key_ideas": [
+        "No global clock to order events",
+        "Messages can be delayed, duplicated, or dropped",
+        "Replicated state machine: multiple computers maintaining identical transaction logs"
+      ],
+      "code_refs": [],
+      "paper_ref": "Preethi Kasireddy, 'Understanding Distributed Consensus' (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "flp_impossibility",
+      "name": "FLP Impossibility",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Fischer-Lynch-Paterson theorem proving that deterministic consensus is impossible in asynchronous systems with even one faulty process.",
+      "key_ideas": [
+        "A single faulty process can prevent consensus at the exact wrong moment",
+        "Workarounds: synchrony assumptions (DLS) or non-determinism (PBFT)",
+        "Partial synchrony: system eventually becomes synchronous"
+      ],
+      "code_refs": [],
+      "paper_ref": "Fischer, Lynch, Paterson (1985) / Preethi Kasireddy (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "byzantine_fault_tolerance",
+      "name": "Byzantine Fault Tolerance (BFT)",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Consensus algorithms that tolerate malicious (Byzantine) nodes — requires 2/3+ honest participants.",
+      "key_ideas": [
+        "Byzantine nodes can lie, delay, or send conflicting messages",
+        "PBFT: Pre-prepare → Prepare → Commit phases",
+        "O(n²) message complexity limits scalability"
+      ],
+      "code_refs": [],
+      "paper_ref": "Castro & Liskov (1999) / Preethi Kasireddy (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nakamoto_consensus",
+      "name": "Nakamoto Consensus",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Bitcoin's probabilistic consensus using Proof of Work and longest chain rule — permissionless and Sybil-resistant.",
+      "key_ideas": [
+        "Probabilistic termination: finality increases with confirmations",
+        "Sybil resistance: real resource consumption prevents fake nodes",
+        "Longest chain rule: 51%+ honest hashpower ensures honest chain wins"
+      ],
+      "code_refs": [],
+      "paper_ref": "Satoshi Nakamoto (2008) / Preethi Kasireddy (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "three_axes_decentralization", "target": "architectural_decentralization", "relationship": "component_of", "weight": 1.0, "description": "Architectural decentralization is one of the three axes" },
+    { "source": "three_axes_decentralization", "target": "political_decentralization", "relationship": "component_of", "weight": 1.0, "description": "Political decentralization is one of the three axes" },
+    { "source": "three_axes_decentralization", "target": "logical_decentralization", "relationship": "component_of", "weight": 1.0, "description": "Logical decentralization is one of the three axes" },
+    { "source": "architectural_decentralization", "target": "fault_tolerance", "relationship": "enables", "weight": 1.0, "description": "Physical distribution enables fault tolerance" },
+    { "source": "political_decentralization", "target": "attack_resistance", "relationship": "enables", "weight": 1.0, "description": "Distributed control increases cost of attack" },
+    { "source": "political_decentralization", "target": "collusion_resistance", "relationship": "enables", "weight": 1.0, "description": "Distributed control helps prevent unwanted coordination" },
+    { "source": "fault_tolerance", "target": "common_mode_failure", "relationship": "requires", "weight": 1.0, "description": "Fault tolerance must address common mode failures" },
+    { "source": "three_axes_decentralization", "target": "headless_brands", "relationship": "enables", "weight": 0.8, "description": "Decentralization framework explains headless brand emergence" },
+    { "source": "headless_brands", "target": "bitcoin_headless_brand", "relationship": "builds_on", "weight": 1.0, "description": "Bitcoin exemplifies headless brand theory" },
+    { "source": "bitcoin_headless_brand", "target": "narrative_forks", "relationship": "enables", "weight": 1.0, "description": "Bitcoin forks demonstrate narrative divergence" },
+    { "source": "collusion_resistance", "target": "narrative_forks", "relationship": "builds_on", "weight": 0.7, "description": "Collusion resistance relates to managing narrative forks" },
+    { "source": "three_axes_decentralization", "target": "web3_identity_stack", "relationship": "requires", "weight": 0.9, "description": "Understanding decentralization is prerequisite for identity stack" },
+    { "source": "web3_identity_stack", "target": "did_decentralized_identifiers", "relationship": "component_of", "weight": 1.0, "description": "DIDs are a core component of the identity stack" },
+    { "source": "web3_identity_stack", "target": "crypto_pki_trojan_horse", "relationship": "builds_on", "weight": 0.8, "description": "Crypto adoption enabled identity stack development" },
+    { "source": "distributed_consensus", "target": "flp_impossibility", "relationship": "requires", "weight": 1.0, "description": "Understanding consensus requires knowing its theoretical limits" },
+    { "source": "flp_impossibility", "target": "byzantine_fault_tolerance", "relationship": "enables", "weight": 1.0, "description": "BFT algorithms work around FLP impossibility" },
+    { "source": "flp_impossibility", "target": "nakamoto_consensus", "relationship": "enables", "weight": 1.0, "description": "Nakamoto consensus uses probabilistic approach to circumvent FLP" },
+    { "source": "fault_tolerance", "target": "distributed_consensus", "relationship": "requires", "weight": 0.9, "description": "Fault tolerance in distributed systems requires consensus" },
+    { "source": "distributed_consensus", "target": "architectural_decentralization", "relationship": "builds_on", "weight": 0.8, "description": "Consensus algorithms implement architectural decentralization" },
+    { "source": "nakamoto_consensus", "target": "bitcoin_headless_brand", "relationship": "enables", "weight": 0.9, "description": "Nakamoto consensus is the technical foundation of Bitcoin" },
+    { "source": "attack_resistance", "target": "nakamoto_consensus", "relationship": "builds_on", "weight": 0.8, "description": "Attack resistance analysis applies to consensus mechanisms" },
+    { "source": "byzantine_fault_tolerance", "target": "attack_resistance", "relationship": "builds_on", "weight": 0.7, "description": "BFT provides attack resistance against malicious actors" }
+  ]
+}

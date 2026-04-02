@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "title": "DAO & Decentralized Organizations Knowledge Graph",
+    "description": "Concept dependency graph for DAO and decentralized organizations — 18 nodes, 22 edges",
+    "source": "Minhyun Kim, Common Computer — Blockchain Lecture Series / Vitalik Buterin, Taylor Pearson, Aragon, Nick Tomaino, Jesse Walden",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "blockchain_fundamentals",
+      "name": "Blockchain Fundamentals",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Learn the basic principles of blockchain, consensus mechanisms (PoW/PoS), smart contracts, and the difference between coins and tokens.",
+      "key_ideas": [
+        "Blockchain = A tamper-proof ledger distributed globally",
+        "PoW (Proof of Work) vs PoS (Proof of Stake) consensus mechanisms",
+        "Smart contracts: Code that executes automatically when conditions are met",
+        "Coins (own chain) vs Tokens (issued on other chains)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Lecture",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_definition",
+      "name": "Definition and Structure of DAOs",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Learn the definition of Decentralized Autonomous Organizations (DAOs), differences from traditional corporations, and token-based governance structures.",
+      "key_ideas": [
+        "DAO = Organization with operating rules recorded on blockchain as smart contracts",
+        "Traditional corporation: Board decides → Employees execute",
+        "DAO: Token holders vote → Smart contract auto-executes",
+        "Operates automatically without intermediary managers"
+      ],
+      "code_refs": [],
+      "paper_ref": "Minhyun Kim, Common Computer — Blockchain Lecture",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "the_dao_incident",
+      "name": "TheDAO Hack and Lessons Learned",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Learn about the 2016 TheDAO hack, re-entrancy attack, and Ethereum hard fork decision.",
+      "key_ideas": [
+        "2016: Slock.it launched TheDAO on Ethereum → $150M raised",
+        "Re-entrancy exploit drained 30% of funds",
+        "Ethereum community decided to hard fork (block 1,920,000)",
+        "Lesson: Importance of smart contract security audits"
+      ],
+      "code_refs": [],
+      "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "convex_concave_decisions",
+      "name": "Convex vs Concave Decision-Making",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn Vitalik Buterin's Convex/Concave decision-making framework. Understand when centralization vs decentralization is more effective.",
+      "key_ideas": [
+        "Convex: Extreme choice is best (military strategy, rapid product decisions)",
+        "Concave: Middle ground/compromise is best (fund allocation, policy decisions)",
+        "Convex problems → Centralized few should handle",
+        "Concave problems → Entire community should decide"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_vs_corporation",
+      "name": "DAO vs Corporation Debate",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the criticism that DAOs will eventually converge to corporate structures and Vitalik's counter-argument.",
+      "key_ideas": [
+        "Corporation camp: Hierarchy makes decisions efficient, DAOs will converge",
+        "Vitalik: DAOs are closer to Sovereigns, not Corporations",
+        "DAOs should learn from political science, not business management",
+        "Succession Problem is the key challenge"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pod_structure",
+      "name": "Pod Structure and Hybrid Governance",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Learn about the Pod structure combining decentralization and centralization through the Ukraine DAO case study.",
+      "key_ideas": [
+        "Fundraising: Decentralized approach",
+        "Fund execution: Centralized within Pods after allocation",
+        "Upper level (Core): Focus on Concave situations",
+        "Lower level (Pod): Focus on Convex situations"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "censorship_resistance",
+      "name": "Censorship Resistance and Decentralization",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the principles of how decentralization provides censorship resistance and cases like Pirate Bay, Sci-Hub, and BitTorrent.",
+      "key_ideas": [
+        "Pirate Bay, Sci-Hub: Only domain managers face legal risk, data stays decentralized",
+        "BitTorrent: Anyone can join/leave without affecting file availability",
+        "DAO's censorship resistance: Goal is stable maintenance, not permanent evasion",
+        "Maintain organization stability under uncertainty and interference"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "kleros_case",
+      "name": "Kleros Decentralized Court Case Study",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Learn about 'trustworthy fairness' as decentralization through the Kleros decentralized dispute resolution platform.",
+      "key_ideas": [
+        "Random selection of 3,000 jurors from PNK token stakers",
+        "Jurors don't know each other, vote after 3-day evidence review",
+        "Automatic compensation payment via smart contract",
+        "Limitation: Case #1170 controversy over insider token mobilization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'DAOs are not corporations' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "organization_man",
+      "name": "Organization Man and Social Ethic",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn William Whyte's Organization Man concept and the background of 20th century corporate-centric society formation.",
+      "key_ideas": [
+        "Organization Man: Named by William Whyte in 1956",
+        "Shift from individualism → collectivism (Social Ethic)",
+        "Belief that 'belongingness' is the ultimate human need",
+        "Rational adaptation to 20th century corporate-dominated society"
+      ],
+      "code_refs": [],
+      "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "blockchain_man",
+      "name": "Blockchain Man and the New Paradigm",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn Taylor Pearson's Blockchain Man concept and how reduced transaction costs change organization size.",
+      "key_ideas": [
+        "If internet lowered transaction costs by one order of magnitude, blockchain will lower it by another",
+        "As transaction costs approach zero, optimal firm size approaches one person",
+        "Frontier scientist-type humans are the prototype of Blockchain Man",
+        "Hollywood model: Project-based collaboration becomes the norm"
+      ],
+      "code_refs": [],
+      "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fat_protocol_thesis",
+      "name": "Fat Protocol Thesis",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the Fat Protocol thesis that explains the difference in value distribution structure between internet and blockchain.",
+      "key_ideas": [
+        "Internet: Thin protocol (free) + Fat application (Google, Facebook)",
+        "Blockchain: Fat protocol (ETH, SOL) + Thin application",
+        "Blockchain protocols have built-in tokens that directly accumulate value",
+        "Current debate: DeFi/NFT applications also create massive value"
+      ],
+      "code_refs": [],
+      "paper_ref": "Taylor Pearson, 'The Blockchain Man' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dao_types_overview",
+      "name": "15 Application Areas of DAOs",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Learn about the various areas being transformed by DAOs: developer collectives, worker collectives, art collectives, asset management, etc.",
+      "key_ideas": [
+        "Developer Collectives: BadgerDAO, Gitcoin, API3",
+        "Worker Collectives: Raid Guild, dOrg — Modern revival of medieval guilds",
+        "Art Collectives: PleasrDAO — Holds iconic NFTs in crypto history",
+        "Metaverse: Decentraland — Fully decentralized metaverse"
+      ],
+      "code_refs": [],
+      "paper_ref": "Aragon Blog, '15 Ways the World is Being Transformed by DAOs' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "firm_existence",
+      "name": "Why Firms Exist",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Learn Ronald Coase's transaction cost theory and the economic reasons for the existence of firms.",
+      "key_ideas": [
+        "Transaction cost minimization — Ronald Coase, 'The Nature of the Firm' (1937)",
+        "Aggregation of capital and talent — Vitalari & Shaughnessy",
+        "Provides stability and job security to risk-averse individuals",
+        "Most people dislike corporations but need them"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_without_firm",
+      "name": "Bitcoin Thriving Without a Firm",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn how Bitcoin achieved a sustainable digital service without a legal entity.",
+      "key_ideas": [
+        "Miners: Performance measured by PoW, directly rewarded in BTC by protocol",
+        "Developers/Users: Hold BTC → Indirectly rewarded through value appreciation",
+        "2017: Bitcoin market cap $100B > Goldman Sachs market cap",
+        "2026: Bitcoin market cap ~$1.7T, tens of times larger than Goldman Sachs"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decentralized_org_barriers",
+      "name": "Key Barriers for Decentralized Organizations",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Learn about the difficulties of decentralized decision-making, contribution measurement problems, and misuse of 'decentralization'.",
+      "key_ideas": [
+        "Decentralized decision-making is hard — No governance best practices yet",
+        "Most labor types are difficult to accurately measure contribution",
+        "Misuse and ambiguity of 'decentralization'",
+        "Some centralized decision-making is needed initially"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nick Tomaino, 'The Slow Death of the Firm' (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "progressive_decentralization",
+      "name": "Progressive Decentralization Strategy",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Learn a16z's progressive decentralization playbook — PMF → Community Participation → Sufficient Decentralization sequence.",
+      "key_ideas": [
+        "Stage 1: Product/Market Fit — Core team leads all decisions",
+        "Stage 2: Community Participation — Strengthen community harmony",
+        "Stage 3: Sufficient Decentralization — Broad token distribution",
+        "Failure pattern: Pursuing community ownership first only attracts speculators"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "howey_test",
+      "name": "Howey Test and Securities Classification",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Learn about the Howey Test, the criteria for classifying crypto tokens as securities.",
+      "key_ideas": [
+        "4 requirements: Investment, common enterprise, profit expectation, reliance on others' efforts",
+        "Meeting all four → Likely classified as security",
+        "Sufficient decentralization → No reliance on others' efforts → Non-security",
+        "Cases: Kik $5M fine, Ripple partial win, Ethereum recognized as non-security"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "exit_to_community",
+      "name": "Exit to Community",
+      "type": "technique",
+      "level": "frontier",
+      "description": "Learn about the exit-to-community strategy where teams transfer ownership to users and the cooperative economic model.",
+      "key_ideas": [
+        "Core team transfers majority ownership (fees, control)",
+        "Token can transition to non-security status",
+        "User-owners realize increasing returns through cooperative economic model",
+        "Success cases: Uniswap (UNI), Compound (COMP), Optimism (OP), Arbitrum (ARB)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jesse Walden, 'Progressive Decentralization' (2020)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "blockchain_fundamentals", "target": "dao_definition", "relationship": "requires", "weight": 1.0, "description": "Understanding blockchain basics is a prerequisite for learning DAO definition" },
+    { "source": "dao_definition", "target": "the_dao_incident", "relationship": "builds_on", "weight": 1.0, "description": "Need to know DAO definition to understand TheDAO incident context" },
+    { "source": "dao_definition", "target": "convex_concave_decisions", "relationship": "enables", "weight": 1.0, "description": "Understanding DAO structure enables learning decision-making framework" },
+    { "source": "convex_concave_decisions", "target": "dao_vs_corporation", "relationship": "builds_on", "weight": 1.0, "description": "Convex/Concave concept is the foundation for DAO vs Corporation debate" },
+    { "source": "convex_concave_decisions", "target": "pod_structure", "relationship": "enables", "weight": 1.0, "description": "Decision-making framework is the basis for Pod structure design" },
+    { "source": "dao_definition", "target": "censorship_resistance", "relationship": "enables", "weight": 0.8, "description": "DAO's decentralized nature is the foundation for censorship resistance" },
+    { "source": "censorship_resistance", "target": "kleros_case", "relationship": "builds_on", "weight": 0.9, "description": "Censorship resistance concept provides background for Kleros case analysis" },
+    { "source": "dao_definition", "target": "organization_man", "relationship": "alternative_to", "weight": 0.7, "description": "DAO is an alternative organizational form to Organization Man era" },
+    { "source": "organization_man", "target": "blockchain_man", "relationship": "evolves_to", "weight": 1.0, "description": "Evolution from Organization Man to Blockchain Man" },
+    { "source": "blockchain_man", "target": "fat_protocol_thesis", "relationship": "builds_on", "weight": 0.8, "description": "Blockchain Man concept connects to Fat Protocol thesis" },
+    { "source": "dao_definition", "target": "dao_types_overview", "relationship": "enables", "weight": 1.0, "description": "Understanding DAO definition enables learning various application areas" },
+    { "source": "blockchain_fundamentals", "target": "firm_existence", "relationship": "enables", "weight": 0.7, "description": "Blockchain understanding enables re-examination of why firms exist" },
+    { "source": "firm_existence", "target": "bitcoin_without_firm", "relationship": "builds_on", "weight": 1.0, "description": "Need to know why firms exist to understand Bitcoin's innovation" },
+    { "source": "bitcoin_without_firm", "target": "decentralized_org_barriers", "relationship": "enables", "weight": 1.0, "description": "Bitcoin case enables discussion of decentralized org barriers" },
+    { "source": "decentralized_org_barriers", "target": "progressive_decentralization", "relationship": "enables", "weight": 1.0, "description": "Understanding barriers motivates progressive decentralization strategy" },
+    { "source": "progressive_decentralization", "target": "howey_test", "relationship": "builds_on", "weight": 1.0, "description": "Progressive decentralization connects to Howey Test compliance strategy" },
+    { "source": "howey_test", "target": "exit_to_community", "relationship": "enables", "weight": 1.0, "description": "Understanding Howey Test provides rationale for Exit to Community" },
+    { "source": "the_dao_incident", "target": "decentralized_org_barriers", "relationship": "builds_on", "weight": 0.8, "description": "TheDAO incident is a historical case showing decentralized org barriers" },
+    { "source": "kleros_case", "target": "progressive_decentralization", "relationship": "builds_on", "weight": 0.6, "description": "Kleros case is a practical example of progressive decentralization" },
+    { "source": "dao_types_overview", "target": "exit_to_community", "relationship": "builds_on", "weight": 0.7, "description": "Various DAO types are real cases of Exit to Community" },
+    { "source": "fat_protocol_thesis", "target": "progressive_decentralization", "relationship": "enables", "weight": 0.6, "description": "Understanding value distribution influences decentralization strategy design" },
+    { "source": "dao_vs_corporation", "target": "decentralized_org_barriers", "relationship": "builds_on", "weight": 0.8, "description": "DAO vs Corporation debate contributes to understanding decentralized org barriers" }
+  ]
+}

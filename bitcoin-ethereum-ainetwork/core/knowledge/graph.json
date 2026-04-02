@@ -1,0 +1,377 @@
+{
+  "metadata": {
+    "title": "Bitcoin, Ethereum, AI Network Knowledge Graph",
+    "description": "Concept dependency graph for Bitcoin, Ethereum, and AI Network whitepapers and architecture — 20 nodes, 25 edges",
+    "source": "Satoshi Nakamoto (Bitcoin Whitepaper, 2008) / Vitalik Buterin (Ethereum Whitepaper, 2014) / AI Network (Architecture Paper, 2018-2021 / Whitepaper, 2025)",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "bitcoin_introduction",
+      "name": "Birth of Bitcoin",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Learn the background of Satoshi Nakamoto's Bitcoin proposal during the 2008 financial crisis and the problems with trust-based financial systems.",
+      "key_ideas": [
+        "Internet commerce relies almost exclusively on trusted third parties (financial institutions)",
+        "Completely non-reversible transactions impossible, mediation costs cut off small transactions",
+        "What is needed: electronic payment system based on cryptographic proof instead of trust",
+        "October 31, 2008 Halloween — Bitcoin whitepaper first published"
+      ],
+      "code_refs": [],
+      "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_transactions",
+      "name": "Bitcoin Transaction Structure",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Learn how electronic coins are defined as chains of digital signatures and how the double-spending problem is solved.",
+      "key_ideas": [
+        "Electronic coin = chain of digital signatures",
+        "Each owner transfers by signing hash of previous transaction + next owner's public key",
+        "Problem: cannot verify double-spending without central authority",
+        "Solution: transactions publicly announced, participants agree on order received"
+      ],
+      "code_refs": [],
+      "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "proof_of_work",
+      "name": "Proof of Work (PoW)",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Learn the PoW system inspired by Adam Back's Hashcash and the 'one-CPU-one-vote' principle.",
+      "key_ideas": [
+        "Find value where SHA-256 hash starts with certain number of zero bits",
+        "After PoW completed, all subsequent blocks must be redone to change",
+        "one-CPU-one-vote: proof of work = 1 CPU = 1 vote (ideal)",
+        "Reality: ASICs and large mining pools dominate (as of 2026)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_incentive",
+      "name": "Bitcoin Incentive Structure",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn Bitcoin's incentive mechanism consisting of block rewards and transaction fees, and the Halving schedule.",
+      "key_ideas": [
+        "First transaction in block = special transaction where block creator receives new coins",
+        "Halving: 2012 (25 BTC) → 2016 (12.5) → 2020 (6.25) → 2024 (3.125 BTC)",
+        "As of 2026, approximately 94% of total 21 million BTC supply already mined",
+        "Incentive will transition entirely to transaction fees"
+      ],
+      "code_refs": [],
+      "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_spv",
+      "name": "SPV and Merkle Tree",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Learn Simplified Payment Verification and disk space reclamation through Merkle Trees.",
+      "key_ideas": [
+        "Payment verification possible without full node (block headers + Merkle branch)",
+        "Merkle Tree: hash transactions, include only root in block hash",
+        "2008 prediction: block headers 4.2MB/year, no storage problem",
+        "2026 reality: Bitcoin full node 600GB+"
+      ],
+      "code_refs": [],
+      "paper_ref": "Satoshi Nakamoto, 'Bitcoin: A Peer-to-Peer Electronic Cash System' (2008)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_state_transition",
+      "name": "Bitcoin as State Transition System",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the perspective of understanding Bitcoin as a UTXO-based state transition system.",
+      "key_ideas": [
+        "State = ownership status of all unspent transaction outputs (UTXO)",
+        "State Transition Function: APPLY(S, TX) → S' or ERROR",
+        "Bitcoin = technically a state transition system",
+        "Framework from Ethereum whitepaper reinterpreting Bitcoin"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_script_limits",
+      "name": "Limitations of Bitcoin Script",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn the 4 major limitations of Bitcoin Script and the motivation for Ethereum's creation.",
+      "key_ideas": [
+        "Lack of Turing-completeness: no loops supported",
+        "Value-blindness: UTXO scripts cannot fine-control withdrawal amounts",
+        "Lack of state: UTXO only used/unused, no multi-stage contracts",
+        "Blockchain-blindness: cannot access nonce, timestamp, etc."
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_accounts",
+      "name": "Ethereum Account Structure",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Learn Ethereum's EOA and contract accounts, and the 4-field structure.",
+      "key_ideas": [
+        "4 fields: nonce, ether balance, contract code, storage",
+        "EOA (Externally Owned Account): controlled by private key, creates and signs transactions",
+        "Contract Account: controlled by contract code, activates on message receipt",
+        "Ethereum = blockchain with built-in Turing-complete programming language"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_gas",
+      "name": "Gas and Fee Model",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Learn Ethereum's Gas mechanism and fee structure changes after EIP-1559.",
+      "key_ideas": [
+        "STARTGAS: maximum computational steps allowed for execution",
+        "GASPRICE: fee paid per computational step",
+        "EIP-1559 (2021): base fee (burned) + tip (to validator)",
+        "Base fee burning causes ETH net deflation periods"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_evm",
+      "name": "EVM and Code Execution",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Learn the Ethereum Virtual Machine's 3 storage spaces and the Solidity language.",
+      "key_ideas": [
+        "Stack: LIFO container, reset after computation",
+        "Memory: infinitely expandable, reset after computation",
+        "Storage: key/value store, permanently persisted",
+        "Serpent (2014) → Solidity is current standard"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_merge",
+      "name": "The Merge and PoS Transition",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Learn about Ethereum's transition from PoW to PoS (The Merge) in September 2022.",
+      "key_ideas": [
+        "September 15, 2022: The Merge completed",
+        "PoW completely abolished, transitioned to PoS",
+        "Energy consumption reduced by approximately 99.95%",
+        "Miner → Validator, 32 ETH staking required"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_applications",
+      "name": "Ethereum Application Areas",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Learn application areas proposed in the Ethereum whitepaper: token systems, financial derivatives, DAOs.",
+      "key_ideas": [
+        "Financial: sub-currencies, derivatives, hedging contracts, savings wallets",
+        "Semi-Financial: bounties for computational problem solving",
+        "Non-Financial: online voting, decentralized governance",
+        "ERC-20 standard (2015-2017): foundation for thousands of tokens"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_scalability",
+      "name": "Ethereum Scalability Challenges",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Learn the scalability problem where all transactions must be processed by all nodes, and Layer 2 solutions.",
+      "key_ideas": [
+        "Fundamental weakness: every transaction processed by every node",
+        "Bitcoin: UTXO only, Ethereum: UTXO + code + state",
+        "Layer 2 solutions: Arbitrum, Optimism, zkSync, Base",
+        "Dencun upgrade (2024): massive L2 data cost reduction"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin, 'Ethereum Whitepaper' (2014)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ain_vision",
+      "name": "AI Network Vision",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Learn AI Network's vision — global computer network and the Open Resource initiative.",
+      "key_ideas": [
+        "Open access to shared computing resources in a cost-effective manner",
+        "Global computer network where anyone can provide and configure cutting-edge solutions",
+        "Open Resource: open source AI → sovereign on-chain AI agents",
+        "Separation of developer and resource provider roles"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Architecture Paper' (2018-2021) / 'Whitepaper' (2025)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "deep_computing",
+      "name": "Deep Computing Architecture",
+      "type": "architecture",
+      "level": "advanced",
+      "description": "Learn AI Network's Deep Computing — the 3 components: SRE, Big Storage, AIN Blockchain Protocol.",
+      "key_ideas": [
+        "SRE (Secure Runtime Environment): CPU role, code execution environment",
+        "Big Storage: Memory role, large-scale data storage",
+        "AIN Blockchain: I/O role, inter-node communication and reputation management",
+        "Correspondence with Von Neumann architecture"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Architecture Paper' (2018-2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ain_roles",
+      "name": "AI Network Role System",
+      "type": "architecture",
+      "level": "advanced",
+      "description": "Learn the 4 roles: Admin, Evaluator, Worker, Client, and the Reputation Tree (RTree).",
+      "key_ideas": [
+        "Admin: registers task schemas, approves evaluators/workers",
+        "Evaluator: validates worker solutions and evaluates performance",
+        "Worker: executes computation and returns solutions",
+        "Client: requests task execution and provides rewards"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Architecture Paper' (2018-2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ain_execution_model",
+      "name": "AI Network Execution Model",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Learn the event-driven off-chain execution model and the Post-Consensus protocol.",
+      "key_ideas": [
+        "Avoids monolithic on-chain execution like Ethereum",
+        "Blockchain = real-time event bus + immutable ledger",
+        "Resource providers: receive on-chain events → execute off-chain in SRE",
+        "Post-Consensus: prioritizes immediate event propagation"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Whitepaper' (2025)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ain_token",
+      "name": "AIN Token Economics",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Learn the utility of the AIN token and Preemptive Buying options.",
+      "key_ideas": [
+        "AIN: utility token for both humans and computers",
+        "Reserve computing power for specific periods with AIN",
+        "Preemptive Buying: reserve resources at fixed AIN price, eliminate price volatility risk",
+        "Total initial supply: 700,000,000 AIN"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Whitepaper' (2025)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ml_patterns",
+      "name": "AI Network ML Patterns",
+      "type": "application",
+      "level": "frontier",
+      "description": "Learn distributed computing, loss function optimization, data parallelism, and reinforcement learning patterns.",
+      "key_ideas": [
+        "Distributed Computing: decompose tasks into small pieces, send asynchronously",
+        "Optimizing Loss Function: Workers compete to achieve L(w) → 0",
+        "Data Parallelism: client acts as parameter server",
+        "Reinforcement Training: AlphaGo case, share self-play data"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Architecture Paper' (2018-2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_resource",
+      "name": "Open Source to Open Resource",
+      "type": "theory",
+      "level": "frontier",
+      "description": "Learn the core concept of AI Network transforming open source AI into sovereign agents (Open Resource).",
+      "key_ideas": [
+        "Execution Gap: open source AI cannot run in typical environments",
+        "Centralization of value: platforms like ChatGPT don't return value to original creators",
+        "Open Resource: static code → sovereign on-chain agents",
+        "True promise of World Computer: living network of cooperating intelligences"
+      ],
+      "code_refs": [],
+      "paper_ref": "AI Network, 'Whitepaper' (2025)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "bitcoin_introduction", "target": "bitcoin_transactions", "relationship": "enables", "weight": 1.0, "description": "Bitcoin's birth background motivates understanding transaction structure" },
+    { "source": "bitcoin_transactions", "target": "proof_of_work", "relationship": "requires", "weight": 1.0, "description": "PoW needed to solve double-spending" },
+    { "source": "proof_of_work", "target": "bitcoin_incentive", "relationship": "enables", "weight": 1.0, "description": "PoW forms the basis of incentive structure" },
+    { "source": "bitcoin_transactions", "target": "bitcoin_spv", "relationship": "builds_on", "weight": 0.9, "description": "SPV and Merkle Tree used for transaction verification" },
+    { "source": "bitcoin_introduction", "target": "bitcoin_state_transition", "relationship": "enables", "weight": 0.8, "description": "Understanding Bitcoin is foundation for state transition perspective" },
+    { "source": "bitcoin_state_transition", "target": "bitcoin_script_limits", "relationship": "builds_on", "weight": 1.0, "description": "Analyzing Script limits from state transition perspective" },
+    { "source": "bitcoin_script_limits", "target": "ethereum_accounts", "relationship": "enables", "weight": 1.0, "description": "Bitcoin limitations motivated Ethereum design" },
+    { "source": "ethereum_accounts", "target": "ethereum_gas", "relationship": "requires", "weight": 1.0, "description": "Account structure understanding prerequisite for Gas mechanism" },
+    { "source": "ethereum_accounts", "target": "ethereum_evm", "relationship": "requires", "weight": 1.0, "description": "Account structure is foundation for EVM understanding" },
+    { "source": "ethereum_gas", "target": "ethereum_merge", "relationship": "builds_on", "weight": 0.8, "description": "Gas model is foundation for understanding post-Merge changes" },
+    { "source": "ethereum_evm", "target": "ethereum_applications", "relationship": "enables", "weight": 1.0, "description": "EVM enables various application areas" },
+    { "source": "ethereum_applications", "target": "ethereum_scalability", "relationship": "builds_on", "weight": 1.0, "description": "Application growth highlights scalability issues" },
+    { "source": "proof_of_work", "target": "ethereum_merge", "relationship": "evolves_to", "weight": 0.9, "description": "Evolution from PoW to PoS" },
+    { "source": "ethereum_scalability", "target": "ain_vision", "relationship": "enables", "weight": 0.7, "description": "Ethereum scalability limits background for AI Network vision" },
+    { "source": "ain_vision", "target": "deep_computing", "relationship": "requires", "weight": 1.0, "description": "Deep Computing architecture needed to realize AI Network vision" },
+    { "source": "deep_computing", "target": "ain_roles", "relationship": "requires", "weight": 1.0, "description": "Deep Computing is foundation for role system" },
+    { "source": "ain_roles", "target": "ain_execution_model", "relationship": "builds_on", "weight": 1.0, "description": "Role system is foundation for execution model" },
+    { "source": "ain_execution_model", "target": "ain_token", "relationship": "enables", "weight": 1.0, "description": "Execution model is basis for token economics" },
+    { "source": "ain_roles", "target": "ml_patterns", "relationship": "enables", "weight": 1.0, "description": "Role system enables ML pattern execution" },
+    { "source": "ain_vision", "target": "open_resource", "relationship": "builds_on", "weight": 1.0, "description": "AI Network vision concretized as Open Resource concept" },
+    { "source": "ethereum_applications", "target": "open_resource", "relationship": "enables", "weight": 0.6, "description": "Understanding Ethereum applications is background for Open Resource concept" },
+    { "source": "bitcoin_incentive", "target": "ain_token", "relationship": "builds_on", "weight": 0.7, "description": "Bitcoin incentive model influenced AIN token design" },
+    { "source": "ethereum_evm", "target": "deep_computing", "relationship": "alternative_to", "weight": 0.8, "description": "EVM on-chain execution and Deep Computing off-chain execution are alternative approaches" },
+    { "source": "bitcoin_spv", "target": "ethereum_scalability", "relationship": "builds_on", "weight": 0.5, "description": "SPV concept is precursor to scalability solutions" },
+    { "source": "ml_patterns", "target": "open_resource", "relationship": "enables", "weight": 0.9, "description": "ML patterns are practical applications of Open Resource" }
+  ]
+}

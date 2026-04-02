@@ -1,0 +1,157 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "bitcoin-ethereum-ainetwork",
+  "topic_map": {
+    "bitcoin_introduction": "bitcoin-ethereum-ainetwork/bitcoin_introduction",
+    "bitcoin_transactions": "bitcoin-ethereum-ainetwork/bitcoin_transactions",
+    "proof_of_work": "bitcoin-ethereum-ainetwork/proof_of_work",
+    "bitcoin_incentive": "bitcoin-ethereum-ainetwork/bitcoin_incentive",
+    "bitcoin_spv": "bitcoin-ethereum-ainetwork/bitcoin_spv",
+    "bitcoin_state_transition": "bitcoin-ethereum-ainetwork/bitcoin_state_transition",
+    "bitcoin_script_limits": "bitcoin-ethereum-ainetwork/bitcoin_script_limits",
+    "ethereum_accounts": "bitcoin-ethereum-ainetwork/ethereum_accounts",
+    "ethereum_gas": "bitcoin-ethereum-ainetwork/ethereum_gas",
+    "ethereum_evm": "bitcoin-ethereum-ainetwork/ethereum_evm",
+    "ethereum_merge": "bitcoin-ethereum-ainetwork/ethereum_merge",
+    "ethereum_applications": "bitcoin-ethereum-ainetwork/ethereum_applications",
+    "ethereum_scalability": "bitcoin-ethereum-ainetwork/ethereum_scalability",
+    "ain_vision": "bitcoin-ethereum-ainetwork/ain_vision",
+    "deep_computing": "bitcoin-ethereum-ainetwork/deep_computing",
+    "ain_roles": "bitcoin-ethereum-ainetwork/ain_roles",
+    "ain_execution_model": "bitcoin-ethereum-ainetwork/ain_execution_model",
+    "ain_token": "bitcoin-ethereum-ainetwork/ain_token",
+    "ml_patterns": "bitcoin-ethereum-ainetwork/ml_patterns",
+    "open_resource": "bitcoin-ethereum-ainetwork/open_resource"
+  },
+  "depth_map": {
+    "bitcoin_introduction": 1,
+    "bitcoin_transactions": 1,
+    "proof_of_work": 1,
+    "bitcoin_incentive": 2,
+    "bitcoin_spv": 2,
+    "bitcoin_state_transition": 2,
+    "bitcoin_script_limits": 2,
+    "ethereum_accounts": 2,
+    "ethereum_gas": 2,
+    "ethereum_evm": 2,
+    "ethereum_merge": 2,
+    "ethereum_applications": 2,
+    "ethereum_scalability": 3,
+    "ain_vision": 2,
+    "deep_computing": 3,
+    "ain_roles": 3,
+    "ain_execution_model": 3,
+    "ain_token": 3,
+    "ml_patterns": 4,
+    "open_resource": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "bitcoin-ethereum-ainetwork",
+      "title": "Bitcoin, Ethereum, AI Network",
+      "description": "Learning path covering Bitcoin, Ethereum, and AI Network whitepapers and architectures"
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_introduction",
+      "title": "Birth of Bitcoin",
+      "description": "Learn the background of Satoshi Nakamoto's Bitcoin proposal during the 2008 financial crisis and the problems with trust-based financial systems."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_transactions",
+      "title": "Bitcoin Transaction Structure",
+      "description": "Learn how electronic coins are defined as chains of digital signatures and how the double-spending problem is solved."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/proof_of_work",
+      "title": "Proof of Work (PoW)",
+      "description": "Learn the PoW system inspired by Adam Back's Hashcash and the 'one-CPU-one-vote' principle."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_incentive",
+      "title": "Bitcoin Incentive Structure",
+      "description": "Learn Bitcoin's incentive mechanism consisting of block rewards and transaction fees, and the Halving schedule."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_spv",
+      "title": "SPV and Merkle Tree",
+      "description": "Learn Simplified Payment Verification and disk space reclamation through Merkle Trees."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_state_transition",
+      "title": "Bitcoin as State Transition System",
+      "description": "Learn the perspective of understanding Bitcoin as a UTXO-based state transition system."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/bitcoin_script_limits",
+      "title": "Limitations of Bitcoin Script",
+      "description": "Learn the 4 major limitations of Bitcoin Script and the motivation for Ethereum's creation."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_accounts",
+      "title": "Ethereum Account Structure",
+      "description": "Learn Ethereum's EOA and contract accounts, and the 4-field structure."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_gas",
+      "title": "Gas and Fee Model",
+      "description": "Learn Ethereum's Gas mechanism and fee structure changes after EIP-1559."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_evm",
+      "title": "EVM and Code Execution",
+      "description": "Learn the Ethereum Virtual Machine's 3 storage spaces and the Solidity language."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_merge",
+      "title": "The Merge and PoS Transition",
+      "description": "Learn about Ethereum's transition from PoW to PoS (The Merge) in September 2022."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_applications",
+      "title": "Ethereum Application Areas",
+      "description": "Learn application areas proposed in the Ethereum whitepaper: token systems, financial derivatives, DAOs."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ethereum_scalability",
+      "title": "Ethereum Scalability Challenges",
+      "description": "Learn the scalability problem where all transactions must be processed by all nodes, and Layer 2 solutions."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_vision",
+      "title": "AI Network Vision",
+      "description": "Learn AI Network's vision — global computer network and the Open Resource initiative."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/deep_computing",
+      "title": "Deep Computing Architecture",
+      "description": "Learn AI Network's Deep Computing — the 3 components: SRE, Big Storage, AIN Blockchain Protocol."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_roles",
+      "title": "AI Network Role System",
+      "description": "Learn the 4 roles: Admin, Evaluator, Worker, Client, and the Reputation Tree (RTree)."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_execution_model",
+      "title": "AI Network Execution Model",
+      "description": "Learn the event-driven off-chain execution model and the Post-Consensus protocol."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ain_token",
+      "title": "AIN Token Economics",
+      "description": "Learn the utility of the AIN token and Preemptive Buying options."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/ml_patterns",
+      "title": "AI Network ML Patterns",
+      "description": "Learn distributed computing, loss function optimization, data parallelism, and reinforcement learning patterns."
+    },
+    {
+      "path": "bitcoin-ethereum-ainetwork/open_resource",
+      "title": "Open Source to Open Resource",
+      "description": "Learn the core concept of AI Network transforming open source AI into sovereign agents (Open Resource)."
+    }
+  ],
+  "x402_lessons": {}
+}

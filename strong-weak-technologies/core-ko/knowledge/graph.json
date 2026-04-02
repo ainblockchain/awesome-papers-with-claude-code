@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "title": "Strong and Weak Technologies 지식 그래프",
+    "description": "강한 기술 vs 약한 기술 쌍, 메타버스 필수 요소, Web3 GTM 전략, Scissor Label을 포함하는 개념 의존성 그래프 — 18개 노드, 20개 엣지",
+    "source": "Chris Dixon 'Strong and Weak Technologies' (2019), a16z crypto 'Metaverse Ingredients' (2022), Maggie Hsu 'Web3 GTM' (2022), John Palmer 'Scissor Labels' (2021)",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "strong_vs_weak_tech",
+      "name": "강한 기술 vs 약한 기술",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Chris Dixon의 프레임워크로, 강한 형태의 기술은 세상을 재편하고 약한 형태는 세상에 적응한다는 기술 쌍의 구분. 강한 기술은 열성가들을 사로잡고 하이프 사이클을 거치며, 약한 기술은 기존 기업들에게 더 안전해 보인다.",
+      "key_ideas": [
+        "기술은 쌍으로 등장: 강한 형태(혁명적)와 약한 형태(타협)",
+        "강한 기술: iPhone, 공개 인터넷, 퍼미션리스 블록체인, VR",
+        "약한 기술: Blackberry, 인트라넷, 프라이빗 블록체인, AR",
+        "강한 기술은 환멸의 골짜기를 거쳐 Perez/Gartner 하이프 사이클을 따름"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Strong and Weak Technologies' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "hype_cycle",
+      "name": "하이프 사이클",
+      "type": "theory",
+      "level": "foundational",
+      "description": "강한 기술의 진행 과정을 설명하는 Perez/Gartner 모델: 혁신 촉발, 과대 기대의 정점, 환멸의 골짜기, 계몽의 경사면, 생산성의 고원.",
+      "key_ideas": [
+        "5단계: 촉발 → 정점 → 골짜기 → 경사면 → 고원",
+        "환멸의 골짜기는 기업가들이 믿음을 잃고 약한 기술로 전환하는 시점",
+        "골짜기를 견딘 강한 기술이 새로운 시대를 정의",
+        "약한 기술은 주류 채택에 더 가까워 보이지만 미래를 정의하는 경우는 드묾"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Strong and Weak Technologies' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "unreasonable_man",
+      "name": "비합리적 인간",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "George Bernard Shaw의 개념으로, 진보는 세상을 자신의 비전에 맞추려는 사람들에게 달려있다는 것. 약한 기술은 현재 세상에 적응하고, 강한 기술은 세상을 자신에게 맞춘다.",
+      "key_ideas": [
+        "합리적인 사람은 세상에 자신을 맞춤",
+        "비합리적인 사람은 세상을 자신에게 맞춤",
+        "모든 진보는 비합리적인 사람에게 달려있음",
+        "iPhone은 세상(통신사, 개발자, 사용자)을 변화시켰지 순응하지 않음"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Strong and Weak Technologies' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decentralization_axis",
+      "name": "필수 요소로서의 탈중앙화",
+      "type": "theory",
+      "level": "foundational",
+      "description": "진정한 메타버스의 지배적이고 근본적인 원칙. 단일 주체나 과두 집단이 소유하거나 운영하지 않는 시스템. 블록체인의 코드 강제 약속으로 가능해짐.",
+      "key_ideas": [
+        "중앙화 플랫폼은 처음엔 우호적이지만 성장이 둔화되면 착취적으로 변함",
+        "탈중앙화 없이는 사용자가 언제든 '러그풀'당할 수 있음",
+        "블록체인은 약한 약속 대신 코드로 강한 약속을 가능하게 함",
+        "탈중앙화는 단일 주체 포획과 남용을 방지"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "property_rights",
+      "name": "디지털 세계의 재산권",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "디지털 자산 구매가 물리적 세계처럼 임대가 아닌 진정한 소유권을 부여해야 한다는 원칙. 암호학, 블록체인, NFT로 가능해져 디지털 농노를 자작농으로 전환.",
+      "key_ideas": [
+        "현재 인게임 구매는 소유가 아닌 임대",
+        "진정한 소유권은 판매, 거래, 컨텍스트 간 이동 가능을 의미",
+        "NFT와 블록체인이 디지털 재산권을 집행 가능하게 함",
+        "메타버스는 디지털 농노를 자작농으로 전환해야 함"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "self_sovereign_identity",
+      "name": "자기주권적 정체성",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "중앙화된 제공자에 의존하지 않고 메타버스 전반에 걸쳐 지속되는 정체성. Web3 암호학은 감시 기반 소셜 로그인 없이 인증을 가능하게 함.",
+      "key_ideas": [
+        "자신을 소유하지 않으면 재산을 소유할 수 없음",
+        "현재 SSO(Google, Meta)는 광고 모델을 위한 추적 가능",
+        "지갑(MetaMask, Phantom)은 자체 검증 제공",
+        "EIP-4361, ENS 같은 표준이 개방형 정체성 가능하게 함"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "composability",
+      "name": "컴포저빌리티",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "레고 블록처럼 소프트웨어 컴포넌트를 조합하는 능력. 각 컴포넌트는 한 번 작성되면 영원히 재사용. 강한 형태는 전체 스택에서 퍼미션리스 수정 가능. DeFi가 증명.",
+      "key_ideas": [
+        "소프트웨어 컴포넌트의 레고 같은 조합",
+        "강한 형태: 모든 레이어에서 퍼미션리스 수정 가능(DeFi)",
+        "약한 형태: 수정 불가능한 블랙박스 API(Stripe, Twilio)",
+        "복리 이자나 무어의 법칙처럼 지수적 가치 창출"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "openness",
+      "name": "개방성과 오픈소스",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "공공재로서의 투명한 코드, 알고리즘, 프로토콜. 진정한 컴포저빌리티와 커뮤니티 신뢰에 필수. 더 안전한 소프트웨어를 가능하게 하고 정보 비대칭 감소.",
+      "key_ideas": [
+        "오픈소스는 진정한 컴포저빌리티 가능하게 함",
+        "투명성은 소프트웨어를 더 안전하고 신뢰할 수 있게 함",
+        "경제 조건이 모든 당사자에게 명확해짐",
+        "빌더와 사용자 간 정보 비대칭 제거"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "community_ownership",
+      "name": "커뮤니티 소유권",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "이해관계자들이 참여도에 비례해 거버넌스 발언권을 가짐. 기업 칙령이 아님. 토큰이 공동선을 향해 네트워크 참여자들을 정렬. DAO가 유연한 거버넌스 실험.",
+      "key_ideas": [
+        "이해관계자가 기여에 비례해 거버넌스",
+        "토큰이 빌더, 크리에이터, 투자자, 사용자 정렬",
+        "DAO가 유연하고 민주적인 거버넌스 실험 가능하게 함",
+        "가상 세계를 단일 주체가 소유/통제하는 것 방지"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "social_immersion",
+      "name": "사회적 몰입",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "메타버스는 사회적 몰입이 필요하지 VR/AR 하드웨어가 필수는 아님. 빅테크의 트로이 목마 내러티브. 중요한 것은 가능한 활동: 어울리기, 일하기, 소셜라이징.",
+      "key_ideas": [
+        "VR/AR 하드웨어는 메타버스에 필수 아님",
+        "빅테크는 하드웨어 요구사항을 통제를 위한 트로이 목마로 사용",
+        "사회적 몰입은 Discord, Twitter Spaces, Clubhouse로 가능",
+        "하드웨어보다 활동이 중요: 소셜라이징, 일하기, 수익 창출"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cold_start_problem",
+      "name": "콜드 스타트 문제",
+      "type": "theory",
+      "level": "foundational",
+      "description": "무에서 네트워크를 부트스트랩하는 방법. Web2는 전통적 세일즈/마케팅 퍼널 사용. Web3는 네트워크 효과 전에 토큰으로 초기 사용자 보상.",
+      "key_ideas": [
+        "모든 비즈니스 직면: 첫 고객을 어떻게 얻나?",
+        "Web2: 리드 생성을 위한 세일즈/마케팅 팀 투자",
+        "Web3: 토큰이 네트워크 효과 전 기여에 대해 초기 사용자 보상",
+        "초기 사용자가 세일즈맨보다 강력한 전도사가 됨"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokens_as_gtm",
+      "name": "GTM 촉매로서의 토큰",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "토큰이 초기 기여를 보상해 콜드 스타트 문제에 대안 제공. Compound의 COMP 유동성 채굴이 TVL을 $100M에서 $600M으로 증가. 토큰은 유치하지만 유지를 보장하진 않음.",
+      "key_ideas": [
+        "토큰이 네트워크 효과 전에 초기 사용자 보상",
+        "Compound 유동성 채굴: $100M → $600M TVL",
+        "초기 사용자가 전도사이자 네트워크 빌더가 됨",
+        "주의: 토큰 인센티브만으로는 고착성 불충분"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "web3_gtm_stakeholders",
+      "name": "Web3 GTM 이해관계자",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Web3 GTM은 고객뿐 아니라 개발자, 투자자, 파트너 대상. 세일즈/마케팅보다 커뮤니티 역할이 중요. 목적과 커뮤니티 소유권에 집중.",
+      "key_ideas": [
+        "Web2 GTM: 고객(세일즈/마케팅 통해)",
+        "Web3 GTM: 고객 + 개발자 + 투자자 + 파트너",
+        "커뮤니티 > 세일즈/마케팅 중요도",
+        "제품이 반드시 먼저일 필요 없음; 목적과 커뮤니티가 선행 가능"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "defi_dao_gtm",
+      "name": "DeFi DAO GTM",
+      "type": "application",
+      "level": "advanced",
+      "description": "DeFi 프로토콜은 중앙화로 시작해 거버넌스 토큰과 DAO를 통해 점진적으로 탈중앙화. Web2와 다르게 가치 귀속. TVL은 표준 지표지만 통합과 커뮤니티 건강이 더 중요.",
+      "key_ideas": [
+        "경로: 중앙화 개발팀 → 거버넌스 토큰 → DAO 소유권",
+        "MakerDAO(2015 DAO, 2018 재단, 2021 재단 은퇴)",
+        "Uniswap: UNI 홀더가 통제, Uniswap Labs는 기여자 중 하나",
+        "더 나은 지표: 토큰 홀더, 커뮤니티 참여, 통합 > TVL"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "social_dao_gtm",
+      "name": "소셜 및 문화 DAO GTM",
+      "type": "application",
+      "level": "advanced",
+      "description": "GTM이 명확한 목적과 유기적 커뮤니티 성장 중심. ConstitutionDAO는 로드맵, 실행 계획, 토큰 없이 $47M 조달. 목적이 방법에 선행 가능. 지표에 Discord 활동과 거버넌스 참여 포함.",
+      "key_ideas": [
+        "목적으로 시작, 방법은 나중(Web2 크라우드펀딩과 반대)",
+        "ConstitutionDAO: 몇 주 만에 $47M, 초기엔 로드맵이나 토큰 없음",
+        "Krause House(NBA 팀), LinksDAO(골프), PleasrDAO(NFT)",
+        "지표: Discord 활동, 유지율, 거버넌스 투표, 유급 기여자"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "scissor_labels",
+      "name": "Scissor Label",
+      "type": "theory",
+      "level": "foundational",
+      "description": "트렌드 이름으로 널리 인식되지만 합의된 정의가 없는 범주화 용어. 정의를 통제하는 것이 트렌드 내러티브를 통제하는 것. 예: Hyperpop, Metaverse, Web3.",
+      "key_ideas": [
+        "트렌드 이름을 널리 확립하지만 정의는 논쟁 대상으로 남음",
+        "정의 통제 = 트렌드가 대표하는 것 통제",
+        "지적 논쟁으로 위장된 권력 투쟁",
+        "예: Hyperpop, Spatial Software, Metaverse, Web3"
+      ],
+      "code_refs": [],
+      "paper_ref": "John Palmer, 'Scissor Labels' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "narrative_wars",
+      "name": "내러티브 전쟁",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Scissor label이 내러티브 통제를 위한 전장이 됨. VC 자금 지원 공간에서 레이블 정의 내 포함 여부가 펀딩에 영향. 이진 논쟁이 실제 이해관계 가림: 커뮤니티 보존, 문화 자본.",
+      "key_ideas": [
+        "Scissor label 정의 싸움은 권력 투쟁",
+        "VC 내러티브 포함이 스타트업 펀딩 영향",
+        "Hyperpop 논쟁은 퀴어/트랜스 커뮤니티 공간 보존에 관한 것",
+        "이진 프레이밍(X 포함?)이 미묘한 이해관계 가림"
+      ],
+      "code_refs": [],
+      "paper_ref": "John Palmer, 'Scissor Labels' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "future_orientation",
+      "name": "미래 지향 vs Scissor 논쟁",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Scissor label에 대한 생산적 참여: 실제 이해관계 파악, 스펙트럼/하위카테고리 도입, 또는 무시하고 밑의 흥미로운 아이디어에 집중. 최선: 계속 창조하기.",
+      "key_ideas": [
+        "이동 1: 이진 정의 질문 너머 실제 이해관계 표면화",
+        "이동 2: 스펙트럼이나 하위카테고리로 이진 깨기",
+        "Scissor label은 정말 흥미로운 것이 나타날 때 등장",
+        "최선 대응: 계속 창조해 논쟁이 아닌 작업으로 카테고리 영향"
+      ],
+      "code_refs": [],
+      "paper_ref": "John Palmer, 'Scissor Labels' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "hype_cycle",
+      "target": "strong_vs_weak_tech",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "하이프 사이클은 강한 기술의 특징적 패턴"
+    },
+    {
+      "source": "strong_vs_weak_tech",
+      "target": "unreasonable_man",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "강한 기술은 Shaw의 비합리적 인간 철학을 구현"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "property_rights",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "탈중앙화가 집행 가능한 재산권을 가능하게 함"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "community_ownership",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "탈중앙화가 일방적 통제 방지하고 커뮤니티 거버넌스 가능하게 함"
+    },
+    {
+      "source": "property_rights",
+      "target": "self_sovereign_identity",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "정체성을 소유하지 않으면 재산을 소유할 수 없음"
+    },
+    {
+      "source": "openness",
+      "target": "composability",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "오픈소스 코드가 진정한 컴포저빌리티의 전제 조건"
+    },
+    {
+      "source": "composability",
+      "target": "defi_dao_gtm",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "DeFi는 컴포저빌리티를 활용해 기존 프로토콜 위에 구축"
+    },
+    {
+      "source": "community_ownership",
+      "target": "social_dao_gtm",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "소셜 DAO는 커뮤니티 소유권 원칙 위에 구축"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "strong_vs_weak_tech",
+      "relationship": "variant_of",
+      "weight": 0.8,
+      "description": "퍼미션리스 블록체인(강함) vs 프라이빗 블록체인(약함)"
+    },
+    {
+      "source": "social_immersion",
+      "target": "strong_vs_weak_tech",
+      "relationship": "variant_of",
+      "weight": 0.8,
+      "description": "메타버스 맥락에서 VR(강함) vs AR(약함) 논쟁"
+    },
+    {
+      "source": "cold_start_problem",
+      "target": "tokens_as_gtm",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "토큰이 초기 사용자 인센티브로 콜드 스타트 해결"
+    },
+    {
+      "source": "tokens_as_gtm",
+      "target": "defi_dao_gtm",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "토큰이 DeFi 유동성 채굴 전략 가능하게 함"
+    },
+    {
+      "source": "tokens_as_gtm",
+      "target": "social_dao_gtm",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "토큰이 소셜 DAO 멤버 조율"
+    },
+    {
+      "source": "web3_gtm_stakeholders",
+      "target": "defi_dao_gtm",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "DeFi DAO는 여러 이해관계자 그룹 서비스해야 함"
+    },
+    {
+      "source": "web3_gtm_stakeholders",
+      "target": "social_dao_gtm",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "소셜 DAO는 다양한 이해관계자 유형 조율"
+    },
+    {
+      "source": "scissor_labels",
+      "target": "narrative_wars",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Scissor label이 내러티브 통제를 위한 전장이 됨"
+    },
+    {
+      "source": "narrative_wars",
+      "target": "future_orientation",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "내러티브 전쟁에 대한 생산적 대응은 미래 지향 필요"
+    },
+    {
+      "source": "strong_vs_weak_tech",
+      "target": "scissor_labels",
+      "relationship": "alternative_to",
+      "weight": 0.7,
+      "description": "기술 쌍 프레이밍이 scissor label 논쟁 명확화 가능"
+    },
+    {
+      "source": "hype_cycle",
+      "target": "narrative_wars",
+      "relationship": "alternative_to",
+      "weight": 0.6,
+      "description": "환멸의 골짜기가 종종 scissor label 논쟁과 겹침"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "scissor_labels",
+      "relationship": "alternative_to",
+      "weight": 0.5,
+      "description": "메타버스는 scissor label, 탈중앙화가 명확성 제공"
+    }
+  ]
+}

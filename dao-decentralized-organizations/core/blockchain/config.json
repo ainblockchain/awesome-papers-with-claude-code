@@ -1,0 +1,143 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "dao-decentralized-organizations",
+  "topic_map": {
+    "blockchain_fundamentals": "dao-decentralized-organizations/blockchain_fundamentals",
+    "dao_definition": "dao-decentralized-organizations/dao_definition",
+    "the_dao_incident": "dao-decentralized-organizations/the_dao_incident",
+    "convex_concave_decisions": "dao-decentralized-organizations/convex_concave_decisions",
+    "dao_vs_corporation": "dao-decentralized-organizations/dao_vs_corporation",
+    "pod_structure": "dao-decentralized-organizations/pod_structure",
+    "censorship_resistance": "dao-decentralized-organizations/censorship_resistance",
+    "kleros_case": "dao-decentralized-organizations/kleros_case",
+    "organization_man": "dao-decentralized-organizations/organization_man",
+    "blockchain_man": "dao-decentralized-organizations/blockchain_man",
+    "fat_protocol_thesis": "dao-decentralized-organizations/fat_protocol_thesis",
+    "dao_types_overview": "dao-decentralized-organizations/dao_types_overview",
+    "firm_existence": "dao-decentralized-organizations/firm_existence",
+    "bitcoin_without_firm": "dao-decentralized-organizations/bitcoin_without_firm",
+    "decentralized_org_barriers": "dao-decentralized-organizations/decentralized_org_barriers",
+    "progressive_decentralization": "dao-decentralized-organizations/progressive_decentralization",
+    "howey_test": "dao-decentralized-organizations/howey_test",
+    "exit_to_community": "dao-decentralized-organizations/exit_to_community"
+  },
+  "depth_map": {
+    "blockchain_fundamentals": 1,
+    "dao_definition": 1,
+    "the_dao_incident": 1,
+    "firm_existence": 1,
+    "convex_concave_decisions": 2,
+    "dao_vs_corporation": 2,
+    "pod_structure": 2,
+    "censorship_resistance": 2,
+    "kleros_case": 2,
+    "organization_man": 2,
+    "blockchain_man": 2,
+    "fat_protocol_thesis": 2,
+    "dao_types_overview": 2,
+    "bitcoin_without_firm": 2,
+    "decentralized_org_barriers": 3,
+    "progressive_decentralization": 3,
+    "howey_test": 3,
+    "exit_to_community": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "dao-decentralized-organizations",
+      "title": "DAO & Decentralized Organizations",
+      "description": "Learning path for DAO and decentralized organizations"
+    },
+    {
+      "path": "dao-decentralized-organizations/blockchain_fundamentals",
+      "title": "Blockchain Fundamentals",
+      "description": "Learn the basic principles of blockchain, consensus mechanisms (PoW/PoS), smart contracts, and the difference between coins and tokens."
+    },
+    {
+      "path": "dao-decentralized-organizations/dao_definition",
+      "title": "Definition and Structure of DAOs",
+      "description": "Learn the definition of Decentralized Autonomous Organizations (DAOs), differences from traditional corporations, and token-based governance structures."
+    },
+    {
+      "path": "dao-decentralized-organizations/the_dao_incident",
+      "title": "TheDAO Hack and Lessons Learned",
+      "description": "Learn about the 2016 TheDAO hack, re-entrancy attack, and Ethereum hard fork decision."
+    },
+    {
+      "path": "dao-decentralized-organizations/convex_concave_decisions",
+      "title": "Convex vs Concave Decision-Making",
+      "description": "Learn Vitalik Buterin's Convex/Concave decision-making framework."
+    },
+    {
+      "path": "dao-decentralized-organizations/dao_vs_corporation",
+      "title": "DAO vs Corporation Debate",
+      "description": "Learn the criticism that DAOs will eventually converge to corporate structures and Vitalik's counter-argument."
+    },
+    {
+      "path": "dao-decentralized-organizations/pod_structure",
+      "title": "Pod Structure and Hybrid Governance",
+      "description": "Learn about the Pod structure combining decentralization and centralization through the Ukraine DAO case study."
+    },
+    {
+      "path": "dao-decentralized-organizations/censorship_resistance",
+      "title": "Censorship Resistance and Decentralization",
+      "description": "Learn the principles of how decentralization provides censorship resistance and real-world cases."
+    },
+    {
+      "path": "dao-decentralized-organizations/kleros_case",
+      "title": "Kleros Decentralized Court Case Study",
+      "description": "Learn about 'trustworthy fairness' as decentralization through the Kleros decentralized dispute resolution platform."
+    },
+    {
+      "path": "dao-decentralized-organizations/organization_man",
+      "title": "Organization Man and Social Ethic",
+      "description": "Learn William Whyte's Organization Man concept and the background of 20th century corporate-centric society formation."
+    },
+    {
+      "path": "dao-decentralized-organizations/blockchain_man",
+      "title": "Blockchain Man and the New Paradigm",
+      "description": "Learn Taylor Pearson's Blockchain Man concept and how reduced transaction costs change organization size."
+    },
+    {
+      "path": "dao-decentralized-organizations/fat_protocol_thesis",
+      "title": "Fat Protocol Thesis",
+      "description": "Learn the Fat Protocol thesis that explains the difference in value distribution structure between internet and blockchain."
+    },
+    {
+      "path": "dao-decentralized-organizations/dao_types_overview",
+      "title": "15 Application Areas of DAOs",
+      "description": "Learn about the various areas being transformed by DAOs."
+    },
+    {
+      "path": "dao-decentralized-organizations/firm_existence",
+      "title": "Why Firms Exist",
+      "description": "Learn Ronald Coase's transaction cost theory and the economic reasons for the existence of firms."
+    },
+    {
+      "path": "dao-decentralized-organizations/bitcoin_without_firm",
+      "title": "Bitcoin Thriving Without a Firm",
+      "description": "Learn how Bitcoin achieved a sustainable digital service without a legal entity."
+    },
+    {
+      "path": "dao-decentralized-organizations/decentralized_org_barriers",
+      "title": "Key Barriers for Decentralized Organizations",
+      "description": "Learn about the difficulties of decentralized decision-making, contribution measurement problems."
+    },
+    {
+      "path": "dao-decentralized-organizations/progressive_decentralization",
+      "title": "Progressive Decentralization Strategy",
+      "description": "Learn a16z's progressive decentralization playbook."
+    },
+    {
+      "path": "dao-decentralized-organizations/howey_test",
+      "title": "Howey Test and Securities Classification",
+      "description": "Learn about the Howey Test, the criteria for classifying crypto tokens as securities."
+    },
+    {
+      "path": "dao-decentralized-organizations/exit_to_community",
+      "title": "Exit to Community",
+      "description": "Learn about the exit-to-community strategy where teams transfer ownership to users."
+    }
+  ],
+  "x402_lessons": {}
+}

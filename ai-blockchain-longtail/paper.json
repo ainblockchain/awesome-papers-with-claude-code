@@ -1,0 +1,53 @@
+{
+  "title": "AI × Blockchain: The Long-Tail Problem and Decentralized Intelligence",
+  "slug": "ai-blockchain-longtail",
+  "sortOrder": 29,
+  "authors": [
+    "Ali Yahya (a16z crypto)",
+    "David Cahn (Sequoia Capital)",
+    "AI Network Team",
+    "Jesse Walden (a16z crypto)",
+    "William M. Peaster (Bankless)"
+  ],
+  "year": "2020-2023",
+  "sources": [
+    {
+      "title": "The Long-Tail Problem in AI, and How Autonomous Markets Can Solve It",
+      "url": "https://a16zcrypto.com/posts/article/long-tail-problem-in-a-i/",
+      "date": "2020-07-24"
+    },
+    {
+      "title": "AI's $200B Question",
+      "url": "https://www.sequoiacap.com/article/follow-the-gpus-perspective/",
+      "date": "2023-09-20"
+    },
+    {
+      "title": "AINFT — Make AI accountable, reproducible, and valuable",
+      "url": "https://medium.com/ai-network/ainft-make-ai-accountable-reproducible-and-valuable-1e216ed123b0",
+      "date": "2021-11-10"
+    },
+    {
+      "title": "4 Eras of Blockchain Computing: Degrees of Composability",
+      "url": "https://a16zcrypto.com/posts/article/4-eras-of-blockchain-computing-degrees-of-composability/",
+      "date": "2018-12-16"
+    },
+    {
+      "title": "Evolving NFTs",
+      "url": "https://metaversal.banklesshq.com/p/evolving-nfts",
+      "date": "2023-11-02"
+    }
+  ],
+  "description": "An integrated learning path covering the convergence of AI and blockchain technologies, exploring how decentralized autonomous markets can solve AI's long-tail problem, the economics of GPU infrastructure, accountable AI components (AINFT), blockchain composability evolution, and dynamic NFTs as evolving digital assets.",
+  "topics": [
+    "Decentralized AI",
+    "Autonomous Marketplaces",
+    "GPU Economics",
+    "AINFT",
+    "Blockchain Composability",
+    "Dynamic NFTs",
+    "Two-Sided Markets",
+    "Smart Contracts",
+    "On-Chain AI"
+  ],
+  "thumbnailUrl": "thumbnail.png"
+}

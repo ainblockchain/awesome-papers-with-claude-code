@@ -1,0 +1,150 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "ainft-web3-ai",
+  "topic_map": {
+    "ainft_definition": "ainft-web3-ai/ainft_definition",
+    "ai_community_role": "ainft-web3-ai/ai_community_role",
+    "ainft_schema": "ainft-web3-ai/ainft_schema",
+    "ainize_platform": "ainft-web3-ai/ainize_platform",
+    "ai_accountability": "ainft-web3-ai/ai_accountability",
+    "ai_reproducibility": "ainft-web3-ai/ai_reproducibility",
+    "ai_value": "ainft-web3-ai/ai_value",
+    "web3_intro": "ainft-web3-ai/web3_intro",
+    "web1_read": "ainft-web3-ai/web1_read",
+    "web2_readwrite": "ainft-web3-ai/web2_readwrite",
+    "web3_own": "ainft-web3-ai/web3_own",
+    "digital_ownership": "ainft-web3-ai/digital_ownership",
+    "censorship_resistance": "ainft-web3-ai/censorship_resistance",
+    "dao_governance": "ainft-web3-ai/dao_governance",
+    "web3_identity": "ainft-web3-ai/web3_identity",
+    "web3_payments": "ainft-web3-ai/web3_payments",
+    "web3_limitations": "ainft-web3-ai/web3_limitations",
+    "evolving_nfts": "ainft-web3-ai/evolving_nfts",
+    "uncommon_gallery": "ainft-web3-ai/uncommon_gallery"
+  },
+  "depth_map": {
+    "ainft_definition": 1,
+    "ai_community_role": 1,
+    "ainft_schema": 1,
+    "ainize_platform": 1,
+    "ai_accountability": 2,
+    "ai_reproducibility": 2,
+    "ai_value": 2,
+    "web3_intro": 1,
+    "web1_read": 1,
+    "web2_readwrite": 1,
+    "web3_own": 2,
+    "digital_ownership": 2,
+    "censorship_resistance": 2,
+    "dao_governance": 3,
+    "web3_identity": 3,
+    "web3_payments": 3,
+    "web3_limitations": 3,
+    "evolving_nfts": 3,
+    "uncommon_gallery": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "ainft-web3-ai",
+      "title": "AINFT and Web3: The Future of AI",
+      "description": "Learning path for AINFT and Web3 technologies"
+    },
+    {
+      "path": "ainft-web3-ai/ainft_definition",
+      "title": "AINFT Definition",
+      "description": "AINFT as immutable identifier for AI components"
+    },
+    {
+      "path": "ainft-web3-ai/ai_community_role",
+      "title": "AI Community Role",
+      "description": "Community's role in AI development and governance"
+    },
+    {
+      "path": "ainft-web3-ai/ainft_schema",
+      "title": "AINFT Schema",
+      "description": "AINFT schema structure (data, model, service, state)"
+    },
+    {
+      "path": "ainft-web3-ai/ainize_platform",
+      "title": "Ainize Platform",
+      "description": "Ainize cloud service for AI deployment"
+    },
+    {
+      "path": "ainft-web3-ai/ai_accountability",
+      "title": "AI Accountability",
+      "description": "Making AI accountable through blockchain"
+    },
+    {
+      "path": "ainft-web3-ai/ai_reproducibility",
+      "title": "AI Reproducibility",
+      "description": "Making AI reproducible at low cost"
+    },
+    {
+      "path": "ainft-web3-ai/ai_value",
+      "title": "AI Value",
+      "description": "Making AI valuable through composability"
+    },
+    {
+      "path": "ainft-web3-ai/web3_intro",
+      "title": "Web3 Introduction",
+      "description": "Web3 introduction and core ideas"
+    },
+    {
+      "path": "ainft-web3-ai/web1_read",
+      "title": "Web 1.0 Read-Only",
+      "description": "Web 1.0 read-only era (1990-2004)"
+    },
+    {
+      "path": "ainft-web3-ai/web2_readwrite",
+      "title": "Web 2.0 Read-Write",
+      "description": "Web 2.0 read-write era (2004-present)"
+    },
+    {
+      "path": "ainft-web3-ai/web3_own",
+      "title": "Web 3.0 Read-Write-Own",
+      "description": "Web 3.0 read-write-own paradigm"
+    },
+    {
+      "path": "ainft-web3-ai/digital_ownership",
+      "title": "Digital Ownership",
+      "description": "NFT-based digital ownership"
+    },
+    {
+      "path": "ainft-web3-ai/censorship_resistance",
+      "title": "Censorship Resistance",
+      "description": "Platform censorship resistance"
+    },
+    {
+      "path": "ainft-web3-ai/dao_governance",
+      "title": "DAO Governance",
+      "description": "DAO for platform governance"
+    },
+    {
+      "path": "ainft-web3-ai/web3_identity",
+      "title": "Web3 Identity",
+      "description": "Digital identity with ENS"
+    },
+    {
+      "path": "ainft-web3-ai/web3_payments",
+      "title": "Web3 Payments",
+      "description": "Native payments with crypto"
+    },
+    {
+      "path": "ainft-web3-ai/web3_limitations",
+      "title": "Web3 Limitations",
+      "description": "Current limitations (access, UX, education)"
+    },
+    {
+      "path": "ainft-web3-ai/evolving_nfts",
+      "title": "Evolving NFTs",
+      "description": "Dynamic and evolving NFTs"
+    },
+    {
+      "path": "ainft-web3-ai/uncommon_gallery",
+      "title": "Uncommon Gallery",
+      "description": "AI x Art gallery concept"
+    }
+  ],
+  "x402_lessons": {}
+}

@@ -1,0 +1,136 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "nft-creator-economy",
+  "topic_map": {
+    "thousand_true_fans": "nft-creator-economy/thousand_true_fans",
+    "creator_middleman_problem": "nft-creator-economy/creator_middleman_problem",
+    "nft_definition": "nft-creator-economy/nft_definition",
+    "rent_seeking_removal": "nft-creator-economy/rent_seeking_removal",
+    "price_tier_granularity": "nft-creator-economy/price_tier_granularity",
+    "user_as_owner": "nft-creator-economy/user_as_owner",
+    "subscribe_to_mint": "nft-creator-economy/subscribe_to_mint",
+    "genesis_drop": "nft-creator-economy/genesis_drop",
+    "collectible_series": "nft-creator-economy/collectible_series",
+    "writing_nfts": "nft-creator-economy/writing_nfts",
+    "web_evolution": "nft-creator-economy/web_evolution",
+    "platform_ownership": "nft-creator-economy/platform_ownership",
+    "creator_dao": "nft-creator-economy/creator_dao",
+    "curator_economy": "nft-creator-economy/curator_economy",
+    "skeuomorphism_vs_native": "nft-creator-economy/skeuomorphism_vs_native",
+    "nft_royalty_challenge": "nft-creator-economy/nft_royalty_challenge",
+    "hype_cycle": "nft-creator-economy/hype_cycle"
+  },
+  "depth_map": {
+    "thousand_true_fans": 1,
+    "creator_middleman_problem": 1,
+    "nft_definition": 1,
+    "rent_seeking_removal": 2,
+    "price_tier_granularity": 2,
+    "user_as_owner": 2,
+    "subscribe_to_mint": 3,
+    "genesis_drop": 3,
+    "collectible_series": 3,
+    "writing_nfts": 3,
+    "web_evolution": 1,
+    "platform_ownership": 2,
+    "creator_dao": 3,
+    "curator_economy": 3,
+    "skeuomorphism_vs_native": 3,
+    "nft_royalty_challenge": 4,
+    "hype_cycle": 2
+  },
+  "topics_to_register": [
+    {
+      "path": "nft-creator-economy",
+      "title": "NFT와 크리에이터 이코노미",
+      "description": "Kevin Kelly의 1000명 진정한 팬부터 Web3 시장 현실까지, NFT와 블록체인이 직접적인 창작자-팬 관계를 가능하게 하는 방법을 탐구하는 학습 경로"
+    },
+    {
+      "path": "nft-creator-economy/thousand_true_fans",
+      "title": "1000명 진정한 팬 이론",
+      "description": "Kevin Kelly의 2008년 이론: 창작자는 수백만 명의 캐주얼 팔로워가 아닌 연간 ~$100를 지불하는 1,000명의 진정한 팬만 있으면 생계를 유지할 수 있다"
+    },
+    {
+      "path": "nft-creator-economy/creator_middleman_problem",
+      "title": "창작자 중개자 문제",
+      "description": "중앙화된 소셜 플랫폼이 창작자와 팬 사이의 새로운 중개자가 되어 대부분의 수익을 포획하면서 광고와 알고리즘 추천을 삽입"
+    },
+    {
+      "path": "nft-creator-economy/nft_definition",
+      "title": "NFT 정의",
+      "description": "대체 불가능 토큰 - 검증 가능한 역사, 출처, 프로그래밍 가능한 기능을 가진 고유한 디지털 미디어를 나타내는 블록체인 기반 기록"
+    },
+    {
+      "path": "nft-creator-economy/rent_seeking_removal",
+      "title": "지대 추구 제거",
+      "description": "블록체인 기반 소유권은 구매한 NFT에 대한 완전한 통제를 사용자에게 제공하여 경쟁을 통해 플랫폼 수수료를 제한함으로써 지대 추구 중개자를 제거"
+    },
+    {
+      "path": "nft-creator-economy/price_tier_granularity",
+      "title": "세밀한 가격 계층화",
+      "description": "NFT는 슈퍼팬을 위한 $100K+ 아이템부터 캐주얼 지지자를 위한 $1 아이템까지 세분화된 가격 책정을 통해 더 많은 소비자 잉여를 포착할 수 있게 함"
+    },
+    {
+      "path": "nft-creator-economy/user_as_owner",
+      "title": "소유자로서의 사용자",
+      "description": "크립토 네트워크는 토큰을 통해 사용자를 소유자로 전환하여 진정한 P2P 마케팅을 만들고 고객 획득 비용을 거의 0으로 감소"
+    },
+    {
+      "path": "nft-creator-economy/subscribe_to_mint",
+      "title": "Subscribe to Mint",
+      "description": "Mirror.xyz 제품으로 NFT를 민트하려면 이메일 구독이 필요하여 장기 참여를 위한 직접적인 창작자-컬렉터 커뮤니케이션 채널 부트스트랩"
+    },
+    {
+      "path": "nft-creator-economy/genesis_drop",
+      "title": "Genesis 드롭",
+      "description": "프로젝트 출시 시 로고/마스코트를 특징으로 하는 NFT 컬렉터블로 신뢰성을 더하고 프로젝트 제네시스를 중심으로 커뮤니티 형성 촉진"
+    },
+    {
+      "path": "nft-creator-economy/collectible_series",
+      "title": "컬렉터블 시리즈",
+      "description": "반복적인 NFT 드롭으로 새로운 팔로워 구독과 기존 홀더의 브랜드 자산 컬렉션 완성에 일관된 인센티브 제공"
+    },
+    {
+      "path": "nft-creator-economy/writing_nfts",
+      "title": "Writing NFT",
+      "description": "Mirror의 서면 콘텐츠 토큰화 접근 방식으로 부트스트랩된 오디언스가 창작자가 100% 수익을 포착하면서 게시물을 수집할 수 있도록 함"
+    },
+    {
+      "path": "nft-creator-economy/web_evolution",
+      "title": "Web 진화",
+      "description": "세 단계: Web1 (정적 사이트), Web2 (소셜/모바일/클라우드), Web3 (크립토/AI/탈중앙화) - 읽기에서 읽기-쓰기로, 읽기-쓰기-소유로의 전환"
+    },
+    {
+      "path": "nft-creator-economy/platform_ownership",
+      "title": "토큰을 통한 플랫폼 소유권",
+      "description": "Web3는 사용자가 토큰을 통해 플랫폼을 소유할 수 있게 하여 권력을 중앙화된 기업에서 분산된 커뮤니티로 이동"
+    },
+    {
+      "path": "nft-creator-economy/creator_dao",
+      "title": "Creator DAO",
+      "description": "창작자를 위한 탈중앙화 자율 조직으로 법인 설립, 자금 조달, 거버넌스, 즉각적인 토큰 유동성을 위해 스마트 컨트랙트 사용"
+    },
+    {
+      "path": "nft-creator-economy/curator_economy",
+      "title": "큐레이터 경제",
+      "description": "큐레이터가 엔젤 투자자처럼 행동하고 NFT/토큰 포트폴리오를 구축하며 투명한 온체인 기록을 통해 창작자 발견을 증명하는 미래"
+    },
+    {
+      "path": "nft-creator-economy/skeuomorphism_vs_native",
+      "title": "스큐어모피즘 vs 크립토 네이티브",
+      "description": "물리적 객체를 모방하는 친숙한 디자인 (YouTube NFT, Tweet NFT)과 블록체인의 고유한 속성을 활용하는 디자인 사이의 긴장"
+    },
+    {
+      "path": "nft-creator-economy/nft_royalty_challenge",
+      "title": "NFT 로열티 도전과제",
+      "description": "2023년 마켓플레이스 전쟁으로 자동 로열티가 붕괴 - OpenSea는 로열티를 선택 사항으로 만들고 Blur는 최소 0.5%만 강제하여 코드와 시장 현실 사이의 격차 드러냄"
+    },
+    {
+      "path": "nft-creator-economy/hype_cycle",
+      "title": "NFT 하이프 사이클",
+      "description": "NFT는 Gartner Hype Cycle을 따라 2021년 과대 기대의 정점 ($29B 아트 시장)에 도달한 후 2024년까지 93% 폭락했으며 실용적인 사용 사례로 계속 진화 중"
+    }
+  ],
+  "x402_lessons": {}
+}

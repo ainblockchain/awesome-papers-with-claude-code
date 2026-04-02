@@ -1,0 +1,150 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "token-standards-crypto",
+  "topic_map": {
+    "fungible_tokens": "token-standards-crypto/fungible_tokens",
+    "erc20_standard": "token-standards-crypto/erc20_standard",
+    "erc20_token_loss": "token-standards-crypto/erc20_token_loss",
+    "nft_concept": "token-standards-crypto/nft_concept",
+    "erc721_standard": "token-standards-crypto/erc721_standard",
+    "cryptokitties": "token-standards-crypto/cryptokitties",
+    "internet_centralization": "token-standards-crypto/internet_centralization",
+    "bitcoin_dual_innovation": "token-standards-crypto/bitcoin_dual_innovation",
+    "ethereum_smart_contracts": "token-standards-crypto/ethereum_smart_contracts",
+    "open_service_governance": "token-standards-crypto/open_service_governance",
+    "incentive_alignment": "token-standards-crypto/incentive_alignment",
+    "token_distribution": "token-standards-crypto/token_distribution",
+    "open_network_movement": "token-standards-crypto/open_network_movement",
+    "tokens_as_primitive": "token-standards-crypto/tokens_as_primitive",
+    "tokenology": "token-standards-crypto/tokenology",
+    "token_use_cases": "token-standards-crypto/token_use_cases",
+    "metcalfes_law": "token-standards-crypto/metcalfes_law",
+    "nvt_ratio": "token-standards-crypto/nvt_ratio",
+    "pmr_ratio": "token-standards-crypto/pmr_ratio"
+  },
+  "depth_map": {
+    "fungible_tokens": 1,
+    "erc20_standard": 1,
+    "erc20_token_loss": 2,
+    "nft_concept": 1,
+    "erc721_standard": 2,
+    "cryptokitties": 2,
+    "internet_centralization": 1,
+    "bitcoin_dual_innovation": 1,
+    "ethereum_smart_contracts": 2,
+    "open_service_governance": 2,
+    "incentive_alignment": 2,
+    "token_distribution": 3,
+    "open_network_movement": 2,
+    "tokens_as_primitive": 1,
+    "tokenology": 3,
+    "token_use_cases": 2,
+    "metcalfes_law": 1,
+    "nvt_ratio": 3,
+    "pmr_ratio": 3
+  },
+  "topics_to_register": [
+    {
+      "path": "token-standards-crypto",
+      "title": "Token Standards and Crypto Economics",
+      "description": "Learning path for ERC-20/ERC-721 standards, token economics, and crypto valuation"
+    },
+    {
+      "path": "token-standards-crypto/fungible_tokens",
+      "title": "Fungible Tokens: The Concept",
+      "description": "Understanding fungibility: tokens where each unit is identical and interchangeable"
+    },
+    {
+      "path": "token-standards-crypto/erc20_standard",
+      "title": "ERC-20 Token Standard",
+      "description": "The standard API for fungible tokens on Ethereum"
+    },
+    {
+      "path": "token-standards-crypto/erc20_token_loss",
+      "title": "ERC-20 Token Loss Problem",
+      "description": "A critical design flaw: tokens sent to contracts without ERC-20 handling are permanently locked"
+    },
+    {
+      "path": "token-standards-crypto/nft_concept",
+      "title": "Non-Fungible Tokens (NFTs): The Concept",
+      "description": "Understanding non-fungibility: each token is unique and can have different value"
+    },
+    {
+      "path": "token-standards-crypto/erc721_standard",
+      "title": "ERC-721 NFT Standard",
+      "description": "The standard API for non-fungible tokens on Ethereum"
+    },
+    {
+      "path": "token-standards-crypto/cryptokitties",
+      "title": "CryptoKitties: NFT Case Study",
+      "description": "The 2017 NFT game that congested Ethereum and popularized NFTs"
+    },
+    {
+      "path": "token-standards-crypto/internet_centralization",
+      "title": "The Centralization of the Internet",
+      "description": "How the open internet was captured by Big Tech through proprietary platforms"
+    },
+    {
+      "path": "token-standards-crypto/bitcoin_dual_innovation",
+      "title": "Bitcoin's Dual Innovation",
+      "description": "Bitcoin contained two innovations: alternative financial system and new way to build open networks"
+    },
+    {
+      "path": "token-standards-crypto/ethereum_smart_contracts",
+      "title": "Ethereum and Smart Contracts",
+      "description": "Ethereum as the first major non-Bitcoin token network with programmable contracts"
+    },
+    {
+      "path": "token-standards-crypto/open_service_governance",
+      "title": "Token-Enabled Open Service Governance",
+      "description": "How tokens solve the open network's biggest weakness: inability to manage and finance running services"
+    },
+    {
+      "path": "token-standards-crypto/incentive_alignment",
+      "title": "Incentive Alignment Through Tokens",
+      "description": "How tokens align all network participants toward common goal: network growth"
+    },
+    {
+      "path": "token-standards-crypto/token_distribution",
+      "title": "Token Distribution Design",
+      "description": "Careful management of token allocation across five groups to maximize network growth"
+    },
+    {
+      "path": "token-standards-crypto/open_network_movement",
+      "title": "The Open Network Movement",
+      "description": "Crypto as spiritual successor to open source and open information movements"
+    },
+    {
+      "path": "token-standards-crypto/tokens_as_primitive",
+      "title": "Tokens as New Digital Primitive",
+      "description": "Tokens are to Web3 what websites were to Web 1.0 — a fundamental building block"
+    },
+    {
+      "path": "token-standards-crypto/tokenology",
+      "title": "Tokenology: Beyond Tokenomics",
+      "description": "Guy Wuollet's framework: tokens are vectors (multidimensional) not scalars"
+    },
+    {
+      "path": "token-standards-crypto/token_use_cases",
+      "title": "Four Token Use Cases",
+      "description": "Ownership, Alignment, Incentive structures, Access to goods/services"
+    },
+    {
+      "path": "token-standards-crypto/metcalfes_law",
+      "title": "Metcalfe's Law for Networks",
+      "description": "Network value is proportional to the square of users (n²)"
+    },
+    {
+      "path": "token-standards-crypto/nvt_ratio",
+      "title": "NVT Ratio: Crypto Valuation Metric",
+      "description": "Network Value-to-Transactions ratio for crypto valuation"
+    },
+    {
+      "path": "token-standards-crypto/pmr_ratio",
+      "title": "PMR Ratio: Price-to-Metcalfe",
+      "description": "Alternative to NVT using Metcalfe's Law M2 formula"
+    }
+  ],
+  "x402_lessons": {}
+}

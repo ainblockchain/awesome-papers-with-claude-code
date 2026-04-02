@@ -1,0 +1,22 @@
+{
+  "title": "AINFT and Web3: The Future of AI",
+  "description": "Explore AINFT (AI NFT) as an immutable identifier for AI components, understand how it makes AI accountable, reproducible, and valuable, learn Web3 fundamentals from the evolution of Web 1.0 to Web 3.0, and discover advanced topics including DAOs, digital identity, native payments, and evolving NFTs.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "AI Network Team"
+    },
+    {
+      "name": "Common Computer"
+    }
+  ],
+  "publishedAt": "2026-04-01",
+  "organization": {
+    "name": "Common Computer"
+  },
+  "submittedBy": "community",
+  "sortOrder": 28
+}

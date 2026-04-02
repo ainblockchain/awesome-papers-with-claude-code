@@ -1,0 +1,200 @@
+{
+  "nodes": [
+    {
+      "id": "ainft_definition",
+      "label": "AINFT Definition",
+      "description": "AINFT as immutable identifier for AI components",
+      "module": 1
+    },
+    {
+      "id": "ai_community_role",
+      "label": "AI Community Role",
+      "description": "Community's role in AI development and governance",
+      "module": 1
+    },
+    {
+      "id": "ainft_schema",
+      "label": "AINFT Schema",
+      "description": "AINFT schema structure (data, model, service, state)",
+      "module": 1
+    },
+    {
+      "id": "ainize_platform",
+      "label": "Ainize Platform",
+      "description": "Ainize cloud service for AI deployment",
+      "module": 1
+    },
+    {
+      "id": "ai_accountability",
+      "label": "AI Accountability",
+      "description": "Making AI accountable through blockchain",
+      "module": 2
+    },
+    {
+      "id": "ai_reproducibility",
+      "label": "AI Reproducibility",
+      "description": "Making AI reproducible at low cost",
+      "module": 2
+    },
+    {
+      "id": "ai_value",
+      "label": "AI Value",
+      "description": "Making AI valuable through composability",
+      "module": 2
+    },
+    {
+      "id": "web3_intro",
+      "label": "Web3 Introduction",
+      "description": "Web3 introduction and core ideas",
+      "module": 3
+    },
+    {
+      "id": "web1_read",
+      "label": "Web 1.0 Read-Only",
+      "description": "Web 1.0 read-only era (1990-2004)",
+      "module": 3
+    },
+    {
+      "id": "web2_readwrite",
+      "label": "Web 2.0 Read-Write",
+      "description": "Web 2.0 read-write era (2004-present)",
+      "module": 3
+    },
+    {
+      "id": "web3_own",
+      "label": "Web 3.0 Read-Write-Own",
+      "description": "Web 3.0 read-write-own paradigm",
+      "module": 3
+    },
+    {
+      "id": "digital_ownership",
+      "label": "Digital Ownership",
+      "description": "NFT-based digital ownership",
+      "module": 3
+    },
+    {
+      "id": "censorship_resistance",
+      "label": "Censorship Resistance",
+      "description": "Platform censorship resistance",
+      "module": 3
+    },
+    {
+      "id": "dao_governance",
+      "label": "DAO Governance",
+      "description": "DAO for platform governance",
+      "module": 4
+    },
+    {
+      "id": "web3_identity",
+      "label": "Web3 Identity",
+      "description": "Digital identity with ENS",
+      "module": 4
+    },
+    {
+      "id": "web3_payments",
+      "label": "Web3 Payments",
+      "description": "Native payments with crypto",
+      "module": 4
+    },
+    {
+      "id": "web3_limitations",
+      "label": "Web3 Limitations",
+      "description": "Current limitations (access, UX, education)",
+      "module": 4
+    },
+    {
+      "id": "evolving_nfts",
+      "label": "Evolving NFTs",
+      "description": "Dynamic and evolving NFTs",
+      "module": 4
+    },
+    {
+      "id": "uncommon_gallery",
+      "label": "Uncommon Gallery",
+      "description": "AI x Art gallery concept",
+      "module": 4
+    }
+  ],
+  "edges": [
+    {
+      "source": "ainft_definition",
+      "target": "ai_accountability",
+      "relationship": "enables"
+    },
+    {
+      "source": "ainft_definition",
+      "target": "ai_reproducibility",
+      "relationship": "enables"
+    },
+    {
+      "source": "ainft_definition",
+      "target": "ai_value",
+      "relationship": "enables"
+    },
+    {
+      "source": "ainft_schema",
+      "target": "ai_accountability",
+      "relationship": "implements"
+    },
+    {
+      "source": "ainize_platform",
+      "target": "ai_reproducibility",
+      "relationship": "supports"
+    },
+    {
+      "source": "ai_community_role",
+      "target": "dao_governance",
+      "relationship": "relates_to"
+    },
+    {
+      "source": "web1_read",
+      "target": "web2_readwrite",
+      "relationship": "evolves_to"
+    },
+    {
+      "source": "web2_readwrite",
+      "target": "web3_own",
+      "relationship": "evolves_to"
+    },
+    {
+      "source": "web3_intro",
+      "target": "web3_own",
+      "relationship": "introduces"
+    },
+    {
+      "source": "web3_own",
+      "target": "digital_ownership",
+      "relationship": "enables"
+    },
+    {
+      "source": "web3_own",
+      "target": "censorship_resistance",
+      "relationship": "provides"
+    },
+    {
+      "source": "digital_ownership",
+      "target": "evolving_nfts",
+      "relationship": "extends_to"
+    },
+    {
+      "source": "dao_governance",
+      "target": "ai_community_role",
+      "relationship": "implements"
+    },
+    {
+      "source": "web3_identity",
+      "target": "censorship_resistance",
+      "relationship": "supports"
+    },
+    {
+      "source": "evolving_nfts",
+      "target": "ainft_definition",
+      "relationship": "relates_to"
+    },
+    {
+      "source": "ainft_definition",
+      "target": "web3_own",
+      "relationship": "applies"
+    }
+  ]
+}

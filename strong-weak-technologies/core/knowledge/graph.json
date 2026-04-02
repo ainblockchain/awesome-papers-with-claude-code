@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "title": "Strong and Weak Technologies Knowledge Graph",
+    "description": "Concept dependency graph covering strong vs weak technology pairs, metaverse ingredients, Web3 GTM strategies, and scissor labels — 18 nodes, 20 edges",
+    "source": "Chris Dixon 'Strong and Weak Technologies' (2019), a16z crypto 'Metaverse Ingredients' (2022), Maggie Hsu 'Web3 GTM' (2022), John Palmer 'Scissor Labels' (2021)",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "strong_vs_weak_tech",
+      "name": "Strong vs Weak Technologies",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Chris Dixon's framework distinguishing technology pairs where strong forms reshape the world while weak forms adapt to it. Strong tech captivates enthusiasts and follows hype cycles, while weak tech appears safer to incumbents.",
+      "key_ideas": [
+        "Technologies emerge in pairs: strong (revolutionary) and weak (compromise)",
+        "Strong tech: iPhone, public internet, permissionless blockchain, VR",
+        "Weak tech: Blackberry, intranets, private blockchain, AR",
+        "Strong tech follows Perez/Gartner hype cycle through trough of disillusionment"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Strong and Weak Technologies' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "hype_cycle",
+      "name": "Hype Cycle",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Perez/Gartner model describing how strong technologies progress: innovation trigger, peak of inflated expectations, trough of disillusionment, slope of enlightenment, plateau of productivity.",
+      "key_ideas": [
+        "Five phases: trigger → peak → trough → slope → plateau",
+        "Trough of disillusionment is when entrepreneurs lose faith and pivot to weak tech",
+        "Strong technologies that survive the trough define new eras",
+        "Weak tech appears closer to mainstream adoption but rarely defines the future"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Strong and Weak Technologies' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "unreasonable_man",
+      "name": "The Unreasonable Man",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "George Bernard Shaw's concept that progress depends on those who persist in adapting the world to their vision. Weak tech adapts to the current world; strong tech makes the world adapt to it.",
+      "key_ideas": [
+        "Reasonable people adapt themselves to the world",
+        "Unreasonable people adapt the world to themselves",
+        "All progress depends on the unreasonable",
+        "iPhone made the world change (carriers, developers, users) rather than conforming"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon, 'Strong and Weak Technologies' (2019)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decentralization_axis",
+      "name": "Decentralization as Essential Ingredient",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The dominant and fundamental principle of a proper metaverse. Systems not owned or operated by a single entity or oligarchy, enabled by blockchain's code-enforced commitments.",
+      "key_ideas": [
+        "Centralized platforms start friendly, turn extractive as growth slows",
+        "Without decentralization, users can be 'rugged' at any time",
+        "Blockchain enables strong commitments through code vs weak promises",
+        "Decentralization prevents single-entity capture and abuse"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "property_rights",
+      "name": "Property Rights in Digital Worlds",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "The principle that digital asset purchases should grant true ownership like physical world, not rentals. Enabled by cryptography, blockchain, and NFTs to convert digital serfs into homesteaders.",
+      "key_ideas": [
+        "Current in-game purchases are rentals, not ownership",
+        "True ownership means ability to sell, trade, and port across contexts",
+        "NFTs and blockchain make digital property rights enforceable",
+        "Metaverse should convert digital serfs into homesteaders"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "self_sovereign_identity",
+      "name": "Self-Sovereign Identity",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Identity that persists across metaverse without dependence on centralized providers. Web3 cryptography enables authentication without surveillance-based social login.",
+      "key_ideas": [
+        "Cannot own property if you don't own yourself",
+        "Current SSO (Google, Meta) enables tracking for ad models",
+        "Wallets (MetaMask, Phantom) provide self-verification",
+        "Standards like EIP-4361 and ENS enable open identity"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "composability",
+      "name": "Composability",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Ability to combine software components like Lego blocks. Each component written once, reused forever. Strong form enables permissionless modification across entire stack, as demonstrated by DeFi.",
+      "key_ideas": [
+        "Lego-like combination of software components",
+        "Strong form: permissionless modification at all layers (DeFi)",
+        "Weak form: blackbox APIs you can't modify (Stripe, Twilio)",
+        "Unlocks exponential value like compound interest or Moore's Law"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "openness",
+      "name": "Openness and Open Source",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Transparent code, algorithms, and protocols as public goods. Essential for true composability and community trust. Enables safer software and reduces information asymmetry.",
+      "key_ideas": [
+        "Open source enables true composability",
+        "Transparency makes software safer and more trustworthy",
+        "Economic conditions become clear to all parties",
+        "Removes information asymmetry between builders and users"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "community_ownership",
+      "name": "Community Ownership",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Stakeholders have governance voice proportional to participation, not corporate edicts. Tokens align network participants toward common good. DAOs experiment with flexible governance.",
+      "key_ideas": [
+        "Stakeholders govern proportional to contribution",
+        "Tokens align builders, creators, investors, users",
+        "DAOs enable flexible, democratic governance experiments",
+        "Prevents single entity from owning/controlling virtual worlds"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "social_immersion",
+      "name": "Social Immersion",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Metaverse requires social immersion, not necessarily VR/AR hardware. The Trojan horse narrative from Big Tech. What matters is enabled activities: hangouts, work, socializing.",
+      "key_ideas": [
+        "VR/AR hardware not essential for metaverse",
+        "Big Tech uses hardware requirement as Trojan horse for control",
+        "Social immersion can happen via Discord, Twitter Spaces, Clubhouse",
+        "Activities matter more than hardware: socializing, working, earning"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z crypto, '7 Essential Ingredients of a Metaverse' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cold_start_problem",
+      "name": "Cold Start Problem",
+      "type": "theory",
+      "level": "foundational",
+      "description": "How to bootstrap a network from nothing. Web2 uses traditional sales/marketing funnels. Web3 uses tokens to reward early users before network effects kick in.",
+      "key_ideas": [
+        "Every business faces: how to get first customers?",
+        "Web2: invest in sales/marketing teams for lead generation",
+        "Web3: tokens reward early users for pre-network-effect contributions",
+        "Early users become evangelists more powerful than salespeople"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokens_as_gtm",
+      "name": "Tokens as GTM Catalyst",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Tokens provide alternative to cold start problem by rewarding early contributions. Compound's COMP liquidity mining drove TVL from $100M to $600M. Tokens attract but don't guarantee retention.",
+      "key_ideas": [
+        "Tokens reward early users before network effects emerge",
+        "Compound liquidity mining: $100M to $600M TVL",
+        "Early users become evangelists and network builders",
+        "Caveat: token incentives alone insufficient for stickiness"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "web3_gtm_stakeholders",
+      "name": "Web3 GTM Stakeholders",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Web3 GTM targets customers, developers, investors, and partners — not just customers. Community roles more important than sales/marketing roles. Focus on purpose and community ownership.",
+      "key_ideas": [
+        "Web2 GTM: customers (via sales/marketing)",
+        "Web3 GTM: customers + developers + investors + partners",
+        "Community > sales/marketing in importance",
+        "Product not necessarily first; purpose and community can precede"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "defi_dao_gtm",
+      "name": "DeFi DAO GTM",
+      "type": "application",
+      "level": "advanced",
+      "description": "DeFi protocols start centralized, progressively decentralize via governance tokens and DAO. Value accrues differently than Web2. TVL is canonical metric but integrations and community health matter more.",
+      "key_ideas": [
+        "Path: centralized dev team → governance token → DAO ownership",
+        "MakerDAO (2015 DAO, 2018 Foundation, 2021 Foundation retirement)",
+        "Uniswap: UNI holders control, Uniswap Labs just one contributor",
+        "Better metrics: token holders, community engagement, integrations > TVL"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "social_dao_gtm",
+      "name": "Social and Cultural DAO GTM",
+      "type": "application",
+      "level": "advanced",
+      "description": "GTM centers on clear purpose and organic community growth. ConstitutionDAO raised $47M without roadmap, execution plan, or token. Purpose can precede method. Metrics include Discord activity and governance participation.",
+      "key_ideas": [
+        "Start with purpose, method follows (vs Web2 crowdfunding)",
+        "ConstitutionDAO: $47M in weeks, no roadmap or token initially",
+        "Krause House (NBA team), LinksDAO (golf), PleasrDAO (NFTs)",
+        "Metrics: Discord activity, retention, governance votes, paid contributors"
+      ],
+      "code_refs": [],
+      "paper_ref": "Maggie Hsu, 'Go-to-Market in Web3' (2022)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "scissor_labels",
+      "name": "Scissor Labels",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Categorization terms that gain widespread recognition as trend names but lack agreed definitions. Controlling the definition means controlling the trend narrative. Examples: Hyperpop, Metaverse, Web3.",
+      "key_ideas": [
+        "Establishes trend name widely but definition remains contested",
+        "Controlling definition = controlling what the trend represents",
+        "Disguises power struggles as intellectual debates",
+        "Examples: Hyperpop, Spatial Software, Metaverse, Web3"
+      ],
+      "code_refs": [],
+      "paper_ref": "John Palmer, 'Scissor Labels' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "narrative_wars",
+      "name": "Narrative Wars",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Scissor labels become battlegrounds for narrative control. In VC-funded spaces, being inside the label definition affects funding. Binary debates obscure real stakes: community preservation, cultural capital.",
+      "key_ideas": [
+        "Scissor label definition battles are power struggles",
+        "VC narrative inclusion affects startup funding",
+        "Hyperpop debate was about preserving queer/trans community space",
+        "Binary framing (is X included?) hides nuanced stakes"
+      ],
+      "code_refs": [],
+      "paper_ref": "John Palmer, 'Scissor Labels' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "future_orientation",
+      "name": "Future Orientation vs Scissor Debate",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Productive engagement with scissor labels: identify real stakes, introduce spectrums/subcategories, or ignore and focus on the interesting idea underneath. Best approach: keep creating forward.",
+      "key_ideas": [
+        "Move 1: Identify and surface actual stakes beyond binary question",
+        "Move 2: Break binary with spectrums or subcategories",
+        "Scissor labels emerge when something genuinely interesting appears",
+        "Best response: keep creating, influence category through work not debate"
+      ],
+      "code_refs": [],
+      "paper_ref": "John Palmer, 'Scissor Labels' (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "hype_cycle",
+      "target": "strong_vs_weak_tech",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Hype cycle is a characteristic pattern of strong technologies"
+    },
+    {
+      "source": "strong_vs_weak_tech",
+      "target": "unreasonable_man",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Strong tech embodies Shaw's unreasonable man philosophy"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "property_rights",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Decentralization makes enforceable property rights possible"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "community_ownership",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Decentralization prevents unilateral control, enables community governance"
+    },
+    {
+      "source": "property_rights",
+      "target": "self_sovereign_identity",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Cannot own property without owning your identity"
+    },
+    {
+      "source": "openness",
+      "target": "composability",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Open source code is prerequisite for true composability"
+    },
+    {
+      "source": "composability",
+      "target": "defi_dao_gtm",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "DeFi leverages composability to build on existing protocols"
+    },
+    {
+      "source": "community_ownership",
+      "target": "social_dao_gtm",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Social DAOs are built on community ownership principle"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "strong_vs_weak_tech",
+      "relationship": "variant_of",
+      "weight": 0.8,
+      "description": "Permissionless blockchain (strong) vs private blockchain (weak)"
+    },
+    {
+      "source": "social_immersion",
+      "target": "strong_vs_weak_tech",
+      "relationship": "variant_of",
+      "weight": 0.8,
+      "description": "VR (strong) vs AR (weak) debate in metaverse context"
+    },
+    {
+      "source": "cold_start_problem",
+      "target": "tokens_as_gtm",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Tokens solve cold start by incentivizing early users"
+    },
+    {
+      "source": "tokens_as_gtm",
+      "target": "defi_dao_gtm",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Tokens enable DeFi liquidity mining strategies"
+    },
+    {
+      "source": "tokens_as_gtm",
+      "target": "social_dao_gtm",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Tokens coordinate social DAO members"
+    },
+    {
+      "source": "web3_gtm_stakeholders",
+      "target": "defi_dao_gtm",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "DeFi DAOs must serve multiple stakeholder groups"
+    },
+    {
+      "source": "web3_gtm_stakeholders",
+      "target": "social_dao_gtm",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "Social DAOs coordinate diverse stakeholder types"
+    },
+    {
+      "source": "scissor_labels",
+      "target": "narrative_wars",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "Scissor labels become battlegrounds for narrative control"
+    },
+    {
+      "source": "narrative_wars",
+      "target": "future_orientation",
+      "relationship": "requires",
+      "weight": 1.0,
+      "description": "Productive response to narrative wars requires future orientation"
+    },
+    {
+      "source": "strong_vs_weak_tech",
+      "target": "scissor_labels",
+      "relationship": "alternative_to",
+      "weight": 0.7,
+      "description": "Technology pair framing can clarify scissor label debates"
+    },
+    {
+      "source": "hype_cycle",
+      "target": "narrative_wars",
+      "relationship": "alternative_to",
+      "weight": 0.6,
+      "description": "Trough of disillusionment often coincides with scissor label debates"
+    },
+    {
+      "source": "decentralization_axis",
+      "target": "scissor_labels",
+      "relationship": "alternative_to",
+      "weight": 0.5,
+      "description": "Metaverse is a scissor label, decentralization provides clarity"
+    }
+  ]
+}

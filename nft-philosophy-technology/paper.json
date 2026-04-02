@@ -1,0 +1,22 @@
+{
+  "title": "NFT Philosophy and Technology",
+  "description": "Explore the philosophical foundations of NFTs through Token Identity Theory and Donald Davidson's Anomalous Monism, understand the technical implementation via ERC-20/721/1155 standards, analyze market cycles and creator economics from a16z State of Crypto 2023, and discover how Vitalik's concept of legitimacy explains NFT value.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "Minhyun Kim"
+    },
+    {
+      "name": "Common Computer"
+    }
+  ],
+  "publishedAt": "2026-04-01",
+  "organization": {
+    "name": "Common Computer"
+  },
+  "submittedBy": "community",
+  "sortOrder": 27
+}

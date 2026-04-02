@@ -1,0 +1,143 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "dao-decentralized-organizations",
+  "topic_map": {
+    "blockchain_fundamentals": "dao-decentralized-organizations/blockchain_fundamentals",
+    "dao_definition": "dao-decentralized-organizations/dao_definition",
+    "the_dao_incident": "dao-decentralized-organizations/the_dao_incident",
+    "convex_concave_decisions": "dao-decentralized-organizations/convex_concave_decisions",
+    "dao_vs_corporation": "dao-decentralized-organizations/dao_vs_corporation",
+    "pod_structure": "dao-decentralized-organizations/pod_structure",
+    "censorship_resistance": "dao-decentralized-organizations/censorship_resistance",
+    "kleros_case": "dao-decentralized-organizations/kleros_case",
+    "organization_man": "dao-decentralized-organizations/organization_man",
+    "blockchain_man": "dao-decentralized-organizations/blockchain_man",
+    "fat_protocol_thesis": "dao-decentralized-organizations/fat_protocol_thesis",
+    "dao_types_overview": "dao-decentralized-organizations/dao_types_overview",
+    "firm_existence": "dao-decentralized-organizations/firm_existence",
+    "bitcoin_without_firm": "dao-decentralized-organizations/bitcoin_without_firm",
+    "decentralized_org_barriers": "dao-decentralized-organizations/decentralized_org_barriers",
+    "progressive_decentralization": "dao-decentralized-organizations/progressive_decentralization",
+    "howey_test": "dao-decentralized-organizations/howey_test",
+    "exit_to_community": "dao-decentralized-organizations/exit_to_community"
+  },
+  "depth_map": {
+    "blockchain_fundamentals": 1,
+    "dao_definition": 1,
+    "the_dao_incident": 1,
+    "firm_existence": 1,
+    "convex_concave_decisions": 2,
+    "dao_vs_corporation": 2,
+    "pod_structure": 2,
+    "censorship_resistance": 2,
+    "kleros_case": 2,
+    "organization_man": 2,
+    "blockchain_man": 2,
+    "fat_protocol_thesis": 2,
+    "dao_types_overview": 2,
+    "bitcoin_without_firm": 2,
+    "decentralized_org_barriers": 3,
+    "progressive_decentralization": 3,
+    "howey_test": 3,
+    "exit_to_community": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "dao-decentralized-organizations",
+      "title": "DAO & 탈중앙화 조직",
+      "description": "DAO와 탈중앙화 조직에 대한 학습 경로"
+    },
+    {
+      "path": "dao-decentralized-organizations/blockchain_fundamentals",
+      "title": "블록체인 기초 개념",
+      "description": "블록체인의 기본 원리, 합의 메커니즘(PoW/PoS), 스마트컨트랙트, 코인과 토큰의 차이를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/dao_definition",
+      "title": "DAO의 정의와 구조",
+      "description": "탈중앙화 자율 조직(DAO)의 정의, 전통 기업과의 차이, 토큰 기반 거버넌스 구조를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/the_dao_incident",
+      "title": "TheDAO 해킹 사건과 교훈",
+      "description": "2016년 TheDAO 해킹 사건의 경위, 재진입 공격, 이더리움 하드포크 결정을 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/convex_concave_decisions",
+      "title": "Convex vs Concave 의사결정",
+      "description": "Vitalik Buterin의 Convex/Concave 의사결정 프레임워크를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/dao_vs_corporation",
+      "title": "DAO vs Corporation 논쟁",
+      "description": "DAO가 결국 기업 구조로 수렴할 것이라는 비판과 Vitalik의 반론을 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/pod_structure",
+      "title": "Pod 구조와 혼합 거버넌스",
+      "description": "우크라이나 DAO 사례를 통해 탈중앙화와 중앙화를 혼합한 Pod 구조를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/censorship_resistance",
+      "title": "검열저항성과 탈중앙화",
+      "description": "탈중앙화가 검열저항성을 제공하는 원리와 사례를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/kleros_case",
+      "title": "Kleros 분산 법원 사례",
+      "description": "Kleros 탈중앙 분쟁 해결 플랫폼을 통해 '신뢰할 수 있는 공정성'으로서의 탈중앙화를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/organization_man",
+      "title": "Organization Man과 Social Ethic",
+      "description": "William Whyte의 Organization Man 개념과 20세기 기업 중심 사회의 형성 배경을 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/blockchain_man",
+      "title": "Blockchain Man과 새로운 패러다임",
+      "description": "Taylor Pearson의 Blockchain Man 개념과 거래비용 감소에 따른 조직 규모 변화를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/fat_protocol_thesis",
+      "title": "Fat Protocol 테제",
+      "description": "인터넷과 블록체인의 가치 분배 구조 차이를 설명하는 Fat Protocol 테제를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/dao_types_overview",
+      "title": "DAO의 15가지 적용 영역",
+      "description": "DAO가 변환하고 있는 다양한 영역을 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/firm_existence",
+      "title": "기업의 존재 이유",
+      "description": "Ronald Coase의 거래비용 이론과 기업이 존재하는 경제학적 이유를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/bitcoin_without_firm",
+      "title": "기업 없이 번성하는 비트코인",
+      "description": "비트코인이 법인 없이도 지속되는 디지털 서비스를 실현한 방식을 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/decentralized_org_barriers",
+      "title": "탈중앙 조직의 주요 장벽",
+      "description": "탈중앙화된 의사결정의 어려움, 기여도 측정 문제를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/progressive_decentralization",
+      "title": "단계적 탈중앙화 전략",
+      "description": "a16z의 단계적 탈중앙화 플레이북을 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/howey_test",
+      "title": "Howey Test와 증권 분류",
+      "description": "크립토 토큰이 증권으로 분류되는 기준인 Howey Test를 학습한다."
+    },
+    {
+      "path": "dao-decentralized-organizations/exit_to_community",
+      "title": "Exit to Community",
+      "description": "팀이 커뮤니티로 엑시트하는 방식과 협동조합 경제 모델을 학습한다."
+    }
+  ],
+  "x402_lessons": {}
+}

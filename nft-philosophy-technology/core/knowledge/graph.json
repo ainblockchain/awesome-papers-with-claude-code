@@ -1,0 +1,291 @@
+{
+  "nodes": [
+    {
+      "id": "token_identity_theory",
+      "name": "Token Identity Theory: Anomalous Monism",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Donald Davidson's philosophical position that individual mental events (tokens) are identical to physical events, but mental event types don't correspond to physical event types.",
+      "key_ideas": [
+        "Token identity: individual mental events = individual physical events",
+        "Type identity rejected: no strict laws correlating mental and physical types",
+        "Foundation for understanding NFT uniqueness vs fungibility"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nicolae Sfetcu — Token Identity Theory: Anomalous Monism (telework.ro)"
+    },
+    {
+      "id": "type_token_distinction",
+      "name": "Type vs Token Distinction",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The philosophical distinction between types (categories/classes) and tokens (individual instances). In '100101', there are 6 tokens but only 2 types (0 and 1).",
+      "key_ideas": [
+        "Token: single occurrence or instance",
+        "Type: category formed by identical tokens",
+        "Foundation for ERC-20 (type identity) vs ERC-721 (token identity)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Nicolae Sfetcu — Token Identity Theory: Anomalous Monism"
+    },
+    {
+      "id": "rationality_holism",
+      "name": "Rationality and Holism Arguments",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Davidson's arguments for the anomaly of the mental: beliefs require rational coherence and mental events presuppose other mental events.",
+      "key_ideas": [
+        "Principle of Charity: interpreting beliefs as largely true and rational",
+        "Holism of the Mental: single mental events cannot be attributed in isolation",
+        "Mental events always presuppose other mental events"
+      ],
+      "code_refs": [],
+      "paper_ref": "Donald Davidson — Mental Events (1970)"
+    },
+    {
+      "id": "fungibility_concept",
+      "name": "Fungibility Spectrum",
+      "type": "component",
+      "level": "foundational",
+      "description": "The spectrum from fully fungible (interchangeable units) through semi-fungible (fungible within classes) to non-fungible (unique items).",
+      "key_ideas": [
+        "Fungible: lumber, coins, loyalty points — fully interchangeable",
+        "Semi-fungible: tickets, clothing — interchangeable within class",
+        "Non-fungible: art, domains, real estate — unique items"
+      ],
+      "code_refs": [],
+      "paper_ref": "kimminhyun@comcom.ai — NFT Slides (2021)"
+    },
+    {
+      "id": "erc20_fungible",
+      "name": "ERC-20: Fungible Token Standard",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Ethereum standard for fungible tokens where each token is identical and interchangeable. Data structure: address → balance mapping.",
+      "key_ideas": [
+        "balanceOf(address) returns token balance",
+        "transferFrom(from, to, value) transfers tokens",
+        "All tokens are identical — type identity"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum — ERC-20 Token Standard"
+    },
+    {
+      "id": "erc721_nonfungible",
+      "name": "ERC-721: Non-Fungible Token Standard",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Ethereum standard for non-fungible tokens where each token has a unique tokenId. Data structure: tokenId → owner mapping.",
+      "key_ideas": [
+        "ownerOf(tokenId) returns token owner",
+        "transferFrom(from, to, tokenId) transfers specific token",
+        "Each token is unique — token identity"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum — ERC-721 NFT Standard"
+    },
+    {
+      "id": "erc1155_semifungible",
+      "name": "ERC-1155: Semi-Fungible Token Standard",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Ethereum standard combining fungible and non-fungible tokens. Data structure: id → address → quantity mapping.",
+      "key_ideas": [
+        "balanceOf(address, id) returns quantity of specific token type",
+        "Supports both fungible and non-fungible in single contract",
+        "Efficient for gaming items: 20 identical swords as one id"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum — ERC-1155 Multi Token Standard"
+    },
+    {
+      "id": "legitimacy_concept",
+      "name": "Legitimacy: Higher-Order Acceptance",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Vitalik Buterin's concept that legitimacy is a pattern of higher-order acceptance — people accept an outcome because they expect others to accept it too.",
+      "key_ideas": [
+        "Legitimacy = pattern of higher-order acceptance",
+        "People play their part expecting others to do the same",
+        "Controls millions of dollars in value beyond code or keys"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin — The Most Important Scarce Resource is Legitimacy (2021)"
+    },
+    {
+      "id": "coordination_games",
+      "name": "Coordination Games",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Games where players benefit from coordinating on the same choice. Legitimacy matters because it determines which equilibrium everyone expects others to follow.",
+      "key_ideas": [
+        "Example: which side of the road to drive on",
+        "Switching alone is catastrophic; switching together can be beneficial",
+        "Legitimacy determines the focal point in coordination"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin — The Most Important Scarce Resource is Legitimacy (2021)"
+    },
+    {
+      "id": "legitimacy_sources",
+      "name": "Sources of Legitimacy",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Six ways legitimacy can be achieved: brute force, continuity, fairness, process, performance, and participation.",
+      "key_ideas": [
+        "Brute force, Continuity (tradition), Fairness",
+        "Process (agreed procedures), Performance (good outcomes)",
+        "Participation (ownership through involvement)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Vitalik Buterin — The Most Important Scarce Resource is Legitimacy (2021)"
+    },
+    {
+      "id": "social_contract_tokens",
+      "name": "Tokens as Social Contracts",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Naval Ravikant's insight that tokens are backed by social contracts from creators and surrounding communities, not just code.",
+      "key_ideas": [
+        "Token value from creator commitment + community acceptance",
+        "NFT ownership is programmable, verifiable, composable",
+        "Public blockchains as title registries for valuable things"
+      ],
+      "code_refs": [],
+      "paper_ref": "Naval Ravikant — Demystifying NFTs (Twitter, 2021)"
+    },
+    {
+      "id": "community_driven_value",
+      "name": "Community-Driven NFT Value",
+      "type": "application",
+      "level": "intermediate",
+      "description": "NFT value rises and falls with community health. NFTs are monetized memes — their value reflects community belief and engagement.",
+      "key_ideas": [
+        "Dying community = bleeding NFT value",
+        "Surging community = gaining NFT value",
+        "NFTs as monetized memes backed by social consensus"
+      ],
+      "code_refs": [],
+      "paper_ref": "Naval Ravikant — Demystifying NFTs (Twitter, 2021)"
+    },
+    {
+      "id": "nft_interoperability",
+      "name": "NFT Interoperability",
+      "type": "component",
+      "level": "intermediate",
+      "description": "NFTs following standards like ERC-721 are interoperable across wallets, marketplaces, and applications without custom integration.",
+      "key_ideas": [
+        "Standardized interfaces enable universal compatibility",
+        "Same NFT usable across OpenSea, games, DeFi protocols",
+        "Composability: NFTs as building blocks"
+      ],
+      "code_refs": [],
+      "paper_ref": "kimminhyun@comcom.ai — NFT Slides (2021)"
+    },
+    {
+      "id": "dao_vs_company",
+      "name": "DAO vs Traditional Company",
+      "type": "application",
+      "level": "advanced",
+      "description": "Comparison of DAOs (smart contracts, tokens, community governance) vs traditional companies (Delaware corp, VCs, executive governance).",
+      "key_ideas": [
+        "Formation: smart contracts vs incorporation",
+        "Liquidity: Day 1 token vs 3-10 year exit",
+        "Governance: tokenholders vs executives/board"
+      ],
+      "code_refs": [],
+      "paper_ref": "kimminhyun@comcom.ai — NFT Slides (2021)"
+    },
+    {
+      "id": "nft_defi_fusion",
+      "name": "NFT + DeFi Fusion",
+      "type": "application",
+      "level": "advanced",
+      "description": "Integration of NFTs with DeFi protocols: using NFTs as collateral, fractional ownership, and yield-generating NFT characters like Aavegotchi.",
+      "key_ideas": [
+        "NFT as collateral for loans (NFTfi)",
+        "Fractional NFT ownership (NIFTEX)",
+        "Aavegotchi: NFT characters backed by DeFi collateral"
+      ],
+      "code_refs": [],
+      "paper_ref": "kimminhyun@comcom.ai — NFT Slides (2021)"
+    },
+    {
+      "id": "web_evolution",
+      "name": "Web Evolution: Web1 to Web3",
+      "type": "theory",
+      "level": "foundational",
+      "description": "The evolution from Web1 (open protocols, limited features) through Web2 (corporate platforms, advanced features) to Web3 (blockchain, community governance, value to participants).",
+      "key_ideas": [
+        "Web1: community governance, limited features, no value capture",
+        "Web2: corporate governance, advanced features, value to big tech",
+        "Web3: community governance, advanced features, value to participants"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z — State of Crypto 2023"
+    },
+    {
+      "id": "take_rates_comparison",
+      "name": "Platform Take Rates: Web2 vs Web3",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Comparison of value extraction between Web2 platforms (30%+ take rates) and Web3 protocols (0.06-2.5% take rates).",
+      "key_ideas": [
+        "Web2: YouTube 30%, App Store 30%, Steam 45%",
+        "Web3: OpenSea 2.5%, Uniswap 0.3%, Ethereum 0.06%",
+        "Web3 returns more value to creators and users"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z — State of Crypto 2023"
+    },
+    {
+      "id": "nft_market_cycles",
+      "name": "NFT Market Cycles and Trends",
+      "type": "application",
+      "level": "advanced",
+      "description": "Analysis of NFT market evolution from 2021 hype through 2022-2023 crash to 2026 maturation with utility-focused applications.",
+      "key_ideas": [
+        "Price-innovation cycles: price → interest → ideas → startups",
+        "2021 peak → 2022-2023 crash → K-shaped recovery",
+        "Shift from speculation to utility (gaming, membership, credentials)"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z — State of Crypto 2023"
+    },
+    {
+      "id": "creator_royalties",
+      "name": "NFT Creator Royalties Challenge",
+      "type": "application",
+      "level": "advanced",
+      "description": "The challenge of enforcing creator royalties on-chain. $1.9B+ paid to creators by 2023, but enforcement mechanisms remain contentious.",
+      "key_ideas": [
+        "$1.9B+ in royalties paid to creators (2021-2023)",
+        "On-chain enforcement is technically difficult",
+        "Marketplace competition drove royalties toward zero"
+      ],
+      "code_refs": [],
+      "paper_ref": "a16z — State of Crypto 2023"
+    }
+  ],
+  "edges": [
+    {"source": "token_identity_theory", "target": "type_token_distinction", "relationship": "requires", "weight": 1.0, "description": "Token identity theory builds on the type/token distinction from philosophy"},
+    {"source": "type_token_distinction", "target": "rationality_holism", "relationship": "builds_on", "weight": 0.8, "description": "Davidson's arguments explain why type identity fails for mental events"},
+    {"source": "type_token_distinction", "target": "fungibility_concept", "relationship": "enables", "weight": 1.0, "description": "Type/token distinction maps directly to fungible/non-fungible tokens"},
+    {"source": "fungibility_concept", "target": "erc20_fungible", "relationship": "component_of", "weight": 1.0, "description": "ERC-20 implements the fungible end of the spectrum"},
+    {"source": "fungibility_concept", "target": "erc721_nonfungible", "relationship": "component_of", "weight": 1.0, "description": "ERC-721 implements the non-fungible end of the spectrum"},
+    {"source": "fungibility_concept", "target": "erc1155_semifungible", "relationship": "component_of", "weight": 0.9, "description": "ERC-1155 implements the middle of the fungibility spectrum"},
+    {"source": "erc20_fungible", "target": "erc1155_semifungible", "relationship": "evolves_to", "weight": 0.7, "description": "ERC-1155 combines ERC-20 fungibility with ERC-721 uniqueness"},
+    {"source": "erc721_nonfungible", "target": "erc1155_semifungible", "relationship": "evolves_to", "weight": 0.7, "description": "ERC-1155 combines ERC-721 uniqueness with ERC-20 fungibility"},
+    {"source": "legitimacy_concept", "target": "coordination_games", "relationship": "requires", "weight": 1.0, "description": "Legitimacy matters because social contexts are coordination games"},
+    {"source": "legitimacy_concept", "target": "legitimacy_sources", "relationship": "component_of", "weight": 1.0, "description": "Multiple sources contribute to establishing legitimacy"},
+    {"source": "legitimacy_concept", "target": "social_contract_tokens", "relationship": "enables", "weight": 1.0, "description": "Token value derives from legitimacy-based social contracts"},
+    {"source": "social_contract_tokens", "target": "community_driven_value", "relationship": "builds_on", "weight": 1.0, "description": "Community acceptance is what makes social contracts valuable"},
+    {"source": "erc721_nonfungible", "target": "nft_interoperability", "relationship": "enables", "weight": 1.0, "description": "Standard interfaces enable cross-platform NFT interoperability"},
+    {"source": "community_driven_value", "target": "dao_vs_company", "relationship": "enables", "weight": 0.8, "description": "Community-driven value model enables DAO governance structures"},
+    {"source": "erc721_nonfungible", "target": "nft_defi_fusion", "relationship": "enables", "weight": 0.9, "description": "NFT standards enable integration with DeFi protocols"},
+    {"source": "web_evolution", "target": "take_rates_comparison", "relationship": "component_of", "weight": 1.0, "description": "Take rates illustrate the value distribution difference between web eras"},
+    {"source": "nft_interoperability", "target": "nft_market_cycles", "relationship": "enables", "weight": 0.7, "description": "Interoperability enables vibrant NFT markets and trading"},
+    {"source": "community_driven_value", "target": "creator_royalties", "relationship": "builds_on", "weight": 0.8, "description": "Creator royalties depend on community acceptance and enforcement"},
+    {"source": "nft_market_cycles", "target": "creator_royalties", "relationship": "requires", "weight": 0.7, "description": "Market dynamics directly impact royalty enforcement and adoption"}
+  ]
+}

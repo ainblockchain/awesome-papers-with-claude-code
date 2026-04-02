@@ -1,0 +1,29 @@
+{
+  "id": "bitcoin-ethereum-ainetwork",
+  "title": "Bitcoin, Ethereum, AI Network",
+  "title_ko": "Bitcoin, Ethereum, AI Network",
+  "authors": [
+    "Satoshi Nakamoto",
+    "Vitalik Buterin",
+    "AI Network Team"
+  ],
+  "year": 2008,
+  "source": "Common Computer Blockchain Lecture Series",
+  "description": "Comprehensive course covering Bitcoin Whitepaper (2008), Ethereum Whitepaper (2014), and AI Network Architecture/Whitepaper (2018-2025) — from fundamentals to frontier concepts.",
+  "description_ko": "비트코인 백서(2008), 이더리움 백서(2014), AI Network 아키텍처/백서(2018-2025)를 다루는 종합 코스 — 기초부터 프론티어 개념까지.",
+  "sortOrder": 3,
+  "series": "blockchain-fundamentals",
+  "courses": [
+    {
+      "slug": "core",
+      "language": "en",
+      "title": "Bitcoin, Ethereum, AI Network"
+    },
+    {
+      "slug": "core-ko",
+      "language": "ko",
+      "title": "Bitcoin, Ethereum, AI Network"
+    }
+  ],
+  "thumbnailUrl": "thumbnail.png"
+}

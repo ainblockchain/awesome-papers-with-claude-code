@@ -1,0 +1,143 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "meaning-of-decentralization",
+  "topic_map": {
+    "three_axes_decentralization": "meaning-of-decentralization/three_axes_decentralization",
+    "architectural_decentralization": "meaning-of-decentralization/architectural_decentralization",
+    "political_decentralization": "meaning-of-decentralization/political_decentralization",
+    "logical_decentralization": "meaning-of-decentralization/logical_decentralization",
+    "fault_tolerance": "meaning-of-decentralization/fault_tolerance",
+    "attack_resistance": "meaning-of-decentralization/attack_resistance",
+    "collusion_resistance": "meaning-of-decentralization/collusion_resistance",
+    "common_mode_failure": "meaning-of-decentralization/common_mode_failure",
+    "did_decentralized_identifiers": "meaning-of-decentralization/did_decentralized_identifiers",
+    "web3_identity_stack": "meaning-of-decentralization/web3_identity_stack",
+    "crypto_pki_trojan_horse": "meaning-of-decentralization/crypto_pki_trojan_horse",
+    "headless_brands": "meaning-of-decentralization/headless_brands",
+    "bitcoin_headless_brand": "meaning-of-decentralization/bitcoin_headless_brand",
+    "narrative_forks": "meaning-of-decentralization/narrative_forks",
+    "distributed_consensus": "meaning-of-decentralization/distributed_consensus",
+    "flp_impossibility": "meaning-of-decentralization/flp_impossibility",
+    "byzantine_fault_tolerance": "meaning-of-decentralization/byzantine_fault_tolerance",
+    "nakamoto_consensus": "meaning-of-decentralization/nakamoto_consensus"
+  },
+  "depth_map": {
+    "three_axes_decentralization": 1,
+    "architectural_decentralization": 1,
+    "political_decentralization": 1,
+    "logical_decentralization": 1,
+    "fault_tolerance": 2,
+    "attack_resistance": 2,
+    "collusion_resistance": 2,
+    "common_mode_failure": 2,
+    "did_decentralized_identifiers": 2,
+    "web3_identity_stack": 2,
+    "crypto_pki_trojan_horse": 2,
+    "headless_brands": 3,
+    "bitcoin_headless_brand": 3,
+    "narrative_forks": 3,
+    "distributed_consensus": 1,
+    "flp_impossibility": 3,
+    "byzantine_fault_tolerance": 3,
+    "nakamoto_consensus": 3
+  },
+  "topics_to_register": [
+    {
+      "path": "meaning-of-decentralization",
+      "title": "The Meaning of Decentralization",
+      "description": "Learning path for Vitalik Buterin's decentralization framework, Web3 identity, headless brands, and distributed consensus"
+    },
+    {
+      "path": "meaning-of-decentralization/three_axes_decentralization",
+      "title": "Three Axes of Decentralization",
+      "description": "Vitalik's framework distinguishing architectural, political, and logical decentralization"
+    },
+    {
+      "path": "meaning-of-decentralization/architectural_decentralization",
+      "title": "Architectural Decentralization",
+      "description": "Physical distribution of computers in a system"
+    },
+    {
+      "path": "meaning-of-decentralization/political_decentralization",
+      "title": "Political Decentralization",
+      "description": "Distribution of control over system operation"
+    },
+    {
+      "path": "meaning-of-decentralization/logical_decentralization",
+      "title": "Logical Decentralization",
+      "description": "Whether system appears as single object or amorphous swarm"
+    },
+    {
+      "path": "meaning-of-decentralization/fault_tolerance",
+      "title": "Fault Tolerance",
+      "description": "System's ability to continue despite component failures"
+    },
+    {
+      "path": "meaning-of-decentralization/attack_resistance",
+      "title": "Attack Resistance",
+      "description": "How decentralization increases cost of coercion and attack"
+    },
+    {
+      "path": "meaning-of-decentralization/collusion_resistance",
+      "title": "Collusion Resistance",
+      "description": "Preventing unwanted coordination among participants"
+    },
+    {
+      "path": "meaning-of-decentralization/common_mode_failure",
+      "title": "Common Mode Failure",
+      "description": "When multiple components fail for the same reason"
+    },
+    {
+      "path": "meaning-of-decentralization/did_decentralized_identifiers",
+      "title": "Decentralized Identifiers (DIDs)",
+      "description": "W3C standard for self-sovereign identifiers"
+    },
+    {
+      "path": "meaning-of-decentralization/web3_identity_stack",
+      "title": "Web3 Identity Stack",
+      "description": "Layered architecture for digital self-sovereignty"
+    },
+    {
+      "path": "meaning-of-decentralization/crypto_pki_trojan_horse",
+      "title": "Cryptocurrency as PKI Trojan Horse",
+      "description": "How crypto incentives drove public key infrastructure adoption"
+    },
+    {
+      "path": "meaning-of-decentralization/headless_brands",
+      "title": "Headless Brands",
+      "description": "Brands without central management or narrative control"
+    },
+    {
+      "path": "meaning-of-decentralization/bitcoin_headless_brand",
+      "title": "Bitcoin: The First Headless Brand",
+      "description": "Bitcoin as the archetype of headless branding"
+    },
+    {
+      "path": "meaning-of-decentralization/narrative_forks",
+      "title": "Narrative Forks and Exit vs Voice",
+      "description": "Hard forks as narrative divergence and governance response"
+    },
+    {
+      "path": "meaning-of-decentralization/distributed_consensus",
+      "title": "Distributed Consensus Fundamentals",
+      "description": "Challenge of achieving agreement across distributed computers"
+    },
+    {
+      "path": "meaning-of-decentralization/flp_impossibility",
+      "title": "FLP Impossibility",
+      "description": "Theoretical proof that deterministic consensus is impossible with faults"
+    },
+    {
+      "path": "meaning-of-decentralization/byzantine_fault_tolerance",
+      "title": "Byzantine Fault Tolerance",
+      "description": "Consensus algorithms tolerating malicious nodes"
+    },
+    {
+      "path": "meaning-of-decentralization/nakamoto_consensus",
+      "title": "Nakamoto Consensus",
+      "description": "Bitcoin's probabilistic consensus using PoW and longest chain rule"
+    }
+  ],
+  "x402_lessons": {}
+}

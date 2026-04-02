@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "title": "Token Standards and Crypto Economics Knowledge Graph",
+    "description": "Concept dependency graph for Token Standards & Crypto Valuation — 18 nodes, 22 edges",
+    "source": "ERC-20/721 Standards, Chris Dixon 'Crypto Tokens' (2017), a16z 'Tokenology' (2023), Metcalfe's Law & Crypto Valuation",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "fungible_tokens",
+      "name": "Fungible Tokens: The Concept",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Understanding fungibility: tokens where each unit is identical and interchangeable. Like currency, each token has the same value as any other token of the same type.",
+      "key_ideas": [
+        "Fungibility means each token is identical in type and value",
+        "Like ETH or traditional currency, 1 token = 1 token always",
+        "Foundation for ERC-20 and most cryptocurrency tokens"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-20 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc20_standard",
+      "name": "ERC-20 Token Standard",
+      "type": "technique",
+      "level": "foundational",
+      "description": "The standard API for fungible tokens on Ethereum. Defines methods like transfer, balanceOf, approve, and events like Transfer and Approval.",
+      "key_ideas": [
+        "Proposed by Fabian Vogelsteller in November 2015",
+        "Implements 9 methods: name, symbol, decimals, totalSupply, balanceOf, transfer, transferFrom, approve, allowance",
+        "Two events: Transfer, Approval",
+        "Enables interoperability: wallets, exchanges, DApps can work with any ERC-20 token"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-20 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc20_token_loss",
+      "name": "ERC-20 Token Loss Problem",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "A critical design flaw: tokens sent to contracts without ERC-20 handling are permanently locked. Over $83M lost as of 2024.",
+      "key_ideas": [
+        "Contracts cannot detect incoming ERC-20 transfers (no callback)",
+        "Tokens sent to unprepared contracts are permanently locked",
+        "Minimum $83.6M USD lost as of June 2024",
+        "Solutions: require(_to != address(this)), approve+transferFrom pattern, ERC-223/ERC-1363"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-20 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nft_concept",
+      "name": "Non-Fungible Tokens (NFTs): The Concept",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Understanding non-fungibility: each token is unique and can have different value. Like a concert ticket with a specific seat number.",
+      "key_ideas": [
+        "Non-fungible means each token is unique",
+        "Each NFT has a unique tokenId (uint256)",
+        "Perfect for collectibles, access keys, tickets, digital art"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-721 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc721_standard",
+      "name": "ERC-721 NFT Standard",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "The standard API for non-fungible tokens on Ethereum. Each token has a unique tokenId and the pair (contract address, tokenId) is globally unique.",
+      "key_ideas": [
+        "Proposed by William Entriken, Dieter Shirley, Jacob Evans, Nastassia Sachs in January 2018",
+        "Core methods: balanceOf, ownerOf, safeTransferFrom, transferFrom, approve, setApprovalForAll",
+        "Events: Transfer, Approval, ApprovalForAll",
+        "Global uniqueness: (contract address, uint256 tokenId) pair"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-721 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cryptokitties",
+      "name": "CryptoKitties: NFT Case Study",
+      "type": "application",
+      "level": "intermediate",
+      "description": "The 2017 NFT game that congested Ethereum and popularized NFTs. A historical milestone showing NFT's potential and limitations.",
+      "key_ideas": [
+        "Launched in 2017, became so popular it congested Ethereum network",
+        "First mainstream demonstration of NFT concept",
+        "Custom events: Pregnant, Birth",
+        "2026 context: NFT market crashed 93%+ from 2021 peak, but technology evolved to utility use cases"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-721 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "internet_centralization",
+      "name": "The Centralization of the Internet",
+      "type": "theory",
+      "level": "foundational",
+      "description": "How the open internet was captured by Big Tech (Google, Facebook, Amazon, Apple) through proprietary platforms and 30% platform taxes.",
+      "key_ideas": [
+        "Internet started as open protocols, anyone could build on equal footing",
+        "Google started in a garage, Facebook in a dorm room",
+        "By 2017, Big Tech dominated market cap, mobile apps, developer platforms",
+        "iOS/Android charge 30% fees and control app distribution"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_dual_innovation",
+      "name": "Bitcoin's Dual Innovation",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Bitcoin contained two innovations: (1) alternative financial system, (2) new way to build open networks. Tokens extracted and generalized the second.",
+      "key_ideas": [
+        "Innovation 1: Store of value, alternative to traditional finance",
+        "Innovation 2: Open network design primitive (tokens)",
+        "Crypto tokens separated innovation #2 from Bitcoin's financial context"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_smart_contracts",
+      "name": "Ethereum and Smart Contracts",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "Ethereum as the first major non-Bitcoin token network. Introduced smart contracts and the Ether token for computation ('gas').",
+      "key_ideas": [
+        "Whitepaper 2013, launch 2015 (Dixon incorrectly wrote 2014 introduction)",
+        "Vitalik wanted smart contracts on Bitcoin, limitations led to new approach",
+        "Smart contracts: code executed by distributed network",
+        "Ether token: financial asset + purchase computation (gas)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_service_governance",
+      "name": "Token-Enabled Open Service Governance",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "How tokens solve the open network's biggest weakness: inability to manage and finance running services at scale.",
+      "key_ideas": [
+        "Open systems lacked effective ways to manage and fund operational services",
+        "2007 social network wars: open protocols lost to proprietary services (Facebook)",
+        "Tokens fund hosting costs via automatic distribution to miners/validators",
+        "Tokens create shared computing resources while maintaining decentralization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "incentive_alignment",
+      "name": "Incentive Alignment Through Tokens",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "How tokens align all network participants (users, developers, investors, service providers) toward common goal: network growth and token value appreciation.",
+      "key_ideas": [
+        "Traditional platforms: conflict between platform and complements (Twitter API shutdowns)",
+        "Token networks: everyone benefits from network growth",
+        "Solves bootstrap problem: early incentives attract initial users",
+        "Steemit example: paid users for content, token value rose, virtuous cycle (2017 optimism; 2026 reality: fork to Hive after governance failure)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "token_distribution",
+      "name": "Token Distribution Design",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Careful management of token allocation across five groups: users, core devs, 3rd party devs, investors, service providers to maximize network growth.",
+      "key_ideas": [
+        "Five participant groups must receive appropriate token allocation",
+        "Balance determines network growth trajectory",
+        "Analogy: imagine if internet was funded by domain name sales, with names distributed to builders, hosters, developers"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_network_movement",
+      "name": "The Open Network Movement",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "Crypto as spiritual successor to open source (Linux) and open information (Wikipedia) movements. Combines social benefits of open protocols with financial advantages of proprietary networks.",
+      "key_ideas": [
+        "Linux: open source software → now dominant OS",
+        "Wikipedia: open information → most popular reference",
+        "Both were niche and controversial at first, late blooming (大器晚成)",
+        "Crypto tokens: open network design, currently niche but potentially transformative"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokens_as_primitive",
+      "name": "Tokens as New Digital Primitive",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Chris Dixon's 2021 insight: tokens are to Web3 what websites were to Web 1.0 — a fundamental building block.",
+      "key_ideas": [
+        "1990s: website = new digital primitive",
+        "2020s: token = new digital primitive",
+        "Enables new forms of value creation and organization"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Twitter thread (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokenology",
+      "name": "Tokenology: Beyond Tokenomics",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Guy Wuollet's framework: tokens are vectors (multidimensional) not scalars. They express social, reputational, and political value beyond monetary.",
+      "key_ideas": [
+        "Tokenomics is too narrow, focuses only on economic dimension",
+        "Tokenology = tokens × economics × art × cryptography × mechanism design",
+        "Tokens are vectors: magnitude + direction, multidimensional value",
+        "Modern economy reduces high-dimensional value to scalar (USD), losing information"
+      ],
+      "code_refs": [],
+      "paper_ref": "Guy Wuollet (a16z) — Tokenology (2023)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "token_use_cases",
+      "name": "Four Token Use Cases",
+      "type": "application",
+      "level": "intermediate",
+      "description": "Ownership, Alignment, Incentive structures, Access to goods/services — the four primary ways tokens create value beyond money.",
+      "key_ideas": [
+        "Ownership: User-owned networks (Ethereum), hyperstructures",
+        "Alignment: Creator coins, social tokens, community membership (BAYC 2023; floor -90% by 2026)",
+        "Incentive: Governance (Uniswap, Compound), validator coordination",
+        "Access: Compute (Ethereum gas), storage (Filecoin), token-gated experiences"
+      ],
+      "code_refs": [],
+      "paper_ref": "Guy Wuollet (a16z) — Tokenology (2023)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "metcalfes_law",
+      "name": "Metcalfe's Law for Networks",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Network value is proportional to the square of users (n²). Originally for Ethernet, applied to Facebook revenue and crypto valuation.",
+      "key_ideas": [
+        "Robert Metcalfe (1980s): network value ∝ n²",
+        "2015: Facebook revenue ∝ MAU², also Tencent",
+        "Ken Alabi: Bitcoin, Ethereum, Dash fit Metcalfe's Law",
+        "Foundation for crypto valuation models"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jacob Franek — Metcalfe's Law & Crypto Valuation (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nvt_ratio",
+      "name": "NVT Ratio: Crypto Valuation Metric",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Network Value-to-Transactions ratio. When NVT > 20, price may exceed fundamental value. Similar to P/E ratio for stocks.",
+      "key_ideas": [
+        "NVT = Market Cap / 90-day MA of daily USD transaction volume",
+        "NVT > 20 suggests overvaluation (Kalichkin)",
+        "Limitations: both numerator and denominator contain USD price, circular dependency",
+        "Successfully predicted major corrections in BTC 2018"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jacob Franek — Metcalfe's Law & Crypto Valuation (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pmr_ratio",
+      "name": "PMR Ratio: Price-to-Metcalfe",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Alternative to NVT. PMR = ln(USD price) - ln(M2). Predicted 3 major BTC and 4 major ETH corrections in 2017-2018.",
+      "key_ideas": [
+        "PMR uses M2 = (Active Addresses)² / Supply",
+        "PMR > 1.0: potential overvaluation",
+        "PMR < -1.25 (BTC) or -0.25 (ETH): accumulation zone",
+        "Limitations: Layer 2 growth (2026) moves transactions off-chain, weakens model",
+        "2018 assumption: 'crypto is speculative' — less true in 2026 (BTC ETF approved, ETH has real DeFi usage)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jacob Franek — Metcalfe's Law & Crypto Valuation (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "fungible_tokens", "target": "erc20_standard", "relationship": "enables", "weight": 1.0, "description": "Fungibility concept is the foundation for ERC-20 token design" },
+    { "source": "erc20_standard", "target": "erc20_token_loss", "relationship": "builds_on", "weight": 1.0, "description": "Token loss problem arises from ERC-20's transfer mechanism design" },
+    { "source": "nft_concept", "target": "erc721_standard", "relationship": "enables", "weight": 1.0, "description": "Non-fungibility concept is the foundation for ERC-721 design" },
+    { "source": "erc721_standard", "target": "cryptokitties", "relationship": "enables", "weight": 1.0, "description": "ERC-721 standard enabled CryptoKitties and NFT boom" },
+    { "source": "internet_centralization", "target": "bitcoin_dual_innovation", "relationship": "enables", "weight": 0.9, "description": "Centralization problem motivated search for alternatives, Bitcoin emerged" },
+    { "source": "bitcoin_dual_innovation", "target": "ethereum_smart_contracts", "relationship": "evolves_to", "weight": 1.0, "description": "Ethereum generalized Bitcoin's token innovation into programmable platform" },
+    { "source": "ethereum_smart_contracts", "target": "erc20_standard", "relationship": "enables", "weight": 1.0, "description": "Ethereum smart contracts enable ERC-20 token implementation" },
+    { "source": "ethereum_smart_contracts", "target": "erc721_standard", "relationship": "enables", "weight": 1.0, "description": "Ethereum smart contracts enable ERC-721 NFT implementation" },
+    { "source": "bitcoin_dual_innovation", "target": "open_service_governance", "relationship": "enables", "weight": 1.0, "description": "Token model enables open service governance and financing" },
+    { "source": "open_service_governance", "target": "incentive_alignment", "relationship": "builds_on", "weight": 1.0, "description": "Service governance leads to participant incentive alignment" },
+    { "source": "incentive_alignment", "target": "token_distribution", "relationship": "requires", "weight": 1.0, "description": "Incentive alignment requires careful token distribution design" },
+    { "source": "open_service_governance", "target": "open_network_movement", "relationship": "component_of", "weight": 0.8, "description": "Open service governance is part of broader open network movement" },
+    { "source": "bitcoin_dual_innovation", "target": "tokens_as_primitive", "relationship": "evolves_to", "weight": 0.9, "description": "Bitcoin's innovation evolved into tokens as fundamental primitive" },
+    { "source": "tokens_as_primitive", "target": "tokenology", "relationship": "builds_on", "weight": 1.0, "description": "Recognizing tokens as primitive leads to multidimensional tokenology framework" },
+    { "source": "tokenology", "target": "token_use_cases", "relationship": "builds_on", "weight": 1.0, "description": "Tokenology framework explains diverse token use cases" },
+    { "source": "token_use_cases", "target": "erc20_standard", "relationship": "builds_on", "weight": 0.7, "description": "Many use cases implemented via ERC-20 tokens" },
+    { "source": "token_use_cases", "target": "erc721_standard", "relationship": "builds_on", "weight": 0.7, "description": "Ownership and access use cases often use ERC-721 NFTs" },
+    { "source": "metcalfes_law", "target": "nvt_ratio", "relationship": "enables", "weight": 1.0, "description": "Metcalfe's Law provides foundation for NVT valuation metric" },
+    { "source": "metcalfes_law", "target": "pmr_ratio", "relationship": "enables", "weight": 1.0, "description": "Metcalfe's Law M2 formula is core component of PMR" },
+    { "source": "nvt_ratio", "target": "pmr_ratio", "relationship": "alternative_to", "weight": 0.8, "description": "PMR addresses some of NVT's limitations" },
+    { "source": "ethereum_smart_contracts", "target": "metcalfes_law", "relationship": "builds_on", "weight": 0.6, "description": "Ethereum network effects can be measured via Metcalfe's Law" },
+    { "source": "incentive_alignment", "target": "metcalfes_law", "relationship": "builds_on", "weight": 0.5, "description": "Incentive alignment drives user growth, which Metcalfe's Law values" }
+  ]
+}

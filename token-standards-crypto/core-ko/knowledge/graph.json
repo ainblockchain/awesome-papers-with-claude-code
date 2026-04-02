@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "title": "토큰 표준과 크립토 경제학 지식 그래프",
+    "description": "토큰 표준 & 크립토 가치 평가 개념 의존성 그래프 — 18개 노드, 22개 엣지",
+    "source": "ERC-20/721 표준, Chris Dixon 'Crypto Tokens' (2017), a16z 'Tokenology' (2023), Metcalfe's Law & Crypto Valuation",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "fungible_tokens",
+      "name": "대체 가능 토큰의 개념",
+      "type": "theory",
+      "level": "foundational",
+      "description": "대체 가능성 이해: 각 단위가 동일하고 상호 교환 가능한 토큰. 화폐처럼, 각 토큰은 같은 종류의 다른 토큰과 동일한 가치를 가집니다.",
+      "key_ideas": [
+        "대체 가능성은 각 토큰이 타입과 가치 측면에서 동일함을 의미",
+        "ETH나 전통 화폐처럼, 1 토큰 = 1 토큰 항상",
+        "ERC-20과 대부분의 암호화폐 토큰의 기초"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-20 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc20_standard",
+      "name": "ERC-20 토큰 표준",
+      "type": "technique",
+      "level": "foundational",
+      "description": "이더리움 상의 대체 가능 토큰을 위한 표준 API. transfer, balanceOf, approve 같은 메서드와 Transfer, Approval 같은 이벤트를 정의합니다.",
+      "key_ideas": [
+        "2015년 11월 Fabian Vogelsteller가 제안",
+        "9개 메서드 구현: name, symbol, decimals, totalSupply, balanceOf, transfer, transferFrom, approve, allowance",
+        "2개 이벤트: Transfer, Approval",
+        "상호운용성 가능: 지갑, 거래소, DApp이 모든 ERC-20 토큰과 작동"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-20 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc20_token_loss",
+      "name": "ERC-20 토큰 영구 손실 문제",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "심각한 설계 결함: ERC-20 처리 기능이 없는 컨트랙트로 토큰을 보내면 영구히 잠김. 2024년 기준 8360만 달러 이상 손실.",
+      "key_ideas": [
+        "컨트랙트는 들어오는 ERC-20 전송을 감지할 수 없음 (콜백 없음)",
+        "준비되지 않은 컨트랙트로 보낸 토큰은 영구히 잠김",
+        "2024년 6월 기준 최소 8360만 USD 손실",
+        "해결책: require(_to != address(this)), approve+transferFrom 패턴, ERC-223/ERC-1363"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-20 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nft_concept",
+      "name": "대체 불가능 토큰(NFT)의 개념",
+      "type": "theory",
+      "level": "foundational",
+      "description": "대체 불가능성 이해: 각 토큰이 고유하며 다른 가치를 가질 수 있음. 특정 좌석 번호가 있는 콘서트 티켓처럼.",
+      "key_ideas": [
+        "대체 불가능은 각 토큰이 고유함을 의미",
+        "각 NFT는 고유한 tokenId (uint256)를 가짐",
+        "수집품, 접근 키, 티켓, 디지털 아트에 완벽"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-721 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "erc721_standard",
+      "name": "ERC-721 NFT 표준",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "이더리움 상의 대체 불가능 토큰을 위한 표준 API. 각 토큰은 고유한 tokenId를 가지며 (컨트랙트 주소, tokenId) 쌍은 전 세계적으로 고유합니다.",
+      "key_ideas": [
+        "2018년 1월 William Entriken, Dieter Shirley, Jacob Evans, Nastassia Sachs가 제안",
+        "핵심 메서드: balanceOf, ownerOf, safeTransferFrom, transferFrom, approve, setApprovalForAll",
+        "이벤트: Transfer, Approval, ApprovalForAll",
+        "전 세계적 고유성: (컨트랙트 주소, uint256 tokenId) 쌍"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-721 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "cryptokitties",
+      "name": "CryptoKitties: NFT 사례 연구",
+      "type": "application",
+      "level": "intermediate",
+      "description": "2017년 이더리움을 정체시킨 NFT 게임. NFT의 잠재력과 한계를 보여준 역사적 이정표.",
+      "key_ideas": [
+        "2017년 출시, 너무 인기가 많아 이더리움 네트워크 정체",
+        "NFT 개념의 최초 주류 시연",
+        "커스텀 이벤트: Pregnant, Birth",
+        "2026년 맥락: NFT 시장 2021년 정점 대비 93%+ 하락, 하지만 기술은 유틸리티 사용 사례로 진화"
+      ],
+      "code_refs": [],
+      "paper_ref": "Ethereum.org — ERC-721 Token Standard (2026)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "internet_centralization",
+      "name": "인터넷의 중앙화",
+      "type": "theory",
+      "level": "foundational",
+      "description": "빅테크(Google, Facebook, Amazon, Apple)가 독점 플랫폼과 30% 플랫폼 세금으로 개방 인터넷을 어떻게 장악했는지.",
+      "key_ideas": [
+        "인터넷은 개방 프로토콜로 시작, 누구나 동등한 입장에서 구축 가능",
+        "Google은 차고에서, Facebook은 기숙사에서 시작",
+        "2017년까지 빅테크가 시가총액, 모바일 앱, 개발자 플랫폼 지배",
+        "iOS/Android는 30% 수수료 부과하고 앱 배포 통제"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "bitcoin_dual_innovation",
+      "name": "비트코인의 이중 혁신",
+      "type": "theory",
+      "level": "foundational",
+      "description": "비트코인은 두 가지 혁신을 담고 있음: (1) 대안 금융 시스템, (2) 오픈 네트워크를 구축하는 새로운 방법. 토큰은 두 번째를 추출하고 일반화했습니다.",
+      "key_ideas": [
+        "혁신 1: 가치 저장 수단, 전통 금융의 대안",
+        "혁신 2: 오픈 네트워크 설계 원시 단위 (토큰)",
+        "크립토 토큰은 혁신 #2를 비트코인의 금융 맥락에서 분리"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "ethereum_smart_contracts",
+      "name": "이더리움과 스마트 컨트랙트",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "최초의 주요 비-비트코인 토큰 네트워크인 이더리움. 스마트 컨트랙트와 계산을 위한 Ether 토큰('가스')을 도입.",
+      "key_ideas": [
+        "백서 2013년, 출시 2015년 (Dixon이 잘못 쓴 2014년 소개)",
+        "Vitalik은 비트코인에 스마트 컨트랙트를 원했으나, 한계로 인해 새로운 접근 필요",
+        "스마트 컨트랙트: 분산 네트워크가 실행하는 코드",
+        "Ether 토큰: 금융 자산 + 계산 구매 (가스)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_service_governance",
+      "name": "토큰 기반 오픈 서비스 거버넌스",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "토큰이 오픈 네트워크의 가장 큰 약점인 대규모 운영 서비스 관리 및 자금 조달 불가능 문제를 어떻게 해결하는지.",
+      "key_ideas": [
+        "오픈 시스템은 운영 서비스를 관리하고 자금화할 효과적인 방법 부족",
+        "2007년 소셜 네트워크 전쟁: 오픈 프로토콜이 독점 서비스(Facebook)에 패배",
+        "토큰은 채굴자/검증자에게 자동 분배를 통해 호스팅 비용 자금 조달",
+        "토큰은 탈중앙화를 유지하면서 공유 컴퓨팅 자원 생성"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "incentive_alignment",
+      "name": "토큰을 통한 인센티브 정렬",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "토큰이 모든 네트워크 참여자(사용자, 개발자, 투자자, 서비스 제공자)를 공동 목표인 네트워크 성장과 토큰 가치 상승으로 정렬하는 방법.",
+      "key_ideas": [
+        "전통 플랫폼: 플랫폼과 보완재 간 충돌 (Twitter API 종료)",
+        "토큰 네트워크: 모두가 네트워크 성장으로 이익",
+        "부트스트랩 문제 해결: 초기 인센티브가 초기 사용자 유치",
+        "Steemit 사례: 사용자에게 보상 지급, 토큰 가치 상승, 선순환 (2017년 낙관; 2026년 현실: 거버넌스 실패 후 Hive로 포크)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "token_distribution",
+      "name": "토큰 분배 설계",
+      "type": "technique",
+      "level": "advanced",
+      "description": "5개 그룹(사용자, 핵심 개발자, 제3자 개발자, 투자자, 서비스 제공자)에 걸친 토큰 할당의 신중한 관리로 네트워크 성장 극대화.",
+      "key_ideas": [
+        "5개 참여자 그룹이 적절한 토큰 할당을 받아야 함",
+        "균형이 네트워크 성장 궤적 결정",
+        "비유: 인터넷이 도메인 이름 판매로 자금 조달되고, 이름이 구축자, 호스터, 개발자에게 분배되었다고 상상"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "open_network_movement",
+      "name": "오픈 네트워크 운동",
+      "type": "theory",
+      "level": "intermediate",
+      "description": "크립토는 오픈 소스(Linux)와 오픈 정보(Wikipedia) 운동의 정신적 계승자. 오픈 프로토콜의 사회적 이익과 독점 네트워크의 금융적 이점을 결합.",
+      "key_ideas": [
+        "Linux: 오픈 소스 소프트웨어 → 현재 지배적 OS",
+        "Wikipedia: 오픈 정보 → 가장 인기 있는 참고 자료",
+        "둘 다 처음에는 틈새이고 논란이 많았으나, 대기만성 (大器晩成)",
+        "크립토 토큰: 오픈 네트워크 설계, 현재 틈새이지만 잠재적으로 변혁적"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Crypto Tokens: A Breakthrough (2017)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokens_as_primitive",
+      "name": "새로운 디지털 원시 단위로서의 토큰",
+      "type": "theory",
+      "level": "foundational",
+      "description": "Chris Dixon의 2021년 통찰: 토큰은 Web3에서 웹사이트가 Web 1.0에서 했던 것 — 기본 빌딩 블록.",
+      "key_ideas": [
+        "1990년대: 웹사이트 = 새로운 디지털 원시 단위",
+        "2020년대: 토큰 = 새로운 디지털 원시 단위",
+        "새로운 형태의 가치 창출과 조직화 가능"
+      ],
+      "code_refs": [],
+      "paper_ref": "Chris Dixon — Twitter thread (2021)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "tokenology",
+      "name": "토크놀로지: 토크노믹스를 넘어",
+      "type": "theory",
+      "level": "advanced",
+      "description": "Guy Wuollet의 프레임워크: 토큰은 벡터(다차원)이지 스칼라가 아님. 금전적 가치 외에 사회적, 평판적, 정치적 가치를 표현.",
+      "key_ideas": [
+        "토크노믹스는 너무 좁고, 경제적 차원에만 집중",
+        "토크놀로지 = 토큰 × 경제학 × 예술 × 암호학 × 메커니즘 설계",
+        "토큰은 벡터: 크기 + 방향, 다차원 가치",
+        "현대 경제는 고차원 가치를 스칼라(USD)로 줄여, 정보 손실"
+      ],
+      "code_refs": [],
+      "paper_ref": "Guy Wuollet (a16z) — Tokenology (2023)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "token_use_cases",
+      "name": "4가지 토큰 사용 사례",
+      "type": "application",
+      "level": "intermediate",
+      "description": "소유권, 정렬, 인센티브 구조, 재화/서비스 접근 — 토큰이 돈을 넘어 가치를 창출하는 4가지 주요 방법.",
+      "key_ideas": [
+        "소유권: 사용자 소유 네트워크 (이더리움), 하이퍼스트럭처",
+        "정렬: 크리에이터 코인, 소셜 토큰, 커뮤니티 멤버십 (BAYC 2023; 2026년까지 바닥가 -90%)",
+        "인센티브: 거버넌스 (Uniswap, Compound), 검증자 조정",
+        "접근: 계산 (Ethereum 가스), 저장 (Filecoin), 토큰 게이팅 경험"
+      ],
+      "code_refs": [],
+      "paper_ref": "Guy Wuollet (a16z) — Tokenology (2023)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "metcalfes_law",
+      "name": "네트워크를 위한 Metcalfe의 법칙",
+      "type": "theory",
+      "level": "foundational",
+      "description": "네트워크 가치는 사용자 수의 제곱(n²)에 비례. 원래 이더넷용, Facebook 수익과 크립토 가치 평가에 적용.",
+      "key_ideas": [
+        "Robert Metcalfe (1980년대): 네트워크 가치 ∝ n²",
+        "2015년: Facebook 수익 ∝ MAU², Tencent도 마찬가지",
+        "Ken Alabi: Bitcoin, Ethereum, Dash가 Metcalfe의 법칙에 부합",
+        "크립토 가치 평가 모델의 기초"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jacob Franek — Metcalfe's Law & Crypto Valuation (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "nvt_ratio",
+      "name": "NVT 비율: 크립토 가치 평가 지표",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Network Value-to-Transactions 비율. NVT > 20일 때, 가격이 기본 가치를 초과할 수 있음. 주식의 P/E 비율과 유사.",
+      "key_ideas": [
+        "NVT = 시가총액 / 일일 USD 거래량의 90일 이동평균",
+        "NVT > 20은 과대평가 시사 (Kalichkin)",
+        "한계: 분자와 분모 모두 USD 가격 포함, 순환 의존성",
+        "2018년 BTC 주요 조정 성공적으로 예측"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jacob Franek — Metcalfe's Law & Crypto Valuation (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "pmr_ratio",
+      "name": "PMR 비율: Price-to-Metcalfe",
+      "type": "technique",
+      "level": "advanced",
+      "description": "NVT의 대안. PMR = ln(USD 가격) - ln(M2). 2017-2018년 BTC 3건, ETH 4건의 주요 조정 예측.",
+      "key_ideas": [
+        "PMR은 M2 = (활성 주소)² / 공급량 사용",
+        "PMR > 1.0: 잠재적 과대평가",
+        "PMR < -1.25 (BTC) 또는 -0.25 (ETH): 축적 구간",
+        "한계: Layer 2 성장 (2026)으로 거래가 오프체인으로 이동, 모델 약화",
+        "2018년 가정: '크립토는 투기적' — 2026년에는 덜 참 (BTC ETF 승인, ETH 실제 DeFi 사용)"
+      ],
+      "code_refs": [],
+      "paper_ref": "Jacob Franek — Metcalfe's Law & Crypto Valuation (2018)",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    { "source": "fungible_tokens", "target": "erc20_standard", "relationship": "enables", "weight": 1.0, "description": "대체 가능성 개념은 ERC-20 토큰 설계의 기초" },
+    { "source": "erc20_standard", "target": "erc20_token_loss", "relationship": "builds_on", "weight": 1.0, "description": "토큰 손실 문제는 ERC-20의 전송 메커니즘 설계에서 발생" },
+    { "source": "nft_concept", "target": "erc721_standard", "relationship": "enables", "weight": 1.0, "description": "대체 불가능성 개념은 ERC-721 설계의 기초" },
+    { "source": "erc721_standard", "target": "cryptokitties", "relationship": "enables", "weight": 1.0, "description": "ERC-721 표준이 CryptoKitties와 NFT 붐을 가능하게 함" },
+    { "source": "internet_centralization", "target": "bitcoin_dual_innovation", "relationship": "enables", "weight": 0.9, "description": "중앙화 문제가 대안 탐색을 동기화, 비트코인 등장" },
+    { "source": "bitcoin_dual_innovation", "target": "ethereum_smart_contracts", "relationship": "evolves_to", "weight": 1.0, "description": "이더리움이 비트코인의 토큰 혁신을 프로그래밍 가능한 플랫폼으로 일반화" },
+    { "source": "ethereum_smart_contracts", "target": "erc20_standard", "relationship": "enables", "weight": 1.0, "description": "이더리움 스마트 컨트랙트가 ERC-20 토큰 구현을 가능하게 함" },
+    { "source": "ethereum_smart_contracts", "target": "erc721_standard", "relationship": "enables", "weight": 1.0, "description": "이더리움 스마트 컨트랙트가 ERC-721 NFT 구현을 가능하게 함" },
+    { "source": "bitcoin_dual_innovation", "target": "open_service_governance", "relationship": "enables", "weight": 1.0, "description": "토큰 모델이 오픈 서비스 거버넌스와 자금 조달을 가능하게 함" },
+    { "source": "open_service_governance", "target": "incentive_alignment", "relationship": "builds_on", "weight": 1.0, "description": "서비스 거버넌스가 참여자 인센티브 정렬로 이어짐" },
+    { "source": "incentive_alignment", "target": "token_distribution", "relationship": "requires", "weight": 1.0, "description": "인센티브 정렬은 신중한 토큰 분배 설계를 필요로 함" },
+    { "source": "open_service_governance", "target": "open_network_movement", "relationship": "component_of", "weight": 0.8, "description": "오픈 서비스 거버넌스는 더 광범위한 오픈 네트워크 운동의 일부" },
+    { "source": "bitcoin_dual_innovation", "target": "tokens_as_primitive", "relationship": "evolves_to", "weight": 0.9, "description": "비트코인의 혁신이 기본 원시 단위로서의 토큰으로 진화" },
+    { "source": "tokens_as_primitive", "target": "tokenology", "relationship": "builds_on", "weight": 1.0, "description": "토큰을 원시 단위로 인식하면 다차원 토크놀로지 프레임워크로 이어짐" },
+    { "source": "tokenology", "target": "token_use_cases", "relationship": "builds_on", "weight": 1.0, "description": "토크놀로지 프레임워크가 다양한 토큰 사용 사례를 설명" },
+    { "source": "token_use_cases", "target": "erc20_standard", "relationship": "builds_on", "weight": 0.7, "description": "많은 사용 사례가 ERC-20 토큰을 통해 구현됨" },
+    { "source": "token_use_cases", "target": "erc721_standard", "relationship": "builds_on", "weight": 0.7, "description": "소유권과 접근 사용 사례는 종종 ERC-721 NFT를 사용" },
+    { "source": "metcalfes_law", "target": "nvt_ratio", "relationship": "enables", "weight": 1.0, "description": "Metcalfe의 법칙이 NVT 가치 평가 지표의 기초 제공" },
+    { "source": "metcalfes_law", "target": "pmr_ratio", "relationship": "enables", "weight": 1.0, "description": "Metcalfe의 법칙 M2 공식이 PMR의 핵심 구성 요소" },
+    { "source": "nvt_ratio", "target": "pmr_ratio", "relationship": "alternative_to", "weight": 0.8, "description": "PMR이 NVT의 일부 한계를 해결" },
+    { "source": "ethereum_smart_contracts", "target": "metcalfes_law", "relationship": "builds_on", "weight": 0.6, "description": "이더리움 네트워크 효과는 Metcalfe의 법칙으로 측정 가능" },
+    { "source": "incentive_alignment", "target": "metcalfes_law", "relationship": "builds_on", "weight": 0.5, "description": "인센티브 정렬이 사용자 성장을 촉진하며, Metcalfe의 법칙이 이를 평가" }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "ai-blockchain-longtail",
+  "topic_map": {
+    "ai_centralization": "ai-blockchain-longtail/ai_centralization",
+    "robot_hivemind": "ai-blockchain-longtail/robot_hivemind",
+    "long_tail_problem": "ai-blockchain-longtail/long_tail_problem",
+    "neural_network_limits": "ai-blockchain-longtail/neural_network_limits",
+    "world_computer": "ai-blockchain-longtail/world_computer",
+    "smart_contracts": "ai-blockchain-longtail/smart_contracts",
+    "two_sided_markets": "ai-blockchain-longtail/two_sided_markets",
+    "cold_start_problem": "ai-blockchain-longtail/cold_start_problem",
+    "autonomous_marketplace": "ai-blockchain-longtail/autonomous_marketplace",
+    "data_quality": "ai-blockchain-longtail/data_quality",
+    "private_smart_contracts": "ai-blockchain-longtail/private_smart_contracts",
+    "decentralized_hivemind": "ai-blockchain-longtail/decentralized_hivemind",
+    "market_power": "ai-blockchain-longtail/market_power",
+    "gpu_question": "ai-blockchain-longtail/gpu_question",
+    "ainft_concept": "ai-blockchain-longtail/ainft_concept",
+    "composability": "ai-blockchain-longtail/composability",
+    "flash_loans": "ai-blockchain-longtail/flash_loans",
+    "l2_scaling": "ai-blockchain-longtail/l2_scaling"
+  },
+  "depth_map": {
+    "ai_centralization": 1,
+    "robot_hivemind": 1,
+    "long_tail_problem": 1,
+    "neural_network_limits": 1,
+    "world_computer": 2,
+    "smart_contracts": 2,
+    "two_sided_markets": 2,
+    "cold_start_problem": 2,
+    "autonomous_marketplace": 3,
+    "data_quality": 3,
+    "private_smart_contracts": 3,
+    "decentralized_hivemind": 3,
+    "market_power": 3,
+    "gpu_question": 4,
+    "ainft_concept": 4,
+    "composability": 4,
+    "flash_loans": 4,
+    "l2_scaling": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "ai-blockchain-longtail",
+      "title": "AI × Blockchain: Long-Tail Problem and Decentralized Intelligence",
+      "description": "Learning path exploring how blockchain and decentralized markets solve AI's centralization and long-tail challenges"
+    },
+    {
+      "path": "ai-blockchain-longtail/ai_centralization",
+      "title": "AI Centralization",
+      "description": "AI has become a game dominated by big tech companies with massive resources and data"
+    },
+    {
+      "path": "ai-blockchain-longtail/robot_hivemind",
+      "title": "Robot Hivemind",
+      "description": "Building collective intelligence systems where robots share learning experiences"
+    },
+    {
+      "path": "ai-blockchain-longtail/long_tail_problem",
+      "title": "Long-Tail Problem",
+      "description": "The challenge of handling edge cases and variations in AI that require massive amounts of data"
+    },
+    {
+      "path": "ai-blockchain-longtail/neural_network_limits",
+      "title": "Neural Network Limits",
+      "description": "Neural networks are excellent interpolators but poor extrapolators, requiring vast training data"
+    },
+    {
+      "path": "ai-blockchain-longtail/world_computer",
+      "title": "Decentralized World Computer",
+      "description": "Ethereum as a trustless, permissionless global computing platform owned by the community"
+    },
+    {
+      "path": "ai-blockchain-longtail/smart_contracts",
+      "title": "Smart Contracts",
+      "description": "Sovereign programs that execute deterministically without external interference"
+    },
+    {
+      "path": "ai-blockchain-longtail/two_sided_markets",
+      "title": "Two-Sided Markets",
+      "description": "Crypto-enabled marketplaces connecting data suppliers with AI service consumers"
+    },
+    {
+      "path": "ai-blockchain-longtail/cold_start_problem",
+      "title": "Cold-Start Problem",
+      "description": "Solving marketplace bootstrapping through ownership tokens instead of pure cash subsidies"
+    },
+    {
+      "path": "ai-blockchain-longtail/autonomous_marketplace",
+      "title": "Autonomous Marketplace",
+      "description": "Self-funding AI marketplaces that incentivize participation through token ownership"
+    },
+    {
+      "path": "ai-blockchain-longtail/data_quality",
+      "title": "Data Quality Measurement",
+      "description": "Mechanisms to reliably measure signal in contributed data and distinguish quality from noise"
+    },
+    {
+      "path": "ai-blockchain-longtail/private_smart_contracts",
+      "title": "Private Smart Contracts",
+      "description": "Using zk-SNARKs to protect neural network models while maintaining verifiable execution"
+    },
+    {
+      "path": "ai-blockchain-longtail/decentralized_hivemind",
+      "title": "Decentralized Autonomous Hivemind",
+      "description": "Autonomous AI entities emerging from grassroots efforts with collective intelligence"
+    },
+    {
+      "path": "ai-blockchain-longtail/market_power",
+      "title": "Market Power for AI",
+      "description": "Adam Smith's invisible hand applied to decentralized AI development coordination"
+    },
+    {
+      "path": "ai-blockchain-longtail/gpu_question",
+      "title": "AI's GPU Question",
+      "description": "The $200B-$600B gap between GPU infrastructure investment and actual AI revenue generation"
+    },
+    {
+      "path": "ai-blockchain-longtail/ainft_concept",
+      "title": "AINFT",
+      "description": "Immutable identifiers for AI components making AI accountable, reproducible, and valuable"
+    },
+    {
+      "path": "ai-blockchain-longtail/composability",
+      "title": "Blockchain Composability",
+      "description": "Four eras of blockchain computing from Calculator to Cloud with varying degrees of composability"
+    },
+    {
+      "path": "ai-blockchain-longtail/flash_loans",
+      "title": "Flash Loans & Atomic Transactions",
+      "description": "Marble example showing trustless composability through single atomic transactions"
+    },
+    {
+      "path": "ai-blockchain-longtail/l2_scaling",
+      "title": "Layer 2 Scaling",
+      "description": "Evolution from traditional sharding to rollup-centric scaling with Danksharding"
+    }
+  ],
+  "x402_lessons": {}
+}

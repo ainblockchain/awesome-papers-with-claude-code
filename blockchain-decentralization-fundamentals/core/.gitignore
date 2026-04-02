@@ -1,0 +1,13 @@
+blockchain/.env
+blockchain/node_modules/
+.learner/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
