@@ -3,11 +3,21 @@
   "title": "DAO & Decentralized Organizations",
   "title_ko": "DAO & 탈중앙화 조직",
   "authors": [
-    "Minhyun Kim",
-    "Vitalik Buterin",
-    "Taylor Pearson",
-    "Nick Tomaino",
-    "Jesse Walden"
+    {
+      "name": "Minhyun Kim"
+    },
+    {
+      "name": "Vitalik Buterin"
+    },
+    {
+      "name": "Taylor Pearson"
+    },
+    {
+      "name": "Nick Tomaino"
+    },
+    {
+      "name": "Jesse Walden"
+    }
   ],
   "year": 2022,
   "source": "Common Computer Blockchain Lecture Series",

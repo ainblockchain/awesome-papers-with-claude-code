@@ -3,9 +3,15 @@
   "title": "Bitcoin, Ethereum, AI Network",
   "title_ko": "Bitcoin, Ethereum, AI Network",
   "authors": [
-    "Satoshi Nakamoto",
-    "Vitalik Buterin",
-    "AI Network Team"
+    {
+      "name": "Satoshi Nakamoto"
+    },
+    {
+      "name": "Vitalik Buterin"
+    },
+    {
+      "name": "AI Network Team"
+    }
   ],
   "year": 2008,
   "source": "Common Computer Blockchain Lecture Series",

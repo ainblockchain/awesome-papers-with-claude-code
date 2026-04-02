@@ -3,11 +3,21 @@
   "slug": "ai-blockchain-longtail",
   "sortOrder": 29,
   "authors": [
-    "Ali Yahya (a16z crypto)",
-    "David Cahn (Sequoia Capital)",
-    "AI Network Team",
-    "Jesse Walden (a16z crypto)",
-    "William M. Peaster (Bankless)"
+    {
+      "name": "Ali Yahya (a16z crypto)"
+    },
+    {
+      "name": "David Cahn (Sequoia Capital)"
+    },
+    {
+      "name": "AI Network Team"
+    },
+    {
+      "name": "Jesse Walden (a16z crypto)"
+    },
+    {
+      "name": "William M. Peaster (Bankless)"
+    }
   ],
   "year": "2020-2023",
   "sources": [
