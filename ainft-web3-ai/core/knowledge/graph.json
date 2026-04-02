@@ -2,117 +2,250 @@
   "nodes": [
     {
       "id": "ainft_definition",
-      "label": "AINFT Definition",
       "description": "AINFT as immutable identifier for AI components",
-      "module": 1
+      "module": 1,
+      "name": "AINFT Definition",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "ai_community_role",
-      "label": "AI Community Role",
       "description": "Community's role in AI development and governance",
-      "module": 1
+      "module": 1,
+      "name": "AI Community Role",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "ainft_schema",
-      "label": "AINFT Schema",
       "description": "AINFT schema structure (data, model, service, state)",
-      "module": 1
+      "module": 1,
+      "name": "AINFT Schema",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "ainize_platform",
-      "label": "Ainize Platform",
       "description": "Ainize cloud service for AI deployment",
-      "module": 1
+      "module": 1,
+      "name": "Ainize Platform",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "ai_accountability",
-      "label": "AI Accountability",
       "description": "Making AI accountable through blockchain",
-      "module": 2
+      "module": 2,
+      "name": "AI Accountability",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "ai_reproducibility",
-      "label": "AI Reproducibility",
       "description": "Making AI reproducible at low cost",
-      "module": 2
+      "module": 2,
+      "name": "AI Reproducibility",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "ai_value",
-      "label": "AI Value",
       "description": "Making AI valuable through composability",
-      "module": 2
+      "module": 2,
+      "name": "AI Value",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "web3_intro",
-      "label": "Web3 Introduction",
       "description": "Web3 introduction and core ideas",
-      "module": 3
+      "module": 3,
+      "name": "Web3 Introduction",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "web1_read",
-      "label": "Web 1.0 Read-Only",
       "description": "Web 1.0 read-only era (1990-2004)",
-      "module": 3
+      "module": 3,
+      "name": "Web 1.0 Read-Only",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "web2_readwrite",
-      "label": "Web 2.0 Read-Write",
       "description": "Web 2.0 read-write era (2004-present)",
-      "module": 3
+      "module": 3,
+      "name": "Web 2.0 Read-Write",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "web3_own",
-      "label": "Web 3.0 Read-Write-Own",
       "description": "Web 3.0 read-write-own paradigm",
-      "module": 3
+      "module": 3,
+      "name": "Web 3.0 Read-Write-Own",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "digital_ownership",
-      "label": "Digital Ownership",
       "description": "NFT-based digital ownership",
-      "module": 3
+      "module": 3,
+      "name": "Digital Ownership",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "censorship_resistance",
-      "label": "Censorship Resistance",
       "description": "Platform censorship resistance",
-      "module": 3
+      "module": 3,
+      "name": "Censorship Resistance",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "dao_governance",
-      "label": "DAO Governance",
       "description": "DAO for platform governance",
-      "module": 4
+      "module": 4,
+      "name": "DAO Governance",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "web3_identity",
-      "label": "Web3 Identity",
       "description": "Digital identity with ENS",
-      "module": 4
+      "module": 4,
+      "name": "Web3 Identity",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "web3_payments",
-      "label": "Web3 Payments",
       "description": "Native payments with crypto",
-      "module": 4
+      "module": 4,
+      "name": "Web3 Payments",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "web3_limitations",
-      "label": "Web3 Limitations",
       "description": "Current limitations (access, UX, education)",
-      "module": 4
+      "module": 4,
+      "name": "Web3 Limitations",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "evolving_nfts",
-      "label": "Evolving NFTs",
       "description": "Dynamic and evolving NFTs",
-      "module": 4
+      "module": 4,
+      "name": "Evolving NFTs",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "uncommon_gallery",
-      "label": "Uncommon Gallery",
       "description": "AI x Art gallery concept",
-      "module": 4
+      "module": 4,
+      "name": "Uncommon Gallery",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "frontier"
     }
   ],
   "edges": [

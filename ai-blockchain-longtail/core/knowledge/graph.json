@@ -2,93 +2,219 @@
   "nodes": [
     {
       "id": "ai_centralization",
-      "label": "AI Centralization",
-      "description": "AI has become a game dominated by big tech companies with massive resources and data"
+      "description": "AI has become a game dominated by big tech companies with massive resources and data",
+      "name": "AI Centralization",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "robot_hivemind",
-      "label": "Robot Hivemind",
-      "description": "Building collective intelligence systems where robots share learning experiences"
+      "description": "Building collective intelligence systems where robots share learning experiences",
+      "name": "Robot Hivemind",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "long_tail_problem",
-      "label": "Long-Tail Problem",
-      "description": "The challenge of handling edge cases and variations in AI that require massive amounts of data"
+      "description": "The challenge of handling edge cases and variations in AI that require massive amounts of data",
+      "name": "Long-Tail Problem",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "neural_network_limits",
-      "label": "Neural Network Limits",
-      "description": "Neural networks are excellent interpolators but poor extrapolators, requiring vast training data"
+      "description": "Neural networks are excellent interpolators but poor extrapolators, requiring vast training data",
+      "name": "Neural Network Limits",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "foundational"
     },
     {
       "id": "world_computer",
-      "label": "Decentralized World Computer",
-      "description": "Ethereum as a trustless, permissionless global computing platform owned by the community"
+      "description": "Ethereum as a trustless, permissionless global computing platform owned by the community",
+      "name": "Decentralized World Computer",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "smart_contracts",
-      "label": "Smart Contracts",
-      "description": "Sovereign programs that execute deterministically without external interference"
+      "description": "Sovereign programs that execute deterministically without external interference",
+      "name": "Smart Contracts",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "two_sided_markets",
-      "label": "Two-Sided Markets",
-      "description": "Crypto-enabled marketplaces connecting data suppliers with AI service consumers"
+      "description": "Crypto-enabled marketplaces connecting data suppliers with AI service consumers",
+      "name": "Two-Sided Markets",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "cold_start_problem",
-      "label": "Cold-Start Problem",
-      "description": "Solving marketplace bootstrapping through ownership tokens instead of pure cash subsidies"
+      "description": "Solving marketplace bootstrapping through ownership tokens instead of pure cash subsidies",
+      "name": "Cold-Start Problem",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "intermediate"
     },
     {
       "id": "autonomous_marketplace",
-      "label": "Autonomous Marketplace",
-      "description": "Self-funding AI marketplaces that incentivize participation through token ownership"
+      "description": "Self-funding AI marketplaces that incentivize participation through token ownership",
+      "name": "Autonomous Marketplace",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "data_quality",
-      "label": "Data Quality Measurement",
-      "description": "Mechanisms to reliably measure signal in contributed data and distinguish quality from noise"
+      "description": "Mechanisms to reliably measure signal in contributed data and distinguish quality from noise",
+      "name": "Data Quality Measurement",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "private_smart_contracts",
-      "label": "Private Smart Contracts",
-      "description": "Using zk-SNARKs to protect neural network models while maintaining verifiable execution"
+      "description": "Using zk-SNARKs to protect neural network models while maintaining verifiable execution",
+      "name": "Private Smart Contracts",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "decentralized_hivemind",
-      "label": "Decentralized Autonomous Hivemind",
-      "description": "Autonomous AI entities emerging from grassroots efforts with collective intelligence"
+      "description": "Autonomous AI entities emerging from grassroots efforts with collective intelligence",
+      "name": "Decentralized Autonomous Hivemind",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "market_power",
-      "label": "Market Power for AI",
-      "description": "Adam Smith's invisible hand applied to decentralized AI development coordination"
+      "description": "Adam Smith's invisible hand applied to decentralized AI development coordination",
+      "name": "Market Power for AI",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "advanced"
     },
     {
       "id": "gpu_question",
-      "label": "AI's GPU Question",
-      "description": "The $200B-$600B gap between GPU infrastructure investment and actual AI revenue generation"
+      "description": "The $200B-$600B gap between GPU infrastructure investment and actual AI revenue generation",
+      "name": "AI's GPU Question",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "frontier"
     },
     {
       "id": "ainft_concept",
-      "label": "AINFT",
-      "description": "Immutable identifiers for AI components making AI accountable, reproducible, and valuable"
+      "description": "Immutable identifiers for AI components making AI accountable, reproducible, and valuable",
+      "name": "AINFT",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "frontier"
     },
     {
       "id": "composability",
-      "label": "Blockchain Composability",
-      "description": "Four eras of blockchain computing from Calculator to Cloud with varying degrees of composability"
+      "description": "Four eras of blockchain computing from Calculator to Cloud with varying degrees of composability",
+      "name": "Blockchain Composability",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "frontier"
     },
     {
       "id": "flash_loans",
-      "label": "Flash Loans & Atomic Transactions",
-      "description": "Marble example showing trustless composability through single atomic transactions"
+      "description": "Marble example showing trustless composability through single atomic transactions",
+      "name": "Flash Loans & Atomic Transactions",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "frontier"
     },
     {
       "id": "l2_scaling",
-      "label": "Layer 2 Scaling",
-      "description": "Evolution from traditional sharding to rollup-centric scaling with Danksharding"
+      "description": "Evolution from traditional sharding to rollup-centric scaling with Danksharding",
+      "name": "Layer 2 Scaling",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1,
+      "type": "concept",
+      "level": "frontier"
     }
   ],
   "edges": [

@@ -2,122 +2,207 @@
   "nodes": [
     {
       "id": "thousand_true_fans",
-      "label": "1000 True Fans Theory",
       "description": "Kevin Kelly's 2008 theory that creators need only 1,000 true fans paying ~$100/year to make a living, rather than millions of casual followers",
-      "domain": "creator_economy",
-      "depth": 1
+      "name": "1000 True Fans Theory",
+      "type": "creator_economy",
+      "level": "foundational",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "creator_middleman_problem",
-      "label": "Creator Middleman Problem",
       "description": "Centralized social platforms became new intermediaries between creators and fans, inserting ads and algorithmic recommendations while capturing most revenue",
-      "domain": "platform_economics",
-      "depth": 1
+      "name": "Creator Middleman Problem",
+      "type": "platform_economics",
+      "level": "foundational",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "nft_definition",
-      "label": "NFT Definition",
       "description": "Non-Fungible Token - a blockchain-based record representing unique digital media with verifiable history, provenance, and programmable capabilities",
-      "domain": "blockchain_fundamentals",
-      "depth": 1
+      "name": "NFT Definition",
+      "type": "blockchain_fundamentals",
+      "level": "foundational",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "rent_seeking_removal",
-      "label": "Rent-Seeking Removal",
       "description": "Blockchain-based ownership eliminates rent-seeking intermediaries by giving users full control of purchased NFTs, limiting platform fees through competition",
-      "domain": "economic_mechanisms",
-      "depth": 2
+      "name": "Rent-Seeking Removal",
+      "type": "economic_mechanisms",
+      "level": "intermediate",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "price_tier_granularity",
-      "label": "Fine-Grained Price Tiering",
       "description": "NFTs enable creators to capture more consumer surplus through granular pricing from $100K+ items for superfans to $1 items for casual supporters",
-      "domain": "pricing_strategy",
-      "depth": 2
+      "name": "Fine-Grained Price Tiering",
+      "type": "pricing_strategy",
+      "level": "intermediate",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "user_as_owner",
-      "label": "Users as Owners",
       "description": "Crypto networks turn users into owners through tokens, creating genuine P2P marketing and reducing customer acquisition costs to near zero",
-      "domain": "growth_mechanisms",
-      "depth": 2
+      "name": "Users as Owners",
+      "type": "growth_mechanisms",
+      "level": "intermediate",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "subscribe_to_mint",
-      "label": "Subscribe to Mint",
       "description": "Mirror.xyz product requiring email subscription to mint NFTs, bootstrapping direct creator-collector communication channels for long-term engagement",
-      "domain": "creator_tools",
-      "depth": 3
+      "name": "Subscribe to Mint",
+      "type": "creator_tools",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "genesis_drop",
-      "label": "Genesis Drop",
       "description": "NFT collectible featuring project logo/mascot at launch, adding credibility and catalyzing community formation around project genesis",
-      "domain": "launch_strategies",
-      "depth": 3
+      "name": "Genesis Drop",
+      "type": "launch_strategies",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "collectible_series",
-      "label": "Collectible Series",
       "description": "Recurring NFT drops providing consistent incentives for new follower subscriptions and brand asset collection completion by existing holders",
-      "domain": "engagement_strategies",
-      "depth": 3
+      "name": "Collectible Series",
+      "type": "engagement_strategies",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "writing_nfts",
-      "label": "Writing NFTs",
       "description": "Mirror's approach to tokenizing written content, allowing bootstrapped audiences to collect posts with creators capturing 100% of revenue",
-      "domain": "content_monetization",
-      "depth": 3
+      "name": "Writing NFTs",
+      "type": "content_monetization",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "web_evolution",
-      "label": "Web Evolution",
       "description": "Three phases: Web1 (static sites), Web2 (social/mobile/cloud), Web3 (crypto/AI/decentralization) representing shift from read to read-write to read-write-own",
-      "domain": "internet_history",
-      "depth": 1
+      "name": "Web Evolution",
+      "type": "internet_history",
+      "level": "foundational",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "platform_ownership",
-      "label": "Platform Ownership via Tokens",
       "description": "Web3 enables users to own platforms through tokens, shifting power from centralized corporations to distributed communities",
-      "domain": "decentralization",
-      "depth": 2
+      "name": "Platform Ownership via Tokens",
+      "type": "decentralization",
+      "level": "intermediate",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "creator_dao",
-      "label": "Creator DAO",
       "description": "Decentralized Autonomous Organizations for creators using smart contracts for incorporation, funding, governance, and immediate token liquidity",
-      "domain": "organizational_models",
-      "depth": 3
+      "name": "Creator DAO",
+      "type": "organizational_models",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "curator_economy",
-      "label": "Curator Economy",
       "description": "Future where curators act like angel investors, building portfolios of NFTs/tokens and proving discovery of creators through transparent on-chain records",
-      "domain": "curation_models",
-      "depth": 3
+      "name": "Curator Economy",
+      "type": "curation_models",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "skeuomorphism_vs_native",
-      "label": "Skeuomorphism vs Crypto-Native",
       "description": "Tension between familiar designs mimicking physical objects (YouTube NFTs, Tweet NFTs) versus designs leveraging blockchain's unique properties",
-      "domain": "design_philosophy",
-      "depth": 3
+      "name": "Skeuomorphism vs Crypto-Native",
+      "type": "design_philosophy",
+      "level": "advanced",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "nft_royalty_challenge",
-      "label": "NFT Royalty Challenge",
       "description": "2023 marketplace wars collapsed automatic royalties - OpenSea made royalties optional, Blur enforced 0.5% minimum, revealing gap between code and market reality",
-      "domain": "market_evolution",
-      "depth": 4
+      "name": "NFT Royalty Challenge",
+      "type": "market_evolution",
+      "level": "frontier",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     },
     {
       "id": "hype_cycle",
-      "label": "NFT Hype Cycle",
       "description": "NFTs followed Gartner Hype Cycle reaching Peak of Inflated Expectations in 2021 ($29B art market), then 93% crash by 2024, with ongoing evolution to practical use cases",
-      "domain": "market_dynamics",
-      "depth": 2
+      "name": "NFT Hype Cycle",
+      "type": "market_dynamics",
+      "level": "intermediate",
+      "key_ideas": [],
+      "code_refs": [],
+      "paper_ref": "",
+      "first_appeared": null,
+      "confidence": 1
     }
   ],
   "edges": [
