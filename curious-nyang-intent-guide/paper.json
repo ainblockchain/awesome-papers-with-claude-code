@@ -1,0 +1,22 @@
+{
+  "title": "궁금하냥 인텐트 기여 가이드",
+  "description": "한양대학교 학사 행정 챗봇 '궁금하냥'의 인텐트 시스템을 이해하고, 트리거 문장과 프롬프트를 관리하며, 표준 프로세스에 따라 품질을 개선하는 방법을 배웁니다.",
+  "githubUrl": "https://github.com/ainblockchain",
+  "docsUrl": "",
+  "thumbnailUrl": "thumbnail.png",
+  "backgroundUrl": "",
+  "authors": [
+    {
+      "name": "AI Network"
+    },
+    {
+      "name": "Common Computer"
+    }
+  ],
+  "publishedAt": "2026-01-01",
+  "organization": {
+    "name": "Common Computer"
+  },
+  "submittedBy": "community",
+  "sortOrder": 30
+}
