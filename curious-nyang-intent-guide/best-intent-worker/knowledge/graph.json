@@ -1,0 +1,288 @@
+{
+  "nodes": [
+    {
+      "id": "project_overview",
+      "name": "궁금하냥 프로젝트 소개",
+      "type": "application",
+      "level": "foundational",
+      "description": "한양대학교 학사 행정 챗봇 '궁금하냥'의 목적, 아키텍처, 주요 기능을 소개합니다. AI Network 인프라 기반의 대학 행정 질의응답 에이전트입니다.",
+      "key_ideas": ["한양대 학사 행정 전용 AI 챗봇", "AI Network 인프라 기반", "인텐트 기반 질의응답 시스템"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "environment_setup",
+      "name": "개발/운영 환경 구성",
+      "type": "application",
+      "level": "foundational",
+      "description": "Dev(Staging)와 Prod 환경의 차이, 각 환경별 URL과 리소스 접근 방법을 설명합니다.",
+      "key_ideas": ["Dev/Prod 이중 환경 구조", "환경별 독립 Google Sheet", "어드민 대시보드 접근"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "intent_system_overview",
+      "name": "인텐트 시스템 개요",
+      "type": "architecture",
+      "level": "foundational",
+      "description": "인텐트 기반 챗봇의 동작 원리를 설명합니다. 유저 질문이 트리거 문장과 매칭되어 인텐트로 분류되고, 해당 인텐트의 프롬프트가 답변을 생성하는 전체 흐름입니다.",
+      "key_ideas": ["트리거 문장 → 인텐트 매칭", "인텐트 → 프롬프트 → 답변 생성", "Google Sheet 기반 관리"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "google_sheet_architecture",
+      "name": "Google Sheet 인텐트 구조",
+      "type": "architecture",
+      "level": "intermediate",
+      "description": "인텐트 관리의 핵심 도구인 Google Sheet의 탭 구조를 설명합니다. intent_trigger_sentence, 일반, 재무, 학사, 국제 탭의 역할과 관계를 이해합니다.",
+      "key_ideas": ["5개 탭 구조", "트리거 문장 탭과 인텐트 정의 탭 분리", "카테고리별 인텐트 관리"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "intent_trigger_management",
+      "name": "인텐트 트리거 문장 관리",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "intent_trigger_sentence 탭에서 트리거 문장을 추가하고 수정하는 방법을 다룹니다. Category와 Intent 필드의 필수 입력 규칙을 포함합니다.",
+      "key_ideas": ["Intent + Sentence 쌍 구조", "Category와 Intent 필드 필수", "트리거 문장 품질이 매칭 정확도 결정"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "intent_prompt_management",
+      "name": "인텐트 프롬프트 관리",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "일반(general) 탭에서 인텐트를 정의하고 프롬프트를 작성/수정하는 방법을 다룹니다. Model, isPush 필드의 필수 입력 규칙을 포함합니다.",
+      "key_ideas": ["Intent + 대표 Sentence + Prompt 구조", "Model과 isPush 필드 필수", "프롬프트가 답변 품질을 결정"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "intent_categories",
+      "name": "인텐트 카테고리 분류",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "재무, 학사, 국제, 일반의 4가지 인텐트 카테고리의 범위와 분류 기준을 설명합니다. 장학금은 재무가 아닌 일반으로 분류되는 등의 주의사항을 포함합니다.",
+      "key_ideas": ["재무: 등록금 관련", "학사: 시험/휴학/복학/일정/입학", "국제: 외국인 inbound + 한양대생 outbound", "일반: 나머지 전부 (장학금 포함)"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "update_deployment",
+      "name": "챗봇 업데이트 반영",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Google Sheet에서 수정한 인텐트를 실제 챗봇에 반영하는 App Script 실행 절차를 설명합니다. Custom Scripts 메뉴의 Update Intent Prompt와 Update Intent Triggers 사용법을 다룹니다.",
+      "key_ideas": ["Custom Scripts 메뉴 사용", "Update Intent Prompt → Update ALL (dev)", "Update Intent Triggers → Insert to Dev", "반영 후 Dev에서 검증 필수"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "standard_workflow",
+      "name": "표준 프로세스",
+      "type": "technique",
+      "level": "advanced",
+      "description": "이슈 발견부터 프로덕션 반영까지의 전체 워크플로우를 설명합니다. Prod 대시보드 → 노션 이슈 등록 → Dev 수정/확인 → PM 승인 → Prod 반영의 4단계 프로세스입니다.",
+      "key_ideas": ["Prod 대시보드에서 이슈 포착", "노션에 이슈 등록", "Dev에서 수정 후 확인", "PM 승인 후 Prod 반영"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "dashboard_monitoring",
+      "name": "대시보드 모니터링",
+      "type": "application",
+      "level": "advanced",
+      "description": "Metabase 대시보드를 통해 유저 채팅 내역을 확인하고 이슈를 포착하는 방법을 설명합니다. Dev와 Prod 대시보드의 차이점을 포함합니다.",
+      "key_ideas": ["Metabase 기반 대시보드", "유저 채팅 내역 실시간 확인", "이슈 상황 포착의 시작점"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "troubleshooting_patterns",
+      "name": "트러블슈팅 패턴",
+      "type": "technique",
+      "level": "advanced",
+      "description": "챗봇이 제대로 답변하지 못하는 3가지 대표 패턴과 각각의 해결 방법을 설명합니다. 트리거 미매칭, 인텐트 미등록, 정보 오류 사례를 다룹니다.",
+      "key_ideas": ["패턴1: 인텐트 있는데 트리거 안 됨 → 트리거 문장 추가", "패턴2: 인텐트 미등록 → 새 인텐트 생성", "패턴3: 잘못된 정보 → 프롬프트 수정"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "prod_launch_process",
+      "name": "프로덕션 런치",
+      "type": "technique",
+      "level": "frontier",
+      "description": "Dev에서 검증 완료된 변경사항을 Prod에 배포하는 과정을 설명합니다. PM 승인, Prod Google Sheet 반영, 골든셋 검증을 포함합니다.",
+      "key_ideas": ["PM 승인 후 Prod 반영", "Prod용 Google Sheet는 별도 관리", "골든셋으로 품질 검증", "대시보드 Status를 DONE으로 변경"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "intent_committee_standards",
+      "name": "인텐트 위원회 표준",
+      "type": "theory",
+      "level": "frontier",
+      "description": "인텐트 위원회에서 규정한 포맷 표준과 작성 원칙을 설명합니다. 트리거 문장 작성 가이드라인, 스크린샷 지양 원칙, 테이블/텍스트 입력 원칙을 다룹니다.",
+      "key_ideas": ["인텐트 위원회 규정 포맷 준수", "스크린샷 지양, 테이블과 텍스트로 입력", "일관된 인텐트 명명 규칙", "품질 기준 및 리뷰 프로세스"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "project_overview",
+      "target": "intent_system_overview",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "프로젝트 전체 이해가 인텐트 시스템 학습의 기반이 됩니다"
+    },
+    {
+      "source": "project_overview",
+      "target": "environment_setup",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "프로젝트 구조를 알아야 환경 구성을 이해할 수 있습니다"
+    },
+    {
+      "source": "intent_system_overview",
+      "target": "google_sheet_architecture",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "인텐트 시스템의 구현체가 Google Sheet 구조입니다"
+    },
+    {
+      "source": "environment_setup",
+      "target": "google_sheet_architecture",
+      "relationship": "requires",
+      "weight": 0.8,
+      "description": "Dev/Prod 환경별로 별도의 Google Sheet가 존재합니다"
+    },
+    {
+      "source": "google_sheet_architecture",
+      "target": "intent_trigger_management",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "트리거 문장 관리는 Google Sheet 구조의 핵심 구성 요소입니다"
+    },
+    {
+      "source": "google_sheet_architecture",
+      "target": "intent_prompt_management",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "프롬프트 관리는 Google Sheet 구조의 핵심 구성 요소입니다"
+    },
+    {
+      "source": "intent_prompt_management",
+      "target": "intent_categories",
+      "relationship": "component_of",
+      "weight": 0.9,
+      "description": "카테고리 분류는 프롬프트 관리 체계의 하위 구성입니다"
+    },
+    {
+      "source": "intent_trigger_management",
+      "target": "update_deployment",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "트리거 문장 수정 후 업데이트 반영이 필요합니다"
+    },
+    {
+      "source": "intent_prompt_management",
+      "target": "update_deployment",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "프롬프트 수정 후 업데이트 반영이 필요합니다"
+    },
+    {
+      "source": "environment_setup",
+      "target": "standard_workflow",
+      "relationship": "requires",
+      "weight": 0.8,
+      "description": "표준 프로세스는 Dev/Prod 환경을 넘나들며 진행됩니다"
+    },
+    {
+      "source": "update_deployment",
+      "target": "standard_workflow",
+      "relationship": "component_of",
+      "weight": 1.0,
+      "description": "업데이트 반영은 표준 프로세스의 핵심 단계입니다"
+    },
+    {
+      "source": "environment_setup",
+      "target": "dashboard_monitoring",
+      "relationship": "requires",
+      "weight": 0.7,
+      "description": "대시보드 접근을 위해 환경 구성을 알아야 합니다"
+    },
+    {
+      "source": "intent_trigger_management",
+      "target": "troubleshooting_patterns",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "트리거 문장 관리 지식이 트러블슈팅의 기반입니다"
+    },
+    {
+      "source": "intent_prompt_management",
+      "target": "troubleshooting_patterns",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "프롬프트 관리 지식이 트러블슈팅의 기반입니다"
+    },
+    {
+      "source": "standard_workflow",
+      "target": "prod_launch_process",
+      "relationship": "builds_on",
+      "weight": 1.0,
+      "description": "프로덕션 런치는 표준 프로세스의 최종 단계입니다"
+    },
+    {
+      "source": "update_deployment",
+      "target": "prod_launch_process",
+      "relationship": "enables",
+      "weight": 0.9,
+      "description": "Dev 업데이트 경험이 Prod 배포의 기반입니다"
+    },
+    {
+      "source": "troubleshooting_patterns",
+      "target": "intent_committee_standards",
+      "relationship": "enables",
+      "weight": 0.8,
+      "description": "트러블슈팅 경험이 표준 수립의 기반이 됩니다"
+    },
+    {
+      "source": "intent_categories",
+      "target": "intent_committee_standards",
+      "relationship": "builds_on",
+      "weight": 0.8,
+      "description": "카테고리 이해가 위원회 표준 준수의 기반입니다"
+    }
+  ]
+}

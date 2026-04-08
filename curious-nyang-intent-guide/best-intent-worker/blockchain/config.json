@@ -1,0 +1,108 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "curious-nyang-intent-guide",
+  "topic_map": {
+    "project_overview": "curious-nyang-intent-guide/project_overview",
+    "environment_setup": "curious-nyang-intent-guide/environment_setup",
+    "intent_system_overview": "curious-nyang-intent-guide/intent_system_overview",
+    "google_sheet_architecture": "curious-nyang-intent-guide/google_sheet_architecture",
+    "intent_trigger_management": "curious-nyang-intent-guide/intent_trigger_management",
+    "intent_prompt_management": "curious-nyang-intent-guide/intent_prompt_management",
+    "intent_categories": "curious-nyang-intent-guide/intent_categories",
+    "update_deployment": "curious-nyang-intent-guide/update_deployment",
+    "standard_workflow": "curious-nyang-intent-guide/standard_workflow",
+    "dashboard_monitoring": "curious-nyang-intent-guide/dashboard_monitoring",
+    "troubleshooting_patterns": "curious-nyang-intent-guide/troubleshooting_patterns",
+    "prod_launch_process": "curious-nyang-intent-guide/prod_launch_process",
+    "intent_committee_standards": "curious-nyang-intent-guide/intent_committee_standards"
+  },
+  "depth_map": {
+    "project_overview": 1,
+    "environment_setup": 1,
+    "intent_system_overview": 1,
+    "google_sheet_architecture": 2,
+    "intent_trigger_management": 2,
+    "intent_prompt_management": 2,
+    "intent_categories": 2,
+    "update_deployment": 3,
+    "standard_workflow": 3,
+    "dashboard_monitoring": 3,
+    "troubleshooting_patterns": 3,
+    "prod_launch_process": 4,
+    "intent_committee_standards": 4
+  },
+  "topics_to_register": [
+    {
+      "path": "curious-nyang-intent-guide",
+      "title": "궁금하냥 인텐트 기여 가이드",
+      "description": "한양대학교 학사 행정 챗봇 궁금하냥의 인텐트 시스템 운영 가이드"
+    },
+    {
+      "path": "curious-nyang-intent-guide/project_overview",
+      "title": "궁금하냥 프로젝트 소개",
+      "description": "한양대학교 학사 행정 챗봇 '궁금하냥'의 목적, 아키텍처, 주요 기능을 소개합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/environment_setup",
+      "title": "개발/운영 환경 구성",
+      "description": "Dev(Staging)와 Prod 환경의 차이, 각 환경별 URL과 리소스 접근 방법을 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/intent_system_overview",
+      "title": "인텐트 시스템 개요",
+      "description": "인텐트 기반 챗봇의 동작 원리를 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/google_sheet_architecture",
+      "title": "Google Sheet 인텐트 구조",
+      "description": "인텐트 관리의 핵심 도구인 Google Sheet의 탭 구조를 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/intent_trigger_management",
+      "title": "인텐트 트리거 문장 관리",
+      "description": "intent_trigger_sentence 탭에서 트리거 문장을 추가하고 수정하는 방법을 다룹니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/intent_prompt_management",
+      "title": "인텐트 프롬프트 관리",
+      "description": "일반(general) 탭에서 인텐트를 정의하고 프롬프트를 작성/수정하는 방법을 다룹니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/intent_categories",
+      "title": "인텐트 카테고리 분류",
+      "description": "재무, 학사, 국제, 일반의 4가지 인텐트 카테고리의 범위와 분류 기준을 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/update_deployment",
+      "title": "챗봇 업데이트 반영",
+      "description": "Google Sheet에서 수정한 인텐트를 실제 챗봇에 반영하는 App Script 실행 절차를 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/standard_workflow",
+      "title": "표준 프로세스",
+      "description": "이슈 발견부터 프로덕션 반영까지의 전체 워크플로우를 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/dashboard_monitoring",
+      "title": "대시보드 모니터링",
+      "description": "Metabase 대시보드를 통해 유저 채팅 내역을 확인하고 이슈를 포착하는 방법을 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/troubleshooting_patterns",
+      "title": "트러블슈팅 패턴",
+      "description": "챗봇이 제대로 답변하지 못하는 3가지 대표 패턴과 각각의 해결 방법을 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/prod_launch_process",
+      "title": "프로덕션 런치",
+      "description": "Dev에서 검증 완료된 변경사항을 Prod에 배포하는 과정을 설명합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/intent_committee_standards",
+      "title": "인텐트 위원회 표준",
+      "description": "인텐트 위원회에서 규정한 포맷 표준과 작성 원칙을 설명합니다."
+    }
+  ],
+  "x402_lessons": {}
+}
