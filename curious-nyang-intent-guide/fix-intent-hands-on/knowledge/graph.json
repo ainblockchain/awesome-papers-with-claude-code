@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "id": "find_broken_intents",
+      "name": "고칠 인텐트 발굴하기",
+      "type": "technique",
+      "level": "foundational",
+      "description": "Prod 대시보드에서 유저 채팅 내역을 확인하고, 인텐트 매칭 실패, 부적절한 답변, 틀린 정보 등 개선이 필요한 건을 발굴합니다.",
+      "key_ideas": ["Metabase 대시보드에서 채팅 내역 확인", "인텐트 미매칭/부적절 매칭 패턴 발견", "답변 품질 이슈 발굴 및 기록"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "decide_fix_strategy",
+      "name": "인텐트를 어떻게 고칠지 결정하기",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "발굴한 이슈의 원인을 진단하고, 트리거 문장 수정/프롬프트 수정/신규 인텐트 등록 중 적절한 수정 전략을 결정합니다.",
+      "key_ideas": ["문제 원인 진단: 트리거 vs 프롬프트 vs 미등록", "수정 대상 탭 결정", "카테고리 분류 및 수정 계획 수립"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "fix_intent",
+      "name": "인텐트 고치기",
+      "type": "technique",
+      "level": "intermediate",
+      "description": "Dev Google Sheet에서 트리거 문장과 프롬프트를 직접 수정하고, App Script를 실행하여 Dev 챗봇에 반영합니다.",
+      "key_ideas": ["Dev Google Sheet에서 트리거/프롬프트 수정", "App Script로 Dev 반영", "인텐트 위원회 포맷 준수"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "verify_fix",
+      "name": "고친 인텐트 결과 확인하기",
+      "type": "technique",
+      "level": "advanced",
+      "description": "Dev 챗봇에서 수정한 인텐트가 정상 동작하는지 다양한 표현으로 테스트하고, 문제가 있으면 수정-확인을 반복합니다.",
+      "key_ideas": ["Dev 챗봇에서 직접 테스트", "다양한 표현으로 매칭 확인", "문제 발견 시 수정-확인 반복"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    },
+    {
+      "id": "record_changes",
+      "name": "기록하기",
+      "type": "technique",
+      "level": "advanced",
+      "description": "노션 Agents Intents 페이지에 수정 내용을 기록하고, Assignee/Season/Status를 설정하여 인텐트 수정 카운트에 반영되도록 합니다.",
+      "key_ideas": ["노션에 이슈 기록 — 카운트의 필수 조건", "Assignee/Season/Status 설정", "작업내용을 텍스트와 테이블로 작성"],
+      "code_refs": [],
+      "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+      "first_appeared": null,
+      "confidence": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "find_broken_intents",
+      "target": "decide_fix_strategy",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "이슈를 발굴해야 수정 전략을 결정할 수 있습니다"
+    },
+    {
+      "source": "decide_fix_strategy",
+      "target": "fix_intent",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "수정 전략이 있어야 실제 수정 작업을 진행할 수 있습니다"
+    },
+    {
+      "source": "fix_intent",
+      "target": "verify_fix",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "수정 후 결과를 확인해야 합니다"
+    },
+    {
+      "source": "verify_fix",
+      "target": "record_changes",
+      "relationship": "enables",
+      "weight": 1.0,
+      "description": "검증 완료 후 기록을 남깁니다"
+    }
+  ]
+}

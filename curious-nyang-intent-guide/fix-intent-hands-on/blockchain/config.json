@@ -1,0 +1,52 @@
+{
+  "provider_url": "https://devnet-api.ainetwork.ai",
+  "chain_id": 0,
+  "topic_prefix": "curious-nyang-intent-guide",
+  "topic_map": {
+    "find_broken_intents": "curious-nyang-intent-guide/find_broken_intents",
+    "decide_fix_strategy": "curious-nyang-intent-guide/decide_fix_strategy",
+    "fix_intent": "curious-nyang-intent-guide/fix_intent",
+    "verify_fix": "curious-nyang-intent-guide/verify_fix",
+    "record_changes": "curious-nyang-intent-guide/record_changes"
+  },
+  "depth_map": {
+    "find_broken_intents": 1,
+    "decide_fix_strategy": 2,
+    "fix_intent": 2,
+    "verify_fix": 3,
+    "record_changes": 3
+  },
+  "topics_to_register": [
+    {
+      "path": "curious-nyang-intent-guide",
+      "title": "궁금하냥 인텐트 기여 가이드",
+      "description": "한양대학교 학사 행정 챗봇 궁금하냥의 인텐트 시스템 운영 가이드"
+    },
+    {
+      "path": "curious-nyang-intent-guide/find_broken_intents",
+      "title": "고칠 인텐트 발굴하기",
+      "description": "Prod 대시보드에서 개선이 필요한 인텐트를 발굴합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/decide_fix_strategy",
+      "title": "인텐트를 어떻게 고칠지 결정하기",
+      "description": "이슈의 원인을 진단하고 수정 전략을 결정합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/fix_intent",
+      "title": "인텐트 고치기",
+      "description": "Dev Google Sheet에서 트리거/프롬프트를 수정하고 App Script로 반영합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/verify_fix",
+      "title": "고친 인텐트 결과 확인하기",
+      "description": "Dev 챗봇에서 수정 결과를 테스트하고 검증합니다."
+    },
+    {
+      "path": "curious-nyang-intent-guide/record_changes",
+      "title": "기록하기",
+      "description": "노션에 수정 내용을 기록하고 카운트에 반영되도록 합니다."
+    }
+  ],
+  "x402_lessons": {}
+}
