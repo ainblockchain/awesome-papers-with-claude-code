@@ -4,13 +4,20 @@
     "title": "고칠 인텐트 찾기",
     "description": "Prod 기록을 탐색하며 개선이 필요한 인텐트를 직접 발견합니다.",
     "concepts": ["find_broken_intent"],
+    "signboards": [
+      {
+        "id": "chatlog_board",
+        "title": "대화 기록 게시판",
+        "position": { "x": 9, "y": 4 },
+        "dataSource": "chatlog"
+      }
+    ],
     "lessons": [
       {
         "concept_id": "find_broken_intent",
-        "title": "대화 기록 게시판",
-        "interactionType": "chatlog",
+        "title": "고칠 인텐트 찾기 미션",
         "prerequisites": [],
-        "content": "",
+        "content": "## 미션: 고칠 인텐트를 찾아라\n\n게시판에서 궁금하냥 Prod 대화 기록을 확인하세요.\n유저 질문과 챗봇 응답이 맞지 않는 케이스를 찾는 것이 이 스테이지의 목표입니다.\n\n## 어떤 걸 찾아야 하나요?\n\n- 유저 질문과 다른 인텐트가 매칭된 경우\n- 인텐트는 맞지만 답변이 부정확한 경우\n- 아예 매칭이 안 된 경우\n\n게시판(Press E)에서 기록을 확인한 뒤, 문이 있는 쪽으로 가서 퀴즈를 풀어보세요.",
         "key_ideas": ["Prod 채팅 기록 분석", "인텐트 미매칭 패턴 식별", "문제 케이스 발견"],
         "code_ref": "",
         "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
