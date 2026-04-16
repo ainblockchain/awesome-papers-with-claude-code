@@ -8,7 +8,7 @@
       {
         "id": "chatlog_board",
         "title": "대화 기록 게시판",
-        "position": { "x": 9, "y": 4 },
+        "position": { "x": 4, "y": 6 },
         "dataSource": "chatlog"
       }
     ],
