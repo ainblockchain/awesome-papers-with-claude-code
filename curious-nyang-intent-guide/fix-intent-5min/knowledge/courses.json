@@ -1,0 +1,90 @@
+[
+  {
+    "id": "stage_find_intent",
+    "title": "고칠 인텐트 찾기",
+    "description": "Prod 기록을 탐색하며 개선이 필요한 인텐트를 직접 발견합니다.",
+    "concepts": ["find_broken_intent"],
+    "lessons": [
+      {
+        "concept_id": "find_broken_intent",
+        "title": "Prod 기록에서 문제 인텐트 발견하기",
+        "prerequisites": [],
+        "content": "## 미션: 고칠 인텐트를 찾아라\n\n궁금하냥 Prod 대시보드의 실제 채팅 기록을 살펴보세요.\n유저 질문과 챗봇 응답이 맞지 않는 케이스를 찾는 것이 이 스테이지의 목표입니다.\n\n## 어떤 걸 찾아야 하나요?\n\n- 유저 질문과 다른 인텐트가 매칭된 경우\n- 인텐트는 맞지만 답변이 부정확한 경우\n- 아예 매칭이 안 된 경우\n\n화면에 표시된 기록들을 확인하고, 문제가 있는 인텐트를 선택하세요.",
+        "key_ideas": ["Prod 채팅 기록 분석", "인텐트 미매칭 패턴 식별", "문제 케이스 발견"],
+        "code_ref": "",
+        "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+        "exercise": "다음 중 인텐트 개선이 필요한 케이스는?\n1) Intent: 등록금_납부 / 질문: \"등록금 언제까지 내야 해?\" / 답변: 등록금 납부 기한 안내\n2) Intent: 등록금_납부 / 질문: \"장학금 신청 방법 알려줘\" / 답변: 등록금 납부 방법 안내\n3) Intent: 도서관_이용 / 질문: \"도서관 몇 시에 열어?\" / 답변: 도서관 운영시간 안내",
+        "answer": "Intent: 등록금_납부 / 질문: \"장학금 신청 방법 알려줘\" / 답변: 등록금 납부 방법 안내",
+        "explanation": "장학금 신청 방법을 물었는데 등록금_납부 인텐트로 매칭되어 엉뚱한 답변이 나왔습니다. 인텐트 미매칭 케이스입니다.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_decide_fix",
+    "title": "어떻게 고칠지 결정하기",
+    "description": "발견한 인텐트의 수정 방향을 설명하고 AI 에이전트의 평가를 받습니다.",
+    "concepts": ["decide_fix_direction"],
+    "lessons": [
+      {
+        "concept_id": "decide_fix_direction",
+        "title": "수정 방향 결정하기",
+        "prerequisites": ["find_broken_intent"],
+        "content": "## 미션: 어떻게 고칠지 설명하라\n\n스테이지 1에서 찾은 문제 인텐트를 어떻게 수정할지 자연어로 설명하세요.\nAI 에이전트가 수정 방향이 적합한지 평가합니다.\n\n## 수정 방향의 세 가지 유형\n\n| 유형 | 설명 |\n|------|------|\n| 트리거 문장 수정 | 유저 표현이 올바른 인텐트로 매칭되도록 트리거 추가/수정 |\n| 프롬프트 수정 | 인텐트 매칭은 맞지만 답변 내용이 부정확할 때 |\n| 신규 인텐트 등록 | 해당 인텐트 자체가 없을 때 |\n\n수정 방향을 입력하면 에이전트가 피드백을 줍니다.",
+        "key_ideas": ["문제 원인 진단", "트리거 vs 프롬프트 vs 신규 등록 판단", "수정 계획 수립"],
+        "code_ref": "",
+        "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+        "exercise": "유저가 \"교환학생 지원 자격\"을 물었는데 매칭 실패했고, 관련 인텐트가 없습니다. 올바른 수정 방향은?\n1) 기존 인텐트의 트리거 문장만 추가\n2) 기존 인텐트의 프롬프트 수정\n3) 국제 카테고리에 신규 인텐트 등록 + 트리거 추가",
+        "answer": "국제 카테고리에 신규 인텐트 등록 + 트리거 추가",
+        "explanation": "인텐트 자체가 없으므로 신규 등록이 필요합니다. 교환학생은 국제 카테고리에 해당하며, 트리거 문장도 함께 추가해야 합니다.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_fix_intent",
+    "title": "인텐트 직접 고치기",
+    "description": "Google Sheet에서 인텐트를 직접 수정합니다.",
+    "concepts": ["execute_fix"],
+    "lessons": [
+      {
+        "concept_id": "execute_fix",
+        "title": "Google Sheet에서 인텐트 수정하기",
+        "prerequisites": ["decide_fix_direction"],
+        "content": "## 미션: 인텐트를 직접 고쳐라\n\nDev Google Sheet에서 인텐트를 실제로 수정하세요.\n수정이 완료되면 시스템이 DB를 확인하여 검증합니다.\n\n## 수정 절차\n\n1. Dev Google Sheet 열기\n2. 수정 대상 탭(tab1~5)에서 작업\n3. App Script로 Dev에 반영\n\n수정을 마쳤다면 완료 버튼을 눌러주세요.",
+        "key_ideas": ["Dev Sheet에서 트리거/프롬프트 수정", "App Script로 반영", "수정 결과 DB 검증"],
+        "code_ref": "",
+        "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+        "exercise": "Google Sheet에서 수정 후 챗봇에 반영하려면?\n1) 저장하면 자동 반영\n2) Custom Scripts에서 Update 스크립트 실행\n3) 개발팀에 요청",
+        "answer": "Custom Scripts에서 Update 스크립트 실행",
+        "explanation": "Google Sheet 수정만으로는 반영되지 않습니다. Custom Scripts 메뉴에서 해당 Update 스크립트를 실행해야 Dev 챗봇에 적용됩니다.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  },
+  {
+    "id": "stage_verify_result",
+    "title": "고친 인텐트 결과 확인하기",
+    "description": "Dev 챗봇에서 수정 결과를 직접 테스트합니다.",
+    "concepts": ["verify_result"],
+    "lessons": [
+      {
+        "concept_id": "verify_result",
+        "title": "Dev 챗봇에서 결과 확인하기",
+        "prerequisites": ["execute_fix"],
+        "content": "## 미션: 수정 결과를 확인하라\n\nDev 챗봇 페이지에서 직접 질문을 입력하여 인텐트 수정이 효과가 있었는지 확인하세요.\n\n## 확인 방법\n\n1. Dev 챗봇 페이지에 접속\n2. 스테이지 1에서 문제가 됐던 질문을 동일하게 입력\n3. 올바른 인텐트로 매칭되고, 적절한 답변이 나오는지 확인\n\n정상 동작이 확인되면 코스 완료입니다!",
+        "key_ideas": ["Dev 챗봇에서 직접 테스트", "수정 전후 비교", "인텐트 매칭 정상 확인"],
+        "code_ref": "",
+        "paper_ref": "AI Network — 궁금하냥 인텐트 기여 가이드",
+        "exercise": "인텐트를 수정한 후 가장 먼저 해야 할 것은?\n1) 바로 Prod에 배포한다\n2) Dev 챗봇에서 수정한 질문을 테스트한다\n3) 다른 인텐트도 함께 수정한다",
+        "answer": "Dev 챗봇에서 수정한 질문을 테스트한다",
+        "explanation": "수정 후 반드시 Dev 환경에서 먼저 테스트하여 의도대로 동작하는지 확인해야 합니다. Prod 배포는 검증 후 진행합니다.",
+        "x402_price": "",
+        "x402_gateway": ""
+      }
+    ]
+  }
+]
